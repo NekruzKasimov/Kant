@@ -15,6 +15,19 @@
 		1F5893911F614DB600FD2C5D /* Kaindy_KantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893901F614DB600FD2C5D /* Kaindy_KantUITests.swift */; };
 		1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58939F1F614ED700FD2C5D /* MainViewController.swift */; };
 		1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893A31F614EF600FD2C5D /* SWRevealViewController.m */; };
+		1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893A81F61510D00FD2C5D /* MenuViewController.swift */; };
+		1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893AA1F61523700FD2C5D /* Extensions.swift */; };
+		1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893B21F61546400FD2C5D /* Service.storyboard */; };
+		1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893B41F61547000FD2C5D /* ServiceViewController.swift */; };
+		1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893B71F61561D00FD2C5D /* Provider.storyboard */; };
+		1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */; };
+		1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893BC1F6156DF00FD2C5D /* RequestViewController.swift */; };
+		1F5893BF1F6156EB00FD2C5D /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893BE1F6156EB00FD2C5D /* Request.storyboard */; };
+		1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893C11F61583200FD2C5D /* Login.storyboard */; };
+		1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C31F61583E00FD2C5D /* LoginViewController.swift */; };
+		1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */; };
+		1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */; };
+		1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +64,19 @@
 		1F5893A11F614EF500FD2C5D /* Kaindy-Kant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kaindy-Kant-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F5893A21F614EF600FD2C5D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1F5893A31F614EF600FD2C5D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		1F5893A81F61510D00FD2C5D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		1F5893AA1F61523700FD2C5D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1F5893B21F61546400FD2C5D /* Service.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
+		1F5893B41F61547000FD2C5D /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
+		1F5893B71F61561D00FD2C5D /* Provider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Provider.storyboard; sourceTree = "<group>"; };
+		1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderViewController.swift; sourceTree = "<group>"; };
+		1F5893BC1F6156DF00FD2C5D /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		1F5893BE1F6156EB00FD2C5D /* Request.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
+		1F5893C11F61583200FD2C5D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1F5893C31F61583E00FD2C5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
+				1F5893C01F61582400FD2C5D /* Login */,
 				1F58939E1F614EA200FD2C5D /* MainPage */,
+				1F5893A71F6150E600FD2C5D /* MenuPage */,
+				1F5893B11F61544D00FD2C5D /* Services */,
+				1F5893B61F61560800FD2C5D /* Providers */,
+				1F5893BB1F6156C800FD2C5D /* Requests */,
 				1F5893701F614DB600FD2C5D /* AppDelegate.swift */,
 				1F5893771F614DB600FD2C5D /* Assets.xcassets */,
 				1F5893791F614DB600FD2C5D /* LaunchScreen.storyboard */,
@@ -141,6 +172,7 @@
 		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F5893AA1F61523700FD2C5D /* Extensions.swift */,
 				1F5893A61F614F0A00FD2C5D /* SWReveal */,
 			);
 			name = "Supporting Files";
@@ -154,6 +186,53 @@
 				1F5893A11F614EF500FD2C5D /* Kaindy-Kant-Bridging-Header.h */,
 			);
 			name = SWReveal;
+			sourceTree = "<group>";
+		};
+		1F5893A71F6150E600FD2C5D /* MenuPage */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893A81F61510D00FD2C5D /* MenuViewController.swift */,
+			);
+			name = MenuPage;
+			sourceTree = "<group>";
+		};
+		1F5893B11F61544D00FD2C5D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893B21F61546400FD2C5D /* Service.storyboard */,
+				1F5893B41F61547000FD2C5D /* ServiceViewController.swift */,
+				1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1F5893B61F61560800FD2C5D /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893B71F61561D00FD2C5D /* Provider.storyboard */,
+				1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */,
+				1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
+		1F5893BB1F6156C800FD2C5D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893BE1F6156EB00FD2C5D /* Request.storyboard */,
+				1F5893BC1F6156DF00FD2C5D /* RequestViewController.swift */,
+				1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		1F5893C01F61582400FD2C5D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893C11F61583200FD2C5D /* Login.storyboard */,
+				1F5893C31F61583E00FD2C5D /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +303,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4459UQ4UL2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -264,9 +344,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
+				1F5893BF1F6156EB00FD2C5D /* Request.storyboard in Resources */,
+				1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
+				1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +375,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
+				1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */,
+				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
+				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
+				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
+				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
+				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
+				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
+				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4459UQ4UL2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NeoBis.Kaindy-Kant";
@@ -463,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4459UQ4UL2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NeoBis.Kaindy-Kant";

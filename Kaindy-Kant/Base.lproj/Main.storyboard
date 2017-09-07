@@ -41,10 +41,19 @@
                     <view key="view" contentMode="scaleToFill" id="Jkz-Q8-Rht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wl-y2-ji1">
+                                <rect key="frame" x="159" y="367" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CPm-vH-vHv">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="add" id="ZDm-KR-tc0"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" style="plain" id="ZDm-KR-tc0"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mainMenuBtn" destination="ZDm-KR-tc0" id="YCX-3w-64L"/>
@@ -54,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1824.8" y="373.76311844077964"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="cXU-fU-chj">
             <objects>
-                <viewController id="EyI-rA-lRP" sceneMemberID="viewController">
+                <viewController id="EyI-rA-lRP" customClass="MenuViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OIj-8t-aFZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Mb4-yh-9ji"/>
@@ -65,17 +74,43 @@
                     <view key="view" contentMode="scaleToFill" id="0eh-eW-V9r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-tc-Vna">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EyI-rA-lRP" id="2yt-dg-w3o"/>
+                                    <outlet property="delegate" destination="EyI-rA-lRP" id="03E-Pn-Uzx"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOy-XZ-ySK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dnj-tz-PmM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dbf-tc-Vna" firstAttribute="leading" secondItem="0eh-eW-V9r" secondAttribute="leading" id="AFb-iH-4dc"/>
+                            <constraint firstItem="Mb4-yh-9ji" firstAttribute="top" secondItem="dbf-tc-Vna" secondAttribute="bottom" id="AjC-HF-TpI"/>
+                            <constraint firstAttribute="trailing" secondItem="dbf-tc-Vna" secondAttribute="trailing" id="UEd-Pv-wt3"/>
+                            <constraint firstItem="nOy-XZ-ySK" firstAttribute="leading" secondItem="0eh-eW-V9r" secondAttribute="leading" id="dsA-9f-UT9"/>
+                            <constraint firstItem="nOy-XZ-ySK" firstAttribute="top" secondItem="0eh-eW-V9r" secondAttribute="top" id="tJ1-N2-daS"/>
+                            <constraint firstItem="dbf-tc-Vna" firstAttribute="top" secondItem="nOy-XZ-ySK" secondAttribute="bottom" id="zMu-8w-75W"/>
+                            <constraint firstAttribute="trailing" secondItem="nOy-XZ-ySK" secondAttribute="trailing" id="zxg-pp-zuv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cf0-Ly-aOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="-336"/>
+            <point key="canvasLocation" x="885.60000000000002" y="-336.88155922038982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3TV-wF-4mT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rwb-9Z-7Em" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNav" automaticallyAdjustsScrollViewInsets="NO" id="rwb-9Z-7Em" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f9T-du-Y7O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -91,4 +126,7 @@
             <point key="canvasLocation" x="885.60000000000002" y="373.76311844077964"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="16" height="16"/>
+    </resources>
 </document>
