@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893701F614DB600FD2C5D /* AppDelegate.swift */; };
-		1F5893731F614DB600FD2C5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893721F614DB600FD2C5D /* ViewController.swift */; };
 		1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893741F614DB600FD2C5D /* Main.storyboard */; };
 		1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893771F614DB600FD2C5D /* Assets.xcassets */; };
 		1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893791F614DB600FD2C5D /* LaunchScreen.storyboard */; };
 		1F5893861F614DB600FD2C5D /* Kaindy_KantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893851F614DB600FD2C5D /* Kaindy_KantTests.swift */; };
 		1F5893911F614DB600FD2C5D /* Kaindy_KantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893901F614DB600FD2C5D /* Kaindy_KantUITests.swift */; };
+		1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58939F1F614ED700FD2C5D /* MainViewController.swift */; };
+		1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893A31F614EF600FD2C5D /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		1F58936D1F614DB600FD2C5D /* Kaindy-Kant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kaindy-Kant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5893701F614DB600FD2C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F5893721F614DB600FD2C5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F5893751F614DB600FD2C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F5893771F614DB600FD2C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F58937A1F614DB600FD2C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,10 @@
 		1F58938C1F614DB600FD2C5D /* Kaindy-KantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kaindy-KantUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5893901F614DB600FD2C5D /* Kaindy_KantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaindy_KantUITests.swift; sourceTree = "<group>"; };
 		1F5893921F614DB600FD2C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F58939F1F614ED700FD2C5D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1F5893A11F614EF500FD2C5D /* Kaindy-Kant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kaindy-Kant-Bridging-Header.h"; sourceTree = "<group>"; };
+		1F5893A21F614EF600FD2C5D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		1F5893A31F614EF600FD2C5D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,9 @@
 		1F58936F1F614DB600FD2C5D /* Kaindy-Kant */ = {
 			isa = PBXGroup;
 			children = (
+				1F5893A51F614EF900FD2C5D /* Supporting Files */,
+				1F58939E1F614EA200FD2C5D /* MainPage */,
 				1F5893701F614DB600FD2C5D /* AppDelegate.swift */,
-				1F5893721F614DB600FD2C5D /* ViewController.swift */,
-				1F5893741F614DB600FD2C5D /* Main.storyboard */,
 				1F5893771F614DB600FD2C5D /* Assets.xcassets */,
 				1F5893791F614DB600FD2C5D /* LaunchScreen.storyboard */,
 				1F58937C1F614DB600FD2C5D /* Info.plist */,
@@ -123,6 +127,33 @@
 				1F5893921F614DB600FD2C5D /* Info.plist */,
 			);
 			path = "Kaindy-KantUITests";
+			sourceTree = "<group>";
+		};
+		1F58939E1F614EA200FD2C5D /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893741F614DB600FD2C5D /* Main.storyboard */,
+				1F58939F1F614ED700FD2C5D /* MainViewController.swift */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893A61F614F0A00FD2C5D /* SWReveal */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F5893A61F614F0A00FD2C5D /* SWReveal */ = {
+			isa = PBXGroup;
+			children = (
+				1F5893A21F614EF600FD2C5D /* SWRevealViewController.h */,
+				1F5893A31F614EF600FD2C5D /* SWRevealViewController.m */,
+				1F5893A11F614EF500FD2C5D /* Kaindy-Kant-Bridging-Header.h */,
+			);
+			name = SWReveal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +224,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					1F5893801F614DB600FD2C5D = {
@@ -259,8 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F5893731F614DB600FD2C5D /* ViewController.swift in Sources */,
+				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
+				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,10 +447,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NeoBis.Kaindy-Kant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kaindy-Kant/Kaindy-Kant-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +462,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NeoBis.Kaindy-Kant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kaindy-Kant/Kaindy-Kant-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -507,6 +545,7 @@
 				1F5893971F614DB600FD2C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F5893981F614DB600FD2C5D /* Build configuration list for PBXNativeTarget "Kaindy-KantTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +554,7 @@
 				1F58939A1F614DB600FD2C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F58939B1F614DB600FD2C5D /* Build configuration list for PBXNativeTarget "Kaindy-KantUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +563,7 @@
 				1F58939D1F614DB600FD2C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
