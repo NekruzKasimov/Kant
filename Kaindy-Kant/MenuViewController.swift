@@ -10,18 +10,24 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var menu = ["Главная", "Профиль", "Услуги" , "Поставщики" , "Заявки" , "Технология че-то че-то" , "Выход"]
-    var navigations = ["MainNav" , "ProfileNav", "ServiceNav" , "ProviderNav" , "RequestNav" , "" , "LoginNav"]
-    var sbs = ["Main" , "Profile", "Service", "Provider" , "Request" , "" , "Login"]
+    var menu = ["Главная", "Услуги" , "Поставщики" , "Заявки" , "Технология че-то че-то" , "Выход"]
+    var navigations = ["MainNav" , "ServiceNav" , "ProviderNav" , "RequestNav" , "" , "LoginNav"]
+    var sbs = ["Main" , "Service", "Provider" , "Request" , "" , "Login"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
     @IBAction func showProfilePage(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController")
-        present(vc, animated: true, completion: nil)
+        openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
+    }
+    
+    func openPage(storyboard: String, vcIdentifier: String) {
+        let revealVC = revealViewController()
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
+        revealVC?.pushFrontViewController(vc, animated: true)
     }
 }
 
@@ -38,9 +44,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let revealVC = revealViewController()
-        let sb = UIStoryboard(name: sbs[indexPath.row], bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: navigations[indexPath.row])
-        revealVC?.pushFrontViewController(vc, animated: true)
+        openPage(storyboard: sbs[indexPath.row], vcIdentifier: navigations[indexPath.row])
     }
 }
