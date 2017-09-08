@@ -18,6 +18,11 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    @IBAction func showProfilePage(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController")
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
