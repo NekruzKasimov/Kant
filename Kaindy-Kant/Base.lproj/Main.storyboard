@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NjI-5S-a5S">
-                                <rect key="frame" x="0.0" y="16" width="375" height="651"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FirstSectionTableViewCell" rowHeight="116" id="RgA-UP-KiX" customClass="FirstSectionTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -59,34 +59,35 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 68" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3L-1W-lfK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$ 68" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3L-1W-lfK">
                                                     <rect key="frame" x="12" y="8.5" width="48.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaz-fh-2yK">
-                                                    <rect key="frame" x="68.5" y="9" width="49" height="27.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Цена на Сахар" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2II-tY-rlA">
+                                                    <rect key="frame" x="12" y="79.5" width="118" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена на Сахар" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2II-tY-rlA">
-                                                    <rect key="frame" x="12" y="44.5" width="118" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="€ 80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaz-fh-2yK">
+                                                    <rect key="frame" x="12" y="44" width="49" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="N8G-Bb-ggY" secondAttribute="bottom" constant="8" id="Dqw-nE-WiC"/>
-                                                <constraint firstItem="N8G-Bb-ggY" firstAttribute="top" secondItem="PMC-jp-Mct" secondAttribute="top" constant="8" id="KTY-02-f13"/>
+                                                <constraint firstItem="2II-tY-rlA" firstAttribute="top" secondItem="Uaz-fh-2yK" secondAttribute="bottom" constant="8" id="3bo-5d-8JS"/>
+                                                <constraint firstItem="N8G-Bb-ggY" firstAttribute="top" secondItem="W3L-1W-lfK" secondAttribute="top" id="8NM-7P-V9S"/>
+                                                <constraint firstItem="Uaz-fh-2yK" firstAttribute="leading" secondItem="W3L-1W-lfK" secondAttribute="leading" id="Kop-0s-0cC"/>
+                                                <constraint firstItem="N8G-Bb-ggY" firstAttribute="bottom" secondItem="2II-tY-rlA" secondAttribute="bottom" id="LbR-do-Qud"/>
                                                 <constraint firstItem="W3L-1W-lfK" firstAttribute="leading" secondItem="PMC-jp-Mct" secondAttribute="leading" constant="12" id="Ldu-fJ-0V0"/>
-                                                <constraint firstItem="Uaz-fh-2yK" firstAttribute="top" secondItem="W3L-1W-lfK" secondAttribute="top" id="Uww-DF-RGu"/>
+                                                <constraint firstAttribute="bottom" secondItem="2II-tY-rlA" secondAttribute="bottom" constant="8" id="PQC-ti-u6h"/>
                                                 <constraint firstItem="2II-tY-rlA" firstAttribute="leading" secondItem="PMC-jp-Mct" secondAttribute="leading" constant="12" id="Vt2-4f-Lla"/>
                                                 <constraint firstAttribute="trailing" secondItem="N8G-Bb-ggY" secondAttribute="trailing" constant="8" id="ZAb-ti-QkG"/>
-                                                <constraint firstItem="2II-tY-rlA" firstAttribute="top" secondItem="Uaz-fh-2yK" secondAttribute="bottom" constant="8" id="l9m-lr-6Wd"/>
-                                                <constraint firstItem="Uaz-fh-2yK" firstAttribute="leading" secondItem="W3L-1W-lfK" secondAttribute="trailing" constant="8" id="mUw-Yw-pIu"/>
+                                                <constraint firstItem="Uaz-fh-2yK" firstAttribute="top" secondItem="W3L-1W-lfK" secondAttribute="bottom" constant="8" id="oZD-uw-fme"/>
                                                 <constraint firstItem="W3L-1W-lfK" firstAttribute="top" secondItem="PMC-jp-Mct" secondAttribute="top" constant="8" id="uhW-hS-6IT"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -103,7 +104,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News News News News News News News News News News News News News News News " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejm-rK-22J">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsNewsNewsNews News News News News News News News News News News News " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejm-rK-22J">
                                                     <rect key="frame" x="8" y="8" width="359" height="99.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -132,7 +133,7 @@
                         <constraints>
                             <constraint firstItem="NjI-5S-a5S" firstAttribute="leading" secondItem="Jkz-Q8-Rht" secondAttribute="leading" id="CBt-GT-ngy"/>
                             <constraint firstItem="r5U-iO-xx9" firstAttribute="top" secondItem="NjI-5S-a5S" secondAttribute="bottom" id="Is0-9y-2We"/>
-                            <constraint firstItem="NjI-5S-a5S" firstAttribute="top" secondItem="Jkz-Q8-Rht" secondAttribute="top" constant="16" id="LTs-et-Y4a"/>
+                            <constraint firstItem="NjI-5S-a5S" firstAttribute="top" secondItem="Jkz-Q8-Rht" secondAttribute="top" id="LTs-et-Y4a"/>
                             <constraint firstAttribute="trailing" secondItem="NjI-5S-a5S" secondAttribute="trailing" id="peR-zO-CrJ"/>
                         </constraints>
                     </view>
