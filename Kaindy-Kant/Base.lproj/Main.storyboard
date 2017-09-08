@@ -85,9 +85,29 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOy-XZ-ySK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="sTX-I1-SmB">
+                                        <rect key="frame" x="8" y="34" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="AQx-hU-Oc2"/>
+                                            <constraint firstAttribute="height" constant="50" id="fS7-3y-ry6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-14-cbr">
+                                        <rect key="frame" x="66" y="41" width="92" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Профиль">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sTX-I1-SmB" secondAttribute="bottom" constant="16" id="ZAs-o5-v6j"/>
+                                    <constraint firstItem="sTX-I1-SmB" firstAttribute="leading" secondItem="nOy-XZ-ySK" secondAttribute="leading" constant="8" id="aRR-Bc-7DZ"/>
                                     <constraint firstAttribute="height" constant="100" id="dnj-tz-PmM"/>
+                                    <constraint firstItem="8gp-14-cbr" firstAttribute="centerY" secondItem="sTX-I1-SmB" secondAttribute="centerY" id="lSr-1q-JN7"/>
+                                    <constraint firstItem="8gp-14-cbr" firstAttribute="leading" secondItem="sTX-I1-SmB" secondAttribute="trailing" constant="8" id="pbU-CG-BIw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -128,5 +148,6 @@
     </scenes>
     <resources>
         <image name="menu" width="16" height="16"/>
+        <image name="profile" width="256" height="256"/>
     </resources>
 </document>
