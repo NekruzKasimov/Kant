@@ -28,6 +28,14 @@
 		1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */; };
 		1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */; };
 		1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */; };
+		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
+		23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE91F6237A700D58F5B /* GlobalFunctions.swift */; };
+		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
+		23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */; };
+		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
+		3C0FAD08511FD6AF4A0CAC36 /* Pods_Kaindy_KantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */; };
+		5A02A68FBB493D6827A4F890 /* Pods_Kaindy_KantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */; };
+		AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,20 @@
 		1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
+		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		23205AE91F6237A700D58F5B /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorButton.swift; sourceTree = "<group>"; };
+		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		34E18E9CDE7FCD24268E1471 /* Pods-Kaindy-KantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.release.xcconfig"; sourceTree = "<group>"; };
+		3CE491DD05550BA76CEBE29F /* Pods-Kaindy-Kant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-Kant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.release.xcconfig"; sourceTree = "<group>"; };
+		4CB32D25E92A4582285E9236 /* Pods-Kaindy-KantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E81C9294F924370F4DFF66F /* Pods-Kaindy-KantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		519B48CAD2C406E2D6F875E7 /* Pods-Kaindy-Kant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-Kant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.debug.xcconfig"; sourceTree = "<group>"; };
+		82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_KantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_Kant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_KantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA36D511538BBE890729F7FB /* Pods-Kaindy-KantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A02A68FBB493D6827A4F890 /* Pods_Kaindy_KantTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +122,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0FAD08511FD6AF4A0CAC36 /* Pods_Kaindy_KantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B433ADDF3EA7883C156EF35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				519B48CAD2C406E2D6F875E7 /* Pods-Kaindy-Kant.debug.xcconfig */,
+				3CE491DD05550BA76CEBE29F /* Pods-Kaindy-Kant.release.xcconfig */,
+				4CB32D25E92A4582285E9236 /* Pods-Kaindy-KantTests.debug.xcconfig */,
+				34E18E9CDE7FCD24268E1471 /* Pods-Kaindy-KantTests.release.xcconfig */,
+				4E81C9294F924370F4DFF66F /* Pods-Kaindy-KantUITests.debug.xcconfig */,
+				BA36D511538BBE890729F7FB /* Pods-Kaindy-KantUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1F5893641F614DB600FD2C5D = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +149,8 @@
 				1F5893841F614DB600FD2C5D /* Kaindy-KantTests */,
 				1F58938F1F614DB600FD2C5D /* Kaindy-KantUITests */,
 				1F58936E1F614DB600FD2C5D /* Products */,
+				0B433ADDF3EA7883C156EF35 /* Pods */,
+				3795890B1F6AB0F4A1DCF3F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +169,7 @@
 			children = (
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
 				1F5893C01F61582400FD2C5D /* Login */,
+				23205AE61F62375D00D58F5B /* Profile */,
 				1F58939E1F614EA200FD2C5D /* MainPage */,
 				1F5893A71F6150E600FD2C5D /* MenuPage */,
 				1F5893B11F61544D00FD2C5D /* Services */,
@@ -172,7 +213,10 @@
 		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */,
+				23205AE91F6237A700D58F5B /* GlobalFunctions.swift */,
 				1F5893AA1F61523700FD2C5D /* Extensions.swift */,
+				23205AE71F62378100D58F5B /* Colors.swift */,
 				1F5893A61F614F0A00FD2C5D /* SWReveal */,
 			);
 			name = "Supporting Files";
@@ -235,6 +279,25 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		23205AE61F62375D00D58F5B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				23205AEF1F62391800D58F5B /* Profile.storyboard */,
+				23205AF31F6239B900D58F5B /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		3795890B1F6AB0F4A1DCF3F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */,
+				AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */,
+				82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,9 +305,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F5893951F614DB600FD2C5D /* Build configuration list for PBXNativeTarget "Kaindy-Kant" */;
 			buildPhases = (
+				F819FD5F6AD8422236B3CD8A /* [CP] Check Pods Manifest.lock */,
 				1F5893691F614DB600FD2C5D /* Sources */,
 				1F58936A1F614DB600FD2C5D /* Frameworks */,
 				1F58936B1F614DB600FD2C5D /* Resources */,
+				515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */,
+				0642CE4BCFA65C4CDF11281E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,9 +325,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F5893981F614DB600FD2C5D /* Build configuration list for PBXNativeTarget "Kaindy-KantTests" */;
 			buildPhases = (
+				9A3398B239746549F3E28213 /* [CP] Check Pods Manifest.lock */,
 				1F58937D1F614DB600FD2C5D /* Sources */,
 				1F58937E1F614DB600FD2C5D /* Frameworks */,
 				1F58937F1F614DB600FD2C5D /* Resources */,
+				9805D3F84B4CF843C02622FB /* [CP] Embed Pods Frameworks */,
+				97783AF95AFB69453ABB0301 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,9 +346,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F58939B1F614DB600FD2C5D /* Build configuration list for PBXNativeTarget "Kaindy-KantUITests" */;
 			buildPhases = (
+				2671A0331D67D09F8EBA1492 /* [CP] Check Pods Manifest.lock */,
 				1F5893881F614DB600FD2C5D /* Sources */,
 				1F5893891F614DB600FD2C5D /* Frameworks */,
 				1F58938A1F614DB600FD2C5D /* Resources */,
+				E3A076D0C9EB9D49B5D6F60A /* [CP] Embed Pods Frameworks */,
+				AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,7 +375,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4459UQ4UL2;
+						DevelopmentTeam = U5DCDBG2W2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -346,6 +418,7 @@
 			files = (
 				1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
+				23205AF01F62391800D58F5B /* Profile.storyboard in Resources */,
 				1F5893BF1F6156EB00FD2C5D /* Request.storyboard in Resources */,
 				1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
@@ -370,6 +443,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0642CE4BCFA65C4CDF11281E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2671A0331D67D09F8EBA1492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97783AF95AFB69453ABB0301 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9805D3F84B4CF843C02622FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A3398B239746549F3E28213 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3A076D0C9EB9D49B5D6F60A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F819FD5F6AD8422236B3CD8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F5893691F614DB600FD2C5D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -377,15 +588,19 @@
 			files = (
 				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
 				1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */,
+				23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
+				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
+				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
+				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,10 +753,11 @@
 		};
 		1F5893961F614DB600FD2C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 519B48CAD2C406E2D6F875E7 /* Pods-Kaindy-Kant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4459UQ4UL2;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NeoBis.Kaindy-Kant";
@@ -554,10 +770,11 @@
 		};
 		1F5893971F614DB600FD2C5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE491DD05550BA76CEBE29F /* Pods-Kaindy-Kant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4459UQ4UL2;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NeoBis.Kaindy-Kant";
@@ -569,6 +786,7 @@
 		};
 		1F5893991F614DB600FD2C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CB32D25E92A4582285E9236 /* Pods-Kaindy-KantTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,6 +801,7 @@
 		};
 		1F58939A1F614DB600FD2C5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34E18E9CDE7FCD24268E1471 /* Pods-Kaindy-KantTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -597,6 +816,7 @@
 		};
 		1F58939C1F614DB600FD2C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E81C9294F924370F4DFF66F /* Pods-Kaindy-KantUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Kaindy-KantUITests/Info.plist";
@@ -610,6 +830,7 @@
 		};
 		1F58939D1F614DB600FD2C5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA36D511538BBE890729F7FB /* Pods-Kaindy-KantUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Kaindy-KantUITests/Info.plist";
