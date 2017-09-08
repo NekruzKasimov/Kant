@@ -61,8 +61,8 @@ extension MainViewController {
 
 extension MainViewController {
     func configureTableView() {
-        tableView.rowHeight             = 80
-        tableView.estimatedRowHeight    = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight    = 50
+        tableView.rowHeight             = UITableViewAutomaticDimension
         tableView.tableFooterView       = UIView()
     }
 }
