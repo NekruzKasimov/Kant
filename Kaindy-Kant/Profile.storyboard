@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="Mkz-Sq-cIu">
+            <objects>
+                <viewController id="WIi-VN-ZPK" customClass="ProfileViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Chm-Mz-flf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ytv-UW-j3E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F1j-DV-obZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQ0-9k-vIl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ewg-kz-0bk">
+                                        <rect key="frame" x="16" y="150" width="343" height="274.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjP-bJ-lqG" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wvt-z4-kCi" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="39" width="343" height="39.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HBm-Xu-5tY" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="78.5" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iM-6g-KFI" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="117.5" width="343" height="39.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qt6-hF-Ohs" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="157" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVj-FY-9Bo" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="196" width="343" height="39.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0l3-Nq-1AJ" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="235.5" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="CnP-xl-HJL">
+                                        <rect key="frame" x="132" y="16" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="67r-Om-kUp"/>
+                                            <constraint firstAttribute="height" constant="110" id="b5R-Ej-FiL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2T-dQ-AzO" customClass="LoadingIndicatorButton" customModule="Kaindy_Kant" customModuleProvider="target">
+                                        <rect key="frame" x="70" y="454.5" width="235" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="W2T-dQ-AzO" secondAttribute="height" multiplier="47:11" id="gvU-R2-nzq"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="saveUser:" destination="WIi-VN-ZPK" eventType="touchUpInside" id="V1z-bm-P7b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA7-A2-0DY" customClass="LoadingIndicatorButton" customModule="Kaindy_Kant" customModuleProvider="target">
+                                        <rect key="frame" x="70" y="539.5" width="235" height="55"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="signOut:" destination="WIi-VN-ZPK" eventType="touchUpInside" id="C4T-92-ZL9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="W2T-dQ-AzO" secondAttribute="trailing" constant="70" id="5Ip-DB-xn0"/>
+                                    <constraint firstItem="yA7-A2-0DY" firstAttribute="width" secondItem="yA7-A2-0DY" secondAttribute="height" multiplier="47:11" id="8jH-8q-DZI"/>
+                                    <constraint firstItem="CnP-xl-HJL" firstAttribute="top" secondItem="EQ0-9k-vIl" secondAttribute="top" constant="16" id="8ta-Pj-RW4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ewg-kz-0bk" secondAttribute="trailing" constant="16" id="Gqp-ea-LPb"/>
+                                    <constraint firstItem="CnP-xl-HJL" firstAttribute="centerX" secondItem="EQ0-9k-vIl" secondAttribute="centerX" id="Ncg-ce-OdX"/>
+                                    <constraint firstAttribute="trailing" secondItem="yA7-A2-0DY" secondAttribute="trailing" constant="70" id="ULs-LU-lKk"/>
+                                    <constraint firstItem="W2T-dQ-AzO" firstAttribute="top" secondItem="Ewg-kz-0bk" secondAttribute="bottom" constant="30" id="XP9-eD-8ba"/>
+                                    <constraint firstItem="Ewg-kz-0bk" firstAttribute="centerX" secondItem="EQ0-9k-vIl" secondAttribute="centerX" id="XzH-yf-ZLD"/>
+                                    <constraint firstAttribute="bottom" secondItem="yA7-A2-0DY" secondAttribute="bottom" constant="30" id="arb-Xp-jbh"/>
+                                    <constraint firstItem="Ewg-kz-0bk" firstAttribute="top" secondItem="CnP-xl-HJL" secondAttribute="bottom" constant="24" id="bxw-EU-S33"/>
+                                    <constraint firstItem="Ewg-kz-0bk" firstAttribute="leading" secondItem="EQ0-9k-vIl" secondAttribute="leading" constant="16" id="c6Y-rM-ZUu"/>
+                                    <constraint firstItem="yA7-A2-0DY" firstAttribute="top" secondItem="W2T-dQ-AzO" secondAttribute="bottom" constant="30" id="pxR-GC-BzU"/>
+                                    <constraint firstItem="yA7-A2-0DY" firstAttribute="leading" secondItem="EQ0-9k-vIl" secondAttribute="leading" constant="70" id="qXy-6O-9Ai"/>
+                                    <constraint firstItem="W2T-dQ-AzO" firstAttribute="leading" secondItem="EQ0-9k-vIl" secondAttribute="leading" constant="70" id="xRE-EJ-DtS"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ytv-UW-j3E" firstAttribute="top" secondItem="EQ0-9k-vIl" secondAttribute="bottom" id="44R-YI-rJ9"/>
+                            <constraint firstAttribute="trailing" secondItem="EQ0-9k-vIl" secondAttribute="trailing" id="6gg-ez-sx0"/>
+                            <constraint firstItem="EQ0-9k-vIl" firstAttribute="top" secondItem="F1j-DV-obZ" secondAttribute="top" id="OB6-34-mQP"/>
+                            <constraint firstItem="EQ0-9k-vIl" firstAttribute="leading" secondItem="F1j-DV-obZ" secondAttribute="leading" id="gMu-dO-wcG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dta-ef-h5J"/>
+                    <connections>
+                        <outlet property="birthdayTF" destination="HBm-Xu-5tY" id="cb8-XG-9HG"/>
+                        <outlet property="cityTF" destination="0l3-Nq-1AJ" id="3ch-FW-MN9"/>
+                        <outlet property="countryTF" destination="Qt6-hF-Ohs" id="04K-rj-duy"/>
+                        <outlet property="firstNameTF" destination="pjP-bJ-lqG" id="94F-fd-vDM"/>
+                        <outlet property="imageView" destination="CnP-xl-HJL" id="Cne-se-b0D"/>
+                        <outlet property="lastNameTF" destination="Wvt-z4-kCi" id="9wI-bj-Rs0"/>
+                        <outlet property="logoutButton" destination="yA7-A2-0DY" id="vN1-xF-4XB"/>
+                        <outlet property="phoneNumberTF" destination="0iM-6g-KFI" id="piF-g1-Cxm"/>
+                        <outlet property="regionTF" destination="RVj-FY-9Bo" id="Fyg-EN-CjM"/>
+                        <outlet property="saveButton" destination="W2T-dQ-AzO" id="lNo-jN-a3q"/>
+                        <outlet property="scrollView" destination="EQ0-9k-vIl" id="rWG-wM-uQc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0l-Gr-Mbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="192.95352323838082"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Apj-x0-yuW">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileNav" automaticallyAdjustsScrollViewInsets="NO" id="jxE-ep-pey" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8ma-OL-7uU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WIi-VN-ZPK" kind="relationship" relationship="rootViewController" id="aU9-xt-CLy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nUr-d9-Jkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.80000000000001" y="192.95352323838082"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" width="90" height="90"/>
+    </resources>
+</document>
