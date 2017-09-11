@@ -29,8 +29,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet{
             firstNameTF.accessibilityIdentifier = "firstNameTextField"
             GlobalFunctions.configure(textField: firstNameTF,
-                                      withText: "First name",
-                                      placeholder: "First name",
+                                      withText: "Имя",
+                                      placeholder: "Имя",
                                       tag:1)
             configure(textField: firstNameTF, with: .user)
         }
@@ -39,8 +39,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet{
             lastNameTF.accessibilityIdentifier = "lastNameTextField"
             GlobalFunctions.configure(textField: lastNameTF,
-                                      withText: "Last name",
-                                      placeholder: "Last name",
+                                      withText: "Фамилия",
+                                      placeholder: "Фамилия",
                                       tag:2)
             configure(textField: lastNameTF, with: .user)
         }
@@ -49,8 +49,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet{
             birthdayTF.accessibilityIdentifier = "birthdayTextField"
             GlobalFunctions.configure(textField: birthdayTF,
-                                      withText: "Birthday",
-                                      placeholder: "Birthday",
+                                      withText: "Дата рождения",
+                                      placeholder: "Дата рождения",
                                       tag:3)
             configure(textField: birthdayTF, with: .birthdayCake)
         }
@@ -71,8 +71,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet{
             phoneNumberTF.accessibilityIdentifier = "phoneNumberTextField"
             GlobalFunctions.configure(textField: phoneNumberTF,
-                                      withText: "Phone number",
-                                      placeholder: "Phone number",
+                                      withText: "Номер телефона",
+                                      placeholder: "Номер телефона",
                                       tag:4)
             configure(textField: phoneNumberTF, with: .phone)
         }
@@ -82,8 +82,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet {
             countryTF.accessibilityIdentifier = "countryTextField"
             GlobalFunctions.configure(textField: countryTF,
-                                      withText: "Country",
-                                      placeholder: "Country",
+                                      withText: "Город",
+                                      placeholder: "Город",
                                       tag: 5)
             configure(textField: countryTF, with: .map)
         }
@@ -93,8 +93,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet {
             regionTF.accessibilityIdentifier = "regionTextField"
             GlobalFunctions.configure(textField: regionTF,
-                                      withText: "Region",
-                                      placeholder: "Region",
+                                      withText: "Регион",
+                                      placeholder: "Регион",
                                       tag: 6)
             configure(textField: regionTF, with: .mapMarker)
         }
@@ -104,8 +104,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         didSet {
             cityTF.accessibilityIdentifier = "cityTextField"
             GlobalFunctions.configure(textField: cityTF,
-                                      withText: "City",
-                                      placeholder: "City",
+                                      withText: "Город",
+                                      placeholder: "Город",
                                       tag: 7)
             configure(textField: cityTF, with: .mapPin)
             
@@ -115,14 +115,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var saveButton: LoadingIndicatorButton! {
         didSet{
             saveButton.accessibilityIdentifier = "saveButton"
-            saveButton.buttonTitle = "Save"
+            saveButton.buttonTitle = "Сохранить"
             saveButton.bc = UIColor.init(netHex: Colors.green)
         }
     }
     @IBOutlet weak var logoutButton: LoadingIndicatorButton! {
         didSet{
             logoutButton.accessibilityIdentifier = "logoutButton"
-            logoutButton.buttonTitle = "Logout"
+            logoutButton.buttonTitle = "Выйти"
             logoutButton.bc = UIColor(netHex: Colors.yellow)
         }
     }

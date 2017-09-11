@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration View Controller-->
+        <scene sceneID="sJN-hg-Q9G">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationViewController" id="6KM-R1-rU5" customClass="RegistrationViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yss-EK-VfH"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Wa-sd-HOD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hrW-iQ-9m8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15w-rq-3Gd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ika-n9-K2a">
+                                        <rect key="frame" x="16" y="150" width="343" height="240"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRm-8Z-4JK" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADl-jd-qgp" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="50" width="343" height="39.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cJ-N9-ftv" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="100.5" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9e-Y5-VIB" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="150.5" width="343" height="39.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kcI-r6-QPb" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="0.0" y="201" width="343" height="39"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="vPj-4h-uVX">
+                                        <rect key="frame" x="132" y="16" width="110" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="FlM-v4-QzI"/>
+                                            <constraint firstAttribute="width" constant="110" id="wDJ-CI-2pD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd6-NV-IhN">
+                                        <rect key="frame" x="70" y="420" width="235" height="55"/>
+                                        <color key="backgroundColor" red="0.61458438630000001" green="0.1268199384" blue="0.2744753063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Vd6-NV-IhN" secondAttribute="height" multiplier="47:11" id="J7h-On-EyX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Зарегистрироваться">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ika-n9-K2a" firstAttribute="leading" secondItem="15w-rq-3Gd" secondAttribute="leading" constant="16" id="2xB-FY-QcW"/>
+                                    <constraint firstItem="Vd6-NV-IhN" firstAttribute="leading" secondItem="15w-rq-3Gd" secondAttribute="leading" constant="70" id="4hB-Qm-d17"/>
+                                    <constraint firstItem="vPj-4h-uVX" firstAttribute="centerX" secondItem="15w-rq-3Gd" secondAttribute="centerX" id="K17-z8-rVx"/>
+                                    <constraint firstItem="Ika-n9-K2a" firstAttribute="top" secondItem="vPj-4h-uVX" secondAttribute="bottom" constant="24" id="NuI-Fr-9GN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vd6-NV-IhN" secondAttribute="bottom" constant="20" id="UG2-Id-SFa"/>
+                                    <constraint firstItem="vPj-4h-uVX" firstAttribute="top" secondItem="15w-rq-3Gd" secondAttribute="top" constant="16" id="njp-CI-kZ9"/>
+                                    <constraint firstItem="Vd6-NV-IhN" firstAttribute="top" secondItem="Ika-n9-K2a" secondAttribute="bottom" constant="30" id="rQL-y2-Agy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vd6-NV-IhN" secondAttribute="trailing" constant="70" id="tqW-mr-s5x"/>
+                                    <constraint firstItem="Ika-n9-K2a" firstAttribute="centerX" secondItem="15w-rq-3Gd" secondAttribute="centerX" id="uR5-Bn-zIV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ika-n9-K2a" secondAttribute="trailing" constant="16" id="zcs-Ct-RzC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="15w-rq-3Gd" firstAttribute="top" secondItem="hrW-iQ-9m8" secondAttribute="top" id="Cuk-Mw-C4d"/>
+                            <constraint firstItem="15w-rq-3Gd" firstAttribute="leading" secondItem="hrW-iQ-9m8" secondAttribute="leading" id="NuW-Vt-1db"/>
+                            <constraint firstAttribute="trailing" secondItem="15w-rq-3Gd" secondAttribute="trailing" id="lkm-Mi-S5A"/>
+                            <constraint firstItem="8Wa-sd-HOD" firstAttribute="top" secondItem="15w-rq-3Gd" secondAttribute="bottom" id="mug-e8-NPK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="amc-OA-pwW">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="fZo-JR-ehu">
+                            <connections>
+                                <action selector="dismissBtn:" destination="6KM-R1-rU5" id="28F-bx-5i8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmPasswordTF" destination="kcI-r6-QPb" id="trO-Jo-1vF"/>
+                        <outlet property="firstNameTF" destination="bRm-8Z-4JK" id="v5W-aX-BbY"/>
+                        <outlet property="lastNameTF" destination="ADl-jd-qgp" id="wTJ-zW-VD4"/>
+                        <outlet property="passwordTF" destination="s9e-Y5-VIB" id="a4W-BY-yCm"/>
+                        <outlet property="phoneTF" destination="6cJ-N9-ftv" id="96l-cM-cjb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Deg-We-rRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-716" y="-223.53823088455775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0lg-Kt-u1T">
+            <objects>
+                <navigationController storyboardIdentifier="RegistrationNav" automaticallyAdjustsScrollViewInsets="NO" id="YOH-am-RKB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sOQ-ia-jLu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6KM-R1-rU5" kind="relationship" relationship="rootViewController" id="xHf-FU-IdL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbE-pQ-6iA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1655.2" y="-223.53823088455775"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" width="90" height="90"/>
+    </resources>
+</document>

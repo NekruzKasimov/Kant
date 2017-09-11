@@ -26,15 +26,11 @@ class LoginViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
         present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func openRegistration(_ sender: Any) {
+        let sb = UIStoryboard(name: "Registration", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "RegistrationNav")
+        present(vc, animated: true, completion: nil)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }
