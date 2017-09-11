@@ -10,7 +10,7 @@ import UIKit
 
 class RequestViewController: UIViewController {
     
-    var requests = ["Оправка по че-то" , "Заявка на очередь"]
+    var requests = ["Оправка заявку по семенам" , "Заявка на очередь"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
