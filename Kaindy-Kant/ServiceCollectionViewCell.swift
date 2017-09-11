@@ -10,4 +10,5 @@ import UIKit
 
 class ServiceCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var serviceLbl: UILabel!
 }

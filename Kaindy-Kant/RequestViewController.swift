@@ -9,6 +9,8 @@
 import UIKit
 
 class RequestViewController: UIViewController {
+    
+    var requests = ["Оправка по че-то" , "Заявка на очередь"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +22,12 @@ class RequestViewController: UIViewController {
 extension RequestViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return requests.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RequestCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RequestCollectionViewCell", for: indexPath) as! RequestCollectionViewCell
+        cell.requestLbl.text = requests[indexPath.row]
         return cell
     }
 }
