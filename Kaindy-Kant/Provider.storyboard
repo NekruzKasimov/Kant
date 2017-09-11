@@ -34,7 +34,19 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ2-9H-2Xs">
                                                     <rect key="frame" x="8" y="4" width="359" height="127"/>
-                                                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erX-wo-unp">
+                                                            <rect key="frame" x="156" y="8" width="46.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.88046007979999996" green="0.88917750630000003" blue="0.88917750630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="erX-wo-unp" firstAttribute="top" secondItem="sZ2-9H-2Xs" secondAttribute="top" constant="8" id="NVL-rk-XBx"/>
+                                                        <constraint firstItem="erX-wo-unp" firstAttribute="centerX" secondItem="sZ2-9H-2Xs" secondAttribute="centerX" id="bsY-tY-qkf"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -44,6 +56,9 @@
                                                 <constraint firstItem="sZ2-9H-2Xs" firstAttribute="leading" secondItem="Pej-zn-Fr7" secondAttribute="leading" constant="8" id="bVo-rn-T1c"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="providerLbl" destination="erX-wo-unp" id="eFX-Ke-eFE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

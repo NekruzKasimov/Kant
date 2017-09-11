@@ -10,6 +10,7 @@ import UIKit
 
 class ProviderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var providerLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

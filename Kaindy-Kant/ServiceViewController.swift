@@ -9,6 +9,8 @@
 import UIKit
 
 class ServiceViewController: UIViewController {
+    
+    var services = ["Банки" , "Услуги по консультации" , "Информация о почвах лаборатории"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +22,12 @@ class ServiceViewController: UIViewController {
 extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return services.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
+        cell.serviceLbl.text = services[indexPath.row]
         return cell
     }
 }

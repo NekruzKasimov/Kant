@@ -9,6 +9,8 @@
 import UIKit
 
 class ProviderViewController: UIViewController {
+    
+    var providers = ["Поставщики средств защиты" , "Поставщики удобрений"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +22,12 @@ class ProviderViewController: UIViewController {
 extension ProviderViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return providers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProviderTableViewCell", for: indexPath) as! ProviderTableViewCell
-        
+        cell.providerLbl.text = providers[indexPath.row]
         return cell
     }
     

@@ -9,5 +9,6 @@
 import UIKit
 
 class RequestCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var requestLbl: UILabel!
     
 }
