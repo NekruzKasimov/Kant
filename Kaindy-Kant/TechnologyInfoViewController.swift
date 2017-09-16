@@ -22,7 +22,6 @@ class TechnologyInfoViewController: UIViewController {
         
         docsTableView.estimatedRowHeight = 74
         docsTableView.rowHeight = UITableViewAutomaticDimension
-        docsTableView.tableFooterView = UIView()
         setNavigationBar()
     }
 }
@@ -36,6 +35,7 @@ extension TechnologyInfoViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = docs[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     

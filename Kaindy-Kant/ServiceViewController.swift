@@ -30,6 +30,10 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.serviceLbl.text = services[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension ServiceViewController: UICollectionViewDelegateFlowLayout {
