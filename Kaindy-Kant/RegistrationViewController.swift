@@ -11,6 +11,12 @@ import SkyFloatingLabelTextField
 import FontAwesome_swift
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
+    }
 
     @IBOutlet weak var firstNameTF: SkyFloatingLabelTextFieldWithIcon! {
         didSet {
