@@ -10,7 +10,7 @@ import UIKit
 
 class ProviderViewController: UIViewController {
     
-    var providers = ["Поставщики средств защиты" , "Поставщики удобрений"]
+    var providers = [["Поставщики средств защиты", "fertilizer"] , ["Поставщики удобрений", "remedies"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,8 @@ extension ProviderViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProviderTableViewCell", for: indexPath) as! ProviderTableViewCell
-        cell.providerLbl.text = providers[indexPath.row]
+        cell.providerLbl.text = providers[indexPath.row][0]
+        cell.providerImg.image = UIImage(named: providers[indexPath.row][1])
         return cell
     }
     

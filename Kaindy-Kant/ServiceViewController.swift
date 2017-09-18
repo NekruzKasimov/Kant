@@ -10,7 +10,7 @@ import UIKit
 
 class ServiceViewController: UIViewController {
     
-    var services = ["Банки" , "Услуги по консультации" , "Информация о почвах лаборатории"]
+    var services = [["Банки", "bank"], ["Услуги по консультации", "consultation"], ["Информация о почвах лаборатории", "laboratory"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,18 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
-        cell.serviceLbl.text = services[indexPath.row]
+        cell.serviceLbl.text = services[indexPath.row][0]
+        cell.serviceLbl.numberOfLines = 0
+        cell.serviceImg.image = UIImage(named: services[indexPath.row][1])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.row == 1 {
+            let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "DetailedServiceViewController") as! DetailedServiceViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

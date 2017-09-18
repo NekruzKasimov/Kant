@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,6 +35,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ2-9H-2Xs">
                                                     <rect key="frame" x="8" y="4" width="359" height="127"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SjD-fH-BEb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="127"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erX-wo-unp">
                                                             <rect key="frame" x="156" y="8" width="46.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
@@ -44,9 +47,19 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.88046007979999996" green="0.88917750630000003" blue="0.88917750630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="SjD-fH-BEb" firstAttribute="top" secondItem="sZ2-9H-2Xs" secondAttribute="top" id="4fZ-ho-0W3"/>
                                                         <constraint firstItem="erX-wo-unp" firstAttribute="top" secondItem="sZ2-9H-2Xs" secondAttribute="top" constant="8" id="NVL-rk-XBx"/>
+                                                        <constraint firstItem="SjD-fH-BEb" firstAttribute="leading" secondItem="sZ2-9H-2Xs" secondAttribute="leading" id="alg-ka-8mv"/>
                                                         <constraint firstItem="erX-wo-unp" firstAttribute="centerX" secondItem="sZ2-9H-2Xs" secondAttribute="centerX" id="bsY-tY-qkf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SjD-fH-BEb" secondAttribute="bottom" id="iHO-05-iJL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SjD-fH-BEb" secondAttribute="trailing" id="xEB-gj-dQ7"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -57,6 +70,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="providerImg" destination="SjD-fH-BEb" id="3Vz-Be-PWM"/>
                                             <outlet property="providerLbl" destination="erX-wo-unp" id="eFX-Ke-eFE"/>
                                         </connections>
                                     </tableViewCell>
@@ -86,7 +100,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ProviderNav" automaticallyAdjustsScrollViewInsets="NO" id="h1P-iV-iff" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6OP-OA-yZX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6OP-OA-yZX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
