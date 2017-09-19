@@ -10,13 +10,13 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var menu = ["Главная", "Услуги" , "Поставщики" , "Заявки" , "Технология возвед-я свеклы" , "Выход"]
+    var menu = ["Главная", "Услуги" , "Поставщики" , "Заявки" , "Технология возведения свеклы" , "Выход"]
     var navigations = ["MainNav" , "ServiceNav" , "ProviderNav" , "RequestNav" , "TechnologyInfoNav" , "LoginNav"]
     var sbs = ["Main" , "Service", "Provider" , "Request" , "TechnologyInfo" , "Login"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     @IBAction func showProfilePage(_ sender: UIButton) {
@@ -40,10 +40,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = menu[indexPath.row]
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openPage(storyboard: sbs[indexPath.row], vcIdentifier: navigations[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

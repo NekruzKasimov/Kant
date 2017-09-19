@@ -11,6 +11,8 @@ import UIKit
 class ProviderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var providerLbl: UILabel!
+    @IBOutlet weak var providerImg: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

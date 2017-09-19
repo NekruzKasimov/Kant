@@ -36,6 +36,8 @@
 		1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */; };
 		1F7291331F66638700111692 /* TechnologyInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7291321F66638700111692 /* TechnologyInfo.storyboard */; };
 		1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */; };
+		1FE137711F6FB69900B7926B /* DetailedServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE137701F6FB69900B7926B /* DetailedServiceViewController.swift */; };
+		1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */; };
 		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
 		23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE91F6237A700D58F5B /* GlobalFunctions.swift */; };
 		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
@@ -107,6 +109,8 @@
 		1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 		1F7291321F66638700111692 /* TechnologyInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TechnologyInfo.storyboard; sourceTree = "<group>"; };
 		1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyInfoViewController.swift; sourceTree = "<group>"; };
+		1FE137701F6FB69900B7926B /* DetailedServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedServiceViewController.swift; sourceTree = "<group>"; };
+		1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailedService.storyboard; sourceTree = "<group>"; };
 		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		23205AE91F6237A700D58F5B /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 				1F5893B21F61546400FD2C5D /* Service.storyboard */,
 				1F5893B41F61547000FD2C5D /* ServiceViewController.swift */,
 				1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */,
+				1FE1376F1F6FB65800B7926B /* Detalied Service */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -331,6 +336,15 @@
 				1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */,
 			);
 			name = TechnologyInfo;
+			sourceTree = "<group>";
+		};
+		1FE1376F1F6FB65800B7926B /* Detalied Service */ = {
+			isa = PBXGroup;
+			children = (
+				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
+				1FE137701F6FB69900B7926B /* DetailedServiceViewController.swift */,
+			);
+			name = "Detalied Service";
 			sourceTree = "<group>";
 		};
 		23205AE61F62375D00D58F5B /* Profile */ = {
@@ -504,6 +518,7 @@
 				1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
+				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
 				1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +702,7 @@
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
 				23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */,
 				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
+				1FE137711F6FB69900B7926B /* DetailedServiceViewController.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,

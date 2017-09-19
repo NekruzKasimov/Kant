@@ -6,6 +6,7 @@ target 'Kaindy-Kant' do
   use_frameworks!
  pod 'SkyFloatingLabelTextField'
  pod 'FontAwesome.swift'
+ pod 'IQKeyboardManager'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do
