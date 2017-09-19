@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Provider View Controller-->
+        <!--Поставщики-->
         <scene sceneID="Cbr-B0-dya">
             <objects>
                 <viewController storyboardIdentifier="ProviderViewController" id="biM-59-bLQ" customClass="ProviderViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="5" width="375" height="662"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProviderTableViewCell" rowHeight="135" id="0ml-vg-4mL" customClass="ProviderTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProviderTableViewCell" rowHeight="135" id="0ml-vg-4mL" customClass="ProviderTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ml-vg-4mL" id="Pej-zn-Fr7">
@@ -89,7 +89,7 @@
                             <constraint firstItem="yM7-7x-Qo0" firstAttribute="top" secondItem="ric-08-IA9" secondAttribute="top" constant="5" id="j9D-bF-w9D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dXw-0s-iWU"/>
+                    <navigationItem key="navigationItem" title="Поставщики" id="dXw-0s-iWU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXs-vI-N3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

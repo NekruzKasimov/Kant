@@ -10,7 +10,7 @@ import UIKit
 
 class ProviderViewController: UIViewController {
     
-    var providers = [["Поставщики средств защиты", "fertilizer"] , ["Поставщики удобрений", "remedies"]]
+    var providers = [["Поставщики удобрений", "fertilizer"] , ["Поставщики средств защиты", "remedies"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()

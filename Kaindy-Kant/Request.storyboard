@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Request View Controller-->
+        <!--Заявки-->
         <scene sceneID="N9b-2F-X9b">
             <objects>
                 <viewController id="wmk-5t-hEg" customClass="RequestViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <constraint firstItem="Huo-YM-ClH" firstAttribute="top" secondItem="WAk-BB-uQp" secondAttribute="topMargin" constant="10" id="iAx-S0-nzF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="V3G-wp-GBr"/>
+                    <navigationItem key="navigationItem" title="Заявки" id="V3G-wp-GBr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0v-Vs-Eu4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
