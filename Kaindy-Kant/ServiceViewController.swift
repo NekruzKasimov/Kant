@@ -10,7 +10,7 @@ import UIKit
 
 class ServiceViewController: UIViewController {
     
-    var services = [["Банки", "bank"], ["Услуги по консультации", "consultation"], ["Информация о почвах лаборатории", "laboratory"]]
+    var services = [["Банки", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +34,24 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
-            let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "DetailedServiceViewController") as! DetailedServiceViewController
-            navigationController?.pushViewController(vc, animated: true)
+        let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+        var nameOfVC: String!
+        
+        switch indexPath.row {
+        case 0:
+            nameOfVC = "BankServiceViewController"
+            break
+        case 1:
+            nameOfVC = "ConsultationServiceViewController"
+            break
+        case 2:
+            nameOfVC = "LaboratoryServiceViewController"
+        default:
+            break
         }
+        
+        let vc = sb.instantiateViewController(withIdentifier: nameOfVC)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

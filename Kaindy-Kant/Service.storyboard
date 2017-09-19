@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Service View Controller-->
+        <!--Услуги-->
         <scene sceneID="FsJ-Fe-oa0">
             <objects>
                 <viewController id="iDz-FF-Qdh" customClass="ServiceViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                             <constraint firstAttribute="trailing" secondItem="0Xc-cz-OMP" secondAttribute="trailing" constant="8" id="zf3-7B-qjN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="r3i-lH-v8v"/>
+                    <navigationItem key="navigationItem" title="Услуги" id="r3i-lH-v8v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcZ-Zr-IkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
