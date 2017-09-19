@@ -1,0 +1,6 @@
+framework module Pods_Kaindy_KantTests {
+  umbrella header "Pods-Kaindy-KantTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

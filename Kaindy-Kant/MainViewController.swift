@@ -8,61 +8,123 @@
 
 import UIKit
 
-//enum tableViewSections : Int {
-//    case firstSection = 0
-//    case secondSection = 1
-//    case thirdSection = 2
-//}
-
-class MainViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
-
-    @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
+enum MainVCSections : Int {
+    case sugar = 0
+    case currency = 1
+    case news = 2
     
-    @IBOutlet weak var tableView: UITableView!
+    func getItemsCount() -> Int {
+        switch self {
+        case .sugar:
+            return 1
+        case .currency:
+            return 2
+        case .news:
+            return 5
+        }
+    }
+}
+
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    //
+    @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
+    //
+    //    @IBOutlet weak var tableView: UITableView!
+    //
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-    }
-
-}
-
-//MARK UITableViewDataSourse methods
-extension MainViewController {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    
+        
+        //automaticallyAdjustsScrollViewInsets
+        
+//        configureCollectionView()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 5
-        }
-        return 0
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "FirstSectionTableViewCell") as! FirstSectionTableViewCell
-        } else if indexPath.section == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return MainVCSections(rawValue: section)!.getItemsCount()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell = UICollectionViewCell()
+        let secType = MainVCSections(rawValue: indexPath.section)!
+        switch secType {
+        case .sugar:
+             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SugarCollectionViewCell", for: indexPath) as! SugarCollectionViewCell
+        case .currency:
+            if indexPath.item == 0 {
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
+            } else {
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
+            }
+        case .news:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
         }
-        cell.selectionStyle = .none
         return cell
     }
-}
 
-//MARK: Helper Functions
-
-extension MainViewController {
-    func configureTableView() {
-        tableView.estimatedRowHeight    = 50
-        tableView.rowHeight             = UITableViewAutomaticDimension
-        tableView.tableFooterView       = UIView()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let secType = MainVCSections(rawValue: indexPath.section)!
+        var size = CGSize()
+        var height = CGFloat(200)
+        switch secType {
+        case .sugar:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SugarCollectionViewCell", for: indexPath) as! SugarCollectionViewCell
+//            cell.cardView.updateConstraintsIfNeeded()
+//            let height = cell.cardView.frame.height + 8
+//            let height = CGFloat(300)
+            height = 180
+            let width = collectionView.frame.width - 20
+            size = CGSize(width: width, height: height)
+        case .currency:
+//            let cell = collectionView.cellForItem(at: indexPath) as! SugarCollectionViewCell
+//            cell.cardView.updateConstraintsIfNeeded()
+//            let height = cell.cardView.frame.height + 8
+//            let height = CGFloat(300)
+            if indexPath.item == 0 {
+                var width = collectionView.frame.width - 30
+                width = width / 5 * 3
+                size = CGSize(width: width, height: height)
+            } else {
+                var width = collectionView.frame.width - 30
+                width = width / 5 * 2
+                size = CGSize(width: width, height: height)
+            }
+            //find MaxHeoght 
+            //return (maxHeight, calculated width)
+        case .news:
+//            let height = CGFloat(200.0)
+            let width = collectionView.frame.width - 20
+            size = CGSize(width: width, height: height)
+        }
+        return size
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        var left = CGFloat(0)
+        if section == MainVCSections.currency.rawValue {
+           left = 10
+        }
+        return UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
+    }
+    
+    
+    func configureCollectionView(){
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        
+//        layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        self.collectionView.collectionViewLayout = layout
     }
 }
+

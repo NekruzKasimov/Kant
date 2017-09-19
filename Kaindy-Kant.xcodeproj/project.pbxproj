@@ -41,10 +41,12 @@
 		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
 		23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */; };
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
-		23205AF71F62409F00D58F5B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF61F62409F00D58F5B /* NewsTableViewCell.swift */; };
-		23205AF91F6240C200D58F5B /* FirstSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF81F6240C200D58F5B /* FirstSectionTableViewCell.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
+		23FE2B0C1F6FAFF3006C47B7 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0B1F6FAFF3006C47B7 /* SugarCollectionViewCell.swift */; };
+		23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */; };
+		23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */; };
+		23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */; };
 		3C0FAD08511FD6AF4A0CAC36 /* Pods_Kaindy_KantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */; };
 		5A02A68FBB493D6827A4F890 /* Pods_Kaindy_KantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */; };
 		AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */; };
@@ -110,10 +112,12 @@
 		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorButton.swift; sourceTree = "<group>"; };
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		23205AF61F62409F00D58F5B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-		23205AF81F6240C200D58F5B /* FirstSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSectionTableViewCell.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		23FE2B0B1F6FAFF3006C47B7 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
+		23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
+		23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		34E18E9CDE7FCD24268E1471 /* Pods-Kaindy-KantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.release.xcconfig"; sourceTree = "<group>"; };
 		3CE491DD05550BA76CEBE29F /* Pods-Kaindy-Kant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-Kant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.release.xcconfig"; sourceTree = "<group>"; };
 		4CB32D25E92A4582285E9236 /* Pods-Kaindy-KantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,7 +246,7 @@
 		1F58939E1F614EA200FD2C5D /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				23205AF51F62407300D58F5B /* MainPageTableViewCell */,
+				23205AF51F62407300D58F5B /* MainPageCollectionViewCell */,
 				1F5893741F614DB600FD2C5D /* Main.storyboard */,
 				1F58939F1F614ED700FD2C5D /* MainViewController.swift */,
 			);
@@ -338,13 +342,15 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		23205AF51F62407300D58F5B /* MainPageTableViewCell */ = {
+		23205AF51F62407300D58F5B /* MainPageCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				23205AF61F62409F00D58F5B /* NewsTableViewCell.swift */,
-				23205AF81F6240C200D58F5B /* FirstSectionTableViewCell.swift */,
+				23FE2B0B1F6FAFF3006C47B7 /* SugarCollectionViewCell.swift */,
+				23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */,
+				23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */,
+				23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */,
 			);
-			name = MainPageTableViewCell;
+			name = MainPageCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		2380ABA01F667BE20023C5AB /* Registration */ = {
@@ -666,18 +672,20 @@
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
 				23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
-				23205AF91F6240C200D58F5B /* FirstSectionTableViewCell.swift in Sources */,
+				23FE2B0C1F6FAFF3006C47B7 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
+				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
+				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
-				23205AF71F62409F00D58F5B /* NewsTableViewCell.swift in Sources */,
+				23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */,
 				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Technologies View Controller-->
+        <scene sceneID="aXo-Sd-cY9">
+            <objects>
+                <viewController id="1aH-ym-BSL" customClass="TechnologiesViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BiW-0B-Zcq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Muz-Qz-kEP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5cj-6c-bfR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5a-gi-cSv">
+                                <rect key="frame" x="138" y="209" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="openFile:" destination="1aH-ym-BSL" eventType="touchUpInside" id="qBC-Pc-rme"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vN0-lc-3Lu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZbV-Op-ZXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1916" y="68.815592203898049"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="pJV-Vx-xLS">
+            <objects>
+                <navigationController storyboardIdentifier="TechnologiesNav" automaticallyAdjustsScrollViewInsets="NO" id="oeh-Y5-Q7f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9ZS-Ho-fRv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sKU-hg-Y8D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1aH-ym-BSL" kind="relationship" relationship="rootViewController" id="twG-Gm-ivG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2m0-AU-wLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.79999999999995" y="68.815592203898049"/>
+        </scene>
+    </scenes>
+</document>

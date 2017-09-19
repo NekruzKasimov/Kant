@@ -12,7 +12,8 @@ import Foundation
  Common colors in app
  */
 struct Colors {
-    static let green = 0x009846
+    static let purple = 0x9D2046
+    static let green = 0x12AC41
     static let gray = 0xC7C7CD
     static let yellow = 0xFECC00
     static let fbColor = 0x3B5998

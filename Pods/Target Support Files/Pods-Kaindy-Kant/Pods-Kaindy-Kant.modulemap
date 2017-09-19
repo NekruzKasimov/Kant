@@ -1,0 +1,6 @@
+framework module Pods_Kaindy_Kant {
+  umbrella header "Pods-Kaindy-Kant-umbrella.h"
+
+  export *
+  module * { export * }
+}
