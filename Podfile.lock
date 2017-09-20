@@ -1,15 +1,18 @@
 PODS:
   - FontAwesome.swift (1.2.0)
+  - IQKeyboardManager (4.0.13)
   - SkyFloatingLabelTextField (3.2.0)
 
 DEPENDENCIES:
   - FontAwesome.swift
+  - IQKeyboardManager
   - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   FontAwesome.swift: 60063e3f19ba4801155d4b0f2334ab7585763ab3
+  IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   SkyFloatingLabelTextField: 4e2d2f7160af660ed1da6bb9d0027b5c474b4b79
 
-PODFILE CHECKSUM: fd9b9369087d6e63d555a25fc9604487e4e377a4
+PODFILE CHECKSUM: 7b05739eb91fa6bdf81f2984e33d01d68177259a
 
 COCOAPODS: 1.2.1

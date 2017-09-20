@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
-import FontAwesome_swift
 
-class ProfileViewController: UIViewController, UITextFieldDelegate {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -25,116 +23,21 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBOutlet weak var firstNameTF: SkyFloatingLabelTextFieldWithIcon! {
+    
+    
+    @IBOutlet weak var changePasswordButton: UIButton! {
         didSet{
-            firstNameTF.accessibilityIdentifier = "firstNameTextField"
-            GlobalFunctions.configure(textField: firstNameTF,
-                                      withText: "Имя",
-                                      placeholder: "Имя",
-                                      tag:1)
-            configure(textField: firstNameTF, with: .user)
+            changePasswordButton.accessibilityIdentifier = "changePasswordButton"
+            let attrs:[String : Any] = [
+                NSFontAttributeName : UIFont.systemFont(ofSize: 18.0),
+                NSForegroundColorAttributeName : UIColor.init(netHex: Colors.gray),
+                NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue
+            ]
+            let attributeString = NSMutableAttributedString(string: "Поменять пароль",
+                                                            attributes: attrs)
+            changePasswordButton.setAttributedTitle(attributeString, for: .normal)
+            changePasswordButton.addTarget(self, action: #selector(changePassword), for: .touchUpInside)
         }
-    }
-    @IBOutlet weak var lastNameTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet{
-            lastNameTF.accessibilityIdentifier = "lastNameTextField"
-            GlobalFunctions.configure(textField: lastNameTF,
-                                      withText: "Фамилия",
-                                      placeholder: "Фамилия",
-                                      tag:2)
-            configure(textField: lastNameTF, with: .user)
-        }
-    }
-    @IBOutlet weak var birthdayTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet{
-            birthdayTF.accessibilityIdentifier = "birthdayTextField"
-            GlobalFunctions.configure(textField: birthdayTF,
-                                      withText: "Дата рождения",
-                                      placeholder: "Дата рождения",
-                                      tag:3)
-            configure(textField: birthdayTF, with: .birthdayCake)
-        }
-    }
-    //    @IBOutlet weak var emailTF: SkyFloatingLabelTextFieldWithIcon! {
-    //        didSet{
-    //            emailTF.accessibilityIdentifier = "emailTextField"
-    //            GlobalFunctions.configure(textField: emailTF,
-    //                                      withText: "Email",
-    //                                      placeholder: "Email",
-    //                                      tag:4)
-    //            configure(textField: emailTF, with: .envelope)
-    //
-    //        }
-    //    }
-    
-    @IBOutlet weak var phoneNumberTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet{
-            phoneNumberTF.accessibilityIdentifier = "phoneNumberTextField"
-            GlobalFunctions.configure(textField: phoneNumberTF,
-                                      withText: "Номер телефона",
-                                      placeholder: "Номер телефона",
-                                      tag:4)
-            configure(textField: phoneNumberTF, with: .phone)
-        }
-    }
-    
-    @IBOutlet weak var countryTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            countryTF.accessibilityIdentifier = "countryTextField"
-            GlobalFunctions.configure(textField: countryTF,
-                                      withText: "Город",
-                                      placeholder: "Город",
-                                      tag: 5)
-            configure(textField: countryTF, with: .map)
-        }
-    }
-    
-    @IBOutlet weak var regionTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            regionTF.accessibilityIdentifier = "regionTextField"
-            GlobalFunctions.configure(textField: regionTF,
-                                      withText: "Регион",
-                                      placeholder: "Регион",
-                                      tag: 6)
-            configure(textField: regionTF, with: .mapMarker)
-        }
-    }
-    
-    @IBOutlet weak var cityTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            cityTF.accessibilityIdentifier = "cityTextField"
-            GlobalFunctions.configure(textField: cityTF,
-                                      withText: "Город",
-                                      placeholder: "Город",
-                                      tag: 7)
-            configure(textField: cityTF, with: .mapPin)
-            
-        }
-    }
-    
-    @IBOutlet weak var saveButton: LoadingIndicatorButton! {
-        didSet{
-            saveButton.accessibilityIdentifier = "saveButton"
-            saveButton.buttonTitle = "Сохранить"
-            saveButton.bc = UIColor.init(netHex: Colors.green)
-        }
-    }
-    @IBOutlet weak var logoutButton: LoadingIndicatorButton! {
-        didSet{
-            logoutButton.accessibilityIdentifier = "logoutButton"
-            logoutButton.buttonTitle = "Выйти"
-            logoutButton.bc = UIColor(netHex: Colors.yellow)
-        }
-    }
-    
-    @IBAction func signOut(_ sender: UIButton){
-        signOut()
-    }
-    
-    func changePassword() {
-    }
-    
-    @IBAction func saveUser(_ sender:UIButton){
     }
     
     override func viewDidLoad() {
@@ -166,34 +69,26 @@ extension ProfileViewController {
     }
     
     func showDatePicker() {
-        let myDatePicker = UIDatePicker()
-        myDatePicker.datePickerMode = .date
-        myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
-        
-        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.view.addSubview(myDatePicker)
-        alertController.view.tintColor = .black
-        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
-            dateFormatter.locale = Locale.init(identifier: "en_GB")
-            self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion:{})
+//        let myDatePicker = UIDatePicker()
+//        myDatePicker.datePickerMode = .date
+//        myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
+//        
+//        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//        alertController.view.addSubview(myDatePicker)
+//        alertController.view.tintColor = .black
+//        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "dd/MM/yyyy"
+//            dateFormatter.locale = Locale.init(identifier: "en_GB")
+//            self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+//        alertController.addAction(okAction)
+//        alertController.addAction(cancelAction)
+//        self.present(alertController, animated: true, completion:{})
     }
     
-    func configure(textField: SkyFloatingLabelTextFieldWithIcon, with iconName:FontAwesome) {
-        textField.delegate = self
-        textField.iconFont = UIFont.fontAwesome(ofSize: 18)
-        textField.iconText = String.fontAwesomeIcon(name: iconName)
-        textField.iconColor = .black
-        textField.iconMarginBottom = 0
-    }
-    
-    func signOut()  {
+    func changePassword()  {
     }
     
     func showStartPage() {
@@ -226,19 +121,6 @@ extension ProfileViewController {
     func refreshOptions(sender: UIRefreshControl) {
     }
     
-    func showShareAppPage() {
-        let myAppId = 23523523 //TODO: put real app id in iTunes
-        if let name = NSURL(string: "https://itunes.apple.com/us/app/myapp/id\(myAppId)?ls=1&mt=8") {
-            let objectsToShare = [name]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-            self.present(activityVC, animated: true, completion: nil)
-        }
-        else
-        {
-            // show alert for not available
-        }
-    }
     func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
         guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
             completion(false)
