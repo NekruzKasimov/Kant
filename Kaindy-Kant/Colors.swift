@@ -2,7 +2,7 @@
 //  Colors.swift
 //  SORTD
 //
-//  Created by Ulan on 3/27/17.
+//  Created by Niko on 3/27/17.
 //  Copyright © 2017 SORTD. All rights reserved.
 //
 

@@ -9,14 +9,14 @@
 import UIKit
 
 enum MainVCSections : Int {
-    case sugar = 0
+    case first = 0
     case currency = 1
     case news = 2
     
     func getItemsCount() -> Int {
         switch self {
-        case .sugar:
-            return 1
+        case .first:
+            return 3
         case .currency:
             return 2
         case .news:
@@ -32,6 +32,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     //    @IBOutlet weak var tableView: UITableView!
     //
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let firstRowTitles = ["Банки", "Технологии", "Поставщики"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,21 +56,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
         let secType = MainVCSections(rawValue: indexPath.section)!
         switch secType {
-        case .sugar:
-             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SugarCollectionViewCell", for: indexPath) as! SugarCollectionViewCell
+        case .first:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FirstRowCollectionViewCell", for: indexPath) as! FirstRowCollectionViewCell
+            cell.titleLabel.text = firstRowTitles[indexPath.row]
+            return cell
         case .currency:
             if indexPath.item == 0 {
-                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
+                return cell
             } else {
-                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
+                return cell
             }
         case .news:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+            return cell
         }
-        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -76,13 +81,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         var size = CGSize()
         var height = CGFloat(200)
         switch secType {
-        case .sugar:
+        case .first:
 //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SugarCollectionViewCell", for: indexPath) as! SugarCollectionViewCell
 //            cell.cardView.updateConstraintsIfNeeded()
 //            let height = cell.cardView.frame.height + 8
 //            let height = CGFloat(300)
-            height = 180
-            let width = collectionView.frame.width - 20
+            height = 60
+            let width = (collectionView.frame.width - 40) / 3
             size = CGSize(width: width, height: height)
         case .currency:
 //            let cell = collectionView.cellForItem(at: indexPath) as! SugarCollectionViewCell
@@ -111,10 +116,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var left = CGFloat(0)
-        if section == MainVCSections.currency.rawValue {
+        var right = CGFloat(0)
+        if section == MainVCSections.first.rawValue  {
+            right = 10
+            left = 10
+        } else if section == MainVCSections.currency.rawValue {
            left = 10
         }
-        return UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: left, bottom: 0, right: right)
     }
     
     

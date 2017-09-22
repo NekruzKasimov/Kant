@@ -1,5 +1,5 @@
 //
-//  SugarCollectionViewCell.swift
+//  FirstRowCollectionViewCell.swift
 //  Kaindy-Kant
 //
 //  Created by Niko on 9/22/17.
@@ -8,13 +8,8 @@
 
 import UIKit
 
-class SugarCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+class FirstRowCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var cardView: UIView! {
         didSet {
             cardView.layer.cornerRadius = 3
@@ -25,10 +20,5 @@ class SugarCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var sugarDateLabel: UILabel!
-    
-    @IBOutlet weak var jomDateLabel: UILabel!
-    
+    @IBOutlet weak var titleLabel: UILabel!
 }
