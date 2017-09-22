@@ -47,8 +47,6 @@
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
-		23CE2FCA1F74C76E0002CDD0 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */; };
-		23CE2FCB1F74C76E0002CDD0 /* ProfileMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
 		23CE2FD11F74CF080002CDD0 /* FirstRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */; };
@@ -59,6 +57,8 @@
 		5A02A68FBB493D6827A4F890 /* Pods_Kaindy_KantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
+		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
+		84FBB1001F74EE2C00C366B1 /* ProfileMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */; };
 		AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,8 +128,6 @@
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
-		23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMapTableViewCell.xib; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
 		23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRowCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -144,6 +142,8 @@
 		82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_KantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
+		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
+		84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileMapTableViewCell.xib; sourceTree = "<group>"; };
 		9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_Kant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_KantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D511538BBE890729F7FB /* Pods-Kaindy-KantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				8464AABC1F73896400AA4980 /* ChangePassword */,
+				23E1EDFF1F73A7550012C867 /* ProfileMapTableViewCell */,
 				23205AEF1F62391800D58F5B /* Profile.storyboard */,
 				23205AF31F6239B900D58F5B /* ProfileViewController.swift */,
 			);
@@ -400,8 +401,8 @@
 		23E1EDFF1F73A7550012C867 /* ProfileMapTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */,
-				23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */,
+				84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */,
+				84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */,
 			);
 			name = ProfileMapTableViewCell;
 			sourceTree = "<group>";
@@ -510,6 +511,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = U5DCDBG2W2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -555,7 +557,6 @@
 				1F0DF1AD1F6BCDDC00DE54F2 /* Приложение 5_Кант кызылчасын өстүрүү технологиясы боюнча кыскача таркатма.pdf in Resources */,
 				2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
-				23CE2FCB1F74C76E0002CDD0 /* ProfileMapTableViewCell.xib in Resources */,
 				23205AF01F62391800D58F5B /* Profile.storyboard in Resources */,
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
@@ -567,6 +568,7 @@
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
 				1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */,
+				84FBB1001F74EE2C00C366B1 /* ProfileMapTableViewCell.xib in Resources */,
 				23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,6 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
 				1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
@@ -754,7 +757,6 @@
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
-				23CE2FCA1F74C76E0002CDD0 /* ProfileMapTableViewCell.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
@@ -933,7 +935,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -954,7 +956,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
