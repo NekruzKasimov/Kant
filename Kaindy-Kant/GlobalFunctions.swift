@@ -2,7 +2,7 @@
 //  Global functions.swift
 //  SORTD
 //
-//  Created by Ulan on 3/19/17.
+//  Created by Niko on 3/19/17.
 //  Copyright © 2017 SORTD. All rights reserved.
 //
 

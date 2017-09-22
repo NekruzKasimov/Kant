@@ -8,62 +8,65 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
-            imageView.layer.cornerRadius = imageView.frame.size.width/2
-            imageView.clipsToBounds = true
-            imageView.accessibilityIdentifier = "imageView"
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
-            imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(tapGestureRecognizer)
+//            imageView.layer.cornerRadius = imageView.frame.size.width/2
+//            imageView.clipsToBounds = true
+//            imageView.accessibilityIdentifier = "imageView"
+//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
+//            imageView.isUserInteractionEnabled = true
+//            imageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
     
     
     
-    @IBOutlet weak var changePasswordButton: UIButton! {
-        didSet{
-            changePasswordButton.accessibilityIdentifier = "changePasswordButton"
-            let attrs:[String : Any] = [
-                NSFontAttributeName : UIFont.systemFont(ofSize: 18.0),
-                NSForegroundColorAttributeName : UIColor.init(netHex: Colors.gray),
-                NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue
-            ]
-            let attributeString = NSMutableAttributedString(string: "Поменять пароль",
-                                                            attributes: attrs)
-            changePasswordButton.setAttributedTitle(attributeString, for: .normal)
-            changePasswordButton.addTarget(self, action: #selector(changePassword), for: .touchUpInside)
-        }
-    }
+//    @IBOutlet weak var changePasswordButton: UIButton! {
+//        didSet{
+//            changePasswordButton.accessibilityIdentifier = "changePasswordButton"
+//            let attrs:[String : Any] = [
+//                NSFontAttributeName : UIFont.systemFont(ofSize: 18.0),
+//                NSForegroundColorAttributeName : UIColor.init(netHex: Colors.gray),
+//                NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue
+//            ]
+//            let attributeString = NSMutableAttributedString(string: "Поменять пароль",
+//                                                            attributes: attrs)
+//            changePasswordButton.setAttributedTitle(attributeString, for: .normal)
+//            changePasswordButton.addTarget(self, action: #selector(changePassword), for: .touchUpInside)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureRefreshControl()
-        addTapToScrollView()
+//        configureRefreshControl()
+//        addTapToScrollView()
         setNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        configureTableView()
     }
 }
 
 
 extension ProfileViewController {
     
-    func addTapToScrollView() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        scrollView.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        scrollView.endEditing(true)
-    }
+//    func addTapToScrollView() {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        
+//        scrollView.addGestureRecognizer(tap)
+//    }
+//    
+//    func dismissKeyboard() {
+//        scrollView.endEditing(true)
+//    }
     
     func updateUI() {
     }
@@ -96,6 +99,15 @@ extension ProfileViewController {
     func showStartPage() {
     }
     
+    func configureTableView() {
+        tableView.register(ProfileMapTableViewCell.self, forCellReuseIdentifier: "ProfileMapTableViewCell" )
+        tableView.register(UINib(nibName: "ProfileMapTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMapTableViewCell")
+        tableView.estimatedRowHeight        = 300
+        tableView.rowHeight                 = UITableViewAutomaticDimension
+        tableView.tableFooterView           = UIView()
+        tableViewHeight.constant            = tableView.contentSize.height
+    }
+    
     func showImagePicker() {
         //        let imagePickerController = ImagePickerController()
         //        imagePickerController.imageLimit = 1
@@ -104,36 +116,36 @@ extension ProfileViewController {
         //        present(imagePickerController, animated: true, completion: nil)
     }
     
-    func configureRefreshControl() {
-        let refreshControl = UIRefreshControl()
-        let title = NSLocalizedString("Pull to refresh", comment: "Pull to refresh")
-        //        refreshControl.attributedTitle = NSAttributedString(string: title)
-        //        refreshControl.addTarget(self,
-        //                                 action: #selector(refreshOptions(sender:)),
-        //                                 for: .valueChanged)
-        
-        if #available(iOS 10.0, *) {
-            scrollView.refreshControl = refreshControl
-        }
-        else{
-            scrollView.addSubview(refreshControl)
-        }
-    }
+//    func configureRefreshControl() {
+//        let refreshControl = UIRefreshControl()
+//        let title = NSLocalizedString("Pull to refresh", comment: "Pull to refresh")
+//        //        refreshControl.attributedTitle = NSAttributedString(string: title)
+//        //        refreshControl.addTarget(self,
+//        //                                 action: #selector(refreshOptions(sender:)),
+//        //                                 for: .valueChanged)
+//        
+//        if #available(iOS 10.0, *) {
+//            scrollView.refreshControl = refreshControl
+//        }
+//        else{
+//            scrollView.addSubview(refreshControl)
+//        }
+//    }
     
-    func refreshOptions(sender: UIRefreshControl) {
-    }
-    
-    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
-        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
-            completion(false)
-            return
-        }
-        guard #available(iOS 10, *) else {
-            completion(UIApplication.shared.openURL(url))
-            return
-        }
-        UIApplication.shared.open(url, options: [:], completionHandler: completion)
-    }
+//    func refreshOptions(sender: UIRefreshControl) {
+//    }
+//    
+//    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
+//        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
+//            completion(false)
+//            return
+//        }
+//        guard #available(iOS 10, *) else {
+//            completion(UIApplication.shared.openURL(url))
+//            return
+//        }
+//        UIApplication.shared.open(url, options: [:], completionHandler: completion)
+//    }
 }
 
 //MARK: ImagePickerDelegate methods
@@ -153,32 +165,15 @@ extension ProfileViewController {
 //}
 //MARK: UITextFieldDelegate methods
 
-extension ProfileViewController{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        return true
+extension ProfileViewController {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //        if textField.tag == 7 {
-        //            showShareAppPage()
-        //            return false
-        //        } else if textField.tag == 9 {
-        //            return false
-        //        }
-        //        else if textField.tag == 6 {
-        //            return false
-        //        }
-        //        else if textField.tag == 3 {
-        //            showDatePicker()
-        //            return false
-        //        } else if textField.tag == 8 {
-        //            changePassword()
-        //            return false
-        //        }
-        //        else{
-        return true
-        //        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
+        
+        return cell
     }
 }
