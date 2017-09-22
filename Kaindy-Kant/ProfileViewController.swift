@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 //    @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
@@ -50,6 +51,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        configureTableView()
     }
 }
 
@@ -93,6 +95,15 @@ extension ProfileViewController {
     }
     
     func showStartPage() {
+    }
+    
+    func configureTableView() {
+        tableView.register(ProfileMapTableViewCell.self, forCellReuseIdentifier: "ProfileMapTableViewCell" )
+        tableView.register(UINib(nibName: "ProfileMapTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMapTableViewCell")
+        tableView.estimatedRowHeight        = 300
+        tableView.rowHeight                 = UITableViewAutomaticDimension
+        tableView.tableFooterView           = UIView()
+        tableViewHeight.constant            = tableView.contentSize.height
     }
     
     func showImagePicker() {
@@ -152,14 +163,15 @@ extension ProfileViewController {
 //}
 //MARK: UITextFieldDelegate methods
 
-extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+extension ProfileViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
+        
         return cell
     }
 }
