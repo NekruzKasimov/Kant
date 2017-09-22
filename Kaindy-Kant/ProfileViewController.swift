@@ -89,7 +89,9 @@ extension ProfileViewController {
     }
     
     func changePassword()  {
-    }
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangingPasswordViewController") as! ChangingPasswordViewController
+//        self.navigationController?.show(vc, sender: self)
+            }
     
     func showStartPage() {
     }

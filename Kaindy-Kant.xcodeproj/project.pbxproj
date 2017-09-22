@@ -53,6 +53,8 @@
 		23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */; };
 		3C0FAD08511FD6AF4A0CAC36 /* Pods_Kaindy_KantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */; };
 		5A02A68FBB493D6827A4F890 /* Pods_Kaindy_KantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */; };
+		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
+		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +134,8 @@
 		4E81C9294F924370F4DFF66F /* Pods-Kaindy-KantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		519B48CAD2C406E2D6F875E7 /* Pods-Kaindy-Kant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-Kant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.debug.xcconfig"; sourceTree = "<group>"; };
 		82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_KantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
+		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_Kant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_KantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D511538BBE890729F7FB /* Pods-Kaindy-KantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 		23205AE61F62375D00D58F5B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8464AABC1F73896400AA4980 /* ChangePassword */,
 				23205AEF1F62391800D58F5B /* Profile.storyboard */,
 				23205AF31F6239B900D58F5B /* ProfileViewController.swift */,
 			);
@@ -390,6 +395,23 @@
 				82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8464AABC1F73896400AA4980 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				8464AABF1F738B5900AA4980 /* Controllers */,
+			);
+			name = ChangePassword;
+			sourceTree = "<group>";
+		};
+		8464AABF1F738B5900AA4980 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */,
+				8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,9 +721,11 @@
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */,
+				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
 				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
+				8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */,
 				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
