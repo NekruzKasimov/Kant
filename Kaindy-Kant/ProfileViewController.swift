@@ -106,6 +106,7 @@ extension ProfileViewController {
         tableView.rowHeight                 = UITableViewAutomaticDimension
         tableView.tableFooterView           = UIView()
         tableViewHeight.constant            = tableView.contentSize.height
+        tableView.separatorStyle            = .none
     }
     
     func showImagePicker() {
