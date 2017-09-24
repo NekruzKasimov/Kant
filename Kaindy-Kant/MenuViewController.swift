@@ -16,18 +16,13 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureTableView()
     }
+    
+    @IBOutlet weak var tablevView: UITableView!
     
     @IBAction func showProfilePage(_ sender: UIButton) {
         openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
-    }
-    
-    func openPage(storyboard: String, vcIdentifier: String) {
-        let revealVC = revealViewController()
-        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
-        revealVC?.pushFrontViewController(vc, animated: true)
     }
 }
 
@@ -47,8 +42,22 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openPage(storyboard: sbs[indexPath.row], vcIdentifier: navigations[indexPath.row])
     }
+}
+
+// MARK: Helper functions
+
+extension MenuViewController {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+    func configureTableView() {
+        tablevView.tableFooterView              = UIView()
+        tablevView.estimatedRowHeight           = 60
+        tablevView.rowHeight                    = UITableViewAutomaticDimension
+    }
+    
+    func openPage(storyboard: String, vcIdentifier: String) {
+        let revealVC = revealViewController()
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
+        revealVC?.pushFrontViewController(vc, animated: true)
     }
 }

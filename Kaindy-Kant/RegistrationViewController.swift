@@ -12,76 +12,60 @@ import FontAwesome_swift
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var birthdayTF: UITextField! {
+        didSet {
+            birthdayTF.delegate = self
+            birthdayTF.tag = 0
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.topItem?.title = ""
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
     }
+    
+}
 
-    @IBOutlet weak var firstNameTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            firstNameTF.accessibilityIdentifier = "firstNameTextField"
-            GlobalFunctions.configure(textField: firstNameTF,
-                                      withText: "Имя",
-                                      placeholder: "Имя",
-                                      tag:1)
-            configure(textField: firstNameTF, with: .deaf)
-        }
-    }
+// MARK: Helper functions
 
-    @IBOutlet weak var lastNameTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            lastNameTF.accessibilityIdentifier = "lastNameTextField"
-            GlobalFunctions.configure(textField: lastNameTF,
-                                      withText: "Фамилия",
-                                      placeholder: "Фамилия",
-                                      tag:2)
-            configure(textField: lastNameTF, with: .user)
+extension RegistrationViewController {
+    func showDatePicker() {
+        let myDatePicker = UIDatePicker()
+        myDatePicker.datePickerMode = .date
+        myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.view.addSubview(myDatePicker)
+        alertController.view.tintColor = .black
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.locale = Locale.init(identifier: "en_GB")
+            self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion:{})
+    }
+}
+
+
+// MARK: UITextFieldDelegate methods
+
+extension RegistrationViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
-    @IBOutlet weak var phoneTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet{
-            phoneTF.accessibilityIdentifier = "phoneNumberTextField"
-            GlobalFunctions.configure(textField: phoneTF,
-                                      withText: "Номер телефона",
-                                      placeholder: "Номер телефона",
-                                      tag:3)
-            configure(textField: phoneTF, with: .phone)
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            showDatePicker()
+            return false
+        } else {
+            return true
         }
-    }
-    
-    @IBOutlet weak var passwordTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            passwordTF.accessibilityIdentifier = "passwordTF"
-            GlobalFunctions.configure(textField: passwordTF,
-                                      withText: "Пароль",
-                                      placeholder: "Пароль",
-                                      tag:4)
-            configure(textField: passwordTF, with: .youTube)
-        }
-    }
-    
-    @IBOutlet weak var confirmPasswordTF: SkyFloatingLabelTextFieldWithIcon! {
-        didSet {
-            confirmPasswordTF.accessibilityIdentifier = "confirmPasswordTF"
-            GlobalFunctions.configure(textField: confirmPasswordTF,
-                                      withText: "Подтвердить пароль",
-                                      placeholder: "Подтвердить пароль",
-                                      tag:5)
-            configure(textField: confirmPasswordTF, with: .amazon)
-        }
-    }
-    
-    func configure(textField: SkyFloatingLabelTextFieldWithIcon, with iconName:FontAwesome) {
-        textField.delegate = self
-        textField.iconFont = UIFont.fontAwesome(ofSize: 18)
-        textField.iconText = String.fontAwesomeIcon(name: iconName)
-        textField.iconColor = .black
-        textField.iconMarginBottom = 0
-    }
-    
-    @IBAction func dismissBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 }
