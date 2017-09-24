@@ -82,18 +82,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         var height = CGFloat(200)
         switch secType {
         case .first:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SugarCollectionViewCell", for: indexPath) as! SugarCollectionViewCell
-//            cell.cardView.updateConstraintsIfNeeded()
-//            let height = cell.cardView.frame.height + 8
-//            let height = CGFloat(300)
             height = 60
             let width = (collectionView.frame.width - 40) / 3
             size = CGSize(width: width, height: height)
         case .currency:
-//            let cell = collectionView.cellForItem(at: indexPath) as! SugarCollectionViewCell
-//            cell.cardView.updateConstraintsIfNeeded()
-//            let height = cell.cardView.frame.height + 8
-//            let height = CGFloat(300)
             if indexPath.item == 0 {
                 var width = collectionView.frame.width - 30
                 width = width / 5 * 3
@@ -103,10 +95,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 width = width / 5 * 2
                 size = CGSize(width: width, height: height)
             }
-            //find MaxHeoght 
-            //return (maxHeight, calculated width)
         case .news:
-//            let height = CGFloat(200.0)
             let width = collectionView.frame.width - 20
             size = CGSize(width: width, height: height)
         }
@@ -126,6 +115,25 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         return UIEdgeInsets(top: 0, left: left, bottom: 0, right: right)
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let secType = MainVCSections(rawValue: indexPath.section)!
+        
+        switch secType {
+        case .first:
+            break
+        case .currency:
+            if indexPath.item == 0 {
+                break
+            } else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+                self.navigationController?.show(vc, sender: self)
+            }
+        case .news:
+            break
+        }
+    }
     
     func configureCollectionView(){
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

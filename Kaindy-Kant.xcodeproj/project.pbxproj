@@ -47,6 +47,8 @@
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
+		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
+		2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D21B1F74F83D0059B88C /* WeatherCell.swift */; };
 		23CE2FCA1F74C76E0002CDD0 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */; };
 		23CE2FCB1F74C76E0002CDD0 /* ProfileMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
@@ -126,6 +128,8 @@
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		2388D2171F74E09E0059B88C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		2388D21B1F74F83D0059B88C /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
 		23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMapTableViewCell.xib; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -262,9 +266,10 @@
 		1F58939E1F614EA200FD2C5D /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				23205AF51F62407300D58F5B /* MainPageCollectionViewCell */,
+				23205AF51F62407300D58F5B /* Cells */,
 				1F5893741F614DB600FD2C5D /* Main.storyboard */,
 				1F58939F1F614ED700FD2C5D /* MainViewController.swift */,
+				2388D2171F74E09E0059B88C /* WeatherViewController.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -371,7 +376,7 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		23205AF51F62407300D58F5B /* MainPageCollectionViewCell */ = {
+		23205AF51F62407300D58F5B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */,
@@ -380,8 +385,9 @@
 				23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */,
 				23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */,
 				23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */,
+				2388D21B1F74F83D0059B88C /* WeatherCell.swift */,
 			);
-			name = MainPageCollectionViewCell;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		2380ABA01F667BE20023C5AB /* Registration */ = {
@@ -727,7 +733,9 @@
 			files = (
 				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
 				1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */,
+				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
+				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
