@@ -174,7 +174,7 @@ extension ProfileViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
-        
+        cell.selectionStyle = .none
         return cell
     }
 }

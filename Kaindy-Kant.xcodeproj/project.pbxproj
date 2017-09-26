@@ -49,11 +49,14 @@
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
 		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
 		2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D21B1F74F83D0059B88C /* WeatherCell.swift */; };
-		23CE2FCA1F74C76E0002CDD0 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */; };
-		23CE2FCB1F74C76E0002CDD0 /* ProfileMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */; };
+		23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
 		23CE2FD11F74CF080002CDD0 /* FirstRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */; };
+		23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */; };
+		23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */; };
+		23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */; };
+		23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */; };
 		23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */; };
 		23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */; };
 		23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */; };
@@ -134,11 +137,14 @@
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		2388D2171F74E09E0059B88C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		2388D21B1F74F83D0059B88C /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
-		23CE2FC81F74C76E0002CDD0 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
-		23CE2FC91F74C76E0002CDD0 /* ProfileMapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMapTableViewCell.xib; sourceTree = "<group>"; };
+		23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionTableViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
 		23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorExcelViewController.storyboard; sourceTree = "<group>"; };
+		23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelViewController.swift; sourceTree = "<group>"; };
+		23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelTableViewCell.swift; sourceTree = "<group>"; };
+		23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelTotalTableViewCell.swift; sourceTree = "<group>"; };
 		23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
 		23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 				1F5893B61F61560800FD2C5D /* Providers */,
 				1F5893BB1F6156C800FD2C5D /* Requests */,
 				1F7291311F66636300111692 /* TechnologyInfo */,
+				23EF3F661F77E42A00D0C4B7 /* Excel */,
 				1F5893701F614DB600FD2C5D /* AppDelegate.swift */,
 				1F5893771F614DB600FD2C5D /* Assets.xcassets */,
 				1F5893791F614DB600FD2C5D /* LaunchScreen.storyboard */,
@@ -417,6 +424,26 @@
 			name = ProfileMapTableViewCell;
 			sourceTree = "<group>";
 		};
+		23EF3F661F77E42A00D0C4B7 /* Excel */ = {
+			isa = PBXGroup;
+			children = (
+				23EF3F6B1F77E8C900D0C4B7 /* CalculatorExcelTableViewCell */,
+				23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */,
+				23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */,
+			);
+			name = Excel;
+			sourceTree = "<group>";
+		};
+		23EF3F6B1F77E8C900D0C4B7 /* CalculatorExcelTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */,
+				23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */,
+				23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */,
+			);
+			name = CalculatorExcelTableViewCell;
+			sourceTree = "<group>";
+		};
 		3795890B1F6AB0F4A1DCF3F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +599,7 @@
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
 				1F7291331F66638700111692 /* TechnologyInfo.storyboard in Resources */,
 				1F5893BF1F6156EB00FD2C5D /* Request.storyboard in Resources */,
+				23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */,
 				1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */,
 				1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
@@ -780,12 +808,16 @@
 				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
+				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
+				23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */,
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
+				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
 				23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */,
 				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
+				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */,
