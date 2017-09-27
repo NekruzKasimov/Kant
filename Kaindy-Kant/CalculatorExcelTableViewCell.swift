@@ -8,13 +8,15 @@
 
 import Foundation
 
-class CalculatorExcelTableViewCell: UITableViewCell {
+class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var counterLabel: UILabel! {
         didSet {
             counterLabel.layer.borderWidth = 1
         }
     }
+    
+    var valueChangeHandler: ((Int, Int)->())?
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -25,12 +27,16 @@ class CalculatorExcelTableViewCell: UITableViewCell {
     @IBOutlet weak var priceTF: UITextField! {
         didSet {
             priceTF.keyboardType = .decimalPad
+            priceTF.delegate = self
+            priceTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
     }
     
     @IBOutlet weak var amountTF: UITextField! {
         didSet {
             amountTF.keyboardType = .decimalPad
+            amountTF.delegate = self
+            amountTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
     }
     
@@ -40,16 +46,24 @@ class CalculatorExcelTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var priceWidthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var amountWidthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var totalWidthConstraint: NSLayoutConstraint!
-    
-    func setConstraints(width: CGFloat) {
-        priceWidthConstraint.constant        = width
-        amountWidthConstraint.constant      = width
-        totalWidthConstraint.constant       = width
+    func setValues(expenses: Expenses, counter: Int) {
+        self.priceTF.placeholder = "\(expenses.price)"
+        self.amountTF.placeholder = "\(expenses.amount)"
+        self.titleLabel.text = expenses.name
+        self.counterLabel.text = "\(counter + 1)"
+    }
+}
+
+extension CalculatorExcelTableViewCell {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textFieldDidChange()
+        return true
     }
     
+    func textFieldDidChange() {
+        let price = priceTF.text == "" ? Int(priceTF.placeholder!)! : Int(priceTF.text!)!
+        let amount = amountTF.text == "" ? Int(amountTF.placeholder!)! : Int(amountTF.text!)!
+        self.totalLabel.text = "\(price * amount)"
+        valueChangeHandler?(price * amount, Int(self.counterLabel.text!)!)
+    }
 }

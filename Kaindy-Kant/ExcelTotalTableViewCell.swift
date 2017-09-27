@@ -21,10 +21,5 @@ class ExcelTotalTableViewCell: UITableViewCell {
             totalLabel.layer.borderWidth = 1
         }
     }
-    
-    @IBOutlet weak var totalWidthConstraint: NSLayoutConstraint!
-    
-    func setConstraints(width: CGFloat) {
-        totalWidthConstraint.constant       = width
-    }
+
 }

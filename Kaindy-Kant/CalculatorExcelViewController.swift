@@ -29,12 +29,34 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
 
     @IBOutlet weak var tableView: UITableView!
     
+    var expenses = [Expenses]()
+    
+    var totalIndexPath: IndexPath?
+    
+    let names = ["Лущение стерни", "Внесение удобрения (аммофос +хлористый калий)", "Внесение почвенного гербицида"]
+    let prices = [1200, 500, 400]
+    let amount = [1, 3, 5]
+    
+    var totalValue = 0
+    
+    var total: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         configureTableView()
+        for item in names {
+            let index = names.index(of: item)!
+            let expense = Expenses.init(price: prices[index], name: names[index], amount: amount[index])
+            expenses.append(expense)
+        }
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateTotalValues()
+    }
 }
 
 //MARK: UITableViewDataSourse methods
@@ -46,25 +68,28 @@ extension CalculatorExcelViewController {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ExcelSections(rawValue: section)!.getItemsCount()
+        if ExcelSections.items.rawValue == section {
+            return prices.count
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let secType = ExcelSections(rawValue: indexPath.section)!
-        let width = tableView.frame.width / 5
         switch secType {
         case .first:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FirstSectionTableViewCell") as! FirstSectionTableViewCell
-            cell.setConstraints(width: width)
             return cell
         case .items:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell") as! CalculatorExcelTableViewCell
-            cell.titleLabel.text = "text text text text text text text"
-            cell.setConstraints(width: width)
+            cell.setValues(expenses: expenses[indexPath.row], counter: indexPath.row)
+            cell.valueChangeHandler = updateValues(total:counter:)
+            cell.totalLabel.text = "\(total[indexPath.row])"
             return cell
         case .total:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExcelTotalTableViewCell") as! ExcelTotalTableViewCell
-            cell.setConstraints(width: width)
+            self.totalIndexPath = indexPath
+            cell.totalLabel.text = "\(totalValue)"
             return cell
         }
     }
@@ -74,7 +99,7 @@ extension CalculatorExcelViewController {
             let label = UILabel()
             label.text = "Расходы на механизацию и ручной труд"
             label.textAlignment = .center
-            label.backgroundColor = UIColor.init(netHex: Colors.orange)
+            label.backgroundColor = UIColor.init(netHex: Colors.gray)
             label.layer.borderWidth = 1
             label.numberOfLines = 0
             label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightSemibold)
@@ -91,14 +116,34 @@ extension CalculatorExcelViewController {
     }
 }
 
-
 //MARK: Helper functions
 
 extension CalculatorExcelViewController {
+    
     func configureTableView() {
         tableView.tableFooterView                   = UIView()
         tableView.separatorStyle                    = .none
         tableView.estimatedRowHeight                = 80
         tableView.rowHeight                         = UITableViewAutomaticDimension
+    }
+    
+    func updateTotalValues() {
+        for item in expenses {
+            let total = item.amount * item.price
+            self.total.append(total)
+            totalValue += total
+        }
+    }
+    
+    func updateValues(total: Int, counter: Int) {
+        let value = self.total[counter - 1]
+        totalValue -= value
+        totalValue += total
+        let indexPath = IndexPath(item: counter - 1, section: 1)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell", for: indexPath)
+        cell.reloadInputViews()
+        let indexPath1 = IndexPath(item: 0, section: 2)
+        let cell1 = tableView.dequeueReusableCell(withIdentifier: "ExcelTotalTableViewCell", for: indexPath1)
+        cell1.reloadInputViews()
     }
 }

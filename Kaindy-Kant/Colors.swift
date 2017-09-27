@@ -14,7 +14,7 @@ import Foundation
 struct Colors {
     static let purple = 0x9D2046
     static let green = 0x12AC41
-    static let gray = 0xC7C7CD
+    static let gray = 0xE6E6E6
     static let orange = 0xF1C296
     static let yellow = 0xFECC00
     static let fbColor = 0x3B5998

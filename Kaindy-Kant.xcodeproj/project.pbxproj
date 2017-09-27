@@ -45,6 +45,7 @@
 		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
 		23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */; };
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
+		235E28521F7A8B4A00378759 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E28511F7A8B4A00378759 /* Expenses.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
 		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
@@ -133,6 +134,7 @@
 		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		23205AF11F62398400D58F5B /* LoadingIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorButton.swift; sourceTree = "<group>"; };
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		235E28511F7A8B4A00378759 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		2388D2171F74E09E0059B88C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		1F58936F1F614DB600FD2C5D /* Kaindy-Kant */ = {
 			isa = PBXGroup;
 			children = (
+				235E28501F7A8B1D00378759 /* Models */,
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
 				1F5893C01F61582400FD2C5D /* Login */,
 				2380ABA01F667BE20023C5AB /* Registration */,
@@ -406,6 +409,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		235E28501F7A8B1D00378759 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				235E28511F7A8B4A00378759 /* Expenses.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		2380ABA01F667BE20023C5AB /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,9 +448,9 @@
 		23EF3F6B1F77E8C900D0C4B7 /* CalculatorExcelTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */,
 				23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */,
 				23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */,
-				23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */,
 			);
 			name = CalculatorExcelTableViewCell;
 			sourceTree = "<group>";
@@ -788,6 +799,7 @@
 			files = (
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
+				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,

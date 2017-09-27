@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
 //    @IBOutlet weak var scrollView: UIScrollView!
     
@@ -25,6 +25,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    @IBOutlet weak var birthdayTF: UITextField! {
+        didSet {
+            birthdayTF.delegate = self
+            birthdayTF.tag = 0
+        }
+    }
     
     
 //    @IBOutlet weak var changePasswordButton: UIButton! {
@@ -72,23 +78,23 @@ extension ProfileViewController {
     }
     
     func showDatePicker() {
-//        let myDatePicker = UIDatePicker()
-//        myDatePicker.datePickerMode = .date
-//        myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
-//        
-//        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-//        alertController.view.addSubview(myDatePicker)
-//        alertController.view.tintColor = .black
-//        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "dd/MM/yyyy"
-//            dateFormatter.locale = Locale.init(identifier: "en_GB")
-//            self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-//        alertController.addAction(okAction)
-//        alertController.addAction(cancelAction)
-//        self.present(alertController, animated: true, completion:{})
+        let myDatePicker = UIDatePicker()
+        myDatePicker.datePickerMode = .date
+        myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.view.addSubview(myDatePicker)
+        alertController.view.tintColor = .black
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.locale = Locale.init(identifier: "en_GB")
+            self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion:{})
     }
     
     func changePassword()  {
@@ -165,6 +171,16 @@ extension ProfileViewController {
 //    }
 //}
 //MARK: UITextFieldDelegate methods
+
+extension ProfileViewController {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            showDatePicker()
+            return false
+        }
+        return true
+    }
+}
 
 extension ProfileViewController {
     

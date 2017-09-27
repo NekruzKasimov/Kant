@@ -48,25 +48,25 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость (сом)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO9-GS-4pZ">
-                                                    <rect key="frame" x="205" y="0.0" width="50" height="172"/>
+                                                    <rect key="frame" x="185" y="0.0" width="60" height="172"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="nKm-jm-oOu"/>
+                                                        <constraint firstAttribute="width" constant="60" id="nKm-jm-oOu"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-Ym-1kc">
-                                                    <rect key="frame" x="255" y="0.0" width="50" height="171.5"/>
+                                                    <rect key="frame" x="245" y="0.0" width="60" height="171.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="zkb-uF-6OM"/>
+                                                        <constraint firstAttribute="width" constant="60" id="zkb-uF-6OM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Виды работ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-GS-3Bq">
-                                                    <rect key="frame" x="20" y="0.0" width="185" height="171.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="165" height="171.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -93,12 +93,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountLabel" destination="dTe-Ym-1kc" id="zzk-jY-1W4"/>
-                                            <outlet property="amountWidthConstraint" destination="zkb-uF-6OM" id="jII-WO-hBW"/>
                                             <outlet property="firstLabel" destination="C6G-jb-Gyi" id="GAJ-O6-KP5"/>
                                             <outlet property="priceLabel" destination="ZO9-GS-4pZ" id="pPu-Ab-LGW"/>
-                                            <outlet property="priceWidthConstraint" destination="nKm-jm-oOu" id="Z89-82-TEY"/>
                                             <outlet property="totalPriceLabel" destination="Abn-8d-EN8" id="1q2-He-hFu"/>
-                                            <outlet property="totalWidthConstraint" destination="HCB-I5-prM" id="91O-6f-Skr"/>
                                             <outlet property="typesOfJobLabel" destination="vGK-GS-3Bq" id="zQg-kG-f4i"/>
                                         </connections>
                                     </tableViewCell>
@@ -110,18 +107,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqe-aH-qEY">
-                                                    <rect key="frame" x="225" y="0.0" width="100" height="112.5"/>
+                                                    <rect key="frame" x="245" y="0.0" width="60" height="112.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="JNw-VX-Oaq"/>
+                                                        <constraint firstAttribute="width" constant="60" id="JNw-VX-Oaq"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="1200" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9XC-2D-ODj">
-                                                    <rect key="frame" x="125" y="0.0" width="100" height="112.5"/>
+                                                    <rect key="frame" x="185" y="0.0" width="60" height="112.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="eeZ-yZ-h1M"/>
+                                                        <constraint firstAttribute="width" constant="60" id="eeZ-yZ-h1M"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -137,15 +134,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl3-kl-PxE">
-                                                    <rect key="frame" x="20" y="0.0" width="105" height="112.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="165" height="112.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fP-It-WiO">
-                                                    <rect key="frame" x="325" y="0.0" width="50" height="112.5"/>
+                                                    <rect key="frame" x="305" y="0.0" width="70" height="112.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="zhK-Zy-zkg"/>
+                                                        <constraint firstAttribute="width" constant="70" id="zhK-Zy-zkg"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -173,13 +170,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountTF" destination="aqe-aH-qEY" id="Trz-Df-b9Q"/>
-                                            <outlet property="amountWidthConstraint" destination="JNw-VX-Oaq" id="LkS-oY-Jbv"/>
                                             <outlet property="counterLabel" destination="D2u-aN-v8N" id="FyM-SX-xlp"/>
                                             <outlet property="priceTF" destination="9XC-2D-ODj" id="sng-Kn-oZ4"/>
-                                            <outlet property="priceWidthConstraint" destination="eeZ-yZ-h1M" id="96l-IK-4MY"/>
                                             <outlet property="titleLabel" destination="nl3-kl-PxE" id="png-oU-4wH"/>
                                             <outlet property="totalLabel" destination="4fP-It-WiO" id="R70-RB-CVH"/>
-                                            <outlet property="totalWidthConstraint" destination="zhK-Zy-zkg" id="cHA-pq-Vx2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExcelTotalTableViewCell" rowHeight="179" id="Hph-tC-JpY" customClass="ExcelTotalTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -190,15 +184,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итого затраты на механизацию и ручной труд" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW1-OD-Ymr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="178.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="305" height="178.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL5-xz-dP9">
-                                                    <rect key="frame" x="295" y="0.0" width="80" height="178.5"/>
+                                                    <rect key="frame" x="305" y="0.0" width="70" height="178.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="b2y-ey-fuk"/>
+                                                        <constraint firstAttribute="width" constant="70" id="b2y-ey-fuk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -218,7 +212,6 @@
                                         <connections>
                                             <outlet property="titleLabel" destination="dW1-OD-Ymr" id="xuE-5S-DsV"/>
                                             <outlet property="totalLabel" destination="gL5-xz-dP9" id="akB-vh-lQu"/>
-                                            <outlet property="totalWidthConstraint" destination="b2y-ey-fuk" id="qqi-Uf-XAe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

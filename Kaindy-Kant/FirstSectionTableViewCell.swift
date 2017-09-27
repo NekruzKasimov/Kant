@@ -14,48 +14,36 @@ class FirstSectionTableViewCell: UITableViewCell {
     @IBOutlet weak var firstLabel: UILabel! {
         didSet {
             firstLabel.layer.borderWidth = 1
-            firstLabel.backgroundColor = UIColor.init(netHex: Colors.orange)
+            firstLabel.backgroundColor = UIColor.init(netHex: Colors.gray)
         }
     }
     
     @IBOutlet weak var typesOfJobLabel: UILabel! {
         didSet {
             typesOfJobLabel.layer.borderWidth = 1
-            typesOfJobLabel.backgroundColor = UIColor.init(netHex: Colors.orange)
+            typesOfJobLabel.backgroundColor = UIColor.init(netHex: Colors.gray)
         }
     }
     
     @IBOutlet weak var priceLabel: UILabel! {
         didSet {
             priceLabel.layer.borderWidth = 1
-            priceLabel.backgroundColor = UIColor.init(netHex: Colors.orange)
+            priceLabel.backgroundColor = UIColor.init(netHex: Colors.gray)
         }
     }
     
     @IBOutlet weak var amountLabel: UILabel! {
         didSet {
             amountLabel.layer.borderWidth = 1
-            amountLabel.backgroundColor = UIColor.init(netHex: Colors.orange)
+            amountLabel.backgroundColor = UIColor.init(netHex: Colors.gray)
         }
     }
     
     @IBOutlet weak var totalPriceLabel: UILabel! {
         didSet {
             totalPriceLabel.layer.borderWidth = 1
-            totalPriceLabel.backgroundColor = UIColor.init(netHex: Colors.orange)
+            totalPriceLabel.backgroundColor = UIColor.init(netHex: Colors.gray)
         }
-    }
-    
-    @IBOutlet weak var priceWidthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var amountWidthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var totalWidthConstraint: NSLayoutConstraint!
-    
-    func setConstraints(width: CGFloat) {
-        priceWidthConstraint.constant        = width
-        amountWidthConstraint.constant      = width
-        totalWidthConstraint.constant       = width
     }
     
 }
