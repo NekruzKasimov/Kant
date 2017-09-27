@@ -32,6 +32,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    @IBAction func chagePasswordButton(_ sender: Any) {
+    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangingPasswordViewController") as! ChangingPasswordViewController
+    self.navigationController?.show(vc, sender: self)
+        
+    }
     
 //    @IBOutlet weak var changePasswordButton: UIButton! {
 //        didSet{
