@@ -10,4 +10,8 @@ import Foundation
 
 class WeatherCell: UICollectionViewCell {
     
+    @IBOutlet weak var weatherDegreeLabel: UILabel!
+    
+    @IBOutlet weak var weekdayLabel: UILabel!
+    
 }

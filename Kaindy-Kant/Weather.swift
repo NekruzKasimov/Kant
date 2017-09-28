@@ -1,0 +1,60 @@
+//
+//  Weather.swift
+//  Kaindy-Kant
+//
+//  Created by Niko on 9/27/17.
+//  Copyright © 2017 NeoBis. All rights reserved.
+//
+
+import Foundation
+import SwiftyJSON
+
+
+class Weather {
+    var list: Lists
+    
+    init(json: JSON) {
+        list = Lists(json: json["list"])
+    }
+}
+
+struct List {
+    var date: String
+    var main: Main
+    var weatherStatus: WeatherStatus
+    
+    init(json: JSON) {
+        date = json["dt_txt"].stringValue
+        main = Main(json: json["main"])
+        weatherStatus = WeatherStatus(json: json["weather"])
+    }
+}
+
+class Lists: NSObject {
+    var array: Array = Array<List>()
+    init(json:JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = List(json:json)
+            array.append(tempObject)
+        }
+    }
+}
+
+class Main {
+    var temp: Float
+    
+    init(json: JSON) {
+        temp = json["temp"].floatValue - 273
+    }
+}
+
+class WeatherStatus {
+    var main: String
+    var description: String
+    
+    init (json: JSON) {
+        main = json["main"].stringValue
+        description = json["description"].stringValue
+    }
+}

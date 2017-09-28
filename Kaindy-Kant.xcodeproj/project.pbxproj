@@ -40,6 +40,7 @@
 		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
 		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
 		1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */; };
+		2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */; };
 		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
 		23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE91F6237A700D58F5B /* GlobalFunctions.swift */; };
 		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
@@ -50,6 +51,10 @@
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
 		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
 		2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D21B1F74F83D0059B88C /* WeatherCell.swift */; };
+		23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EA1F7B46060062B4F9 /* Weather.swift */; };
+		23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */; };
+		23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */; };
+		23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EE1F7B5BDA0062B4F9 /* HTTPStatusCode.swift */; };
 		23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
@@ -129,6 +134,7 @@
 		1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBankViewController.swift; sourceTree = "<group>"; };
 		1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailedService.storyboard; sourceTree = "<group>"; };
+		2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelLogicController.swift; sourceTree = "<group>"; };
 		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		23205AE91F6237A700D58F5B /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		2388D2171F74E09E0059B88C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		2388D21B1F74F83D0059B88C /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		23A690EA1F7B46060062B4F9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
+		23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		23A690EE1F7B5BDA0062B4F9 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionTableViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -300,6 +310,9 @@
 				23205AE91F6237A700D58F5B /* GlobalFunctions.swift */,
 				1F5893AA1F61523700FD2C5D /* Extensions.swift */,
 				23205AE71F62378100D58F5B /* Colors.swift */,
+				23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */,
+				23A690EE1F7B5BDA0062B4F9 /* HTTPStatusCode.swift */,
+				23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */,
 				1F5893A61F614F0A00FD2C5D /* SWReveal */,
 			);
 			name = "Supporting Files";
@@ -413,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				235E28511F7A8B4A00378759 /* Expenses.swift */,
+				23A690EA1F7B46060062B4F9 /* Weather.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -441,6 +455,7 @@
 				23EF3F6B1F77E8C900D0C4B7 /* CalculatorExcelTableViewCell */,
 				23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */,
 				23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */,
+				2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */,
 			);
 			name = Excel;
 			sourceTree = "<group>";
@@ -679,15 +694,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -797,6 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */,
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
@@ -806,6 +826,7 @@
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
+				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
@@ -814,7 +835,9 @@
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
 				23CE2FD11F74CF080002CDD0 /* FirstRowCollectionViewCell.swift in Sources */,
+				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
 				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
+				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
 				8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */,
 				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
@@ -831,6 +854,7 @@
 				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
 				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
+				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,

@@ -8,7 +8,17 @@
 
 import Foundation
 
-class ExcelTotalTableViewCell: UITableViewCell {
+class ExcelTotalTableViewCell: UITableViewCell, UpdateTotalValueDelegate {
+    
+    func updateTotalValue(total: Int) {
+        totalLabel.text = "\(total)"
+        reloadInputViews()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        CalculatorExcelLogicController.shared.delegate = self
+    }
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {

@@ -55,6 +55,7 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
 }
 
 extension CalculatorExcelTableViewCell {
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textFieldDidChange()
         return true
@@ -63,7 +64,8 @@ extension CalculatorExcelTableViewCell {
     func textFieldDidChange() {
         let price = priceTF.text == "" ? Int(priceTF.placeholder!)! : Int(priceTF.text!)!
         let amount = amountTF.text == "" ? Int(amountTF.placeholder!)! : Int(amountTF.text!)!
-        self.totalLabel.text = "\(price * amount)"
         valueChangeHandler?(price * amount, Int(self.counterLabel.text!)!)
+        self.totalLabel.text = "\(price * amount)"
+        reloadInputViews()
     }
 }

@@ -139,11 +139,7 @@ extension CalculatorExcelViewController {
         let value = self.total[counter - 1]
         totalValue -= value
         totalValue += total
-        let indexPath = IndexPath(item: counter - 1, section: 1)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell", for: indexPath)
-        cell.reloadInputViews()
-        let indexPath1 = IndexPath(item: 0, section: 2)
-        let cell1 = tableView.dequeueReusableCell(withIdentifier: "ExcelTotalTableViewCell", for: indexPath1)
-        cell1.reloadInputViews()
+        CalculatorExcelLogicController.shared.setTotalValue(total: totalValue)
+        
     }
 }
