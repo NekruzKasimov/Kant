@@ -19,12 +19,12 @@ class Weather {
 }
 
 struct List {
-    var date: String
+    var date: Date
     var main: Main
     var weatherStatus: WeatherStatus
     
     init(json: JSON) {
-        date = json["dt_txt"].stringValue
+        date = json["dt"].intValue.timestampToDate()
         main = Main(json: json["main"])
         weatherStatus = WeatherStatus(json: json["weather"])
     }

@@ -21,10 +21,12 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     
     var weather: Weather?
-    let weekdays = ["Ср", "Чт", "Пт", "Сб", "Вс"]
-    let weathers = ["17", "18", "20", "17", "18"]
+    let weekdays = ["Вс", "Пн", "Вт","Ср", "Чт", "Пт", "Сб"]
     
-    var dates = [Date]()
+    var week: [String] = []
+    var dates: [Int] = []
+    var degrees: [Int] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,6 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
     func setWeather(weather: Weather) {
         self.weather = weather
         updateValues()
-        print("Done")
     }
 }
 
@@ -45,13 +46,13 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
 
 extension WeatherViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return week.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        cell.weekdayLabel.text = weekdays[indexPath.row]
-        cell.weatherDegreeLabel.text = weathers[indexPath.row] + "°"
+        cell.weatherDegreeLabel.text = "\(degrees[indexPath.row])°"
+        cell.weekdayLabel.text = week[indexPath.row]
         return cell
     }
     
@@ -67,6 +68,17 @@ extension WeatherViewController {
 extension WeatherViewController {
    
     func updateValues() {
+        for i in (weather?.list.array)! {
+            let hour = Calendar.current.component(.hour, from: i.date)
+            let day = Calendar.current.component(.day, from: i.date)
+            if hour == 12 {
+                let weekday = Calendar.current.component(.weekday, from: i.date)
+                week.append(weekdays[weekday - 1])
+                degrees.append(Int(i.main.temp))
+                dates.append(day)
+            }
+        }
+        collectionView.reloadData()
     }
 
 }

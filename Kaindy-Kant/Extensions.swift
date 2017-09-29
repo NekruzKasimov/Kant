@@ -41,16 +41,18 @@ extension UIViewController {
         
     }
 }
-//extension UIView {
-//    func addConstraintsWithFormat(format: String, views: UIView...) {
-//        var viewsDictionary = [String: UIView]()
-//        for (index, view) in views.enumerated() {
-//            let key = "v\(index)"
-//            view.translatesAutoresizingMaskIntoConstraints = false
-//            viewsDictionary[key] = view
-//        }
-//        
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
-//    }
-//}
+
+extension Int {
+    func timestampToDate() -> Date {
+        let date = NSDate(timeIntervalSince1970: TimeInterval(self))
+        let dtf = DateFormatter()
+        let localTimeZoneName: String = TimeZone.current.identifier
+        dtf.timeZone = NSTimeZone(name: localTimeZoneName) as TimeZone!
+        dtf.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let temp = dtf.string(from: date as Date)
+        return dtf.date(from: temp)!
+    }
+    
+}
+
 

@@ -140,6 +140,5 @@ extension CalculatorExcelViewController {
         totalValue -= value
         totalValue += total
         CalculatorExcelLogicController.shared.setTotalValue(total: totalValue)
-        
     }
 }
