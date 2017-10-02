@@ -21,12 +21,12 @@ class Weather {
 struct List {
     var date: Date
     var main: Main
-    var weatherStatus: WeatherStatus
+    var weatherStatuses: WeatherStatuses
     
     init(json: JSON) {
         date = json["dt"].intValue.timestampToDate()
         main = Main(json: json["main"])
-        weatherStatus = WeatherStatus(json: json["weather"])
+        weatherStatuses = WeatherStatuses(json: json["weather"])
     }
 }
 
@@ -56,5 +56,16 @@ class WeatherStatus {
     init (json: JSON) {
         main = json["main"].stringValue
         description = json["description"].stringValue
+    }
+}
+
+class WeatherStatuses: NSObject {
+    var array: Array = Array<WeatherStatus>()
+    init(json:JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = WeatherStatus(json:json)
+            array.append(tempObject)
+        }
     }
 }

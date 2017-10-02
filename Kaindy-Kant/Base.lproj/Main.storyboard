@@ -29,6 +29,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-316" y="278"/>
         </scene>
         <!--Главное меню-->
         <scene sceneID="r1V-s5-COj">
@@ -376,6 +377,8 @@
                                         <size key="customSize" width="150" height="204"/>
                                         <connections>
                                             <outlet property="cardView" destination="cSa-RO-Fe9" id="CTE-qc-Ojb"/>
+                                            <outlet property="weatherDegreeLabel" destination="UwE-eq-nnU" id="e9Y-de-x7V"/>
+                                            <outlet property="weatherStatusLabel" destination="QMp-p9-cFc" id="YIg-PL-j2d"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsCollectionViewCell" id="5ou-HD-eEm" customClass="NewsCollectionViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -600,8 +603,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="8my-F4-4mO" id="Q0K-LM-q9j"/>
-                                    <outlet property="delegate" destination="8my-F4-4mO" id="RZ8-Pb-SlZ"/>
+                                    <outlet property="dataSource" destination="8my-F4-4mO" id="yGb-vb-7hB"/>
+                                    <outlet property="delegate" destination="8my-F4-4mO" id="HlR-sz-4ZR"/>
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-gg-8Pf">
@@ -636,11 +639,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cityLabel" destination="kQC-8i-Lcy" id="RHQ-Zr-6Bp"/>
-                        <outlet property="collectionView" destination="Ufs-ft-rA8" id="rJS-TM-cQU"/>
-                        <outlet property="dateLabel" destination="AVf-ym-mfC" id="qh9-lE-kGP"/>
-                        <outlet property="weatheStatusLabel" destination="WnN-ap-ppT" id="dei-ra-ZIS"/>
-                        <outlet property="weatherDegreeLabel" destination="xD3-uP-eGu" id="qye-oL-ni0"/>
+                        <outlet property="cityLabel" destination="kQC-8i-Lcy" id="HRL-4a-QA1"/>
+                        <outlet property="collectionView" destination="Ufs-ft-rA8" id="h3f-30-r3U"/>
+                        <outlet property="dateLabel" destination="AVf-ym-mfC" id="Odo-Fg-bdF"/>
+                        <outlet property="weatheStatusLabel" destination="WnN-ap-ppT" id="rJC-RY-boU"/>
+                        <outlet property="weatherDegreeLabel" destination="xD3-uP-eGu" id="UqS-7m-skR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI9-z0-FYI" userLabel="First Responder" sceneMemberID="firstResponder"/>

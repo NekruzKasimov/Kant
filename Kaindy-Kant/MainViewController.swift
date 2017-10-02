@@ -26,27 +26,35 @@ enum MainVCSections : Int {
 }
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    //
+
     @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
-    //
-    //    @IBOutlet weak var tableView: UITableView!
-    //
     @IBOutlet weak var collectionView: UICollectionView!
     
     let firstRowTitles = ["Банки", "Технологии", "Поставщики"]
+    
+    var weather: Weather?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-    
-        
-        //automaticallyAdjustsScrollViewInsets
-        
-//        configureCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ServerManager.shared.getWeather(setWeather) { (error) in
+        }
+    }
+    
+    var degree = 0
+    var status = ""
+    
+}
+
+//MARK: UICollectionViewDataSourse, Delegate, FlowDelegate functions
+
+extension MainViewController {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -68,6 +76,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
+                cell.weatherDegreeLabel.text = degree > 0 ? "+\(degree)°C" : "\(degree)°C"
+                cell.weatherStatusLabel.text = status
                 return cell
             }
         case .news:
@@ -75,7 +85,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             return cell
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let secType = MainVCSections(rawValue: indexPath.section)!
         var size = CGSize()
@@ -110,7 +120,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             right = 10
             left = 10
         } else if section == MainVCSections.currency.rawValue {
-           left = 10
+            left = 10
         }
         return UIEdgeInsets(top: 0, left: left, bottom: 0, right: right)
     }
@@ -128,20 +138,35 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+                vc.weather = self.weather
                 self.navigationController?.show(vc, sender: self)
             }
         case .news:
             break
         }
     }
-    
-    func configureCollectionView(){
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
-        
-//        layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
-        self.collectionView.collectionViewLayout = layout
-    }
 }
 
+//MARK: Helper functions
+
+extension MainViewController {
+    
+    func setWeather(weather: Weather){
+        self.weather = weather
+        setTodayWeather()
+    }
+    
+    func setTodayWeather() {
+        for i in (weather?.list.array)! {
+            let hour = Calendar.current.component(.hour, from: i.date)
+            if hour == 12 {
+                degree = Int(i.main.temp)
+                status = i.weatherStatuses.array[0].main
+                print(i.weatherStatuses.array[0].main)
+                break
+            }
+        }
+        collectionView.reloadData()
+        
+    }
+}

@@ -11,16 +11,17 @@ import UIKit
 class WeatherViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var cityLabel: UILabel!
-    
-    @IBOutlet weak var weatherDegreeLabel: UILabel! 
-    
+    @IBOutlet weak var weatherDegreeLabel: UILabel!
     @IBOutlet weak var weatheStatusLabel: UILabel!
-    
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var weather: Weather?
+    var weather: Weather? {
+        didSet {
+            updateValues()
+        }
+    }
     let weekdays = ["Вс", "Пн", "Вт","Ср", "Чт", "Пт", "Сб"]
     
     var week: [String] = []
@@ -32,26 +33,22 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         self.title = "Погода"
         self.navigationController?.navigationBar.topItem?.title = ""
-        ServerManager.shared.getWeather(setWeather(weather:)) { (error) in
-        }
-    }
-    
-    func setWeather(weather: Weather) {
-        self.weather = weather
-        updateValues()
+        weatherDegreeLabel.text = degrees[0] > 0 ? "+\(degrees[0])°C" : "\(degrees[0])°C"
+        weatheStatusLabel.text = weather?.list.array[0].weatherStatuses.array[0].main
     }
 }
 
 //MARK: UICollectionViewDataSourse, UICollectionViewDelegate methods
 
 extension WeatherViewController {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return week.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        cell.weatherDegreeLabel.text = "\(degrees[indexPath.row])°"
+        cell.weatherDegreeLabel.text =  degrees[indexPath.row] > 0 ? "+\(degrees[indexPath.row])°C" : "\(degrees[indexPath.row])°C"
         cell.weekdayLabel.text = week[indexPath.row]
         return cell
     }
@@ -66,7 +63,6 @@ extension WeatherViewController {
 //MARK: Helper functions
 
 extension WeatherViewController {
-   
     func updateValues() {
         for i in (weather?.list.array)! {
             let hour = Calendar.current.component(.hour, from: i.date)
@@ -78,7 +74,6 @@ extension WeatherViewController {
                 dates.append(day)
             }
         }
-        collectionView.reloadData()
     }
 
 }

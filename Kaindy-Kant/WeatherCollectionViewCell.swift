@@ -11,6 +11,9 @@ import Foundation
 
 class WeatherCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var weatherDegreeLabel: UILabel!
+    @IBOutlet weak var weatherStatusLabel: UILabel!
+    
     @IBOutlet weak var cardView: UIView!  {
         didSet {
             cardView.layer.cornerRadius = 3
