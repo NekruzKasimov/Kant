@@ -36,6 +36,7 @@
 		1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */; };
 		1F7291331F66638700111692 /* TechnologyInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7291321F66638700111692 /* TechnologyInfo.storyboard */; };
 		1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */; };
+		1F781B241F8247930060B616 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B231F8247930060B616 /* MapViewController.swift */; };
 		1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */; };
 		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
 		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
@@ -130,6 +131,7 @@
 		1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 		1F7291321F66638700111692 /* TechnologyInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TechnologyInfo.storyboard; sourceTree = "<group>"; };
 		1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyInfoViewController.swift; sourceTree = "<group>"; };
+		1F781B231F8247930060B616 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankServiceViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBankViewController.swift; sourceTree = "<group>"; };
@@ -386,6 +388,14 @@
 			name = TechnologyInfo;
 			sourceTree = "<group>";
 		};
+		1F781B201F82452D0060B616 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1F781B231F8247930060B616 /* MapViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		1FE1376F1F6FB65800B7926B /* Detalied Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +410,7 @@
 		23205AE61F62375D00D58F5B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				1F781B201F82452D0060B616 /* Map */,
 				8464AABC1F73896400AA4980 /* ChangePassword */,
 				23E1EDFF1F73A7550012C867 /* ProfileMapTableViewCell */,
 				23205AEF1F62391800D58F5B /* Profile.storyboard */,
@@ -684,7 +695,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -758,7 +769,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -806,7 +817,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -827,6 +838,7 @@
 				23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
+				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,

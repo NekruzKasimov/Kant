@@ -64,6 +64,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(animated)
         configureTableView()
     }
+    @IBAction func presentMap(_ sender: Any) {
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

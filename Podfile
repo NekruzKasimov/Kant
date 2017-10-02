@@ -9,6 +9,8 @@ target 'Kaindy-Kant' do
  pod 'IQKeyboardManager'
  pod 'SwiftyJSON'
  pod 'Alamofire', '~> 4.4'
+ pod 'GoogleMaps'
+ pod 'GooglePlaces'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do

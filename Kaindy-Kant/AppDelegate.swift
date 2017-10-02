@@ -8,15 +8,20 @@
 
 import UIKit
 import IQKeyboardManager
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let googleApiKey = "AIzaSyDd_Gv9Zmj0LCpAJG8sCq_fFNST59ZkMC4"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey(googleApiKey)
+        GMSPlacesClient.provideAPIKey(googleApiKey)
         
         UINavigationBar.appearance().backgroundColor = UIColor(red: 157/255, green: 32/255, blue: 70/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
