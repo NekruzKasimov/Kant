@@ -37,6 +37,8 @@
 		1F7291331F66638700111692 /* TechnologyInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7291321F66638700111692 /* TechnologyInfo.storyboard */; };
 		1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */; };
 		1F781B241F8247930060B616 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B231F8247930060B616 /* MapViewController.swift */; };
+		1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B271F824A1E0060B616 /* AboutAppViewController.swift */; };
+		1F781B2A1F824AD90060B616 /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B291F824AD90060B616 /* AboutApp.storyboard */; };
 		1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */; };
 		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
 		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
@@ -132,6 +134,8 @@
 		1F7291321F66638700111692 /* TechnologyInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TechnologyInfo.storyboard; sourceTree = "<group>"; };
 		1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyInfoViewController.swift; sourceTree = "<group>"; };
 		1F781B231F8247930060B616 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1F781B271F824A1E0060B616 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		1F781B291F824AD90060B616 /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
 		1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankServiceViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBankViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				1F5893B61F61560800FD2C5D /* Providers */,
 				1F5893BB1F6156C800FD2C5D /* Requests */,
 				1F7291311F66636300111692 /* TechnologyInfo */,
+				1F781B251F8249F70060B616 /* AboutApp */,
 				23EF3F661F77E42A00D0C4B7 /* Excel */,
 				1F5893701F614DB600FD2C5D /* AppDelegate.swift */,
 				1F5893771F614DB600FD2C5D /* Assets.xcassets */,
@@ -394,6 +399,15 @@
 				1F781B231F8247930060B616 /* MapViewController.swift */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		1F781B251F8249F70060B616 /* AboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				1F781B291F824AD90060B616 /* AboutApp.storyboard */,
+				1F781B271F824A1E0060B616 /* AboutAppViewController.swift */,
+			);
+			name = AboutApp;
 			sourceTree = "<group>";
 		};
 		1FE1376F1F6FB65800B7926B /* Detalied Service */ = {
@@ -628,6 +642,7 @@
 			files = (
 				1F0DF1AC1F6BCDDC00DE54F2 /* Приложение 4_Модуль_Сахарная свекла_2016.pdf in Resources */,
 				1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */,
+				1F781B2A1F824AD90060B616 /* AboutApp.storyboard in Resources */,
 				1F0DF1AD1F6BCDDC00DE54F2 /* Приложение 5_Кант кызылчасын өстүрүү технологиясы боюнча кыскача таркатма.pdf in Resources */,
 				2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
@@ -849,6 +864,7 @@
 				23CE2FD11F74CF080002CDD0 /* FirstRowCollectionViewCell.swift in Sources */,
 				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
 				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
+				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
 				8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */,
