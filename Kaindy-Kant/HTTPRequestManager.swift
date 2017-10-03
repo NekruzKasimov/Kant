@@ -17,7 +17,7 @@ class HTTPRequestManager {
     typealias FailureHandler = (String)-> Void
     typealias Parameter = [String: Any]?
     
-    let url = "http://api.openweathermap.org/data/2.5/forecast?q=bishkek,kg"
+    let url = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222"
     
     private func request(method: HTTPMethod, api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         
