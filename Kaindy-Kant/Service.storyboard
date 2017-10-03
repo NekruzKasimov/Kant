@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-cz-OMP">
-                                <rect key="frame" x="8" y="10" width="359" height="657"/>
+                                <rect key="frame" x="8" y="74" width="359" height="593"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yeO-uP-uvY">
                                     <size key="itemSize" width="189" height="179"/>
@@ -31,60 +31,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ServiceCollectionViewCell" id="2a5-FS-jcX" customClass="ServiceCollectionViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
-                                        <rect key="frame" x="85" y="0.0" width="189" height="179"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="189" height="179"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDY-9X-rRp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="189" height="179"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NpN-gj-X1d">
-                                                            <rect key="frame" x="0.0" y="20" width="189" height="159"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5t-yC-Yvq">
-                                                            <rect key="frame" x="0.0" y="4" width="189" height="18"/>
-                                                            <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="W5t-yC-Yvq" secondAttribute="trailing" id="2Uv-4c-0jN"/>
-                                                        <constraint firstAttribute="bottom" secondItem="NpN-gj-X1d" secondAttribute="bottom" id="HxE-Oa-7Kr"/>
-                                                        <constraint firstItem="NpN-gj-X1d" firstAttribute="leading" secondItem="nDY-9X-rRp" secondAttribute="leading" id="QBg-Ey-wBR"/>
-                                                        <constraint firstItem="NpN-gj-X1d" firstAttribute="top" secondItem="nDY-9X-rRp" secondAttribute="top" constant="20" id="ZcL-wC-eyb"/>
-                                                        <constraint firstItem="W5t-yC-Yvq" firstAttribute="top" secondItem="nDY-9X-rRp" secondAttribute="top" constant="4" id="d5G-dB-qOD"/>
-                                                        <constraint firstItem="W5t-yC-Yvq" firstAttribute="leading" secondItem="nDY-9X-rRp" secondAttribute="leading" id="hPC-2d-4cU"/>
-                                                        <constraint firstAttribute="trailing" secondItem="NpN-gj-X1d" secondAttribute="trailing" id="vXU-xh-eTn"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.88046007981238184" green="0.88917750634517767" blue="0.88917750634517767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="nDY-9X-rRp" firstAttribute="top" secondItem="2a5-FS-jcX" secondAttribute="top" id="9Hd-Bd-Z5L"/>
-                                            <constraint firstItem="nDY-9X-rRp" firstAttribute="leading" secondItem="2a5-FS-jcX" secondAttribute="leading" id="Iiy-5O-GMs"/>
-                                            <constraint firstAttribute="bottom" secondItem="nDY-9X-rRp" secondAttribute="bottom" id="TZk-m6-Br7"/>
-                                            <constraint firstAttribute="trailing" secondItem="nDY-9X-rRp" secondAttribute="trailing" id="hUb-hu-vAm"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="serviceImg" destination="NpN-gj-X1d" id="n2R-bZ-aM2"/>
-                                            <outlet property="serviceLbl" destination="W5t-yC-Yvq" id="ggz-NE-p6Q"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="iDz-FF-Qdh" id="sHM-Mp-FWB"/>
                                     <outlet property="delegate" destination="iDz-FF-Qdh" id="uTf-sb-Okq"/>
@@ -100,6 +47,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Услуги" id="r3i-lH-v8v"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0Xc-cz-OMP" id="N7z-5w-Xyo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcZ-Zr-IkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +61,7 @@
                 <navigationController storyboardIdentifier="ServiceNav" automaticallyAdjustsScrollViewInsets="NO" id="mmU-pk-SZC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xi6-0t-Lau">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

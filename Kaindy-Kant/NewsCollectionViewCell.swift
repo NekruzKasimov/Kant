@@ -2,15 +2,15 @@
 //  NewsCollectionViewCell.swift
 //  Kaindy-Kant
 //
-//  Created by Niko on 9/18/17.
+//  Created by Niko on 10/2/17.
 //  Copyright © 2017 NeoBis. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NewsCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var cardView: UIView!  {
+
+    @IBOutlet weak var cardView: UIView! {
         didSet {
             cardView.layer.cornerRadius = 3
             cardView.layer.masksToBounds = false
@@ -20,4 +20,9 @@ class NewsCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var textLabel: UILabel!
 }

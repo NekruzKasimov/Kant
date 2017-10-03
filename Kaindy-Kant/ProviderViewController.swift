@@ -8,7 +8,14 @@
 
 import UIKit
 
-class ProviderViewController: UIViewController {
+class ProviderViewController: UIViewController,  UICollectionViewDataSource, UISearchControllerDelegate, UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+            collectionView.register(UINib(nibName: "ServiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+        }
+    }
     
     var providers = [["Поставщики удобрений", "fertilizer"] , ["Поставщики средств защиты", "remedies"]]
 
@@ -18,21 +25,31 @@ class ProviderViewController: UIViewController {
         setNavigationBar()
     }
 }
-
-extension ProviderViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//MARK: UICollectionViewDataSourse methods
+extension ProviderViewController {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return providers.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProviderTableViewCell", for: indexPath) as! ProviderTableViewCell
-        cell.providerLbl.text = providers[indexPath.row][0]
-        cell.providerImg.image = UIImage(named: providers[indexPath.row][1])
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
+        
+        cell.titleLabel.text = providers[indexPath.row][0]
+        cell.imageView.image = UIImage(named: providers[indexPath.row][1])
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width = collectionView.frame.width - 10
+        width = width / 2
+        let size = CGSize(width: width, height: width)
+        return size
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
 }

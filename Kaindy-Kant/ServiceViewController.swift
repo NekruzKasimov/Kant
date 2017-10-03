@@ -10,7 +10,14 @@ import UIKit
 
 class ServiceViewController: UIViewController {
     
-    var services = [["Банки", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+            collectionView.register(UINib(nibName: "ServiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+        }
+    }
+    
+    var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +33,12 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
-        cell.serviceLbl.text = services[indexPath.row][0]
-        cell.serviceLbl.numberOfLines = 0
-        cell.serviceImg.image = UIImage(named: services[indexPath.row][1])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for:
+            indexPath) as! ServiceCollectionViewCell
+        
+        cell.titleLabel.text = services[indexPath.row][0]
+        cell.imageView.image = UIImage(named: services[indexPath.row][1])
+        
         return cell
     }
     
@@ -53,12 +62,21 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
         let vc = sb.instantiateViewController(withIdentifier: nameOfVC)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 extension ServiceViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (UIScreen.main.bounds.width / 2) - 13
-        return CGSize(width: width, height: width)
+        var width = collectionView.frame.width - 10
+        width = width / 2
+        let size = CGSize(width: width, height: width)
+        return size
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
 }

@@ -12,6 +12,13 @@ class RequestViewController: UIViewController {
     
     var requests = ["Оправка заявку по семенам" , "Заявка на очередь"]
 
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+            collectionView.register(UINib(nibName: "ServiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,22 +26,30 @@ class RequestViewController: UIViewController {
     }
 }
 
-extension RequestViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RequestViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return requests.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RequestCollectionViewCell", for: indexPath) as! RequestCollectionViewCell
-        cell.requestLbl.text = requests[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
+        
+        cell.titleLabel.text = requests[indexPath.row]
+//        cell.imageView.image = UIImage(named: providers[indexPath.row][1])
+        
         return cell
     }
-}
-
-extension RequestViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (UIScreen.main.bounds.width / 2) - 13
-        return CGSize(width: width, height: width)
+        var width = collectionView.frame.width - 10
+        width = width / 2
+        let size = CGSize(width: width, height: width)
+        return size
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

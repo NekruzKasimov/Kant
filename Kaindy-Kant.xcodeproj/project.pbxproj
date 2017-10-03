@@ -31,9 +31,6 @@
 		1F5893BF1F6156EB00FD2C5D /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893BE1F6156EB00FD2C5D /* Request.storyboard */; };
 		1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893C11F61583200FD2C5D /* Login.storyboard */; };
 		1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C31F61583E00FD2C5D /* LoginViewController.swift */; };
-		1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */; };
-		1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */; };
-		1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */; };
 		1F7291331F66638700111692 /* TechnologyInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7291321F66638700111692 /* TechnologyInfo.storyboard */; };
 		1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */; };
 		1F781B241F8247930060B616 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B231F8247930060B616 /* MapViewController.swift */; };
@@ -58,17 +55,19 @@
 		23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */; };
 		23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */; };
 		23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EE1F7B5BDA0062B4F9 /* HTTPStatusCode.swift */; };
+		23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A3651F828A0C0065C5E6 /* NewsCollectionViewCell.swift */; };
+		23A8A3681F828A0C0065C5E6 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8A3661F828A0C0065C5E6 /* NewsCollectionViewCell.xib */; };
+		23A8A36B1F83425B0065C5E6 /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A3691F83425B0065C5E6 /* ServiceCollectionViewCell.swift */; };
+		23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8A36A1F83425B0065C5E6 /* ServiceCollectionViewCell.xib */; };
 		23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
-		23CE2FD11F74CF080002CDD0 /* FirstRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */; };
 		23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */; };
 		23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */; };
 		23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */; };
 		23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */; };
 		23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */; };
 		23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */; };
-		23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */; };
 		3C0FAD08511FD6AF4A0CAC36 /* Pods_Kaindy_KantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CD8A4220560F7CCB81A6AC /* Pods_Kaindy_KantUITests.framework */; };
 		5A02A68FBB493D6827A4F890 /* Pods_Kaindy_KantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2392771FC0F0A3C7760DD6 /* Pods_Kaindy_KantTests.framework */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
@@ -128,9 +127,6 @@
 		1F5893BE1F6156EB00FD2C5D /* Request.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
 		1F5893C11F61583200FD2C5D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1F5893C31F61583E00FD2C5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
-		1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCollectionViewCell.swift; sourceTree = "<group>"; };
-		1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 		1F7291321F66638700111692 /* TechnologyInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TechnologyInfo.storyboard; sourceTree = "<group>"; };
 		1F7291341F66639F00111692 /* TechnologyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyInfoViewController.swift; sourceTree = "<group>"; };
 		1F781B231F8247930060B616 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -155,17 +151,19 @@
 		23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
 		23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		23A690EE1F7B5BDA0062B4F9 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		23A8A3651F828A0C0065C5E6 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		23A8A3661F828A0C0065C5E6 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		23A8A3691F83425B0065C5E6 /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		23A8A36A1F83425B0065C5E6 /* ServiceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCollectionViewCell.xib; sourceTree = "<group>"; };
 		23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionTableViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
-		23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorExcelViewController.storyboard; sourceTree = "<group>"; };
 		23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelViewController.swift; sourceTree = "<group>"; };
 		23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelTableViewCell.swift; sourceTree = "<group>"; };
 		23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelTotalTableViewCell.swift; sourceTree = "<group>"; };
 		23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
 		23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
-		23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		34E18E9CDE7FCD24268E1471 /* Pods-Kaindy-KantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.release.xcconfig"; sourceTree = "<group>"; };
 		3CE491DD05550BA76CEBE29F /* Pods-Kaindy-Kant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-Kant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.release.xcconfig"; sourceTree = "<group>"; };
 		4CB32D25E92A4582285E9236 /* Pods-Kaindy-KantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaindy-KantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,9 +344,9 @@
 		1F5893B11F61544D00FD2C5D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A36D1F83426A0065C5E6 /* Cells */,
 				1F5893B21F61546400FD2C5D /* Service.storyboard */,
 				1F5893B41F61547000FD2C5D /* ServiceViewController.swift */,
-				1F5893C51F615C1800FD2C5D /* ServiceCollectionViewCell.swift */,
 				1FE1376F1F6FB65800B7926B /* Detalied Service */,
 			);
 			name = Services;
@@ -359,7 +357,6 @@
 			children = (
 				1F5893B71F61561D00FD2C5D /* Provider.storyboard */,
 				1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */,
-				1F5893C91F6167F700FD2C5D /* ProviderTableViewCell.swift */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -369,7 +366,6 @@
 			children = (
 				1F5893BE1F6156EB00FD2C5D /* Request.storyboard */,
 				1F5893BC1F6156DF00FD2C5D /* RequestViewController.swift */,
-				1F5893C71F615D8700FD2C5D /* RequestCollectionViewCell.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -438,11 +434,11 @@
 			children = (
 				23FE2B0D1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift */,
 				23FE2B0F1F6FB01C006C47B7 /* WeatherCollectionViewCell.swift */,
-				23FE2B111F6FB029006C47B7 /* NewsCollectionViewCell.swift */,
 				23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */,
 				23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */,
-				23CE2FD01F74CF080002CDD0 /* FirstRowCollectionViewCell.swift */,
 				2388D21B1F74F83D0059B88C /* WeatherCell.swift */,
+				23A8A3651F828A0C0065C5E6 /* NewsCollectionViewCell.swift */,
+				23A8A3661F828A0C0065C5E6 /* NewsCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -463,6 +459,15 @@
 				2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */,
 			);
 			name = Registration;
+			sourceTree = "<group>";
+		};
+		23A8A36D1F83426A0065C5E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A3691F83425B0065C5E6 /* ServiceCollectionViewCell.swift */,
+				23A8A36A1F83425B0065C5E6 /* ServiceCollectionViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		23E1EDFF1F73A7550012C867 /* ProfileMapTableViewCell */ = {
@@ -646,6 +651,7 @@
 				1F0DF1AD1F6BCDDC00DE54F2 /* Приложение 5_Кант кызылчасын өстүрүү технологиясы боюнча кыскача таркатма.pdf in Resources */,
 				2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
+				23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */,
 				23205AF01F62391800D58F5B /* Profile.storyboard in Resources */,
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
@@ -654,6 +660,7 @@
 				23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */,
 				1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */,
 				1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */,
+				23A8A3681F828A0C0065C5E6 /* NewsCollectionViewCell.xib in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
@@ -686,9 +693,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -710,7 +721,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -784,7 +795,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -832,7 +843,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -844,9 +855,7 @@
 			files = (
 				23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */,
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
-				1F5893C81F615D8700FD2C5D /* RequestCollectionViewCell.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
-				1F5893C61F615C1800FD2C5D /* ServiceCollectionViewCell.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
@@ -855,14 +864,14 @@
 				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
-				1F5893CA1F6167F700FD2C5D /* ProviderTableViewCell.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
+				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
-				23CE2FD11F74CF080002CDD0 /* FirstRowCollectionViewCell.swift in Sources */,
 				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
+				23A8A36B1F83425B0065C5E6 /* ServiceCollectionViewCell.swift in Sources */,
 				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
@@ -878,7 +887,6 @@
 				23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */,
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
 				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
-				23FE2B121F6FB029006C47B7 /* NewsCollectionViewCell.swift in Sources */,
 				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
 				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,

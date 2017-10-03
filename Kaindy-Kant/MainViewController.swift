@@ -9,18 +9,15 @@
 import UIKit
 
 enum MainVCSections : Int {
-    case first = 0
-    case currency = 1
-    case news = 2
+    case currency = 0
+    case services = 1
     
     func getItemsCount() -> Int {
         switch self {
-        case .first:
-            return 3
         case .currency:
             return 2
-        case .news:
-            return 5
+        case .services:
+            return 3
         }
     }
 }
@@ -28,10 +25,15 @@ enum MainVCSections : Int {
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    let firstRowTitles = ["Банки", "Технологии", "Поставщики"]
-    
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+            collectionView.register(UINib(nibName: "ServiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ServiceCollectionViewCell")
+        }
+    }
+
+    var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
     var weather: Weather?
     
     override func viewDidLoad() {
@@ -49,14 +51,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var degree = 0
     var status = ""
-    
 }
 
 //MARK: UICollectionViewDataSourse, Delegate, FlowDelegate functions
 
 extension MainViewController {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,10 +67,6 @@ extension MainViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let secType = MainVCSections(rawValue: indexPath.section)!
         switch secType {
-        case .first:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FirstRowCollectionViewCell", for: indexPath) as! FirstRowCollectionViewCell
-            cell.titleLabel.text = firstRowTitles[indexPath.row]
-            return cell
         case .currency:
             if indexPath.item == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
@@ -80,8 +77,12 @@ extension MainViewController {
                 cell.weatherStatusLabel.text = status
                 return cell
             }
-        case .news:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
+        case .services:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
+            
+            cell.titleLabel.text = services[indexPath.row][0]
+            cell.imageView.image = UIImage(named: services[indexPath.row][1])
+            
             return cell
         }
     }
@@ -89,13 +90,9 @@ extension MainViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let secType = MainVCSections(rawValue: indexPath.section)!
         var size = CGSize()
-        var height = CGFloat(200)
+        let height = CGFloat(200)
         switch secType {
-        case .first:
-            height = 60
-            let width = (collectionView.frame.width - 40) / 3
-            size = CGSize(width: width, height: height)
-        case .currency:
+         case .currency:
             if indexPath.item == 0 {
                 var width = collectionView.frame.width - 30
                 width = width / 5 * 3
@@ -105,10 +102,12 @@ extension MainViewController {
                 width = width / 5 * 2
                 size = CGSize(width: width, height: height)
             }
-        case .news:
-            let width = collectionView.frame.width - 20
+        case .services:
+            var width = collectionView.frame.width - 42
+            width = width / 2
             size = CGSize(width: width, height: height)
         }
+        
         return size
     }
     
@@ -116,9 +115,9 @@ extension MainViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var left = CGFloat(0)
         var right = CGFloat(0)
-        if section == MainVCSections.first.rawValue  {
-            right = 10
-            left = 10
+        if section == MainVCSections.services.rawValue  {
+            right = 14
+            left = 14
         } else if section == MainVCSections.currency.rawValue {
             left = 10
         }
@@ -130,8 +129,6 @@ extension MainViewController {
         let secType = MainVCSections(rawValue: indexPath.section)!
         
         switch secType {
-        case .first:
-            break
         case .currency:
             if indexPath.item == 0 {
                 break
@@ -141,7 +138,7 @@ extension MainViewController {
                 vc.weather = self.weather
                 self.navigationController?.show(vc, sender: self)
             }
-        case .news:
+        case .services:
             break
         }
     }
