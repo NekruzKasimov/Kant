@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-316" y="278"/>
         </scene>
-        <!--Главное меню-->
+        <!--Main View Controller-->
         <scene sceneID="r1V-s5-COj">
             <objects>
                 <viewController id="BsC-sb-a31" customClass="MainViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
@@ -357,7 +357,7 @@
                             <constraint firstAttribute="trailing" secondItem="umC-Zg-xD5" secondAttribute="trailing" id="Zrf-Bq-Xow"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Главное меню" id="CPm-vH-vHv">
+                    <navigationItem key="navigationItem" id="CPm-vH-vHv">
                         <barButtonItem key="leftBarButtonItem" image="menu" style="plain" id="ZDm-KR-tc0"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

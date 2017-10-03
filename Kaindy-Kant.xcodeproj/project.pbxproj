@@ -13,6 +13,8 @@
 		1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0DF1AA1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf */; };
 		1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */; };
 		1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */; };
+		1F3FE0CE1F835C3A005AFE10 /* BankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FE0CC1F835C3A005AFE10 /* BankTableViewCell.swift */; };
+		1F3FE0CF1F835C3A005AFE10 /* BankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3FE0CD1F835C3A005AFE10 /* BankTableViewCell.xib */; };
 		1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893701F614DB600FD2C5D /* AppDelegate.swift */; };
 		1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893741F614DB600FD2C5D /* Main.storyboard */; };
 		1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893771F614DB600FD2C5D /* Assets.xcassets */; };
@@ -36,6 +38,10 @@
 		1F781B241F8247930060B616 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B231F8247930060B616 /* MapViewController.swift */; };
 		1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F781B271F824A1E0060B616 /* AboutAppViewController.swift */; };
 		1F781B2A1F824AD90060B616 /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F781B291F824AD90060B616 /* AboutApp.storyboard */; };
+		1FC61FCE1F83BC75000BE56A /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC61FCD1F83BC75000BE56A /* News.storyboard */; };
+		1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */; };
+		1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */; };
+		1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */; };
 		1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */; };
 		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
 		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
@@ -101,6 +107,8 @@
 		1F0DF1AA1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf"; sourceTree = "<group>"; };
 		1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Sugar Beet VAC_Development Concept-2_MD.pdf"; sourceTree = "<group>"; };
 		1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		1F3FE0CC1F835C3A005AFE10 /* BankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTableViewCell.swift; sourceTree = "<group>"; };
+		1F3FE0CD1F835C3A005AFE10 /* BankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankTableViewCell.xib; sourceTree = "<group>"; };
 		1F58936D1F614DB600FD2C5D /* Kaindy-Kant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kaindy-Kant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5893701F614DB600FD2C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F5893751F614DB600FD2C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +140,10 @@
 		1F781B231F8247930060B616 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1F781B271F824A1E0060B616 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		1F781B291F824AD90060B616 /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
+		1FC61FCD1F83BC75000BE56A /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankServiceViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
 		1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBankViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +244,15 @@
 			name = Docs;
 			sourceTree = "<group>";
 		};
+		1F3FE0D01F835C3F005AFE10 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FE0CC1F835C3A005AFE10 /* BankTableViewCell.swift */,
+				1F3FE0CD1F835C3A005AFE10 /* BankTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		1F5893641F614DB600FD2C5D = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +285,7 @@
 				23205AE61F62375D00D58F5B /* Profile */,
 				1F58939E1F614EA200FD2C5D /* MainPage */,
 				1F5893A71F6150E600FD2C5D /* MenuPage */,
+				1FC61FCC1F83BC57000BE56A /* News */,
 				1F5893B11F61544D00FD2C5D /* Services */,
 				1F5893B61F61560800FD2C5D /* Providers */,
 				1F5893BB1F6156C800FD2C5D /* Requests */,
@@ -406,9 +428,29 @@
 			name = AboutApp;
 			sourceTree = "<group>";
 		};
+		1FC61FCC1F83BC57000BE56A /* News */ = {
+			isa = PBXGroup;
+			children = (
+				1FC61FD11F83BF44000BE56A /* Cells */,
+				1FC61FCD1F83BC75000BE56A /* News.storyboard */,
+				1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		1FC61FD11F83BF44000BE56A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */,
+				1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		1FE1376F1F6FB65800B7926B /* Detalied Service */ = {
 			isa = PBXGroup;
 			children = (
+				1F3FE0D01F835C3F005AFE10 /* Cells */,
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
 				1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */,
 				1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */,
@@ -654,6 +696,7 @@
 				23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */,
 				23205AF01F62391800D58F5B /* Profile.storyboard in Resources */,
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
+				1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
 				1F7291331F66638700111692 /* TechnologyInfo.storyboard in Resources */,
 				1F5893BF1F6156EB00FD2C5D /* Request.storyboard in Resources */,
@@ -664,7 +707,9 @@
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
+				1FC61FCE1F83BC75000BE56A /* News.storyboard in Resources */,
 				1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */,
+				1F3FE0CF1F835C3A005AFE10 /* BankTableViewCell.xib in Resources */,
 				84FBB1001F74EE2C00C366B1 /* ProfileMapTableViewCell.xib in Resources */,
 				23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */,
 			);
@@ -858,6 +903,7 @@
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
+				1F3FE0CE1F835C3A005AFE10 /* BankTableViewCell.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				23205AEA1F6237A700D58F5B /* GlobalFunctions.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
@@ -886,6 +932,8 @@
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
 				23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */,
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
+				1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */,
+				1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */,
 				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
 				23205AF21F62398400D58F5B /* LoadingIndicatorButton.swift in Sources */,
 				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
