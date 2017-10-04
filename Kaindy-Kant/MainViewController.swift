@@ -56,6 +56,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //MARK: UICollectionViewDataSourse, Delegate, FlowDelegate functions
 
 extension MainViewController {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -111,7 +112,6 @@ extension MainViewController {
         return size
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var left = CGFloat(0)
         var right = CGFloat(0)
@@ -123,7 +123,6 @@ extension MainViewController {
         }
         return UIEdgeInsets(top: 0, left: left, bottom: 0, right: right)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let secType = MainVCSections(rawValue: indexPath.section)!
@@ -164,6 +163,5 @@ extension MainViewController {
             }
         }
         collectionView.reloadData()
-        
     }
 }
