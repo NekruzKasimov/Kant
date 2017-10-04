@@ -19,6 +19,7 @@ class NewsTableViewCell: UITableViewCell {
             newsView.layer.shadowOpacity = 0.8
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
