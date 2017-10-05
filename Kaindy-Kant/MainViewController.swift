@@ -133,8 +133,8 @@ extension MainViewController {
                 break
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
-                vc.weather = self.weather
+                let vc = storyboard.instantiateViewController(withIdentifier: "Weather_ViewController") as! Weather_ViewController
+//                vc.weather = self.weather
                 self.navigationController?.show(vc, sender: self)
             }
         case .services:

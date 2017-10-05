@@ -78,6 +78,7 @@
 		84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */; };
 		84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */; };
 		84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */; };
+		84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AED1F865FD700BA935F /* Weather_ViewController.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
@@ -186,6 +187,7 @@
 		84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResouceViewController.swift; sourceTree = "<group>"; };
 		84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResourceProtectionViewController.swift; sourceTree = "<group>"; };
 		84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		84049AED1F865FD700BA935F /* Weather_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_ViewController.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				1F5893741F614DB600FD2C5D /* Main.storyboard */,
 				1F58939F1F614ED700FD2C5D /* MainViewController.swift */,
 				2388D2171F74E09E0059B88C /* WeatherViewController.swift */,
+				84049AED1F865FD700BA935F /* Weather_ViewController.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
+				84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
