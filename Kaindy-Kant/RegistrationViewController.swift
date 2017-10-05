@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
-import FontAwesome_swift
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
-    
+
     @IBOutlet weak var birthdayTF: UITextField! {
         didSet {
             birthdayTF.delegate = self
