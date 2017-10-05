@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contact Of Resources View Controller-->
+        <scene sceneID="CTS-sV-Fsa">
+            <objects>
+                <viewController storyboardIdentifier="ContactOfResourcesViewController" id="kEk-KX-iFo" customClass="ContactOfResourcesViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="El1-y7-Bgs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XJ-Ln-ftw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kEk-KX-iFo" id="i71-bn-Rc5"/>
+                                    <outlet property="delegate" destination="kEk-KX-iFo" id="zuJ-lG-2tq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2XJ-Ln-ftw" firstAttribute="trailing" secondItem="bav-4q-B3i" secondAttribute="trailing" id="C6g-sm-zhf"/>
+                            <constraint firstItem="2XJ-Ln-ftw" firstAttribute="bottom" secondItem="bav-4q-B3i" secondAttribute="bottom" id="Rny-sO-zIk"/>
+                            <constraint firstItem="2XJ-Ln-ftw" firstAttribute="leading" secondItem="bav-4q-B3i" secondAttribute="leading" id="m29-Pw-S7k"/>
+                            <constraint firstItem="2XJ-Ln-ftw" firstAttribute="top" secondItem="El1-y7-Bgs" secondAttribute="top" id="ngy-M5-SAK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bav-4q-B3i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpV-r8-hdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.6" y="9.4452773613193415"/>
+        </scene>
+        <!--Detail Contact Of Resouce View Controller-->
+        <scene sceneID="30d-HV-Po0">
+            <objects>
+                <viewController storyboardIdentifier="DetailContactOfResouceViewController" id="XP8-QE-enz" customClass="DetailContactOfResouceViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ckW-77-bU6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Z97-09-10a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agI-rh-zvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="699"/>
+        </scene>
+        <!--Detail Contact Of Resource Protection View Controller-->
+        <scene sceneID="ZNm-zw-7tt">
+            <objects>
+                <viewController storyboardIdentifier="DetailContactOfResourceProtectionViewController" id="mKX-oE-Uiq" customClass="DetailContactOfResourceProtectionViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="adT-W6-2yX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="epA-AK-wxj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zj-VS-Xus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="699"/>
+        </scene>
+        <!--Contact Of Resource Protection View Controller-->
+        <scene sceneID="qNM-Jv-Kdv">
+            <objects>
+                <viewController storyboardIdentifier="ContactOfResourceProtectionViewController" id="1GB-n1-YUC" customClass="ContactOfResourceProtectionViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ra-u2-w9p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HFU-qe-IeH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1GB-n1-YUC" id="J3x-pl-2Zg"/>
+                                    <outlet property="delegate" destination="1GB-n1-YUC" id="sr7-A6-jej"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HFU-qe-IeH" firstAttribute="bottom" secondItem="nJD-ZT-nyx" secondAttribute="bottom" id="89T-eP-KOp"/>
+                            <constraint firstItem="HFU-qe-IeH" firstAttribute="leading" secondItem="nJD-ZT-nyx" secondAttribute="leading" id="KOr-di-Sh8"/>
+                            <constraint firstItem="HFU-qe-IeH" firstAttribute="trailing" secondItem="nJD-ZT-nyx" secondAttribute="trailing" id="Tx6-Bv-IJn"/>
+                            <constraint firstItem="HFU-qe-IeH" firstAttribute="top" secondItem="2ra-u2-w9p" secondAttribute="top" id="w7w-B5-4aQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nJD-ZT-nyx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5LN-vI-U0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.79999999999995" y="8.5457271364317844"/>
+        </scene>
+    </scenes>
+</document>
