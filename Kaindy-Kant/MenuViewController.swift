@@ -10,9 +10,9 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var menu = ["Главная", "Услуги" , "Поставщики" , "Заявки" , "Технология возведения свеклы" , "О приложении" , "Выход", "Excel"]
-    var navigations = ["MainNav" , "ServiceNav" , "ProviderNav" , "RequestNav" , "TechnologyInfoNav" , "AboutAppNav" , "LoginNav", "CalcNav"]
-    var sbs = ["Main" , "Service", "Provider" , "Request" , "TechnologyInfo" , "AboutApp" , "Login", "CalculatorExcelViewController"]
+    var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "Заявки" , "Технология возведения свеклы" , "О приложении" , "Выход", "Excel"]
+    var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "RequestNav" , "TechnologyInfoNav" , "AboutAppNav" , "LoginNav", "CalcNav"]
+    var sbs = ["Main" ,  "News" , "Service" , "Provider" , "Request" , "TechnologyInfo" , "AboutApp" , "Login", "CalculatorExcelViewController"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
