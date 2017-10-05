@@ -11,6 +11,8 @@ target 'Kaindy-Kant' do
  pod 'Alamofire', '~> 4.4'
  pod 'GoogleMaps'
  pod 'GooglePlaces'
+ pod 'SJSegmentedScrollView'
+ pod 'ScrollableSegmentedControl'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do
