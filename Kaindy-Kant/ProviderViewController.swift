@@ -51,5 +51,23 @@ extension ProviderViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "DetailProvider", bundle: nil)
+        var nameOfVC: String!
+        
+        switch indexPath.row {
+        case 0:
+            nameOfVC = "ContactOfResourcesViewController"
+            break
+        case 1:
+            nameOfVC = "ContactOfResourceProtectionViewController"
+            break
+        default:
+            break
+        }
+        
+        let vc = sb.instantiateViewController(withIdentifier: nameOfVC)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
