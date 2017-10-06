@@ -219,6 +219,9 @@
                                                                 <integer key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="saveButton:" destination="6KM-R1-rU5" eventType="touchUpInside" id="jmu-oL-FjY"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UI6-9v-lQs">
                                                         <rect key="frame" x="16" y="780.5" width="327" height="17"/>
@@ -345,6 +348,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deg-We-rRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.19999999999999" y="-224.88755622188907"/>
+        </scene>
+        <!--Language View Controller-->
+        <scene sceneID="MYR-t6-7zX">
+            <objects>
+                <viewController storyboardIdentifier="LanguageViewController" id="epu-no-uNS" customClass="LanguageViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Ct-Bi-Bkg"/>
+                        <viewControllerLayoutGuide type="bottom" id="EDE-EU-K4v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Ke-OB-BFW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pu6-1J-0GD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите Язык" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAR-KT-3jP">
+                                        <rect key="frame" x="8" y="180" width="359" height="26.5"/>
+                                        <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="0.49509803921568629" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RE-Z4-Ud5">
+                                        <rect key="frame" x="8" y="222.5" width="174" height="60"/>
+                                        <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="97J-Mw-H0f"/>
+                                            <constraint firstAttribute="width" constant="174" id="GC9-n9-0EH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <state key="normal" title="Русский">
+                                            <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="russianLanguageButton:" destination="epu-no-uNS" eventType="touchUpInside" id="emE-4X-es9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1un-kW-4jT">
+                                        <rect key="frame" x="193" y="222.5" width="174" height="60"/>
+                                        <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="174" id="bTC-BL-Hdm"/>
+                                            <constraint firstAttribute="height" constant="60" id="nWG-SO-VmM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <state key="normal" title="Кыргызча">
+                                            <color key="titleColor" red="0.99616628885269165" green="0.98819214105606079" blue="0.9921073317527771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="kyrgyzchaLanguageButton:" destination="epu-no-uNS" eventType="touchUpInside" id="VnM-aq-5i8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1un-kW-4jT" secondAttribute="trailing" constant="8" id="3XA-Aj-Msb"/>
+                                    <constraint firstItem="1un-kW-4jT" firstAttribute="top" secondItem="8RE-Z4-Ud5" secondAttribute="top" id="Dpd-OX-63X"/>
+                                    <constraint firstItem="8RE-Z4-Ud5" firstAttribute="top" secondItem="kAR-KT-3jP" secondAttribute="bottom" constant="16" id="Vb4-KJ-jdY"/>
+                                    <constraint firstItem="8RE-Z4-Ud5" firstAttribute="leading" secondItem="Pu6-1J-0GD" secondAttribute="leading" constant="8" id="XaL-Sh-Z5n"/>
+                                    <constraint firstItem="kAR-KT-3jP" firstAttribute="leading" secondItem="Pu6-1J-0GD" secondAttribute="leading" constant="8" id="Yut-AE-6MU"/>
+                                    <constraint firstItem="kAR-KT-3jP" firstAttribute="top" secondItem="Pu6-1J-0GD" secondAttribute="top" constant="180" id="ZLH-8t-DcL"/>
+                                    <constraint firstAttribute="trailing" secondItem="kAR-KT-3jP" secondAttribute="trailing" constant="8" id="hSM-JA-CUi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EDE-EU-K4v" firstAttribute="top" secondItem="Pu6-1J-0GD" secondAttribute="bottom" id="Bgy-ct-acL"/>
+                            <constraint firstItem="Pu6-1J-0GD" firstAttribute="top" secondItem="0Ke-OB-BFW" secondAttribute="top" id="PkK-Ja-HFr"/>
+                            <constraint firstItem="Pu6-1J-0GD" firstAttribute="leading" secondItem="0Ke-OB-BFW" secondAttribute="leading" id="XBg-Qv-ntG"/>
+                            <constraint firstAttribute="trailing" secondItem="Pu6-1J-0GD" secondAttribute="trailing" id="lem-TN-VvM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="languageView" destination="Pu6-1J-0GD" id="Ss1-p7-X9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FME-sd-M3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="-420.53973013493254"/>
         </scene>
     </scenes>
     <resources>

@@ -4,13 +4,13 @@
 target 'Kaindy-Kant' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
- pod 'SkyFloatingLabelTextField'
- pod 'FontAwesome.swift'
  pod 'IQKeyboardManager'
  pod 'SwiftyJSON'
  pod 'Alamofire', '~> 4.4'
  pod 'GoogleMaps'
  pod 'GooglePlaces'
+ pod 'SJSegmentedScrollView'
+ pod 'ScrollableSegmentedControl'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do

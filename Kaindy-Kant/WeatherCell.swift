@@ -14,4 +14,5 @@ class WeatherCell: UICollectionViewCell {
     
     @IBOutlet weak var weekdayLabel: UILabel!
     
+    @IBOutlet weak var nightWeatherDegreeLabel: UILabel!
 }

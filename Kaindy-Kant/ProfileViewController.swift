@@ -7,13 +7,17 @@
 //
 
 import UIKit
-
+//import BetterSegmentedControl
+//import PageMenu
+import ScrollableSegmentedControl
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
-    
-//    @IBOutlet weak var scrollView: UIScrollView!
-    
+   
+    @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    var yearTitle = "2010"
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
 //            imageView.layer.cornerRadius = imageView.frame.size.width/2
@@ -24,7 +28,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 //            imageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
-    
+    @IBOutlet weak var myFieldsLable: UILabel!
+
     @IBOutlet weak var birthdayTF: UITextField! {
         didSet {
             birthdayTF.delegate = self
@@ -58,8 +63,30 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 //        configureRefreshControl()
 //        addTapToScrollView()
         setNavigationBar()
+        segmentedControl.selectedSegmentIndex = 0
+        addScrollableSegmentControl()
+        print(myFieldsLable.frame.origin.y)
+        
     }
-    
+    func addScrollableSegmentControl(){
+        segmentedControl.segmentStyle = .textOnly
+        for index in 0..<10 {
+            segmentedControl.insertSegment(withTitle: "201\(index)", at: index)
+        }
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.underlineSelected = true
+        segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
+        // change some colors
+        segmentedControl.segmentContentColor = UIColor.black
+        segmentedControl.selectedSegmentContentColor = UIColor.black
+        segmentedControl.backgroundColor = UIColor.white
+    }
+    func segmentSelected(sender:ScrollableSegmentedControl) {
+        //segmentedControl
+        yearTitle = "201\(sender.selectedSegmentIndex)"
+        tableView.reloadData()
+        print("Segment at index \(sender.selectedSegmentIndex)  selected")
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureTableView()
@@ -200,6 +227,7 @@ extension ProfileViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
+        cell.yearLabel.text = yearTitle
         cell.selectionStyle = .none
         return cell
     }

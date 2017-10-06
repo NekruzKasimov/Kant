@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
-import FontAwesome_swift
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
-    
+
     @IBOutlet weak var birthdayTF: UITextField! {
         didSet {
             birthdayTF.delegate = self
@@ -24,7 +22,12 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.topItem?.title = ""
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
     }
-    
+    @IBAction func saveButton(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
+        self.present(nextViewController!, animated:true, completion:nil)
+    }
 }
 
 // MARK: Helper functions
