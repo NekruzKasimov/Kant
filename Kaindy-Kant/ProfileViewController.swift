@@ -118,7 +118,7 @@ extension ProfileViewController {
     func configureTableView() {
         tableView.register(ProfileMapTableViewCell.self, forCellReuseIdentifier: "ProfileMapTableViewCell" )
         tableView.register(UINib(nibName: "ProfileMapTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMapTableViewCell")
-        tableView.estimatedRowHeight        = 300
+        tableView.estimatedRowHeight        = 320
         tableView.rowHeight                 = UITableViewAutomaticDimension
         tableView.tableFooterView           = UIView()
         tableViewHeight.constant            = tableView.contentSize.height
@@ -202,5 +202,15 @@ extension ProfileViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 310
     }
 }
