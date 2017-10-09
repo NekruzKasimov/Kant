@@ -48,10 +48,12 @@ class ServerManager: HTTPRequestManager  {
 
     }
     
-//    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void)
-//    {
-//        self.get(api: "", completion: <#T##HTTPRequestManager.SuccessHandler##HTTPRequestManager.SuccessHandler##(JSON) -> Void#>, error: <#T##HTTPRequestManager.FailureHandler##HTTPRequestManager.FailureHandler##(String) -> Void#>)
-//    }
+    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)/", serverType: .kant, completion: { (succes) in
+            completion(Rossahar(json: succes))
+        }) { (error) in
+        }
+    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

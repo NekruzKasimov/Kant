@@ -24,6 +24,9 @@ enum NewsSections: Int {
 
 class NewsViewController: UIViewController {
 
+    @IBOutlet weak var mySCOutlet: UISegmentedControl!
+    //var newRossahar: Rossahar?
+    let newRossahar = ServerManager.shared
     @IBOutlet weak var newsTableView: UITableView! {
         didSet {
             newsTableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "NewsTableViewCell")
@@ -36,6 +39,18 @@ class NewsViewController: UIViewController {
         setNavigationBar()
     
     }
+   
+    @IBAction func mySegmentedControllAction(_ sender: Any) {
+        switch mySCOutlet.selectedSegmentIndex {
+        case 0:
+
+        case 1:
+       //     afasdfa
+        default:
+            break;  <#code#>
+        }
+    }
+    
 }
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {

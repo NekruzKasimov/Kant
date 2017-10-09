@@ -47,7 +47,6 @@
 		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
 		232E07201F86323100D117CE /* DetailedSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */; };
-		232E07221F86386400D117CE /* DetailedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E07211F86386400D117CE /* DetailedSceneViewController.swift */; };
 		235E28521F7A8B4A00378759 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E28511F7A8B4A00378759 /* Expenses.swift */; };
 		236BD0621F8B293F006077B0 /* FinancialOffices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD0611F8B293F006077B0 /* FinancialOffices.swift */; };
 		236BD0641F8B39C4006077B0 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD0631F8B39C4006077B0 /* HeaderViewController.swift */; };
@@ -165,7 +164,6 @@
 		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSceneTableViewCell.swift; sourceTree = "<group>"; };
-		232E07211F86386400D117CE /* DetailedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSceneViewController.swift; sourceTree = "<group>"; };
 		235E28511F7A8B4A00378759 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		236BD0611F8B293F006077B0 /* FinancialOffices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOffices.swift; sourceTree = "<group>"; };
 		236BD0631F8B39C4006077B0 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
@@ -476,7 +474,6 @@
 			children = (
 				232E071E1F86320E00D117CE /* Cells */,
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
-				232E07211F86386400D117CE /* DetailedSceneViewController.swift */,
 				236BD0631F8B39C4006077B0 /* HeaderViewController.swift */,
 				236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */,
 			);
@@ -827,7 +824,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -905,7 +902,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -953,7 +950,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -996,7 +993,6 @@
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
-				232E07221F86386400D117CE /* DetailedSceneViewController.swift in Sources */,
 				8433F2761F8B523400BA712B /* Domestic.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
