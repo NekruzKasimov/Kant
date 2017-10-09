@@ -952,6 +952,7 @@
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
+				8433F2761F8B523400BA712B /* Domestic.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				8423B9991F8B54780061C702 /* Constants.swift in Sources */,
@@ -968,6 +969,7 @@
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
 				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
+				8433F2781F8B550400BA712B /* Result.swift in Sources */,
 				1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,
 			);

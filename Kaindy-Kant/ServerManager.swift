@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class ServerManager: HTTPRequestManager  {
-
+    
+    var _rossahar: Rossahar?
     class var shared: ServerManager {
         struct Static {
             static let instance = ServerManager()
