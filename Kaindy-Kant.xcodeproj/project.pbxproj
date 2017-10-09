@@ -151,9 +151,6 @@
 		1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
-		1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankServiceViewController.swift; sourceTree = "<group>"; };
-		1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
-		1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBankViewController.swift; sourceTree = "<group>"; };
 		1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailedService.storyboard; sourceTree = "<group>"; };
 		2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelLogicController.swift; sourceTree = "<group>"; };
 		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
