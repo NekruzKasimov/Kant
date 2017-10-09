@@ -5,7 +5,6 @@
 //  Created by ITLabAdmin on 7/19/17.
 //  Copyright © 2017 NeoBis. All rights reserved.
 //
-
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -21,8 +20,8 @@ class HTTPRequestManager {
     typealias SuccessHandler = (JSON) -> Void
     typealias FailureHandler = (String)-> Void
     typealias Parameter = [String: Any]?
-    let url = "http://139.59.22.220:8000/api"
-    let weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222"
+    
+    //let url = "http://rooms.auca.kg/"
     
     private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         if !isConnectedToNetwork() {
@@ -32,16 +31,17 @@ class HTTPRequestManager {
         var apiUrl = ""
         var tempParam = parameters
         
-        let currentUrl = api.contains("APPID") ? weatherUrl : url
-        
-        let APIaddress = "\(currentUrl)\(api)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print(APIaddress)
-        
-        let header: HTTPHeaders = [:]
-
-        
-        Alamofire.request(APIaddress!, method: method, parameters: parameters, encoding: JSONEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
-            
+        switch serverType {
+        case .whether:
+            apiUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222&APPID=079587841f01c6b277a82c1c7788a6c3"
+            tempParam = nil
+        case .kant:
+            apiUrl = ApiAddressKant(endpoint: endpoint).getURLString()
+            tempParam = nil
+        }
+        var header: HTTPHeaders = [:]
+        print(apiUrl)
+        Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: URLEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
             guard response.response != nil else {
                 error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)
                 return
@@ -132,4 +132,3 @@ class HTTPRequestManager {
     
     
 }
-

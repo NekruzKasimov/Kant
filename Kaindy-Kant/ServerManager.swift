@@ -21,26 +21,44 @@ class ServerManager: HTTPRequestManager  {
     }
     
     func getWeather(_ completion: @escaping (Weather)-> Void, error: @escaping (String)-> Void) {
-        self.get(api: "&APPID=079587841f01c6b277a82c1c7788a6c3", completion: { (json) in
-                    let obj = Weather(json: json)
-                    completion(obj)
-                }, error: error)
+        print("here")
+        self.get(endpoint: "", serverType: .whether, completion: { (json) in
+            let obj = Weather(json: json)
+            completion(obj)
+        }, error: error)
     }
+    
+    
+    
 //    func signUp(category: Category, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
 //        //let param = category.toDict()
     
     func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
-        self.get(api: "/fin-office", completion: { (json) in
-            let obj = FinancialOffices(json: json)
-            completion(obj)
-        }, error: error)
+        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
+            completion(FinancialOffices(json: succes))
+        }) { (error) in
+        }
     }
-    
+
     func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
-        self.get(api: "/fin-office/\(id)", completion: { (json) in
-            let obj = DetailedFinOffice(json: json)
-            completion(obj)
-        }, error: error)
+        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
+            completion(DetailedFinOffice(json: succes))
+        }) { (error) in
+        }
+
     }
     
+//    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void)
+//    {
+//        self.get(api: "", completion: <#T##HTTPRequestManager.SuccessHandler##HTTPRequestManager.SuccessHandler##(JSON) -> Void#>, error: <#T##HTTPRequestManager.FailureHandler##HTTPRequestManager.FailureHandler##(String) -> Void#>)
+//    }
+//    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
+//
+//        post(api: "addSubCategories",
+//             parameters: param, completion: {(json) in
+//                self._categories = nil
+//                completion()
+//        }
+//            , error: error)
+//    }
 }

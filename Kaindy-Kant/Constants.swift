@@ -20,6 +20,7 @@ struct Constants {
             static let Token_auth = "api/token-auth"
             static let Login = "user/login"
             static let SignUp = "api/user/signup"
+            static let FinOffice = "api/fin-office"
         }
     }
     
