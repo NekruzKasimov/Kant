@@ -27,9 +27,13 @@ class ServerManager: HTTPRequestManager  {
             completion(obj)
         }, error: error)
     }
-//    func signUp(category: Category, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
-//        //let param = category.toDict()
-    
+    func signUp(newUser: NewUser, completion: @escaping (JSON)-> Void,error: @escaping (String)-> Void) {
+        //let param = category.toDict()
+        self.post(endpoint: Constants.Network.EndPoints.SignUp, serverType: .kant, parameters: newUser.toDictionary(), completion: { (json) in
+            //let message = json[""]
+            completion(json)
+        }, error: error)
+    }
 //    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void)
 //    {
 //        self.get(api: "", completion: <#T##HTTPRequestManager.SuccessHandler##HTTPRequestManager.SuccessHandler##(JSON) -> Void#>, error: <#T##HTTPRequestManager.FailureHandler##HTTPRequestManager.FailureHandler##(String) -> Void#>)
