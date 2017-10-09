@@ -16,8 +16,8 @@ class HTTPRequestManager {
     typealias SuccessHandler = (JSON) -> Void
     typealias FailureHandler = (String)-> Void
     typealias Parameter = [String: Any]?
-    
-    let url = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222"
+    let url = "http://139.59.22.220:8000/api"
+    let weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222"
     
     private func request(method: HTTPMethod, api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         
@@ -26,7 +26,9 @@ class HTTPRequestManager {
             return
         }
         
-        let APIaddress = "\(url)\(api)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let currentUrl = api.contains("APPID") ? weatherUrl : url
+        
+        let APIaddress = "\(currentUrl)\(api)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         print(APIaddress)
         
         let header: HTTPHeaders = [:]

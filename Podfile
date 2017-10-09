@@ -11,6 +11,7 @@ target 'Kaindy-Kant' do
  pod 'GooglePlaces'
  pod 'SJSegmentedScrollView'
  pod 'ScrollableSegmentedControl'
+ pod 'ImageSlideshow/Kingfisher'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do

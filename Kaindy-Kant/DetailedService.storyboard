@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -2043,10 +2044,53 @@ Cg
             </objects>
             <point key="canvasLocation" x="84" y="-846"/>
         </scene>
-        <!--Bank Service View Controller-->
+        <!--Header View Controller-->
+        <scene sceneID="yxl-pB-Cn7">
+            <objects>
+                <viewController storyboardIdentifier="HeaderViewController" id="18J-Ci-Hci" customClass="HeaderViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gJp-5I-jKr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hxz-AL-5X1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2YH-QJ-Xov">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-YB-czL" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="0.0" y="60" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="raS-CA-QNO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rH-LM-mgT">
+                                <rect key="frame" x="12" y="12" width="351" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Plb-YB-czL" firstAttribute="leading" secondItem="2YH-QJ-Xov" secondAttribute="leading" id="Boh-gB-iA7"/>
+                            <constraint firstItem="Plb-YB-czL" firstAttribute="top" secondItem="0rH-LM-mgT" secondAttribute="bottom" constant="12" id="KAs-tg-sAn"/>
+                            <constraint firstItem="Hxz-AL-5X1" firstAttribute="top" secondItem="Plb-YB-czL" secondAttribute="bottom" id="Nkv-5i-s4y"/>
+                            <constraint firstAttribute="trailing" secondItem="Plb-YB-czL" secondAttribute="trailing" id="eGZ-8a-Qgk"/>
+                            <constraint firstAttribute="trailing" secondItem="0rH-LM-mgT" secondAttribute="trailing" constant="12" id="kDc-JA-The"/>
+                            <constraint firstItem="0rH-LM-mgT" firstAttribute="top" secondItem="gJp-5I-jKr" secondAttribute="bottom" constant="12" id="qsq-VU-hFg"/>
+                            <constraint firstItem="0rH-LM-mgT" firstAttribute="leading" secondItem="2YH-QJ-Xov" secondAttribute="leading" constant="12" id="rcP-mn-aIA"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="260"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PDw-RN-TEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="-1356"/>
+        </scene>
+        <!--Detailed Scene View Controller-->
         <scene sceneID="tVq-aa-a4B">
             <objects>
-                <viewController storyboardIdentifier="BankServiceViewController" id="WDY-RX-YOV" customClass="BankServiceViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedSceneViewController" id="WDY-RX-YOV" customClass="DetailedSceneViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="75J-8l-rHs"/>
                         <viewControllerLayoutGuide type="bottom" id="YAJ-zg-q5R"/>
@@ -2055,12 +2099,49 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ma5-c3-pd1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ma5-c3-pd1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailedSceneTableViewCell" rowHeight="200" id="Sos-Cr-Sxu" customClass="DetailedSceneTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sos-Cr-Sxu" id="IbZ-4U-V0b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOD-ON-nND">
+                                                    <rect key="frame" x="20" y="112" width="255" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkZ-kD-4BC">
+                                                    <rect key="frame" x="287" y="46" width="80" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="CbK-lk-lul"/>
+                                                        <constraint firstAttribute="width" constant="80" id="rNQ-yv-YRS"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fkZ-kD-4BC" secondAttribute="trailing" constant="8" id="A2k-S5-ye0"/>
+                                                <constraint firstItem="fkZ-kD-4BC" firstAttribute="top" secondItem="IbZ-4U-V0b" secondAttribute="top" constant="8" id="IoZ-nf-hjF"/>
+                                                <constraint firstItem="fkZ-kD-4BC" firstAttribute="centerY" secondItem="AOD-ON-nND" secondAttribute="centerY" id="Xau-Bc-gry"/>
+                                                <constraint firstItem="fkZ-kD-4BC" firstAttribute="leading" secondItem="AOD-ON-nND" secondAttribute="trailing" constant="12" id="bKB-8j-1yO"/>
+                                                <constraint firstItem="AOD-ON-nND" firstAttribute="leading" secondItem="IbZ-4U-V0b" secondAttribute="leadingMargin" constant="12" id="gcg-K1-zft"/>
+                                                <constraint firstAttribute="bottom" secondItem="fkZ-kD-4BC" secondAttribute="bottom" constant="8" id="lBs-RP-wtb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logoImageView" destination="fkZ-kD-4BC" id="uW2-pf-qlx"/>
+                                            <outlet property="titleLabel" destination="AOD-ON-nND" id="fl4-VX-gUg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="WDY-RX-YOV" id="Pd2-8U-bal"/>
-                                    <outlet property="delegate" destination="WDY-RX-YOV" id="Xs5-HV-80j"/>
+                                    <outlet property="dataSource" destination="WDY-RX-YOV" id="JhP-4D-O9E"/>
+                                    <outlet property="delegate" destination="WDY-RX-YOV" id="KnQ-BR-a6C"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -2072,76 +2153,96 @@ Cg
                             <constraint firstAttribute="trailing" secondItem="Ma5-c3-pd1" secondAttribute="trailing" id="ycp-dS-ZQX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ma5-c3-pd1" id="RY4-gn-ZK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjK-ht-WWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799" y="-846"/>
+            <point key="canvasLocation" x="797.60000000000002" y="-846.02698650674665"/>
         </scene>
-        <!--Detailed Bank View Controller-->
-        <scene sceneID="S4H-YT-p8Z">
+        <!--Description View Controller-->
+        <scene sceneID="IxS-Yp-7Cw">
             <objects>
-                <viewController storyboardIdentifier="DetailedBankViewController" id="Oxc-mC-lsc" customClass="DetailedBankViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DescriptionViewController" id="ggH-Ke-Cvp" customClass="DescriptionViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WWq-rY-Akg"/>
-                        <viewControllerLayoutGuide type="bottom" id="1gJ-Si-cwi"/>
+                        <viewControllerLayoutGuide type="top" id="zGV-VZ-TBA"/>
+                        <viewControllerLayoutGuide type="bottom" id="pwJ-3e-VgO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vJC-f4-pcL">
+                    <view key="view" contentMode="scaleToFill" id="e6t-eU-aeP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ew-NO-KNF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ap7-kd-3v3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYn-wd-eTp">
+                                        <rect key="frame" x="16" y="16" width="343" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GYn-wd-eTp" firstAttribute="leading" secondItem="Ap7-kd-3v3" secondAttribute="leading" constant="16" id="FRK-yH-3pX"/>
+                                    <constraint firstItem="GYn-wd-eTp" firstAttribute="centerX" secondItem="Ap7-kd-3v3" secondAttribute="centerX" id="Fd0-k1-dpd"/>
+                                    <constraint firstAttribute="trailing" secondItem="GYn-wd-eTp" secondAttribute="trailing" constant="16" id="JdU-fS-FYw"/>
+                                    <constraint firstAttribute="bottom" secondItem="GYn-wd-eTp" secondAttribute="bottom" constant="12" id="Oxj-Ju-L38"/>
+                                    <constraint firstItem="GYn-wd-eTp" firstAttribute="top" secondItem="Ap7-kd-3v3" secondAttribute="top" constant="16" id="USX-Ke-D5k"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="8ew-NO-KNF" secondAttribute="trailing" id="4zK-Yf-Qba"/>
-                            <constraint firstItem="8ew-NO-KNF" firstAttribute="leading" secondItem="vJC-f4-pcL" secondAttribute="leading" id="IV1-UT-uIX"/>
-                            <constraint firstItem="8ew-NO-KNF" firstAttribute="top" secondItem="vJC-f4-pcL" secondAttribute="top" id="iHK-6b-BaE"/>
-                            <constraint firstItem="1gJ-Si-cwi" firstAttribute="top" secondItem="8ew-NO-KNF" secondAttribute="bottom" id="qRO-aF-mvu"/>
+                            <constraint firstItem="Ap7-kd-3v3" firstAttribute="leading" secondItem="e6t-eU-aeP" secondAttribute="leading" id="2ha-Zb-KbW"/>
+                            <constraint firstItem="Ap7-kd-3v3" firstAttribute="top" secondItem="e6t-eU-aeP" secondAttribute="top" id="DwX-Bx-7eW"/>
+                            <constraint firstItem="pwJ-3e-VgO" firstAttribute="top" secondItem="Ap7-kd-3v3" secondAttribute="bottom" id="MVY-yj-Foa"/>
+                            <constraint firstAttribute="trailing" secondItem="Ap7-kd-3v3" secondAttribute="trailing" id="gEO-1u-Z6H"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailedBankWebView" destination="8ew-NO-KNF" id="m5T-z6-I2X"/>
+                        <outlet property="descriptionLabel" destination="GYn-wd-eTp" id="F5O-Jf-lvq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JLx-W9-rIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOE-tn-iOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="-183"/>
+            <point key="canvasLocation" x="798" y="-103"/>
         </scene>
-        <!--Laboratory View Controller-->
-        <scene sceneID="UFl-zL-WAV">
+        <!--View Controller-->
+        <scene sceneID="Oz5-Yw-WAI">
             <objects>
-                <viewController storyboardIdentifier="LaboratoryServiceViewController" id="eqg-Wd-LJM" customClass="LaboratoryViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OnO-sg-F7m" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="79p-y1-yhV"/>
-                        <viewControllerLayoutGuide type="bottom" id="RbT-BL-MCY"/>
+                        <viewControllerLayoutGuide type="top" id="HyH-Ex-XLn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hk6-1J-NJG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nHN-Jg-g5b">
+                    <view key="view" contentMode="scaleToFill" id="rKK-UL-u8a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-cC-fGX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Bfi-cC-fGX" firstAttribute="top" secondItem="nHN-Jg-g5b" secondAttribute="top" id="5hY-oF-e19"/>
-                            <constraint firstItem="RbT-BL-MCY" firstAttribute="top" secondItem="Bfi-cC-fGX" secondAttribute="bottom" id="iU4-qh-J8E"/>
-                            <constraint firstAttribute="trailing" secondItem="Bfi-cC-fGX" secondAttribute="trailing" id="jGp-yo-TgB"/>
-                            <constraint firstItem="Bfi-cC-fGX" firstAttribute="leading" secondItem="nHN-Jg-g5b" secondAttribute="leading" id="snq-m4-uMz"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="laboratoryWebView" destination="Bfi-cC-fGX" id="owW-IB-nVz"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QyZ-bt-M9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5UI-Fk-QcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552.8" y="-846.02698650674665"/>
+            <point key="canvasLocation" x="1572" y="-104"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jek-fE-qrI">
+            <objects>
+                <viewController id="Ygs-3V-7UB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aYe-g0-9yA"/>
+                        <viewControllerLayoutGuide type="bottom" id="kek-63-4KR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V6r-rs-Uwv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wk-uJ-mxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="-846"/>
         </scene>
     </scenes>
 </document>
