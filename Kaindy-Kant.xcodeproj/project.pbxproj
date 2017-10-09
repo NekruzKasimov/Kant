@@ -13,6 +13,7 @@
 		1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0DF1AA1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf */; };
 		1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */; };
 		1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */; };
+		1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D284D1F8787EC00FE7A0B /* DetailedMapViewController.swift */; };
 		1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893701F614DB600FD2C5D /* AppDelegate.swift */; };
 		1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893741F614DB600FD2C5D /* Main.storyboard */; };
 		1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893771F614DB600FD2C5D /* Assets.xcassets */; };
@@ -81,6 +82,10 @@
 		84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */; };
 		84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */; };
 		84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */; };
+		84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AED1F865FD700BA935F /* Weather_ViewController.swift */; };
+		8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2731F8B521C00BA712B /* Rossahar.swift */; };
+		8433F2761F8B523400BA712B /* Domestic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2751F8B523400BA712B /* Domestic.swift */; };
+		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
@@ -112,6 +117,7 @@
 		1F0DF1AA1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf"; sourceTree = "<group>"; };
 		1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Sugar Beet VAC_Development Concept-2_MD.pdf"; sourceTree = "<group>"; };
 		1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		1F2D284D1F8787EC00FE7A0B /* DetailedMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMapViewController.swift; sourceTree = "<group>"; };
 		1F58936D1F614DB600FD2C5D /* Kaindy-Kant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kaindy-Kant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5893701F614DB600FD2C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F5893751F614DB600FD2C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,6 +198,10 @@
 		84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResouceViewController.swift; sourceTree = "<group>"; };
 		84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResourceProtectionViewController.swift; sourceTree = "<group>"; };
 		84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		84049AED1F865FD700BA935F /* Weather_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_ViewController.swift; sourceTree = "<group>"; };
+		8433F2731F8B521C00BA712B /* Rossahar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rossahar.swift; sourceTree = "<group>"; };
+		8433F2751F8B523400BA712B /* Domestic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domestic.swift; sourceTree = "<group>"; };
+		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -326,6 +336,7 @@
 				1F5893741F614DB600FD2C5D /* Main.storyboard */,
 				1F58939F1F614ED700FD2C5D /* MainViewController.swift */,
 				2388D2171F74E09E0059B88C /* WeatherViewController.swift */,
+				84049AED1F865FD700BA935F /* Weather_ViewController.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -415,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				1F781B231F8247930060B616 /* MapViewController.swift */,
+				1F2D284D1F8787EC00FE7A0B /* DetailedMapViewController.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -930,6 +942,7 @@
 				84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
+				84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
@@ -939,6 +952,7 @@
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
+				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,

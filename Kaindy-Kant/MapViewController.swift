@@ -35,7 +35,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     func addGoogleMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 42.81064, longitude: 74.627359, zoom: 15)
-        map = GMSMapView.map(withFrame: fieldMapView.frame, camera: camera)
+        map = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         map.delegate = self
         map.settings.myLocationButton = true
         map.isMyLocationEnabled = true

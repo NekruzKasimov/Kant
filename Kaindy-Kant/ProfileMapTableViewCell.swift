@@ -20,6 +20,5 @@ class ProfileMapTableViewCell: UITableViewCell {
     
     @IBOutlet weak var totalLabel: UILabel!
     
-    @IBAction func showOnMap(_ sender: Any) {
-    }
+    @IBOutlet weak var mapView: UIView!
 }
