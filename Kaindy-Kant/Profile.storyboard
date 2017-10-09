@@ -763,7 +763,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heg-BV-FNB">
-                                <rect key="frame" x="100" y="341" width="212" height="2"/>
+                                <rect key="frame" x="100" y="341" width="196" height="2"/>
                                 <color key="backgroundColor" red="0.03254304081" green="0.72779995200000003" blue="0.30068773030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="VHZ-bR-IoJ"/>
@@ -781,13 +781,13 @@
                             <constraint firstAttribute="trailing" secondItem="KYv-ud-IC0" secondAttribute="trailing" id="9FW-1K-aAb"/>
                             <constraint firstItem="KYv-ud-IC0" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leading" id="9kQ-Ii-uNl"/>
                             <constraint firstItem="Xr0-sO-fRW" firstAttribute="leading" secondItem="Ekj-4e-df7" secondAttribute="trailing" constant="8" id="Ahx-44-t15"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="heg-BV-FNB" secondAttribute="trailing" constant="8" id="BY5-Im-c5X"/>
                             <constraint firstItem="KYv-ud-IC0" firstAttribute="top" secondItem="e4M-JY-3G6" secondAttribute="top" id="Ba2-fG-FCx"/>
                             <constraint firstItem="Kg9-v9-b9o" firstAttribute="top" secondItem="l2s-TC-I4o" secondAttribute="bottom" id="BmY-Wq-cHV"/>
                             <constraint firstItem="Ekj-4e-df7" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leadingMargin" id="Dm6-hU-eLc"/>
                             <constraint firstItem="D5H-zv-ORV" firstAttribute="leading" secondItem="5rn-uK-Roy" secondAttribute="trailing" constant="8" id="GQw-u4-NQw"/>
                             <constraint firstItem="Xr0-sO-fRW" firstAttribute="centerY" secondItem="Ekj-4e-df7" secondAttribute="centerY" id="IPN-pY-hCQ"/>
                             <constraint firstItem="l2s-TC-I4o" firstAttribute="top" secondItem="Ekj-4e-df7" secondAttribute="bottom" constant="40" id="Jbc-S8-nJo"/>
-                            <constraint firstItem="heg-BV-FNB" firstAttribute="trailing" secondItem="e4M-JY-3G6" secondAttribute="trailingMargin" constant="8" id="JsL-Ow-0h1"/>
                             <constraint firstItem="D5H-zv-ORV" firstAttribute="centerY" secondItem="5rn-uK-Roy" secondAttribute="centerY" id="MJ1-k4-yAC"/>
                             <constraint firstItem="l2s-TC-I4o" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leadingMargin" id="OO7-8v-1ZK"/>
                             <constraint firstItem="BUW-e8-IOA" firstAttribute="top" secondItem="8Ft-MZ-pJQ" secondAttribute="bottom" constant="20" id="Vnl-3E-YiN"/>
@@ -801,6 +801,9 @@
                             <constraint firstItem="F36-Co-uZC" firstAttribute="leading" secondItem="Kg9-v9-b9o" secondAttribute="leading" id="wqJ-z2-yk2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailedMap" destination="KYv-ud-IC0" id="5xQ-ip-M47"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6J-3A-rno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

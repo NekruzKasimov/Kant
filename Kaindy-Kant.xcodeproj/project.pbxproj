@@ -41,9 +41,6 @@
 		1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */; };
 		1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */; };
 		1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */; };
-		1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */; };
-		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
-		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
 		1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */; };
 		2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */; };
 		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
@@ -154,9 +151,6 @@
 		1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
-		1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankServiceViewController.swift; sourceTree = "<group>"; };
-		1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
-		1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBankViewController.swift; sourceTree = "<group>"; };
 		1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailedService.storyboard; sourceTree = "<group>"; };
 		2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelLogicController.swift; sourceTree = "<group>"; };
 		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -468,9 +462,6 @@
 			isa = PBXGroup;
 			children = (
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
-				1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */,
-				1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */,
-				1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */,
 			);
 			name = "Detalied Service";
 			sourceTree = "<group>";
@@ -799,7 +790,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -873,7 +864,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -921,7 +912,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -947,7 +938,6 @@
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
-				1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
@@ -956,7 +946,6 @@
 				84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */,
 				8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */,
 				8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */,
-				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
@@ -984,7 +973,6 @@
 				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				8433F2781F8B550400BA712B /* Result.swift in Sources */,
-				1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
