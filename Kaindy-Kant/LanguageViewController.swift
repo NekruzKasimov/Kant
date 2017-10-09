@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class LanguageViewController: UIViewController {
 
     @IBOutlet weak var languageView: UIView!
@@ -20,12 +19,17 @@ class LanguageViewController: UIViewController {
     @IBAction func russianLanguageButton(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
+        sighUp()
         present(vc, animated: true, completion: nil)
     }
     
     @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
+        sighUp()
         present(vc, animated: true, completion: nil)
+    }
+    func sighUp(){
+        
     }
 }

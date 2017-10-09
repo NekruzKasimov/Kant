@@ -1,15 +1,20 @@
 //
 //  HTTPRequestManager.swift
-//  OpenSport
+//  CafeService
 //
-//  Created by Sanira on 2/21/17.
-//  Copyright © 2017 TimelySoft. All rights reserved.
+//  Created by ITLabAdmin on 7/19/17.
+//  Copyright © 2017 NeoBis. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 import SwiftyJSON
 import SystemConfiguration
+
+enum ServerType {
+    case whether
+    case kant
+}
 
 class HTTPRequestManager {
     
@@ -19,12 +24,13 @@ class HTTPRequestManager {
     let url = "http://139.59.22.220:8000/api"
     let weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222"
     
-    private func request(method: HTTPMethod, api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        
+    private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         if !isConnectedToNetwork() {
-            error("Нет подключения к интернету")
+            error(Constants.Network.ErrorMessage.NO_INTERNET_CONNECTION)
             return
         }
+        var apiUrl = ""
+        var tempParam = parameters
         
         let currentUrl = api.contains("APPID") ? weatherUrl : url
         
@@ -37,56 +43,41 @@ class HTTPRequestManager {
         Alamofire.request(APIaddress!, method: method, parameters: parameters, encoding: JSONEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
             
             guard response.response != nil else {
-                error("Не удалось загрузить данные.")
+                error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)
                 return
             }
-            
+            //value    String    "PHPSESSID=o549sv96q773fu97jmrc6sa420"
             guard let statusCode = response.response?.statusCode else {
-                error("Не удалось получить код статуса HTTP")
+                error(Constants.Network.ErrorMessage.NO_HTTP_STATUS_CODE)
                 return
             }
-          
-//            if response.result.isFailure {
-//                if (response.error != nil) {
-//                    if let description = response.error?.localizedDescription  {
-//                        error(description)
-//                    }
-//                    
-//                } else {
-//                    error("Не удалось загрузить данные. Вероятно, соединение с Интернетом прервано.")
-//                }
-//                return
-//            }
-            
-            
-            print("\(statusCode) - \(api)")
+            //print("\(statusCode) - \(apiUrl)")
             
             switch(statusCode) {
             case HttpStatusCode.unauthorized.statusCode:
-                error("Вам нужно войти, чтобы выполнить это действие")
+                error(Constants.Network.ErrorMessage.UNAUTHORIZED)
                 break
             case HttpStatusCode.ok.statusCode,
                  HttpStatusCode.accepted.statusCode,
                  HttpStatusCode.created.statusCode:
+                
                 let json = JSON(data: response.data!)
-                if json["error"].stringValue.isEmpty {
-                    completion(JSON(data: response.data!))
-                    break;
+                
+                if !json["error"].stringValue.isEmpty {
+                    error(json["error"].stringValue)
+                } else {
+                    //print(response.response?.allHeaderFields.description)
+                    completion(json)
                 }
-                error(json["error"].stringValue)
+                
                 break
             default:
                 
                 let json = JSON(data: response.data!)
                 if !json.isEmpty {
-                    print(json)
                     let message = json["error"].stringValue
-                    if  message != ""
-                    {
-                        error(message)
-                    } else {
-                        error("Неизвестная ошибка")
-                    }
+                    error(message)
+                    //print(message)
                 } else {
                     if let data = response.data {
                         let json = String(data: data, encoding: String.Encoding.utf8)
@@ -100,17 +91,14 @@ class HTTPRequestManager {
     }
     
     
-    internal func post(api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .post, api: api, parameters: parameters, completion: completion, error: error)
+    internal func post(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .post, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
     }
-    internal func delete(api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .delete, api: api, parameters: parameters, completion: completion, error: error)
+    internal func get(endpoint: String, serverType: ServerType,  completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: nil, completion: completion, error: error)
     }
-    internal func put(api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .put, api: api, parameters: parameters, completion: completion, error: error)
-    }
-    internal func get(api: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .get, api: api, parameters: nil, completion: completion, error: error)
+    internal func get(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
     }
     
     
@@ -143,28 +131,5 @@ class HTTPRequestManager {
     }
     
     
-//    func uploadImage(api: String, image: UIImage,fileName: String, _ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
-//        
-//        let imageData = UIImagePNGRepresentation(image)
-//        let token = UserDefaults.standard.string(forKey: "token")
-//        let header: HTTPHeaders = ["Authorization" : token!]
-//        let APIaddress = "\(url)\(api)"
-//        
-//        Alamofire.upload(
-//            multipartFormData: { multipartFormData in
-//                multipartFormData.append(imageData!, withName: "imageFile", fileName: fileName, mimeType: "image/*")
-//        },
-//            to: APIaddress, method: .post, headers: header,
-//            encodingCompletion: { encodingResult in
-//                switch encodingResult {
-//                case .success(let upload, _, _):
-//                    upload.responseJSON { response in
-//                       completion()
-//                    }
-//                case .failure(let encodingError):
-//                    error(encodingError.localizedDescription)
-//                }
-//        }
-//        )
-//    }
 }
+

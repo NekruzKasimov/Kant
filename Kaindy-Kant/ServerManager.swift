@@ -26,6 +26,8 @@ class ServerManager: HTTPRequestManager  {
                     completion(obj)
                 }, error: error)
     }
+//    func signUp(category: Category, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
+//        //let param = category.toDict()
     
     func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
         self.get(api: "/fin-office", completion: { (json) in
