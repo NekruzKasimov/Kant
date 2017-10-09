@@ -80,6 +80,9 @@
 		84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */; };
 		84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */; };
 		84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AED1F865FD700BA935F /* Weather_ViewController.swift */; };
+		8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9941F8B4DBA0061C702 /* ApiAddress.swift */; };
+		8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9961F8B4FA10061C702 /* NewUser.swift */; };
+		8423B9991F8B54780061C702 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9981F8B54780061C702 /* Constants.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
@@ -190,6 +193,9 @@
 		84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResourceProtectionViewController.swift; sourceTree = "<group>"; };
 		84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		84049AED1F865FD700BA935F /* Weather_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_ViewController.swift; sourceTree = "<group>"; };
+		8423B9941F8B4DBA0061C702 /* ApiAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAddress.swift; sourceTree = "<group>"; };
+		8423B9961F8B4FA10061C702 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
+		8423B9981F8B54780061C702 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -250,13 +256,6 @@
 				1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */,
 			);
 			name = Docs;
-			sourceTree = "<group>";
-		};
-		1F3FE0D01F835C3F005AFE10 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 		1F5893641F614DB600FD2C5D = {
@@ -339,12 +338,14 @@
 		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F0DF1A61F6BCD5400DE54F2 /* Docs */,
+				8423B9981F8B54780061C702 /* Constants.swift */,
+				8423B9941F8B4DBA0061C702 /* ApiAddress.swift */,
 				1F5893AA1F61523700FD2C5D /* Extensions.swift */,
 				23205AE71F62378100D58F5B /* Colors.swift */,
 				23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */,
 				23A690EE1F7B5BDA0062B4F9 /* HTTPStatusCode.swift */,
 				23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */,
+				1F0DF1A61F6BCD5400DE54F2 /* Docs */,
 				1F5893A61F614F0A00FD2C5D /* SWReveal */,
 			);
 			name = "Supporting Files";
@@ -496,6 +497,7 @@
 			children = (
 				235E28511F7A8B4A00378759 /* Expenses.swift */,
 				23A690EA1F7B46060062B4F9 /* Weather.swift */,
+				8423B9961F8B4FA10061C702 /* NewUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -940,6 +942,7 @@
 				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
 				23A8A36B1F83425B0065C5E6 /* ServiceCollectionViewCell.swift in Sources */,
 				84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */,
+				8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */,
 				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
@@ -951,6 +954,8 @@
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
+				8423B9991F8B54780061C702 /* Constants.swift in Sources */,
+				8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */,
 				84049AE41F85F4AB00BA935F /* ContactOfResourcesViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
 				23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */,
