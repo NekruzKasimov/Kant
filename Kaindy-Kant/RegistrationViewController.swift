@@ -17,16 +17,44 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var firstNameTF: UITextField!
+    @IBOutlet weak var lastNameTF: UITextField!
+    @IBOutlet weak var fathersNameTF: UITextField!
+    @IBOutlet weak var phoneTF: UITextField!
+    @IBOutlet weak var cityTF: UITextField!
+    @IBOutlet weak var addressTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var passwordRepeatTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
     }
     @IBAction func saveButton(_ sender: Any) {
+        var newUser = NewUser()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
+        if birthdayTF.text! != "" && phoneTF.text! != "" && passwordTF.text! != "" && passwordRepeatTF.text! != "" {
+            
         
+        newUser.first_name = self.firstNameTF.text!
+        newUser.last_name = self.lastNameTF.text!
+        newUser.fathers_name = self.fathersNameTF.text!
+        newUser.phone = self.phoneTF.text!
+        newUser.city = self.cityTF.text!
+        newUser.address = self.addressTF.text!
+        newUser.password_repeat = self.passwordRepeatTF.text!
+        newUser.password = self.passwordTF.text!
+        newUser.first_name = self.firstNameTF.text!
+        //print(self.birthdayTF.text!)
+        
+        newUser.date_of_birth = self.birthdayTF.text!
+        DataManager.shared.setNewUser(newUser: newUser)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
         self.present(nextViewController!, animated:true, completion:nil)
+        }
+        else {
+            showErrorAlert(message: "Fill required data")
+        }
     }
 }
 
@@ -43,7 +71,7 @@ extension RegistrationViewController {
         alertController.view.tintColor = .black
         let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             dateFormatter.locale = Locale.init(identifier: "en_GB")
             self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
         }

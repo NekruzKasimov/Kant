@@ -27,25 +27,12 @@ class ServerManager: HTTPRequestManager  {
             completion(obj)
         }, error: error)
     }
-    
-    
-    
-//    func signUp(category: Category, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
-//        //let param = category.toDict()
-    
-    func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
-            completion(FinancialOffices(json: succes))
-        }) { (error) in
-        }
-    }
-
-    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
-            completion(DetailedFinOffice(json: succes))
-        }) { (error) in
-        }
-
+    func signUp(newUser: NewUser, completion: @escaping (JSON)-> Void,error: @escaping (String)-> Void) {
+        //let param = category.toDict()
+        self.post(endpoint: Constants.Network.EndPoints.SignUp, serverType: .kant, parameters: newUser.toDictionary(), completion: { (json) in
+            //let message = json[""]
+            completion(json)
+        }, error: error)
     }
     
     func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {

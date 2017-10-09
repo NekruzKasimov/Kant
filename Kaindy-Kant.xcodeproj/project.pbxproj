@@ -41,6 +41,9 @@
 		1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */; };
 		1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */; };
 		1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */; };
+		1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */; };
+		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
+		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
 		1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */; };
 		2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */; };
 		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
@@ -48,10 +51,6 @@
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
 		232E07201F86323100D117CE /* DetailedSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */; };
 		235E28521F7A8B4A00378759 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E28511F7A8B4A00378759 /* Expenses.swift */; };
-		236BD0621F8B293F006077B0 /* FinancialOffices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD0611F8B293F006077B0 /* FinancialOffices.swift */; };
-		236BD0641F8B39C4006077B0 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD0631F8B39C4006077B0 /* HeaderViewController.swift */; };
-		236BD0661F8B3ABE006077B0 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */; };
-		236BD0681F8B4A6C006077B0 /* DetailedFinOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD0671F8B4A6C006077B0 /* DetailedFinOffice.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
 		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
@@ -90,6 +89,7 @@
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
+		84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D519491F8B6BDE00512102 /* DataManager.swift */; };
 		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
 		84FBB1001F74EE2C00C366B1 /* ProfileMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */; };
 		AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */; };
@@ -165,10 +165,6 @@
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSceneTableViewCell.swift; sourceTree = "<group>"; };
 		235E28511F7A8B4A00378759 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
-		236BD0611F8B293F006077B0 /* FinancialOffices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOffices.swift; sourceTree = "<group>"; };
-		236BD0631F8B39C4006077B0 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
-		236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
-		236BD0671F8B4A6C006077B0 /* DetailedFinOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFinOffice.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		2388D2171F74E09E0059B88C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +207,7 @@
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
+		84D519491F8B6BDE00512102 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
 		84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileMapTableViewCell.xib; sourceTree = "<group>"; };
 		9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_Kant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,7 +277,6 @@
 				1F58936E1F614DB600FD2C5D /* Products */,
 				0B433ADDF3EA7883C156EF35 /* Pods */,
 				3795890B1F6AB0F4A1DCF3F7 /* Frameworks */,
-				236BD0691F8B689A006077B0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,6 +348,7 @@
 		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84D519491F8B6BDE00512102 /* DataManager.swift */,
 				8423B9981F8B54780061C702 /* Constants.swift */,
 				8423B9941F8B4DBA0061C702 /* ApiAddress.swift */,
 				1F5893AA1F61523700FD2C5D /* Extensions.swift */,
@@ -472,7 +469,6 @@
 		1FE1376F1F6FB65800B7926B /* Detalied Service */ = {
 			isa = PBXGroup;
 			children = (
-				232E071E1F86320E00D117CE /* Cells */,
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
 				236BD0631F8B39C4006077B0 /* HeaderViewController.swift */,
 				236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */,
@@ -506,37 +502,17 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		232E071E1F86320E00D117CE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
 		235E28501F7A8B1D00378759 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				235E28511F7A8B4A00378759 /* Expenses.swift */,
 				23A690EA1F7B46060062B4F9 /* Weather.swift */,
-				236BD0611F8B293F006077B0 /* FinancialOffices.swift */,
-				236BD0671F8B4A6C006077B0 /* DetailedFinOffice.swift */,
 				8423B9961F8B4FA10061C702 /* NewUser.swift */,
 				8433F2731F8B521C00BA712B /* Rossahar.swift */,
 				8433F2751F8B523400BA712B /* Domestic.swift */,
 				8433F2771F8B550400BA712B /* Result.swift */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		236BD0691F8B689A006077B0 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */,
-				1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */,
-				1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		2380ABA01F667BE20023C5AB /* Registration */ = {
@@ -836,8 +812,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -846,8 +820,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -970,13 +942,13 @@
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */,
-				232E07201F86323100D117CE /* DetailedSceneTableViewCell.swift in Sources */,
 				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
+				1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
@@ -985,6 +957,7 @@
 				84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */,
 				8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */,
 				8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */,
+				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
@@ -1000,21 +973,19 @@
 				8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */,
 				84049AE41F85F4AB00BA935F /* ContactOfResourcesViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
+				84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */,
 				23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */,
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
 				1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */,
 				84049AE61F85F71200BA935F /* ContactOfResourceProtectionViewController.swift in Sources */,
 				1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */,
-				236BD0641F8B39C4006077B0 /* HeaderViewController.swift in Sources */,
-				236BD0681F8B4A6C006077B0 /* DetailedFinOffice.swift in Sources */,
 				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
 				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
-				236BD0621F8B293F006077B0 /* FinancialOffices.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
 				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,
-				236BD0661F8B3ABE006077B0 /* DescriptionViewController.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				8433F2781F8B550400BA712B /* Result.swift in Sources */,
+				1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

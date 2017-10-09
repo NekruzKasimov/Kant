@@ -342,7 +342,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
+                        <outlet property="addressTF" destination="MGT-xz-yOq" id="tie-jj-BgY"/>
                         <outlet property="birthdayTF" destination="08O-ni-JvY" id="DJ5-BU-SWC"/>
+                        <outlet property="cityTF" destination="LD5-hC-eNz" id="6AB-dY-I7S"/>
+                        <outlet property="fathersNameTF" destination="7Tr-Cn-WIs" id="8SD-Pu-NOO"/>
+                        <outlet property="firstNameTF" destination="4JI-MV-rAE" id="Ouh-Fi-YP7"/>
+                        <outlet property="lastNameTF" destination="3S2-nT-j95" id="w4k-IV-WWJ"/>
+                        <outlet property="passwordRepeatTF" destination="UI6-9v-lQs" id="ujO-kl-yA1"/>
+                        <outlet property="passwordTF" destination="8Xl-4E-njK" id="Ofd-k3-lCJ"/>
+                        <outlet property="phoneTF" destination="Vpt-wm-L4m" id="7xm-Ll-M75"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deg-We-rRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
