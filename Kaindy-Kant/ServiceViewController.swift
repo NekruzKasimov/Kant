@@ -18,10 +18,10 @@ class ServiceViewController: UIViewController {
     }
     
     var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setNavigationBar()
     }
 }
@@ -44,22 +44,11 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-        var nameOfVC: String!
-        
-        switch indexPath.row {
-        case 0:
-            nameOfVC = "BankServiceViewController"
-            break
-        case 1:
-            nameOfVC = "ConsultationServiceViewController"
-            break
-        case 2:
-            nameOfVC = "LaboratoryServiceViewController"
-        default:
-            break
+        var serviceVC = "DetailedSceneViewController"
+        if indexPath.row == 1 {
+            serviceVC = "ConsultationServiceViewController"
         }
-        
-        let vc = sb.instantiateViewController(withIdentifier: nameOfVC)
+        let vc = sb.instantiateViewController(withIdentifier: serviceVC)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -80,3 +69,4 @@ extension ServiceViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+

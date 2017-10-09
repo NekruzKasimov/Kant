@@ -5,7 +5,6 @@
 //  Created by ITLabAdmin on 7/19/17.
 //  Copyright © 2017 NeoBis. All rights reserved.
 //
-
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -132,4 +131,3 @@ class HTTPRequestManager {
     
     
 }
-
