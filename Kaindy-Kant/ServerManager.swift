@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class ServerManager: HTTPRequestManager  {
-
+    
+    var _rossahar: Rossahar?
     class var shared: ServerManager {
         struct Static {
             static let instance = ServerManager()
@@ -27,6 +28,10 @@ class ServerManager: HTTPRequestManager  {
                 }, error: error)
     }
     
+//    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void)
+//    {
+//        self.get(api: "", completion: <#T##HTTPRequestManager.SuccessHandler##HTTPRequestManager.SuccessHandler##(JSON) -> Void#>, error: <#T##HTTPRequestManager.FailureHandler##HTTPRequestManager.FailureHandler##(String) -> Void#>)
+//    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        if _contactTypes != nil {
