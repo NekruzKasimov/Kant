@@ -34,10 +34,18 @@ class ServerManager: HTTPRequestManager  {
             completion(json)
         }, error: error)
     }
+
+//    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
+//        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
+//            completion(DetailedFinOffice(json: succes))
+//        }) { (error) in
+//        }
+//
+//    }
     
     func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)/", serverType: .kant, completion: { (succes) in
-            completion(Rossahar(json: succes))
+        self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)", serverType: .kant, completion: { (success) in
+            completion(Rossahar(json: success))
         }) { (error) in
         }
     }

@@ -41,15 +41,11 @@
 		1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FCF1F83BCD5000BE56A /* NewsViewController.swift */; };
 		1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */; };
 		1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */; };
-		1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */; };
-		1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */; };
-		1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */; };
 		1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */; };
 		2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */; };
 		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
 		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
-		232E07201F86323100D117CE /* DetailedSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */; };
 		235E28521F7A8B4A00378759 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E28511F7A8B4A00378759 /* Expenses.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
@@ -163,7 +159,6 @@
 		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSceneTableViewCell.swift; sourceTree = "<group>"; };
 		235E28511F7A8B4A00378759 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
@@ -277,6 +272,7 @@
 				1F58936E1F614DB600FD2C5D /* Products */,
 				0B433ADDF3EA7883C156EF35 /* Pods */,
 				3795890B1F6AB0F4A1DCF3F7 /* Frameworks */,
+				84B54FC51F8B8DBA0016A301 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -470,8 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
-				236BD0631F8B39C4006077B0 /* HeaderViewController.swift */,
-				236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */,
 			);
 			name = "Detalied Service";
 			sourceTree = "<group>";
@@ -601,6 +595,16 @@
 				8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		84B54FC51F8B8DBA0016A301 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */,
+				1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */,
+				1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -948,7 +952,6 @@
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
-				1FDFC3D81F71440B00B3317B /* LaboratoryViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
@@ -957,7 +960,6 @@
 				84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */,
 				8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */,
 				8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */,
-				1FDFC3DA1F7145DE00B3317B /* DetailedBankViewController.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
@@ -985,7 +987,6 @@
 				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				8433F2781F8B550400BA712B /* Result.swift in Sources */,
-				1FDFC3D61F711ABC00B3317B /* BankServiceViewController.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
