@@ -29,6 +29,12 @@ class ServerManager: HTTPRequestManager  {
     }
 //    func signUp(category: Category, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
 //        //let param = category.toDict()
+    
+//    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void)
+//    {
+//        self.get(api: "", completion: <#T##HTTPRequestManager.SuccessHandler##HTTPRequestManager.SuccessHandler##(JSON) -> Void#>, error: <#T##HTTPRequestManager.FailureHandler##HTTPRequestManager.FailureHandler##(String) -> Void#>)
+//    }
+//    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",
 //             parameters: param, completion: {(json) in
