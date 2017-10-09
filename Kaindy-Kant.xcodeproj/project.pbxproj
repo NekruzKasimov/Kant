@@ -57,6 +57,11 @@
 		2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2380ABA11F667C0E0023C5AB /* Registration.storyboard */; };
 		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
 		2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D21B1F74F83D0059B88C /* WeatherCell.swift */; };
+		238F6F021F8B713400304DED /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F011F8B713400304DED /* ContactsViewController.swift */; };
+		238F6F041F8B720E00304DED /* ContactsTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F031F8B720E00304DED /* ContactsTableVIewCell.swift */; };
+		238F6F061F8B840300304DED /* BranchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F051F8B840300304DED /* BranchesViewController.swift */; };
+		238F6F081F8B847900304DED /* BranchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F071F8B847900304DED /* BranchesTableViewCell.swift */; };
+		238F6F0A1F8B84F000304DED /* BranchesMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */; };
 		23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EA1F7B46060062B4F9 /* Weather.swift */; };
 		23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */; };
 		23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */; };
@@ -175,6 +180,11 @@
 		2380ABA11F667C0E0023C5AB /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		2388D2171F74E09E0059B88C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		2388D21B1F74F83D0059B88C /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		238F6F011F8B713400304DED /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		238F6F031F8B720E00304DED /* ContactsTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableVIewCell.swift; sourceTree = "<group>"; };
+		238F6F051F8B840300304DED /* BranchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesViewController.swift; sourceTree = "<group>"; };
+		238F6F071F8B847900304DED /* BranchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesTableViewCell.swift; sourceTree = "<group>"; };
+		238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesMapTableViewCell.swift; sourceTree = "<group>"; };
 		23A690EA1F7B46060062B4F9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
 		23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -479,6 +489,8 @@
 				232E07211F86386400D117CE /* DetailedSceneViewController.swift */,
 				236BD0631F8B39C4006077B0 /* HeaderViewController.swift */,
 				236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */,
+				238F6F011F8B713400304DED /* ContactsViewController.swift */,
+				238F6F051F8B840300304DED /* BranchesViewController.swift */,
 			);
 			name = "Detalied Service";
 			sourceTree = "<group>";
@@ -512,7 +524,10 @@
 		232E071E1F86320E00D117CE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				238F6F031F8B720E00304DED /* ContactsTableVIewCell.swift */,
 				232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */,
+				238F6F071F8B847900304DED /* BranchesTableViewCell.swift */,
+				238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -963,9 +978,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238F6F061F8B840300304DED /* BranchesViewController.swift in Sources */,
 				23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */,
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */,
+				238F6F021F8B713400304DED /* ContactsViewController.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */,
@@ -975,7 +992,9 @@
 				84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */,
 				232E07201F86323100D117CE /* DetailedSceneTableViewCell.swift in Sources */,
 				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
+				238F6F041F8B720E00304DED /* ContactsTableVIewCell.swift in Sources */,
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
+				238F6F081F8B847900304DED /* BranchesTableViewCell.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
@@ -993,6 +1012,7 @@
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
 				8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */,
 				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
+				238F6F0A1F8B84F000304DED /* BranchesMapTableViewCell.swift in Sources */,
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
