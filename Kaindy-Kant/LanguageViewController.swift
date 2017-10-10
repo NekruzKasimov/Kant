@@ -34,6 +34,6 @@ class LanguageViewController: UIViewController {
     }
     
     func  showJson(json: JSON) {
-        //print(json)
+        print(json)
     }
 }

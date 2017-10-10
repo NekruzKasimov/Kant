@@ -21,6 +21,7 @@ struct Constants {
             static let Login = "user/login"
             static let SignUp = "api/user/signup"
             static let FinOffice = "api/fin-office"
+            static let NewRossahar = "api/news/rossahar?limit=100&offset=0"
         }
     }
     

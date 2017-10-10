@@ -18,11 +18,15 @@ class DataManager {
         return Static.instance
     }
     var newUser: NewUser?
+    var newRossahar: Rossahar?
     
     func setNewUser(newUser: NewUser) {
         self.newUser = newUser
     }
     func getNewUser() -> NewUser {
         return newUser!
+    }
+    func getNewRossahar() -> Rossahar {
+        return newRossahar!
     }
 }

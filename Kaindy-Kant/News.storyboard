@@ -25,6 +25,9 @@
                                     <segment title="Местные"/>
                                 </segments>
                                 <color key="tintColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="mySegmentedControllAction:" destination="dxt-Fo-X7W" eventType="valueChanged" id="qXM-xI-Z4y"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3oK-0C-2Ng">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
@@ -361,6 +364,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dQB-xt-ecc"/>
                     <connections>
+                        <outlet property="mySCOutlet" destination="X9k-8T-594" id="0lb-3o-BPG"/>
                         <outlet property="newsTableView" destination="3oK-0C-2Ng" id="3RQ-FR-jVU"/>
                     </connections>
                 </viewController>

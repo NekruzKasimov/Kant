@@ -35,22 +35,28 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
         if birthdayTF.text! != "" && phoneTF.text! != "" && passwordTF.text! != "" && passwordRepeatTF.text! != "" {
             
+            if passwordTF.text! != passwordRepeatTF.text! {
+                showErrorAlert(message: "Пароли не совпадают!")
+            }
+            else if passwordTF.text!.count < 4 {
+                showErrorAlert(message: "Пароль должен состоять из 4 и более символов!")
+            }
+            else {
+                newUser.first_name = self.firstNameTF.text!
+                newUser.last_name = self.lastNameTF.text!
+                newUser.fathers_name = self.fathersNameTF.text!
+                newUser.phone = self.phoneTF.text!
+                newUser.city = self.cityTF.text!
+                newUser.address = self.addressTF.text!
+                newUser.password_repeat = self.passwordRepeatTF.text!
+                newUser.password = self.passwordTF.text!
+                newUser.first_name = self.firstNameTF.text!
+                newUser.date_of_birth = self.birthdayTF.text!
+                DataManager.shared.setNewUser(newUser: newUser)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
+                self.present(nextViewController!, animated:true, completion:nil)
+            }
         
-        newUser.first_name = self.firstNameTF.text!
-        newUser.last_name = self.lastNameTF.text!
-        newUser.fathers_name = self.fathersNameTF.text!
-        newUser.phone = self.phoneTF.text!
-        newUser.city = self.cityTF.text!
-        newUser.address = self.addressTF.text!
-        newUser.password_repeat = self.passwordRepeatTF.text!
-        newUser.password = self.passwordTF.text!
-        newUser.first_name = self.firstNameTF.text!
-        //print(self.birthdayTF.text!)
-        
-        newUser.date_of_birth = self.birthdayTF.text!
-        DataManager.shared.setNewUser(newUser: newUser)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
-        self.present(nextViewController!, animated:true, completion:nil)
         }
         else {
             showErrorAlert(message: "Fill required data")

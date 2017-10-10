@@ -37,6 +37,8 @@ class HTTPRequestManager {
             tempParam = nil
         case .kant:
             apiUrl = ApiAddressKant(endpoint: endpoint).getURLString()
+    
+            print(apiUrl)
         }
         var header: HTTPHeaders = [:]
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: URLEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
