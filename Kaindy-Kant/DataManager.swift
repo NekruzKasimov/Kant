@@ -19,7 +19,29 @@ class DataManager {
     }
     var newUser: NewUser?
     var newRossahar: Rossahar?
-    
+    var userId: Int?
+    var uDefaults = UserDefaults.standard
+    func saveUser(username: String, password: String) {
+        uDefaults.set(username, forKey: "username")
+        uDefaults.set(password, forKey: "password")
+    }
+    func getUser() -> [String: String]? {
+        guard let username = uDefaults.string(forKey: "username"), let password = uDefaults.string(forKey: "password") else {
+            return nil
+        }
+        return ["username": username, "password": password]
+    }
+    func clearData(){
+        uDefaults.removeObject(forKey: "username")
+        uDefaults.removeObject(forKey: "password")
+        uDefaults.removeObject(forKey: "token")
+    }
+    func setUserId(user_id: Int) {
+        self.userId = user_id
+    }
+    func getUserId() -> Int {
+        return userId!
+    }
     func setNewUser(newUser: NewUser) {
         self.newUser = newUser
     }

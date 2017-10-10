@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DataManager.shared.clearData()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -39,9 +39,6 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text
         if login != "" && password != "" {
             ServerManager.shared.login(login: login!, password: password!, completion: log_in, error: showErrorAlert)
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
-            present(vc, animated: true, completion: nil)
         }
         else {
             showErrorAlert(message: "Заполните поля!")
@@ -49,8 +46,12 @@ class LoginViewController: UIViewController {
         
         
     }
-    func log_in(json: JSON) {
-        
+    func log_in(user_id: Int) {
+        DataManager.shared.setUserId(user_id: user_id)
+        DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
+        present(vc, animated: true, completion: nil)
     }
 }
 
