@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
@@ -35,9 +35,22 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
-        present(vc, animated: true, completion: nil)
+        let login = loginTextField.text
+        let password = passwordTextField.text
+        if login != "" && password != "" {
+            ServerManager.shared.login(login: login!, password: password!, completion: log_in, error: showErrorAlert)
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
+            present(vc, animated: true, completion: nil)
+        }
+        else {
+            showErrorAlert(message: "Заполните поля!")
+        }
+        
+        
+    }
+    func log_in(json: JSON) {
+        
     }
 }
 

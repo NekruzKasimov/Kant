@@ -34,7 +34,17 @@ class ServerManager: HTTPRequestManager  {
             completion(json)
         }, error: error)
     }
-
+    func login(login: String, password: String, completion: @escaping (JSON)-> Void,error: @escaping (String)-> Void) {
+        //let param = category.toDict()
+        self.post(endpoint: Constants.Network.EndPoints.Token_auth, serverType: .kant, parameters: ["username": login, "password": password], completion: { (json) in
+            //let message = json[""]
+            let token = json["token"].stringValue
+            UserDefaults.standard.set(token, forKey: "token")
+            self.post(endpoint: Constants.Network.EndPoints.Login, serverType: .kant, parameters: ["phone": login, "password": password], completion: { (json) in
+                print(json)
+            }, error: error)
+        }, error: error)
+    }
 //    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
 //        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
 //            completion(DetailedFinOffice(json: succes))
