@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SJSegmentedScrollView
 
 class DescriptionViewController: UIViewController {
     var desc: String?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -18,3 +20,13 @@ class DescriptionViewController: UIViewController {
         descriptionLabel.text = desc
     }
 }
+
+//MARK SJSegmentViewController
+
+extension DescriptionViewController: SJSegmentedViewControllerViewSource {
+    
+    func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
+        return scrollView
+    }
+}
+

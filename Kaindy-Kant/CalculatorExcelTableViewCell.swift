@@ -48,7 +48,7 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func setValues(expenses: Expenses, counter: Int) {
         self.priceTF.placeholder = "\(expenses.price)"
-        self.amountTF.placeholder = "\(expenses.amount)"
+       // self.amountTF.placeholder = "\(expenses.amount)"
         self.titleLabel.text = expenses.name
         self.counterLabel.text = "\(counter + 1)"
     }

@@ -16,38 +16,40 @@ class HeaderViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     var finOffice: DetailedFinOffice!
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        titleLabel.text = course.name
-//        setSlideImageView()
-//    }
-//    
-//    func setSlideImageView() {
-//        ServerManager.shared._course = nil
-//        var images: [String] = []
-//        for item in course.images.array {
-//            images.append(item.imagePath)
-//        }
-//        
-//        if (images.count != 0) {
-//            var imageArray = [InputSource]()
-//            var count = 0
-//            for imageModel in images {
-//                guard  let url = URL(string: imageModel) else {
-//                    return
-//                }
-//                imageArray.append(KingfisherSource(url: url))
-//                
-//                count += 1
-//            }
-//            slideShow.setImageInputs(imageArray)
-//        } else {
-//            slideShow.setImageInputs([ ImageSource(image: UIImage(named: "no-image")!)])
-//        }
-//        
-//        slideShow.pageControl.pageIndicatorTintColor = UIColor.lightGray
-//        slideShow.pageControl.currentPageIndicatorTintColor = ThemeColor.coral
-//    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        titleLabel.text = finOffice.title
+        setSlideImageView()
+    }
+
+    func setSlideImageView() {
+        var images: [String] = []
+        for item in (finOffice.images?.array)! {
+            images.append(item.image)
+        }
+        
+        if (images.count != 0) {
+            var imageArray = [InputSource]()
+            var count = 0
+            for imageModel in images {
+                guard  let url = URL(string: imageModel) else {
+                    return
+                }
+                imageArray.append(KingfisherSource(url: url))
+                
+                count += 1
+            }
+            slideShow.setImageInputs(imageArray)
+        } else {
+            let url = URL(string: finOffice.logo)!
+            var imageArray = [InputSource]()
+            imageArray.append(KingfisherSource(url: url))
+            slideShow.setImageInputs(imageArray)
+        }
+        
+        slideShow.pageControl.pageIndicatorTintColor = UIColor.lightGray
+        slideShow.pageControl.currentPageIndicatorTintColor = .red
+    }
 }
 
