@@ -29,7 +29,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
 
     @IBOutlet weak var tableView: UITableView!
     
-    var expenses = [Expenses]()
+    var expenses: Expenses?
     
     var totalIndexPath: IndexPath?
     
@@ -47,15 +47,25 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         configureTableView()
         for item in names {
             let index = names.index(of: item)!
-            let expense = Expenses.init(price: prices[index], name: names[index], amount: amount[index])
-            expenses.append(expense)
+            //let expense = Expenses.init(price: prices[index], name: names[index], amount: amount[index])
+           // expenses.append(expense)
+            ServerManager.shared.getExpenses({ (succes) in
+                self.setExpenses(expenses: succes)
+            }, error: { (error) in
+                print(error)
+            })
         }
         
     }
     
+    func setExpenses(expenses: Expenses) {
+        self.expenses = expenses
+        tableView.reloadData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateTotalValues()
+        //updateTotalValues()
     }
 }
 
@@ -82,7 +92,7 @@ extension CalculatorExcelViewController {
             return cell
         case .items:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell") as! CalculatorExcelTableViewCell
-            cell.setValues(expenses: expenses[indexPath.row], counter: indexPath.row)
+            //cell.setValues(expenses: expenses[indexPath.row], counter: indexPath.row)
             cell.valueChangeHandler = updateValues(total:counter:)
             cell.totalLabel.text = "\(total[indexPath.row])"
             return cell
@@ -127,13 +137,13 @@ extension CalculatorExcelViewController {
         tableView.rowHeight                         = UITableViewAutomaticDimension
     }
     
-    func updateTotalValues() {
-        for item in expenses {
-            let total = item.amount * item.price
-            self.total.append(total)
-            totalValue += total
-        }
-    }
+//    func updateTotalValues() {
+//        for item in expenses {
+//            let total = item.amount * item.price
+//            self.total.append(total)
+//            totalValue += total
+//        }
+//    }
     
     func updateValues(total: Int, counter: Int) {
         let value = self.total[counter - 1]

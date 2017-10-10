@@ -7,21 +7,33 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class Expenses {
+struct Expenses {
     var price: Int
     var name: String
-    var amount: Int
+    //var amount: Int
     
     init() {
         self.price = 0
         self.name = ""
-        self.amount = 0
+       // self.amount = 0
     }
     
-    init(price: Int, name: String, amount: Int) {
-        self.price = price
-        self.name = name
-        self.amount = amount
+    init(json: JSON) {
+        price = json["price"].intValue
+        name = json["name"].stringValue
+       // amount = json["amount"].intValue
+    }
+}
+class Expenseses: NSObject {
+    override init() {}
+    var array: Array = Array<Expenses>()
+    init(json: JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = Expenses(json:json)
+            array.append(tempObject)
+        }
     }
 }

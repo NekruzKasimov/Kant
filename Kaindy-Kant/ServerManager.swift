@@ -13,6 +13,7 @@ import SwiftyJSON
 class ServerManager: HTTPRequestManager  {
     
     var _rossahar: Rossahar?
+    var _expenses: Expenses?
     class var shared: ServerManager {
         struct Static {
             static let instance = ServerManager()
@@ -46,6 +47,12 @@ class ServerManager: HTTPRequestManager  {
     func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)", serverType: .kant, completion: { (success) in
             completion(Rossahar(json: success))
+        }) { (error) in
+        }
+    }
+    func getExpenses(_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.Expenses)", serverType: .kant, completion: { (success) in
+            completion(Expenses(json: success))
         }) { (error) in
         }
     }
