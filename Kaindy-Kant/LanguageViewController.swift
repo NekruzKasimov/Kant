@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 class LanguageViewController: UIViewController {
 
     @IBOutlet weak var languageView: UIView!
@@ -22,7 +23,6 @@ class LanguageViewController: UIViewController {
         sighUp()
         present(vc, animated: true, completion: nil)
     }
-    
     @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
@@ -30,6 +30,10 @@ class LanguageViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     func sighUp(){
-        
+        ServerManager.shared.signUp(newUser: DataManager.shared.getNewUser(), completion: showJson, error: showErrorAlert)
+    }
+    
+    func  showJson(json: JSON) {
+        print(json)
     }
 }

@@ -22,3 +22,14 @@ struct Result {
         description = json["description"].stringValue
     }
 }
+class Results: NSObject {
+    override init() {}
+    var array: Array = Array<Result>()
+    init(json: JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = Result(json:json)
+            array.append(tempObject)
+        }
+    }
+}

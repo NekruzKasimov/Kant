@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,30 +20,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNZ-ic-deY">
-                        <rect key="frame" x="16" y="16" width="425" height="216.5"/>
+                        <rect key="frame" x="4" y="4" width="449" height="240.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="KmC-hz-cnB">
-                                <rect key="frame" x="12" y="33" width="401" height="2"/>
+                                <rect key="frame" x="12" y="33" width="425" height="2"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.67450980390000004" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="POt-h7-cMC"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правительство РФ будет субсидировать часть затрат на экспорт сельхозпродукции" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3k-76-xbm">
-                                <rect key="frame" x="12" y="43" width="401" height="19.5"/>
+                                <rect key="frame" x="12" y="43" width="425" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJj-sj-M5f">
-                                <rect key="frame" x="12" y="71" width="401" height="145.5"/>
+                                <rect key="frame" x="12" y="71" width="425" height="169.5"/>
                                 <string key="text">Правительство РФ будет субсидировать часть логистических затрат на экспорт сельскохозяйственной и рыбной продукции, постановление выйдет до конца недели. Об этом сообщил журналистам вице-премьер Аркадий Дворкович на Международном рыбопромышленном форуме.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07.09.2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoS-Jt-ger">
-                                <rect key="frame" x="169" y="8" width="86" height="21"/>
+                                <rect key="frame" x="181" y="8" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -68,15 +67,18 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="TNZ-ic-deY" secondAttribute="trailing" constant="8" id="49U-dB-QRy"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="TNZ-ic-deY" secondAttribute="bottom" constant="8" id="FFq-mK-va7"/>
-                    <constraint firstItem="TNZ-ic-deY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="r13-4B-XM9"/>
-                    <constraint firstItem="TNZ-ic-deY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="tLE-Gi-EXa"/>
+                    <constraint firstAttribute="trailing" secondItem="TNZ-ic-deY" secondAttribute="trailing" constant="4" id="FVt-xO-eJa"/>
+                    <constraint firstItem="TNZ-ic-deY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Kuc-Rp-CEd"/>
+                    <constraint firstItem="TNZ-ic-deY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="UJC-pb-GSU"/>
+                    <constraint firstAttribute="bottom" secondItem="TNZ-ic-deY" secondAttribute="bottom" constant="4" id="yp8-06-1Xp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dataLabel" destination="PoS-Jt-ger" id="j6g-SN-dEZ"/>
+                <outlet property="descriptionLabel" destination="lJj-sj-M5f" id="zMT-jb-90l"/>
                 <outlet property="newsView" destination="TNZ-ic-deY" id="anW-lc-IgY"/>
+                <outlet property="titleLabel" destination="t3k-76-xbm" id="hJc-xS-cGi"/>
             </connections>
             <point key="canvasLocation" x="102.5" y="166.5"/>
         </tableViewCell>

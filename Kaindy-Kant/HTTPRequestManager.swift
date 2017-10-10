@@ -37,11 +37,12 @@ class HTTPRequestManager {
             tempParam = nil
         case .kant:
             apiUrl = ApiAddressKant(endpoint: endpoint).getURLString()
-            tempParam = nil
+    
+            print(apiUrl)
         }
         var header: HTTPHeaders = [:]
-        print(apiUrl)
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: URLEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
+            //print(response.description)
             guard response.response != nil else {
                 error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)
                 return
@@ -51,7 +52,7 @@ class HTTPRequestManager {
                 error(Constants.Network.ErrorMessage.NO_HTTP_STATUS_CODE)
                 return
             }
-            //print("\(statusCode) - \(apiUrl)")
+           // print("\(statusCode) - \(apiUrl)")
             
             switch(statusCode) {
             case HttpStatusCode.unauthorized.statusCode:

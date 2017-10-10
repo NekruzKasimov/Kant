@@ -27,31 +27,28 @@ class ServerManager: HTTPRequestManager  {
             completion(obj)
         }, error: error)
     }
-    
-    
-    
-//    func signUp(category: Category, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
-//        //let param = category.toDict()
-    
-    func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
-            completion(FinancialOffices(json: succes))
-        }) { (error) in
-        }
+    func signUp(newUser: NewUser, completion: @escaping (JSON)-> Void,error: @escaping (String)-> Void) {
+        //let param = category.toDict()
+        self.post(endpoint: Constants.Network.EndPoints.SignUp, serverType: .kant, parameters: newUser.toDictionary(), completion: { (json) in
+            //let message = json[""]
+            completion(json)
+        }, error: error)
     }
 
-    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
-            completion(DetailedFinOffice(json: succes))
-        }) { (error) in
-        }
-
-    }
-    
-//    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void)
-//    {
-//        self.get(api: "", completion: <#T##HTTPRequestManager.SuccessHandler##HTTPRequestManager.SuccessHandler##(JSON) -> Void#>, error: <#T##HTTPRequestManager.FailureHandler##HTTPRequestManager.FailureHandler##(String) -> Void#>)
+//    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
+//        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
+//            completion(DetailedFinOffice(json: succes))
+//        }) { (error) in
+//        }
+//
 //    }
+    
+    func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)", serverType: .kant, completion: { (success) in
+            completion(Rossahar(json: success))
+        }) { (error) in
+        }
+    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",
