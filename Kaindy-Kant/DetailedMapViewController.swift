@@ -8,22 +8,42 @@
 
 import UIKit
 import MapKit
-
+import GoogleMaps
+import GooglePlaces
 
 class DetailedMapViewController: UIViewController {
     
     @IBOutlet weak var detailedMap: MKMapView!
+    var googleMap: GMSMapView!
+    var googlePoints: [CLLocationCoordinate2D] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addMap(latitude: 42.81064, longitude: 74.627359)
+     
+        googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
+        googlePoints.append(CLLocationCoordinate2D(latitude: 42.807869, longitude: 74.6294193))
+        googlePoints.append(CLLocationCoordinate2D(latitude: 42.811612, longitude: 74.6309217))
+        setupMap()
     }
     
-    func addMap(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: location, span: span)
-        detailedMap.setRegion(region, animated: true)
+    func setupMap() {
+        let googleCamera = GMSCameraPosition.camera(withTarget: googlePoints[0], zoom: 15)
+        googleMap = GMSMapView.map(withFrame: detailedMap.frame, camera: googleCamera)
+        googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(googleMap)
+        
+        setupField()
+    }
+    
+    func setupField() {
+        let path = GMSMutablePath()
+        
+        for p in googlePoints {
+            path.add(p)
+        }
+        
+        let field = GMSPolygon(path: path)
+        field.strokeWidth = 2.0
+        field.map = googleMap
     }
 }
