@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 enum NewsSections: Int {
     case sugar = 0
@@ -73,32 +74,34 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
         } else {
             if let count = newRossahar?.results.array.count {
-                return count
+                return count - 1
             }
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell = UITableViewCell()
-//
-//        switch NewsSections(rawValue: indexPath.section)! {
-//        case .sugar:
-//            cell = tableView.dequeueReusableCell(withIdentifier: "SugarTableViewCell")!
-//            break
-//        case .news:
-           let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
-            cell.dataLabel.text = newRossahar?.results.array[indexPath.row].data
-            cell.titleLabel.text = newRossahar?.results.array[indexPath.row].name
-            cell.descriptionLabel.text = newRossahar?.results.array[indexPath.row].description
-        
-           // break
-        //}
 
-        return cell
+        switch NewsSections(rawValue: indexPath.section)! {
+        case .sugar:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SugarAndJomTableViewCell") as! SugarAndJomTableViewCell
+            return cell
+        case .news:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
+            cell.dataLabel.text = newRossahar?.results.array[indexPath.row + 1].data
+            cell.titleLabel.text = newRossahar?.results.array[indexPath.row + 1].name
+            cell.descriptionLabel.text = newRossahar?.results.array[indexPath.row + 1].description
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 204
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            self.present(SFSafariViewController.init(url: URL(string: "http://rossahar.ru\(newRossahar!.results.array[indexPath.row].link)")!), animated: true, completion: nil)
+        }
     }
 }

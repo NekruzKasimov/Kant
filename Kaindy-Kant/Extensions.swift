@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
@@ -23,6 +24,7 @@ extension UIColor {
 }
 
 extension UIViewController {
+   
     func showErrorAlert(message: String) {
         //HUD.hide()
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -30,6 +32,7 @@ extension UIViewController {
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
     func setNavigationBar() {
         let revealVC =  self.revealViewController()
         if revealVC != nil {
@@ -59,5 +62,27 @@ extension Int {
     }
     
 }
+
+class Alert {
+    static let shared = Alert()
+    var tintColor: UIColor?
+    
+    func showCustomAlertIn(vc:UIViewController, withTitle title: String, message: String, actions:[UIAlertAction])  {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.view.tintColor = tintColor ?? .black
+        for action in actions {
+            alertController.addAction(action)
+        }
+        vc.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSimpleAlertIn(vc:UIViewController, withTitle title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alertController.addAction(okAction)
+        vc.present(alertController, animated: true, completion: nil)
+    }
+}
+
 
 

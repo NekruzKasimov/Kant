@@ -24,7 +24,7 @@ class DetailedFinOffice {
         logo = json["logo"].stringValue
         description = json["description"].stringValue
         branches = Branches(json: json["branches"])
-        contacts = Contacts(json: json["contacs"])
+        contacts = Contacts(json: json["contacts"])
         images = Images(json: json["images"])
     }
 }
@@ -103,5 +103,21 @@ class Images: NSObject {
             let tempObject = Image(json:json)
             array.append(tempObject)
         }
+    }
+}
+
+struct Location {
+    var latitude: Double
+    var longitude: Double
+    
+    init(latitude: String, longitude: String) {
+        self.latitude = Double(latitude)!
+        self.longitude = Double(longitude)!
+    }
+    
+    func toDict() -> [String: Any]
+    {
+        return ["longitude": longitude,
+                "latitude": latitude]
     }
 }
