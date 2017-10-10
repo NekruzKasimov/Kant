@@ -23,10 +23,10 @@ class DescriptionViewController: UIViewController {
 
 //MARK SJSegmentViewController
 
-//extension DescriptionViewController: SJSegmentedViewControllerViewSource {
-//    
-//    func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
-//        return scrollView
-//    }
-//}
+extension DescriptionViewController: SJSegmentedViewControllerViewSource {
+    
+    func viewForSegmentControllerToObserveContentOffsetChange() -> UIView {
+        return scrollView
+    }
+}
 

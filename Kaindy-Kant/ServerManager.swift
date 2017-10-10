@@ -35,13 +35,20 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
     }
 
-//    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
-//        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
-//            completion(DetailedFinOffice(json: succes))
-//        }) { (error) in
-//        }
-//
-//    }
+    func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
+            completion(FinancialOffices(json: succes))
+        }) { (error) in
+        }
+        
+    }
+    
+    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
+            completion(DetailedFinOffice(json: succes))
+        }) { (error) in
+        }
+    }
     
     func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)", serverType: .kant, completion: { (success) in
@@ -49,6 +56,7 @@ class ServerManager: HTTPRequestManager  {
         }) { (error) in
         }
     }
+    
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

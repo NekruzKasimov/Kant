@@ -52,10 +52,17 @@
 		2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D2171F74E09E0059B88C /* WeatherViewController.swift */; };
 		2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D21B1F74F83D0059B88C /* WeatherCell.swift */; };
 		238F6F021F8B713400304DED /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F011F8B713400304DED /* ContactsViewController.swift */; };
-		238F6F041F8B720E00304DED /* ContactsTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F031F8B720E00304DED /* ContactsTableVIewCell.swift */; };
 		238F6F061F8B840300304DED /* BranchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F051F8B840300304DED /* BranchesViewController.swift */; };
-		238F6F081F8B847900304DED /* BranchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F071F8B847900304DED /* BranchesTableViewCell.swift */; };
-		238F6F0A1F8B84F000304DED /* BranchesMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */; };
+		2397A2751F8CB7B800606660 /* DetailedFinOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A2731F8CB7B800606660 /* DetailedFinOffice.swift */; };
+		2397A2761F8CB7B800606660 /* FinancialOffices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A2741F8CB7B800606660 /* FinancialOffices.swift */; };
+		2397A27A1F8CB7E000606660 /* DetailedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A2791F8CB7E000606660 /* DetailedSceneViewController.swift */; };
+		2397A27F1F8CB80600606660 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A27E1F8CB80500606660 /* HeaderViewController.swift */; };
+		2397A2801F8CB8A700606660 /* BranchesMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A27D1F8CB7ED00606660 /* BranchesMapTableViewCell.swift */; };
+		2397A2811F8CB8A700606660 /* BranchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A27C1F8CB7ED00606660 /* BranchesTableViewCell.swift */; };
+		2397A2821F8CB8A700606660 /* ContactsTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A27B1F8CB7E600606660 /* ContactsTableVIewCell.swift */; };
+		2397A2831F8CB8A700606660 /* DetailedSceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A2781F8CB7D600606660 /* DetailedSceneTableViewCell.swift */; };
+		2397A2851F8CB8E200606660 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A2841F8CB8E200606660 /* DescriptionViewController.swift */; };
+		2397A2871F8CDB4E00606660 /* SugarAndJomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397A2861F8CDB4E00606660 /* SugarAndJomTableViewCell.swift */; };
 		23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EA1F7B46060062B4F9 /* Weather.swift */; };
 		23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */; };
 		23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */; };
@@ -171,6 +178,16 @@
 		238F6F051F8B840300304DED /* BranchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesViewController.swift; sourceTree = "<group>"; };
 		238F6F071F8B847900304DED /* BranchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesTableViewCell.swift; sourceTree = "<group>"; };
 		238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesMapTableViewCell.swift; sourceTree = "<group>"; };
+		2397A2731F8CB7B800606660 /* DetailedFinOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFinOffice.swift; sourceTree = "<group>"; };
+		2397A2741F8CB7B800606660 /* FinancialOffices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOffices.swift; sourceTree = "<group>"; };
+		2397A2781F8CB7D600606660 /* DetailedSceneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSceneTableViewCell.swift; sourceTree = "<group>"; };
+		2397A2791F8CB7E000606660 /* DetailedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSceneViewController.swift; sourceTree = "<group>"; };
+		2397A27B1F8CB7E600606660 /* ContactsTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableVIewCell.swift; sourceTree = "<group>"; };
+		2397A27C1F8CB7ED00606660 /* BranchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesTableViewCell.swift; sourceTree = "<group>"; };
+		2397A27D1F8CB7ED00606660 /* BranchesMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesMapTableViewCell.swift; sourceTree = "<group>"; };
+		2397A27E1F8CB80500606660 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		2397A2841F8CB8E200606660 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		2397A2861F8CDB4E00606660 /* SugarAndJomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarAndJomTableViewCell.swift; sourceTree = "<group>"; };
 		23A690EA1F7B46060062B4F9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		23A690EC1F7B5BDA0062B4F9 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
 		23A690ED1F7B5BDA0062B4F9 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -465,6 +482,7 @@
 			children = (
 				1FC61FD41F83BF68000BE56A /* NewsTableViewCell.swift */,
 				1FC61FD51F83BF68000BE56A /* NewsTableViewCell.xib */,
+				2397A2861F8CDB4E00606660 /* SugarAndJomTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -472,11 +490,12 @@
 		1FE1376F1F6FB65800B7926B /* Detalied Service */ = {
 			isa = PBXGroup;
 			children = (
+				2397A2771F8CB7CD00606660 /* Cells */,
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
-				232E07211F86386400D117CE /* DetailedSceneViewController.swift */,
-				236BD0631F8B39C4006077B0 /* HeaderViewController.swift */,
-				236BD0651F8B3ABE006077B0 /* DescriptionViewController.swift */,
+				2397A27E1F8CB80500606660 /* HeaderViewController.swift */,
+				2397A2791F8CB7E000606660 /* DetailedSceneViewController.swift */,
 				238F6F011F8B713400304DED /* ContactsViewController.swift */,
+				2397A2841F8CB8E200606660 /* DescriptionViewController.swift */,
 				238F6F051F8B840300304DED /* BranchesViewController.swift */,
 			);
 			name = "Detalied Service";
@@ -508,17 +527,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		232E071E1F86320E00D117CE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				238F6F031F8B720E00304DED /* ContactsTableVIewCell.swift */,
-				232E071F1F86323100D117CE /* DetailedSceneTableViewCell.swift */,
-				238F6F071F8B847900304DED /* BranchesTableViewCell.swift */,
-				238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
 		235E28501F7A8B1D00378759 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +534,8 @@
 				23A690EA1F7B46060062B4F9 /* Weather.swift */,
 				8423B9961F8B4FA10061C702 /* NewUser.swift */,
 				8433F2731F8B521C00BA712B /* Rossahar.swift */,
+				2397A2731F8CB7B800606660 /* DetailedFinOffice.swift */,
+				2397A2741F8CB7B800606660 /* FinancialOffices.swift */,
 				8433F2751F8B523400BA712B /* Domestic.swift */,
 				8433F2771F8B550400BA712B /* Result.swift */,
 			);
@@ -540,6 +550,17 @@
 				84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */,
 			);
 			name = Registration;
+			sourceTree = "<group>";
+		};
+		2397A2771F8CB7CD00606660 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2397A27D1F8CB7ED00606660 /* BranchesMapTableViewCell.swift */,
+				2397A27C1F8CB7ED00606660 /* BranchesTableViewCell.swift */,
+				2397A27B1F8CB7E600606660 /* ContactsTableVIewCell.swift */,
+				2397A2781F8CB7D600606660 /* DetailedSceneTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		23A8A36D1F83426A0065C5E6 /* Cells */ = {
@@ -623,9 +644,9 @@
 		84B54FC51F8B8DBA0016A301 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				1FDFC3D71F71440B00B3317B /* LaboratoryViewController.swift */,
-				1FDFC3D91F7145DE00B3317B /* DetailedBankViewController.swift */,
-				1FDFC3D51F711ABC00B3317B /* BankServiceViewController.swift */,
+				238F6F031F8B720E00304DED /* ContactsTableVIewCell.swift */,
+				238F6F071F8B847900304DED /* BranchesTableViewCell.swift */,
+				238F6F091F8B84F000304DED /* BranchesMapTableViewCell.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -827,7 +848,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -839,6 +860,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -847,6 +870,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -901,7 +926,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -949,7 +974,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -959,6 +984,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2397A2801F8CB8A700606660 /* BranchesMapTableViewCell.swift in Sources */,
+				2397A2811F8CB8A700606660 /* BranchesTableViewCell.swift in Sources */,
+				2397A2821F8CB8A700606660 /* ContactsTableVIewCell.swift in Sources */,
+				2397A2831F8CB8A700606660 /* DetailedSceneTableViewCell.swift in Sources */,
 				238F6F061F8B840300304DED /* BranchesViewController.swift in Sources */,
 				23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */,
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
@@ -970,11 +999,10 @@
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
+				2397A2851F8CB8E200606660 /* DescriptionViewController.swift in Sources */,
 				84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */,
 				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
-				238F6F041F8B720E00304DED /* ContactsTableVIewCell.swift in Sources */,
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
-				238F6F081F8B847900304DED /* BranchesTableViewCell.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
@@ -992,14 +1020,15 @@
 				1F5893BD1F6156DF00FD2C5D /* RequestViewController.swift in Sources */,
 				8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */,
 				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
-				238F6F0A1F8B84F000304DED /* BranchesMapTableViewCell.swift in Sources */,
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
+				2397A27F1F8CB80600606660 /* HeaderViewController.swift in Sources */,
 				8433F2761F8B523400BA712B /* Domestic.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				8423B9991F8B54780061C702 /* Constants.swift in Sources */,
+				2397A2751F8CB7B800606660 /* DetailedFinOffice.swift in Sources */,
 				8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */,
 				84049AE41F85F4AB00BA935F /* ContactOfResourcesViewController.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
@@ -1010,12 +1039,15 @@
 				84049AE61F85F71200BA935F /* ContactOfResourceProtectionViewController.swift in Sources */,
 				1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */,
 				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
+				2397A2871F8CDB4E00606660 /* SugarAndJomTableViewCell.swift in Sources */,
 				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
+				2397A2761F8CB7B800606660 /* FinancialOffices.swift in Sources */,
 				1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */,
 				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				8433F2781F8B550400BA712B /* Result.swift in Sources */,
 				1F7291351F66639F00111692 /* TechnologyInfoViewController.swift in Sources */,
+				2397A27A1F8CB7E000606660 /* DetailedSceneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

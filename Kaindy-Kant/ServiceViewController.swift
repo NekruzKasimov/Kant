@@ -43,13 +43,13 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-//        var serviceVC = "DetailedSceneViewController"
-//        if indexPath.row == 1 {
-//            serviceVC = "ConsultationServiceViewController"
-//        }
-//        let vc = sb.instantiateViewController(withIdentifier: serviceVC)
-//        navigationController?.pushViewController(vc, animated: true)
+        let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+        var serviceVC = "DetailedSceneViewController"
+        if indexPath.row == 1 {
+            serviceVC = "ConsultationServiceViewController"
+        }
+        let vc = sb.instantiateViewController(withIdentifier: serviceVC)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
