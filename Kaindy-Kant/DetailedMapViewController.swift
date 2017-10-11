@@ -13,13 +13,13 @@ import GooglePlaces
 
 class DetailedMapViewController: UIViewController {
     
-    @IBOutlet weak var detailedMap: MKMapView!
+    @IBOutlet weak var googleMapView: GMSMapView!
     var googleMap: GMSMapView!
     var googlePoints: [CLLocationCoordinate2D] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.807869, longitude: 74.6294193))
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.811612, longitude: 74.6309217))
@@ -28,8 +28,8 @@ class DetailedMapViewController: UIViewController {
     
     func setupMap() {
         let googleCamera = GMSCameraPosition.camera(withTarget: googlePoints[0], zoom: 15)
-        googleMap = GMSMapView.map(withFrame: detailedMap.frame, camera: googleCamera)
-        googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        googleMap = GMSMapView.map(withFrame: googleMapView.frame, camera: googleCamera)
+        googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight] 
         view.addSubview(googleMap)
         
         setupField()
@@ -43,7 +43,11 @@ class DetailedMapViewController: UIViewController {
         }
         
         let field = GMSPolygon(path: path)
-        field.strokeWidth = 2.0
         field.map = googleMap
+        
+        let line = GMSPolyline(path: path)
+        line.strokeWidth = 2
+        line.strokeColor = .green
+        line.map = googleMap
     }
 }

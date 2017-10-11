@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DataManager.shared.clearData()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -35,6 +35,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
+        let login = loginTextField.text
+        let password = passwordTextField.text
+        if login != "" && password != "" {
+            ServerManager.shared.login(login: login!, password: password!, completion: log_in, error: showErrorAlert)
+        }
+        else {
+            showErrorAlert(message: "Заполните поля!")
+        }
+        
+        
+    }
+    func log_in(user_id: Int) {
+        DataManager.shared.setUserId(user_id: user_id)
+        DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
         present(vc, animated: true, completion: nil)

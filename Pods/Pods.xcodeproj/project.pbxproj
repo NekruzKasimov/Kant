@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0040192935E234E44ADCD470373169E9 /* ic_cross_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 554F7C906F626D6D557219F9F8F3F32F /* ic_cross_white@2x.png */; };
 		0108C4F1C58230D5D2B1B4FF08921240 /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0439D1C71169D8A79E63414589B8CE /* RequestModifier.swift */; };
 		01C7C4175E12EF7E435B67BF9582DF99 /* IQPreviousNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6930AA3E74DD0A8102DFAE193CAF1B31 /* IQPreviousNextView.m */; };
 		04BC6C72900E853B804E7C3ADC9049A8 /* IQUIWindow+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6D08C645AD0FE9D71B1343D8D35FBA /* IQUIWindow+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,22 +17,19 @@
 		10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE71C5D0BABBB3D58FFC3BE013146A8 /* Timeline.swift */; };
 		11F9F26CED29BAFCF03410C054D55DCE /* SJShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAC6CF10B34014CD72B209B234BC3E /* SJShadow.swift */; };
 		1272F071D11EFD3133246140B9A8130D /* IQUIViewController+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C52B0F9462011A7357E4A4A7E6F1B41 /* IQUIViewController+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13D6214BF4A8F56A18EDBFE777155FD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
+		12BEF6C7A473907935C95EC2232C450F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		14540634442FE9E22417AD1D93D0884D /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 720457C880C3137ECCC24C2208B066F0 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19FD947BD58DB3A89B1874CE93F60198 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683095536B65D371C91DE1254CC602E6 /* Filter.swift */; };
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B30C6B2AE4E839A375E663D97EAEAB83 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E40B7E2884CB3A693B8E00EEABAD857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
+		1BE66DF4B3D3B64F53EC88108140DEF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		1FAF936145744EF7FBEBD2B1CCF20430 /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 89168D2581E24AF568FD0C2C367D0686 /* IQTitleBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		200FB827EB8EA177AE3111DE265F4673 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E17F3CB6A63D58B8EA263A0A3305F /* AnimatedImageView.swift */; };
 		201BD96438180A921F4E50FDB21EC8CE /* FullScreenSlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1073F4245DACFBA80D27D05C4D6519E /* FullScreenSlideshowViewController.swift */; };
-		218D37503654B55B17FD04555E59C54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
+		2384B8056541CBDAEA377378EDD0CD72 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6500FB2043265B816694F3B0F09FD57D /* QuartzCore.framework */; };
 		25ECD347263E92187AAC695330C947FC /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = E41C7EA791C4EE9B68A1213F127E4BC5 /* IQNSArray+Sort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2698FFB3FB651DE9FEA8821FF3E3A256 /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B028AF9915F35EE0577162EFD693B8 /* IQUIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C3810EA6835375432A233E79C028A4F /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6F0E55639D4A110443765BA29C166C /* IQToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CA45B0F7175C884633BBE0ADEA5AC9E /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A00F98E2DDB22FC00CE09FCFD49A48D6 /* IQUIView+IQKeyboardToolbar.m */; };
-		2E8FEE8018D53D47E762FB1F630DD217 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479D7F5896AC201D4C1519BD73DE369 /* CFNetwork.framework */; };
-		317868CE5B363871BD4B2D4DAC64CD91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
-		33F332BD847D16731F53DE7AA81C93A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F39CB28B18544A7B1C114731D51073 /* QuartzCore.framework */; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166CA116DDC42B89C6369173127F731C /* TaskDelegate.swift */; };
 		3738174C9FE2A9AA1E89C4407D94E217 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964FF5F33F99DBED59573D41EEB46A96 /* ImageCache.swift */; };
 		3DD5A26B210989F539F9ECFFB69DE28C /* IQUITextFieldView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DABD4A3ABA20B361CE4595E96F3F914 /* IQUITextFieldView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,14 +38,14 @@
 		443346908A8190FBBBB34B1FA593EB54 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2DAE820A12D7DE350C0A3C4D1E882 /* IQKeyboardReturnKeyHandler.m */; };
 		4482BE4AA4226D4EC0D89FE6D3D25CE3 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AB46106511BC760CFEA13F96008451 /* Kingfisher.framework */; };
 		45C47235A5FFC625534B5D9498E615FF /* ImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165713DC39C8433C6CEBEA9C5C91A72D /* ImageSlideshow.swift */; };
-		4684DE919CC6D626CDB24611D4981881 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
 		473C601C4E686AA726B6F8076D044F9C /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2F83D5775FF55A0B0A2008068CF0A /* KingfisherManager.swift */; };
 		4A1C7D4388B8CA4B6D0802FE74F1CB2A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4686F583C9BC657A227CB7AD453D15 /* ImageDownloader.swift */; };
-		50819958178AD5637A7ACC1F2F90D301 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4150782185CD95A20B00F1AEFBA8610E /* CoreGraphics.framework */; };
+		524227D7C5117BD7E590AA2FD78CF7C3 /* ic_cross_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 600F2F003E1E0887A3D0D6FDE906625B /* ic_cross_white@3x.png */; };
 		5337BC4C83A056BD8023DA78F0B92E77 /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E80B366F2D2222923B0825B8C5A2CF /* IQBarButtonItem.m */; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1197751EC5291ED9E1217BA8AA58 /* Request.swift */; };
 		54FD0DDF189726FAACEB78E2A8C77B58 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = B7452F73F96CE5644E55238377CED728 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55AA601B4FB9DBC77E46B1CEACC805DA /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A02834628FC85D1C797D8823892234 /* IQTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DDFD75A7136C0CE1F1D3BBC8A3413A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		5E29476CC6161C0BCE6FE931144499F6 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DFD81BF996D749DA331527C65D1ACF /* Box.swift */; };
 		5E5133A76AD980EF71058262B33AA177 /* SJSegmentedScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A699C9496D16BE32E64F7DE0E61AFEF /* SJSegmentedScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		603E2C6E25F9D489CF8603AFDD761D02 /* Pods-Kaindy-Kant-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F2915E8BC3449627356DB331F5E235 /* Pods-Kaindy-Kant-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,19 +59,20 @@
 		68ABDDA54338A8F4A56E7BA44A6F047A /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8C515998E7AC185939A695E78B892 /* ImageProcessor.swift */; };
 		6C1EF0169B5B314206686D597368EB05 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E3184B4465925A67B7BC24BB80946B /* IQUITextFieldView+Additions.m */; };
 		6E73F281D5D93E472D619A556D9A96D6 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD0173506C81D4216F9B4782927D253 /* ImageTransition.swift */; };
+		6EF3BEC17C0A55D5E0B0F40170A50C1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		6F990DB5706CCBC26E90ED8E5D83B790 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC4231136154C7E1B053DE288D3ECBA /* SwiftyJSON.swift */; };
 		6FB5F6CEA45F7148224328DF3ED57A91 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9D398FE862A21F000A5EB64C01BA2 /* SwiftyJSON-dummy.m */; };
 		7035709F9D020AD401C2B19B6598F2FE /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF6152EC6CCD1C18948D05599AAA1B84 /* IQKeyboardManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70E60D5D86703932F345DE6302983A21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		7334597CBDA885B4BC2C59E24E202545 /* SJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3FF1342DDB4866A32EABEB8D0A9E6 /* SJSegmentView.swift */; };
-		73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
 		750A49E59156604B2D7CC519B27E565F /* SJSegmentedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729400F6DA47654397BF0DD9A8C82C8C /* SJSegmentedScrollView.swift */; };
 		75CA4835125EA10DAD8E1C73BB7F20F9 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CB7EC28490523E5D138FD2F5476761 /* ThreadHelper.swift */; };
+		773DE51DED0AE9FF542EA7F378FA0CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		78CC681CF8F0B09AFFAC05C9096F8E45 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769F3133F8F79E6C152B07F7392504E /* UIButton+Kingfisher.swift */; };
 		7A486786E00AE11618C0E32C5AEC048C /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E67B4E7251B5908CA2EFFF9A7E329E /* ImageView+Kingfisher.swift */; };
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DCAEF92382650942B79B6E4F7712BD /* SessionDelegate.swift */; };
 		7C9AD7528EE145B22A1CD74340E27639 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF1259015F7CFEC83AC71CE35D04BC /* String+MD5.swift */; };
 		7CE88029AEDE48A41FFFB00D51D97AE5 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1C464390FA18B8C98DD3D33A879D3 /* Placeholder.swift */; };
-		7D8710DBAECEAE50A7BF388BFCE3D489 /* ic_cross_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC793BD797D093812AA361A8A1490244 /* ic_cross_white@2x.png */; };
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FB64578A3291D7E7C1556805D2EB9C /* Result.swift */; };
 		7DD82A159879063584B82B1AB8F9D451 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 518A7D928A80716FEDDF3F74BD047F2F /* IQUIView+Hierarchy.m */; };
 		8332A346C63A53BC5D550F9040BEA3D9 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A862555081BC489583E5D2E9AFE68F /* Kingfisher-dummy.m */; };
@@ -82,21 +81,25 @@
 		8668498088907F92A13B58C08E386BED /* Pods-Kaindy-KantUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC46EED645F3F2F1A2321391EFD165ED /* Pods-Kaindy-KantUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8701FB0E8A3E67DC73385AEEE9A02530 /* KingfisherSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D99B79F37F2E13E6EE1A74FEE1F04 /* KingfisherSource.swift */; };
 		876E1862195D53B728E9A053091C909C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E067413FF6BE874E1A5811874AD915 /* Resource.swift */; };
-		8ACFE85614AFCD6370FF2E1B457812F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD0BA3E96741FD928EE5182A9869649 /* UIKit.framework */; };
 		9172F3AFCFC9C5AE87EB199270BBC9FF /* UIImage+AspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB5DAC93111FD8DFF65FF9E013BAC /* UIImage+AspectFit.swift */; };
 		91F05F7E50DF41AE327461795AC8E822 /* ScrollableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19B7062C6EC697E73CA7D96C4710DD /* ScrollableSegmentedControl.swift */; };
 		93E767926702A33EF0A4C3522D7E1751 /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D043EE8230FE3B99C36BB50ECF7425A /* ImagePrefetcher.swift */; };
 		96493829042C93A8358B11962AD998CF /* UIImageView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27366135D8D24088307059E854BBB077 /* UIImageView+Tools.swift */; };
+		983857A6F6D2B93E01F243BB8D27376C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003C657295B10C9D14B6D73CF6D2C3E /* UIKit.framework */; };
 		9A146B7948F2A5A72E2A925ECAD414F4 /* ScrollableSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 707A20888A4CEDC297A15A35D9D55C96 /* ScrollableSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A7EFC71994A46C4FD9E3A4527CD8CCE /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8376B93C5E7FCFEF1A9E2D40800D2BB0 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B8578CF6065F8E210E5DB4C95332ACE /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D43CE4DF2DC9DF07B72D3439D19F1B9E /* IQTitleBarButtonItem.m */; };
+		9D2D7C92DD38B922D7E8191AFA9213E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D86BAF4C76B0796122E064DC96FB /* AFError.swift */; };
 		9EE4EB9DD009BFFC70B492AC19DDA5DE /* IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F89EDC5834B4F128D8AB170245CF352 /* IQKeyboardManager-dummy.m */; };
 		9FE60963BAE036AB98FD566E6B2897B8 /* SJSegmentedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFFCCB274A660B5344C1C0D530E944 /* SJSegmentedScrollView-dummy.m */; };
+		A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		A1117755DDA279216CAACBD6609A58CB /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 645B372CA372B975B013173B24ABCDDD /* IQUIViewController+Additions.m */; };
 		A1150A5AFC85414D7851B5C038F4559E /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48879876A8F41AEBA417E48965C3E3B9 /* IQUIScrollView+Additions.m */; };
 		A13E2654516875D947470014B081639B /* ImageSlideshow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C634D43CD2B1CE4BE4BA96B9D2AE13 /* ImageSlideshow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA03A27A1C6E8E31245EB4CD581068 /* NetworkReachabilityManager.swift */; };
+		A3BCC3B8DC910D46657092656DD293F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
+		A4ECFA4414D14486C20F647F6D69C73F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DF72060606D3281E9481210C60FECE /* CFNetwork.framework */; };
 		A57975A9DCA8CAA06242BB1AEE77B8E1 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1885952D5D1899D7063736F20464DD /* ActivityIndicator.swift */; };
 		A674C0E699D02551BC5275D5072E0F5C /* SJContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C2F5CCC67339958128D33CB4C89CD9 /* SJContentView.swift */; };
 		A7BFC531DC11E7C9136EFD7A349E3752 /* SJUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92832984FF4A513D7A688EC9777C58A1 /* SJUtil.swift */; };
@@ -104,6 +107,7 @@
 		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BA8701477A397E4BAA42B61DEF3FA2 /* Alamofire-dummy.m */; };
 		ABBAAF617F6C37E04179CEA491C8BED3 /* Pods-Kaindy-KantTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DB08B22E6500845280921A445153CF /* Pods-Kaindy-KantTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC2A36BB3595E73A56D2C15344A9630C /* Pods-Kaindy-KantTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 115380CF4D1D13F98830E079C7AE3F61 /* Pods-Kaindy-KantTests-dummy.m */; };
+		AD0F6E5B1492C79A19151B706FB9AFC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3003C657295B10C9D14B6D73CF6D2C3E /* UIKit.framework */; };
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129CE5644DEC99801E1DF5C4910F45D6 /* SessionManager.swift */; };
 		AFB5D8FF4B69C0B8E2CC2D2D61DDAD64 /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E224E7CF5DB19544BBB771777A5C45E /* IQKeyboardManagerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B18918EAF48A0A67D4143CBB01A271F5 /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE3FAC6C6D7CFAAF13FD5C64ADE9213 /* ZoomAnimatedTransitioning.swift */; };
@@ -118,22 +122,18 @@
 		C0A18E70A64377EC2D83D9CE361A55F1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA79D8C6D1637388BFFED02A36E5709 /* Image.swift */; };
 		C9E7720445023057606D4D38168E3083 /* SJSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC940382F5E16FF3953EE04D0F6DF118 /* SJSegmentedViewController.swift */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9B750D1614DED01F97C647D7BB07 /* Response.swift */; };
-		CCAA4ADBAC32C971528C5B40519AA701 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD0BA3E96741FD928EE5182A9869649 /* UIKit.framework */; };
 		CD29C12D4D084E694D9A348198CF6611 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78307CAC8877B9172F31644452CB18 /* IQNSArray+Sort.m */; };
-		CF2202E3D70DD652799E0C0AA2500BF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
 		D8B683A3DA76454FABA6A1F7BD59B1BA /* Pods-Kaindy-Kant-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8B34876ECBAEE14D5A1113536159A9 /* Pods-Kaindy-Kant-dummy.m */; };
 		DFD625F71513715BE93E4E100B90AFD3 /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 72229DBA220E9B6842F703C8387DBC67 /* IQKeyboardManagerConstantsInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E450FB46407E6CA4F6B362B7C243E279 /* IQPreviousNextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0E478F32A590F58BCF06D85F25E2E0 /* IQPreviousNextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E5D840E83BB1765A6FD00BE82476F3CF /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC753D9999D868D220BA8857107F49 /* FormatIndicatedCacheSerializer.swift */; };
 		E649444F760C6D983F4488D9E797516A /* ImageSlideshow.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93A25326F67BB9AFBE608505F81953EB /* ImageSlideshow.bundle */; };
-		E904DD4C59F98EF31DB4386ABD6F0EEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
-		EF1277719AA7C7D3CE27319F816A9F35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
+		EB2E00FE935B97B28D7A5C3533008965 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C8FE447477F63F269F39428032F0D /* Notifications.swift */; };
 		F4A44D3ED358E7E359FD2B0CE7E0FB3E /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = F79AFF32333B6A079C693870C526245B /* IQUIWindow+Hierarchy.m */; };
-		F5425752788428B7F4A5CF2101079E20 /* ic_cross_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E9DF9DDE1C7932D50A51A65037A946 /* ic_cross_white@3x.png */; };
+		F4C3A0F546F9454E1C496B64FE8F4BC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E61A75CA8A3BA9F06814E1E40BF1287 /* CoreGraphics.framework */; };
 		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF090CACE2F170C0EAC89F3A531230A9 /* ResponseSerialization.swift */; };
 		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A104E02C45F687DB3BBE7A20CB00A4 /* Alamofire.swift */; };
-		FFB479E8CA6CB176964A0A154763CD3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */; };
 		FFFE10FE5308E5D0416AF0DC182263BE /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0307C6B051344A2ABD042A2EBC72CC /* Indicator.swift */; };
 /* End PBXBuildFile section */
 
@@ -209,7 +209,6 @@
 		032455D5A9632679DFAFBDA518B5B8B1 /* ScrollableSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollableSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
 		064BD6772868980E9C2695E0E82DEF3E /* Pods_Kaindy_Kant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Kaindy_Kant.framework; path = "Pods-Kaindy-Kant.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0769F3133F8F79E6C152B07F7392504E /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
-		08E9DF9DDE1C7932D50A51A65037A946 /* ic_cross_white@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@3x.png"; path = "ImageSlideshow/Assets/ic_cross_white@3x.png"; sourceTree = "<group>"; };
 		0906E0CA356F3342960826EEC292F8DA /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		0988282DD3D8BA95265A794AEB840C59 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		0AFAF44A595F0BC9CCB6103FFDFD29CB /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
@@ -241,8 +240,10 @@
 		2C6F0E55639D4A110443765BA29C166C /* IQToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQToolbar.h; path = IQKeyboardManager/IQToolbar/IQToolbar.h; sourceTree = "<group>"; };
 		2CB7A0A6E8EE27872D33906D3FA6324C /* Pods-Kaindy-KantUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Kaindy-KantUITests-resources.sh"; sourceTree = "<group>"; };
 		2DE9023F84539FAC8607675CDF9FBEF7 /* Pods-Kaindy-KantUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Kaindy-KantUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2E61A75CA8A3BA9F06814E1E40BF1287 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		2F6D08C645AD0FE9D71B1343D8D35FBA /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIWindow+Hierarchy.h"; path = "IQKeyboardManager/Categories/IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
 		2F78307CAC8877B9172F31644452CB18 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQNSArray+Sort.m"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		3003C657295B10C9D14B6D73CF6D2C3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		307ECA04349B11B7CBA5C90F876CD5D7 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
 		33546B5BF32296EF8359750FA9F90AEE /* Pods-Kaindy-Kant-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Kaindy-Kant-resources.sh"; sourceTree = "<group>"; };
 		33E067413FF6BE874E1A5811874AD915 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
@@ -253,7 +254,7 @@
 		3D8749A45A325DCAB4CAB6D29592887D /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1EB888A801EA0300E047533CF23FD3 /* ImageSlideshow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ImageSlideshow.modulemap; sourceTree = "<group>"; };
 		3F479222B53BF964946681768A06F6EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4150782185CD95A20B00F1AEFBA8610E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4275B09089EE344818723EEF7CE25E9B /* Pods-Kaindy-KantUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Kaindy-KantUITests-frameworks.sh"; sourceTree = "<group>"; };
 		42A2F83D5775FF55A0B0A2008068CF0A /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 		45AB46106511BC760CFEA13F96008451 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,15 +269,18 @@
 		518A7D928A80716FEDDF3F74BD047F2F /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+Hierarchy.m"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
 		520592FA6CCB7733D13B0811B2A1E82A /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManager.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B9E86827AA9AA69CAFD3B8C9B59344 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		554F7C906F626D6D557219F9F8F3F32F /* ic_cross_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "ic_cross_white@2x.png"; path = "ImageSlideshow/Assets/ic_cross_white@2x.png"; sourceTree = "<group>"; };
 		578D9035489342CD0592C7B13AB39C06 /* Pods-Kaindy-KantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kaindy-KantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		58807B57FB85516E9CFF11AE671AE472 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		5A47A8074E7E740646168734CC6D5711 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		600F2F003E1E0887A3D0D6FDE906625B /* ic_cross_white@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "ic_cross_white@3x.png"; path = "ImageSlideshow/Assets/ic_cross_white@3x.png"; sourceTree = "<group>"; };
 		62CB7EC28490523E5D138FD2F5476761 /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Sources/ThreadHelper.swift; sourceTree = "<group>"; };
 		645B372CA372B975B013173B24ABCDDD /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIViewController+Additions.m"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		6500FB2043265B816694F3B0F09FD57D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		65DF72060606D3281E9481210C60FECE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		683095536B65D371C91DE1254CC602E6 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		6930AA3E74DD0A8102DFAE193CAF1B31 /* IQPreviousNextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQPreviousNextView.m; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.m; sourceTree = "<group>"; };
 		694244DF4FC79205DED2B165E39D3A63 /* Pods-Kaindy-KantTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kaindy-KantTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6FB153D105E9D7D3F62915D2D7F20109 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		707A20888A4CEDC297A15A35D9D55C96 /* ScrollableSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollableSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
 		717F152F19A46D07BB5BB55A3368DE2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -302,12 +306,10 @@
 		89FBB5DAC93111FD8DFF65FF9E013BAC /* UIImage+AspectFit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+AspectFit.swift"; path = "ImageSlideshow/Classes/Core/UIImage+AspectFit.swift"; sourceTree = "<group>"; };
 		8B5EBF55542C12204847F0C244E69698 /* IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
 		8C3D99B79F37F2E13E6EE1A74FEE1F04 /* KingfisherSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherSource.swift; path = ImageSlideshow/Classes/InputSources/KingfisherSource.swift; sourceTree = "<group>"; };
-		8DD0BA3E96741FD928EE5182A9869649 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8E31E3E02BAFAE3B56DEDFA8B513F689 /* Pods-Kaindy-Kant-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kaindy-Kant-acknowledgements.plist"; sourceTree = "<group>"; };
 		92832984FF4A513D7A688EC9777C58A1 /* SJUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SJUtil.swift; path = SJSegmentedScrollView/Classes/SJUtil.swift; sourceTree = "<group>"; };
 		93A25326F67BB9AFBE608505F81953EB /* ImageSlideshow.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ImageSlideshow.bundle; path = ImageSlideshow.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9479D7F5896AC201D4C1519BD73DE369 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		964FF5F33F99DBED59573D41EEB46A96 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
 		96DFD81BF996D749DA331527C65D1ACF /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
 		98E80B366F2D2222923B0825B8C5A2CF /* IQBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.m; sourceTree = "<group>"; };
@@ -317,7 +319,6 @@
 		9F89EDC5834B4F128D8AB170245CF352 /* IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
 		9FFAC6CF10B34014CD72B209B234BC3E /* SJShadow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SJShadow.swift; path = SJSegmentedScrollView/Classes/SJShadow.swift; sourceTree = "<group>"; };
 		A00F98E2DDB22FC00CE09FCFD49A48D6 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+IQKeyboardToolbar.m"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
-		A0F39CB28B18544A7B1C114731D51073 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A1073F4245DACFBA80D27D05C4D6519E /* FullScreenSlideshowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullScreenSlideshowViewController.swift; path = ImageSlideshow/Classes/Core/FullScreenSlideshowViewController.swift; sourceTree = "<group>"; };
 		A10CE8F586D52D3491017D16B08CEDFF /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		A5050530E16D1C2A7DE23CAD353D925C /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
@@ -337,7 +338,6 @@
 		B8FB64578A3291D7E7C1556805D2EB9C /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		BA2FA1B164F2C0011CF7B8FCDCCC43C4 /* Pods-Kaindy-Kant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kaindy-Kant.release.xcconfig"; sourceTree = "<group>"; };
 		BC46EED645F3F2F1A2321391EFD165ED /* Pods-Kaindy-KantUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Kaindy-KantUITests-umbrella.h"; sourceTree = "<group>"; };
-		BC793BD797D093812AA361A8A1490244 /* ic_cross_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@2x.png"; path = "ImageSlideshow/Assets/ic_cross_white@2x.png"; sourceTree = "<group>"; };
 		BF6E7D329AF59211645E5C01C0260F0D /* IQKeyboardManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManager.xcconfig; sourceTree = "<group>"; };
 		BF7B9B750D1614DED01F97C647D7BB07 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		BFD8BC1F348DA72331E9C30729871EC6 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
@@ -399,7 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2202E3D70DD652799E0C0AA2500BF0 /* Foundation.framework in Frameworks */,
+				6EF3BEC17C0A55D5E0B0F40170A50C1F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +407,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E40B7E2884CB3A693B8E00EEABAD857 /* Foundation.framework in Frameworks */,
+				9D2D7C92DD38B922D7E8191AFA9213E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +415,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D6214BF4A8F56A18EDBFE777155FD8 /* Foundation.framework in Frameworks */,
+				EB2E00FE935B97B28D7A5C3533008965 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +423,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E8FEE8018D53D47E762FB1F630DD217 /* CFNetwork.framework in Frameworks */,
-				218D37503654B55B17FD04555E59C54B /* Foundation.framework in Frameworks */,
+				A4ECFA4414D14486C20F647F6D69C73F /* CFNetwork.framework in Frameworks */,
+				12BEF6C7A473907935C95EC2232C450F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +439,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */,
+				A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,10 +447,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50819958178AD5637A7ACC1F2F90D301 /* CoreGraphics.framework in Frameworks */,
-				4684DE919CC6D626CDB24611D4981881 /* Foundation.framework in Frameworks */,
-				33F332BD847D16731F53DE7AA81C93A8 /* QuartzCore.framework in Frameworks */,
-				8ACFE85614AFCD6370FF2E1B457812F0 /* UIKit.framework in Frameworks */,
+				F4C3A0F546F9454E1C496B64FE8F4BC1 /* CoreGraphics.framework in Frameworks */,
+				5DDFD75A7136C0CE1F1D3BBC8A3413A4 /* Foundation.framework in Frameworks */,
+				2384B8056541CBDAEA377378EDD0CD72 /* QuartzCore.framework in Frameworks */,
+				983857A6F6D2B93E01F243BB8D27376C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +458,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				317868CE5B363871BD4B2D4DAC64CD91 /* Foundation.framework in Frameworks */,
+				1BE66DF4B3D3B64F53EC88108140DEF5 /* Foundation.framework in Frameworks */,
 				4482BE4AA4226D4EC0D89FE6D3D25CE3 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +467,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF1277719AA7C7D3CE27319F816A9F35 /* Foundation.framework in Frameworks */,
+				773DE51DED0AE9FF542EA7F378FA0CCD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,8 +475,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB479E8CA6CB176964A0A154763CD3B /* Foundation.framework in Frameworks */,
-				CCAA4ADBAC32C971528C5B40519AA701 /* UIKit.framework in Frameworks */,
+				A3BCC3B8DC910D46657092656DD293F3 /* Foundation.framework in Frameworks */,
+				AD0F6E5B1492C79A19151B706FB9AFC4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +484,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E904DD4C59F98EF31DB4386ABD6F0EEA /* Foundation.framework in Frameworks */,
+				70E60D5D86703932F345DE6302983A21 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +580,7 @@
 				89FBB5DAC93111FD8DFF65FF9E013BAC /* UIImage+AspectFit.swift */,
 				27366135D8D24088307059E854BBB077 /* UIImageView+Tools.swift */,
 				ECE3FAC6C6D7CFAAF13FD5C64ADE9213 /* ZoomAnimatedTransitioning.swift */,
-				F842BF9AD1D9A3CF1D87FACEDF01CC33 /* Resources */,
+				A84503C46E781060B3F4680E9CDA104F /* Resources */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -757,7 +757,7 @@
 			isa = PBXGroup;
 			children = (
 				45AB46106511BC760CFEA13F96008451 /* Kingfisher.framework */,
-				E318A2A1AADA572BB8A7ED6F3A30A748 /* iOS */,
+				885B21CFE545421E2442D546E22588CF /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -769,6 +769,18 @@
 				741E526934C0826B72CDB6F851A577AA /* Resources */,
 			);
 			name = Maps;
+			sourceTree = "<group>";
+		};
+		885B21CFE545421E2442D546E22588CF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				65DF72060606D3281E9481210C60FECE /* CFNetwork.framework */,
+				2E61A75CA8A3BA9F06814E1E40BF1287 /* CoreGraphics.framework */,
+				41A2C9ECC1799541A4DD05CCF7ACB51B /* Foundation.framework */,
+				6500FB2043265B816694F3B0F09FD57D /* QuartzCore.framework */,
+				3003C657295B10C9D14B6D73CF6D2C3E /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		886E037F49AD0A0BB1BEABD1FF5E7E70 /* Base */ = {
@@ -829,6 +841,15 @@
 			isa = PBXGroup;
 			children = (
 				29E3D310F0B9FB8A901A5510D367D516 /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A84503C46E781060B3F4680E9CDA104F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				554F7C906F626D6D557219F9F8F3F32F /* ic_cross_white@2x.png */,
+				600F2F003E1E0887A3D0D6FDE906625B /* ic_cross_white@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -961,27 +982,6 @@
 				2A326E0163E185C0D7BFF9056348D3F1 /* GooglePlaces.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E318A2A1AADA572BB8A7ED6F3A30A748 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9479D7F5896AC201D4C1519BD73DE369 /* CFNetwork.framework */,
-				4150782185CD95A20B00F1AEFBA8610E /* CoreGraphics.framework */,
-				6EE3F918E925AB426BD88F3EB6E49FC9 /* Foundation.framework */,
-				A0F39CB28B18544A7B1C114731D51073 /* QuartzCore.framework */,
-				8DD0BA3E96741FD928EE5182A9869649 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F842BF9AD1D9A3CF1D87FACEDF01CC33 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BC793BD797D093812AA361A8A1490244 /* ic_cross_white@2x.png */,
-				08E9DF9DDE1C7932D50A51A65037A946 /* ic_cross_white@3x.png */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1257,7 +1257,7 @@
 			buildPhases = (
 				E501012CA19DDB255FC35E9CD4E2E099 /* Sources */,
 				901534F852CAD7B48252693E1E928264 /* Frameworks */,
-				31398BE93B80DC8CAC00B5C10399BB18 /* Resources */,
+				DBA4C8BB1E9D96F00C499DFD7997BB40 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1291,7 +1291,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -1330,20 +1330,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31398BE93B80DC8CAC00B5C10399BB18 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D8710DBAECEAE50A7BF388BFCE3D489 /* ic_cross_white@2x.png in Resources */,
-				F5425752788428B7F4A5CF2101079E20 /* ic_cross_white@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A3DA1F459A304523E1B69A32B8BE1DD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E649444F760C6D983F4488D9E797516A /* ImageSlideshow.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBA4C8BB1E9D96F00C499DFD7997BB40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0040192935E234E44ADCD470373169E9 /* ic_cross_white@2x.png in Resources */,
+				524227D7C5117BD7E590AA2FD78CF7C3 /* ic_cross_white@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1568,11 +1568,111 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		077C4BB7DBEAA715DED46C057DC8051C /* Release */ = {
+		00CCC98AB8074079F9A8331CE65DB1B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3833F05211AAB002A812644FD1AAC9A /* ScrollableSegmentedControl.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollableSegmentedControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ScrollableSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0345283377CBD7A4A73239AD2FC24F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D623AA83A09F838507B1D5B85AD2FC17 /* Pods-Kaindy-Kant.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-Kant/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Kaindy_Kant;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0531A77F297E145BD79901BDD08DD655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500A6F2E809EC006A39499A94016F9AF /* Kingfisher.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Kingfisher;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0A29B6F510198AF64EFD762EF6FA97A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D615AFC2DA57DD7D5F69BDACC6F6C964 /* Alamofire.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1594,8 +1694,6 @@
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1603,11 +1701,10 @@
 			};
 			name = Release;
 		};
-		1AD2A9976663F318AE702F67377205B7 /* Debug */ = {
+		132DAF11219EAE5FE63BBC2B899A06AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CBF0960338CCD242EAB9267CACAB2F1 /* Pods-Kaindy-KantUITests.debug.xcconfig */;
+			baseConfigurationReference = EF1512366EE8B677CC78240F4C430627 /* ImageSlideshow.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1619,20 +1716,51 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-KantUITests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Kaindy_KantUITests;
+				PRODUCT_NAME = ImageSlideshow;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		13C9D1C8744C309969078F4D56D725B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500A6F2E809EC006A39499A94016F9AF /* Kingfisher.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Kingfisher;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1656,224 +1784,10 @@
 			};
 			name = Release;
 		};
-		269A74579EA6A8292631031926DF57B0 /* Debug */ = {
+		521FBA4FA8BBB62E9742F92525427160 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF6E7D329AF59211645E5C01C0260F0D /* IQKeyboardManager.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/IQKeyboardManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/IQKeyboardManager/IQKeyboardManager.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = IQKeyboardManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		298D058A83B6CF88E7FC5E67C8776A11 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA2FA1B164F2C0011CF7B8FCDCCC43C4 /* Pods-Kaindy-Kant.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-Kant/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Kaindy_Kant;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4E9FE2EEB69BC2CD92C1936BC219213B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF1512366EE8B677CC78240F4C430627 /* ImageSlideshow.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ImageSlideshow;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		542CDB7F7A0B8A5CA14E089FC53AE718 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C33D3ED181920F8B8754C7A24C12315 /* SJSegmentedScrollView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SJSegmentedScrollView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SJSegmentedScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		59BF2ACD480257CE1107CE0F3DFD2C67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 578D9035489342CD0592C7B13AB39C06 /* Pods-Kaindy-KantTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-KantTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Kaindy_KantTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		66EF21C404D789EB58BAE2532C91B988 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF1512366EE8B677CC78240F4C430627 /* ImageSlideshow.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ImageSlideshow;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		75DA33F1DE41D17C12A7D176319F1CD2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF6E7D329AF59211645E5C01C0260F0D /* IQKeyboardManager.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1895,7 +1809,6 @@
 				PRODUCT_NAME = IQKeyboardManager;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1903,46 +1816,10 @@
 			};
 			name = Release;
 		};
-		85434C74B78466638DFAA0741D8A6511 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 500A6F2E809EC006A39499A94016F9AF /* Kingfisher.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Kingfisher;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8BD00F4F6E7AA11A64C46BA115156AF3 /* Debug */ = {
+		573D5F58C68BBACED74A6E5F38F2DD65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C33D3ED181920F8B8754C7A24C12315 /* SJSegmentedScrollView.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1964,7 +1841,6 @@
 				PRODUCT_NAME = SJSegmentedScrollView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1973,29 +1849,11 @@
 			};
 			name = Debug;
 		};
-		8E0CDD98F9F837161D2CDA0CC973E34A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF1512366EE8B677CC78240F4C430627 /* ImageSlideshow.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ImageSlideshow";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ResourceBundle-ImageSlideshow-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = ImageSlideshow;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		97803B46811A9BDB5E70FA1303AFBFFE /* Debug */ = {
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -2003,13 +1861,10 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -2034,165 +1889,14 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		A139357E09951AEFD62CA7CF2E614868 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AFAF44A595F0BC9CCB6103FFDFD29CB /* SwiftyJSON.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B8050E6799586236CFBF614345452766 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3833F05211AAB002A812644FD1AAC9A /* ScrollableSegmentedControl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollableSegmentedControl/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ScrollableSegmentedControl;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C31DC5CF0AB6A750141B900851540F99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AFAF44A595F0BC9CCB6103FFDFD29CB /* SwiftyJSON.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CAF7767C0F01AE481F7A804249AA0FED /* Release */ = {
+		667AA97523E5C5A465CA0007B2CC5E03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12E270C50F0F99D9D5880B16A2923AE6 /* Pods-Kaindy-KantTests.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2224,155 +1928,10 @@
 			};
 			name = Release;
 		};
-		CC1445BCFB3E768C1DC5357D40BAF60A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3833F05211AAB002A812644FD1AAC9A /* ScrollableSegmentedControl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ScrollableSegmentedControl/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ScrollableSegmentedControl;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D60F8C4DE6B0D221A33959774DA3DAFF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D615AFC2DA57DD7D5F69BDACC6F6C964 /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		ED8BE29EDB0E4DFF5A7DCD80C44F9BAA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D623AA83A09F838507B1D5B85AD2FC17 /* Pods-Kaindy-Kant.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-Kant/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Kaindy_Kant;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F5FE5B980EF2FDD98B965DEE7FE4BC95 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 500A6F2E809EC006A39499A94016F9AF /* Kingfisher.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Kingfisher;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FC0F5B8AEC40D6AA2654930A8260A273 /* Release */ = {
+		73AA2BBB1DA2DF7640FA59C205C1614B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8F1974A8CF8F19D455FE711BD048AC8 /* Pods-Kaindy-KantUITests.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2404,14 +1963,402 @@
 			};
 			name = Release;
 		};
+		7EB8C3DDD6CE129DA259F47737BC905E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF6E7D329AF59211645E5C01C0260F0D /* IQKeyboardManager.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManager/IQKeyboardManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManager/IQKeyboardManager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = IQKeyboardManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		823794B037CE9832EFB1DA776C42C807 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF1512366EE8B677CC78240F4C430627 /* ImageSlideshow.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ImageSlideshow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		83BA842568F1973EDABC4461319DE020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AFAF44A595F0BC9CCB6103FFDFD29CB /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E0CDD98F9F837161D2CDA0CC973E34A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF1512366EE8B677CC78240F4C430627 /* ImageSlideshow.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ImageSlideshow";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ResourceBundle-ImageSlideshow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = ImageSlideshow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		91F02C38E9173CCA7600E3175522F3CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CBF0960338CCD242EAB9267CACAB2F1 /* Pods-Kaindy-KantUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-KantUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-KantUITests/Pods-Kaindy-KantUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Kaindy_KantUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		95BDEB266800AC309F8F769C3DD47F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA2FA1B164F2C0011CF7B8FCDCCC43C4 /* Pods-Kaindy-Kant.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-Kant/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Kaindy_Kant;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A06CA317872A6468F78BF1355CF9F7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3833F05211AAB002A812644FD1AAC9A /* ScrollableSegmentedControl.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScrollableSegmentedControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ScrollableSegmentedControl/ScrollableSegmentedControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ScrollableSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E061C277FA211F61A11CABD1A679D54E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 578D9035489342CD0592C7B13AB39C06 /* Pods-Kaindy-KantTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Kaindy-KantTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Kaindy-KantTests/Pods-Kaindy-KantTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Kaindy_KantTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F20D9C90EF7045C554B752000CF1DB08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C33D3ED181920F8B8754C7A24C12315 /* SJSegmentedScrollView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SJSegmentedScrollView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SJSegmentedScrollView/SJSegmentedScrollView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SJSegmentedScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F383079BFBF927813EA3613CFB679FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D615AFC2DA57DD7D5F69BDACC6F6C964 /* Alamofire.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F54D45A63E96A34665E0D99D9163529B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AFAF44A595F0BC9CCB6103FFDFD29CB /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		005C33B7B426F02D0FBA7D1B386E63F8 /* Build configuration list for PBXNativeTarget "ScrollableSegmentedControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC1445BCFB3E768C1DC5357D40BAF60A /* Debug */,
-				B8050E6799586236CFBF614345452766 /* Release */,
+				00CCC98AB8074079F9A8331CE65DB1B4 /* Debug */,
+				A06CA317872A6468F78BF1355CF9F7FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2419,8 +2366,8 @@
 		0908B385113CCBA19687CEAC92CA1387 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A139357E09951AEFD62CA7CF2E614868 /* Debug */,
-				C31DC5CF0AB6A750141B900851540F99 /* Release */,
+				F54D45A63E96A34665E0D99D9163529B /* Debug */,
+				83BA842568F1973EDABC4461319DE020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2428,8 +2375,8 @@
 		0C178CA15A790893D7B50FF72E559410 /* Build configuration list for PBXNativeTarget "Kingfisher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5FE5B980EF2FDD98B965DEE7FE4BC95 /* Debug */,
-				85434C74B78466638DFAA0741D8A6511 /* Release */,
+				13C9D1C8744C309969078F4D56D725B2 /* Debug */,
+				0531A77F297E145BD79901BDD08DD655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2437,8 +2384,8 @@
 		1DCA20BB0C2AFAC04EF8D7DA88A05D58 /* Build configuration list for PBXNativeTarget "Pods-Kaindy-Kant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED8BE29EDB0E4DFF5A7DCD80C44F9BAA /* Debug */,
-				298D058A83B6CF88E7FC5E67C8776A11 /* Release */,
+				0345283377CBD7A4A73239AD2FC24F0C /* Debug */,
+				95BDEB266800AC309F8F769C3DD47F13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2446,8 +2393,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97803B46811A9BDB5E70FA1303AFBFFE /* Debug */,
-				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2455,8 +2402,8 @@
 		419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D60F8C4DE6B0D221A33959774DA3DAFF /* Debug */,
-				077C4BB7DBEAA715DED46C057DC8051C /* Release */,
+				F383079BFBF927813EA3613CFB679FDE /* Debug */,
+				0A29B6F510198AF64EFD762EF6FA97A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2464,8 +2411,8 @@
 		46CC99CE0C0E9BB131A3B7A00661FD87 /* Build configuration list for PBXNativeTarget "Pods-Kaindy-KantTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59BF2ACD480257CE1107CE0F3DFD2C67 /* Debug */,
-				CAF7767C0F01AE481F7A804249AA0FED /* Release */,
+				E061C277FA211F61A11CABD1A679D54E /* Debug */,
+				667AA97523E5C5A465CA0007B2CC5E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2473,8 +2420,8 @@
 		5CCBB0ACEEF334D3AC93B7100EFC5C9E /* Build configuration list for PBXNativeTarget "ImageSlideshow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E9FE2EEB69BC2CD92C1936BC219213B /* Debug */,
-				66EF21C404D789EB58BAE2532C91B988 /* Release */,
+				132DAF11219EAE5FE63BBC2B899A06AA /* Debug */,
+				823794B037CE9832EFB1DA776C42C807 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2482,8 +2429,8 @@
 		8A1192466985C60041994C4723695355 /* Build configuration list for PBXNativeTarget "IQKeyboardManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				269A74579EA6A8292631031926DF57B0 /* Debug */,
-				75DA33F1DE41D17C12A7D176319F1CD2 /* Release */,
+				7EB8C3DDD6CE129DA259F47737BC905E /* Debug */,
+				521FBA4FA8BBB62E9742F92525427160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2491,8 +2438,8 @@
 		8E86ED27A1BEFB240301331EC272F6FE /* Build configuration list for PBXNativeTarget "Pods-Kaindy-KantUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1AD2A9976663F318AE702F67377205B7 /* Debug */,
-				FC0F5B8AEC40D6AA2654930A8260A273 /* Release */,
+				91F02C38E9173CCA7600E3175522F3CB /* Debug */,
+				73AA2BBB1DA2DF7640FA59C205C1614B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2500,8 +2447,8 @@
 		B1D7AF2B02F9927F27853F82EA373D85 /* Build configuration list for PBXNativeTarget "SJSegmentedScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BD00F4F6E7AA11A64C46BA115156AF3 /* Debug */,
-				542CDB7F7A0B8A5CA14E089FC53AE718 /* Release */,
+				573D5F58C68BBACED74A6E5F38F2DD65 /* Debug */,
+				F20D9C90EF7045C554B752000CF1DB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

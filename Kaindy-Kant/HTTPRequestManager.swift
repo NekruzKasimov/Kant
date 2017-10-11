@@ -41,6 +41,9 @@ class HTTPRequestManager {
             print(apiUrl)
         }
         var header: HTTPHeaders = [:]
+        if let token = UserDefaults.standard.string(forKey: "token") {
+            header = ["Authorization" : "Bearer \(token)"]
+        }
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: URLEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
             //print(response.description)
             guard response.response != nil else {
@@ -52,7 +55,7 @@ class HTTPRequestManager {
                 error(Constants.Network.ErrorMessage.NO_HTTP_STATUS_CODE)
                 return
             }
-           // print("\(statusCode) - \(apiUrl)")
+            print("\(statusCode) - \(apiUrl)")
             
             switch(statusCode) {
             case HttpStatusCode.unauthorized.statusCode:
@@ -72,7 +75,7 @@ class HTTPRequestManager {
                 }
                 
                 break
-            default:
+            default: 
                 
                 let json = JSON(data: response.data!)
                 if !json.isEmpty {
