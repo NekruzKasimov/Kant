@@ -1,38 +1,40 @@
 //
-//  Expenses.swift
+//  Jon.swift
 //  Kaindy-Kant
 //
-//  Created by Niko on 9/26/17.
+//  Created by ITLabAdmin on 10/11/17.
 //  Copyright © 2017 NeoBis. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-struct Expenses {
-    var price: Int
+struct Jom {
     var name: String
-    var amount: Int
+    var price: String
+    var percentage: String
     
-    init() {
-        self.price = 0
-        self.name = ""
-        self.amount = 0
+    init ()
+    {
+        name = ""
+        price = ""
+        percentage = ""
     }
     
     init(json: JSON) {
-        price = json["price"].intValue
+        percentage = json["percentage"].stringValue
+        price = json["price"].stringValue
         name = json["name"].stringValue
-        amount = json["amount"].intValue
     }
 }
-class Expenseses: NSObject {
+
+class Joms: NSObject {
     override init() {}
-    var array: Array = Array<Expenses>()
+    var array: Array = Array<Jom>()
     init(json: JSON) {
         let jsonArr:[JSON] = json.arrayValue
         for json in jsonArr {
-            let tempObject = Expenses(json:json)
+            let tempObject = Jom(json:json)
             array.append(tempObject)
         }
     }

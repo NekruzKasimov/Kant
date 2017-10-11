@@ -63,6 +63,13 @@ class ServerManager: HTTPRequestManager  {
         }) { (error) in
         }
     }
+    
+    func getSugarJom(_ completion: @escaping (SugarJom)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.SugarJom)", serverType: .kant, completion: { (success) in
+            completion(SugarJom(json: success))
+        }) { (error) in
+        }
+    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

@@ -48,7 +48,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         for item in names {
             let index = names.index(of: item)!
             //let expense = Expenses.init(price: prices[index], name: names[index], amount: amount[index])
-           // expenses.append(expense)
+           //expenses.append(expense)
             ServerManager.shared.getExpenses({ (succes) in
                 self.setExpenses(expenses: succes)
             }, error: { (error) in
@@ -94,7 +94,7 @@ extension CalculatorExcelViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell") as! CalculatorExcelTableViewCell
             //cell.setValues(expenses: expenses[indexPath.row], counter: indexPath.row)
             cell.valueChangeHandler = updateValues(total:counter:)
-            cell.totalLabel.text = "\(total[indexPath.row])"
+//            cell.totalLabel.text = "\(total[indexPath.row])"
             return cell
         case .total:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExcelTotalTableViewCell") as! ExcelTotalTableViewCell

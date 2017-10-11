@@ -92,6 +92,9 @@
 		8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9941F8B4DBA0061C702 /* ApiAddress.swift */; };
 		8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9961F8B4FA10061C702 /* NewUser.swift */; };
 		8423B9991F8B54780061C702 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9981F8B54780061C702 /* Constants.swift */; };
+		8424F6391F8DF5B700639C9D /* SugarJom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F6381F8DF5B700639C9D /* SugarJom.swift */; };
+		8424F63B1F8DF6AF00639C9D /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F63A1F8DF6AF00639C9D /* Sugar.swift */; };
+		8424F63D1F8DF6BF00639C9D /* Jom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F63C1F8DF6BF00639C9D /* Jom.swift */; };
 		8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2731F8B521C00BA712B /* Rossahar.swift */; };
 		8433F2761F8B523400BA712B /* Domestic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2751F8B523400BA712B /* Domestic.swift */; };
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
@@ -221,6 +224,9 @@
 		8423B9941F8B4DBA0061C702 /* ApiAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAddress.swift; sourceTree = "<group>"; };
 		8423B9961F8B4FA10061C702 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		8423B9981F8B54780061C702 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8424F6381F8DF5B700639C9D /* SugarJom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarJom.swift; sourceTree = "<group>"; };
+		8424F63A1F8DF6AF00639C9D /* Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sugar.swift; sourceTree = "<group>"; };
+		8424F63C1F8DF6BF00639C9D /* Jom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jom.swift; sourceTree = "<group>"; };
 		8433F2731F8B521C00BA712B /* Rossahar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rossahar.swift; sourceTree = "<group>"; };
 		8433F2751F8B523400BA712B /* Domestic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domestic.swift; sourceTree = "<group>"; };
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -538,6 +544,9 @@
 				2397A2741F8CB7B800606660 /* FinancialOffices.swift */,
 				8433F2751F8B523400BA712B /* Domestic.swift */,
 				8433F2771F8B550400BA712B /* Result.swift */,
+				8424F6381F8DF5B700639C9D /* SugarJom.swift */,
+				8424F63A1F8DF6AF00639C9D /* Sugar.swift */,
+				8424F63C1F8DF6BF00639C9D /* Jom.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -728,7 +737,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4459UQ4UL2;
+						DevelopmentTeam = U5DCDBG2W2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -848,7 +857,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -926,7 +935,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -974,7 +983,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -997,6 +1006,7 @@
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				84049AEE1F865FD700BA935F /* Weather_ViewController.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
+				8424F6391F8DF5B700639C9D /* SugarJom.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				2397A2851F8CB8E200606660 /* DescriptionViewController.swift in Sources */,
@@ -1009,6 +1019,7 @@
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
+				8424F63B1F8DF6AF00639C9D /* Sugar.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
 				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
 				23A8A36B1F83425B0065C5E6 /* ServiceCollectionViewCell.swift in Sources */,
@@ -1031,6 +1042,7 @@
 				2397A2751F8CB7B800606660 /* DetailedFinOffice.swift in Sources */,
 				8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */,
 				84049AE41F85F4AB00BA935F /* ContactOfResourcesViewController.swift in Sources */,
+				8424F63D1F8DF6BF00639C9D /* Jom.swift in Sources */,
 				1F5893A41F614EF600FD2C5D /* SWRevealViewController.m in Sources */,
 				84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */,
 				23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */,
@@ -1205,7 +1217,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4459UQ4UL2;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1226,7 +1238,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4459UQ4UL2;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -307,8 +307,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cardView" destination="v1v-bn-Fi0" id="NnJ-fW-4bU"/>
+                                            <outlet property="cardView" destination="v1v-bn-Fi0" id="gwq-Pe-uQp"/>
                                             <outlet property="jomDateLabel" destination="c66-Rh-eab" id="Xdy-9q-Ms4"/>
+                                            <outlet property="jomNameLabel" destination="WqV-yl-vUY" id="73v-gZ-yxL"/>
+                                            <outlet property="jomPercentageLabel" destination="rjM-fC-eFx" id="sut-E1-zz2"/>
+                                            <outlet property="jomPriceLabel" destination="KvQ-uT-ZPE" id="eIr-v9-3Ux"/>
+                                            <outlet property="nameLabel" destination="psu-kw-TMM" id="QMH-Pn-dHT"/>
+                                            <outlet property="percentageLabel" destination="Pd4-6j-WrU" id="3jd-XR-9Jv"/>
+                                            <outlet property="priceLabel" destination="oYy-Cu-HgK" id="c4Z-So-k3P"/>
                                             <outlet property="sugarDateLabel" destination="yKH-fN-VvY" id="IGH-Ki-fzG"/>
                                         </connections>
                                     </tableViewCell>
