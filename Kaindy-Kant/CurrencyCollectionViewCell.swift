@@ -21,6 +21,14 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    @IBOutlet weak var rub_buy: UILabel!
+    @IBOutlet weak var rub_sell: UILabel!
+    @IBOutlet weak var usd_buy: UILabel!
+    @IBOutlet weak var usd_sell: UILabel!
+    @IBOutlet weak var eur_buy: UILabel!
+    @IBOutlet weak var eur_sell: UILabel!
+    @IBOutlet weak var kzt_buy: UILabel!
+    @IBOutlet weak var kzt_sell: UILabel!
     
     
     

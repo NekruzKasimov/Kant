@@ -152,12 +152,6 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="68,50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="0WX-eQ-eHX">
-                                                            <rect key="frame" x="58" y="103" width="69" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="68,70" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6np-Ho-z9U">
                                                             <rect key="frame" x="131" y="103" width="69" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -184,6 +178,12 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0,2010" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KVW-1A-0VP">
                                                             <rect key="frame" x="131" y="161" width="69" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="68,50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="0WX-eQ-eHX">
+                                                            <rect key="frame" x="58" y="102" width="69" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -254,6 +254,14 @@
                                         <size key="customSize" width="212" height="204"/>
                                         <connections>
                                             <outlet property="cardView" destination="TUK-nG-E4Y" id="007-EW-QpI"/>
+                                            <outlet property="eur_buy" destination="1bt-a4-Jog" id="nXg-cd-pa4"/>
+                                            <outlet property="eur_sell" destination="E7j-o3-Oh8" id="KHS-E6-sAF"/>
+                                            <outlet property="kzt_buy" destination="YAd-PT-rMq" id="F4t-Tn-vKy"/>
+                                            <outlet property="kzt_sell" destination="KVW-1A-0VP" id="gJb-jb-aqN"/>
+                                            <outlet property="rub_buy" destination="94A-n4-Zuo" id="GF0-2t-cCm"/>
+                                            <outlet property="rub_sell" destination="YmI-GQ-zLz" id="pb0-Vt-0PF"/>
+                                            <outlet property="usd_buy" destination="0WX-eQ-eHX" id="h1y-UP-e63"/>
+                                            <outlet property="usd_sell" destination="6np-Ho-z9U" id="tFE-Uf-9WI"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCollectionViewCell" id="51h-JX-1Fa" customClass="WeatherCollectionViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -384,31 +392,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бишкек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQC-8i-Lcy">
-                                <rect key="frame" x="136" y="248" width="102.5" height="32.5"/>
+                                <rect key="frame" x="136" y="249" width="102.5" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+17°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD3-uP-eGu">
-                                <rect key="frame" x="111" y="153" width="152" height="63.5"/>
+                                <rect key="frame" x="111" y="154" width="152" height="63"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="53"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Среда, 27 сентября" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-ym-mfC">
-                                <rect key="frame" x="91" y="321" width="193.5" height="25.5"/>
+                                <rect key="frame" x="91" y="321" width="193" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o16-Xe-nSb">
-                                <rect key="frame" x="12" y="368" width="66" height="21"/>
+                                <rect key="frame" x="12" y="368" width="66" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-ft-rA8">
-                                <rect key="frame" x="8" y="433" width="359" height="174"/>
+                                <rect key="frame" x="8" y="432.5" width="359" height="174.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yqb-hq-E8t">
                                     <size key="itemSize" width="151" height="144"/>
@@ -418,14 +426,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="wQN-Bd-CPw" customClass="WeatherCell" customModule="Kaindy_Kant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15" width="151" height="144"/>
+                                        <rect key="frame" x="0.0" y="15.5" width="151" height="144"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ah-vz-2NN">
-                                                    <rect key="frame" x="8" y="16" width="134.5" height="24"/>
+                                                    <rect key="frame" x="8" y="16" width="135" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
