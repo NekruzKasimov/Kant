@@ -14,6 +14,7 @@ class ServerManager: HTTPRequestManager  {
     
     var _rossahar: Rossahar?
     var _expenses: Expenses?
+    
     class var shared: ServerManager {
         struct Static {
             static let instance = ServerManager()

@@ -91,6 +91,12 @@ extension DetailedSceneViewController {
         aboutVC.title = "Описание"
         aboutVC.desc = detailedFinOffice.description
 
+        for item in (detailedFinOffice.contacts?.array)! {
+            if item.type == "web" {
+                aboutVC.webSite = item.data
+            }
+        }
+
         
         let mapVC = storyboard.instantiateViewController(
             withIdentifier: "BranchesViewController") as! BranchesViewController
