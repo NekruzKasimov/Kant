@@ -33,39 +33,25 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
     
     var totalIndexPath: IndexPath?
     
-    let names = ["Лущение стерни", "Внесение удобрения (аммофос +хлористый калий)", "Внесение почвенного гербицида"]
-    let prices = [1200, 500, 400]
-    let amount = [1, 3, 5]
-    
-    var totalValue = 0
-    
-    var total: [Int] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         configureTableView()
-        for item in names {
-            let index = names.index(of: item)!
-            //let expense = Expenses.init(price: prices[index], name: names[index], amount: amount[index])
-           //expenses.append(expense)
-            ServerManager.shared.getExpenses({ (succes) in
-                self.setExpenses(expenses: succes)
-            }, error: { (error) in
-                print(error)
-            })
-        }
-        
     }
     
     func setExpenses(expenses: Expenses) {
         self.expenses = expenses
+        CalculatorExcelLogicController.shared.updateTotalValues(expenses: self.expenses!)
         tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //updateTotalValues()
+        ServerManager.shared.getExpenses({ (succes) in
+            self.setExpenses(expenses: succes)
+        }, error: { (error) in
+            print(error)
+        })
     }
 }
 
@@ -79,7 +65,10 @@ extension CalculatorExcelViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if ExcelSections.items.rawValue == section {
-            return prices.count
+            if let count = expenses?.array.count {
+                return count
+            }
+            return 0
         }
         return 1
     }
@@ -92,14 +81,13 @@ extension CalculatorExcelViewController {
             return cell
         case .items:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell") as! CalculatorExcelTableViewCell
-            //cell.setValues(expenses: expenses[indexPath.row], counter: indexPath.row)
-            cell.valueChangeHandler = updateValues(total:counter:)
-//            cell.totalLabel.text = "\(total[indexPath.row])"
+            cell.setValues(expense: (expenses?.array[indexPath.row])!, counter: indexPath.row)
+            cell.totalLabel.text = "\(CalculatorExcelLogicController.shared.total[indexPath.row])"
             return cell
         case .total:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExcelTotalTableViewCell") as! ExcelTotalTableViewCell
             self.totalIndexPath = indexPath
-            cell.totalLabel.text = "\(totalValue)"
+            cell.totalLabel.text = "\(CalculatorExcelLogicController.shared.totalValue)"
             return cell
         }
     }
@@ -135,20 +123,5 @@ extension CalculatorExcelViewController {
         tableView.separatorStyle                    = .none
         tableView.estimatedRowHeight                = 80
         tableView.rowHeight                         = UITableViewAutomaticDimension
-    }
-    
-//    func updateTotalValues() {
-//        for item in expenses {
-//            let total = item.amount * item.price
-//            self.total.append(total)
-//            totalValue += total
-//        }
-//    }
-    
-    func updateValues(total: Int, counter: Int) {
-        let value = self.total[counter - 1]
-        totalValue -= value
-        totalValue += total
-        CalculatorExcelLogicController.shared.setTotalValue(total: totalValue)
     }
 }
