@@ -21,7 +21,7 @@ class AboutAppViewController: UIViewController {
         
         ru = ["Мобильное приложение разработано при финансовой поддержке Федерального правительства Германии через программу Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH (Германского общества по международному сотрудничеству) „Содействие устойчивому экономическому развитию“." , "gizLogoRu"]
         kg = ["Мобилдик колдонмо Германия Федералдык өкмөтү тарабынан  каржыланган Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH (Германия эл аралык кызматташуу коомунун) «Туруктуу экономикалык өнүгүүгө көмөктөшүү” программасы аркылуу иштеп чыгарылган.", "gizLogoKg"]
-        
+        self.title = "О приложении"
         aboutAppImg.image = UIImage(named: ru[1])
         aboutAppLbl.text = ru[0]
     }

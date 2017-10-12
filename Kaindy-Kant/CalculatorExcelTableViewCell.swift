@@ -26,7 +26,7 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var priceTF: UITextField! {
         didSet {
-            priceTF.keyboardType = .decimalPad
+            priceTF.keyboardType = .numberPad
             priceTF.delegate = self
             priceTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
@@ -34,7 +34,7 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var amountTF: UITextField! {
         didSet {
-            amountTF.keyboardType = .decimalPad
+            amountTF.keyboardType = .numberPad
             amountTF.delegate = self
             amountTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }

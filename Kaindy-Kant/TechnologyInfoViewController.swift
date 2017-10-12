@@ -19,7 +19,7 @@ class TechnologyInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Технологии"
         docsTableView.estimatedRowHeight = 74
         docsTableView.rowHeight = UITableViewAutomaticDimension
         setNavigationBar()

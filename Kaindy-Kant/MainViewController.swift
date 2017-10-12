@@ -38,6 +38,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var currencies: [Currency]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Главная"
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))

@@ -26,7 +26,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.title = "Карта"
         addGoogleMap()
         addResetButton()
         addSaveButton()
@@ -108,14 +109,14 @@ extension MapViewController {
     }
     
     func saveButtonClicked() {
-        let alert = UIAlertController(title: "", message: "Уверенсинби?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
         //Cancel
-        alert.addAction(UIAlertAction(title: "Сори", style: .cancel, handler: { (acrion) in
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (acrion) in
         }))
         
         //Add
-        alert.addAction(UIAlertAction(title: "Смело", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
         }))
         

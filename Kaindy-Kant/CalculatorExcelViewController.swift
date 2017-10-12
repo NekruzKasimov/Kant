@@ -47,6 +47,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = "Расходы"
         ServerManager.shared.getExpenses({ (succes) in
             self.setExpenses(expenses: succes)
         }, error: { (error) in

@@ -44,6 +44,7 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        self.title = "Новости"
         ServerManager.shared.getNewsRossahar({ (succes) in
             self.setRossahar(rossahar: succes)
         }) { (error) in
