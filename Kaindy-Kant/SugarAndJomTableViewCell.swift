@@ -23,4 +23,10 @@ class SugarAndJomTableViewCell: UITableViewCell {
     @IBOutlet weak var sugarDateLabel: UILabel!
     
     @IBOutlet weak var jomDateLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var jomNameLabel: UILabel!
+    @IBOutlet weak var jomPriceLabel: UILabel!
+    @IBOutlet weak var jomPercentageLabel: UILabel!
 }

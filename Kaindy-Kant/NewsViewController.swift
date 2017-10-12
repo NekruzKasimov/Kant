@@ -26,6 +26,7 @@ enum NewsSections: Int {
 class NewsViewController: UIViewController {
 
     var newRossahar: Rossahar?
+    var sugarJom: SugarJom?
     @IBOutlet weak var mySCOutlet: UISegmentedControl!
     //var newRossahar: Rossahar?
     @IBOutlet weak var newsTableView: UITableView! {
@@ -43,10 +44,19 @@ class NewsViewController: UIViewController {
         }) { (error) in
             print(error)
         }
+        ServerManager.shared.getSugarJom({ (setSugarJom) in
+            
+        }) { (error) in
+            print(error)
+        }
     }
     
     func setRossahar(rossahar: Rossahar) {
         self.newRossahar = rossahar
+        newsTableView.reloadData()
+    }
+    func setSugarJom(sugarjom: SugarJom) {
+        self.sugarJom = sugarjom
         newsTableView.reloadData()
     }
    
@@ -85,6 +95,12 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         switch NewsSections(rawValue: indexPath.section)! {
         case .sugar:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SugarAndJomTableViewCell") as! SugarAndJomTableViewCell
+            cell.nameLabel.text = sugarJom?.sugar.array[indexPath.row].name
+            cell.priceLabel.text = sugarJom?.sugar.array[indexPath.row].price
+            cell.percentageLabel.text = sugarJom?.sugar.array[indexPath.row].percentage
+            cell.jomNameLabel.text = sugarJom?.jom.array[indexPath.row].name
+            cell.jomPriceLabel.text = sugarJom?.jom.array[indexPath.row].price
+            cell.jomPercentageLabel.text = sugarJom?.jom.array[indexPath.row].percentage
             return cell
         case .news:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell

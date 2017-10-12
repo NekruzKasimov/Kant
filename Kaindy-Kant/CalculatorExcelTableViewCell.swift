@@ -46,11 +46,16 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
-    func setValues(expenses: Expenses, counter: Int) {
-        self.priceTF.placeholder = "\(expenses.price)"
-       // self.amountTF.placeholder = "\(expenses.amount)"
-        self.titleLabel.text = expenses.name
+    func setValues(expense: Expense, counter: Int) {
+        self.priceTF.placeholder = "\(expense.price)"
+        self.amountTF.placeholder = "\(expense.amount)"
+        self.titleLabel.text = expense.name
         self.counterLabel.text = "\(counter + 1)"
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        valueChangeHandler = CalculatorExcelLogicController.shared.updateValues(total:counter:)
     }
 }
 

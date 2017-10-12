@@ -22,8 +22,28 @@ class CalculatorExcelLogicController {
     }
     
     var delegate: UpdateTotalValueDelegate?
+        
+    var totalValue = 0
+    
+    var total: [Int] = []
     
     func setTotalValue(total: Int) {
         delegate?.updateTotalValue(total: total)
+    }
+    
+    func updateTotalValues(expenses: Expenses) {
+        for item in expenses.array {
+            let total = item.amount * item.price
+            self.total.append(total)
+            totalValue += total
+        }
+    }
+    
+    func updateValues(total: Int, counter: Int) {
+        let value = self.total[counter - 1]
+        totalValue -= value
+        totalValue += total
+        self.total[counter - 1] = total
+        setTotalValue(total: totalValue)
     }
 }

@@ -17,7 +17,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         var coordinate: CLLocationCoordinate2D
         var number: Int
     }
-    @IBOutlet weak var fieldMapView: MKMapView!
     let resetButton = UIButton()
     let saveButton = UIButton()
     var map: GMSMapView!
@@ -68,17 +67,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         line.map = map
     }
     
-        func addRoute() {
-            let path = GMSMutablePath()
-            for p in points {
-                path.add(p.coordinate)
-            }
-    
-            let route = GMSPolygon(path: path)
-            route.strokeWidth = 2.0
-            route.strokeColor = UIColor.green
-            route.map = map
+    func addRoute() {
+        let path = GMSMutablePath()
+        for p in points {
+            path.add(p.coordinate)
         }
+    
+        let route = GMSPolygon(path: path)
+        route.strokeWidth = 2.0
+        route.strokeColor = UIColor.green
+        route.map = map
+    }
     
     func addResetButton() {
         resetButton.frame = CGRect(x: 10, y: view.frame.height - 50, width: 100, height: 40)
@@ -113,7 +112,6 @@ extension MapViewController {
         
         //Cancel
         alert.addAction(UIAlertAction(title: "Сори", style: .cancel, handler: { (acrion) in
-            print("OP")
         }))
         
         //Add

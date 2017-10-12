@@ -48,6 +48,7 @@ class ServerManager: HTTPRequestManager  {
             }, error: error)
         }, error: error)
     }
+   
     func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
             completion(FinancialOffices(json: succes))
@@ -76,9 +77,19 @@ class ServerManager: HTTPRequestManager  {
         }) { (error) in
         }
     }
+    
+    
     func getExpenses(_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.Expenses)", serverType: .kant, completion: { (success) in
+        self.get(endpoint: Constants.Network.EndPoints.Expenses, serverType: .kant, completion: { (success) in
             completion(Expenses(json: success))
+        }) { (error) in
+        }
+        
+    }
+    
+    func getSugarJom(_ completion: @escaping (SugarJom)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.SugarJom)", serverType: .kant, completion: { (success) in
+            completion(SugarJom(json: success))
         }) { (error) in
         }
     }
