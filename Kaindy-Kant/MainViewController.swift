@@ -35,7 +35,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
     var weather: Weather?
-    
+    var currencies: [Currency]?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
@@ -47,6 +47,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewWillAppear(animated)
         ServerManager.shared.getWeather(setWeather) { (error) in
         }
+        ServerManager.shared.getCurrecncies(setCurrencies, error: showErrorAlert)
+    }
+    func setCurrencies(currencies: [Currency]) {
+        self.currencies = currencies
+        collectionView.reloadData()
     }
     
     var degree = 0
@@ -62,7 +67,10 @@ extension MainViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MainVCSections(rawValue: section)!.getItemsCount()
+        if let _ = currencies, let _ = weather {
+           return MainVCSections(rawValue: section)!.getItemsCount()
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,6 +79,9 @@ extension MainViewController {
         case .currency:
             if indexPath.item == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
+                if let c = currencies {
+                    cell.setValues(currencies: c)
+                }
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell

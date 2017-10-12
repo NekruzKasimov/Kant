@@ -40,7 +40,7 @@ class Currencies: NSObject {
     init(json: JSON) {
         var data = json["data"]
         //var currenc
-        for i in 2...4 {
+        for i in 2...5 {
             array.append(Currency(json: data["\(i)"]))
         }
     }

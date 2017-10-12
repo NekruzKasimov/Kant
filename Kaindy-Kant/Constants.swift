@@ -24,6 +24,8 @@ struct Constants {
             static let NewRossahar = "api/news/rossahar?limit=100&offset=0"
             static let Expenses = "api/expenses"
             static let SugarJom = "api/sugar-jom"
+            static let Currencies = "api/currency"
+
         }
     }
     

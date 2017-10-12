@@ -102,4 +102,10 @@ class ServerManager: HTTPRequestManager  {
 //        }
 //            , error: error)
 //    }
+    func getCurrecncies(_ completion: @escaping ([Currency])-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.Currencies)", serverType: .kant, completion: { (json) in
+            completion(Currencies(json: json).array)
+        }) { (error) in
+        }
+    }
 }

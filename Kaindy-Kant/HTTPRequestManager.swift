@@ -66,8 +66,8 @@ class HTTPRequestManager {
                  HttpStatusCode.created.statusCode:
                 
                 let json = JSON(data: response.data!)
-                
-                if !json["error"].stringValue.isEmpty {
+
+                if !json["error"].stringValue.isEmpty{
                     error(json["error"].stringValue)
                 } else {
                     //print(response.response?.allHeaderFields.description)
