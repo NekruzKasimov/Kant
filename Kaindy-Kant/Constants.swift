@@ -27,5 +27,9 @@ struct Constants {
         }
     }
     
+    struct SugarAndJom {
+        static let JomDate = "Сушенный гранулированный жом НТБ (руб./т, с НДС)"
+        static let SugarDate = "Расчетная цена на сахар НТБ (руб./т, с НДС)"
+    }
 }
 

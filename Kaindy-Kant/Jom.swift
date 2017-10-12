@@ -13,18 +13,21 @@ struct Jom {
     var name: String
     var price: String
     var percentage: String
+    var date: String
     
     init ()
     {
         name = ""
         price = ""
         percentage = ""
+        date = ""
     }
     
     init(json: JSON) {
         percentage = json["percentage"].stringValue
         price = json["price"].stringValue
         name = json["name"].stringValue
+        date = json["date"].stringValue
     }
 }
 

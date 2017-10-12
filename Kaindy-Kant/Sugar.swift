@@ -13,17 +13,20 @@ struct Sugar {
     var name: String
     var price: String
     var percentage: String
+    var date: String
     
     init ()
     {
         name = ""
         price = ""
         percentage = ""
+        date = ""
     }
     init(json: JSON) {
         name = json["name"].stringValue
         price = json["price"].stringValue
         percentage = json["percentage"].stringValue
+        date = json["date"].stringValue
     }
 }
 

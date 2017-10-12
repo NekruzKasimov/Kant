@@ -28,11 +28,16 @@ class NewsViewController: UIViewController {
     var newRossahar: Rossahar?
     var sugarJom: SugarJom?
     @IBOutlet weak var mySCOutlet: UISegmentedControl!
-    //var newRossahar: Rossahar?
+    
+    @IBAction func showOtherNews(_ sender: Any) {
+        
+    }
     @IBOutlet weak var newsTableView: UITableView! {
         didSet {
             newsTableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "NewsTableViewCell")
             newsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsTableViewCell")
+//            newsTableView.estimatedRowHeight = 200
+//            newsTableView.rowHeight = UITableViewAutomaticDimension
         }
     }
     
@@ -44,8 +49,8 @@ class NewsViewController: UIViewController {
         }) { (error) in
             print(error)
         }
-        ServerManager.shared.getSugarJom({ (setSugarJom) in
-            
+        ServerManager.shared.getSugarJom({ (success) in
+           self.setSugarJom(sugarjom: success)
         }) { (error) in
             print(error)
         }
@@ -55,6 +60,7 @@ class NewsViewController: UIViewController {
         self.newRossahar = rossahar
         newsTableView.reloadData()
     }
+    
     func setSugarJom(sugarjom: SugarJom) {
         self.sugarJom = sugarjom
         newsTableView.reloadData()
@@ -81,7 +87,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            if let _ = sugarJom {
+                return 1
+            }
+            return 0
         } else {
             if let count = newRossahar?.results.array.count {
                 return count - 1
@@ -95,18 +104,11 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         switch NewsSections(rawValue: indexPath.section)! {
         case .sugar:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SugarAndJomTableViewCell") as! SugarAndJomTableViewCell
-            cell.nameLabel.text = sugarJom?.sugar.array[indexPath.row].name
-            cell.priceLabel.text = sugarJom?.sugar.array[indexPath.row].price
-            cell.percentageLabel.text = sugarJom?.sugar.array[indexPath.row].percentage
-            cell.jomNameLabel.text = sugarJom?.jom.array[indexPath.row].name
-            cell.jomPriceLabel.text = sugarJom?.jom.array[indexPath.row].price
-            cell.jomPercentageLabel.text = sugarJom?.jom.array[indexPath.row].percentage
+            cell.setValues(sugarJom: sugarJom!)
             return cell
         case .news:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
-            cell.dataLabel.text = newRossahar?.results.array[indexPath.row + 1].data
-            cell.titleLabel.text = newRossahar?.results.array[indexPath.row + 1].name
-            cell.descriptionLabel.text = newRossahar?.results.array[indexPath.row + 1].description
+            cell.setValues(result: (newRossahar?.results.array[indexPath.row])!)
             return cell
         }
     }
@@ -114,7 +116,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 204
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             self.present(SFSafariViewController.init(url: URL(string: "http://rossahar.ru\(newRossahar!.results.array[indexPath.row].link)")!), animated: true, completion: nil)

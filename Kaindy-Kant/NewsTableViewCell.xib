@@ -29,13 +29,13 @@
                                     <constraint firstAttribute="height" constant="2" id="POt-h7-cMC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правительство РФ будет субсидировать часть затрат на экспорт сельхозпродукции" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3k-76-xbm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правительство РФ будет субсидировать часть затрат на экспорт сельхозпродукции" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3k-76-xbm">
                                 <rect key="frame" x="12" y="43" width="425" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJj-sj-M5f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJj-sj-M5f">
                                 <rect key="frame" x="12" y="71" width="425" height="169.5"/>
                                 <string key="text">Правительство РФ будет субсидировать часть логистических затрат на экспорт сельскохозяйственной и рыбной продукции, постановление выйдет до конца недели. Об этом сообщил журналистам вице-премьер Аркадий Дворкович на Международном рыбопромышленном форуме.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
