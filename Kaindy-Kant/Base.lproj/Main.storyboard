@@ -382,7 +382,7 @@
         <!--Weather View Controller-->
         <scene sceneID="4nS-QO-c9S">
             <objects>
-                <viewController storyboardIdentifier="Weather_ViewController" id="8my-F4-4mO" customClass="Weather_ViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherViewController" id="8my-F4-4mO" customClass="WeatherViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EmJ-iE-1sn"/>
                         <viewControllerLayoutGuide type="bottom" id="hvI-pA-AV2"/>
@@ -507,8 +507,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="8my-F4-4mO" id="njm-79-DAC"/>
-                                    <outlet property="delegate" destination="8my-F4-4mO" id="fTN-eY-dxI"/>
+                                    <outlet property="dataSource" destination="8my-F4-4mO" id="HQ9-9P-CW2"/>
+                                    <outlet property="delegate" destination="8my-F4-4mO" id="zsU-p3-i9r"/>
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пасмурно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnN-ap-ppT">
@@ -539,7 +539,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="weatherCollectionView" destination="Ufs-ft-rA8" id="7m9-Oa-ebe"/>
+                        <outlet property="cityLabel" destination="kQC-8i-Lcy" id="TFl-E3-Wre"/>
+                        <outlet property="collectionView" destination="Ufs-ft-rA8" id="SNh-Yt-0Cz"/>
+                        <outlet property="dateLabel" destination="AVf-ym-mfC" id="JsC-IK-2vt"/>
+                        <outlet property="weatheStatusLabel" destination="WnN-ap-ppT" id="Vup-OU-8fk"/>
+                        <outlet property="weatherDegreeLabel" destination="xD3-uP-eGu" id="adw-kT-3bh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI9-z0-FYI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,12 +23,12 @@ class ServerManager: HTTPRequestManager  {
     }
     
     func getWeather(_ completion: @escaping (Weather)-> Void, error: @escaping (String)-> Void) {
-        print("here")
-        self.get(endpoint: "", serverType: .whether, completion: { (json) in
+        self.get(endpoint: Constants.Network.EndPoints.Weather, serverType: .kant, completion: { (json) in
             let obj = Weather(json: json)
             completion(obj)
         }, error: error)
     }
+    
     func signUp(newUser: NewUser, completion: @escaping (JSON)-> Void,error: @escaping (String)-> Void) {
         //let param = category.toDict()
         self.post(endpoint: Constants.Network.EndPoints.SignUp, serverType: .kant, parameters: newUser.toDictionary(), completion: { (json) in
