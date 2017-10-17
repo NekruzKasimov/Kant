@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 import SJSegmentedScrollView
-
+import KRProgressHUD
 class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +26,7 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        KRProgressHUD.show()
         ServerManager.shared.getAllFinancialOffices(setFinancialOffices) { (error) in
             print(error)
         }
@@ -38,7 +39,9 @@ extension DetailedSceneViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = finOffices?.array.count {
+            KRProgressHUD.dismiss()
             return count
+            
         }
         return 0
     }

@@ -21,7 +21,8 @@ enum MainVCSections : Int {
         }
     }
 }
-
+import PKHUD
+import KRProgressHUD
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
@@ -48,16 +49,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ServerManager.shared.getWeather(setWeather) { (error) in
-        }
+       // HUD.show(.progress)
+        KRProgressHUD.show()
+        ServerManager.shared.getWeather(setWeather, error: showErrorAlert)
         ServerManager.shared.getCurrecncies(setCurrencies, error: showErrorAlert)
     }
-    
-    func setCurrencies(currencies: [Currency]) {
-        self.currencies = currencies
-        collectionView.reloadData()
-    }
-    
     var degree = 0
     var status = ""
 }
@@ -72,7 +68,8 @@ extension MainViewController {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let _ = currencies, let _ = weather {
-           return MainVCSections(rawValue: section)!.getItemsCount()
+            KRProgressHUD.dismiss()
+            return MainVCSections(rawValue: section)!.getItemsCount()
         }
         return 0
     }
@@ -165,6 +162,10 @@ extension MainViewController {
     func setWeather(weather: Weather){
         self.weather = weather
         setTodayWeather()
+    }
+    func setCurrencies(currencies: [Currency]) {
+        self.currencies = currencies
+        collectionView.reloadData()
     }
     
     func setTodayWeather() {
