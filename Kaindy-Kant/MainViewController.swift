@@ -35,8 +35,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
+    
     var weather: Weather?
     var currencies: [Currency]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Главная"
@@ -169,10 +171,11 @@ extension MainViewController {
     func setTodayWeather() {
         for i in (weather?.list.array)! {
             let hour = Calendar.current.component(.hour, from: i.date)
-            if hour == 12 {
+            if hour == 15 {
                 degree = Int(i.main.temp)
-                status = i.weatherStatuses.array[0].main
-                print(i.weatherStatuses.array[0].main)
+                if let item = Constants.Weather.weatherStatuses[i.weatherStatuses.array[0].main] {
+                    self.status = item
+                }
                 break
             }
         }
