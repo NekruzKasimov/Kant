@@ -13,6 +13,7 @@ import GoogleMaps
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
 
+    @IBOutlet weak var mapView: UIView!
     struct Coordinate {
         var coordinate: CLLocationCoordinate2D
         var number: Int
@@ -26,6 +27,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.topItem?.title = ""
         self.title = "Карта"
         addGoogleMap()
@@ -33,6 +35,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         addSaveButton()
     }
     
+    @IBAction func saveFiledBtn(_ sender: Any) {
+        
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+        let alert = UIAlertController(title: "Saved", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (acrion) in
+        }))
+        present(alert, animated: true, completion: nil)
+    }
     func addGoogleMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 42.81064, longitude: 74.627359, zoom: 15)
         map = GMSMapView.map(withFrame: self.view.frame, camera: camera)
@@ -119,8 +132,21 @@ extension MapViewController {
         //Add
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
+            self.animateIn()
         }))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func animateIn() {
+        self.view.addSubview(mapView)
+        
+        mapView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        mapView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.mapView.alpha = 1
+            self.mapView.transform = CGAffineTransform.identity
+        }
     }
 }
