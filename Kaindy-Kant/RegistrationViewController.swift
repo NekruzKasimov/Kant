@@ -25,13 +25,15 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var passwordRepeatTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
     }
     @IBAction func saveButton(_ sender: Any) {
-        var newUser = NewUser()
+        let newUser = NewUser()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
         if birthdayTF.text! != "" && phoneTF.text! != "" && passwordTF.text! != "" && passwordRepeatTF.text! != "" {
             
@@ -41,7 +43,11 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             else if passwordTF.text!.count < 4 {
                 showErrorAlert(message: "Пароль должен состоять из 4 и более символов!")
             }
-            else {
+            else if (phoneTF.text?.count)! < 10 {
+                showErrorAlert(message: "Введите правильный номер телефона!")
+
+            } else {
+                
                 newUser.first_name = self.firstNameTF.text!
                 newUser.last_name = self.lastNameTF.text!
                 newUser.fathers_name = self.fathersNameTF.text!
@@ -52,6 +58,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 newUser.password = self.passwordTF.text!
                 newUser.first_name = self.firstNameTF.text!
                 newUser.date_of_birth = self.birthdayTF.text!
+                newUser.email = self.emailTF.text!
                 DataManager.shared.setNewUser(newUser: newUser)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
                 self.present(nextViewController!, animated:true, completion:nil)

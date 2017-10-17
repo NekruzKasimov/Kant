@@ -30,6 +30,13 @@ class LanguageViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     func sighUp(){
+        let cookie = HTTPCookie.self
+        let cookieJar = HTTPCookieStorage.shared
+        
+        for cookie in cookieJar.cookies! {
+            print(cookie.name+"="+cookie.value)
+            cookieJar.deleteCookie(cookie)
+        }
         ServerManager.shared.signUp(newUser: DataManager.shared.getNewUser(), completion: showJson, error: showErrorAlert)
     }
     
