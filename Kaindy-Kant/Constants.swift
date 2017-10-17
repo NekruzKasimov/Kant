@@ -9,13 +9,16 @@
 import Foundation
 
 struct Constants {
+   
     struct Network {
+        
         struct ErrorMessage {
             static let NO_INTERNET_CONNECTION = "No internet connection"
             static let UNABLE_LOAD_DATA = "Unable load data"
             static let NO_HTTP_STATUS_CODE = "Unable to get response HTTP status code"
             static let UNAUTHORIZED = "Unauthorized error"
         }
+        
         struct EndPoints {
             static let Token_auth = "api/token-auth"
             static let Login = "api/user/login"
@@ -32,6 +35,12 @@ struct Constants {
     struct SugarAndJom {
         static let JomDate = "Сушенный гранулированный жом НТБ (руб./т, с НДС)"
         static let SugarDate = "Расчетная цена на сахар НТБ (руб./т, с НДС)"
+    }
+    
+    struct Weather {
+        static let months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
+        static let weekdays = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
+        static let weatherStatuses = ["Clouds" : "Пасмурно", "Clear" : "Ясное небо", "Rain" : "Дожди", "Snow" : "Снег"]
     }
 }
 
