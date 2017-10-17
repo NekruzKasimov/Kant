@@ -38,8 +38,10 @@ class HTTPRequestManager {
         case .kant:
             apiUrl = ApiAddressKant(endpoint: endpoint).getURLString()
     
-            print(apiUrl)
         }
+        apiUrl.remove(at: apiUrl.index(before: apiUrl.endIndex))
+        print(apiUrl)
+
         var header: HTTPHeaders = [:]
         if let token = UserDefaults.standard.string(forKey: "token") {
             header = ["Authorization" : "Bearer \(token)"]

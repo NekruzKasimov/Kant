@@ -26,6 +26,8 @@ struct Constants {
             static let SugarJom = "api/sugar-jom"
             static let Currencies = "api/currency"
             static let Weather = "api/weather"
+            static let GetUser = "api/user"
+            
         }
     }
     
