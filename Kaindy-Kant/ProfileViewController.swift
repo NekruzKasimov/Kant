@@ -17,6 +17,16 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var firts_name_TF: UITextField!
+    @IBOutlet weak var last_name_TF: UITextField!
+    @IBOutlet weak var fathers_name_TF: UITextField!
+    @IBOutlet weak var phone_TF: UITextField!
+    @IBOutlet weak var email_TF: UITextField!
+    @IBOutlet weak var date_of_birth_TF: UITextField!
+    @IBOutlet weak var address_TF: UITextField!
+    @IBOutlet weak var city_TF: UITextField!
+    @IBOutlet weak var password_TF: UITextField!
+    
     var yearTitle = "2010"
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
@@ -89,7 +99,20 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fillUserInformation()
         configureTableView()
+    }
+    func fillUserInformation() {
+        let user_info = DataManager.shared.getUserInformation()!
+        firts_name_TF.text = user_info["first_name"]
+        last_name_TF.text = user_info["last_name_TF"]
+        fathers_name_TF.text = user_info["fathers_name"]
+        phone_TF.text = user_info["phone"]
+        email_TF.text = user_info["email"]
+        address_TF.text = user_info["address"]
+        date_of_birth_TF.text = user_info["date_of_birth"]
+        city_TF.text = user_info["city"]
+        password_TF.text = user_info["password"]
     }
     @IBAction func presentMap(_ sender: Any) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)

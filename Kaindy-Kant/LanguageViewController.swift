@@ -24,16 +24,25 @@ class LanguageViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
+       
         sighUp()
-        present(vc, animated: true, completion: nil)
+       
     }
     func sighUp(){
+        //let cookie = HTTPCookie.self
+        let cookieJar = HTTPCookieStorage.shared
+        
+        for cookie in cookieJar.cookies! {
+            print(cookie.name+"="+cookie.value)
+            cookieJar.deleteCookie(cookie)
+        }
         ServerManager.shared.signUp(newUser: DataManager.shared.getNewUser(), completion: showJson, error: showErrorAlert)
     }
     
     func  showJson(json: JSON) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
+        present(vc, animated: true, completion: nil)
         print(json)
     }
 }

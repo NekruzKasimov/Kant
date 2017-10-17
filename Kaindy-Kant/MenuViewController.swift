@@ -22,6 +22,16 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var tablevView: UITableView!
     
     @IBAction func showProfilePage(_ sender: UIButton) {
+        if let _ = DataManager.shared.getUserInformation()  {
+            openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
+        } else {
+            ServerManager.shared.getUser(setUserInfo, error: showErrorAlert)
+        }
+        
+    }
+    func setUserInfo(user: NewUser){
+        print(user.toDictionary())
+        DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
     }
 }

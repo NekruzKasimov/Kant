@@ -49,7 +49,12 @@ class ServerManager: HTTPRequestManager  {
             }, error: error)
         }, error: error)
     }
-   
+    func getUser(_ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetUser)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
+            completion(NewUser(json: json))
+        }) { (error) in
+        }
+    }
     func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
             completion(FinancialOffices(json: succes))

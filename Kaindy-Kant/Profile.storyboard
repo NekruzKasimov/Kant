@@ -74,7 +74,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="***********" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Off-ma-RmY">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="***********" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Off-ma-RmY">
                                         <rect key="frame" x="188" y="512" width="175" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -423,8 +423,17 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1250"/>
                     <connections>
+                        <outlet property="address_TF" destination="NCV-N4-JTB" id="z9F-AT-cs2"/>
                         <outlet property="birthdayTF" destination="oyJ-So-wie" id="1Th-0o-Jyy"/>
+                        <outlet property="city_TF" destination="Njx-C3-Jm1" id="sMd-R0-Duq"/>
+                        <outlet property="date_of_birth_TF" destination="oyJ-So-wie" id="Ibp-gE-JoQ"/>
+                        <outlet property="email_TF" destination="OhM-yU-fOw" id="DT6-Ug-X7q"/>
+                        <outlet property="fathers_name_TF" destination="edU-Qj-tef" id="LCc-9j-Rob"/>
+                        <outlet property="firts_name_TF" destination="Da8-KK-t2t" id="Htn-cM-TMZ"/>
+                        <outlet property="last_name_TF" destination="REO-lE-dQr" id="HJW-Mg-fRx"/>
                         <outlet property="myFieldsLable" destination="aiP-O2-vZL" id="JBB-e7-bHd"/>
+                        <outlet property="password_TF" destination="Off-ma-RmY" id="agJ-rc-Piw"/>
+                        <outlet property="phone_TF" destination="Pp0-EW-KFk" id="pZ0-do-9Nl"/>
                         <outlet property="scrollView" destination="nlv-HA-bTv" id="4Qb-gY-n0t"/>
                         <outlet property="segmentView" destination="TGp-Af-Lxh" id="rT5-Ih-ipq"/>
                         <outlet property="segmentedControl" destination="TGp-Af-Lxh" id="OIZ-49-3pt"/>
