@@ -119,8 +119,15 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        
+        if indexPath.section == 1 && mySCOutlet.selectedSegmentIndex == 0 {
             self.present(SFSafariViewController.init(url: URL(string: "http://rossahar.ru\(newRossahar!.results.array[indexPath.row].link)")!), animated: true, completion: nil)
+            
+        } else if indexPath.section == 1 && mySCOutlet.selectedSegmentIndex == 1 {
+            let sb = UIStoryboard(name: "News", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "LocalNewsViewController") as! LocalNewsViewController
+            navigationController?.pushViewController(vc, animated: true)
+            
         }
     }
 }

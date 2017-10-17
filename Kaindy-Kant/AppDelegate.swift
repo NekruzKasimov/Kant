@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let user = DataManager.shared.getUser()
-        
+        GMSServices.provideAPIKey(googleApiKey)
+        GMSPlacesClient.provideAPIKey(googleApiKey)
         
         if user != nil {
             ServerManager.shared.login(login: user!["username"]!, password: user!["password"]!, completion: log_in, error: UIViewController().showErrorAlert)
@@ -31,9 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = vc
             
         }
-        
-        GMSServices.provideAPIKey(googleApiKey)
-        GMSPlacesClient.provideAPIKey(googleApiKey)
         UINavigationBar.appearance().backgroundColor = UIColor(red: 157/255, green: 32/255, blue: 70/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]

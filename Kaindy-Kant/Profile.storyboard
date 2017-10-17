@@ -791,16 +791,11 @@
                                     <constraint firstAttribute="height" constant="2" id="VHZ-bR-IoJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxG-lL-g4O" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="280"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="igy-wh-s4W" firstAttribute="leading" secondItem="D5H-zv-ORV" secondAttribute="leading" id="1j0-6U-TdU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kg9-v9-b9o" secondAttribute="trailing" constant="8" id="2xJ-an-XKK"/>
-                            <constraint firstItem="nxG-lL-g4O" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leading" id="3ZB-ta-JuS"/>
                             <constraint firstItem="5rn-uK-Roy" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leadingMargin" id="7Yy-wI-I1K"/>
                             <constraint firstItem="5rn-uK-Roy" firstAttribute="top" secondItem="l2s-TC-I4o" secondAttribute="bottom" constant="40" id="87m-yD-t6C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="igy-wh-s4W" secondAttribute="trailing" constant="8" id="8CO-hF-egI"/>
@@ -811,7 +806,6 @@
                             <constraint firstItem="Ekj-4e-df7" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leadingMargin" id="Dm6-hU-eLc"/>
                             <constraint firstItem="D5H-zv-ORV" firstAttribute="leading" secondItem="5rn-uK-Roy" secondAttribute="trailing" constant="8" id="GQw-u4-NQw"/>
                             <constraint firstItem="Xr0-sO-fRW" firstAttribute="centerY" secondItem="Ekj-4e-df7" secondAttribute="centerY" id="IPN-pY-hCQ"/>
-                            <constraint firstItem="Ekj-4e-df7" firstAttribute="top" secondItem="nxG-lL-g4O" secondAttribute="bottom" constant="20" id="JSE-PH-Qf5"/>
                             <constraint firstItem="l2s-TC-I4o" firstAttribute="top" secondItem="Ekj-4e-df7" secondAttribute="bottom" constant="40" id="Jbc-S8-nJo"/>
                             <constraint firstItem="D5H-zv-ORV" firstAttribute="centerY" secondItem="5rn-uK-Roy" secondAttribute="centerY" id="MJ1-k4-yAC"/>
                             <constraint firstItem="l2s-TC-I4o" firstAttribute="leading" secondItem="e4M-JY-3G6" secondAttribute="leadingMargin" id="OO7-8v-1ZK"/>
@@ -821,15 +815,10 @@
                             <constraint firstItem="8Ft-MZ-pJQ" firstAttribute="top" secondItem="5rn-uK-Roy" secondAttribute="bottom" constant="50" id="eRT-Rn-iFT"/>
                             <constraint firstItem="heg-BV-FNB" firstAttribute="leading" secondItem="Xr0-sO-fRW" secondAttribute="leading" id="fBk-Va-i9I"/>
                             <constraint firstItem="F36-Co-uZC" firstAttribute="leading" secondItem="l2s-TC-I4o" secondAttribute="trailing" constant="8" id="qOt-ta-MxU"/>
-                            <constraint firstAttribute="trailing" secondItem="nxG-lL-g4O" secondAttribute="trailing" id="wVo-pX-inZ"/>
-                            <constraint firstItem="nxG-lL-g4O" firstAttribute="top" secondItem="JMO-tv-yg2" secondAttribute="bottom" id="wd9-3M-VVz"/>
                             <constraint firstItem="igy-wh-s4W" firstAttribute="top" secondItem="D5H-zv-ORV" secondAttribute="bottom" id="wnb-aI-NYb"/>
                             <constraint firstItem="F36-Co-uZC" firstAttribute="leading" secondItem="Kg9-v9-b9o" secondAttribute="leading" id="wqJ-z2-yk2"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="googleMapView" destination="nxG-lL-g4O" id="KxD-rb-asr"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6J-3A-rno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1116,6 +1105,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allYield" destination="XKQ-Xm-N9t" id="thH-ce-9dF"/>
+                        <outlet property="averageYield" destination="9Dy-mI-32N" id="uZE-pE-Gg4"/>
+                        <outlet property="fieldHectare" destination="SvZ-TL-W6r" id="QcA-b9-mOy"/>
                         <outlet property="mapView" destination="OAr-GN-wal" id="4U1-39-doL"/>
                     </connections>
                 </viewController>

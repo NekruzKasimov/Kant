@@ -13,7 +13,6 @@ import GooglePlaces
 
 class DetailedMapViewController: UIViewController {
     
-    @IBOutlet weak var googleMapView: GMSMapView!
     var googleMap: GMSMapView!
     var googlePoints: [CLLocationCoordinate2D] = []
     
@@ -23,12 +22,15 @@ class DetailedMapViewController: UIViewController {
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.807869, longitude: 74.6294193))
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.811612, longitude: 74.6309217))
+        googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
         setupMap()
     }
     
     func setupMap() {
         let googleCamera = GMSCameraPosition.camera(withTarget: googlePoints[0], zoom: 15)
-        googleMap = GMSMapView.map(withFrame: googleMapView.frame, camera: googleCamera)
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
+        googleMap = GMSMapView.map(withFrame: frame, camera: googleCamera)
+        googleMap.mapType = .hybrid
         googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight] 
         view.addSubview(googleMap)
         

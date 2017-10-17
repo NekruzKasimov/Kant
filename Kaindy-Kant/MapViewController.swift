@@ -12,18 +12,19 @@ import GooglePlaces
 import GoogleMaps
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
-
-    @IBOutlet weak var mapView: UIView!
+    
     struct Coordinate {
         var coordinate: CLLocationCoordinate2D
         var number: Int
     }
-    let resetButton = UIButton()
-    let saveButton = UIButton()
+
+    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var fieldHectare: UITextField!
+    @IBOutlet weak var averageYield: UITextField!
+    @IBOutlet weak var allYield: UITextField!
+    
     var map: GMSMapView!
     var points: [Coordinate] = []
-    //
-    var marker: GMSMarker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +38,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBAction func saveFiledBtn(_ sender: Any) {
         
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        navigationController?.pushViewController(vc, animated: true)
-        
-        let alert = UIAlertController(title: "Saved", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (acrion) in
-        }))
-        present(alert, animated: true, completion: nil)
+        if (fieldHectare.text == "" || averageYield.text == "" || allYield.text == "") {
+            errorAlert()
+            
+        } else {
+            let sb = UIStoryboard(name: "Profile", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            navigationController?.pushViewController(vc, animated: true)
+            
+            let alert = UIAlertController(title: "Saved", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (acrion) in
+            }))
+            present(alert, animated: true, completion: nil)
+        }
     }
+    
     func addGoogleMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 42.81064, longitude: 74.627359, zoom: 15)
         map = GMSMapView.map(withFrame: self.view.frame, camera: camera)
@@ -58,7 +65,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        marker = GMSMarker(position: coordinate)
+        let marker = GMSMarker(position: coordinate)
         marker.icon = UIImage(named: "marker")
         marker.map = map
         setPoint(coordinate)
@@ -95,6 +102,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func addResetButton() {
+        let resetButton = UIButton()
         resetButton.frame = CGRect(x: 10, y: view.frame.height - 50, width: 100, height: 40)
         resetButton.setTitle("Отменить", for: .normal)
         resetButton.setTitleColor(.white, for: .normal)
@@ -105,6 +113,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func addSaveButton() {
+        let saveButton = UIButton()
         saveButton.frame = CGRect(x: 120, y: view.frame.height - 50, width: 100, height: 40)
         saveButton.setTitle("Сохранить", for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
@@ -123,18 +132,31 @@ extension MapViewController {
     }
     
     func saveButtonClicked() {
+        if points.count > 2 {
+            acceptFiled()
+        } else {
+            errorAlert()
+        }
+    }
+    
+    func acceptFiled() {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        
         //Cancel
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (acrion) in
         }))
-        
         //Add
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
             self.animateIn()
         }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func errorAlert() {
+        let alert = UIAlertController(title: "Error", message: "", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+        }))
         present(alert, animated: true, completion: nil)
     }
     
@@ -149,4 +171,6 @@ extension MapViewController {
             self.mapView.transform = CGAffineTransform.identity
         }
     }
+    
+    
 }
