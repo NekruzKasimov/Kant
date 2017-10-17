@@ -13,6 +13,10 @@ PODS:
     - Kingfisher (> 3.0)
   - IQKeyboardManager (4.0.13)
   - Kingfisher (4.1.0)
+  - KRActivityIndicatorView (2.0.2)
+  - KRProgressHUD (3.0.0):
+    - KRActivityIndicatorView (~> 2.0.2)
+  - PKHUD (4.2.3)
   - ScrollableSegmentedControl (1.2.1)
   - SJSegmentedScrollView (1.3.6)
   - SwiftyJSON (3.1.4)
@@ -23,6 +27,8 @@ DEPENDENCIES:
   - GooglePlaces
   - ImageSlideshow/Kingfisher
   - IQKeyboardManager
+  - KRProgressHUD
+  - PKHUD
   - ScrollableSegmentedControl
   - SJSegmentedScrollView
   - SwiftyJSON
@@ -34,10 +40,13 @@ SPEC CHECKSUMS:
   ImageSlideshow: 2c4de19eae796a46f1c827f9d3520d3193079613
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
+  KRActivityIndicatorView: 2a9d5442ba8da6274db3afdf46aeaef7cf6dd8ad
+  KRProgressHUD: 14f9fad06080bdb1e59569104a8eda654c83e813
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   ScrollableSegmentedControl: fc0a1cd9a12662a6c12dea44172262bdcca21cdc
   SJSegmentedScrollView: 13eb38fc0a28cc46a3ccc52b4e246df0e2227077
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: e5443759e5bf12e525bea7d05cf781e7206fe8c2
+PODFILE CHECKSUM: 474623fcf0ae5bc011ff2436af31a56d7b0cc9e6
 
 COCOAPODS: 1.3.1

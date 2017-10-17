@@ -12,6 +12,8 @@ target 'Kaindy-Kant' do
  pod 'SJSegmentedScrollView'
  pod 'ScrollableSegmentedControl'
  pod 'ImageSlideshow/Kingfisher’
+ pod 'PKHUD'
+ pod 'KRProgressHUD'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do

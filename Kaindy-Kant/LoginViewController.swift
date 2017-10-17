@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+//import PKHUD
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
@@ -38,6 +39,7 @@ class LoginViewController: UIViewController {
         let login = loginTextField.text
         let password = passwordTextField.text
         if login != "" && password != "" {
+            //HUD.show(.progress)
             ServerManager.shared.login(login: login!, password: password!, completion: log_in, error: showErrorAlert)
         }
         else {
@@ -47,6 +49,7 @@ class LoginViewController: UIViewController {
         
     }
     func log_in(user_id: Int) {
+        //HUD.hide()
         DataManager.shared.setUserId(user_id: user_id)
         DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
         let sb = UIStoryboard(name: "Main", bundle: nil)
