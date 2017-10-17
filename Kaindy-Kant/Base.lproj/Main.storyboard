@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -409,14 +408,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o16-Xe-nSb">
-                                <rect key="frame" x="12" y="368" width="66" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-ft-rA8">
-                                <rect key="frame" x="8" y="432.5" width="359" height="174.5"/>
+                                <rect key="frame" x="8" y="406.5" width="359" height="200.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yqb-hq-E8t">
                                     <size key="itemSize" width="151" height="144"/>
@@ -426,7 +419,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="wQN-Bd-CPw" customClass="WeatherCell" customModule="Kaindy_Kant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15.5" width="151" height="144"/>
+                                        <rect key="frame" x="0.0" y="16.5" width="151" height="144"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="144"/>
@@ -517,24 +510,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o16-Xe-nSb">
+                                <rect key="frame" x="12" y="366" width="66" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ufs-ft-rA8" secondAttribute="trailing" constant="8" id="1NX-8o-iN6"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xD3-uP-eGu" secondAttribute="trailing" id="1vN-7W-Rnl"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o16-Xe-nSb" secondAttribute="trailing" constant="20" symbolic="YES" id="72I-wn-TcR"/>
-                            <constraint firstItem="o16-Xe-nSb" firstAttribute="top" secondItem="EmJ-iE-1sn" secondAttribute="bottom" constant="348" id="8gW-nM-Ksz"/>
-                            <constraint firstItem="Ufs-ft-rA8" firstAttribute="top" secondItem="o16-Xe-nSb" secondAttribute="bottom" constant="44" id="BzJ-uk-SBT"/>
-                            <constraint firstItem="xD3-uP-eGu" firstAttribute="leading" secondItem="QAk-82-mWM" secondAttribute="leadingMargin" constant="95" id="T0f-Ko-C0k"/>
+                            <constraint firstItem="o16-Xe-nSb" firstAttribute="top" secondItem="AVf-ym-mfC" secondAttribute="bottom" constant="20" id="8UD-D9-7Y1"/>
+                            <constraint firstItem="Ufs-ft-rA8" firstAttribute="top" secondItem="o16-Xe-nSb" secondAttribute="bottom" constant="20" id="BzJ-uk-SBT"/>
                             <constraint firstItem="WnN-ap-ppT" firstAttribute="top" secondItem="kQC-8i-Lcy" secondAttribute="bottom" constant="8" id="UIv-nh-Ea9"/>
                             <constraint firstItem="Ufs-ft-rA8" firstAttribute="leading" secondItem="QAk-82-mWM" secondAttribute="leading" constant="8" id="WNW-uZ-ECu"/>
+                            <constraint firstItem="kQC-8i-Lcy" firstAttribute="centerX" secondItem="QAk-82-mWM" secondAttribute="centerX" id="ZHP-Pz-fn9"/>
                             <constraint firstItem="AVf-ym-mfC" firstAttribute="centerX" secondItem="QAk-82-mWM" secondAttribute="centerX" id="bv2-Qv-86q"/>
-                            <constraint firstItem="WnN-ap-ppT" firstAttribute="leading" secondItem="QAk-82-mWM" secondAttribute="leadingMargin" constant="122" id="cbY-wR-gDN"/>
+                            <constraint firstItem="WnN-ap-ppT" firstAttribute="centerX" secondItem="QAk-82-mWM" secondAttribute="centerX" id="efX-qt-brb"/>
                             <constraint firstItem="o16-Xe-nSb" firstAttribute="leading" secondItem="QAk-82-mWM" secondAttribute="leading" constant="12" id="gWb-Vg-YbY"/>
                             <constraint firstItem="AVf-ym-mfC" firstAttribute="top" secondItem="WnN-ap-ppT" secondAttribute="bottom" constant="8" id="jnj-wJ-LVb"/>
                             <constraint firstItem="hvI-pA-AV2" firstAttribute="top" secondItem="Ufs-ft-rA8" secondAttribute="bottom" constant="60" id="kHf-lp-MDs"/>
-                            <constraint firstItem="kQC-8i-Lcy" firstAttribute="leading" secondItem="QAk-82-mWM" secondAttribute="leadingMargin" constant="120" id="o0c-7x-xXd"/>
                             <constraint firstItem="AVf-ym-mfC" firstAttribute="centerY" secondItem="QAk-82-mWM" secondAttribute="centerY" id="rJI-UU-Gnn"/>
+                            <constraint firstItem="xD3-uP-eGu" firstAttribute="centerX" secondItem="QAk-82-mWM" secondAttribute="centerX" id="taI-Ur-fsj"/>
                             <constraint firstItem="kQC-8i-Lcy" firstAttribute="top" secondItem="xD3-uP-eGu" secondAttribute="bottom" constant="32" id="th2-Vc-isa"/>
                         </constraints>
                     </view>

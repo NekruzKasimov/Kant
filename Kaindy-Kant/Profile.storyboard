@@ -482,7 +482,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dif-1n-UUv">
-                                        <rect key="frame" x="100" y="169" width="120" height="30"/>
+                                        <rect key="frame" x="96.5" y="169" width="127" height="30"/>
                                         <color key="backgroundColor" red="0.032543040812015533" green="0.72779995203018188" blue="0.30068773031234741" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Bq8-XJ-3lL"/>
@@ -535,7 +535,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dif-1n-UUv" secondAttribute="trailing" constant="100" id="1UC-D3-q8e"/>
                                     <constraint firstAttribute="trailing" secondItem="daS-8N-yUH" secondAttribute="trailing" constant="80" id="8sQ-Oa-pRO"/>
                                     <constraint firstAttribute="trailing" secondItem="9W5-uJ-s3Z" secondAttribute="trailing" constant="32" id="BE7-2x-ebn"/>
                                     <constraint firstItem="fFZ-cd-cpA" firstAttribute="top" secondItem="ek8-L9-uff" secondAttribute="bottom" constant="2" id="Jmd-nl-lo3"/>
@@ -557,7 +556,6 @@
                                     <constraint firstItem="dif-1n-UUv" firstAttribute="centerX" secondItem="EDf-kc-rOc" secondAttribute="centerX" id="o55-OT-TWU"/>
                                     <constraint firstItem="hX2-00-GEr" firstAttribute="leading" secondItem="YWj-8a-NND" secondAttribute="leading" id="o7x-IJ-UKz"/>
                                     <constraint firstItem="daS-8N-yUH" firstAttribute="top" secondItem="fFZ-cd-cpA" secondAttribute="bottom" constant="40" id="wSi-OC-N40"/>
-                                    <constraint firstItem="dif-1n-UUv" firstAttribute="leading" secondItem="EDf-kc-rOc" secondAttribute="leading" constant="100" id="yFS-FX-4s7"/>
                                 </constraints>
                             </view>
                         </subviews>
