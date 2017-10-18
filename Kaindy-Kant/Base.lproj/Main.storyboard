@@ -419,7 +419,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="wQN-Bd-CPw" customClass="WeatherCell" customModule="Kaindy_Kant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="16.5" width="151" height="144"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="151" height="144"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="144"/>
@@ -591,11 +591,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lad-30-hvB" firstAttribute="leading" secondItem="ceQ-7A-NDz" secondAttribute="leading" constant="80" id="2PX-XN-Ryv"/>
                                     <constraint firstAttribute="bottom" secondItem="lad-30-hvB" secondAttribute="bottom" constant="8" id="HH0-ov-D6q"/>
                                     <constraint firstAttribute="height" constant="150" id="Lkf-vx-Fxv"/>
                                     <constraint firstItem="m1y-tP-vtt" firstAttribute="leading" secondItem="ceQ-7A-NDz" secondAttribute="leading" constant="92" id="Xlk-kx-PdJ"/>
                                     <constraint firstItem="lad-30-hvB" firstAttribute="top" secondItem="m1y-tP-vtt" secondAttribute="bottom" constant="8" id="hYa-SU-6g0"/>
+                                    <constraint firstItem="m1y-tP-vtt" firstAttribute="centerX" secondItem="lad-30-hvB" secondAttribute="centerX" id="tYD-ZZ-cH9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -611,6 +611,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="lad-30-hvB" id="Esq-bg-PZ2"/>
                         <outlet property="tablevView" destination="dbf-tc-Vna" id="kNO-Uj-Ipn"/>
                     </connections>
                 </viewController>

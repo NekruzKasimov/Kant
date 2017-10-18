@@ -16,7 +16,6 @@ class ServiceViewController: UIViewController {
             collectionView.register(UINib(nibName: "ServiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ServiceCollectionViewCell")
         }
     }
-    
     var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
     
     override func viewDidLoad() {

@@ -16,7 +16,7 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
     
     var finOffices: FinancialOffices?
     var detailedFinOffice: DetailedFinOffice?
-    
+    var isSelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -26,8 +26,13 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        KRProgressHUD.show()
-        ServerManager.shared.getAllFinancialOffices(setFinancialOffices, error: showErrorAlert)
+        isSelected = false
+        if let financialOffices = DataManager.shared.getFinOffices() {
+            self.finOffices = financialOffices
+        } else {
+            KRProgressHUD.show()
+            ServerManager.shared.getAllFinancialOffices(setFinancialOffices, error: showErrorAlert)
+        }
     }
 }
 
@@ -39,7 +44,6 @@ extension DetailedSceneViewController {
         if let count = finOffices?.array.count {
             KRProgressHUD.dismiss()
             return count
-            
         }
         return 0
     }
@@ -56,7 +60,11 @@ extension DetailedSceneViewController {
 
 extension DetailedSceneViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ServerManager.shared.getFinancialOfficeById(id: indexPath.row + 1, setDetailedFinancialOffice, error: showErrorAlert)
+        if !isSelected {
+            ServerManager.shared.getFinancialOfficeById(id: indexPath.row + 1, setDetailedFinancialOffice, error: showErrorAlert)
+            isSelected = true
+        }
+        
     }
 }
 
@@ -71,6 +79,7 @@ extension DetailedSceneViewController {
     }
     
     func setFinancialOffices(financialOffices: FinancialOffices) {
+        DataManager.shared.setFinOffices(finOffices: financialOffices)
         self.finOffices = financialOffices
         tableView.reloadData()
     }
