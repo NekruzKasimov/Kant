@@ -50,9 +50,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         self.title = "Расходы"
         ServerManager.shared.getExpenses({ (succes) in
             self.setExpenses(expenses: succes)
-        }, error: { (error) in
-            print(error)
-        })
+        }, error: showErrorAlert)
     }
 }
 

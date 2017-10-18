@@ -51,7 +51,7 @@ class DataManager {
         self.userId = user_id
     }
     func getUserId() -> Int {
-        return userId!
+        return userId == nil ? 0 : userId!
     }
     func setNewUser(newUser: NewUser) {
         self.newUser = newUser

@@ -45,17 +45,12 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         self.title = "Новости"
-        KRProgressHUD.show()
         ServerManager.shared.getNewsRossahar({ (succes) in
             self.setRossahar(rossahar: succes)
-        }) { (error) in
-            print(error)
-        }
+        }, error: showErrorAlert)
         ServerManager.shared.getSugarJom({ (success) in
            self.setSugarJom(sugarjom: success)
-        }) { (error) in
-            print(error)
-        }
+        }, error: showErrorAlert)
     }
     
     func setRossahar(rossahar: Rossahar) {
@@ -90,7 +85,6 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             if let _ = sugarJom {
-                KRProgressHUD.dismiss()
                 return 1
             }
             return 0

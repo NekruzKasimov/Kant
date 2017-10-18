@@ -27,9 +27,7 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         KRProgressHUD.show()
-        ServerManager.shared.getAllFinancialOffices(setFinancialOffices) { (error) in
-            print(error)
-        }
+        ServerManager.shared.getAllFinancialOffices(setFinancialOffices, error: showErrorAlert)
     }
 }
 
@@ -58,9 +56,7 @@ extension DetailedSceneViewController {
 
 extension DetailedSceneViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ServerManager.shared.getFinancialOfficeById(id: indexPath.row + 1, setDetailedFinancialOffice) { (error) in
-            print(error)
-        }
+        ServerManager.shared.getFinancialOfficeById(id: indexPath.row + 1, setDetailedFinancialOffice, error: showErrorAlert)
     }
 }
 

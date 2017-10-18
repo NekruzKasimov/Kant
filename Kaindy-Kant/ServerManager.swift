@@ -52,14 +52,12 @@ class ServerManager: HTTPRequestManager  {
     func getUser(_ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.GetUser)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
             completion(NewUser(json: json))
-        }) { (error) in
-        }
+        }, error: error)
     }
     func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
             completion(FinancialOffices(json: succes))
-        }) { (error) in
-        }
+        }, error: error)
         
     }
 //    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
@@ -73,31 +71,27 @@ class ServerManager: HTTPRequestManager  {
     func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
             completion(DetailedFinOffice(json: succes))
-        }) { (error) in
-        }
+        }, error: error)
     }
     
     func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)", serverType: .kant, completion: { (success) in
             completion(Rossahar(json: success))
-        }) { (error) in
-        }
+        }, error: error)
     }
     
     
     func getExpenses(_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: Constants.Network.EndPoints.Expenses, serverType: .kant, completion: { (success) in
             completion(Expenses(json: success))
-        }) { (error) in
-        }
+        }, error: error)
         
     }
     
     func getSugarJom(_ completion: @escaping (SugarJom)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.SugarJom)", serverType: .kant, completion: { (success) in
             completion(SugarJom(json: success))
-        }) { (error) in
-        }
+        }, error: error)
     }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
@@ -111,7 +105,6 @@ class ServerManager: HTTPRequestManager  {
     func getCurrecncies(_ completion: @escaping ([Currency])-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.Currencies)", serverType: .kant, completion: { (json) in
             completion(Currencies(json: json).array)
-        }) { (error) in
-        }
+        }, error: error)
     }
 }
