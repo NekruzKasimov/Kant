@@ -14,24 +14,18 @@ class MenuViewController: UIViewController {
     var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "RequestNav" , "TechnologyInfoNav" , "AboutAppNav" , "LoginNav", "CalcNav"]
     var sbs = ["Main" ,  "News" , "Service" , "Provider" , "Request" , "TechnologyInfo" , "AboutApp" , "Login", "CalculatorExcelViewController"]
 
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let user = DataManager.shared.getUserInformation()
+        self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"
+    }
     @IBOutlet weak var tablevView: UITableView!
     
     @IBAction func showProfilePage(_ sender: UIButton) {
-        if let _ = DataManager.shared.getUserInformation()  {
-            openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
-        } else {
-            ServerManager.shared.getUser(setUserInfo, error: showErrorAlert)
-        }
-        
-    }
-    func setUserInfo(user: NewUser){
-        print(user.toDictionary())
-        DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
     }
 }

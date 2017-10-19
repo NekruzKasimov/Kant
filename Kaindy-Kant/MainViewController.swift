@@ -38,7 +38,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var weather: Weather?
     var currencies: [Currency]?
-    
+    var user: NewUser?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Главная"
@@ -53,6 +53,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         KRProgressHUD.show()
         ServerManager.shared.getWeather(setWeather, error: showErrorAlert)
         ServerManager.shared.getCurrecncies(setCurrencies, error: showErrorAlert)
+        if DataManager.shared.getUserInformation() == nil {
+            ServerManager.shared.getUser(setUserInfo, error: showErrorAlert)
+        }
+        else {
+            self.user = NewUser()
+        }
+    }
+    func setUserInfo(user: NewUser){
+        //print(user.toDictionary())
+        DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
+        self.user = user
     }
     var degree = 0
     var status = ""
@@ -67,7 +78,7 @@ extension MainViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let _ = currencies, let _ = weather {
+        if let _ = currencies, let _ = weather, let _ = user {
             KRProgressHUD.dismiss()
             return MainVCSections(rawValue: section)!.getItemsCount()
         }
