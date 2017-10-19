@@ -29,7 +29,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = ""
         self.title = "Карта"
         addGoogleMap()
         addResetButton()

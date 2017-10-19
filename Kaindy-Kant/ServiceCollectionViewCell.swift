@@ -11,8 +11,8 @@ import UIKit
 class ServiceCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cardView: UIView! {
         didSet {
-            cardView.layer.cornerRadius = 3
-            cardView.layer.masksToBounds = false
+            cardView.layer.cornerRadius = 8
+            cardView.layer.masksToBounds = true
             cardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
             cardView.layer.shadowOffset = CGSize(width: 0, height: 0)
             cardView.layer.shadowOpacity = 0.8

@@ -20,7 +20,6 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        self.navigationController?.navigationBar.topItem?.title = ""
         self.title = "Финансовые учреждения"
     }
     

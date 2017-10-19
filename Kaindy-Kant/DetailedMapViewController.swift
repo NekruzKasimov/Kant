@@ -19,6 +19,7 @@ class DetailedMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Карта"
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.807869, longitude: 74.6294193))
         googlePoints.append(CLLocationCoordinate2D(latitude: 42.811612, longitude: 74.6309217))

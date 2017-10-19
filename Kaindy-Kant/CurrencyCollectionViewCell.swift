@@ -32,7 +32,7 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
     
     
     func setValues(currencies: [Currency]){
-        print(currencies.count)
+        //print(currencies.count)
         
         rub_buy.text = currencies[2].rates.buy_rate
         rub_sell.text = currencies[2].rates.sell_rate
