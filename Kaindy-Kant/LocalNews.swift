@@ -10,11 +10,13 @@ import Foundation
 import SwiftyJSON
 
 struct LocalNews {
+    var photo: NewsPhoto
     var title: String
     var description: String
     var content: String
     
     init(json: JSON) {
+        photo = NewsPhoto(json: json["link"])
         title = json["name"].stringValue
         description = json["description"].stringValue
         content = json["content"].stringValue
@@ -50,6 +52,29 @@ class Newses: NSObject {
         let jsonArr:[JSON] = json.arrayValue
         for json in jsonArr {
             let tempObject = News(json:json)
+            array.append(tempObject)
+        }
+    }
+}
+
+struct NewsPhoto {
+    var photoLink: News
+    
+    init(json: JSON) {
+        photoLink = News(json: json["photo_link"])
+    }
+    func getNewsPhotos() -> [String: Any] {
+        return ["photo_link": photoLink]
+    }
+}
+
+class NewsPhotos: NSObject {
+    override init() {}
+    var array: Array = Array<NewsPhoto>()
+    init(json: JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = NewsPhoto(json:json)
             array.append(tempObject)
         }
     }

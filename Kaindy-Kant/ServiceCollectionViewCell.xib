@@ -22,26 +22,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7y-FI-juU">
                         <rect key="frame" x="0.0" y="0.0" width="275" height="225"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V72-Gs-JVW">
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="225"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-tB-UCT">
-                                <rect key="frame" x="0.0" y="4" width="275" height="18"/>
-                                <color key="backgroundColor" red="0.61458438630000001" green="0.1268199384" blue="0.2744753063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="18"/>
+                                <color key="backgroundColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V72-Gs-JVW">
-                                <rect key="frame" x="0.0" y="24" width="275" height="201"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="V72-Gs-JVW" firstAttribute="top" secondItem="NGO-tB-UCT" secondAttribute="bottom" constant="2" id="1un-yA-eBa"/>
-                            <constraint firstItem="V72-Gs-JVW" firstAttribute="leading" secondItem="c7y-FI-juU" secondAttribute="leading" id="IUp-xi-XNN"/>
-                            <constraint firstAttribute="trailing" secondItem="V72-Gs-JVW" secondAttribute="trailing" id="bED-08-cFO"/>
-                            <constraint firstAttribute="bottom" secondItem="V72-Gs-JVW" secondAttribute="bottom" id="cZb-zb-NYK"/>
-                            <constraint firstItem="NGO-tB-UCT" firstAttribute="top" secondItem="c7y-FI-juU" secondAttribute="top" constant="4" id="g1O-U7-gn2"/>
-                            <constraint firstAttribute="trailing" secondItem="NGO-tB-UCT" secondAttribute="trailing" id="hXo-iz-7oc"/>
-                            <constraint firstItem="NGO-tB-UCT" firstAttribute="leading" secondItem="c7y-FI-juU" secondAttribute="leading" id="qcf-U7-gGQ"/>
+                            <constraint firstItem="V72-Gs-JVW" firstAttribute="leading" secondItem="c7y-FI-juU" secondAttribute="leading" id="RZk-8l-r3c"/>
+                            <constraint firstItem="V72-Gs-JVW" firstAttribute="top" secondItem="c7y-FI-juU" secondAttribute="top" id="U6Y-R9-OSZ"/>
+                            <constraint firstAttribute="trailing" secondItem="NGO-tB-UCT" secondAttribute="trailing" id="eW4-io-txC"/>
+                            <constraint firstAttribute="bottom" secondItem="V72-Gs-JVW" secondAttribute="bottom" id="idM-Dz-cmX"/>
+                            <constraint firstItem="NGO-tB-UCT" firstAttribute="top" secondItem="c7y-FI-juU" secondAttribute="top" id="syq-Gg-sLO"/>
+                            <constraint firstAttribute="trailing" secondItem="V72-Gs-JVW" secondAttribute="trailing" id="u77-ex-Fxb"/>
+                            <constraint firstItem="NGO-tB-UCT" firstAttribute="leading" secondItem="c7y-FI-juU" secondAttribute="leading" id="uyv-Yl-5Iu"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>

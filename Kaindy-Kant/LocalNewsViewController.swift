@@ -15,12 +15,17 @@ class LocalNewsViewController: UIViewController {
     @IBOutlet weak var localNewsTitle: UILabel!
     @IBOutlet weak var localNewsContent: UILabel!
     
-    var local: LocalNews!
+    var newsTitle = ""
+    var newsContent = ""
+    var photo: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupSlideShow()
+        localNewsTitle.text = newsTitle
+        localNewsContent.text = newsContent
+        
     }
     
     func setupSlideShow() {

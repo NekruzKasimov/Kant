@@ -383,13 +383,13 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBz-EU-DGn">
                                         <rect key="frame" x="16" y="216" width="342" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2B-BI-o5C">
-                                        <rect key="frame" x="16" y="253" width="342" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2B-BI-o5C">
+                                        <rect key="frame" x="16" y="253" width="342" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -403,7 +403,7 @@
                                     <constraint firstItem="MBz-EU-DGn" firstAttribute="top" secondItem="KNW-WE-omi" secondAttribute="bottom" constant="8" id="XmG-qD-SxB"/>
                                     <constraint firstItem="MBz-EU-DGn" firstAttribute="trailing" secondItem="KNW-WE-omi" secondAttribute="trailing" id="bfq-MV-Ca4"/>
                                     <constraint firstItem="KNW-WE-omi" firstAttribute="centerX" secondItem="7JL-Di-pY7" secondAttribute="centerX" id="ple-HD-BEk"/>
-                                    <constraint firstAttribute="bottom" secondItem="p2B-BI-o5C" secondAttribute="bottom" id="qXT-dR-ak8"/>
+                                    <constraint firstAttribute="bottom" secondItem="p2B-BI-o5C" secondAttribute="bottom" constant="8" id="qXT-dR-ak8"/>
                                     <constraint firstItem="p2B-BI-o5C" firstAttribute="leading" secondItem="7JL-Di-pY7" secondAttribute="leading" constant="16" id="u0a-pG-Nxl"/>
                                     <constraint firstAttribute="trailing" secondItem="KNW-WE-omi" secondAttribute="trailing" constant="16" id="vpt-EZ-dn0"/>
                                 </constraints>

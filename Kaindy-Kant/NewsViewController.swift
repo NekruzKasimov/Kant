@@ -107,7 +107,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         } else {
             if let count = localNews?.results.array.count  {
-                return count - 1
+                return count
             }
         }
         return 0
@@ -144,6 +144,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 && mySCOutlet.selectedSegmentIndex == 1 {
             let sb = UIStoryboard(name: "News", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "LocalNewsViewController") as! LocalNewsViewController
+            
+            vc.newsTitle = localNews.results.array[indexPath.row].title
+            vc.newsContent = localNews.results.array[indexPath.row].content
+            
             navigationController?.pushViewController(vc, animated: true)
             
         }

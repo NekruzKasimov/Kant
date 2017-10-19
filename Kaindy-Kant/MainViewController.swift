@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import PKHUD
+import KRProgressHUD
 
 enum MainVCSections : Int {
     case currency = 0
@@ -21,8 +23,7 @@ enum MainVCSections : Int {
         }
     }
 }
-import PKHUD
-import KRProgressHUD
+
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
@@ -105,6 +106,8 @@ extension MainViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
             
             cell.titleLabel.text = services[indexPath.row][0]
+            cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
+            
             cell.imageView.image = UIImage(named: services[indexPath.row][1])
             
             return cell
@@ -127,9 +130,9 @@ extension MainViewController {
                 size = CGSize(width: width, height: height)
             }
         case .services:
-            var width = collectionView.frame.width - 42
-            width = width / 2
-            size = CGSize(width: width, height: height)
+            var width = collectionView.frame.width - 24
+            //width = width / 2
+            size = CGSize(width: width, height: 150)
         }
         
         return size
@@ -161,7 +164,10 @@ extension MainViewController {
                 self.navigationController?.show(vc, sender: self)
             }
         case .services:
-            break
+            let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+            let vcs = ["DetailedSceneViewController" , "ConsultationServiceViewController" , "DetailedSceneViewController"]
+            let vc = sb.instantiateViewController(withIdentifier: vcs[indexPath.row])
+            navigationController?.show(vc, sender: self)
         }
     }
 }
