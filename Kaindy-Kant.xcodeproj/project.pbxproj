@@ -13,6 +13,7 @@
 		1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0DF1AA1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf */; };
 		1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */; };
 		1F0DF1B21F6BCEE300DE54F2 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */; };
+		1F1964C91F97832700CE391C /* LocalNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1964C81F97832700CE391C /* LocalNews.swift */; };
 		1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D284D1F8787EC00FE7A0B /* DetailedMapViewController.swift */; };
 		1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893701F614DB600FD2C5D /* AppDelegate.swift */; };
 		1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893741F614DB600FD2C5D /* Main.storyboard */; };
@@ -131,6 +132,7 @@
 		1F0DF1AA1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf"; sourceTree = "<group>"; };
 		1F0DF1AB1F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Sugar Beet VAC_Development Concept-2_MD.pdf"; sourceTree = "<group>"; };
 		1F0DF1B11F6BCEE300DE54F2 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		1F1964C81F97832700CE391C /* LocalNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNews.swift; sourceTree = "<group>"; };
 		1F2D284D1F8787EC00FE7A0B /* DetailedMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMapViewController.swift; sourceTree = "<group>"; };
 		1F58936D1F614DB600FD2C5D /* Kaindy-Kant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kaindy-Kant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5893701F614DB600FD2C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 				8424F6381F8DF5B700639C9D /* SugarJom.swift */,
 				8424F63A1F8DF6AF00639C9D /* Sugar.swift */,
 				8424F63C1F8DF6BF00639C9D /* Jom.swift */,
+				1F1964C81F97832700CE391C /* LocalNews.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -860,7 +863,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		515171D051A51FF8C3101A28 /* [CP] Embed Pods Frameworks */ = {
@@ -944,7 +947,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AEBD3AF3E07C6CBF916BE331 /* [CP] Copy Pods Resources */ = {
@@ -992,7 +995,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1007,6 +1010,7 @@
 				2397A2821F8CB8A700606660 /* ContactsTableVIewCell.swift in Sources */,
 				2397A2831F8CB8A700606660 /* DetailedSceneTableViewCell.swift in Sources */,
 				238F6F061F8B840300304DED /* BranchesViewController.swift in Sources */,
+				1F1964C91F97832700CE391C /* LocalNews.swift in Sources */,
 				23A690F01F7B5BDA0062B4F9 /* ServerManager.swift in Sources */,
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */,

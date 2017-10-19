@@ -370,9 +370,26 @@
                     <view key="view" contentMode="scaleToFill" id="jNB-DL-HPW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esA-69-PJD" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="16" y="28" width="343" height="200"/>
+                                <color key="backgroundColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="lyR-71-Biw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OFb-mU-uZc" firstAttribute="trailing" secondItem="esA-69-PJD" secondAttribute="trailing" constant="16" id="I0I-Ru-WvU"/>
+                            <constraint firstItem="esA-69-PJD" firstAttribute="leading" secondItem="OFb-mU-uZc" secondAttribute="leading" constant="16" id="qEn-Y0-jVd"/>
+                            <constraint firstItem="esA-69-PJD" firstAttribute="top" secondItem="OFb-mU-uZc" secondAttribute="top" constant="8" id="sJ8-fA-iSn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OFb-mU-uZc"/>
                     </view>
+                    <connections>
+                        <outlet property="localNewsSlideShow" destination="esA-69-PJD" id="GhQ-FO-zqA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTm-uQ-47c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

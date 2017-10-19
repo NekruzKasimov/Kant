@@ -29,4 +29,9 @@ class NewsTableViewCell: UITableViewCell {
         dataLabel.text = result.data
         descriptionLabel.text = result.description
     }
+    
+    func setLocalNews(result: LocalNews) {
+        titleLabel.text = result.title
+        descriptionLabel.text = result.content
+    }
 }

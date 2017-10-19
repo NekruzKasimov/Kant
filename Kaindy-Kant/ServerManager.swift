@@ -80,6 +80,13 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
     }
     
+    func getLocalNews(_ completion: @escaping (News)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.LocalNews)", serverType: .kant, completion: { (success) in
+            completion(News(json: success))
+        }, error: error)
+    }
+    
+    
     
     func getExpenses(_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: Constants.Network.EndPoints.Expenses, serverType: .kant, completion: { (success) in

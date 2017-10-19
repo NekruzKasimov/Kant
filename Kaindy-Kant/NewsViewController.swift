@@ -27,6 +27,8 @@ class NewsViewController: UIViewController {
 
     var newRossahar: Rossahar?
     var sugarJom: SugarJom?
+    var localNews: News!
+    
     @IBOutlet weak var mySCOutlet: UISegmentedControl!
     
     @IBAction func showOtherNews(_ sender: Any) {
@@ -48,8 +50,13 @@ class NewsViewController: UIViewController {
         ServerManager.shared.getNewsRossahar({ (succes) in
             self.setRossahar(rossahar: succes)
         }, error: showErrorAlert)
+        
         ServerManager.shared.getSugarJom({ (success) in
            self.setSugarJom(sugarjom: success)
+        }, error: showErrorAlert)
+        
+        ServerManager.shared.getLocalNews({ (news) in
+            self.setLocalNews(local: news)
         }, error: showErrorAlert)
     }
     
@@ -60,6 +67,11 @@ class NewsViewController: UIViewController {
     
     func setSugarJom(sugarjom: SugarJom) {
         self.sugarJom = sugarjom
+        newsTableView.reloadData()
+    }
+    
+    func setLocalNews(local: News) {
+        self.localNews = local
         newsTableView.reloadData()
     }
    
@@ -88,8 +100,13 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
                 return 1
             }
             return 0
-        } else {
+        } else if section == 1 && mySCOutlet.selectedSegmentIndex == 0 {
             if let count = newRossahar?.results.array.count {
+                return count - 1
+            }
+            return 0
+        } else {
+            if let count = localNews?.results.array.count  {
                 return count - 1
             }
         }
@@ -105,7 +122,12 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .news:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
-            cell.setValues(result: (newRossahar?.results.array[indexPath.row])!)
+            
+            if mySCOutlet.selectedSegmentIndex == 0 {
+                cell.setValues(result: (newRossahar?.results.array[indexPath.row])!)
+            } else if mySCOutlet.selectedSegmentIndex == 1 {
+                cell.setLocalNews(result: (localNews.results.array[indexPath.row]))
+            }
             return cell
         }
     }
