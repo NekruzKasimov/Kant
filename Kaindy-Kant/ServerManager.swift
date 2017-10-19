@@ -38,16 +38,12 @@ class ServerManager: HTTPRequestManager  {
     }
     func login(login: String, password: String, completion: @escaping (Int)-> Void,error: @escaping (String)-> Void) {
         //let param = category.toDict()
-        self.post(endpoint: Constants.Network.EndPoints.Token_auth, serverType: .kant, parameters: ["username": login, "password": password], completion: { (json) in
-            //let message = json[""]
-            let token = json["token"].stringValue
-            UserDefaults.standard.set(token, forKey: "token")
             self.post(endpoint: Constants.Network.EndPoints.Login, serverType: .kant, parameters: ["phone": login, "password": password], completion: { (json) in
+                let token = json["token"].stringValue
+                UserDefaults.standard.set(token, forKey: "token")
                 let user_id = json["user_id"].intValue
-                //print(json)
                 completion(user_id)
             }, error: error)
-        }, error: error)
     }
     func getUser(_ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.GetUser)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
