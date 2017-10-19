@@ -26,10 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if user != nil {
             ServerManager.shared.login(login: user!["username"]!, password: user!["password"]!, completion: log_in, error: UIViewController().showErrorAlert)
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
-            //let navigationController = UINavigationController(rootViewController: vc)
-            self.window?.rootViewController = vc
+            
             
         }
         UINavigationBar.appearance().backgroundColor = UIColor(red: 157/255, green: 32/255, blue: 70/255, alpha: 1)
@@ -43,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func log_in(user_id: Int) {
         DataManager.shared.setUserId(user_id: user_id)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        //let navigationController = UINavigationController(rootViewController: vc)
+        self.window?.rootViewController = vc
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

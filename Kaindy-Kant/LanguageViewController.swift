@@ -40,9 +40,13 @@ class LanguageViewController: UIViewController {
     }
     
     func  showJson(json: JSON) {
+        ServerManager.shared.login(login: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password, completion: log_in, error: showErrorAlert)
+        
+    }
+    func log_in(user_id: Int) {
+        DataManager.shared.setUserId(user_id: user_id)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
         present(vc, animated: true, completion: nil)
-        print(json)
     }
 }
