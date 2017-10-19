@@ -11,6 +11,7 @@ import Foundation
 class DetailedSceneTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var labelConstraint: UIView!
     
     @IBOutlet weak var logoImageView: UIImageView! {
         didSet {

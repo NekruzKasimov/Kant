@@ -2129,14 +2129,16 @@ Cg
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="AOD-ON-nND" secondAttribute="trailing" constant="12" id="7lj-6b-O7n"/>
-                                                <constraint firstItem="AOD-ON-nND" firstAttribute="leading" secondItem="zDA-hI-eHj" secondAttribute="trailing" constant="12" id="EBI-em-u7f"/>
+                                                <constraint firstItem="AOD-ON-nND" firstAttribute="leading" secondItem="zDA-hI-eHj" secondAttribute="trailing" priority="600" constant="12" id="EBI-em-u7f"/>
                                                 <constraint firstAttribute="bottom" secondItem="zDA-hI-eHj" secondAttribute="bottom" constant="12" id="FKA-bp-ewA"/>
+                                                <constraint firstItem="AOD-ON-nND" firstAttribute="leading" secondItem="IbZ-4U-V0b" secondAttribute="leading" priority="200" constant="12" id="PfZ-cq-TIW"/>
                                                 <constraint firstItem="zDA-hI-eHj" firstAttribute="leading" secondItem="IbZ-4U-V0b" secondAttribute="leading" constant="12" id="S9Q-sq-tpg"/>
                                                 <constraint firstItem="AOD-ON-nND" firstAttribute="centerY" secondItem="zDA-hI-eHj" secondAttribute="centerY" id="aCb-sg-zKD"/>
                                                 <constraint firstItem="zDA-hI-eHj" firstAttribute="top" secondItem="IbZ-4U-V0b" secondAttribute="top" constant="12" id="cO6-O6-ufu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="labelConstraint" destination="IbZ-4U-V0b" id="vxs-hj-Ovh"/>
                                             <outlet property="logoImageView" destination="zDA-hI-eHj" id="Yuc-uW-uQo"/>
                                             <outlet property="titleLabel" destination="AOD-ON-nND" id="fl4-VX-gUg"/>
                                         </connections>

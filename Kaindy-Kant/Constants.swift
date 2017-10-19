@@ -31,7 +31,9 @@ struct Constants {
             static let Currencies = "api/currency"
             static let Weather = "api/weather"
             static let GetUser = "api/user"
-            
+            static let GetServices = "api/service"
+            static let GetTechnologies = "api/technology"
+            static let GetSuppliers = "api/supplier"
         }
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class DetailedFinOffice {
+class DetailedService {
     var id: Int
     var title: String
     var logo: String
@@ -26,6 +26,17 @@ class DetailedFinOffice {
         branches = Branches(json: json["branches"])
         contacts = Contacts(json: json["contacts"])
         images = Images(json: json["images"])
+    }
+}
+
+class DetailedServices: NSObject {
+    var array: Array = Array<DetailedService>()
+    init(json:JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = DetailedService(json:json)
+            array.append(tempObject)
+        }
     }
 }
 

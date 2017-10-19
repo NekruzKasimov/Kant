@@ -15,7 +15,7 @@ class HeaderViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    var finOffice: DetailedFinOffice!
+    var finOffice: DetailedService!
 
     override func viewDidLoad() {
         super.viewDidLoad()

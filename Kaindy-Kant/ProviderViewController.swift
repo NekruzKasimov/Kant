@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class ProviderViewController: UIViewController,  UICollectionViewDataSource, UISearchControllerDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -17,25 +18,39 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
         }
     }
     
-    var providers = [["Поставщики удобрений", "fertilizer"] , ["Поставщики средств защиты", "remedies"]]
+    var suppliers: Services?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setNavigationBar()
+        KRProgressHUD.show()
+        ServerManager.shared.getSuppliers(setSuppliers) { (error) in
+            self.showErrorAlert(message: error)
+            KRProgressHUD.dismiss()
+        }
+    }
+    
+    func setSuppliers(suppliers: Services) {
+        self.suppliers = suppliers
+        collectionView.reloadData()
     }
 }
 //MARK: UICollectionViewDataSourse methods
 extension ProviderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return providers.count
+        if let count = suppliers?.array.count {
+            KRProgressHUD.dismiss()
+            return count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
         
-        cell.titleLabel.text = providers[indexPath.row][0]
-        cell.imageView.image = UIImage(named: providers[indexPath.row][1])
+        cell.titleLabel.text = suppliers?.array[indexPath.row].name
+        
+        cell.imageView.image = UIImage(named: (suppliers?.array[indexPath.row].logo)!)
         
         return cell
     }
@@ -52,21 +67,10 @@ extension ProviderViewController {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "DetailProvider", bundle: nil)
-        var nameOfVC: String!
-        
-        switch indexPath.row {
-        case 0:
-            nameOfVC = "ContactOfResourcesViewController"
-            break
-        case 1:
-            nameOfVC = "ContactOfResourceProtectionViewController"
-            break
-        default:
-            break
-        }
-        
-        let vc = sb.instantiateViewController(withIdentifier: nameOfVC)
+        let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
+        vc.detailedServices = suppliers?.array[indexPath.row].detailedServices
+        vc.serviceTitle = suppliers?.array[indexPath.row].name
         navigationController?.pushViewController(vc, animated: true)
     }
 

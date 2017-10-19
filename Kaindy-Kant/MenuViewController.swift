@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "О приложении" , "Калькулятор", "Выход"]
+    var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "О приложении" , "Расчитать бюджет", "Выход"]
     var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "AboutAppNav" , "CalcNav", "LoginNav"]
     var sbs = ["Main" ,  "News" , "Service" , "Provider" , "AboutApp" , "CalculatorExcelViewController", "Login"]
 

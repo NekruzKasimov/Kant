@@ -21,14 +21,16 @@ class DataManager {
     var newRossahar: Rossahar?
     var userId: Int?
     var uDefaults = UserDefaults.standard
-    var finOffices: FinancialOffices?
+    var services: Services?
     
-    func setFinOffices(finOffices: FinancialOffices) {
-        self.finOffices = finOffices
+    func setServices(Services: Services) {
+        self.services = Services
     }
-    func getFinOffices() -> FinancialOffices? {
-        return finOffices
+    
+    func getServices() -> Services? {
+        return self.services
     }
+    
     func saveUser(username: String, password: String) {
         uDefaults.set(username, forKey: "username")
         uDefaults.set(password, forKey: "password")

@@ -19,7 +19,7 @@ enum MainVCSections : Int {
         case .currency:
             return 2
         case .services:
-            return 3
+            return 4
         }
     }
 }
@@ -35,23 +35,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
 
-    var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
+    var AllServices: Services?
+    
+    var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"], ["Технологии", ""]]
     
     var weather: Weather?
     var currencies: [Currency]?
     var user: NewUser?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Главная"
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       // HUD.show(.progress)
-        KRProgressHUD.show()
         ServerManager.shared.getWeather(setWeather, error: showErrorAlert)
         ServerManager.shared.getCurrecncies(setCurrencies, error: showErrorAlert)
         if DataManager.shared.getUserInformation() == nil {
@@ -60,12 +55,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         else {
             self.user = NewUser()
         }
+        
+        if DataManager.shared.getServices() == nil {
+            ServerManager.shared.getServices(setServices, error: showErrorAlert)
+        } else {
+            AllServices = DataManager.shared.getServices()
+        }
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "Главная"
+    }
+    
     func setUserInfo(user: NewUser){
         //print(user.toDictionary())
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         self.user = user
     }
+    
+    func setServices(services: Services) {
+        self.AllServices = services
+        DataManager.shared.setServices(Services: self.AllServices!)
+    }
+    
     var degree = 0
     var status = ""
 }
@@ -130,8 +144,7 @@ extension MainViewController {
                 size = CGSize(width: width, height: height)
             }
         case .services:
-            var width = collectionView.frame.width - 24
-            //width = width / 2
+            let width = collectionView.frame.width - 24
             size = CGSize(width: width, height: 150)
         }
         
@@ -164,10 +177,17 @@ extension MainViewController {
                 self.navigationController?.show(vc, sender: self)
             }
         case .services:
-            let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-            let vcs = ["DetailedSceneViewController" , "ConsultationServiceViewController" , "DetailedSceneViewController"]
-            let vc = sb.instantiateViewController(withIdentifier: vcs[indexPath.row])
-            navigationController?.show(vc, sender: self)
+            if indexPath.row != 3 {
+                let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
+                vc.detailedServices = AllServices?.array[indexPath.row].detailedServices
+                vc.serviceTitle = AllServices?.array[indexPath.row].name
+                navigationController?.show(vc, sender: self)
+            } else {
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
+                navigationController?.show(vc, sender: self)
+            }
         }
     }
 }

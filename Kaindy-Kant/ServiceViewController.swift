@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class ServiceViewController: UIViewController {
     
@@ -16,38 +17,45 @@ class ServiceViewController: UIViewController {
             collectionView.register(UINib(nibName: "ServiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ServiceCollectionViewCell")
         }
     }
-    var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"]]
+    
+    var services: Services?
+    
+    var logos = ["bank", "consultation", "laboratory"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        KRProgressHUD.show()
+        self.services = DataManager.shared.getServices()
         setNavigationBar()
     }
+    
 }
 
 extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.count
+        if let count = services?.array.count {
+            KRProgressHUD.dismiss()
+            return count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for:
             indexPath) as! ServiceCollectionViewCell
         
-        cell.titleLabel.text = services[indexPath.row][0]
-        cell.imageView.image = UIImage(named: services[indexPath.row][1])
+        cell.titleLabel.text = services?.array[indexPath.row].name
+        cell.imageView.image = UIImage(named: logos[indexPath.row])
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-        var serviceVC = "DetailedSceneViewController"
-        if indexPath.row == 1 {
-            serviceVC = "ConsultationServiceViewController"
-        }
-        let vc = sb.instantiateViewController(withIdentifier: serviceVC)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
+        vc.detailedServices = services?.array[indexPath.row].detailedServices
+        vc.serviceTitle = services?.array[indexPath.row].name
         navigationController?.pushViewController(vc, animated: true)
     }
     

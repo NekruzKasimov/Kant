@@ -1,40 +1,35 @@
 //
-//  FinancialOffices.swift
+//  Technologies.swift
 //  Kaindy-Kant
 //
-//  Created by Niko on 10/9/17.
+//  Created by Niko on 10/20/17.
 //  Copyright © 2017 NeoBis. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-class FinancialOffice {
+struct Technology {
     var id: Int
     var name: String
-    var logo: String
+    var text: String
     
-    init(json: JSON) {
+    init (json: JSON){
         id = json["id"].intValue
         name = json["name"].stringValue
-        logo = json["logo"].stringValue
+        text = json["text"].stringValue
     }
-    
-    init(){
-        id = 0
-        name = ""
-        logo = ""
-    }
-    
 }
 
-class FinancialOffices: NSObject {
-    var array: Array = Array<FinancialOffice>()
+
+class Technologies: NSObject {
+    var array: Array = Array<Technology>()
     init(json:JSON) {
         let jsonArr:[JSON] = json.arrayValue
         for json in jsonArr {
-            let tempObject = FinancialOffice(json:json)
+            let tempObject = Technology(json:json)
             array.append(tempObject)
         }
     }
 }
+

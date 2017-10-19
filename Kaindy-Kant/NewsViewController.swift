@@ -147,6 +147,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             
             vc.newsTitle = localNews.results.array[indexPath.row].title
             vc.newsContent = localNews.results.array[indexPath.row].content
+            vc.images = localNews.results.array[indexPath.row].photo
             
             navigationController?.pushViewController(vc, animated: true)
             

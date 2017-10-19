@@ -9,29 +9,28 @@
 import UIKit
 import Kingfisher
 import SJSegmentedScrollView
-import KRProgressHUD
+
 class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var finOffices: FinancialOffices?
-    var detailedFinOffice: DetailedFinOffice?
+    var detailedServices: DetailedServices?
+    var serviceTitle: String?
+    
     var isSelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        self.title = "Финансовые учреждения"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        isSelected = false
-        if let financialOffices = DataManager.shared.getFinOffices() {
-            self.finOffices = financialOffices
-        } else {
-            KRProgressHUD.show()
-            ServerManager.shared.getAllFinancialOffices(setFinancialOffices, error: showErrorAlert)
-        }
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = serviceTitle
     }
 }
 
@@ -40,8 +39,7 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
 extension DetailedSceneViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = finOffices?.array.count {
-            KRProgressHUD.dismiss()
+        if let count = detailedServices?.array.count {
             return count
         }
         return 0
@@ -49,8 +47,8 @@ extension DetailedSceneViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailedSceneTableViewCell") as! DetailedSceneTableViewCell
-        cell.logoImageView.kf.setImage(with: URL(string: (finOffices?.array[indexPath.row].logo)!))
-        cell.titleLabel.text = finOffices?.array[indexPath.row].name
+        cell.logoImageView.kf.setImage(with: URL(string: (detailedServices?.array[indexPath.row].logo)!))
+        cell.titleLabel.text = detailedServices?.array[indexPath.row].title
         return cell
     }
 }
@@ -59,11 +57,7 @@ extension DetailedSceneViewController {
 
 extension DetailedSceneViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !isSelected {
-            ServerManager.shared.getFinancialOfficeById(id: indexPath.row + 1, setDetailedFinancialOffice, error: showErrorAlert)
-            isSelected = true
-        }
-        
+        setBank(detailedService: (detailedServices?.array[indexPath.row])!)
     }
 }
 
@@ -77,29 +71,18 @@ extension DetailedSceneViewController {
         tableView.tableFooterView               = UIView()
     }
     
-    func setFinancialOffices(financialOffices: FinancialOffices) {
-        DataManager.shared.setFinOffices(finOffices: financialOffices)
-        self.finOffices = financialOffices
-        tableView.reloadData()
-    }
-    
-    func setDetailedFinancialOffice(detailedFinOffice: DetailedFinOffice) {
-        self.detailedFinOffice = detailedFinOffice
-        setBank(detailedFinOffice: detailedFinOffice)
-    }
-
-    func setBank(detailedFinOffice: DetailedFinOffice) {
+    func setBank(detailedService: DetailedService) {
         let storyboard = UIStoryboard(name: "DetailedService", bundle: nil)
         let headerVC = storyboard.instantiateViewController(
             withIdentifier: "HeaderViewController") as! HeaderViewController
-        headerVC.finOffice = detailedFinOffice
+        headerVC.finOffice = detailedService
 
         let aboutVC = storyboard.instantiateViewController(
             withIdentifier: "DescriptionViewController") as! DescriptionViewController
         aboutVC.title = "Описание"
-        aboutVC.desc = detailedFinOffice.description
+        aboutVC.desc = detailedService.description
 
-        for item in (detailedFinOffice.contacts?.array)! {
+        for item in (detailedService.contacts?.array)! {
             if item.type == "web" {
                 aboutVC.webSite = item.data
             }
@@ -112,7 +95,7 @@ extension DetailedSceneViewController {
 
         var titles = [String]()
         var locations = [Location]()
-        for item in (detailedFinOffice.branches?.array)!{
+        for item in (detailedService.branches?.array)!{
             titles.append(item.address)
             let location = Location.init(latitude: item.latitude, longitude: item.longitude)
             locations.append(location)
@@ -124,7 +107,7 @@ extension DetailedSceneViewController {
         let contactsVC = storyboard.instantiateViewController(
             withIdentifier: "ContactsViewController") as! ContactsViewController
         contactsVC.title = "Контакты"
-        contactsVC.contacts = detailedFinOffice.contacts
+        contactsVC.contacts = detailedService.contacts
 
 
 //        let servicesVC = storyboard.instantiateViewController(

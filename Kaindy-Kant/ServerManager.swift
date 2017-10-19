@@ -54,25 +54,18 @@ class ServerManager: HTTPRequestManager  {
             completion(NewUser(json: json))
         }, error: error)
     }
-    func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
-            completion(FinancialOffices(json: succes))
-        }, error: error)
-        
-    }
+//    func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
+//        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
+//            completion(FinancialOffices(json: succes))
+//        }, error: error)
+//        
+//    }
+//    
 //    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
 //        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
 //            completion(DetailedFinOffice(json: succes))
-//        }) { (error) in
-//        }
-//
+//        }, error: error)
 //    }
-    
-    func getFinancialOfficeById(id: Int, _ completion: @escaping (DetailedFinOffice)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.FinOffice)/\(id)", serverType: .kant, completion: { (succes) in
-            completion(DetailedFinOffice(json: succes))
-        }, error: error)
-    }
     
     func getNewsRossahar(_ completion: @escaping (Rossahar)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.NewRossahar)", serverType: .kant, completion: { (success) in
@@ -100,6 +93,25 @@ class ServerManager: HTTPRequestManager  {
             completion(SugarJom(json: success))
         }, error: error)
     }
+    
+    func getServices(_ completion: @escaping (Services)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetServices)", serverType: .kant, completion: { (success) in
+            completion(Services(json: success))
+        }, error: error)
+    }
+    
+    func getTechnologies(_ completion: @escaping (Technologies)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetTechnologies)", serverType: .kant, completion: { (success) in
+            completion(Technologies(json: success))
+        }, error: error)
+    }
+    
+    func getSuppliers(_ completion: @escaping (Services)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetSuppliers)", serverType: .kant, completion: { (success) in
+            completion(Services(json: success))
+        }, error: error)
+    }
+    
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

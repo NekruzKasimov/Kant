@@ -25,7 +25,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var date_of_birth_TF: UITextField!
     @IBOutlet weak var address_TF: UITextField!
     @IBOutlet weak var city_TF: UITextField!
-    @IBOutlet weak var password_TF: UITextField!
     @IBOutlet weak var fullNameLabel: UILabel!
     
     var yearTitle = "2010"
@@ -114,7 +113,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         address_TF.text = user_info["address"]
         date_of_birth_TF.text = user_info["date_of_birth"]
         city_TF.text = user_info["city"]
-        password_TF.text = user_info["password"]
         fullNameLabel.text = "\(user_info["first_name"]!) \(user_info["last_name"]!)"
     }
     @IBAction func presentMap(_ sender: Any) {

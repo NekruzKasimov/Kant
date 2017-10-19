@@ -17,7 +17,7 @@ class LocalNewsViewController: UIViewController {
     
     var newsTitle = ""
     var newsContent = ""
-    var photo: [String] = []
+    var images: NewsPhotos?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,11 @@ class LocalNewsViewController: UIViewController {
     }
     
     func setupSlideShow() {
-        let images: [String] = ["consultation" , "consultation" , "consultation" , "consultation"]
+        
         var imageArray = [InputSource]()
         var count = 0
-        for imageModel in images {
-            guard  let url = URL(string: imageModel) else {
+        for imageModel in (images?.array)! {
+            guard  let url = URL(string: imageModel.link) else {
                 return
             }
             imageArray.append(KingfisherSource(url: url))
