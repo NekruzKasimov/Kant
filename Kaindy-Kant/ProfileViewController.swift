@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
 //        configureRefreshControl()
 //        addTapToScrollView()
-        self.title = "Мой профиль"
+        self.title = "Профиль"
         setNavigationBar()
         segmentedControl.selectedSegmentIndex = 0
         addScrollableSegmentControl()

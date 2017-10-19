@@ -12,6 +12,10 @@ import ImageSlideshow
 class LocalNewsViewController: UIViewController {
 
     @IBOutlet weak var localNewsSlideShow: ImageSlideshow!
+    @IBOutlet weak var localNewsTitle: UILabel!
+    @IBOutlet weak var localNewsContent: UILabel!
+    
+    var local: LocalNews!
     
     override func viewDidLoad() {
         super.viewDidLoad()
