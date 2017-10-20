@@ -25,10 +25,7 @@ class LanguageViewController: UIViewController {
     func sighUp(){
         ServerManager.shared.signUp(newUser: DataManager.shared.getNewUser(), completion: showJson, error: showErrorAlert)
     }
-    func  showJson(json: JSON) {
-        ServerManager.shared.login(login: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password, completion: log_in, error: showErrorAlert)
-    }
-    func log_in(user_id: Int) {
+    func  showJson(user_id: Int) {
         DataManager.shared.setUserId(user_id: user_id)
         DataManager.shared.saveUser(username: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password)
         let sb = UIStoryboard(name: "Main", bundle: nil)

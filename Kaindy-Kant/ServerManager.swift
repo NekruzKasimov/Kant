@@ -29,11 +29,14 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
     }
     
-    func signUp(newUser: NewUser, completion: @escaping (JSON)-> Void,error: @escaping (String)-> Void) {
+    func signUp(newUser: NewUser, completion: @escaping (Int)-> Void,error: @escaping (String)-> Void) {
         //let param = category.toDict()
         self.post(endpoint: Constants.Network.EndPoints.SignUp, serverType: .kant, parameters: newUser.toDictionary(), completion: { (json) in
             //let message = json[""]
-            completion(json)
+            let token = json["token"].stringValue
+            UserDefaults.standard.set(token, forKey: "token")
+            let user_id = json["user_id"].intValue
+            completion(user_id)
         }, error: error)
     }
     func login(login: String, password: String, completion: @escaping (Int)-> Void,error: @escaping (String)-> Void) {
@@ -47,6 +50,7 @@ class ServerManager: HTTPRequestManager  {
     }
     func getUser(_ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.GetUser)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
+            
             completion(NewUser(json: json))
         }, error: error)
     }
