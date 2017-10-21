@@ -2052,38 +2052,28 @@ Cg
                         <viewControllerLayoutGuide type="bottom" id="Hxz-AL-5X1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2YH-QJ-Xov">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-YB-czL" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="0.0" y="60" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="raS-CA-QNO"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rH-LM-mgT">
-                                <rect key="frame" x="12" y="12" width="351" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Plb-YB-czL" firstAttribute="leading" secondItem="2YH-QJ-Xov" secondAttribute="leading" id="Boh-gB-iA7"/>
-                            <constraint firstItem="Plb-YB-czL" firstAttribute="top" secondItem="0rH-LM-mgT" secondAttribute="bottom" constant="12" id="KAs-tg-sAn"/>
                             <constraint firstItem="Hxz-AL-5X1" firstAttribute="top" secondItem="Plb-YB-czL" secondAttribute="bottom" id="Nkv-5i-s4y"/>
+                            <constraint firstItem="Plb-YB-czL" firstAttribute="top" secondItem="gJp-5I-jKr" secondAttribute="bottom" id="aLS-Cr-IKa"/>
                             <constraint firstAttribute="trailing" secondItem="Plb-YB-czL" secondAttribute="trailing" id="eGZ-8a-Qgk"/>
-                            <constraint firstAttribute="trailing" secondItem="0rH-LM-mgT" secondAttribute="trailing" constant="12" id="kDc-JA-The"/>
-                            <constraint firstItem="0rH-LM-mgT" firstAttribute="top" secondItem="gJp-5I-jKr" secondAttribute="bottom" constant="12" id="qsq-VU-hFg"/>
-                            <constraint firstItem="0rH-LM-mgT" firstAttribute="leading" secondItem="2YH-QJ-Xov" secondAttribute="leading" constant="12" id="rcP-mn-aIA"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="260"/>
+                    <size key="freeformSize" width="375" height="200"/>
                     <connections>
                         <outlet property="slideShow" destination="Plb-YB-czL" id="9yJ-4R-S7B"/>
-                        <outlet property="titleLabel" destination="0rH-LM-mgT" id="Sgl-1x-Xsr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDw-RN-TEj" userLabel="First Responder" sceneMemberID="firstResponder"/>

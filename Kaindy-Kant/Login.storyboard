@@ -41,7 +41,7 @@
                                         <rect key="frame" x="16" y="58" width="248" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="wTp-Lc-hrk" id="ujV-dp-8fj"/>
                                         </connections>
@@ -63,7 +63,7 @@
                                         <rect key="frame" x="16" y="127" width="248" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="wTp-Lc-hrk" id="9ce-nR-MVc"/>
                                         </connections>

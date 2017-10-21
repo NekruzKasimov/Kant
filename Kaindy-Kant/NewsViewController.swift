@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import KRProgressHUD
 
 enum NewsSections: Int {
     case sugar = 0
@@ -46,18 +47,31 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        KRProgressHUD.show()
         self.title = "Новости"
         ServerManager.shared.getNewsRossahar({ (succes) in
+            KRProgressHUD.dismiss()
             self.setRossahar(rossahar: succes)
-        }, error: showErrorAlert)
+        }, error: { (error) in
+            KRProgressHUD.dismiss()
+            self.showErrorAlert(message: error)
+        })
         
         ServerManager.shared.getSugarJom({ (success) in
+            KRProgressHUD.dismiss()
            self.setSugarJom(sugarjom: success)
-        }, error: showErrorAlert)
+        }, error: { (error) in
+            KRProgressHUD.dismiss()
+            self.showErrorAlert(message: error)
+        })
         
         ServerManager.shared.getLocalNews({ (news) in
             self.setLocalNews(local: news)
-        }, error: showErrorAlert)
+            KRProgressHUD.dismiss()
+        }, error: { (error) in
+            KRProgressHUD.dismiss()
+            self.showErrorAlert(message: error)
+        })
     }
     
     func setRossahar(rossahar: Rossahar) {

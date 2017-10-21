@@ -479,8 +479,8 @@
 			children = (
 				2397A2771F8CB7CD00606660 /* Cells */,
 				1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */,
-				2397A27E1F8CB80500606660 /* HeaderViewController.swift */,
 				2397A2791F8CB7E000606660 /* DetailedSceneViewController.swift */,
+				2397A27E1F8CB80500606660 /* HeaderViewController.swift */,
 				238F6F011F8B713400304DED /* ContactsViewController.swift */,
 				2397A2841F8CB8E200606660 /* DescriptionViewController.swift */,
 				238F6F051F8B840300304DED /* BranchesViewController.swift */,

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Поставщики-->
+        <!--Provider View Controller-->
         <scene sceneID="Cbr-B0-dya">
             <objects>
                 <viewController storyboardIdentifier="ProviderViewController" id="biM-59-bLQ" customClass="ProviderViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                             <constraint firstItem="G8v-D7-MJd" firstAttribute="leading" secondItem="ric-08-IA9" secondAttribute="leading" constant="8" id="gDz-5z-d67"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Поставщики" id="dXw-0s-iWU"/>
+                    <navigationItem key="navigationItem" id="dXw-0s-iWU"/>
                     <connections>
                         <outlet property="collectionView" destination="G8v-D7-MJd" id="kVo-28-Vit"/>
                     </connections>

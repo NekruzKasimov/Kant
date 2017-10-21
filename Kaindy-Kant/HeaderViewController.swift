@@ -12,14 +12,11 @@ import ImageSlideshow
 class HeaderViewController: UIViewController {
     
     @IBOutlet weak var slideShow: ImageSlideshow!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
+
     var finOffice: DetailedService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = finOffice.title
         setSlideImageView()
     }
 

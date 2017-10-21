@@ -25,6 +25,8 @@ class LocalNewsViewController: UIViewController {
         setupSlideShow()
         localNewsTitle.text = newsTitle
         localNewsContent.text = newsContent
+        self.title = "Новости"
+        self.navigationController?.navigationBar.topItem?.title = ""
         
     }
     

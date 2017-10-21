@@ -35,31 +35,41 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
 
-    var AllServices: Services?
-    
-    var services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"], ["Технологии", ""]]
+    var services: Services?
     
     var weather: Weather?
     var currencies: [Currency]?
     var user: NewUser?
     override func viewDidLoad() {
         super.viewDidLoad()
+        KRProgressHUD.show()
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-        ServerManager.shared.getWeather(setWeather, error: showErrorAlert)
-        ServerManager.shared.getCurrecncies(setCurrencies, error: showErrorAlert)
+        ServerManager.shared.getWeather(setWeather, error: { (error) in
+            KRProgressHUD.dismiss()
+            self.showErrorAlert(message: error)
+        })
+        ServerManager.shared.getCurrecncies(setCurrencies, error: { (error) in
+            KRProgressHUD.dismiss()
+            self.showErrorAlert(message: error)
+        })
         if DataManager.shared.getUserInformation() == nil {
-            ServerManager.shared.getUser(setUserInfo, error: showErrorAlert)
-        }
-        else {
+            ServerManager.shared.getUser(setUserInfo, error: { (error) in
+                KRProgressHUD.dismiss()
+                self.showErrorAlert(message: error)
+            })
+        } else {
             self.user = NewUser()
         }
         
         if DataManager.shared.getServices() == nil {
-            ServerManager.shared.getServices(setServices, error: showErrorAlert)
+            ServerManager.shared.getServices(setServices, error: { (error) in
+                KRProgressHUD.dismiss()
+                self.showErrorAlert(message: error)
+            })
         } else {
-            AllServices = DataManager.shared.getServices()
+            services = DataManager.shared.getServices()
         }
         
     }
@@ -76,8 +86,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setServices(services: Services) {
-        self.AllServices = services
-        DataManager.shared.setServices(Services: self.AllServices!)
+        self.services = services
+        DataManager.shared.setServices(Services: self.services!)
     }
     
     var degree = 0
@@ -119,10 +129,10 @@ extension MainViewController {
         case .services:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
             
-            cell.titleLabel.text = services[indexPath.row][0]
+            cell.titleLabel.text = Constants.MainPage.services[indexPath.row][0]
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
             
-            cell.imageView.image = UIImage(named: services[indexPath.row][1])
+            cell.imageView.image = UIImage(named: Constants.MainPage.services[indexPath.row][1])
             
             return cell
         }
@@ -180,8 +190,8 @@ extension MainViewController {
             if indexPath.row != 3 {
                 let sb = UIStoryboard(name: "DetailedService", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
-                vc.detailedServices = AllServices?.array[indexPath.row].detailedServices
-                vc.serviceTitle = AllServices?.array[indexPath.row].name
+                vc.detailedServices = services?.array[indexPath.row].detailedServices
+                vc.serviceTitle = services?.array[indexPath.row].name
                 navigationController?.show(vc, sender: self)
             } else {
                 let sb = UIStoryboard(name: "Main", bundle: nil)

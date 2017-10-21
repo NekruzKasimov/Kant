@@ -47,7 +47,7 @@
                                                         <rect key="frame" x="16" y="69" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-Bf-WOo">
                                                         <rect key="frame" x="16" y="86" width="327" height="3"/>
@@ -66,7 +66,7 @@
                                                         <rect key="frame" x="16" y="158" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMO-hL-tKd">
                                                         <rect key="frame" x="16" y="175" width="327" height="3"/>
@@ -85,7 +85,7 @@
                                                         <rect key="frame" x="16" y="247" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isT-jg-kX0">
                                                         <rect key="frame" x="16" y="264" width="327" height="3"/>
@@ -104,7 +104,7 @@
                                                         <rect key="frame" x="16" y="336" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-zz-ZO6">
                                                         <rect key="frame" x="16" y="353" width="327" height="3"/>
@@ -142,7 +142,7 @@
                                                         <rect key="frame" x="16" y="513.5" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUr-zn-4PG">
                                                         <rect key="frame" x="16" y="530.5" width="327" height="3"/>
@@ -161,7 +161,7 @@
                                                         <rect key="frame" x="16" y="602.5" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKB-Pu-xZ4">
                                                         <rect key="frame" x="16" y="619.5" width="327" height="3"/>
@@ -180,7 +180,7 @@
                                                         <rect key="frame" x="16" y="691" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-i9-NV9">
                                                         <rect key="frame" x="16" y="708" width="327" height="3"/>
@@ -219,7 +219,7 @@
                                                         <rect key="frame" x="16" y="780.5" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUF-mh-0cb">
                                                         <rect key="frame" x="124" y="921" width="110" height="45"/>
@@ -246,7 +246,7 @@
                                                         <rect key="frame" x="16" y="869.5" width="327" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

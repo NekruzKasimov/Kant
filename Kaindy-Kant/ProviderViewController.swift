@@ -30,6 +30,11 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "Поставщики"
+    }
+    
     func setSuppliers(suppliers: Services) {
         self.suppliers = suppliers
         collectionView.reloadData()

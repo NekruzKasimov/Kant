@@ -119,7 +119,8 @@ extension DetailedSceneViewController {
         let segmentControllers = SJSegmentedViewController(
             headerViewController: headerVC,
             segmentControllers: [aboutVC, mapVC, contactsVC])
-        segmentControllers.headerViewHeight = 260
+        segmentControllers.headerViewHeight = 200
+        segmentControllers.title = detailedService.title
         segmentControllers.selectedSegmentViewHeight = 5.0
         segmentControllers.segmentTitleColor = .gray
         segmentControllers.selectedSegmentViewColor = .red

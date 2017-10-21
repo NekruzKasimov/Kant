@@ -47,5 +47,9 @@ struct Constants {
         static let weekdays = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
         static let weatherStatuses = ["Clouds" : "Пасмурно", "Clear" : "Ясное небо", "Rain" : "Дожди", "Snow" : "Снег"]
     }
+    
+    struct MainPage {
+        static let services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"], ["Технологии", ""]]
+    }
 }
 

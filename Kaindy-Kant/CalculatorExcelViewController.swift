@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 enum ExcelSections : Int {
     case first = 0
@@ -37,20 +38,19 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         setNavigationBar()
         configureTableView()
+        KRProgressHUD.show()
+        self.title = "Расчитать бюджет"
+        ServerManager.shared.getExpenses(setExpenses) { (error) in
+            KRProgressHUD.dismiss()
+            self.showErrorAlert(message: error)
+        }
     }
     
     func setExpenses(expenses: Expenses) {
+        KRProgressHUD.dismiss()
         self.expenses = expenses
         CalculatorExcelLogicController.shared.updateTotalValues(expenses: self.expenses!)
         tableView.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.title = "Расходы"
-        ServerManager.shared.getExpenses({ (succes) in
-            self.setExpenses(expenses: succes)
-        }, error: showErrorAlert)
     }
 }
 

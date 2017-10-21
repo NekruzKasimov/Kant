@@ -35,6 +35,7 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         setWeatherDegree()
         self.title = "Погода"
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
 }
 
