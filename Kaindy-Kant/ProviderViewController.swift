@@ -55,7 +55,7 @@ extension ProviderViewController {
         
         cell.titleLabel.text = suppliers?.array[indexPath.row].name
         
-        cell.imageView.image = UIImage(named: (suppliers?.array[indexPath.row].logo)!)
+        cell.imageView.kf.setImage(with: URL(string: (suppliers?.array[indexPath.row].logo)!))
         
         return cell
     }

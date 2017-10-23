@@ -132,7 +132,7 @@ extension MainViewController {
             cell.titleLabel.text = Constants.MainPage.services[indexPath.row][0]
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
             
-            cell.imageView.image = UIImage(named: Constants.MainPage.services[indexPath.row][1])
+            cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
             
             return cell
         }

@@ -8,6 +8,7 @@
 
 import UIKit
 import KRProgressHUD
+import Kingfisher
 
 class ServiceViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class ServiceViewController: UIViewController {
     
     var services: Services?
     
-    var logos = ["bank", "consultation", "laboratory"]
+//    var logos = ["bank", "consultation", "laboratory"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
             indexPath) as! ServiceCollectionViewCell
         
         cell.titleLabel.text = services?.array[indexPath.row].name
-        cell.imageView.image = UIImage(named: logos[indexPath.row])
+        cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
         
         return cell
     }
