@@ -19,7 +19,6 @@ class DataManager {
     }
     var newUser: NewUser?
     var newRossahar: Rossahar?
-    var userId: Int?
     var uDefaults = UserDefaults.standard
     var services: Services?
     
@@ -58,10 +57,10 @@ class DataManager {
 
     }
     func setUserId(user_id: Int) {
-        self.userId = user_id
+        uDefaults.set(user_id, forKey: "user_id")
     }
     func getUserId() -> Int {
-        return userId == nil ? 0 : userId!
+        return uDefaults.integer(forKey: "user_id")
     }
     func setNewUser(newUser: NewUser) {
         self.newUser = newUser

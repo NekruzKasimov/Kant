@@ -22,6 +22,7 @@ struct Constants {
         struct EndPoints {
             static let Token_auth = "api/token-auth"
             static let Login = "api/user/login"
+            static let UpdateUser = "api/user"
             static let SignUp = "api/user/signup"
             static let FinOffice = "api/fin-office"
             static let NewRossahar = "api/news/rossahar?limit=100&offset=0"

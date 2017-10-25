@@ -236,6 +236,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveChangesPressed:" destination="WIi-VN-ZPK" eventType="touchUpInside" id="Mem-BI-jYo"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мои поля:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-O2-vZL">
                                         <rect key="frame" x="20" y="593" width="81" height="21"/>
@@ -552,7 +555,7 @@
                 <navigationController storyboardIdentifier="ProfileNav" automaticallyAdjustsScrollViewInsets="NO" id="jxE-ep-pey" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8ma-OL-7uU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

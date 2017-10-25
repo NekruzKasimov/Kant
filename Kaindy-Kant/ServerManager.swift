@@ -39,6 +39,7 @@ class ServerManager: HTTPRequestManager  {
             completion(user_id)
         }, error: error)
     }
+    
     func login(login: String, password: String, completion: @escaping (Int)-> Void,error: @escaping (String)-> Void) {
         //let param = category.toDict()
             self.post(endpoint: Constants.Network.EndPoints.Login, serverType: .kant, parameters: ["phone": login, "password": password], completion: { (json) in
@@ -51,6 +52,11 @@ class ServerManager: HTTPRequestManager  {
     func getUser(_ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.GetUser)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
             
+            completion(NewUser(json: json))
+        }, error: error)
+    }
+    func updateUser(parameters: [String: String], _ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
+        self.patch(endpoint: "\(Constants.Network.EndPoints.UpdateUser)/\(DataManager.shared.getUserId())", serverType: .kant, parameters: parameters, completion: { (json) in
             completion(NewUser(json: json))
         }, error: error)
     }

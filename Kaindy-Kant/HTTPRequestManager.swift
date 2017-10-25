@@ -110,7 +110,9 @@ class HTTPRequestManager {
     internal func get(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
     }
-    
+    internal func patch(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .patch, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
+    }
     
     
     // MARK: - Internet Connectivity

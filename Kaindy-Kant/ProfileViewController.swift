@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KRProgressHUD
+
 //import BetterSegmentedControl
 //import PageMenu
 import ScrollableSegmentedControl
@@ -52,7 +54,24 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     self.navigationController?.show(vc, sender: self)
         
     }
-    
+    @IBAction func saveChangesPressed(_ sender: Any) {
+        var infoToUpdate = [String: String]()
+        infoToUpdate["first_name"] = self.firts_name_TF.text
+        infoToUpdate["last_name"] = self.last_name_TF.text
+        infoToUpdate["fathers_name"] = self.fathers_name_TF.text
+        infoToUpdate["phone"] = self.phone_TF.text
+        infoToUpdate["email"] = self.email_TF.text
+        infoToUpdate["date_of_birth"] = self.date_of_birth_TF.text
+        infoToUpdate["city"] = self.city_TF.text
+        infoToUpdate["address"] = self.address_TF.text
+        KRProgressHUD.show()
+        ServerManager.shared.updateUser(parameters: infoToUpdate, updateUser, error: showErrorAlert)
+    }
+    func updateUser(user: NewUser){
+        KRProgressHUD.dismiss()
+        DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
+        fillUserInformation()
+    }
 //    @IBOutlet weak var changePasswordButton: UIButton! {
 //        didSet{
 //            changePasswordButton.accessibilityIdentifier = "changePasswordButton"
