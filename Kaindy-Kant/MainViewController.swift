@@ -36,10 +36,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     var services: Services?
-    
     var weather: Weather?
     var currencies: [Currency]?
     var user: NewUser?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         KRProgressHUD.show()
@@ -103,7 +104,7 @@ extension MainViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let _ = currencies, let _ = weather, let _ = user {
+        if let _ = currencies, let _ = weather, let _ = user, let _ = services {
             KRProgressHUD.dismiss()
             return MainVCSections(rawValue: section)!.getItemsCount()
         }
