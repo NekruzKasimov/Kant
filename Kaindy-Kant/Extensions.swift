@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-import KRProgressHUD
+import SVProgressHUD
+
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
@@ -27,7 +28,7 @@ extension UIViewController {
    
     func showErrorAlert(message: String) {
         //HUD.hide()
-        KRProgressHUD.dismiss()
+        SVProgressHUD.dismiss()
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OKAction)

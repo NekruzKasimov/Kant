@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KRProgressHUD
+import SVProgressHUD
 
 class TechnologiesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -17,9 +17,9 @@ class TechnologiesListViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        KRProgressHUD.show()
+        SVProgressHUD.show()
         ServerManager.shared.getTechnologies(setTechnologies) { (error) in
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             self.showErrorAlert(message: error)
         }
         self.navigationController?.navigationBar.topItem?.title = ""
@@ -38,7 +38,7 @@ class TechnologiesListViewController: UIViewController, UITableViewDataSource, U
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let counter = technologies?.array.count {
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             return counter
         }
         return 0

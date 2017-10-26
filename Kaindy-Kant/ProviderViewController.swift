@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KRProgressHUD
+import SVProgressHUD
 
 class ProviderViewController: UIViewController,  UICollectionViewDataSource, UISearchControllerDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -23,10 +23,10 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
-        KRProgressHUD.show()
+        SVProgressHUD.show()
         ServerManager.shared.getSuppliers(setSuppliers) { (error) in
             self.showErrorAlert(message: error)
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -44,7 +44,7 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
 extension ProviderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let count = suppliers?.array.count {
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             return count
         }
         return 0

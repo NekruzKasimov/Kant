@@ -13,7 +13,7 @@ target 'Kaindy-Kant' do
  pod 'ScrollableSegmentedControl'
  pod 'ImageSlideshow/Kingfisher’
  pod 'PKHUD'
- pod 'KRProgressHUD'
+ pod 'SVProgressHUD'
 
   # Pods for Kaindy-Kant
 

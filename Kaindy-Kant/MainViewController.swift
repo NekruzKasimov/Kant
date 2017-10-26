@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import PKHUD
-import KRProgressHUD
+import SVProgressHUD
 
 enum MainVCSections : Int {
     case currency = 0
@@ -43,21 +42,21 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        KRProgressHUD.show()
+        SVProgressHUD.show()
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
         ServerManager.shared.getWeather(setWeather, error: { (error) in
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             self.showErrorAlert(message: error)
         })
         ServerManager.shared.getCurrecncies(setCurrencies, error: { (error) in
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             self.showErrorAlert(message: error)
         })
         if DataManager.shared.getUserInformation() == nil {
             ServerManager.shared.getUser(setUserInfo, error: { (error) in
-                KRProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
                 self.showErrorAlert(message: error)
             })
         } else {
@@ -66,7 +65,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if DataManager.shared.getServices() == nil {
             ServerManager.shared.getServices(setServices, error: { (error) in
-                KRProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
                 self.showErrorAlert(message: error)
             })
         } else {
@@ -105,7 +104,7 @@ extension MainViewController {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let _ = currencies, let _ = weather, let _ = user, let _ = services {
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             return MainVCSections(rawValue: section)!.getItemsCount()
         }
         return 0

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KRProgressHUD
+import SVProgressHUD
 import Kingfisher
 
 class ServiceViewController: UIViewController {
@@ -25,7 +25,7 @@ class ServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        KRProgressHUD.show()
+        SVProgressHUD.show()
         self.services = DataManager.shared.getServices()
         setNavigationBar()
     }
@@ -36,7 +36,7 @@ extension ServiceViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let count = services?.array.count {
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             return count
         }
         return 0

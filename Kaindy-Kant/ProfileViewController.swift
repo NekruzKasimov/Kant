@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KRProgressHUD
+import SVProgressHUD
 
 //import BetterSegmentedControl
 //import PageMenu
@@ -64,11 +64,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         infoToUpdate["date_of_birth"] = self.date_of_birth_TF.text
         infoToUpdate["city"] = self.city_TF.text
         infoToUpdate["address"] = self.address_TF.text
-        KRProgressHUD.show()
+        SVProgressHUD.show()
         ServerManager.shared.updateUser(parameters: infoToUpdate, updateUser, error: showErrorAlert)
     }
     func updateUser(user: NewUser){
-        KRProgressHUD.dismiss()
+        SVProgressHUD.dismiss()
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         fillUserInformation()
     }
