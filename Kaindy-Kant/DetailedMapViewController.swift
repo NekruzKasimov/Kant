@@ -29,7 +29,7 @@ class DetailedMapViewController: UIViewController {
     
     func setupMap() {
         let googleCamera = GMSCameraPosition.camera(withTarget: googlePoints[0], zoom: 15)
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 260)
         googleMap = GMSMapView.map(withFrame: frame, camera: googleCamera)
         googleMap.mapType = .hybrid
         googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight] 
