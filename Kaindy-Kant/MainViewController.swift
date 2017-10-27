@@ -104,7 +104,7 @@ extension MainViewController {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let _ = currencies, let _ = weather, let _ = user, let _ = services {
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             return MainVCSections(rawValue: section)!.getItemsCount()
         }
         return 0
