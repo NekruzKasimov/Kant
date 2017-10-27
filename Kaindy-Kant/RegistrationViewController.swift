@@ -7,31 +7,100 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var birthdayTF: UITextField! {
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    @IBOutlet weak var firstNameTF: SkyFloatingLabelTextField! {
         didSet {
-            birthdayTF.delegate = self
-            birthdayTF.tag = 0
+            firstNameTF.accessibilityIdentifier = "firstNameTextField"
+            GlobalFunctions.configure(textField: firstNameTF, withText: "Имя", placeholder: "Имя", tag: 0)
+            configureTextField(textField: firstNameTF)
         }
     }
     
-    @IBOutlet weak var firstNameTF: UITextField!
-    @IBOutlet weak var lastNameTF: UITextField!
-    @IBOutlet weak var fathersNameTF: UITextField!
-    @IBOutlet weak var phoneTF: UITextField!
-    @IBOutlet weak var cityTF: UITextField!
-    @IBOutlet weak var addressTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var passwordRepeatTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var lastNameTF: SkyFloatingLabelTextField! {
+        didSet {
+            lastNameTF.accessibilityIdentifier = "lastNameTextField"
+            GlobalFunctions.configure(textField: lastNameTF, withText: "Фамилия", placeholder: "Фамилия", tag: 1)
+            configureTextField(textField: lastNameTF)
+        }
+    }
     
+    @IBOutlet weak var fathersNameTF: SkyFloatingLabelTextField! {
+        didSet {
+            fathersNameTF.accessibilityIdentifier = "fathersNameTextField"
+            GlobalFunctions.configure(textField: fathersNameTF, withText: "Отчество", placeholder: "Отчество", tag: 2)
+            configureTextField(textField: fathersNameTF)
+        }
+    }
+    
+    @IBOutlet weak var phoneTF: SkyFloatingLabelTextField! {
+        didSet {
+            phoneTF.accessibilityIdentifier = "phoneTextField"
+            GlobalFunctions.configure(textField: phoneTF, withText: "Телефон", placeholder: "XXXX-XX-XX", tag: 3)
+            phoneTF.keyboardType = .phonePad
+            configureTextField(textField: phoneTF)
+        }
+    }
+    
+    @IBOutlet weak var birthdayTF: SkyFloatingLabelTextField! {
+        didSet {
+            birthdayTF.accessibilityIdentifier = "birthdayTextField"
+            GlobalFunctions.configure(textField: birthdayTF, withText: "День рождения", placeholder: "ГГГГ/ММ/ДД", tag: 4)
+            birthdayTF.delegate = self
+            configureTextField(textField: birthdayTF)
+        }
+    }
+    
+    @IBOutlet weak var cityTF: SkyFloatingLabelTextField! {
+        didSet {
+            cityTF.accessibilityIdentifier = "cityTextField"
+            GlobalFunctions.configure(textField: cityTF, withText: "Город/Село/Район", placeholder: "Город/Село/Район", tag: 5)
+            configureTextField(textField: cityTF)
+        }
+    }
+    
+    @IBOutlet weak var addressTF: SkyFloatingLabelTextField! {
+        didSet {
+            addressTF.accessibilityIdentifier = "addressTextField"
+            GlobalFunctions.configure(textField: addressTF, withText: "Адрес", placeholder: "Адрес", tag: 6)
+            configureTextField(textField: addressTF)
+        }
+    }
+    
+    @IBOutlet weak var emailTF: SkyFloatingLabelTextField! {
+        didSet {
+            emailTF.accessibilityIdentifier = "emailTextField"
+            GlobalFunctions.configure(textField: emailTF, withText: "Почта", placeholder: "Почта", tag: 7)
+            configureTextField(textField: emailTF)
+        }
+    }
+    
+    @IBOutlet weak var passwordTF: SkyFloatingLabelTextField! {
+        didSet {
+            passwordTF.accessibilityIdentifier = "passwordTextField"
+            GlobalFunctions.configure(textField: passwordTF, withText: "Пароль", placeholder: "Пароль", tag: 8)
+            configureTextField(textField: passwordTF)
+        }
+    }
+    
+    @IBOutlet weak var passwordRepeatTF: SkyFloatingLabelTextField! {
+        didSet {
+            passwordRepeatTF.accessibilityIdentifier = "passwordRepeatTextField"
+            GlobalFunctions.configure(textField: passwordRepeatTF, withText: "Повторить пароль", placeholder: "Повторить пароль", tag: 9)
+            configureTextField(textField: passwordRepeatTF)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
     }
+    
     @IBAction func saveButton(_ sender: Any) {
         let newUser = NewUser()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
@@ -59,9 +128,15 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 newUser.first_name = self.firstNameTF.text!
                 newUser.date_of_birth = self.birthdayTF.text!
                 newUser.email = self.emailTF.text!
-                DataManager.shared.setNewUser(newUser: newUser)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
-                self.present(nextViewController!, animated:true, completion:nil)
+                ServerManager.shared.signUp(newUser: newUser, completion: { (user_id) in
+                    DataManager.shared.setUserId(user_id: user_id)
+                    DataManager.shared.setNewUser(newUser: newUser)
+                    DataManager.shared.saveUser(username: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
+                    self.present(nextViewController!, animated:true, completion:nil)
+                }, error: { (error) in
+                    print(error)
+                })
             }
         
         }
@@ -74,6 +149,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 // MARK: Helper functions
 
 extension RegistrationViewController {
+    
     func showDatePicker() {
         let myDatePicker = UIDatePicker()
         myDatePicker.datePickerMode = .date
@@ -82,16 +158,23 @@ extension RegistrationViewController {
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alertController.view.addSubview(myDatePicker)
         alertController.view.tintColor = .black
-        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+        let okAction = UIAlertAction(title: "Ок", style: .default) { [weak self] _ in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             dateFormatter.locale = Locale.init(identifier: "en_GB")
             self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:{})
+    }
+    
+    func configureTextField(textField: SkyFloatingLabelTextField){
+        textField.lineColor = UIColor.init(netHex: Colors.purple)
+        textField.titleColor = UIColor.init(netHex: Colors.purple)
+        textField.selectedLineColor = UIColor.init(netHex: Colors.green)
+        textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
     }
 }
 
@@ -105,7 +188,7 @@ extension RegistrationViewController {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField.tag == 0 {
+        if textField.tag == 4 {
             showDatePicker()
             return false
         } else {

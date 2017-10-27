@@ -17,17 +17,12 @@ class LanguageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func russianLanguageButton(_ sender: Any) {
-        sighUp()
+        showMainPage()
     }
     @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {
-        sighUp()
+        showMainPage()
     }
-    func sighUp(){
-        ServerManager.shared.signUp(newUser: DataManager.shared.getNewUser(), completion: showJson, error: showErrorAlert)
-    }
-    func  showJson(user_id: Int) {
-        DataManager.shared.setUserId(user_id: user_id)
-        DataManager.shared.saveUser(username: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password)
+    func showMainPage(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
         present(vc, animated: true, completion: nil)

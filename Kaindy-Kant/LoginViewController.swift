@@ -8,11 +8,33 @@
 
 import UIKit
 import SwiftyJSON
-//import PKHUD
+import SkyFloatingLabelTextField
+
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginTextField: SkyFloatingLabelTextField! {
+        didSet {
+            loginTextField.accessibilityIdentifier = "passwordTextField"
+            GlobalFunctions.configure(textField: loginTextField, withText: "Логин", placeholder: "XXXX-XX-XX", tag: 0)
+            loginTextField.keyboardType = .phonePad
+            configureTextField(textField: loginTextField)
+        }
+    }
+    
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField! {
+        didSet {
+            passwordTextField.accessibilityIdentifier = "passwordTextField"
+            GlobalFunctions.configure(textField: passwordTextField, withText: "Пароль", placeholder: "Пароль", tag: 1)
+            configureTextField(textField: passwordTextField)
+        }
+    }
+    
+    func configureTextField(textField: SkyFloatingLabelTextField){
+        textField.lineColor = UIColor.init(netHex: Colors.purple)
+        textField.titleColor = UIColor.init(netHex: Colors.purple)
+        textField.selectedLineColor = UIColor.init(netHex: Colors.green)
+        textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +70,7 @@ class LoginViewController: UIViewController {
         
         
     }
+    
     func log_in(user_id: Int) {
         //HUD.hide()
         DataManager.shared.setUserId(user_id: user_id)

@@ -14,6 +14,7 @@ target 'Kaindy-Kant' do
  pod 'ImageSlideshow/Kingfisher’
  pod 'PKHUD'
  pod 'SVProgressHUD'
+ pod 'SkyFloatingLabelTextField'
 
   # Pods for Kaindy-Kant
 
