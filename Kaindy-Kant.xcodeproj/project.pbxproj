@@ -89,6 +89,7 @@
 		84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */; };
 		84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */; };
 		84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */; };
+		8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */; };
 		8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9941F8B4DBA0061C702 /* ApiAddress.swift */; };
 		8423B9971F8B4FA10061C702 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9961F8B4FA10061C702 /* NewUser.swift */; };
 		8423B9991F8B54780061C702 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9981F8B54780061C702 /* Constants.swift */; };
@@ -223,8 +224,8 @@
 		84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResouceViewController.swift; sourceTree = "<group>"; };
 		84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResourceProtectionViewController.swift; sourceTree = "<group>"; };
 		84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
-		8408C3581FA37ABA00B2DDA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Kaindy-Kant.entitlements"; sourceTree = "<group>"; };
+		8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8423B9941F8B4DBA0061C702 /* ApiAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAddress.swift; sourceTree = "<group>"; };
 		8423B9961F8B4FA10061C702 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		8423B9981F8B54780061C702 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 		1F58936F1F614DB600FD2C5D /* Kaindy-Kant */ = {
 			isa = PBXGroup;
 			children = (
+				8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */,
 				8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */,
 				235E28501F7A8B1D00378759 /* Models */,
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
@@ -341,7 +343,6 @@
 				1F5893701F614DB600FD2C5D /* AppDelegate.swift */,
 				1F5893771F614DB600FD2C5D /* Assets.xcassets */,
 				1F5893791F614DB600FD2C5D /* LaunchScreen.storyboard */,
-				8408C3581FA37ABA00B2DDA4 /* GoogleService-Info.plist */,
 				1F58937C1F614DB600FD2C5D /* Info.plist */,
 			);
 			path = "Kaindy-Kant";
@@ -794,6 +795,7 @@
 				23A8A3681F828A0C0065C5E6 /* NewsCollectionViewCell.xib in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
+				8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */,
 				84049AE21F85F32200BA935F /* DetailProvider.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
 				1FC61FCE1F83BC75000BE56A /* News.storyboard in Resources */,
