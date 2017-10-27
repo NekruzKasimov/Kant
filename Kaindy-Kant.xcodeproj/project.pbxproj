@@ -100,6 +100,7 @@
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
+		84A74C5C1FA1CD9500E7AE11 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A74C5B1FA1CD9500E7AE11 /* Field.swift */; };
 		84BEAA9E1F8F65C500D6A647 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEAA9D1F8F65C500D6A647 /* Currency.swift */; };
 		84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D519491F8B6BDE00512102 /* DataManager.swift */; };
 		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
@@ -233,6 +234,7 @@
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
+		84A74C5B1FA1CD9500E7AE11 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		84BEAA9D1F8F65C500D6A647 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		84D519491F8B6BDE00512102 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 				1F1964C81F97832700CE391C /* LocalNews.swift */,
 				232AD4621F991868007736B3 /* Services.swift */,
 				232AD4641F992B48007736B3 /* Technologies.swift */,
+				84A74C5B1FA1CD9500E7AE11 /* Field.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -724,7 +727,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = U5DCDBG2W2;
+						DevelopmentTeam = 4459UQ4UL2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -1025,6 +1028,7 @@
 				8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,
 				23A690F11F7B5BDA0062B4F9 /* HTTPStatusCode.swift in Sources */,
+				84A74C5C1FA1CD9500E7AE11 /* Field.swift in Sources */,
 				8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */,
 				23FE2B0E1F6FB00D006C47B7 /* CurrencyCollectionViewCell.swift in Sources */,
 				23FE2B101F6FB01C006C47B7 /* WeatherCollectionViewCell.swift in Sources */,
@@ -1211,9 +1215,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U5DCDBG2W2;
+				DEVELOPMENT_TEAM = 4459UQ4UL2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neobis.kant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1232,9 +1236,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U5DCDBG2W2;
+				DEVELOPMENT_TEAM = 4459UQ4UL2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neobis.kant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
