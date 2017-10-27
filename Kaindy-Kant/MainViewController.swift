@@ -103,7 +103,7 @@ extension MainViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let _ = currencies, let _ = weather, let _ = user {
+        if let _ = currencies, let _ = weather, let _ = user, let _ = services {
             KRProgressHUD.dismiss()
             return MainVCSections(rawValue: section)!.getItemsCount()
         }
@@ -131,7 +131,7 @@ extension MainViewController {
             
             cell.titleLabel.text = Constants.MainPage.services[indexPath.row][0]
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
-            
+            print((services?.array[indexPath.row].logo)!)
             cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
             
             return cell
