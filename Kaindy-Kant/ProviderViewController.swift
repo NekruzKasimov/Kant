@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KRProgressHUD
+import SVProgressHUD
 
 class ProviderViewController: UIViewController,  UICollectionViewDataSource, UISearchControllerDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -23,10 +23,10 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
-        KRProgressHUD.show()
+        SVProgressHUD.show()
         ServerManager.shared.getSuppliers(setSuppliers) { (error) in
             self.showErrorAlert(message: error)
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -44,7 +44,7 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
 extension ProviderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let count = suppliers?.array.count {
-            KRProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
             return count
         }
         return 0
@@ -61,16 +61,15 @@ extension ProviderViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = collectionView.frame.width - 10
-        width = width / 2
-        let size = CGSize(width: width, height: width)
+        let width = collectionView.frame.width - 24
+        let size = CGSize(width: width, height: 150)
         return size
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "DetailedService", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController

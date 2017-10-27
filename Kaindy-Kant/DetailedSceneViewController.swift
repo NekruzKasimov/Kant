@@ -20,7 +20,7 @@ class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITa
     var isSelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,11 +51,16 @@ extension DetailedSceneViewController {
         cell.titleLabel.text = detailedServices?.array[indexPath.row].title
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 104
+    }
 }
 
 //MARK: UITableViewDelegate methods
 
 extension DetailedSceneViewController {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         setBank(detailedService: (detailedServices?.array[indexPath.row])!)
     }
@@ -64,12 +69,6 @@ extension DetailedSceneViewController {
 //MARK: Helper functions
 
 extension DetailedSceneViewController {
-    
-    func configureTableView() {
-        tableView.estimatedRowHeight            = 100
-        tableView.rowHeight                     = UITableViewAutomaticDimension
-        tableView.tableFooterView               = UIView()
-    }
     
     func setBank(detailedService: DetailedService) {
         let storyboard = UIStoryboard(name: "DetailedService", bundle: nil)
