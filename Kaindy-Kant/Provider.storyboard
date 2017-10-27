@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Provider View Controller-->
+        <!--Поставщики-->
         <scene sceneID="Cbr-B0-dya">
             <objects>
                 <viewController storyboardIdentifier="ProviderViewController" id="biM-59-bLQ" customClass="ProviderViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,11 +41,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="G8v-D7-MJd" secondAttribute="trailing" constant="8" id="DgB-EP-9ei"/>
                             <constraint firstItem="VfV-Yv-pvL" firstAttribute="top" secondItem="G8v-D7-MJd" secondAttribute="bottom" id="JXy-9V-fAP"/>
-                            <constraint firstItem="G8v-D7-MJd" firstAttribute="top" secondItem="Ayz-bC-Xag" secondAttribute="bottom" constant="10" id="esM-Jn-dWW"/>
+                            <constraint firstItem="G8v-D7-MJd" firstAttribute="top" secondItem="Ayz-bC-Xag" secondAttribute="bottom" constant="10" id="Wqe-NM-CO7"/>
                             <constraint firstItem="G8v-D7-MJd" firstAttribute="leading" secondItem="ric-08-IA9" secondAttribute="leading" constant="8" id="gDz-5z-d67"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dXw-0s-iWU"/>
+                    <navigationItem key="navigationItem" title="Поставщики" id="dXw-0s-iWU"/>
                     <connections>
                         <outlet property="collectionView" destination="G8v-D7-MJd" id="kVo-28-Vit"/>
                     </connections>
