@@ -28,8 +28,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var address_TF: UITextField!
     @IBOutlet weak var city_TF: UITextField!
     @IBOutlet weak var fullNameLabel: UILabel!
-    
-    var yearTitle = "2010"
+    var years = Years().years
+    var yearIndex = 0
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
 //            imageView.layer.cornerRadius = imageView.frame.size.width/2
@@ -94,14 +94,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         self.title = "Профиль"
         setNavigationBar()
         segmentedControl.selectedSegmentIndex = 0
-        addScrollableSegmentControl()
-        print(myFieldsLable.frame.origin.y)
+        ServerManager.shared.getFields(setFields, error: showErrorAlert)
         
     }
-    func addScrollableSegmentControl(){
+    func setFields(years: Years){
+        self.years = years.years
         segmentedControl.segmentStyle = .textOnly
-        for index in 0..<10 {
-            segmentedControl.insertSegment(withTitle: "201\(index)", at: index)
+        for index in 0..<years.years.count {
+            segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
         }
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.underlineSelected = true
@@ -113,7 +113,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     func segmentSelected(sender:ScrollableSegmentedControl) {
         //segmentedControl
-        yearTitle = "201\(sender.selectedSegmentIndex)"
+        yearIndex = sender.selectedSegmentIndex
         tableView.reloadData()
         print("Segment at index \(sender.selectedSegmentIndex)  selected")
     }
@@ -265,12 +265,17 @@ extension ProfileViewController {
 extension ProfileViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if self.years.count == 0 {
+            return 0
+        }
+        return self.years[yearIndex].fields.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
-        cell.yearLabel.text = yearTitle
+        cell.yearLabel.text = self.years[yearIndex].year
+        cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
+        cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
         cell.selectionStyle = .none
         return cell
     }
