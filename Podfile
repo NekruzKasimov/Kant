@@ -15,6 +15,9 @@ target 'Kaindy-Kant' do
  pod 'PKHUD'
  pod 'SVProgressHUD'
  pod 'SkyFloatingLabelTextField'
+ pod 'Firebase'
+ pod 'Firebase/Core'
+ pod 'Firebase/Messaging'
 
   # Pods for Kaindy-Kant
 

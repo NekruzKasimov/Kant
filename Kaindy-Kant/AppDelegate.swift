@@ -10,9 +10,13 @@ import UIKit
 import IQKeyboardManager
 import GoogleMaps
 import GooglePlaces
+import UserNotifications
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
     let googleApiKey = "AIzaSyBQ9MySCWhmNLQlItBfbWTfbr1tgP1iBVQ"
@@ -36,7 +40,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 157/255, green: 32/255, blue: 70/255, alpha: 1)
         
         IQKeyboardManager.shared().isEnabled = true
-                
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+            // For iOS 10 data message (sent via FCM
+            Messaging.messaging().remoteMessageDelegate = self
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        FirebaseApp.configure()
         return true
     }
     func applicationWillResignActive(_ application: UIApplication) {
@@ -62,5 +83,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print(fcmToken)
+    }
+    
+    // The callback to handle data message received via FCM for devices running iOS 10 or above.
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage.appData)
+    }
 }
 

@@ -223,6 +223,8 @@
 		84049AE71F85FAE800BA935F /* DetailContactOfResouceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResouceViewController.swift; sourceTree = "<group>"; };
 		84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactOfResourceProtectionViewController.swift; sourceTree = "<group>"; };
 		84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		8408C3581FA37ABA00B2DDA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Kaindy-Kant.entitlements"; sourceTree = "<group>"; };
 		8423B9941F8B4DBA0061C702 /* ApiAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAddress.swift; sourceTree = "<group>"; };
 		8423B9961F8B4FA10061C702 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		8423B9981F8B54780061C702 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		1F58936F1F614DB600FD2C5D /* Kaindy-Kant */ = {
 			isa = PBXGroup;
 			children = (
+				8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */,
 				235E28501F7A8B1D00378759 /* Models */,
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
 				1F5893C01F61582400FD2C5D /* Login */,
@@ -338,6 +341,7 @@
 				1F5893701F614DB600FD2C5D /* AppDelegate.swift */,
 				1F5893771F614DB600FD2C5D /* Assets.xcassets */,
 				1F5893791F614DB600FD2C5D /* LaunchScreen.storyboard */,
+				8408C3581FA37ABA00B2DDA4 /* GoogleService-Info.plist */,
 				1F58937C1F614DB600FD2C5D /* Info.plist */,
 			);
 			path = "Kaindy-Kant";
@@ -727,9 +731,14 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4459UQ4UL2;
+						DevelopmentTeam = U5DCDBG2W2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1F5893801F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -856,28 +865,34 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kaindy-Kant/Pods-Kaindy-Kant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1213,9 +1228,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Kaindy-Kant/Kaindy-Kant.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4459UQ4UL2;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1234,9 +1250,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Kaindy-Kant/Kaindy-Kant.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4459UQ4UL2;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
