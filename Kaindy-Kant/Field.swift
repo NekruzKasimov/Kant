@@ -47,6 +47,8 @@ struct Year {
 
 class Years: NSObject {
     var years: Array = Array<Year>()
+    override init() {
+    }
     init(json: JSON) {
         let jsonArr:[JSON] = json["all_fields"].arrayValue
         for json in jsonArr {

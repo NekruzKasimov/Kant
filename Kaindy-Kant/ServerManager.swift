@@ -60,6 +60,11 @@ class ServerManager: HTTPRequestManager  {
             completion(NewUser(json: json))
         }, error: error)
     }
+    func getFields(_ completion: @escaping (Years)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
+            completion(Years(json: json))
+        }, error: error)
+    }
 //    func getAllFinancialOffices(_ completion: @escaping (FinancialOffices)-> Void, error: @escaping (String)-> Void) {
 //        self.get(endpoint: Constants.Network.EndPoints.FinOffice, serverType: .kant, completion: { (succes) in
 //            completion(FinancialOffices(json: succes))
