@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-
+import SkyFloatingLabelTextField
 //import BetterSegmentedControl
 //import PageMenu
 import ScrollableSegmentedControl
@@ -19,14 +19,81 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var firts_name_TF: UITextField!
-    @IBOutlet weak var last_name_TF: UITextField!
-    @IBOutlet weak var fathers_name_TF: UITextField!
-    @IBOutlet weak var phone_TF: UITextField!
-    @IBOutlet weak var email_TF: UITextField!
-    @IBOutlet weak var date_of_birth_TF: UITextField!
-    @IBOutlet weak var address_TF: UITextField!
-    @IBOutlet weak var city_TF: UITextField!
+    
+    @IBOutlet weak var first_name_TF: SkyFloatingLabelTextField! {
+        didSet {
+            first_name_TF.accessibilityIdentifier = "firstNameTextField"
+            GlobalFunctions.configure(textField: first_name_TF, withText: "Имя", placeholder: "Имя", tag: 0)
+            configureTextField(textField: first_name_TF)
+        }
+    }
+    
+    @IBOutlet weak var last_name_TF: SkyFloatingLabelTextField! {
+        didSet {
+            last_name_TF.accessibilityIdentifier = "lastNameTextField"
+            GlobalFunctions.configure(textField: last_name_TF, withText: "Фамилия", placeholder: "Фамилия", tag: 1)
+            configureTextField(textField: last_name_TF)
+        }
+    }
+    
+    @IBOutlet weak var fathers_name_TF: SkyFloatingLabelTextField! {
+        didSet {
+            fathers_name_TF.accessibilityIdentifier = "fathersNameTextField"
+            GlobalFunctions.configure(textField: fathers_name_TF, withText: "Отчество", placeholder: "Отчество", tag: 2)
+            configureTextField(textField: fathers_name_TF)
+        }
+    }
+    
+    @IBOutlet weak var phone_TF: SkyFloatingLabelTextField!  {
+        didSet {
+            phone_TF.accessibilityIdentifier = "phoneTextField"
+            GlobalFunctions.configure(textField: phone_TF, withText: "Телефон", placeholder: "0777-77-77", tag: 3)
+            phone_TF.keyboardType = .phonePad
+            configureTextField(textField: phone_TF)
+        }
+    }
+    
+    @IBOutlet weak var email_TF: SkyFloatingLabelTextField! {
+        didSet {
+            email_TF.accessibilityIdentifier = "emailTextField"
+            GlobalFunctions.configure(textField: email_TF, withText: "Почта", placeholder: "Почта", tag: 7)
+            configureTextField(textField: email_TF)
+        }
+    }
+    
+    @IBOutlet weak var date_of_birth_TF: SkyFloatingLabelTextField! {
+        didSet {
+            date_of_birth_TF.accessibilityIdentifier = "birthdayTextField"
+            GlobalFunctions.configure(textField: date_of_birth_TF, withText: "День рождения", placeholder: "ГГГГ/ММ/ДД", tag: 4)
+            date_of_birth_TF.delegate = self
+            configureTextField(textField: date_of_birth_TF)
+        }
+    }
+    
+    @IBOutlet weak var address_TF: SkyFloatingLabelTextField! {
+        didSet {
+            address_TF.accessibilityIdentifier = "addressTextField"
+            GlobalFunctions.configure(textField: address_TF, withText: "Адрес", placeholder: "Адрес", tag: 6)
+            configureTextField(textField: address_TF)
+        }
+    }
+    
+    @IBOutlet weak var city_TF: SkyFloatingLabelTextField! {
+        didSet {
+            city_TF.accessibilityIdentifier = "cityTextField"
+            GlobalFunctions.configure(textField: city_TF, withText: "Город/Село/Район", placeholder: "Город/Село/Район", tag: 5)
+            configureTextField(textField: city_TF)
+        }
+    }
+    
+    
+    func configureTextField(textField: SkyFloatingLabelTextField){
+        textField.lineColor = UIColor.init(netHex: Colors.purple)
+        textField.titleColor = UIColor.init(netHex: Colors.purple)
+        textField.selectedLineColor = UIColor.init(netHex: Colors.green)
+        textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
+    }
+    
     @IBOutlet weak var fullNameLabel: UILabel!
     var years = Years().years
     var yearIndex = 0
@@ -42,12 +109,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     @IBOutlet weak var myFieldsLable: UILabel!
 
-    @IBOutlet weak var birthdayTF: UITextField! {
-        didSet {
-            birthdayTF.delegate = self
-            birthdayTF.tag = 0
-        }
-    }
+    @IBOutlet weak var noFieldsConstraint: NSLayoutConstraint!
     
     @IBAction func chagePasswordButton(_ sender: Any) {
     let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangingPasswordViewController") as! ChangingPasswordViewController
@@ -56,7 +118,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     @IBAction func saveChangesPressed(_ sender: Any) {
         var infoToUpdate = [String: String]()
-        infoToUpdate["first_name"] = self.firts_name_TF.text
+        infoToUpdate["first_name"] = self.first_name_TF.text
         infoToUpdate["last_name"] = self.last_name_TF.text
         infoToUpdate["fathers_name"] = self.fathers_name_TF.text
         infoToUpdate["phone"] = self.phone_TF.text
@@ -111,6 +173,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         segmentedControl.selectedSegmentContentColor = UIColor.black
         segmentedControl.backgroundColor = UIColor.white
     }
+
     func segmentSelected(sender:ScrollableSegmentedControl) {
         //segmentedControl
         yearIndex = sender.selectedSegmentIndex
@@ -124,7 +187,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     func fillUserInformation() {
         let user_info = DataManager.shared.getUserInformation()!
-        firts_name_TF.text = user_info["first_name"]
+        first_name_TF.text = user_info["first_name"]
         last_name_TF.text = user_info["last_name"]
         fathers_name_TF.text = user_info["fathers_name"]
         phone_TF.text = user_info["phone"]
@@ -169,7 +232,7 @@ extension ProfileViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             dateFormatter.locale = Locale.init(identifier: "en_GB")
-            self?.birthdayTF.text = dateFormatter.string(from: myDatePicker.date)
+            self?.date_of_birth_TF.text = dateFormatter.string(from: myDatePicker.date)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(okAction)
@@ -254,7 +317,7 @@ extension ProfileViewController {
 
 extension ProfileViewController {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField.tag == 0 {
+        if textField.tag == 4 {
             showDatePicker()
             return false
         }
