@@ -37,7 +37,6 @@ class HTTPRequestManager {
             tempParam = nil
         case .kant:
             apiUrl = ApiAddressKant(endpoint: endpoint).getURLString()
-    
         }
         apiUrl.remove(at: apiUrl.index(before: apiUrl.endIndex))
         print(apiUrl)

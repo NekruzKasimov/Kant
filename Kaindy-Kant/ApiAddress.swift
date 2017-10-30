@@ -14,7 +14,7 @@ class ApiAddressKant: ApiAddress {
 
     init(endpoint: String) {
         super.init()
-        self.domain = "139.59.22.220:8000"
+        self.domain = "128.199.69.20:8000"
         self.endpoint = endpoint
         self.param = getStringFrom(parameter: nil)
     }

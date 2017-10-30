@@ -12,10 +12,18 @@ struct Coordinate {
     var latitude: String
     var longitude: String
     var number: Int
+    init(latitude: String, longitude: String, number: Int) {
+        self.longitude = longitude
+        self.latitude = latitude
+        self.number = number
+    }
     init(json: JSON) {
         latitude = json["latitude"].stringValue
         longitude = json["longitude"].stringValue
         number = json["number"].intValue
+    }
+    func coordinateToDictionary() -> [String: Any] {
+        return ["latitude": latitude, "longitude": longitude, "number": number]
     }
 }
 struct Field {

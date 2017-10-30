@@ -13,7 +13,7 @@ import GoogleMaps
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
-    struct Coordinate {
+    struct MapCoordinate {
         var coordinate: CLLocationCoordinate2D
         var number: Int
     }
@@ -24,7 +24,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var allYield: UITextField!
     
     var map: GMSMapView!
-    var points: [Coordinate] = []
+    var points: [MapCoordinate] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,18 +38,29 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBAction func saveFiledBtn(_ sender: Any) {
         
         if (fieldHectare.text == "" || averageYield.text == "" || allYield.text == "") {
-            errorAlert()
+            showErrorAlert(message: "Добавите данные")
             
         } else {
-            let sb = UIStoryboard(name: "Profile", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-            navigationController?.pushViewController(vc, animated: true)
-            
-            let alert = UIAlertController(title: "Saved", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (acrion) in
-            }))
-            present(alert, animated: true, completion: nil)
+            var coordinates = [Coordinate]()
+            for coordinate in points {
+                let c = Coordinate(latitude: "\(coordinate.coordinate.latitude)", longitude: "\(coordinate.coordinate.longitude)", number: coordinate.number)
+                coordinates.append(c)
+            }
+            let field = FieldToAdd(field_id: "9000", year: 2017, hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates)
+            ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
+           
         }
+    }
+    func fieldAdded(message: String){
+        print(message)
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+        let alert = UIAlertController(title: "Saved", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (acrion) in
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     func addGoogleMap() {
@@ -71,7 +82,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setPoint(_ coordinate: CLLocationCoordinate2D) {
-        let coord = Coordinate(coordinate: coordinate, number: self.points.count)
+        let coord = MapCoordinate(coordinate: coordinate, number: self.points.count)
         points.append(coord)
         addLines()
     }
@@ -81,19 +92,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         for p in points {
             path.add(p.coordinate)
         }
-        
         let line = GMSPolyline(path: path)
         line.strokeWidth = 2.0
         line.strokeColor = UIColor.green
         line.map = map
     }
-    
     func addRoute() {
         let path = GMSMutablePath()
         for p in points {
             path.add(p.coordinate)
         }
-    
+        
         let route = GMSPolygon(path: path)
         route.strokeWidth = 2.0
         route.strokeColor = UIColor.green
@@ -134,12 +143,12 @@ extension MapViewController {
         if points.count > 2 {
             acceptFiled()
         } else {
-            errorAlert()
+            showErrorAlert(message: "вы должны указать минимум три точки")
         }
     }
     
     func acceptFiled() {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Соединить точки и добавить данные?", preferredStyle: .alert)
         //Cancel
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (acrion) in
         }))
@@ -147,14 +156,6 @@ extension MapViewController {
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
             self.animateIn()
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func errorAlert() {
-        let alert = UIAlertController(title: "Error", message: "", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
         }))
         present(alert, animated: true, completion: nil)
     }

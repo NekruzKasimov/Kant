@@ -96,6 +96,7 @@
 		8424F6391F8DF5B700639C9D /* SugarJom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F6381F8DF5B700639C9D /* SugarJom.swift */; };
 		8424F63B1F8DF6AF00639C9D /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F63A1F8DF6AF00639C9D /* Sugar.swift */; };
 		8424F63D1F8DF6BF00639C9D /* Jom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F63C1F8DF6BF00639C9D /* Jom.swift */; };
+		842EB3761FA762C100DC25F2 /* FieldToAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EB3751FA762C100DC25F2 /* FieldToAdd.swift */; };
 		8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2731F8B521C00BA712B /* Rossahar.swift */; };
 		8433F2761F8B523400BA712B /* Domestic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2751F8B523400BA712B /* Domestic.swift */; };
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
@@ -232,6 +233,7 @@
 		8424F6381F8DF5B700639C9D /* SugarJom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarJom.swift; sourceTree = "<group>"; };
 		8424F63A1F8DF6AF00639C9D /* Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sugar.swift; sourceTree = "<group>"; };
 		8424F63C1F8DF6BF00639C9D /* Jom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jom.swift; sourceTree = "<group>"; };
+		842EB3751FA762C100DC25F2 /* FieldToAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldToAdd.swift; sourceTree = "<group>"; };
 		8433F2731F8B521C00BA712B /* Rossahar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rossahar.swift; sourceTree = "<group>"; };
 		8433F2751F8B523400BA712B /* Domestic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domestic.swift; sourceTree = "<group>"; };
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				232AD4621F991868007736B3 /* Services.swift */,
 				232AD4641F992B48007736B3 /* Technologies.swift */,
 				84A74C5B1FA1CD9500E7AE11 /* Field.swift */,
+				842EB3751FA762C100DC25F2 /* FieldToAdd.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1015,6 +1018,7 @@
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */,
 				238F6F021F8B713400304DED /* ContactsViewController.swift in Sources */,
+				842EB3761FA762C100DC25F2 /* FieldToAdd.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				232AD4671F993576007736B3 /* TechnologiesListViewController.swift in Sources */,

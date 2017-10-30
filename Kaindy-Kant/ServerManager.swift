@@ -56,6 +56,7 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
     }
     func updateUser(parameters: [String: String], _ completion: @escaping (NewUser)-> Void, error: @escaping (String)-> Void) {
+        print(parameters)
         self.patch(endpoint: "\(Constants.Network.EndPoints.UpdateUser)/\(DataManager.shared.getUserId())", serverType: .kant, parameters: parameters, completion: { (json) in
             completion(NewUser(json: json))
         }, error: error)
@@ -122,7 +123,13 @@ class ServerManager: HTTPRequestManager  {
             completion(Services(json: success))
         }, error: error)
     }
-    
+    func addField(field: FieldToAdd, _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
+        print(field.getFieldToAddDictionary())
+        self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())", serverType: .kant, parameters: field.getFieldToAddDictionary(), completion: { (json) in
+            let message = json["Success"].stringValue
+            completion(message)
+        }, error: error)
+    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

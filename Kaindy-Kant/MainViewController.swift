@@ -18,7 +18,7 @@ enum MainVCSections : Int {
         case .currency:
             return 2
         case .services:
-            return 4
+            return 0
         }
     }
 }
@@ -88,6 +88,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setServices(services: Services) {
         self.services = services
         DataManager.shared.setServices(Services: self.services!)
+        collectionView.reloadData()
     }
     
     var degree = 0
@@ -105,6 +106,7 @@ extension MainViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let _ = currencies, let _ = weather, let _ = user, let _ = services {
             SVProgressHUD.dismiss()
+            print(MainVCSections(rawValue: section)!.getItemsCount())
             return MainVCSections(rawValue: section)!.getItemsCount()
         }
         return 0
@@ -128,7 +130,6 @@ extension MainViewController {
             }
         case .services:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
-            
             cell.titleLabel.text = Constants.MainPage.services[indexPath.row][0]
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
             print((services?.array[indexPath.row].logo)!)
