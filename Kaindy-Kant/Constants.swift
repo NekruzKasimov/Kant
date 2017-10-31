@@ -51,7 +51,7 @@ struct Constants {
     }
     
     struct MainPage {
-        static let services = [["Финансовые учреждения", "bank"], ["Консультации", "consultation"], ["Лаборатории", "laboratory"], ["Технологии", ""]]
+        static let service = "Технологии"
     }
 }
 

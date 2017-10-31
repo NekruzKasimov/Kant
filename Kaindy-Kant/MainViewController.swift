@@ -11,14 +11,11 @@ import SVProgressHUD
 
 enum MainVCSections : Int {
     case currency = 0
-    case services = 1
     
     func getItemsCount() -> Int {
         switch self {
         case .currency:
             return 2
-        case .services:
-            return 0
         }
     }
 }
@@ -39,6 +36,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var currencies: [Currency]?
     var user: NewUser?
     
+    var servicesCount: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,16 +104,27 @@ extension MainViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let _ = currencies, let _ = weather, let _ = user, let _ = services {
             SVProgressHUD.dismiss()
-            print(MainVCSections(rawValue: section)!.getItemsCount())
-            return MainVCSections(rawValue: section)!.getItemsCount()
+            if section == 0 {
+                return 2
+            } else {
+                if let count = services?.array.count {
+                    if count < 3 {
+                        self.servicesCount = (count + 1)
+                        return count + 1
+                    } else {
+                        self.servicesCount = 3
+                        return 4
+                    }
+                } else {
+                    return 0
+                }
+            }
         }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let secType = MainVCSections(rawValue: indexPath.section)!
-        switch secType {
-        case .currency:
+        if indexPath.section == 0 {
             if indexPath.item == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
                 if let c = currencies {
@@ -128,23 +137,25 @@ extension MainViewController {
                 cell.weatherStatusLabel.text = status
                 return cell
             }
-        case .services:
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
-            cell.titleLabel.text = Constants.MainPage.services[indexPath.row][0]
+            var title = ""
+            if indexPath.row == servicesCount {
+                title = Constants.MainPage.service
+            } else {
+                title = (services?.array[indexPath.row].name)!
+                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
+            }
+            cell.titleLabel.text = title
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
-            print((services?.array[indexPath.row].logo)!)
-            cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
-            
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let secType = MainVCSections(rawValue: indexPath.section)!
         var size = CGSize()
         let height = CGFloat(200)
-        switch secType {
-         case .currency:
+        if indexPath.section == 0 {
             if indexPath.item == 0 {
                 var width = collectionView.frame.width - 30
                 width = width / 5 * 3
@@ -154,7 +165,7 @@ extension MainViewController {
                 width = width / 5 * 2
                 size = CGSize(width: width, height: height)
             }
-        case .services:
+        } else {
             let width = collectionView.frame.width - 24
             size = CGSize(width: width, height: 150)
         }
@@ -163,31 +174,26 @@ extension MainViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        var left = CGFloat(0)
-        var right = CGFloat(0)
-        if section == MainVCSections.services.rawValue  {
-            right = 14
-            left = 14
-        } else if section == MainVCSections.currency.rawValue {
-            left = 10
+        if section == 0 {
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        } else if section == 1 {
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }
-        return UIEdgeInsets(top: 0, left: left, bottom: 0, right: right)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let secType = MainVCSections(rawValue: indexPath.section)!
         
-        switch secType {
-        case .currency:
+        if indexPath.section == 0 {
             if indexPath.item == 0 {
-                break
+                return
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
                 vc.weather = self.weather
                 self.navigationController?.show(vc, sender: self)
             }
-        case .services:
+        } else {
             if indexPath.row != 3 {
                 let sb = UIStoryboard(name: "DetailedService", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
