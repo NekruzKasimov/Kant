@@ -30,7 +30,6 @@ class HTTPRequestManager {
         }
         var apiUrl = ""
         var tempParam = parameters
-        
         switch serverType {
         case .whether:
             apiUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=42.874722&lon=74.612222&APPID=079587841f01c6b277a82c1c7788a6c3"
@@ -40,6 +39,7 @@ class HTTPRequestManager {
         }
         apiUrl.remove(at: apiUrl.index(before: apiUrl.endIndex))
         print(apiUrl)
+        print(tempParam)
         let cookieJar = HTTPCookieStorage.shared
         for cookie in cookieJar.cookies! {
             print(cookie.name+"="+cookie.value)

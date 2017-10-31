@@ -15,15 +15,14 @@ class DetailedMapViewController: UIViewController {
     
     var googleMap: GMSMapView!
     var googlePoints: [CLLocationCoordinate2D] = []
-    
+    var coordinates = [Coordinate]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Карта"
-        googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
-        googlePoints.append(CLLocationCoordinate2D(latitude: 42.807869, longitude: 74.6294193))
-        googlePoints.append(CLLocationCoordinate2D(latitude: 42.811612, longitude: 74.6309217))
-        googlePoints.append(CLLocationCoordinate2D(latitude: 42.81064, longitude: 74.627359))
+        for coordinate in coordinates {
+            googlePoints.append(CLLocationCoordinate2D(latitude: (coordinate.latitude as NSString).doubleValue, longitude: (coordinate.longitude as NSString).doubleValue))
+        }
         setupMap()
     }
     
@@ -45,10 +44,11 @@ class DetailedMapViewController: UIViewController {
             path.add(p)
         }
         
-        let field = GMSPolygon(path: path)
-        field.map = googleMap
-        
         let line = GMSPolyline(path: path)
+        let field = GMSPolygon(path: path)
+        field.strokeWidth = 2.0
+        field.strokeColor = UIColor.green
+        field.map = googleMap
         line.strokeWidth = 2
         line.strokeColor = .green
         line.map = googleMap
