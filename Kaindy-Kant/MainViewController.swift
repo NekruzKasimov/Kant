@@ -209,24 +209,14 @@ extension MainViewController {
     
     func setWeather(weather: Weather){
         self.weather = weather
-        setTodayWeather()
+        self.degree = Int((self.weather?.today.array[0].temp)!)!
+        self.status = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
+        collectionView.reloadData()
     }
     func setCurrencies(currencies: [Currency]) {
         self.currencies = currencies
         collectionView.reloadData()
     }
     
-    func setTodayWeather() {
-        for i in (weather?.list.array)! {
-            let hour = Calendar.current.component(.hour, from: i.date)
-            if hour == 15 {
-                degree = Int(i.main.temp)
-                if let item = Constants.Weather.weatherStatuses[i.weatherStatuses.array[0].main] {
-                    self.status = item
-                }
-                break
-            }
-        }
-        collectionView.reloadData()
-    }
+
 }
