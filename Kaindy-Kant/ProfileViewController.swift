@@ -105,7 +105,9 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         self.years = years.years
         segmentedControl.segmentStyle = .textOnly
         for index in 0..<years.years.count {
-            segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
+            if segmentedControl.numberOfSegments <= index {
+                segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
+            }
         }
         segmentedControl.selectedSegmentIndex = yearIndex
         tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 320)
@@ -126,6 +128,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         ServerManager.shared.getFields(setFields, error: showErrorAlert)
         fillUserInformation()
     }
