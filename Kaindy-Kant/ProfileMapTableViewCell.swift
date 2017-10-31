@@ -7,8 +7,11 @@
 //
 
 import UIKit
-
+protocol ButtonDelegate : class {
+    func didPressButton(_ tag: Int)
+}
 class ProfileMapTableViewCell: UITableViewCell {
+    weak var cellDelegate: ButtonDelegate?
 
     @IBOutlet weak var yearLabel: UILabel!
     
@@ -20,5 +23,8 @@ class ProfileMapTableViewCell: UITableViewCell {
     
     @IBOutlet weak var totalLabel: UILabel!
     
-    @IBOutlet weak var mapView: UIView!
+    @IBAction func showInMap(_ sender: Any) {
+        cellDelegate?.didPressButton(self.tag)
+    }
+    
 }

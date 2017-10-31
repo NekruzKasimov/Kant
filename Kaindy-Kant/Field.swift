@@ -33,7 +33,7 @@ struct Field {
     init(json: JSON) {
         field_id = json["field_id"].stringValue
         hectares = json["hectares"].doubleValue
-        let jsonArr:[JSON] = json["fields"].arrayValue
+        let jsonArr:[JSON] = json["coordinates"].arrayValue
         for json in jsonArr {
             let tempCoordinate = Coordinate(json:json)
             coordinates.append(tempCoordinate)
@@ -45,7 +45,7 @@ struct Year {
     var fields: Array = Array<Field>()
     init(json: JSON) {
         year = json["year"].stringValue
-        let jsonArr:[JSON] = json["fields"].arrayValue
+        let jsonArr:[JSON] = json["data"].arrayValue
         for json in jsonArr {
             let tempField = Field(json:json)
             fields.append(tempField)

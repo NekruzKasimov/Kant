@@ -6,14 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="301" id="KGk-i7-Jjw" customClass="ProfileMapTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="320" id="KGk-i7-Jjw" customClass="ProfileMapTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="532" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -89,24 +88,20 @@
                             <constraint firstAttribute="height" constant="2" id="2tO-z2-XuV"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-hr-vlx">
-                        <rect key="frame" x="166" y="254" width="200" height="33.5"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Посмотреть на карте" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DV-Rr-Vn2">
-                                <rect key="frame" x="8" y="6" width="184" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymh-Q7-jXm">
+                        <rect key="frame" x="166" y="254" width="200" height="33"/>
                         <color key="backgroundColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="7DV-Rr-Vn2" secondAttribute="trailing" constant="8" id="C6H-ZA-4uW"/>
-                            <constraint firstAttribute="width" constant="200" id="Mb6-Xh-gHk"/>
-                            <constraint firstItem="7DV-Rr-Vn2" firstAttribute="centerY" secondItem="pkg-hr-vlx" secondAttribute="centerY" id="Qrx-Rk-agq"/>
-                            <constraint firstItem="7DV-Rr-Vn2" firstAttribute="leading" secondItem="pkg-hr-vlx" secondAttribute="leading" constant="8" id="hUJ-Gj-ALT"/>
+                            <constraint firstAttribute="width" constant="200" id="WjN-F7-EGL"/>
                         </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="Посмотреть на карте">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="showInMap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ngy-r2-XzW"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Hfu-gw-jyc" firstAttribute="top" secondItem="u6B-XD-uXr" secondAttribute="bottom" constant="12" id="0lU-cZ-9z9"/>
@@ -123,10 +118,10 @@
                     <constraint firstItem="GG2-hL-bdC" firstAttribute="top" secondItem="PoN-10-Vaf" secondAttribute="bottom" constant="4" id="ITU-Xe-VMW"/>
                     <constraint firstItem="Gls-w6-Xss" firstAttribute="centerY" secondItem="d30-E3-L7r" secondAttribute="centerY" id="IZU-eh-znO"/>
                     <constraint firstItem="9Ep-tJ-xqj" firstAttribute="trailing" secondItem="GG2-hL-bdC" secondAttribute="trailing" id="J8h-h2-ty1"/>
-                    <constraint firstItem="pkg-hr-vlx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="JTk-hM-Qee"/>
                     <constraint firstItem="fDD-RO-7Vy" firstAttribute="trailing" secondItem="GG2-hL-bdC" secondAttribute="trailing" id="RQd-xu-y0X"/>
                     <constraint firstItem="GG2-hL-bdC" firstAttribute="leading" secondItem="PoN-10-Vaf" secondAttribute="leading" id="SMK-LM-2eU"/>
                     <constraint firstItem="GRu-m3-hHW" firstAttribute="centerY" secondItem="PoN-10-Vaf" secondAttribute="centerY" id="SgI-6K-ouC"/>
+                    <constraint firstItem="Ymh-Q7-jXm" firstAttribute="top" secondItem="fDD-RO-7Vy" secondAttribute="bottom" constant="24" id="Tb2-2k-cGg"/>
                     <constraint firstItem="fDD-RO-7Vy" firstAttribute="top" secondItem="d30-E3-L7r" secondAttribute="bottom" constant="4" id="UVp-SC-VYk"/>
                     <constraint firstItem="d30-E3-L7r" firstAttribute="trailing" secondItem="PoN-10-Vaf" secondAttribute="trailing" id="XET-yZ-mie"/>
                     <constraint firstItem="PoN-10-Vaf" firstAttribute="top" secondItem="Hfu-gw-jyc" secondAttribute="bottom" constant="24" id="Xkn-vE-OFI"/>
@@ -138,12 +133,11 @@
                     <constraint firstItem="fA3-1c-4CT" firstAttribute="centerY" secondItem="yBk-mV-y0o" secondAttribute="centerY" id="lkF-FV-dgz"/>
                     <constraint firstItem="yBk-mV-y0o" firstAttribute="top" secondItem="GG2-hL-bdC" secondAttribute="bottom" constant="24" id="n6x-tt-RZR"/>
                     <constraint firstItem="d30-E3-L7r" firstAttribute="leading" secondItem="PoN-10-Vaf" secondAttribute="leading" id="n7x-KS-zWO"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="pkg-hr-vlx" secondAttribute="bottom" constant="24" id="ng4-Fg-h4a"/>
                     <constraint firstItem="GRu-m3-hHW" firstAttribute="width" secondItem="PoN-10-Vaf" secondAttribute="width" multiplier="1:2" id="nsv-6c-4XF"/>
                     <constraint firstItem="9Ep-tJ-xqj" firstAttribute="top" secondItem="yBk-mV-y0o" secondAttribute="bottom" constant="4" id="pLj-rw-SGW"/>
+                    <constraint firstItem="Ymh-Q7-jXm" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="pZ8-Jg-RoD"/>
                     <constraint firstItem="Gls-w6-Xss" firstAttribute="trailing" secondItem="GRu-m3-hHW" secondAttribute="trailing" id="rtc-gX-CeF"/>
                     <constraint firstItem="fA3-1c-4CT" firstAttribute="leading" secondItem="GRu-m3-hHW" secondAttribute="leading" id="tdJ-Tz-fSs"/>
-                    <constraint firstItem="pkg-hr-vlx" firstAttribute="top" secondItem="fDD-RO-7Vy" secondAttribute="bottom" constant="24" id="uUw-LB-1SM"/>
                     <constraint firstAttribute="trailing" secondItem="GG2-hL-bdC" secondAttribute="trailing" constant="24" id="uhh-c4-JCb"/>
                     <constraint firstItem="GRu-m3-hHW" firstAttribute="leading" secondItem="PoN-10-Vaf" secondAttribute="trailing" id="zOv-wC-vrv"/>
                     <constraint firstItem="u6B-XD-uXr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="zw9-uR-SgR"/>
@@ -153,7 +147,6 @@
                 <outlet property="areaLabel" destination="GRu-m3-hHW" id="eBn-5u-B3Y"/>
                 <outlet property="averageLabel" destination="fA3-1c-4CT" id="7sF-Rp-b5h"/>
                 <outlet property="idLabel" destination="Hfu-gw-jyc" id="hca-t7-Op4"/>
-                <outlet property="mapView" destination="pkg-hr-vlx" id="Z2S-h9-YGc"/>
                 <outlet property="totalLabel" destination="Gls-w6-Xss" id="uRm-Ld-Dle"/>
                 <outlet property="yearLabel" destination="u6B-XD-uXr" id="zK2-q2-m4a"/>
             </connections>

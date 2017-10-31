@@ -12,7 +12,9 @@ import SkyFloatingLabelTextField
 //import BetterSegmentedControl
 //import PageMenu
 import ScrollableSegmentedControl
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class ProfileViewController: UIViewController,  UITextFieldDelegate {
+    
+    
    
     @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -95,6 +97,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var myFieldsLable: UILabel!
+
     var years = Years().years
     var yearIndex = 0
     @IBOutlet weak var imageView: UIImageView!{
@@ -107,7 +111,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 //            imageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
-    @IBOutlet weak var myFieldsLable: UILabel!
 
     @IBOutlet weak var noFieldsConstraint: NSLayoutConstraint!
     
@@ -117,6 +120,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     @IBAction func saveChangesPressed(_ sender: Any) {
+
         var infoToUpdate = [String: String]()
         infoToUpdate["first_name"] = self.first_name_TF.text
         infoToUpdate["last_name"] = self.last_name_TF.text
@@ -155,17 +159,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 //        addTapToScrollView()
         self.title = "Профиль"
         setNavigationBar()
+        configureTableView()
         segmentedControl.selectedSegmentIndex = 0
-        ServerManager.shared.getFields(setFields, error: showErrorAlert)
         
     }
     func setFields(years: Years){
         self.years = years.years
         segmentedControl.segmentStyle = .textOnly
         for index in 0..<years.years.count {
-            segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
+            if segmentedControl.numberOfSegments <= index {
+                segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
+            }
         }
-        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = yearIndex
+        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 320)
+        tableView.reloadData()
         segmentedControl.underlineSelected = true
         segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
         // change some colors
@@ -177,13 +185,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func segmentSelected(sender:ScrollableSegmentedControl) {
         //segmentedControl
         yearIndex = sender.selectedSegmentIndex
-        tableView.reloadData()
         print("Segment at index \(sender.selectedSegmentIndex)  selected")
+        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 320)
+        tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        ServerManager.shared.getFields(setFields, error: showErrorAlert)
         fillUserInformation()
-        configureTableView()
     }
     func fillUserInformation() {
         let user_info = DataManager.shared.getUserInformation()!
@@ -249,13 +259,9 @@ extension ProfileViewController {
     }
     
     func configureTableView() {
-        tableView.register(ProfileMapTableViewCell.self, forCellReuseIdentifier: "ProfileMapTableViewCell" )
         tableView.register(UINib(nibName: "ProfileMapTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMapTableViewCell")
-        tableView.estimatedRowHeight        = 320
-        tableView.rowHeight                 = UITableViewAutomaticDimension
         tableView.tableFooterView           = UIView()
-        tableViewHeight.constant            = tableView.contentSize.height
-        tableView.separatorStyle            = .none
+        //tableView.separatorStyle            = .none
     }
     
     func showImagePicker() {
@@ -325,17 +331,20 @@ extension ProfileViewController {
     }
 }
 
-extension ProfileViewController {
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate, ButtonDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.years.count == 0 {
             return 0
         }
+        print(self.years[yearIndex].fields.count)
         return self.years[yearIndex].fields.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
+        cell.cellDelegate = self
+        cell.tag = indexPath.row
         cell.yearLabel.text = self.years[yearIndex].year
         cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
         cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
@@ -344,12 +353,16 @@ extension ProfileViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
-        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 310
+        return 320
+    }
+    func didPressButton(_ tag: Int) {
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
+        vc.coordinates = self.years[yearIndex].fields[tag].coordinates
+        navigationController?.show(vc, sender: self)
     }
 }
