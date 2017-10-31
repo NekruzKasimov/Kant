@@ -50,7 +50,7 @@ extension WeatherViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         let temp = (week + indexPath.row)
-        let weekday = temp >= 6 ? (temp - 6) : temp
+        let weekday = temp >= 7 ? (temp - 7) : temp
         cell.setValues(week: Constants.Weather.weekdays[weekday], degrees: degrees[indexPath.row])
         return cell
     }
@@ -70,7 +70,7 @@ extension WeatherViewController {
         dateFormatter.dateFormat = "yyyy-mm-dd"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         let today = dateFormatter.date(from: (weather?.list.array[0].date)!)
-        week = Calendar.current.component(.weekday, from: today!)
+        week = Calendar.current.component(.weekday, from: today!) - 1
         for item in (weather?.list.array)!{
             let date = dateFormatter.date(from: item.date)
 //            let weekday = Calendar.current.component(.weekday, from: date!)
