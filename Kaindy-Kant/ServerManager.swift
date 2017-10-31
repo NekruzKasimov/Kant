@@ -125,7 +125,7 @@ class ServerManager: HTTPRequestManager  {
     }
     func addField(field: FieldToAdd, _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
         print(field.getFieldToAddDictionary())
-        self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())", serverType: .kant, parameters: field.getFieldToAddDictionary(), completion: { (json) in
+        self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: field.getFieldToAddDictionary(), completion: { (json) in
             let message = json["Success"].stringValue
             completion(message)
         }, error: error)

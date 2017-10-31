@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import GooglePlaces
 import GoogleMaps
+import SVProgressHUD
+
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
@@ -47,20 +49,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 coordinates.append(c)
             }
             let field = FieldToAdd(field_id: "9000", year: 2017, hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates)
+            SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            
         }
     }
     func fieldAdded(message: String){
-        print(message)
+        SVProgressHUD.dismiss()
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         navigationController?.pushViewController(vc, animated: true)
-        
-        let alert = UIAlertController(title: "Saved", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (acrion) in
-        }))
-        present(alert, animated: true, completion: nil)
     }
     
     func addGoogleMap() {

@@ -20,7 +20,13 @@ struct FieldToAdd {
         for coordinate in coordinates {
             coordinatesToAdd.append(coordinate.coordinateToDictionary())
         }
-        return ["year": year, "field_id": field_id, "hectares": hectares, "coordinates": coordinatesToAdd]
+        var dic:[String: Any] = ["": 0]
+        dic.updateValue(year as Int, forKey: "year")
+        dic.updateValue(coordinatesToAdd as [[String: Any]], forKey: "coordinates")
+        dic.updateValue(field_id as String, forKey: "field_id")
+        dic.updateValue(hectares as Double, forKey: "hectares")
+
+        return dic
     }
 }
 
