@@ -140,11 +140,11 @@ extension MainViewController {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
             var title = ""
-            if indexPath.row == servicesCount {
+            if indexPath.row == 0 {
                 title = Constants.MainPage.service
             } else {
-                title = (services?.array[indexPath.row].name)!
-                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
+                title = (services?.array[indexPath.row - 1].name)!
+                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row - 1].logo)!))
             }
             cell.titleLabel.text = title
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
@@ -156,15 +156,18 @@ extension MainViewController {
         var size = CGSize()
         let height = CGFloat(200)
         if indexPath.section == 0 {
-            if indexPath.item == 0 {
-                var width = collectionView.frame.width - 30
-                width = width / 5 * 3
-                size = CGSize(width: width, height: height)
-            } else {
-                var width = collectionView.frame.width - 30
-                width = width / 5 * 2
-                size = CGSize(width: width, height: height)
-            }
+            var width = collectionView.frame.width - 30
+            width = width / 2
+            size = CGSize(width: width, height: height)
+//
+//            if indexPath.item == 0 {
+//                var width = collectionView.frame.width - 30
+//                size = CGSize(width: width, height: height)
+//            } else {
+//                var width = collectionView.frame.width - 30
+//                width = width / 5 * 2
+//                size = CGSize(width: width, height: height)
+//            }
         } else {
             let width = collectionView.frame.width - 24
             size = CGSize(width: width, height: 150)
