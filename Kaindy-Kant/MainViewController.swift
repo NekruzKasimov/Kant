@@ -196,15 +196,16 @@ extension MainViewController {
                 self.navigationController?.show(vc, sender: self)
             }
         } else {
-            if indexPath.row != 3 {
-                let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
-                vc.detailedServices = services?.array[indexPath.row].detailedServices
-                vc.serviceTitle = services?.array[indexPath.row].name
-                navigationController?.show(vc, sender: self)
-            } else {
+            if indexPath.row == 0 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
+                navigationController?.show(vc, sender: self)
+                
+            } else {
+                let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
+                vc.detailedServices = services?.array[indexPath.row - 1].detailedServices
+                vc.serviceTitle = services?.array[indexPath.row - 1].name
                 navigationController?.show(vc, sender: self)
             }
         }

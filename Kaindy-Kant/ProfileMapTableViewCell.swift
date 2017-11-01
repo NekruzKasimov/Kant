@@ -13,8 +13,13 @@ protocol ButtonDelegate : class {
 class ProfileMapTableViewCell: UITableViewCell {
     weak var cellDelegate: ButtonDelegate?
 
-    @IBOutlet weak var yearLabel: UILabel!
     
+    @IBOutlet weak var buttonMap: UIButton! {
+        didSet {
+            buttonMap.layer.masksToBounds = true
+            buttonMap.layer.cornerRadius = 5
+        }
+    }
     @IBOutlet weak var idLabel: UILabel!
     
     @IBOutlet weak var areaLabel: UILabel!

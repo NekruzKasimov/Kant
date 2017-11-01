@@ -94,6 +94,8 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         textField.titleColor = UIColor.init(netHex: Colors.purple)
         textField.selectedLineColor = UIColor.init(netHex: Colors.green)
         textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
+       //tableView.estimatedRowHeight = 260;
+        //tableView.rowHeight = UITableViewAutomaticDimension;
     }
     
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -172,7 +174,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
             }
         }
         segmentedControl.selectedSegmentIndex = yearIndex
-        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 320)
+        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 260)
         tableView.reloadData()
         segmentedControl.underlineSelected = true
         segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
@@ -186,7 +188,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         //segmentedControl
         yearIndex = sender.selectedSegmentIndex
         print("Segment at index \(sender.selectedSegmentIndex)  selected")
-        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 320)
+        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 260)
         tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -345,7 +347,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate, But
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
         cell.cellDelegate = self
         cell.tag = indexPath.row
-        cell.yearLabel.text = self.years[yearIndex].year
+        let cellHeight = cell.frame.height
         cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
         cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
         cell.selectionStyle = .none
@@ -356,9 +358,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate, But
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 270
+//    }
     func didPressButton(_ tag: Int) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
