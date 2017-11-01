@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -65,7 +65,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9j-FW-EGL" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="24" y="75" width="232" height="39.5"/>
+                                        <rect key="frame" x="24" y="91" width="232" height="39.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -78,7 +78,7 @@
                                     <constraint firstItem="U9N-HZ-G7N" firstAttribute="centerX" secondItem="Xan-w3-GC1" secondAttribute="centerX" id="CJF-oD-bDH"/>
                                     <constraint firstAttribute="bottom" secondItem="Jq1-5f-tnQ" secondAttribute="bottom" constant="20" id="J15-iz-QBF"/>
                                     <constraint firstAttribute="trailing" secondItem="99U-uH-SGc" secondAttribute="trailing" constant="24" id="LU4-34-3dV"/>
-                                    <constraint firstItem="x9j-FW-EGL" firstAttribute="top" secondItem="99U-uH-SGc" secondAttribute="bottom" id="NNy-b3-gBh"/>
+                                    <constraint firstItem="x9j-FW-EGL" firstAttribute="top" secondItem="99U-uH-SGc" secondAttribute="bottom" constant="16" id="NNy-b3-gBh"/>
                                     <constraint firstItem="x9j-FW-EGL" firstAttribute="trailing" secondItem="99U-uH-SGc" secondAttribute="trailing" id="f3X-cC-wTd"/>
                                     <constraint firstItem="Jq1-5f-tnQ" firstAttribute="centerX" secondItem="Xan-w3-GC1" secondAttribute="centerX" id="law-Ik-TJU"/>
                                     <constraint firstItem="99U-uH-SGc" firstAttribute="top" secondItem="Xan-w3-GC1" secondAttribute="top" constant="36" id="rwD-n7-qyH"/>

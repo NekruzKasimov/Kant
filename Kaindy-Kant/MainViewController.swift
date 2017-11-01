@@ -141,6 +141,7 @@ extension MainViewController {
             var title = ""
             if indexPath.row == 0 {
                 title = Constants.MainPage.service
+                cell.imageView.image = UIImage(named: "technology")
             } else {
                 title = (services?.array[indexPath.row - 1].name)!
                 cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row - 1].logo)!))
