@@ -74,7 +74,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTF: SkyFloatingLabelTextField! {
         didSet {
             emailTF.accessibilityIdentifier = "emailTextField"
-            GlobalFunctions.configure(textField: emailTF, withText: "Почта", placeholder: "Почта", tag: 7)
+            GlobalFunctions.configure(textField: emailTF, withText: "Электронная Почта", placeholder: "Электронная Почта", tag: 7)
             configureTextField(textField: emailTF)
         }
     }

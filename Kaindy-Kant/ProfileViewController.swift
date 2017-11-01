@@ -58,7 +58,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var email_TF: SkyFloatingLabelTextField! {
         didSet {
             email_TF.accessibilityIdentifier = "emailTextField"
-            GlobalFunctions.configure(textField: email_TF, withText: "Почта", placeholder: "Почта", tag: 7)
+            GlobalFunctions.configure(textField: email_TF, withText: "Электронная Почта", placeholder: "Электронная Почта", tag: 7)
             configureTextField(textField: email_TF)
         }
     }
