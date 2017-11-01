@@ -69,7 +69,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else {
             services = DataManager.shared.getServices()
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

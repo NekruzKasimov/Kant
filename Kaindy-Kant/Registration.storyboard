@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -203,59 +203,90 @@
                         <viewControllerLayoutGuide type="bottom" id="EDE-EU-K4v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Ke-OB-BFW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pu6-1J-0GD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите Язык" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAR-KT-3jP">
-                                        <rect key="frame" x="8" y="180" width="359" height="26.5"/>
+                                        <rect key="frame" x="16" y="180" width="288" height="50"/>
                                         <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="yKy-Rx-IeQ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                         <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="0.49509803921568629" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RE-Z4-Ud5">
-                                        <rect key="frame" x="8" y="222.5" width="174" height="60"/>
+                                        <rect key="frame" x="7" y="238" width="150" height="50"/>
                                         <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="97J-Mw-H0f"/>
-                                            <constraint firstAttribute="width" constant="174" id="GC9-n9-0EH"/>
+                                            <constraint firstAttribute="height" constant="50" id="97J-Mw-H0f"/>
+                                            <constraint firstAttribute="width" constant="150" id="A27-nw-bI1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                         <state key="normal" title="Русский">
                                             <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="russianLanguageButton:" destination="epu-no-uNS" eventType="touchUpInside" id="emE-4X-es9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1un-kW-4jT">
-                                        <rect key="frame" x="193" y="222.5" width="174" height="60"/>
+                                        <rect key="frame" x="163" y="238" width="150" height="50"/>
                                         <color key="backgroundColor" red="0.61458438634872437" green="0.12681993842124939" blue="0.27447530627250671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="174" id="bTC-BL-Hdm"/>
-                                            <constraint firstAttribute="height" constant="60" id="nWG-SO-VmM"/>
+                                            <constraint firstAttribute="width" constant="150" id="Wqo-Kx-XfS"/>
+                                            <constraint firstAttribute="height" constant="50" id="nWG-SO-VmM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                         <state key="normal" title="Кыргызча">
                                             <color key="titleColor" red="0.99616628885269165" green="0.98819214105606079" blue="0.9921073317527771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="kyrgyzchaLanguageButton:" destination="epu-no-uNS" eventType="touchUpInside" id="VnM-aq-5i8"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51L-sI-7Yl">
+                                        <rect key="frame" x="159" y="238" width="2" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="kjV-sy-4qa"/>
+                                            <constraint firstAttribute="width" constant="2" id="v8c-N2-J0I"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1un-kW-4jT" secondAttribute="trailing" constant="8" id="3XA-Aj-Msb"/>
+                                    <constraint firstItem="51L-sI-7Yl" firstAttribute="leading" secondItem="8RE-Z4-Ud5" secondAttribute="trailing" constant="2" id="9zV-hj-7ev"/>
+                                    <constraint firstItem="51L-sI-7Yl" firstAttribute="top" secondItem="8RE-Z4-Ud5" secondAttribute="top" id="Cs6-Eg-iZf"/>
                                     <constraint firstItem="1un-kW-4jT" firstAttribute="top" secondItem="8RE-Z4-Ud5" secondAttribute="top" id="Dpd-OX-63X"/>
-                                    <constraint firstItem="8RE-Z4-Ud5" firstAttribute="top" secondItem="kAR-KT-3jP" secondAttribute="bottom" constant="16" id="Vb4-KJ-jdY"/>
-                                    <constraint firstItem="8RE-Z4-Ud5" firstAttribute="leading" secondItem="Pu6-1J-0GD" secondAttribute="leading" constant="8" id="XaL-Sh-Z5n"/>
-                                    <constraint firstItem="kAR-KT-3jP" firstAttribute="leading" secondItem="Pu6-1J-0GD" secondAttribute="leading" constant="8" id="Yut-AE-6MU"/>
+                                    <constraint firstItem="8RE-Z4-Ud5" firstAttribute="top" secondItem="kAR-KT-3jP" secondAttribute="bottom" constant="8" id="Vb4-KJ-jdY"/>
+                                    <constraint firstItem="kAR-KT-3jP" firstAttribute="leading" secondItem="Pu6-1J-0GD" secondAttribute="leading" constant="16" id="Yut-AE-6MU"/>
                                     <constraint firstItem="kAR-KT-3jP" firstAttribute="top" secondItem="Pu6-1J-0GD" secondAttribute="top" constant="180" id="ZLH-8t-DcL"/>
-                                    <constraint firstAttribute="trailing" secondItem="kAR-KT-3jP" secondAttribute="trailing" constant="8" id="hSM-JA-CUi"/>
+                                    <constraint firstAttribute="trailing" secondItem="kAR-KT-3jP" secondAttribute="trailing" constant="16" id="hSM-JA-CUi"/>
+                                    <constraint firstItem="1un-kW-4jT" firstAttribute="leading" secondItem="51L-sI-7Yl" secondAttribute="trailing" constant="2" id="kqq-yB-vzl"/>
+                                    <constraint firstItem="51L-sI-7Yl" firstAttribute="centerX" secondItem="Pu6-1J-0GD" secondAttribute="centerX" id="stI-JM-ANZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -273,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FME-sd-M3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="-420.53973013493254"/>
+            <point key="canvasLocation" x="980.625" y="-421.47887323943661"/>
         </scene>
     </scenes>
     <resources>
