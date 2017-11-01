@@ -169,7 +169,7 @@ extension MainViewController {
 //            }
         } else {
             let width = collectionView.frame.width - 24
-            size = CGSize(width: width, height: 150)
+            size = CGSize(width: width, height: 120)
         }
         
         return size
@@ -177,9 +177,9 @@ extension MainViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
         } else if section == 1 {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
         }
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }

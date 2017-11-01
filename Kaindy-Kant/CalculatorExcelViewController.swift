@@ -39,7 +39,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         setNavigationBar()
         configureTableView()
         SVProgressHUD.show()
-        self.title = "Расчитать бюджет"
+        self.title = "Рассчитать бюджет"
         ServerManager.shared.getExpenses(setExpenses) { (error) in
             SVProgressHUD.dismiss()
             self.showErrorAlert(message: error)
@@ -89,27 +89,6 @@ extension CalculatorExcelViewController {
             cell.totalLabel.text = "\(CalculatorExcelLogicController.shared.totalValue)"
             return cell
         }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let label = UILabel()
-            label.text = "Расходы на механизацию и ручной труд"
-            label.textAlignment = .center
-            label.backgroundColor = UIColor.init(netHex: Colors.gray)
-            label.layer.borderWidth = 1
-            label.numberOfLines = 0
-            label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightSemibold)
-            return label
-        }
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return UIScreen.main.bounds.width < 375 ? 60 : 30
-        }
-        return 0
     }
 }
 
