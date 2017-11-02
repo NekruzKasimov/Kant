@@ -72,7 +72,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         view.addSubview(map)
     }
     
-    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker(position: coordinate)
         marker.icon = UIImage(named: "marker")
         marker.map = map
@@ -92,7 +92,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
         let line = GMSPolyline(path: path)
         line.strokeWidth = 2.0
-        line.strokeColor = UIColor.green
+        line.strokeColor = .white
         line.map = map
     }
     func addRoute() {
@@ -169,6 +169,4 @@ extension MapViewController {
             self.mapView.transform = CGAffineTransform.identity
         }
     }
-    
-    
 }
