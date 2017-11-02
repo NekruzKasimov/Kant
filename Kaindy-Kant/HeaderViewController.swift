@@ -46,7 +46,7 @@ class HeaderViewController: UIViewController {
         }
         
         slideShow.pageControl.pageIndicatorTintColor = UIColor.lightGray
-        slideShow.pageControl.currentPageIndicatorTintColor = .red
+        slideShow.pageControl.currentPageIndicatorTintColor = UIColor.init(netHex: Colors.purple)
     }
 }
 

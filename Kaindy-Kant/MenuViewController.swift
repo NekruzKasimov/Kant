@@ -10,9 +10,9 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "О приложении" , "Расчитать бюджет", "Выход"]
-    var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "AboutAppNav" , "CalcNav", "LoginNav"]
-    var sbs = ["Main" ,  "News" , "Service" , "Provider" , "AboutApp" , "CalculatorExcelViewController", "Login"]
+    var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "Рассчитать бюджет", "О приложении" ,  "Выход"]
+    var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
+    var sbs = ["Main" ,  "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
 
     @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {

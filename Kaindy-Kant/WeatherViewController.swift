@@ -27,7 +27,7 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var week: Int = 0
     var dates: [Int] = []
-    var months: [String] = []
+    var month: String = ""
     var degrees: [[Int]] = []
     var status = ""
     
@@ -60,6 +60,11 @@ extension WeatherViewController {
         let width = (collectionView.frame.width - 25) / 5
         return CGSize(width: width, height: height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
 }
 //MARK: Helper functions
 
@@ -71,17 +76,19 @@ extension WeatherViewController {
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         let today = dateFormatter.date(from: (weather?.list.array[0].date)!)
         week = Calendar.current.component(.weekday, from: today!) - 1
+        let monthDate = Calendar.current.component(.month, from: today!)
+        month = Constants.Weather.months[monthDate - 1]
         for item in (weather?.list.array)!{
             let date = dateFormatter.date(from: item.date)
 //            let weekday = Calendar.current.component(.weekday, from: date!)
-            let month = Calendar.current.component(.month, from: date!)
+    
             let day = Calendar.current.component(.day, from: date!)
             var temp: [Int] = []
             temp.append(Int(item.temp.max)!)
             temp.append(Int(item.temp.min)!)
             degrees.append(temp)
             dates.append(day)
-            months.append(Constants.Weather.months[month - 1])
+//            months.append(Constants.Weather.months[month - 1])
 //            week.append(Constants.Weather.weekdays[weekday - 1])
             if let item = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!] {
                 self.status = item
@@ -92,6 +99,6 @@ extension WeatherViewController {
     func setWeatherDegree() {
         self.weatherDegreeLabel.text = Int(weather!.today.array[0].temp)! > 0 ? "+\(Int(weather!.today.array[0].temp)!)°C" : "\(Int(weather!.today.array[0].temp)!)°C"
         self.weatheStatusLabel.text = status
-        self.dateLabel.text = "\(Constants.Weather.weekdays[week]), \(dates[0]) \(months[0])"
+        self.dateLabel.text = "\(Constants.Weather.weekdays[week]), \(dates[0]) \(month)"
     }
 }

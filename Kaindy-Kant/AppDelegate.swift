@@ -34,10 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             //let navigationController = UINavigationController(rootViewController: vc)
             self.window?.rootViewController = vc
         }
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 157/255, green: 32/255, blue: 70/255, alpha: 1)
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        UINavigationBar.appearance().barTintColor = UIColor(red: 157/255, green: 32/255, blue: 70/255, alpha: 1)
+        UINavigationBar.appearance().backgroundColor = .white
+        UINavigationBar.appearance().tintColor = UIColor.init(netHex: Colors.purple)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().isTranslucent = false
         
         IQKeyboardManager.shared().isEnabled = true

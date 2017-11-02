@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,26 +20,30 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7y-FI-juU">
-                        <rect key="frame" x="0.0" y="0.0" width="275" height="225"/>
+                        <rect key="frame" x="4" y="4" width="267" height="217"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V72-Gs-JVW">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="225"/>
+                                <rect key="frame" x="0.0" y="0.0" width="267" height="217"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-tB-UCT">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="18"/>
-                                <color key="backgroundColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <rect key="frame" x="0.0" y="0.0" width="267" height="217"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="I3c-e0-ah7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.82883184519999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V72-Gs-JVW" firstAttribute="leading" secondItem="c7y-FI-juU" secondAttribute="leading" id="RZk-8l-r3c"/>
                             <constraint firstItem="V72-Gs-JVW" firstAttribute="top" secondItem="c7y-FI-juU" secondAttribute="top" id="U6Y-R9-OSZ"/>
+                            <constraint firstAttribute="bottom" secondItem="NGO-tB-UCT" secondAttribute="bottom" id="YZM-xy-voH"/>
                             <constraint firstAttribute="trailing" secondItem="NGO-tB-UCT" secondAttribute="trailing" id="eW4-io-txC"/>
+                            <constraint firstItem="NGO-tB-UCT" firstAttribute="top" secondItem="c7y-FI-juU" secondAttribute="top" id="eiE-WP-iF3"/>
                             <constraint firstAttribute="bottom" secondItem="V72-Gs-JVW" secondAttribute="bottom" id="idM-Dz-cmX"/>
-                            <constraint firstItem="NGO-tB-UCT" firstAttribute="top" secondItem="c7y-FI-juU" secondAttribute="top" id="syq-Gg-sLO"/>
                             <constraint firstAttribute="trailing" secondItem="V72-Gs-JVW" secondAttribute="trailing" id="u77-ex-Fxb"/>
                             <constraint firstItem="NGO-tB-UCT" firstAttribute="leading" secondItem="c7y-FI-juU" secondAttribute="leading" id="uyv-Yl-5Iu"/>
                         </constraints>
@@ -53,10 +57,10 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="c7y-FI-juU" secondAttribute="trailing" id="DTb-jX-rTW"/>
-                <constraint firstItem="c7y-FI-juU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NR7-Np-9op"/>
-                <constraint firstAttribute="bottom" secondItem="c7y-FI-juU" secondAttribute="bottom" id="Ou2-zJ-LJQ"/>
-                <constraint firstItem="c7y-FI-juU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="T1X-gu-5a6"/>
+                <constraint firstAttribute="trailing" secondItem="c7y-FI-juU" secondAttribute="trailing" constant="4" id="DTb-jX-rTW"/>
+                <constraint firstItem="c7y-FI-juU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="NR7-Np-9op"/>
+                <constraint firstAttribute="bottom" secondItem="c7y-FI-juU" secondAttribute="bottom" constant="4" id="Ou2-zJ-LJQ"/>
+                <constraint firstItem="c7y-FI-juU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="T1X-gu-5a6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="275" height="225"/>

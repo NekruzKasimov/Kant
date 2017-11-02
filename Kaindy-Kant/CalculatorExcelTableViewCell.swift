@@ -10,19 +10,9 @@ import Foundation
 
 class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     
-    @IBOutlet weak var counterLabel: UILabel! {
-        didSet {
-            counterLabel.layer.borderWidth = 1
-        }
-    }
-    
     var valueChangeHandler: ((Int, Int)->())?
     
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.layer.borderWidth = 1
-        }
-    }
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var priceTF: UITextField! {
         didSet {
@@ -40,17 +30,13 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
-    @IBOutlet weak var totalLabel: UILabel! {
-        didSet {
-            totalLabel.layer.borderWidth = 1
-        }
-    }
+    @IBOutlet weak var totalLabel: UILabel!
     
     func setValues(expense: Expense, counter: Int) {
         self.priceTF.placeholder = "\(expense.price)"
         self.amountTF.placeholder = "\(expense.amount)"
-        self.titleLabel.text = expense.name
-        self.counterLabel.text = "\(counter + 1)"
+        self.titleLabel.text = "\(counter + 1).\n\(expense.name)"
+        self.tag = counter + 1
     }
     
     override func awakeFromNib() {
@@ -69,7 +55,7 @@ extension CalculatorExcelTableViewCell {
     func textFieldDidChange() {
         let price = priceTF.text == "" ? Int(priceTF.placeholder!)! : Int(priceTF.text!)!
         let amount = amountTF.text == "" ? Int(amountTF.placeholder!)! : Int(amountTF.text!)!
-        valueChangeHandler?(price * amount, Int(self.counterLabel.text!)!)
+        valueChangeHandler?(price * amount, self.tag)
         self.totalLabel.text = "\(price * amount)"
         reloadInputViews()
     }

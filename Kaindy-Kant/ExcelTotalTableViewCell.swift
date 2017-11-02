@@ -20,16 +20,8 @@ class ExcelTotalTableViewCell: UITableViewCell, UpdateTotalValueDelegate {
         CalculatorExcelLogicController.shared.delegate = self
     }
     
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.layer.borderWidth = 1
-        }
-    }
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var totalLabel: UILabel! {
-        didSet {
-            totalLabel.layer.borderWidth = 1
-        }
-    }
+    @IBOutlet weak var totalLabel: UILabel! 
 
 }

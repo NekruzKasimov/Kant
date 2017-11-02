@@ -139,11 +139,12 @@ extension MainViewController {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
             var title = ""
-            if indexPath.row == servicesCount {
+            if indexPath.row == 0 {
                 title = Constants.MainPage.service
+                cell.imageView.image = UIImage(named: "technology")
             } else {
-                title = (services?.array[indexPath.row].name)!
-                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row].logo)!))
+                title = (services?.array[indexPath.row - 1].name)!
+                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row - 1].logo)!))
             }
             cell.titleLabel.text = title
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
@@ -155,18 +156,21 @@ extension MainViewController {
         var size = CGSize()
         let height = CGFloat(200)
         if indexPath.section == 0 {
-            if indexPath.item == 0 {
-                var width = collectionView.frame.width - 30
-                width = width / 5 * 3
-                size = CGSize(width: width, height: height)
-            } else {
-                var width = collectionView.frame.width - 30
-                width = width / 5 * 2
-                size = CGSize(width: width, height: height)
-            }
+            var width = collectionView.frame.width - 30
+            width = width / 2
+            size = CGSize(width: width, height: height)
+//
+//            if indexPath.item == 0 {
+//                var width = collectionView.frame.width - 30
+//                size = CGSize(width: width, height: height)
+//            } else {
+//                var width = collectionView.frame.width - 30
+//                width = width / 5 * 2
+//                size = CGSize(width: width, height: height)
+//            }
         } else {
             let width = collectionView.frame.width - 24
-            size = CGSize(width: width, height: 150)
+            size = CGSize(width: width, height: 120)
         }
         
         return size
@@ -174,9 +178,9 @@ extension MainViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
         } else if section == 1 {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
         }
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
@@ -193,15 +197,16 @@ extension MainViewController {
                 self.navigationController?.show(vc, sender: self)
             }
         } else {
-            if indexPath.row != 3 {
-                let sb = UIStoryboard(name: "DetailedService", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
-                vc.detailedServices = services?.array[indexPath.row].detailedServices
-                vc.serviceTitle = services?.array[indexPath.row].name
-                navigationController?.show(vc, sender: self)
-            } else {
+            if indexPath.row == 0 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
+                navigationController?.show(vc, sender: self)
+                
+            } else {
+                let sb = UIStoryboard(name: "DetailedService", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
+                vc.detailedServices = services?.array[indexPath.row - 1].detailedServices
+                vc.serviceTitle = services?.array[indexPath.row - 1].name
                 navigationController?.show(vc, sender: self)
             }
         }

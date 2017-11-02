@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -2225,7 +2225,7 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MEo-3G-wcG">
-                                <rect key="frame" x="0.0" y="-64" width="375" height="731"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BranchesTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="BranchesTableViewCell" rowHeight="97" id="5GE-hC-eXY" customClass="BranchesTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -2289,7 +2289,7 @@ Cg
                         <constraints>
                             <constraint firstItem="Hk6-1J-NJG" firstAttribute="top" secondItem="MEo-3G-wcG" secondAttribute="bottom" id="XRt-3V-78r"/>
                             <constraint firstAttribute="trailing" secondItem="MEo-3G-wcG" secondAttribute="trailing" id="e46-Wa-P8f"/>
-                            <constraint firstItem="MEo-3G-wcG" firstAttribute="top" secondItem="rKK-UL-u8a" secondAttribute="top" constant="-64" id="kRE-db-UBU"/>
+                            <constraint firstItem="MEo-3G-wcG" firstAttribute="top" secondItem="rKK-UL-u8a" secondAttribute="top" id="kRE-db-UBU"/>
                             <constraint firstItem="MEo-3G-wcG" firstAttribute="leading" secondItem="rKK-UL-u8a" secondAttribute="leading" id="m0T-af-7V8"/>
                         </constraints>
                     </view>
@@ -2314,7 +2314,7 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D0I-hv-429">
-                                <rect key="frame" x="0.0" y="-64" width="375" height="731"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ContactsTableViewCell" rowHeight="67" id="mUS-O5-dMm" customClass="ContactsTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -2373,7 +2373,7 @@ Cg
                         <constraints>
                             <constraint firstItem="D0I-hv-429" firstAttribute="leading" secondItem="V6r-rs-Uwv" secondAttribute="leading" id="JXG-Ln-yj6"/>
                             <constraint firstAttribute="trailing" secondItem="D0I-hv-429" secondAttribute="trailing" id="YhL-Rc-LoF"/>
-                            <constraint firstItem="D0I-hv-429" firstAttribute="top" secondItem="V6r-rs-Uwv" secondAttribute="top" constant="-64" id="gfQ-j7-Cfw"/>
+                            <constraint firstItem="D0I-hv-429" firstAttribute="top" secondItem="V6r-rs-Uwv" secondAttribute="top" id="gfQ-j7-Cfw"/>
                             <constraint firstItem="kek-63-4KR" firstAttribute="top" secondItem="D0I-hv-429" secondAttribute="bottom" id="pxe-0T-Wv5"/>
                         </constraints>
                     </view>
