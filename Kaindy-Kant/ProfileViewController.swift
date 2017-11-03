@@ -212,7 +212,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBAction func presentMap(_ sender: Any) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-        navigationController?.pushViewController(vc, animated: true)
+        present(vc, animated: true, completion: nil)
     }
 }
 
