@@ -20,10 +20,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         var number: Int
     }
 
-    @IBOutlet weak var statusBarView: UIView!
     @IBOutlet weak var tabBarView: UIView!
     @IBOutlet weak var mapView: UIView!
-    
+    var isMapViewAdded = false
     @IBOutlet weak var fieldId: SkyFloatingLabelTextField! {
         didSet {
             fieldId.accessibilityIdentifier = "fieldId"
@@ -45,11 +44,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             configureTextField(textField: averageYield)
         }
     }
-    @IBOutlet weak var allYield: SkyFloatingLabelTextField! {
+    @IBOutlet weak var fieldYear: SkyFloatingLabelTextField! {
         didSet {
-            allYield.accessibilityIdentifier = "allYield"
-            GlobalFunctions.configure(textField: allYield, withText: "Всего урожая(т)", placeholder: "Всего урожая(т)", tag: 2)
-            configureTextField(textField: allYield)
+            fieldYear.accessibilityIdentifier = "fieldYear"
+            GlobalFunctions.configure(textField: fieldYear, withText: "Год", placeholder: "Год", tag: 2)
+            configureTextField(textField: fieldYear)
         }
     }
     
@@ -61,15 +60,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         super.viewDidLoad()
         
         addGoogleMap()
-        view.addSubview(statusBarView)
-        view.addSubview(tabBarView)
+        //view.addSubview(tabBarView)
         addResetButton()
         addSaveButton()
     }
     
     @IBAction func saveFiledBtn(_ sender: Any) {
         
-        if (fieldHectare.text == "" || averageYield.text == "" || allYield.text == "") {
+        if (fieldHectare.text == "" || averageYield.text == "" || fieldYear.text == "") {
             showErrorAlert(message: "Добавите данные")
             
         } else {
@@ -78,7 +76,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 let c = Coordinate(latitude: "\(coordinate.coordinate.latitude)", longitude: "\(coordinate.coordinate.longitude)", number: coordinate.number)
                 coordinates.append(c)
             }
-            let field = FieldToAdd(field_id: "9000", year: 2017, hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates)
+            let field = FieldToAdd(field_id: fieldId.text!, year: Int((fieldYear.text as! NSString).intValue), hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            
@@ -86,14 +84,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func hideMapView(_ sender: UIButton) {
-        //dismissMapView()
+        //self.dismissMapView()
+        dismissMapView()
     }
     
     func fieldAdded(message: String){
         SVProgressHUD.dismiss()
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addGoogleMap() {
@@ -145,18 +142,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func addResetButton() {
-        resetButton.frame = CGRect(x: view.frame.midX - 125, y: view.frame.height - 35, width: 120, height: 30)
-        resetButton.setTitle("Назад", for: .normal)
-        resetButton.setTitleColor(UIColor.init(netHex: Colors.purple), for: .normal)
+        resetButton.frame = CGRect(x: view.frame.midX - 125, y: view.frame.height - 99, width: 120, height: 30)
+        resetButton.setTitle("отмена", for: .normal)
+        resetButton.setTitleColor(.white, for: .normal)
         resetButton.layer.cornerRadius = 2
-        resetButton.backgroundColor = .white
+        resetButton.backgroundColor = UIColor.init(netHex: Colors.purple)
         resetButton.addTarget(self, action: #selector(resetButtonClicked), for: .touchUpInside)
         view.addSubview(resetButton)
     }
     
     func addSaveButton() {
         let saveButton = UIButton()
-        saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 35, width: 120, height: 30)
+        saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
         saveButton.setTitle("Сохранить", for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.layer.cornerRadius = 2
@@ -169,12 +166,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 extension MapViewController {
     
     func resetButtonClicked() {
-        if points.count > 0 {
-            points.removeAll()
-            map.clear()
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
+        points.removeAll()
+        map.clear()
     }
     
     func saveButtonClicked() {
@@ -199,11 +192,15 @@ extension MapViewController {
     }
     
     func showMapView() {
-        self.view.addSubview(mapView)
-        
+        if isMapViewAdded {
+            mapView.isHidden = false
+        }
+        else {
+            isMapViewAdded = true
+            self.view.addSubview(mapView)
+        }
         mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
         mapView.alpha = 0
-        
         UIView.animate(withDuration: 0.4) {
             self.mapView.alpha = 1
             self.mapView.center = self.view.center
@@ -215,7 +212,7 @@ extension MapViewController {
             self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height)
             self.mapView.alpha = 0
         }) { (success) in
-            self.mapView.removeFromSuperview()
+            self.mapView.isHidden = true
         }
     }
     

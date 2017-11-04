@@ -31,10 +31,12 @@ struct Coordinate {
 struct Field {
     var field_id: String
     var hectares: Double
+    var average_harvest: Double
     var coordinates: Array = Array<Coordinate>()
     init(json: JSON) {
         field_id = json["field_id"].stringValue
         hectares = json["hectares"].doubleValue
+        average_harvest = json["average_harvest"].doubleValue
         let jsonArr:[JSON] = json["coordinates"].arrayValue
         for json in jsonArr {
             let tempCoordinate = Coordinate(json:json)
