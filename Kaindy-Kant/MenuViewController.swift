@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MenuViewController: UIViewController {
     
@@ -30,13 +31,14 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         var user = DataManager.shared.getUserInformation()
         self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"
-        if user!["photo"] == "" {
-            avatarButton.imageView?.image = UIImage(named: "camera")
-        } else {
-            let imageToDecode = user!["photo"] as! String
-            let image = imageToDecode.decode64(imageData: imageToDecode) as! UIImage
-            avatarButton.imageView?.image = image
-        }
+        SVProgressHUD.dismiss()
+//        if user!["photo"] == "" {
+//            avatarButton.imageView?.image = UIImage(named: "camera")
+//        } else {
+//            let imageToDecode = user!["photo"] as! String
+//            let image = imageToDecode.decode64(imageData: imageToDecode) as! UIImage
+//            avatarButton.imageView?.image = image
+//        }
     }
     @IBOutlet weak var tablevView: UITableView!
     

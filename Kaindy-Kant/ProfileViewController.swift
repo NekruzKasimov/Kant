@@ -178,12 +178,12 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         date_of_birth_TF.text = user_info["date_of_birth"]
         city_TF.text = user_info["city"]
         fullNameLabel.text = "\(user_info["first_name"]!) \(user_info["last_name"]!)"
-        let imageToDecode = user_info["photo"]
-        if imageToDecode == "" {
-            imageView.image = UIImage(named: "camera")
-        } else {
-            imageView.image = imageToDecode?.decode64(imageData: imageToDecode!) as! UIImage
-        }
+//        let imageToDecode = user_info["photo"]
+//        if imageToDecode == "" {
+//            imageView.image = UIImage(named: "camera")
+//        } else {
+//            imageView.image = imageToDecode?.decode64(imageData: imageToDecode!) as! UIImage
+//        }
     }
     
     @IBAction func presentMap(_ sender: Any) {

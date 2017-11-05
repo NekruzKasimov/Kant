@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
@@ -30,18 +30,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Кант Кызылча uses Camera</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Нужно разрешение для определения вашего местополджения</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Кант Кызылча</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Кант Кызылча uses Gallery</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Login</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Кант Кызылча uses Camera</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Кант Кызылча uses Gallery</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
