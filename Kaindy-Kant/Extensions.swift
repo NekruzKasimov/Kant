@@ -86,5 +86,18 @@ class Alert {
     }
 }
 
+extension UIImage {
+    
+    func encode64(image: UIImage) -> String {
+        let imageData:NSData = UIImagePNGRepresentation(image)! as NSData
+        return imageData.base64EncodedString(options: .lineLength64Characters)
+    }
+}
+extension String {
 
+    func decode64(imageData: String) -> UIImage {
+        let dataDecode:NSData = NSData(base64Encoded: imageData, options:.ignoreUnknownCharacters)!
+        return UIImage(data: dataDecode as Data)!
+    }
+}
 

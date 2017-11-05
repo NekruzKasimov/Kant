@@ -8,10 +8,23 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import Photos
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
+    var imagePicker = UIImagePickerController()
+    var image = ""
+    
+    @IBOutlet weak var avatarImageView: UIImageView! {
+        didSet {
+            avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width/2
+            avatarImageView.clipsToBounds = true
+            avatarImageView.accessibilityIdentifier = "avatarImageView"
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
+            avatarImageView.isUserInteractionEnabled = true
+            avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
     
     @IBOutlet weak var firstNameTF: SkyFloatingLabelTextField! {
         didSet {
@@ -128,6 +141,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 newUser.first_name = self.firstNameTF.text!
                 newUser.date_of_birth = self.birthdayTF.text!
                 newUser.email = self.emailTF.text!
+                newUser.photo = image
                 ServerManager.shared.signUp(newUser: newUser, completion: { (user_id) in
                     DataManager.shared.setUserId(user_id: user_id)
                     DataManager.shared.setNewUser(newUser: newUser)
@@ -176,6 +190,41 @@ extension RegistrationViewController {
         textField.selectedLineColor = UIColor.init(netHex: Colors.green)
         textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
     }
+    
+    func showImagePicker() {
+        let alert = UIAlertController(title: "Выбрать картинку", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Камера", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Галерея", style: .default, handler: { _ in
+            self.openGallary()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Отмена", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert  = UIAlertController(title: "Предупреждение", message: "У вас нет Камеры", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        imagePicker.delegate = self
+    }
+    
+    func openGallary() {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+        imagePicker.delegate = self
+    }
 }
 
 
@@ -194,5 +243,23 @@ extension RegistrationViewController {
         } else {
             return true
         }
+    }
+}
+
+//MARK UIImagePickerController delegate
+
+extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        picker.dismiss(animated: true, completion:nil)
+        let imageToEncode = info[UIImagePickerControllerEditedImage] as! UIImage
+        self.avatarImageView.image = imageToEncode
+//        self.image = imageToEncode.encode64(image: imageToEncode)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion:nil)
     }
 }

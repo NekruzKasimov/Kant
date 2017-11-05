@@ -11,16 +11,18 @@ import SVProgressHUD
 import SkyFloatingLabelTextField
 //import BetterSegmentedControl
 //import PageMenu
+import Photos
 import ScrollableSegmentedControl
+
 class ProfileViewController: UIViewController,  UITextFieldDelegate {
     
-    
-   
     @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    var imagePicker = UIImagePickerController()
+    var image = ""
     
     @IBOutlet weak var first_name_TF: SkyFloatingLabelTextField! {
         didSet {
@@ -105,12 +107,12 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     var yearIndex = 0
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
-//            imageView.layer.cornerRadius = imageView.frame.size.width/2
-//            imageView.clipsToBounds = true
-//            imageView.accessibilityIdentifier = "imageView"
-//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
-//            imageView.isUserInteractionEnabled = true
-//            imageView.addGestureRecognizer(tapGestureRecognizer)
+            imageView.layer.cornerRadius = imageView.frame.size.width/2
+            imageView.clipsToBounds = true
+            imageView.accessibilityIdentifier = "imageView"
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
+            imageView.isUserInteractionEnabled = true
+            imageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
 
@@ -132,6 +134,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         infoToUpdate["date_of_birth"] = self.date_of_birth_TF.text
         infoToUpdate["city"] = self.city_TF.text
         infoToUpdate["address"] = self.address_TF.text
+        infoToUpdate["photo"] = self.image
         SVProgressHUD.show()
         ServerManager.shared.updateUser(parameters: infoToUpdate, updateUser, error: showErrorAlert)
     }
@@ -165,6 +168,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         segmentedControl.selectedSegmentIndex = 0
         
     }
+    
     func setFields(years: Years){
         self.years = years.years
         segmentedControl.segmentStyle = .textOnly
@@ -191,12 +195,14 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 260)
         tableView.reloadData()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         ServerManager.shared.getFields(setFields, error: showErrorAlert)
         fillUserInformation()
     }
+    
     func fillUserInformation() {
         let user_info = DataManager.shared.getUserInformation()!
         first_name_TF.text = user_info["first_name"]
@@ -208,7 +214,14 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         date_of_birth_TF.text = user_info["date_of_birth"]
         city_TF.text = user_info["city"]
         fullNameLabel.text = "\(user_info["first_name"]!) \(user_info["last_name"]!)"
+        let imageToDecode = user_info["photo"]
+        if imageToDecode == "" {
+            imageView.image = UIImage(named: "camera")
+        } else {
+            imageView.image = imageToDecode?.decode64(imageData: imageToDecode!) as! UIImage
+        }
     }
+    
     @IBAction func presentMap(_ sender: Any) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
@@ -267,60 +280,42 @@ extension ProfileViewController {
     }
     
     func showImagePicker() {
-        //        let imagePickerController = ImagePickerController()
-        //        imagePickerController.imageLimit = 1
-        //        imagePickerController.view.backgroundColor = UIColor.init(netHex: Colors.green)
-        //        imagePickerController.delegate = self
-        //        present(imagePickerController, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Выбрать картинку", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Камера", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Галерея", style: .default, handler: { _ in
+            self.openGallary()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Отмена", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
-//    func configureRefreshControl() {
-//        let refreshControl = UIRefreshControl()
-//        let title = NSLocalizedString("Pull to refresh", comment: "Pull to refresh")
-//        //        refreshControl.attributedTitle = NSAttributedString(string: title)
-//        //        refreshControl.addTarget(self,
-//        //                                 action: #selector(refreshOptions(sender:)),
-//        //                                 for: .valueChanged)
-//        
-//        if #available(iOS 10.0, *) {
-//            scrollView.refreshControl = refreshControl
-//        }
-//        else{
-//            scrollView.addSubview(refreshControl)
-//        }
-//    }
-    
-//    func refreshOptions(sender: UIRefreshControl) {
-//    }
-//    
-//    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
-//        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
-//            completion(false)
-//            return
-//        }
-//        guard #available(iOS 10, *) else {
-//            completion(UIApplication.shared.openURL(url))
-//            return
-//        }
-//        UIApplication.shared.open(url, options: [:], completionHandler: completion)
-//    }
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert  = UIAlertController(title: "Предупреждение", message: "У вас нет Камеры", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        imagePicker.delegate = self
+    }
+
+    func openGallary() {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+        imagePicker.delegate = self
+    }
+
 }
 
-//MARK: ImagePickerDelegate methods
-
-//extension ProfileViewController: ImagePickerDelegate {
-//    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-//        self.imageView.image = images.first
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-//
-//    }
-//
-//    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//}
 //MARK: UITextFieldDelegate methods
 
 extension ProfileViewController {
@@ -361,10 +356,29 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate, But
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 270
 //    }
+    
     func didPressButton(_ tag: Int) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
         vc.coordinates = self.years[yearIndex].fields[tag].coordinates
         navigationController?.show(vc, sender: self)
+    }
+}
+
+//MARK UIImagePickerController delegate
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        picker.dismiss(animated: true, completion:nil)
+        let imageToEncode = info[UIImagePickerControllerEditedImage] as! UIImage
+        self.imageView.image = imageToEncode
+//        self.image = imageToEncode.encode64(image: imageToEncode)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion:nil)
     }
 }

@@ -10,6 +10,14 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    
+    @IBOutlet weak var avatarButton: UIButton! {
+        didSet {
+            avatarButton.layer.cornerRadius = avatarButton.frame.size.width/2
+            avatarButton.clipsToBounds = true
+        }
+    }
+    
     var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "Рассчитать бюджет", "О приложении" ,  "Выход"]
     var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
     var sbs = ["Main" ,  "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
@@ -20,8 +28,15 @@ class MenuViewController: UIViewController {
         configureTableView()
     }
     override func viewWillAppear(_ animated: Bool) {
-        let user = DataManager.shared.getUserInformation()
+        var user = DataManager.shared.getUserInformation()
         self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"
+        if user!["photo"] == "" {
+            avatarButton.imageView?.image = UIImage(named: "camera")
+        } else {
+            let imageToDecode = user!["photo"] as! String
+            let image = imageToDecode.decode64(imageData: imageToDecode) as! UIImage
+            avatarButton.imageView?.image = image
+        }
     }
     @IBOutlet weak var tablevView: UITableView!
     
