@@ -21,7 +21,7 @@ class DataManager {
     var newRossahar: Rossahar?
     var uDefaults = UserDefaults.standard
     var services: Services?
-    
+    var years = Years().years
     func setServices(Services: Services) {
         self.services = Services
     }
@@ -70,5 +70,11 @@ class DataManager {
     }
     func getNewRossahar() -> Rossahar {
         return newRossahar!
+    }
+    func setYears(years: [Year]){
+        self.years = years
+    }
+    func getYears() -> [Year]{
+        return self.years
     }
 }

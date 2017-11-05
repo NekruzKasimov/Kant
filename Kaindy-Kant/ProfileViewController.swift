@@ -101,10 +101,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     }
     
     @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var myFieldsLable: UILabel!
 
-    var years = Years().years
-    var yearIndex = 0
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
             imageView.layer.cornerRadius = imageView.frame.size.width/2
@@ -164,8 +161,6 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
 //        addTapToScrollView()
         self.title = "Профиль"
         setNavigationBar()
-        configureTableView()
-        segmentedControl.selectedSegmentIndex = 0
         
     }
     
@@ -198,8 +193,6 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        ServerManager.shared.getFields(setFields, error: showErrorAlert)
         fillUserInformation()
     }
     
@@ -224,8 +217,8 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     
     @IBAction func presentMap(_ sender: Any) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
+        self.navigationController?.show(vc, sender: self)
     }
 }
 
@@ -271,12 +264,6 @@ extension ProfileViewController {
             }
     
     func showStartPage() {
-    }
-    
-    func configureTableView() {
-        tableView.register(UINib(nibName: "ProfileMapTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMapTableViewCell")
-        tableView.tableFooterView           = UIView()
-        //tableView.separatorStyle            = .none
     }
     
     func showImagePicker() {

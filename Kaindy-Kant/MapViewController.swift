@@ -11,35 +11,66 @@ import MapKit
 import GooglePlaces
 import GoogleMaps
 import SVProgressHUD
+import SkyFloatingLabelTextField
 
-
-class MapViewController: UIViewController, GMSMapViewDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate{
     
     struct MapCoordinate {
         var coordinate: CLLocationCoordinate2D
         var number: Int
     }
 
+    @IBOutlet weak var tabBarView: UIView!
     @IBOutlet weak var mapView: UIView!
-    @IBOutlet weak var fieldHectare: UITextField!
-    @IBOutlet weak var averageYield: UITextField!
-    @IBOutlet weak var allYield: UITextField!
+    var isMapViewAdded = false
+    @IBOutlet weak var fieldId: SkyFloatingLabelTextField! {
+        didSet {
+            fieldId.accessibilityIdentifier = "fieldId"
+            GlobalFunctions.configure(textField: fieldId, withText: "ID#", placeholder: "ID#", tag: 2)
+            configureTextField(textField: fieldId)
+        }
+    }
+    @IBOutlet weak var fieldHectare: SkyFloatingLabelTextField! {
+        didSet {
+            fieldHectare.accessibilityIdentifier = "fieldHectare"
+            GlobalFunctions.configure(textField: fieldHectare, withText: "Гектары(га)", placeholder: "Гектары(га)", tag: 2)
+            configureTextField(textField: fieldHectare)
+        }
+    }
+    @IBOutlet weak var averageYield: SkyFloatingLabelTextField! {
+        didSet {
+            averageYield.accessibilityIdentifier = "averageYield"
+            GlobalFunctions.configure(textField: averageYield, withText: "Средняя урожайность(т)", placeholder: "Средняя урожайность(т)", tag: 2)
+            configureTextField(textField: averageYield)
+        }
+    }
+    @IBOutlet weak var fieldYear: SkyFloatingLabelTextField! {
+        didSet {
+            fieldYear.accessibilityIdentifier = "fieldYear"
+            GlobalFunctions.configure(textField: fieldYear, withText: "Год", placeholder: "Год", tag: 2)
+            configureTextField(textField: fieldYear)
+        }
+    }
     
-    var map: GMSMapView!
+    let resetButton = UIButton()
+   // var map: GMSMapView!
     var points: [MapCoordinate] = []
-    
+    var locationManager = CLLocationManager()
+    lazy var map = GMSMapView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Карта"
         addGoogleMap()
+        addCurrentLocation()
+        //view.addSubview(tabBarView)
         addResetButton()
         addSaveButton()
     }
     
     @IBAction func saveFiledBtn(_ sender: Any) {
         
-        if (fieldHectare.text == "" || averageYield.text == "" || allYield.text == "") {
+        if (fieldHectare.text == "" || averageYield.text == "" || fieldYear.text == "") {
             showErrorAlert(message: "Добавите данные")
             
         } else {
@@ -48,17 +79,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 let c = Coordinate(latitude: "\(coordinate.coordinate.latitude)", longitude: "\(coordinate.coordinate.longitude)", number: coordinate.number)
                 coordinates.append(c)
             }
-            let field = FieldToAdd(field_id: "9000", year: 2017, hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates)
+            let field = FieldToAdd(field_id: fieldId.text!, year: Int((fieldYear.text! as NSString).intValue), hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            
         }
     }
+    
+    @IBAction func hideMapView(_ sender: UIButton) {
+        //self.dismissMapView()
+        dismissMapView()
+    }
+    
     func fieldAdded(message: String){
         SVProgressHUD.dismiss()
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func addGoogleMap() {
@@ -67,12 +102,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         map.delegate = self
         map.mapType = .hybrid
         map.settings.myLocationButton = true
+        map.padding = UIEdgeInsets(top: 0, left: 0, bottom: 35, right: 0)
         map.isMyLocationEnabled = true
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
     }
-    
-    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+    func addCurrentLocation() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker(position: coordinate)
         marker.icon = UIImage(named: "marker")
         marker.map = map
@@ -92,9 +133,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
         let line = GMSPolyline(path: path)
         line.strokeWidth = 2.0
-        line.strokeColor = UIColor.green
+        line.strokeColor = .white
         line.map = map
     }
+    
     func addRoute() {
         let path = GMSMutablePath()
         for p in points {
@@ -103,16 +145,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         
         let route = GMSPolygon(path: path)
         route.strokeWidth = 2.0
-        route.strokeColor = UIColor.green
+        route.strokeColor = .white
         route.map = map
     }
     
     func addResetButton() {
-        let resetButton = UIButton()
-        resetButton.frame = CGRect(x: 10, y: view.frame.height - 50, width: 100, height: 40)
-        resetButton.setTitle("Отменить", for: .normal)
+        resetButton.frame = CGRect(x: view.frame.midX - 125, y: view.frame.height - 99, width: 120, height: 30)
+        resetButton.setTitle("отмена", for: .normal)
         resetButton.setTitleColor(.white, for: .normal)
-        resetButton.layer.cornerRadius = 5
+        resetButton.layer.cornerRadius = 2
         resetButton.backgroundColor = UIColor.init(netHex: Colors.purple)
         resetButton.addTarget(self, action: #selector(resetButtonClicked), for: .touchUpInside)
         view.addSubview(resetButton)
@@ -120,13 +161,25 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     func addSaveButton() {
         let saveButton = UIButton()
-        saveButton.frame = CGRect(x: 120, y: view.frame.height - 50, width: 100, height: 40)
+        saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
         saveButton.setTitle("Сохранить", for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
-        saveButton.layer.cornerRadius = 5
-        saveButton.backgroundColor = UIColor.init(netHex: Colors.green)
+        saveButton.layer.cornerRadius = 2
+        saveButton.backgroundColor = UIColor.init(netHex: Colors.purple)
         saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
         view.addSubview(saveButton)
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation = locations.last
+        //let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
+
+        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
+                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
+        self.map.animate(to: camera)
+//        map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+//        map.isMyLocationEnabled = true
+//        self.view = mapView
+        locationManager.stopUpdatingLocation()
     }
 }
 
@@ -153,22 +206,40 @@ extension MapViewController {
         //Add
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
-            self.animateIn()
+            self.showMapView()
         }))
         present(alert, animated: true, completion: nil)
     }
     
-    func animateIn() {
-        self.view.addSubview(mapView)
-        
-        mapView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+    func showMapView() {
+        if isMapViewAdded {
+            mapView.isHidden = false
+        }
+        else {
+            isMapViewAdded = true
+            self.view.addSubview(mapView)
+        }
+        mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
         mapView.alpha = 0
-        
         UIView.animate(withDuration: 0.4) {
             self.mapView.alpha = 1
-            self.mapView.transform = CGAffineTransform.identity
+            self.mapView.center = self.view.center
         }
     }
     
+    func dismissMapView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height)
+            self.mapView.alpha = 0
+        }) { (success) in
+            self.mapView.isHidden = true
+        }
+    }
     
+    func configureTextField(textField: SkyFloatingLabelTextField){
+        textField.lineColor = UIColor.init(netHex: Colors.purple)
+        textField.titleColor = UIColor.init(netHex: Colors.purple)
+        textField.selectedLineColor = UIColor.init(netHex: Colors.green)
+        textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
+    }
 }
