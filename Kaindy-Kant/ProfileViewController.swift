@@ -16,11 +16,9 @@ import ScrollableSegmentedControl
 
 class ProfileViewController: UIViewController,  UITextFieldDelegate {
     
-    @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var segmentView: UIView!
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!
+    
     var imagePicker = UIImagePickerController()
     var image = ""
     
@@ -164,33 +162,6 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         
     }
     
-    func setFields(years: Years){
-        self.years = years.years
-        segmentedControl.segmentStyle = .textOnly
-        for index in 0..<years.years.count {
-            if segmentedControl.numberOfSegments <= index {
-                segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
-            }
-        }
-        segmentedControl.selectedSegmentIndex = yearIndex
-        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 260)
-        tableView.reloadData()
-        segmentedControl.underlineSelected = true
-        segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
-        // change some colors
-        segmentedControl.segmentContentColor = UIColor.black
-        segmentedControl.selectedSegmentContentColor = UIColor.black
-        segmentedControl.backgroundColor = UIColor.white
-    }
-
-    func segmentSelected(sender:ScrollableSegmentedControl) {
-        //segmentedControl
-        yearIndex = sender.selectedSegmentIndex
-        print("Segment at index \(sender.selectedSegmentIndex)  selected")
-        tableViewHeight.constant = CGFloat(self.years[yearIndex].fields.count * 260)
-        tableView.reloadData()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fillUserInformation()
@@ -315,43 +286,6 @@ extension ProfileViewController {
     }
 }
 
-extension ProfileViewController: UITableViewDataSource, UITableViewDelegate, ButtonDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.years.count == 0 {
-            return 0
-        }
-        print(self.years[yearIndex].fields.count)
-        return self.years[yearIndex].fields.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
-        cell.cellDelegate = self
-        cell.tag = indexPath.row
-        let cellHeight = cell.frame.height
-        cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
-        cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 270
-//    }
-    
-    func didPressButton(_ tag: Int) {
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
-        vc.coordinates = self.years[yearIndex].fields[tag].coordinates
-        navigationController?.show(vc, sender: self)
-    }
-}
-
 //MARK UIImagePickerController delegate
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -361,7 +295,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         picker.dismiss(animated: true, completion:nil)
         let imageToEncode = info[UIImagePickerControllerEditedImage] as! UIImage
         self.imageView.image = imageToEncode
-//        self.image = imageToEncode.encode64(image: imageToEncode)
+        //        self.image = imageToEncode.encode64(image: imageToEncode)
         
     }
     
