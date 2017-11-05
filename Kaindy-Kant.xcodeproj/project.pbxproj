@@ -738,6 +738,7 @@
 				TargetAttributes = {
 					1F58936C1F614DB600FD2C5D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = U5DCDBG2W2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1240,7 +1241,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Kaindy-Kant/Kaindy-Kant.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1262,7 +1263,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Kaindy-Kant/Kaindy-Kant.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = "Kaindy-Kant/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

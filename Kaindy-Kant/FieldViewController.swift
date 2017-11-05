@@ -21,24 +21,41 @@ class FieldViewController: UIViewController {
         setNavigationBar()
         configureTableView()
         segmentedControl.selectedSegmentIndex = 0
+        //self.years = DataManager.shared.getYears()
         // Do any additional setup after loading the view.
     }
     func setFields(years: Years){
-        self.years = years.years
         segmentedControl.segmentStyle = .textOnly
-        for index in 0..<years.years.count {
-            if segmentedControl.numberOfSegments <= index {
-                segmentedControl.insertSegment(withTitle: "\(years.years[index].year)", at: index)
+        if self.years.count == 0 {
+            for (index, year) in years.years.enumerated() {
+                segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
             }
         }
+        else {
+            
+            for (index, year) in years.years.enumerated() {
+                var isAppeared = false
+                for yearOld in self.years {
+                    if yearOld.year == year.year {
+                        isAppeared = true
+                    }
+                }
+                if !isAppeared {
+                    segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
+                }
+            }
+       
+        }
+        self.years = years.years
         segmentedControl.selectedSegmentIndex = yearIndex
-        tableView.reloadData()
         segmentedControl.underlineSelected = true
         segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
         // change some colors
         segmentedControl.segmentContentColor = UIColor.black
         segmentedControl.selectedSegmentContentColor = UIColor.black
         segmentedControl.backgroundColor = UIColor.white
+        tableView.reloadData()
+
     }
     func configureTableView() {
         tableView.register(UINib(nibName: "ProfileMapTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileMapTableViewCell")

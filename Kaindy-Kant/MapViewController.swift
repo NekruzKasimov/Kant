@@ -13,7 +13,7 @@ import GoogleMaps
 import SVProgressHUD
 import SkyFloatingLabelTextField
 
-class MapViewController: UIViewController, GMSMapViewDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate{
     
     struct MapCoordinate {
         var coordinate: CLLocationCoordinate2D
@@ -53,13 +53,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     let resetButton = UIButton()
-    var map: GMSMapView!
+   // var map: GMSMapView!
     var points: [MapCoordinate] = []
-    
+    var locationManager = CLLocationManager()
+    lazy var map = GMSMapView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addGoogleMap()
+        addCurrentLocation()
         //view.addSubview(tabBarView)
         addResetButton()
         addSaveButton()
@@ -76,7 +79,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 let c = Coordinate(latitude: "\(coordinate.coordinate.latitude)", longitude: "\(coordinate.coordinate.longitude)", number: coordinate.number)
                 coordinates.append(c)
             }
-            let field = FieldToAdd(field_id: fieldId.text!, year: Int((fieldYear.text as! NSString).intValue), hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue)
+            let field = FieldToAdd(field_id: fieldId.text!, year: Int((fieldYear.text! as NSString).intValue), hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            
@@ -90,7 +93,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     func fieldAdded(message: String){
         SVProgressHUD.dismiss()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func addGoogleMap() {
@@ -104,7 +107,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
     }
-    
+    func addCurrentLocation() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let marker = GMSMarker(position: coordinate)
         marker.icon = UIImage(named: "marker")
@@ -160,6 +168,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         saveButton.backgroundColor = UIColor.init(netHex: Colors.purple)
         saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
         view.addSubview(saveButton)
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation = locations.last
+        //let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
+
+        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
+                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
+        self.map.animate(to: camera)
+//        map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+//        map.isMyLocationEnabled = true
+//        self.view = mapView
+        locationManager.stopUpdatingLocation()
     }
 }
 

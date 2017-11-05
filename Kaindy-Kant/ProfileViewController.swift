@@ -95,8 +95,6 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     
     @IBOutlet weak var fullNameLabel: UILabel!
 
-    var years = Years().years
-    var yearIndex = 0
     @IBOutlet weak var imageView: UIImageView!{
         didSet{
 //            imageView.layer.cornerRadius = imageView.frame.size.width/2
