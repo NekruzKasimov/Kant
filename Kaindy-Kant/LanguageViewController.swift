@@ -9,17 +9,19 @@
 import UIKit
 import SwiftyJSON
 class LanguageViewController: UIViewController {
-
+    
     @IBOutlet weak var languageView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func russianLanguageButton(_ sender: Any) {
+        DataManager.shared.setLanguage(language: "en")
         showMainPage()
     }
     @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {
+        DataManager.shared.setLanguage(language: "ky")
         showMainPage()
     }
     func showMainPage(){
@@ -28,3 +30,4 @@ class LanguageViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
 }
+

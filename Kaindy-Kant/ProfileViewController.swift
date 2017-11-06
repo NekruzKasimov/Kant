@@ -94,20 +94,18 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         textField.titleColor = UIColor.init(netHex: Colors.purple)
         textField.selectedLineColor = UIColor.init(netHex: Colors.green)
         textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
-       //tableView.estimatedRowHeight = 260;
-        //tableView.rowHeight = UITableViewAutomaticDimension;
     }
     
     @IBOutlet weak var fullNameLabel: UILabel!
 
-    @IBOutlet weak var imageView: UIImageView!{
+    @IBOutlet weak var avatarImageView: UIImageView!{
         didSet{
-            imageView.layer.cornerRadius = imageView.frame.size.width/2
-            imageView.clipsToBounds = true
-            imageView.accessibilityIdentifier = "imageView"
+            avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width/2
+            avatarImageView.clipsToBounds = true
+            avatarImageView.accessibilityIdentifier = "avatarImageView"
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
-            imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(tapGestureRecognizer)
+            avatarImageView.isUserInteractionEnabled = true
+            avatarImageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
 
@@ -133,11 +131,13 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         SVProgressHUD.show()
         ServerManager.shared.updateUser(parameters: infoToUpdate, updateUser, error: showErrorAlert)
     }
+    
     func updateUser(user: NewUser){
         SVProgressHUD.dismiss()
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         fillUserInformation()
     }
+    
 //    @IBOutlet weak var changePasswordButton: UIButton! {
 //        didSet{
 //            changePasswordButton.accessibilityIdentifier = "changePasswordButton"
@@ -178,12 +178,12 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         date_of_birth_TF.text = user_info["date_of_birth"]
         city_TF.text = user_info["city"]
         fullNameLabel.text = "\(user_info["first_name"]!) \(user_info["last_name"]!)"
-//        let imageToDecode = user_info["photo"]
-//        if imageToDecode == "" {
-//            imageView.image = UIImage(named: "camera")
-//        } else {
-//            imageView.image = imageToDecode?.decode64(imageData: imageToDecode!) as! UIImage
-//        }
+        let imageToDecode = user_info["photo"]
+        if imageToDecode == "" {
+            avatarImageView.image = UIImage(named: "camera")
+        } else {
+            avatarImageView.image = imageToDecode?.decode64(imageData: imageToDecode!)
+        }
     }
     
     @IBAction func presentMap(_ sender: Any) {
@@ -205,9 +205,6 @@ extension ProfileViewController {
 //    func dismissKeyboard() {
 //        scrollView.endEditing(true)
 //    }
-    
-    func updateUI() {
-    }
     
     func showDatePicker() {
         let myDatePicker = UIDatePicker()
@@ -233,9 +230,6 @@ extension ProfileViewController {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangingPasswordViewController") as! ChangingPasswordViewController
 //        self.navigationController?.show(vc, sender: self)
             }
-    
-    func showStartPage() {
-    }
     
     func showImagePicker() {
         let alert = UIAlertController(title: "Выбрать картинку", message: nil, preferredStyle: .actionSheet)
@@ -293,10 +287,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         
         picker.dismiss(animated: true, completion:nil)
-        let imageToEncode = info[UIImagePickerControllerEditedImage] as! UIImage
-        self.imageView.image = imageToEncode
-        //        self.image = imageToEncode.encode64(image: imageToEncode)
-        
+        let imageToResize = info[UIImagePickerControllerEditedImage] as! UIImage
+        let imageToEncode = imageToResize.resized(withPercentage: 0.4)
+        DispatchQueue.main.async {
+            self.avatarImageView.image = imageToEncode
+        }
+        self.image = (imageToEncode?.encode64(image: imageToEncode!))!
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

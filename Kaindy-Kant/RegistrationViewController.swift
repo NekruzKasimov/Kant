@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import Photos
+import SVProgressHUD
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
@@ -115,6 +116,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        SVProgressHUD.show()
         let newUser = NewUser()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
         if birthdayTF.text! != "" && phoneTF.text! != "" && passwordTF.text! != "" && passwordRepeatTF.text! != "" {
@@ -129,7 +131,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 showErrorAlert(message: "Введите правильный номер телефона!")
 
             } else {
-                
                 newUser.first_name = self.firstNameTF.text!
                 newUser.last_name = self.lastNameTF.text!
                 newUser.fathers_name = self.fathersNameTF.text!
@@ -146,6 +147,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     DataManager.shared.setUserId(user_id: user_id)
                     DataManager.shared.setNewUser(newUser: newUser)
                     DataManager.shared.saveUser(username: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password)
+                    SVProgressHUD.dismiss()
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
                     self.present(nextViewController!, animated:true, completion:nil)
                 }, error: { (error) in
@@ -253,10 +255,10 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         
         picker.dismiss(animated: true, completion:nil)
-        let imageToEncode = info[UIImagePickerControllerEditedImage] as! UIImage
+        let imageToResize = info[UIImagePickerControllerEditedImage] as! UIImage
+        let imageToEncode = imageToResize.resized(withPercentage: 0.4)
         self.avatarImageView.image = imageToEncode
-//        self.image = imageToEncode.encode64(image: imageToEncode)
-        
+        self.image = (imageToEncode?.encode64(image: imageToEncode!))!
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

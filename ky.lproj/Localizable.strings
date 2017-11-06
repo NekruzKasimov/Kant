@@ -1,0 +1,101 @@
+/*
+ Localizable.strings
+ Kaindy-Kant
+ 
+ Created by Niko on 11/6/17.
+ Copyright © 2017 NeoBis. All rights reserved.
+ */
+
+
+
+"LanguageOfBundle" = "Kyrgyz - Кыргызча";
+
+"about_app" = "Тиркеме жөнүндө";
+"add_field" = "Аянт кошуу";
+"address" = "Дарек";
+"agreement1" = "Макулдук №1";
+"agreement2" = "Макулдук №2";
+"applications" = "Арыз";
+"back" = "Артка";
+"birth_date" = "Туулган күн";
+"buy" = "Сатып алуу";
+"change" = "өзгөртүү";
+"changes" = "өзгөртүү";
+"choose_language" = "Тил тандаңыз";
+"change_photo" = "сүрөт өзгөртүү";
+"change_password" = "пароль өзгөртүү";
+"confirm" = "Ырастоо";
+"contract" = "Контракт/Макулдуулук";
+"current_password" = "Азыркы паролунуз";
+"day" = "Күн";
+"night" = "Түн";
+"close_drawer" = "жабуу";
+"field" = "Талаа";
+"finish" = "Бүтүрүү";
+"hectar" = "Гектар";
+"hektar" = "Гектар";
+"kyrgyz" = "Кыргызча";
+"logout" = "Чыгуу";
+"main_menu" = "Алгачкы";
+"my_field" = "Менин талаам";
+"year" = "Жыл";
+"week" = "Жума";
+"weather" = "Аба ырайы";
+"technology" = "Технологиялар";
+"surname" = "Фамилиясы";
+"sale" = "Сатуу";
+"russian" = "Орусча";
+"rep_new_password" = "Жаңы паролду кайталыңыз";
+"quantity" = "Саны";
+"price" = "Баа";
+"name" = "өз аты";
+"fathers_name" = "Атасынын аты";
+"budget" = "Бюджет Эсептөө";
+"cancel" = "жокко чыгаруу";
+"calculator_title" = "Механикалаштыруу жана кол эмгек боюнча чыгашалар";
+"city" = "Шаар/Аймак/Айл";
+"cost" = "Баасы (сом)";
+"demand" = "Талап";
+"supply" = "Сунуш";
+"total_sum" = "Жалпы механикалаштыруу жана кол эмгек чыгымдар";
+"services" = "Кызматтар";
+"save" = "Сактоо";
+"save_changes" = "өзгөртүүлөрдү сактоо";
+"news" = "Жаңылактар";
+"phone" = "Уюлдук Телефон";
+"average_yield" = "Орточо салмак-н кирешелүүлүк";
+"district" = "Аймак";
+"email" = "Почта";
+"enter" = "Кирүү";
+"error" = "Жүктөө ишке ашкан жок!";
+"exchange_rate" = "Валюта курсу";
+"expenses" = "Керектөөнүн чыгымдары (сом)";
+"hint_password" = "Пароль";
+"job_types" = "Иштин түрлөрү";
+"local" = "Жергиликтүү маалымат";
+"look_at_the_map" = "Картада көрүү";
+"my_profile" = "Менин профилим";
+"new_password" = "Жаңы паролуңуз";
+"prices" = "Баалар жана шилтемелер";
+"registration" = "Регистрация";
+"suppliers" = "Кызматкерлер";
+"sugar" = "Кургатылган кумшекер оордугуна ылайык (RUB)";
+"sugar_tax" = "Кургатылган кумшекер оордугуна ылайык (RUB)КНСти эсепке алуу менен";
+"total_yield" = "Россахар";
+"jom" = "Кургатылган гранулдашкан жом оордугуна ылайык (RUB)";
+"jom_tax" = "Кургатылган гранулдашкан жом оордугуна ылайык (RUB)КНСти эсепке алуу менен";
+"hint_phone" = "Телефон";
+"hint_username" = "Логин / Аныктоо коду";
+"error1" = "Катаа!";
+"please_add_field" = "Сураныч! Талааны аныктаңыз";
+"draw_first" = "Биринчиден, тартыңыз!";
+"already_drawn" = "Мурунтан эле тартылган";
+"points_to_draw" = "Талааны тартыш үчүн аз дегенде 3 пункт тандыңыз";
+"not_granted_permission" = "Керектүү уруксаттар берилген эмес";
+"fill_field" = "Бош куту! Сураныч, толтурунуз!";
+"choose_year" = "Жыл тандоо:";
+"fail_to_get_field" = "Талаа алынбай калды";
+"fail_to_get_profile" = "Профиль ачылбай акылды";
+"password_not_the_same" = "сырсөздөр дал келбей жатат!";
+
+

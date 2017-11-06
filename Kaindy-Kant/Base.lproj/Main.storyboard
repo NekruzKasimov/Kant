@@ -668,31 +668,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceQ-7A-NDz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9K-E5-9pE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <connections>
+                                            <action selector="openProfilePage:" destination="EyI-rA-lRP" eventType="touchUpInside" id="Hha-N1-Gdo"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Аман Аманов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lad-30-hvB">
-                                        <rect key="frame" x="80" y="121" width="113.5" height="21"/>
+                                        <rect key="frame" x="81" y="121" width="113.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1y-tP-vtt">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="WIA-Ii-WaB">
                                         <rect key="frame" x="92" y="23" width="90" height="90"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="lLI-Va-je7"/>
-                                            <constraint firstAttribute="height" constant="90" id="oJa-Hd-7ks"/>
+                                            <constraint firstAttribute="height" constant="90" id="eaz-aP-ddV"/>
+                                            <constraint firstAttribute="width" constant="90" id="xdw-fw-A6u"/>
                                         </constraints>
-                                        <state key="normal" image="camera"/>
-                                        <connections>
-                                            <action selector="showProfilePage:" destination="EyI-rA-lRP" eventType="touchUpInside" id="O5t-TL-5u4"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="z9K-E5-9pE" firstAttribute="leading" secondItem="ceQ-7A-NDz" secondAttribute="leading" id="FZ2-Dl-jWa"/>
                                     <constraint firstAttribute="bottom" secondItem="lad-30-hvB" secondAttribute="bottom" constant="8" id="HH0-ov-D6q"/>
                                     <constraint firstAttribute="height" constant="150" id="Lkf-vx-Fxv"/>
-                                    <constraint firstItem="m1y-tP-vtt" firstAttribute="leading" secondItem="ceQ-7A-NDz" secondAttribute="leading" constant="92" id="Xlk-kx-PdJ"/>
-                                    <constraint firstItem="lad-30-hvB" firstAttribute="top" secondItem="m1y-tP-vtt" secondAttribute="bottom" constant="8" id="hYa-SU-6g0"/>
-                                    <constraint firstItem="m1y-tP-vtt" firstAttribute="centerX" secondItem="lad-30-hvB" secondAttribute="centerX" id="tYD-ZZ-cH9"/>
+                                    <constraint firstAttribute="bottom" secondItem="z9K-E5-9pE" secondAttribute="bottom" id="QTd-z7-q2B"/>
+                                    <constraint firstAttribute="trailing" secondItem="z9K-E5-9pE" secondAttribute="trailing" id="Wyp-wS-FxF"/>
+                                    <constraint firstItem="lad-30-hvB" firstAttribute="centerX" secondItem="WIA-Ii-WaB" secondAttribute="centerX" id="ajG-46-O6g"/>
+                                    <constraint firstItem="lad-30-hvB" firstAttribute="top" secondItem="WIA-Ii-WaB" secondAttribute="bottom" constant="8" id="nkT-kQ-v0P"/>
+                                    <constraint firstItem="WIA-Ii-WaB" firstAttribute="leading" secondItem="ceQ-7A-NDz" secondAttribute="leading" constant="92" id="ylb-Un-cKG"/>
+                                    <constraint firstItem="z9K-E5-9pE" firstAttribute="top" secondItem="ceQ-7A-NDz" secondAttribute="top" id="zD4-vz-4Ph"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -708,14 +714,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="avatarButton" destination="m1y-tP-vtt" id="sjS-2Q-UzJ"/>
+                        <outlet property="avatarImageView" destination="WIA-Ii-WaB" id="Ehk-HQ-xfK"/>
                         <outlet property="nameLabel" destination="lad-30-hvB" id="Esq-bg-PZ2"/>
                         <outlet property="tablevView" destination="dbf-tc-Vna" id="kNO-Uj-Ipn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cf0-Ly-aOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="-443"/>
+            <point key="canvasLocation" x="1340" y="-443.02848575712147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3TV-wF-4mT">

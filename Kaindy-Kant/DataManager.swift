@@ -94,4 +94,14 @@ class DataManager {
         }
         return years
     }
+    
+    func setLanguage(language: String) {
+        uDefaults.removeObject(forKey: "AppleLanguages")
+        uDefaults.set(language, forKey: "AppleLanguages")
+        uDefaults.synchronize()
+    }
+    
+    func getLanguage() -> String {
+        return uDefaults.string(forKey: "AppleLanguages")!
+    }
 }

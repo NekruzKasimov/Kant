@@ -11,11 +11,10 @@ import SVProgressHUD
 
 class MenuViewController: UIViewController {
     
-    
-    @IBOutlet weak var avatarButton: UIButton! {
+    @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
-            avatarButton.layer.cornerRadius = avatarButton.frame.size.width/2
-            avatarButton.clipsToBounds = true
+            avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width/2
+            avatarImageView.clipsToBounds = true
         }
     }
     
@@ -23,6 +22,10 @@ class MenuViewController: UIViewController {
     var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
     var sbs = ["Main" ,  "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
 
+    @IBAction func openProfilePage(_ sender: Any) {
+        openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
+    }
+    
     @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +35,16 @@ class MenuViewController: UIViewController {
         var user = DataManager.shared.getUserInformation()
         self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"
         SVProgressHUD.dismiss()
-//        if user!["photo"] == "" {
-//            avatarButton.imageView?.image = UIImage(named: "camera")
-//        } else {
-//            let imageToDecode = user!["photo"] as! String
-//            let image = imageToDecode.decode64(imageData: imageToDecode) as! UIImage
-//            avatarButton.imageView?.image = image
-//        }
+        if user!["photo"] == "" {
+            avatarImageView.image = UIImage(named: "camera")
+        } else {
+            let imageToDecode = user!["photo"]
+            let image = imageToDecode?.decode64(imageData: imageToDecode!)
+            avatarImageView.image = image
+        }
     }
     @IBOutlet weak var tablevView: UITableView!
     
-    @IBAction func showProfilePage(_ sender: UIButton) {
-        openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
-    }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {

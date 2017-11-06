@@ -92,12 +92,31 @@ extension UIImage {
         let imageData:NSData = UIImagePNGRepresentation(image)! as NSData
         return imageData.base64EncodedString(options: .lineLength64Characters)
     }
+    
+    func resized(withPercentage percentage: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }
+
 extension String {
 
     func decode64(imageData: String) -> UIImage {
         let dataDecode:NSData = NSData(base64Encoded: imageData, options:.ignoreUnknownCharacters)!
         return UIImage(data: dataDecode as Data)!
+    }
+    
+    func localized(lang:String) -> String? {
+        if let path = Bundle.main.path(forResource: lang, ofType: "lproj") {
+            if let bundle = Bundle(path: path) {
+                return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+            }
+        }
+        
+        return nil;
     }
 }
 
