@@ -23,6 +23,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBOutlet weak var tabBarView: UIView!
     @IBOutlet weak var mapView: UIView!
     var isMapViewAdded = false
+    var fieldsToShow = [Field]()
     var yearChose = 0
     @IBOutlet weak var fieldId: SkyFloatingLabelTextField! {
         didSet {
@@ -54,7 +55,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         addGoogleMap()
         addCurrentLocation()
         //view.addSubview(tabBarView)
@@ -99,6 +100,28 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         map.isMyLocationEnabled = true
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
+        for field in fieldsToShow {
+            var googlePoints: [CLLocationCoordinate2D] = []
+            for coordinate in field.coordinates.array {
+                googlePoints.append(CLLocationCoordinate2D(latitude: (coordinate.latitude as NSString).doubleValue, longitude: (coordinate.longitude as NSString).doubleValue))
+            }
+            setupField(points: googlePoints)
+        }
+        
+    }
+    func setupField(points: [CLLocationCoordinate2D]) {
+        let path = GMSMutablePath()
+        for p in points {
+            path.add(p)
+        }
+        let line = GMSPolyline(path: path)
+        let field = GMSPolygon(path: path)
+        field.strokeWidth = 2.0
+        field.strokeColor = UIColor.green
+        field.map = map
+        line.strokeWidth = 2
+        line.strokeColor = .green
+        line.map = map
     }
     func addCurrentLocation() {
         locationManager.delegate = self

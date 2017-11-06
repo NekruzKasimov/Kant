@@ -124,7 +124,16 @@ class FieldViewController: UIViewController {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         vc.yearChose = self.choseYear
+        vc.fieldsToShow = getFieldsIfExist()
         self.navigationController?.show(vc, sender: self)
+    }
+    func getFieldsIfExist() -> [Field] {
+        for (index, year) in years.enumerated() {
+            if (year.year as NSString).intValue == choseYear {
+                return years[index].fields
+            }
+        }
+        return [Field]()
     }
     
    
@@ -161,7 +170,6 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
     func didPressButton(_ tag: Int) {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
-        
         vc.coordinates = self.years[yearIndex].fields[tag].coordinates
         navigationController?.show(vc, sender: self)
     }

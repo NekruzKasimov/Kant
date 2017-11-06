@@ -34,17 +34,14 @@ class DetailedMapViewController: UIViewController {
         googleMap.mapType = .hybrid
         googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight] 
         view.addSubview(googleMap)
-        
         setupField()
     }
     
     func setupField() {
         let path = GMSMutablePath()
-        
         for p in googlePoints {
             path.add(p)
         }
-        
         let line = GMSPolyline(path: path)
         let field = GMSPolygon(path: path)
         field.strokeWidth = 2.0
