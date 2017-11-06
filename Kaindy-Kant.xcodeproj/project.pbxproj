@@ -103,6 +103,7 @@
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		84A74C5C1FA1CD9500E7AE11 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A74C5B1FA1CD9500E7AE11 /* Field.swift */; };
+		84B4EA2D1FB09B6C005A5A95 /* PopUpYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */; };
 		84BEAA9E1F8F65C500D6A647 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEAA9D1F8F65C500D6A647 /* Currency.swift */; };
 		84CEC66C1FAD8E6F00D6198D /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */; };
 		84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D519491F8B6BDE00512102 /* DataManager.swift */; };
@@ -241,6 +242,7 @@
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		84A74C5B1FA1CD9500E7AE11 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYearViewController.swift; sourceTree = "<group>"; };
 		84BEAA9D1F8F65C500D6A647 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
 		84D519491F8B6BDE00512102 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				23205AEF1F62391800D58F5B /* Profile.storyboard */,
 				23205AF31F6239B900D58F5B /* ProfileViewController.swift */,
 				84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */,
+				84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1036,6 +1039,7 @@
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
 				232AD4651F992B48007736B3 /* Technologies.swift in Sources */,
 				1F7898591F9635D8001E12FE /* LocalNewsViewController.swift in Sources */,
+				84B4EA2D1FB09B6C005A5A95 /* PopUpYearViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				84CEC66C1FAD8E6F00D6198D /* FieldViewController.swift in Sources */,

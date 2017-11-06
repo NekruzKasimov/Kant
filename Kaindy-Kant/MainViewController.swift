@@ -60,15 +60,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else {
             self.user = NewUser()
         }
-        
-        if DataManager.shared.getServices() == nil {
-            ServerManager.shared.getServices(setServices, error: { (error) in
-                SVProgressHUD.dismiss()
-                self.showErrorAlert(message: error)
-            })
-        } else {
-            services = DataManager.shared.getServices()
-        }
+        ServerManager.shared.getServices(setServices, error: { (error) in
+            self.showErrorAlert(message: error)
+        })
+//        if DataManager.shared.getServices() == nil {
+//
+//        } else {
+//            services = DataManager.shared.getServices()
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,6 +82,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setServices(services: Services) {
+        SVProgressHUD.dismiss()
         self.services = services
         DataManager.shared.setServices(Services: self.services!)
         collectionView.reloadData()

@@ -15,12 +15,13 @@ class DetailedMapViewController: UIViewController {
     
     var googleMap: GMSMapView!
     var googlePoints: [CLLocationCoordinate2D] = []
-    var coordinates = [Coordinate]()
+    var coordinates: Coordinates?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Карта"
-        for coordinate in coordinates {
+        for coordinate in (coordinates?.array)! {
             googlePoints.append(CLLocationCoordinate2D(latitude: (coordinate.latitude as NSString).doubleValue, longitude: (coordinate.longitude as NSString).doubleValue))
         }
         setupMap()

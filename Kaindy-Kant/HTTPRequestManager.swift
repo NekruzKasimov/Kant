@@ -39,12 +39,7 @@ class HTTPRequestManager {
         }
         apiUrl.remove(at: apiUrl.index(before: apiUrl.endIndex))
         print(apiUrl)
-        print(tempParam)
-        let cookieJar = HTTPCookieStorage.shared
-        for cookie in cookieJar.cookies! {
-            print(cookie.name+"="+cookie.value)
-            cookieJar.deleteCookie(cookie)
-        }
+        
         var header: HTTPHeaders = [:]
         if let token = UserDefaults.standard.string(forKey: "token") {
             header = ["Authorization" : "Bearer \(token)"]

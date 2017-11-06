@@ -23,6 +23,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBOutlet weak var tabBarView: UIView!
     @IBOutlet weak var mapView: UIView!
     var isMapViewAdded = false
+    var yearChose = 0
     @IBOutlet weak var fieldId: SkyFloatingLabelTextField! {
         didSet {
             fieldId.accessibilityIdentifier = "fieldId"
@@ -44,13 +45,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             configureTextField(textField: averageYield)
         }
     }
-    @IBOutlet weak var fieldYear: SkyFloatingLabelTextField! {
-        didSet {
-            fieldYear.accessibilityIdentifier = "fieldYear"
-            GlobalFunctions.configure(textField: fieldYear, withText: "Год", placeholder: "Год", tag: 2)
-            configureTextField(textField: fieldYear)
-        }
-    }
     
     let resetButton = UIButton()
    // var map: GMSMapView!
@@ -70,16 +64,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     @IBAction func saveFiledBtn(_ sender: Any) {
         
-        if (fieldHectare.text == "" || averageYield.text == "" || fieldYear.text == "") {
+        if (fieldHectare.text == "" || averageYield.text == "") {
             showErrorAlert(message: "Добавите данные")
-            
         } else {
-            var coordinates = [Coordinate]()
+            let coordinates = Coordinates()
             for coordinate in points {
                 let c = Coordinate(latitude: "\(coordinate.coordinate.latitude)", longitude: "\(coordinate.coordinate.longitude)", number: coordinate.number)
-                coordinates.append(c)
+                coordinates.array.append(c)
             }
-            let field = FieldToAdd(field_id: fieldId.text!, year: Int((fieldYear.text! as NSString).intValue), hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue)
+            let field = FieldToAdd(field_id: fieldId.text!, year: yearChose, hectares: (fieldHectare.text! as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            
@@ -133,7 +126,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
         let line = GMSPolyline(path: path)
         line.strokeWidth = 2.0
-        line.strokeColor = .white
+        line.strokeColor = .green
         line.map = map
     }
     
@@ -145,7 +138,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         let route = GMSPolygon(path: path)
         route.strokeWidth = 2.0
-        route.strokeColor = .white
+        route.strokeColor = .green
         route.map = map
     }
     
@@ -214,6 +207,12 @@ extension MapViewController {
     func showMapView() {
         if isMapViewAdded {
             mapView.isHidden = false
+            mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
+            mapView.alpha = 0
+            UIView.animate(withDuration: 0.4) {
+                self.mapView.alpha = 1
+                self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
+            }
         }
         else {
             isMapViewAdded = true
@@ -223,12 +222,12 @@ extension MapViewController {
         mapView.alpha = 0
         UIView.animate(withDuration: 0.4) {
             self.mapView.alpha = 1
-            self.mapView.center = self.view.center
+            self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
         }
     }
     
     func dismissMapView() {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height)
             self.mapView.alpha = 0
         }) { (success) in

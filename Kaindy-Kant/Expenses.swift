@@ -29,6 +29,8 @@ struct Expense {
 
 class Expenses: NSObject {
     var array: Array = Array<Expense>()
+    override init() {
+    }
     init(json: JSON) {
         let jsonArr:[JSON] = json.arrayValue
         for json in jsonArr {

@@ -28,20 +28,32 @@ struct Coordinate {
         return ["latitude": latitude, "longitude": longitude, "number": number]
     }
 }
+class Coordinates: NSObject {
+    var array: Array = Array<Coordinate>()
+    override init() {
+    }
+    init(json: JSON) {
+        let jsonArr:[JSON] = json.arrayValue
+        for json in jsonArr {
+            let tempObject = Coordinate(json:json)
+            array.append(tempObject)
+        }
+    }
+}
 struct Field {
+    var id: Int
     var field_id: String
     var hectares: Double
     var average_harvest: Double
-    var coordinates: Array = Array<Coordinate>()
+    var coordinates: Coordinates
+    var expenses: Expenses
     init(json: JSON) {
+        id = json["id"].intValue
         field_id = json["field_id"].stringValue
         hectares = json["hectares"].doubleValue
         average_harvest = json["average_harvest"].doubleValue
-        let jsonArr:[JSON] = json["coordinates"].arrayValue
-        for json in jsonArr {
-            let tempCoordinate = Coordinate(json:json)
-            coordinates.append(tempCoordinate)
-        }
+        coordinates = Coordinates(json: json["coordinates"])
+        expenses = Expenses(json: json["expenses"])
     }
 }
 struct Year {

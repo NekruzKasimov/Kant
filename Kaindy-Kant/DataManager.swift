@@ -54,6 +54,13 @@ class DataManager {
         uDefaults.removeObject(forKey: "password")
         uDefaults.removeObject(forKey: "token")
         uDefaults.removeObject(forKey: "user_information")
+        
+        let cookieJar = HTTPCookieStorage.shared
+        for cookie in cookieJar.cookies! {
+            print(cookie.name+"="+cookie.value)
+            cookieJar.deleteCookie(cookie)
+        }
+        
 
     }
     func setUserId(user_id: Int) {
@@ -76,5 +83,15 @@ class DataManager {
     }
     func getYears() -> [Year]{
         return self.years
+    }
+    func getYears() -> [Int] {
+        let date = Date()
+        let calendar = Calendar.current
+        let currentYear = calendar.component(.year, from: date)
+        var years = [Int]()
+        for year in 1970...currentYear {
+            years.append(year)
+        }
+        return years
     }
 }
