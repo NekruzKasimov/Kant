@@ -39,12 +39,11 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
         configureTableView()
         SVProgressHUD.show()
         self.title = "Рассчитать бюджет"
         if fieldId == -1 {
-            
+            setNavigationBar()
             ServerManager.shared.getExpenses(setExpenses) { (error) in
                 SVProgressHUD.dismiss()
                 self.showErrorAlert(message: error)
