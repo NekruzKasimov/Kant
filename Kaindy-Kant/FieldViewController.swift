@@ -171,6 +171,7 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
         vc.coordinates = self.years[yearIndex].fields[tag].coordinates
+        vc.field_id = self.years[yearIndex].fields[tag].id
         navigationController?.show(vc, sender: self)
     }
 }

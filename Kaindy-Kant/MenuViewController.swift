@@ -19,9 +19,9 @@ class MenuViewController: UIViewController {
         }
     }
     
-    var menu = ["Главная", "Новости" , "Услуги" , "Поставщики" , "Рассчитать бюджет", "О приложении" ,  "Выход"]
-    var navigations = ["MainNav" , "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
-    var sbs = ["Main" ,  "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
+    var menu = ["Главная", "Мои поля", "Новости" , "Услуги" , "Поставщики" , "Рассчитать бюджет", "О приложении" ,  "Выход"]
+    var navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
+    var sbs = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
 
     @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
@@ -74,7 +74,6 @@ extension MenuViewController {
         tablevView.estimatedRowHeight           = 60
         tablevView.rowHeight                    = UITableViewAutomaticDimension
     }
-    
     func openPage(storyboard: String, vcIdentifier: String) {
         let revealVC = revealViewController()
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
