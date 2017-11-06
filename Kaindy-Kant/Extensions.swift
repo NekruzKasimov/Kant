@@ -29,7 +29,7 @@ extension UIViewController {
     func showErrorAlert(message: String) {
         //HUD.hide()
         SVProgressHUD.dismiss()
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
