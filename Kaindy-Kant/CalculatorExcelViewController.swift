@@ -13,6 +13,7 @@ enum ExcelSections : Int {
     case first = 0
     case items = 1
     case total = 2
+    case save = 3
     
     func getItemsCount() -> Int {
         switch self {
@@ -22,16 +23,18 @@ enum ExcelSections : Int {
             return 1
         case .total:
             return 1
+        case .save:
+            return 1
         }
     }
 }
 
-class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SaveButtonDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var expenses: Expenses?
-    
+    var fieldId = -1
     var totalIndexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -40,9 +43,18 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         configureTableView()
         SVProgressHUD.show()
         self.title = "Рассчитать бюджет"
-        ServerManager.shared.getExpenses(setExpenses) { (error) in
-            SVProgressHUD.dismiss()
-            self.showErrorAlert(message: error)
+        if fieldId == -1 {
+            
+            ServerManager.shared.getExpenses(setExpenses) { (error) in
+                SVProgressHUD.dismiss()
+                self.showErrorAlert(message: error)
+            }
+        }
+        else {
+            ServerManager.shared.getFieldExpenses(field_id: fieldId, setExpenses) { (error) in
+                SVProgressHUD.dismiss()
+                self.showErrorAlert(message: error)
+            }
         }
     }
     
@@ -59,7 +71,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
 extension CalculatorExcelViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,7 +100,19 @@ extension CalculatorExcelViewController {
             self.totalIndexPath = indexPath
             cell.totalLabel.text = "\(CalculatorExcelLogicController.shared.totalValue)"
             return cell
+        case .save:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SaveTableViewCell") as! SaveTableViewCell
+            cell.cellDelegate = self
+            return cell
         }
+    }
+    func didPressButton(_ tag: Int) {
+        if fieldId == -1 {
+            let sb = UIStoryboard(name: "Profile", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
+            self.navigationController?.show(vc, sender: self)
+        }
+        print("save expenses")
     }
 }
 

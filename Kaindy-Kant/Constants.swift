@@ -36,6 +36,7 @@ struct Constants {
             static let GetServices = "api/service"
             static let GetTechnologies = "api/technology"
             static let GetSuppliers = "api/supplier"
+            static let FieldExpenses = "api/expenses/field"
         }
     }
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
         <!--Calculator Excel View Controller-->
         <scene sceneID="35w-0c-qJ6">
             <objects>
-                <viewController id="PYu-LT-zju" customClass="CalculatorExcelViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorExcelViewController" id="PYu-LT-zju" customClass="CalculatorExcelViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hmZ-Pg-h4R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,6 +229,38 @@
                                             <outlet property="totalLabel" destination="gL5-xz-dP9" id="akB-vh-lQu"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SaveTableViewCell" id="J02-I2-yOA" customClass="SaveTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="407" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J02-I2-yOA" id="QnN-1M-2uL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0A-VC-Abh">
+                                                    <rect key="frame" x="30" y="5" width="315" height="33.5"/>
+                                                    <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Сохранить">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="saveExpensesPressed:" destination="J02-I2-yOA" eventType="touchUpInside" id="DnU-OP-ZpE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s0A-VC-Abh" firstAttribute="top" secondItem="QnN-1M-2uL" secondAttribute="top" constant="5" id="6NI-nu-SDj"/>
+                                                <constraint firstAttribute="trailing" secondItem="s0A-VC-Abh" secondAttribute="trailing" constant="30" id="NqS-t9-qn9"/>
+                                                <constraint firstAttribute="bottom" secondItem="s0A-VC-Abh" secondAttribute="bottom" constant="5" id="ZyG-b6-VAu"/>
+                                                <constraint firstItem="s0A-VC-Abh" firstAttribute="leading" secondItem="QnN-1M-2uL" secondAttribute="leading" constant="30" id="hBC-aE-qgS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="PYu-LT-zju" id="Da2-X0-d8j"/>
@@ -252,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6I4-1b-HU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567.20000000000005" y="152.47376311844079"/>
+            <point key="canvasLocation" x="641" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9PL-pe-mwB">

@@ -48,11 +48,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     }
     
     let resetButton = UIButton()
+    let saveButton = UIButton()
+    let addInfoButton = UIButton()
+
    // var map: GMSMapView!
     var points: [MapCoordinate] = []
     var locationManager = CLLocationManager()
     lazy var map = GMSMapView()
 
+    @IBOutlet weak var hideButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -60,9 +64,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         addCurrentLocation()
         //view.addSubview(tabBarView)
         addResetButton()
+        addAddInfoButton()
         addSaveButton()
     }
-    
+    @IBAction func hideButtonPressed(_ sender: Any) {
+        dismissMapView()
+    }
     @IBAction func saveFiledBtn(_ sender: Any) {
         
         if (fieldHectare.text == "" || averageYield.text == "") {
@@ -83,11 +90,29 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBAction func hideMapView(_ sender: UIButton) {
         //self.dismissMapView()
         dismissMapView()
+
     }
-    
-    func fieldAdded(message: String){
+    func askForOpeningExcel(id: Int){
+        let alert = UIAlertController(title: "", message: "Расчитать бюджет для данного поля?", preferredStyle: .alert)
+        //Cancel
+        alert.addAction(UIAlertAction(title: "Пропустить", style: .cancel, handler: { (acrion) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        //Add
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
+            print("ok")
+            let sb = UIStoryboard(name: "CalculatorExcelViewController", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
+            vc.fieldId = id
+            self.navigationController?.show(vc, sender: self)
+        }))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    func fieldAdded(id: Int){
+        
         SVProgressHUD.dismiss()
-        self.navigationController?.popViewController(animated: true)
+        askForOpeningExcel(id: id)
     }
     
     func addGoogleMap() {
@@ -100,6 +125,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         map.isMyLocationEnabled = true
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
+        
+        fillExistingFields()
+    }
+    func fillExistingFields() {
         for field in fieldsToShow {
             var googlePoints: [CLLocationCoordinate2D] = []
             for coordinate in field.coordinates.array {
@@ -107,7 +136,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             }
             setupField(points: googlePoints)
         }
-        
     }
     func setupField(points: [CLLocationCoordinate2D]) {
         let path = GMSMutablePath()
@@ -176,14 +204,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     }
     
     func addSaveButton() {
-        let saveButton = UIButton()
         saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
-        saveButton.setTitle("Сохранить", for: .normal)
+        saveButton.setTitle("Соеденить", for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.layer.cornerRadius = 2
         saveButton.backgroundColor = UIColor.init(netHex: Colors.purple)
         saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
         view.addSubview(saveButton)
+    }
+    func addAddInfoButton(){
+        addInfoButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
+        addInfoButton.setTitle("Сохранить", for: .normal)
+        addInfoButton.setTitleColor(.white, for: .normal)
+        addInfoButton.layer.cornerRadius = 2
+        addInfoButton.backgroundColor = UIColor.init(netHex: Colors.purple)
+        addInfoButton.addTarget(self, action: #selector(addInfoButtonClicked), for: .touchUpInside)
+        view.addSubview(addInfoButton)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations.last
@@ -202,8 +238,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 extension MapViewController {
     
     func resetButtonClicked() {
+        //self.addInfoButton.removeFromSuperview()
+        //self.addSaveButton()
+        self.saveButton.isHidden = false
         points.removeAll()
         map.clear()
+        fillExistingFields()
     }
     
     func saveButtonClicked() {
@@ -215,36 +255,41 @@ extension MapViewController {
     }
     
     func acceptFiled() {
-        let alert = UIAlertController(title: "", message: "Соединить точки и добавить данные?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Соединить точки?", preferredStyle: .alert)
         //Cancel
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (acrion) in
         }))
         //Add
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
-            self.showMapView()
+            self.saveButton.isHidden = true
+            //self.saveButton.removeFromSuperview()
+            //self.addAddInfoButton()
         }))
         present(alert, animated: true, completion: nil)
     }
-    
+   
+    func addInfoButtonClicked(){
+        self.showMapView()
+    }
     func showMapView() {
         if isMapViewAdded {
             mapView.isHidden = false
-            mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
-            mapView.alpha = 0
-            UIView.animate(withDuration: 0.4) {
-                self.mapView.alpha = 1
-                self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
-            }
+            hideButton.isHidden = false
         }
         else {
             isMapViewAdded = true
+            //mapView.isHidden = false
+            self.view.addSubview(hideButton)
             self.view.addSubview(mapView)
         }
         mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
+        self.hideButton.backgroundColor = UIColor.black
         mapView.alpha = 0
+        hideButton.alpha = 0
         UIView.animate(withDuration: 0.4) {
             self.mapView.alpha = 1
+            self.hideButton.alpha = 0.5
             self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
         }
     }
@@ -253,7 +298,9 @@ extension MapViewController {
         UIView.animate(withDuration: 0.4, animations: {
             self.mapView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height)
             self.mapView.alpha = 0
+            self.hideButton.alpha = 0
         }) { (success) in
+            self.hideButton.isHidden = true
             self.mapView.isHidden = true
         }
     }

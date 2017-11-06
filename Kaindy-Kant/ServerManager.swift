@@ -99,6 +99,12 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
         
     }
+    func getFieldExpenses(field_id: Int,_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.FieldExpenses)/\(field_id)", serverType: .kant, completion: { (success) in
+            completion(Expenses(json: success))
+        }, error: error)
+        
+    }
     
     func getSugarJom(_ completion: @escaping (SugarJom)-> Void, error: @escaping (String)-> Void) {
         self.get(endpoint: "\(Constants.Network.EndPoints.SugarJom)", serverType: .kant, completion: { (success) in
@@ -123,11 +129,12 @@ class ServerManager: HTTPRequestManager  {
             completion(Services(json: success))
         }, error: error)
     }
-    func addField(field: FieldToAdd, _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
+    func addField(field: FieldToAdd, _ completion: @escaping (Int)-> Void, error: @escaping (String)-> Void) {
         print(field.getFieldToAddDictionary())
         self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: field.getFieldToAddDictionary(), completion: { (json) in
-            let message = json["Success"].stringValue
-            completion(message)
+            print(json)
+            let id = json["id"].intValue
+            completion(id)
         }, error: error)
     }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
