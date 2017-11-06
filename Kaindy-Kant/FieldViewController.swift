@@ -22,6 +22,8 @@ class FieldViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Мои поля"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить", style: .plain, target: self, action: #selector(addTapped))
+
         self.yearsPicker = DataManager.shared.getYears()
         choseYear = yearsPicker[yearsPicker.count - 1]
         setNavigationBar()
@@ -29,6 +31,19 @@ class FieldViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 0
         //self.years = DataManager.shared.getYears()
         // Do any additional setup after loading the view.
+    }
+    func addTapped(){
+        self.viewForYearPicker.isHidden = false
+        self.hideButton.isHidden = false
+        self.hideButton.backgroundColor = UIColor.black
+        viewForYearPicker.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
+        viewForYearPicker.alpha = 0
+        hideButton.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            self.hideButton.alpha = 0.5
+            self.viewForYearPicker.alpha = 1
+            self.viewForYearPicker.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
+        }
     }
     @IBAction func hideButtonPressed(_ sender: Any) {
         self.viewForYearPicker.isHidden = true
