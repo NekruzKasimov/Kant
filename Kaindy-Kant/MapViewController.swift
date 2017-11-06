@@ -90,11 +90,29 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBAction func hideMapView(_ sender: UIButton) {
         //self.dismissMapView()
         dismissMapView()
+
     }
-    
-    func fieldAdded(message: String){
+    func askForOpeningExcel(id: Int){
+        let alert = UIAlertController(title: "", message: "Расчитать бюджет для данного поля?", preferredStyle: .alert)
+        //Cancel
+        alert.addAction(UIAlertAction(title: "Пропустить", style: .cancel, handler: { (acrion) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        //Add
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
+            print("ok")
+            let sb = UIStoryboard(name: "CalculatorExcelViewController", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
+            vc.fieldId = id
+            self.navigationController?.show(vc, sender: self)
+        }))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    func fieldAdded(id: Int){
+        
         SVProgressHUD.dismiss()
-        self.navigationController?.popViewController(animated: true)
+        askForOpeningExcel(id: id)
     }
     
     func addGoogleMap() {

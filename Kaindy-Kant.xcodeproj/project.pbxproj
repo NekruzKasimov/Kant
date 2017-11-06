@@ -104,6 +104,7 @@
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		84A74C5C1FA1CD9500E7AE11 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A74C5B1FA1CD9500E7AE11 /* Field.swift */; };
 		84B4EA2D1FB09B6C005A5A95 /* PopUpYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */; };
+		84B4EA2F1FB0D219005A5A95 /* SaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */; };
 		84BEAA9E1F8F65C500D6A647 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEAA9D1F8F65C500D6A647 /* Currency.swift */; };
 		84CEC66C1FAD8E6F00D6198D /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */; };
 		84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D519491F8B6BDE00512102 /* DataManager.swift */; };
@@ -243,6 +244,7 @@
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		84A74C5B1FA1CD9500E7AE11 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYearViewController.swift; sourceTree = "<group>"; };
+		84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTableViewCell.swift; sourceTree = "<group>"; };
 		84BEAA9D1F8F65C500D6A647 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
 		84D519491F8B6BDE00512102 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 				23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */,
 				23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */,
 				23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */,
+				84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */,
 			);
 			name = CalculatorExcelTableViewCell;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B4EA2F1FB0D219005A5A95 /* SaveTableViewCell.swift in Sources */,
 				2397A2801F8CB8A700606660 /* BranchesMapTableViewCell.swift in Sources */,
 				2397A2811F8CB8A700606660 /* BranchesTableViewCell.swift in Sources */,
 				23727DF31FA308A3009BC273 /* GlobalFunctions.swift in Sources */,
