@@ -148,16 +148,13 @@ class FieldViewController: UIViewController {
         
         SVProgressHUD.dismiss()
         segmentedControl.segmentStyle = .textOnly
-        for (index, year) in years.years.enumerated() {
-            segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
-        }
+        var goToFirst = false
         if self.years.count == 0 {
             for (index, year) in years.years.enumerated() {
                 segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
             }
         }
         else {
-
             for (index, year) in years.years.enumerated() {
                 var isAppeared = false
                 for yearOld in self.years {
@@ -167,12 +164,31 @@ class FieldViewController: UIViewController {
                 }
                 if !isAppeared {
                     segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
+                    break
+                }
+            }
+            for (index, yearOld) in self.years.enumerated() {
+                var isAppeared = false
+                for year in years.years {
+                    if yearOld.year == year.year {
+                        isAppeared = true
+                    }
+                }
+                if !isAppeared {
+                    goToFirst = true
+                    segmentedControl.removeSegment(at: index)
+                    break
                 }
             }
 
         }
+        if goToFirst {
+            segmentedControl.selectedSegmentIndex = 0
+        }
+        else {
+            segmentedControl.selectedSegmentIndex = yearIndex
+        }
         self.years = years.years
-        segmentedControl.selectedSegmentIndex = 0
         segmentedControl.underlineSelected = true
         segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
         // change some colors
@@ -304,7 +320,7 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         present(alert, animated: true, completion: nil)
     }
     func deleteField(message: String)  {
-        ServerManager.shared.getFields(setFiledAfterDeleting, error: showErrorAlert)
+        ServerManager.shared.getFields(setFields, error: showErrorAlert)
         print(message)
     }
 }
