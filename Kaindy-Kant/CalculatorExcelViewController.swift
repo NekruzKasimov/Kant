@@ -59,6 +59,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
     
     func setExpenses(expenses: Expenses) {
         SVProgressHUD.dismiss()
+        DataManager.shared.setExpenses(expenses: expenses)
         self.expenses = expenses
         CalculatorExcelLogicController.shared.updateTotalValues(expenses: self.expenses!)
         tableView.reloadData()
@@ -109,6 +110,8 @@ extension CalculatorExcelViewController {
         }
     }
     func didPressButton(_ tag: Int) {
+        print(expenses)
+        print(DataManager.shared.getExpenses())
         if fieldId == -1 {
             let sb = UIStoryboard(name: "Profile", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController

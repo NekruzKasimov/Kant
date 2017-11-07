@@ -22,6 +22,7 @@ class DataManager {
     var uDefaults = UserDefaults.standard
     var services: Services?
     var years = Years().years
+    var expenses = [[String: Any]]()
     func setServices(Services: Services) {
         self.services = Services
     }
@@ -29,7 +30,18 @@ class DataManager {
     func getServices() -> Services? {
         return self.services
     }
-    
+    func setExpenses(expenses: Expenses) {
+        for expense in expenses.array {
+            self.expenses.append(expense.to_dictionary())
+        }
+    }
+    func update(index: Int, price: Int, amount: Int) {
+        self.expenses[index].updateValue(price, forKey: "price")
+        self.expenses[index].updateValue(amount, forKey: "amount")
+    }
+    func getExpenses() -> [[String: Any]] {
+        return expenses
+    }
     func saveUser(username: String, password: String) {
         uDefaults.set(username, forKey: "username")
         uDefaults.set(password, forKey: "password")

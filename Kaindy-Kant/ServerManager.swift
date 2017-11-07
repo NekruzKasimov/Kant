@@ -151,6 +151,13 @@ class ServerManager: HTTPRequestManager  {
             completion(message)
         }, error: error)
     }
+    func updateExpenses(parameters: [String: Any], _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
+        print(parameters)
+        self.patch(endpoint: "\(Constants.Network.EndPoints.Expenses)", serverType: .kant, parameters: parameters, completion: { (json) in
+            let message = json["success"].stringValue
+            completion(message)
+        }, error: error)
+    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

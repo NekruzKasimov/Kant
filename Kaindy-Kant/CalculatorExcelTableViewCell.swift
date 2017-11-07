@@ -55,6 +55,7 @@ extension CalculatorExcelTableViewCell {
     func textFieldDidChange() {
         let price = priceTF.text == "" ? Int(priceTF.placeholder!)! : Int(priceTF.text!)!
         let amount = amountTF.text == "" ? Int(amountTF.placeholder!)! : Int(amountTF.text!)!
+        DataManager.shared.update(index: self.tag - 1, price: price, amount: amount)
         valueChangeHandler?(price * amount, self.tag)
         self.totalLabel.text = "\(price * amount)"
         reloadInputViews()
