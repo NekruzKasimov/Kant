@@ -59,7 +59,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBOutlet weak var hideButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        self.title = "Карта"
         addGoogleMap()
         addCurrentLocation()
         //view.addSubview(tabBarView)

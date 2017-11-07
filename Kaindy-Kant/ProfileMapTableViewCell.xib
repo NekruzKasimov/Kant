@@ -105,6 +105,9 @@
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="updateFieldPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6vC-vk-Vuc"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUB-su-rXR">
                         <rect key="frame" x="282.5" y="215" width="228.5" height="30"/>
@@ -118,6 +121,9 @@
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="deleteFieldPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5RA-e6-pCB"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

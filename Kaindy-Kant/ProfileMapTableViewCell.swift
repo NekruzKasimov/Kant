@@ -8,7 +8,7 @@
 
 import UIKit
 protocol ButtonDelegate : class {
-    func didPressButton(_ tag: Int)
+    func didPressButton(_ tag: Int, _ action: String)
 }
 class ProfileMapTableViewCell: UITableViewCell {
     weak var cellDelegate: ButtonDelegate?
@@ -29,7 +29,14 @@ class ProfileMapTableViewCell: UITableViewCell {
     @IBOutlet weak var totalLabel: UILabel!
     
     @IBAction func showInMap(_ sender: Any) {
-        cellDelegate?.didPressButton(self.tag)
+        cellDelegate?.didPressButton(self.tag, "show")
+    }
+    @IBAction func deleteFieldPressed(_ sender: Any) {
+        cellDelegate?.didPressButton(self.tag, "delete")
+    }
+    @IBAction func updateFieldPressed(_ sender: Any) {
+        cellDelegate?.didPressButton(self.tag, "update")
+
     }
     
 }

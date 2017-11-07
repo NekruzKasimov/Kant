@@ -137,6 +137,20 @@ class ServerManager: HTTPRequestManager  {
             completion(id)
         }, error: error)
     }
+    func deleteField(field_id: Int,_ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
+        self.delete(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(field_id)", serverType: .kant, completion: { (success) in
+            let message = success["success"].stringValue
+            completion(message)
+        }, error: error)
+        
+    }
+    func updateField(field_id: Int, parameters: [String: String], _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
+        print(parameters)
+        self.patch(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(field_id)", serverType: .kant, parameters: parameters, completion: { (json) in
+            let message = json["success"].stringValue
+            completion(message)
+        }, error: error)
+    }
 //    func getContactTypes(_ completion: @escaping (ContactTypes)-> Void, error: @escaping (String)-> Void) {
 //
 //        post(api: "addSubCategories",

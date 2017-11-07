@@ -104,6 +104,9 @@ class HTTPRequestManager {
     internal func get(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
     }
+    internal func delete(endpoint: String, serverType: ServerType, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .delete, endpoint: endpoint, serverType: serverType, parameters: nil, completion: completion, error: error)
+    }
     internal func patch(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         request(method: .patch, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
     }

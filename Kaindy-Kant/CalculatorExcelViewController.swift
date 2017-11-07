@@ -70,6 +70,9 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
 extension CalculatorExcelViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if fieldId == -1 {
+            return 3
+        }
         return 4
     }
     
