@@ -26,7 +26,6 @@
 		1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893AA1F61523700FD2C5D /* Extensions.swift */; };
 		1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893B21F61546400FD2C5D /* Service.storyboard */; };
 		1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893B41F61547000FD2C5D /* ServiceViewController.swift */; };
-		1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893B71F61561D00FD2C5D /* Provider.storyboard */; };
 		1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */; };
 		1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5893C11F61583200FD2C5D /* Login.storyboard */; };
 		1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5893C31F61583E00FD2C5D /* LoginViewController.swift */; };
@@ -41,12 +40,14 @@
 		1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */; };
 		2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */; };
 		23205AE81F62378100D58F5B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AE71F62378100D58F5B /* Colors.swift */; };
-		23205AF01F62391800D58F5B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23205AEF1F62391800D58F5B /* Profile.storyboard */; };
 		23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205AF31F6239B900D58F5B /* ProfileViewController.swift */; };
 		232AD4611F98DF73007736B3 /* TechnologiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AD4601F98DF73007736B3 /* TechnologiesViewController.swift */; };
 		232AD4631F991868007736B3 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AD4621F991868007736B3 /* Services.swift */; };
 		232AD4651F992B48007736B3 /* Technologies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AD4641F992B48007736B3 /* Technologies.swift */; };
 		232AD4671F993576007736B3 /* TechnologiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AD4661F993576007736B3 /* TechnologiesListViewController.swift */; };
+		2344C05E1FB0DC24005C97CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2344C0601FB0DC24005C97CD /* Localizable.strings */; };
+		2344C06F1FB0E522005C97CD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2344C06E1FB0E522005C97CD /* Profile.storyboard */; };
+		2344C0731FB0E55B005C97CD /* Provider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2344C0721FB0E55B005C97CD /* Provider.storyboard */; };
 		235E28521F7A8B4A00378759 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E28511F7A8B4A00378759 /* Expenses.swift */; };
 		23727DF31FA308A3009BC273 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23727DF21FA308A3009BC273 /* GlobalFunctions.swift */; };
 		2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */; };
@@ -158,7 +159,6 @@
 		1F5893AA1F61523700FD2C5D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1F5893B21F61546400FD2C5D /* Service.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
 		1F5893B41F61547000FD2C5D /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
-		1F5893B71F61561D00FD2C5D /* Provider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Provider.storyboard; sourceTree = "<group>"; };
 		1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderViewController.swift; sourceTree = "<group>"; };
 		1F5893C11F61583200FD2C5D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1F5893C31F61583E00FD2C5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -173,12 +173,17 @@
 		1FE137721F6FB6AD00B7926B /* DetailedService.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailedService.storyboard; sourceTree = "<group>"; };
 		2319A3711F7BB96F00F787D3 /* CalculatorExcelLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelLogicController.swift; sourceTree = "<group>"; };
 		23205AE71F62378100D58F5B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		23205AEF1F62391800D58F5B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		23205AF31F6239B900D58F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		232AD4601F98DF73007736B3 /* TechnologiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologiesViewController.swift; sourceTree = "<group>"; };
 		232AD4621F991868007736B3 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		232AD4641F992B48007736B3 /* Technologies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technologies.swift; sourceTree = "<group>"; };
 		232AD4661F993576007736B3 /* TechnologiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologiesListViewController.swift; sourceTree = "<group>"; };
+		2344C05C1FB0DBF3005C97CD /* ky */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ky; path = ky.lproj/Main.strings; sourceTree = "<group>"; };
+		2344C05D1FB0DBF4005C97CD /* ky */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ky; path = ky.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2344C05F1FB0DC24005C97CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2344C0611FB0DC26005C97CD /* ky */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ky; path = ky.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2344C06E1FB0E522005C97CD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		2344C0721FB0E55B005C97CD /* Provider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Provider.storyboard; sourceTree = "<group>"; };
 		235E28511F7A8B4A00378759 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		23727DF21FA308A3009BC273 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		2380AB9E1F6678E10023C5AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +316,7 @@
 		1F5893641F614DB600FD2C5D = {
 			isa = PBXGroup;
 			children = (
+				2344C0601FB0DC24005C97CD /* Localizable.strings */,
 				1F58936F1F614DB600FD2C5D /* Kaindy-Kant */,
 				1F5893841F614DB600FD2C5D /* Kaindy-KantTests */,
 				1F58938F1F614DB600FD2C5D /* Kaindy-KantUITests */,
@@ -438,8 +444,8 @@
 			isa = PBXGroup;
 			children = (
 				84049AE01F85F2F000BA935F /* Detailed Provider */,
-				1F5893B71F61561D00FD2C5D /* Provider.storyboard */,
 				1F5893B91F61562B00FD2C5D /* ProviderViewController.swift */,
+				2344C0721FB0E55B005C97CD /* Provider.storyboard */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -512,7 +518,7 @@
 				1F781B201F82452D0060B616 /* Map */,
 				8464AABC1F73896400AA4980 /* ChangePassword */,
 				23E1EDFF1F73A7550012C867 /* ProfileMapTableViewCell */,
-				23205AEF1F62391800D58F5B /* Profile.storyboard */,
+				2344C06E1FB0E522005C97CD /* Profile.storyboard */,
 				23205AF31F6239B900D58F5B /* ProfileViewController.swift */,
 				84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */,
 				84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */,
@@ -772,6 +778,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ky,
 			);
 			mainGroup = 1F5893641F614DB600FD2C5D;
 			productRefGroup = 1F58936E1F614DB600FD2C5D /* Products */;
@@ -797,9 +804,10 @@
 				2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
 				23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */,
-				23205AF01F62391800D58F5B /* Profile.storyboard in Resources */,
+				2344C0731FB0E55B005C97CD /* Provider.storyboard in Resources */,
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
 				1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */,
+				2344C05E1FB0DC24005C97CD /* Localizable.strings in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
 				23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */,
 				1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */,
@@ -807,11 +815,11 @@
 				23A8A3681F828A0C0065C5E6 /* NewsCollectionViewCell.xib in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
+				2344C06F1FB0E522005C97CD /* Profile.storyboard in Resources */,
 				8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */,
 				84049AE21F85F32200BA935F /* DetailProvider.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
 				1FC61FCE1F83BC75000BE56A /* News.storyboard in Resources */,
-				1F5893B81F61561D00FD2C5D /* Provider.storyboard in Resources */,
 				84FBB1001F74EE2C00C366B1 /* ProfileMapTableViewCell.xib in Resources */,
 				23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */,
 			);
@@ -1130,6 +1138,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F5893751F614DB600FD2C5D /* Base */,
+				2344C05C1FB0DBF3005C97CD /* ky */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1138,8 +1147,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F58937A1F614DB600FD2C5D /* Base */,
+				2344C05D1FB0DBF4005C97CD /* ky */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2344C0601FB0DC24005C97CD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2344C05F1FB0DC24005C97CD /* en */,
+				2344C0611FB0DC26005C97CD /* ky */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1149,6 +1168,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1200,6 +1220,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

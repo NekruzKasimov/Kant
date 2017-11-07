@@ -75,9 +75,9 @@ class LoginViewController: UIViewController {
         //HUD.hide()
         DataManager.shared.setUserId(user_id: user_id)
         DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
-        present(vc, animated: true, completion: nil)
+        let sb = UIStoryboard(name: "Registration", bundle: nil)
+        let nextViewController = sb.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
+        self.present(nextViewController!, animated:true, completion:nil)
     }
 }
 
