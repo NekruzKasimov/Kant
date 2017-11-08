@@ -17,7 +17,6 @@ class MenuViewController: ViewController {
             avatarImageView.clipsToBounds = true
         }
     }
-    
     var menu = Constants.MenuPage.menu
     var navigations = Constants.MenuPage.navigations
     var sbs = Constants.MenuPage.storyboards
@@ -31,6 +30,7 @@ class MenuViewController: ViewController {
         super.viewDidLoad()
         configureTableView()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         var user = DataManager.shared.getUserInformation()
         self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"
@@ -55,7 +55,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = menu[indexPath.row]
+        cell.textLabel?.text = menu[indexPath.row].localized(lang: self.lang)
         
         return cell
     }
@@ -74,6 +74,7 @@ extension MenuViewController {
         tablevView.estimatedRowHeight           = 60
         tablevView.rowHeight                    = UITableViewAutomaticDimension
     }
+    
     func openPage(storyboard: String, vcIdentifier: String) {
         let revealVC = revealViewController()
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)

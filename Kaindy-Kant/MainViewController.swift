@@ -63,26 +63,20 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
         ServerManager.shared.getServices(setServices, error: { (error) in
             self.showErrorAlert(message: error)
         })
-//        if DataManager.shared.getServices() == nil {
-//
-//        } else {
-//            services = DataManager.shared.getServices()
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.title = "main_menu".localized(lang: self.lang)!
+        self.title = "main_menu".localized(lang: self.lang)
     }
     
     func setUserInfo(user: NewUser){
-        //print(user.toDictionary())
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         self.user = user
+        collectionView.reloadData()
     }
     
     func setServices(services: Services) {
-        SVProgressHUD.dismiss()
         self.services = services
         DataManager.shared.setServices(Services: self.services!)
         collectionView.reloadData()
@@ -101,23 +95,14 @@ extension MainViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let _ = currencies, let _ = weather, let _ = user, let _ = services {
-            SVProgressHUD.dismiss()
-            if section == 0 {
-                return 2
-            } else {
-                return (services?.array.count)! + 2
-//                if let count = services?.array.count {
-//                    if count < 3 {
-//                        self.servicesCount = (count + 1)
-//                        return count + 1
-//                    } else {
-//                        self.servicesCount = 3
-//                        return 4
-//                    }
-//                } else {
-//                    return 0
-//                }
+        if let _ = currencies, let _ = weather, let _ = services {
+            if let _ = user {
+                SVProgressHUD.dismiss()
+                if section == 0 {
+                    return 2
+                } else {
+                    return (services?.array.count)! + 2
+                }
             }
         }
         return 0
@@ -165,15 +150,6 @@ extension MainViewController {
             var width = collectionView.frame.width - 30
             width = width / 2
             size = CGSize(width: width, height: height)
-//
-//            if indexPath.item == 0 {
-//                var width = collectionView.frame.width - 30
-//                size = CGSize(width: width, height: height)
-//            } else {
-//                var width = collectionView.frame.width - 30
-//                width = width / 5 * 2
-//                size = CGSize(width: width, height: height)
-//            }
         } else {
             let width = collectionView.frame.width - 24
             size = CGSize(width: width, height: 120)

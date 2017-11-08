@@ -10,7 +10,22 @@ import Foundation
 
 struct Constants {
     
-    static let lang = DataManager.shared.getLanguage()
+    static var lang: String?
+    
+    static var shared: Constants {
+        struct Static {
+            static let instance = Constants()
+        }
+        return Static.instance
+    }
+    
+    func setLanguage() {
+        Constants.lang = DataManager.shared.getLanguage()
+        MainPage.init()
+        MenuPage.init()
+        Values.init()
+    }
+
     
     struct Network {
         
@@ -54,22 +69,34 @@ struct Constants {
     }
     
     struct MainPage {
-        static let technology = "technology".localized(lang: lang)
-        static let myFields = "my_field".localized(lang: lang)
+        static var technology: String?
+        static var myFields: String?
+        init(){
+            MainPage.technology = "technology".localized(lang: lang!)
+            MainPage.myFields = "my_field".localized(lang: lang!)
+        }
     }
     
     struct MenuPage {
-        static let menu = ["main_menu".localized(lang: lang) , "my_field".localized(lang: lang) , "news".localized(lang: lang) , "services".localized(lang: lang) , "suppliers".localized(lang: lang) , "budget".localized(lang: lang) , "about_app".localized(lang: lang) ,  "logout".localized(lang: lang)]
+        static let menu = ["main_menu", "my_field" , "news", "services", "suppliers", "budget", "about_app", "logout"]
         static let navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
         static let storyboards = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
     }
-    
+
     struct Values {
-        static let error = "error1".localized(lang: lang)
-        static let cancel = "cancel".localized(lang: lang)
-        static let chooseImage = "choose_image".localized(lang: lang)
-        static let save = "save".localized(lang: lang)
-        static let changePassword = "change_password".localized(lang: lang)
+        static var error: String?
+        static var cancel: String?
+        static var chooseImage: String?
+        static var save: String?
+        static var changePassword: String?
+        init() {
+            Values.error = "error1".localized(lang: lang!)
+            Values.cancel = "cancel".localized(lang: lang!)
+            Values.chooseImage = "choose_image".localized(lang: lang!)
+            Values.save = "save".localized(lang: lang!)
+            Values.changePassword = "change_password".localized(lang: lang!)
+        }
     }
+
 }
 

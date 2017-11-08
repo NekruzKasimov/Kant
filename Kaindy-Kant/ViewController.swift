@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let lang = DataManager.shared.getLanguage()
+    
+    var lang = DataManager.shared.getLanguage()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Constants.shared.setLanguage()
+    }
 }
