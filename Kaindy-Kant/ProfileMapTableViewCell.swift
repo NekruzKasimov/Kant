@@ -27,7 +27,7 @@ class ProfileMapTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var totalYieldLabel: UILabel!{
         didSet {
-            averageYieldLabel.text = "Всего урожвя"
+            totalYieldLabel.text = "Всего урожая"
         }
     }
     @IBOutlet weak var deleteButton: UIButton! {
@@ -38,7 +38,7 @@ class ProfileMapTableViewCell: UITableViewCell {
     
     @IBOutlet weak var showOnMapButton: UIButton!{
         didSet {
-            deleteButton.setTitle("look_at_the_map".localized(lang: lang), for: .normal)
+            showOnMapButton.setTitle("look_at_the_map".localized(lang: lang), for: .normal)
         }
     }
     @IBOutlet weak var changeButton: UIButton! {
