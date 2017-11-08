@@ -60,6 +60,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Карта"
+        if !UserDefaults.standard.bool(forKey: "isTipShown") {
+            let sb = UIStoryboard(name: "Profile", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
         addGoogleMap()
         addCurrentLocation()
         //view.addSubview(tabBarView)

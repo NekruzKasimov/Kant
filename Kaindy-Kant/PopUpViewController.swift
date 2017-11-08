@@ -1,0 +1,22 @@
+//
+//  PopUpViewController.swift
+//  Kaindy-Kant
+//
+//  Created by Khasanza on 11/8/17.
+//  Copyright © 2017 NeoBis. All rights reserved.
+//
+
+import UIKit
+
+class PopUpViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    @IBAction func dismissPressed(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+       UserDefaults.standard.set(true, forKey: "isTipShown")
+    }
+}

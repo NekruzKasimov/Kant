@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ee-l9-sz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2132" y="-70.614692653673174"/>
+            <point key="canvasLocation" x="2116" y="51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Apj-x0-yuW">
@@ -969,6 +969,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xn3-U2-07h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1359.2" y="-610.34482758620697"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="S5P-5G-MIt">
+            <objects>
+                <viewController storyboardIdentifier="PopUpViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="WBL-7t-0a9" customClass="PopUpViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xjA-X9-Hr4"/>
+                        <viewControllerLayoutGuide type="bottom" id="kk7-hp-ji2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Sf-on-xR3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-bT-ffC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qn-v7-PNx">
+                                <rect key="frame" x="40" y="243" width="295" height="181"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подсказка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXt-gE-Vg9">
+                                        <rect key="frame" x="20" y="20" width="108" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZl-km-eWZ">
+                                        <rect key="frame" x="0.0" y="66.5" width="295" height="4"/>
+                                        <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="RNW-gq-pZx"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot9-XQ-han">
+                                        <rect key="frame" x="20" y="90.5" width="255" height="20.5"/>
+                                        <string key="text">Нажмите на тот участок карты, где находятся границы вашего поля. Создав начальную точку, обозначьте все границы поля. После завершения нажмите на кнопку "соеденить", для того чтобы соеденить начальную и конечные точки</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je3-Cs-HRf">
+                                        <rect key="frame" x="97" y="131" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="1w8-gK-2Di"/>
+                                        </constraints>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dismissPressed:" destination="WBL-7t-0a9" eventType="touchUpInside" id="j9I-io-Ff4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IZl-km-eWZ" firstAttribute="leading" secondItem="4Qn-v7-PNx" secondAttribute="leading" id="4PU-GW-kSP"/>
+                                    <constraint firstItem="IZl-km-eWZ" firstAttribute="top" secondItem="YXt-gE-Vg9" secondAttribute="bottom" constant="20" id="M46-rL-eyq"/>
+                                    <constraint firstItem="je3-Cs-HRf" firstAttribute="centerX" secondItem="4Qn-v7-PNx" secondAttribute="centerX" id="Man-O5-bem"/>
+                                    <constraint firstItem="YXt-gE-Vg9" firstAttribute="leading" secondItem="4Qn-v7-PNx" secondAttribute="leading" constant="20" id="WlM-K1-hrm"/>
+                                    <constraint firstItem="Ot9-XQ-han" firstAttribute="leading" secondItem="4Qn-v7-PNx" secondAttribute="leading" constant="20" id="ZCD-aS-aop"/>
+                                    <constraint firstItem="Ot9-XQ-han" firstAttribute="top" secondItem="IZl-km-eWZ" secondAttribute="bottom" constant="20" id="boF-8v-lwW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ot9-XQ-han" secondAttribute="trailing" constant="20" id="dhP-6v-Ngk"/>
+                                    <constraint firstAttribute="trailing" secondItem="IZl-km-eWZ" secondAttribute="trailing" id="pXX-VB-9sg"/>
+                                    <constraint firstAttribute="bottom" secondItem="je3-Cs-HRf" secondAttribute="bottom" constant="20" id="qAq-n2-f5k"/>
+                                    <constraint firstItem="je3-Cs-HRf" firstAttribute="top" secondItem="Ot9-XQ-han" secondAttribute="bottom" constant="20" id="r14-SR-nTf"/>
+                                    <constraint firstItem="YXt-gE-Vg9" firstAttribute="top" secondItem="4Qn-v7-PNx" secondAttribute="top" constant="20" id="wuw-Vn-5ss"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.75486905809859151" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Qn-v7-PNx" firstAttribute="leading" secondItem="0Sf-on-xR3" secondAttribute="leadingMargin" constant="24" id="9Hs-jt-jqA"/>
+                            <constraint firstItem="b6f-bT-ffC" firstAttribute="top" secondItem="xjA-X9-Hr4" secondAttribute="bottom" id="BLH-3G-U8h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Qn-v7-PNx" secondAttribute="trailing" constant="24" id="IuJ-vx-x4f"/>
+                            <constraint firstItem="4Qn-v7-PNx" firstAttribute="centerY" secondItem="0Sf-on-xR3" secondAttribute="centerY" id="ViU-An-USk"/>
+                            <constraint firstItem="kk7-hp-ji2" firstAttribute="top" secondItem="b6f-bT-ffC" secondAttribute="bottom" id="ZdD-3f-oOc"/>
+                            <constraint firstItem="b6f-bT-ffC" firstAttribute="leading" secondItem="0Sf-on-xR3" secondAttribute="leading" id="hJe-Tm-Hoh"/>
+                            <constraint firstAttribute="trailing" secondItem="b6f-bT-ffC" secondAttribute="trailing" id="vuo-NI-tTf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQ0-Kx-S14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2167.1999999999998" y="-640.02998500749629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7x6-ft-B6Q">
