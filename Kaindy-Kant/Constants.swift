@@ -53,6 +53,8 @@ struct Constants {
     
     struct MainPage {
         static let service = "Технологии"
+        static let myFields = "Мои поля"
+
     }
 }
 

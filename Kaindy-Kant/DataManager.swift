@@ -31,9 +31,7 @@ class DataManager {
         return self.services
     }
     func setExpenses(expenses: Expenses) {
-        for expense in expenses.array {
-            self.expenses.append(expense.to_dictionary())
-        }
+        self.expenses = expenses.getArrayDictionary()
     }
     func update(index: Int, price: Int, amount: Int) {
         self.expenses[index].updateValue(price, forKey: "price")

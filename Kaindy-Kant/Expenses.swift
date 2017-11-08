@@ -44,4 +44,11 @@ class Expenses: NSObject {
             array.append(tempObject)
         }
     }
+    func getArrayDictionary() -> [[String: Any]]{
+        var expenses = [[String: Any]]()
+        for expense in self.array {
+            expenses.append(expense.to_dictionary())
+        }
+        return expenses
+    }
 }

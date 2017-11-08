@@ -973,6 +973,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7x6-ft-B6Q">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ye3-np-ahk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="FieldsNav" automaticallyAdjustsScrollViewInsets="NO" id="63y-WX-J3h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jMf-E3-tGs">
@@ -984,7 +985,6 @@
                         <segue destination="eA4-Sw-QTW" kind="relationship" relationship="rootViewController" id="x1y-fI-qSf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ye3-np-ahk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="532" y="-610"/>
         </scene>

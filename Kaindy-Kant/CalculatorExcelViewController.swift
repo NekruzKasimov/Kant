@@ -56,7 +56,6 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
             }
         }
     }
-    
     func setExpenses(expenses: Expenses) {
         SVProgressHUD.dismiss()
         DataManager.shared.setExpenses(expenses: expenses)
@@ -110,14 +109,18 @@ extension CalculatorExcelViewController {
         }
     }
     func didPressButton(_ tag: Int) {
-        print(expenses)
+        //print(expenses)
+        SVProgressHUD.show()
         print(DataManager.shared.getExpenses())
-        if fieldId == -1 {
-            let sb = UIStoryboard(name: "Profile", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
-            self.navigationController?.show(vc, sender: self)
-        }
+        ServerManager.shared.updateExpenses(parameters: ["data": DataManager.shared.getExpenses()], expensesUpdated, error: showErrorAlert)
         print("save expenses")
+    }
+    func expensesUpdated(message: String){
+        print(message)
+        SVProgressHUD.dismiss()
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
+        self.navigationController?.show(vc, sender: self)
     }
 }
 

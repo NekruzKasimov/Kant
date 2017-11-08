@@ -106,17 +106,18 @@ extension MainViewController {
             if section == 0 {
                 return 2
             } else {
-                if let count = services?.array.count {
-                    if count < 3 {
-                        self.servicesCount = (count + 1)
-                        return count + 1
-                    } else {
-                        self.servicesCount = 3
-                        return 4
-                    }
-                } else {
-                    return 0
-                }
+                return (services?.array.count)! + 2
+//                if let count = services?.array.count {
+//                    if count < 3 {
+//                        self.servicesCount = (count + 1)
+//                        return count + 1
+//                    } else {
+//                        self.servicesCount = 3
+//                        return 4
+//                    }
+//                } else {
+//                    return 0
+//                }
             }
         }
         return 0
@@ -140,11 +141,15 @@ extension MainViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
             var title = ""
             if indexPath.row == 0 {
+                title = Constants.MainPage.myFields
+                cell.imageView.image = UIImage(named: "beet")
+            }
+            else if indexPath.row == 1 {
                 title = Constants.MainPage.service
                 cell.imageView.image = UIImage(named: "technology")
             } else {
-                title = (services?.array[indexPath.row - 1].name)!
-                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row - 1].logo)!))
+                title = (services?.array[indexPath.row - 2].name)!
+                cell.imageView.kf.setImage(with: URL(string: (services?.array[indexPath.row - 2].logo)!))
             }
             cell.titleLabel.text = title
             cell.titleLabel.font = UIFont.systemFont(ofSize: 20)
@@ -198,6 +203,11 @@ extension MainViewController {
             }
         } else {
             if indexPath.row == 0 {
+                let sb = UIStoryboard(name: "Profile", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
+                self.navigationController?.show(vc, sender: self)
+            }
+            else if indexPath.row == 1 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
                 navigationController?.show(vc, sender: self)
@@ -205,8 +215,8 @@ extension MainViewController {
             } else {
                 let sb = UIStoryboard(name: "DetailedService", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "DetailedSceneViewController") as! DetailedSceneViewController
-                vc.detailedServices = services?.array[indexPath.row - 1].detailedServices
-                vc.serviceTitle = services?.array[indexPath.row - 1].name
+                vc.detailedServices = services?.array[indexPath.row - 2].detailedServices
+                vc.serviceTitle = services?.array[indexPath.row - 2].name
                 navigationController?.show(vc, sender: self)
             }
         }
