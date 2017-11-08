@@ -7,8 +7,8 @@ target 'Kaindy-Kant' do
  pod 'IQKeyboardManager'
  pod 'SwiftyJSON'
  pod 'Alamofire', '~> 4.4'
- pod 'GoogleMaps'
- pod 'GooglePlaces'
+ pod 'GoogleMaps', '~> 2.2'
+ pod 'GooglePlaces', '~> 2.2'
  pod 'SJSegmentedScrollView'
  pod 'ScrollableSegmentedControl'
  pod 'ImageSlideshow/Kingfisher’

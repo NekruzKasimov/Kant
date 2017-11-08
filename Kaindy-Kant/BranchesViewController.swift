@@ -34,7 +34,7 @@ extension BranchesViewController {
         if section == 0 {
             return titles.count
         } else if section == 1 {
-            return 1
+            return 0
         }
         return 0
     }

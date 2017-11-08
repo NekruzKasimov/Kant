@@ -98,7 +98,7 @@ struct Constants {
             Values.error = "error1".localized(lang: lang!)
             Values.cancel = "cancel".localized(lang: lang!)
             Values.chooseImage = "choose_image".localized(lang: lang!)
-            Values.save = "save".localized(lang: lang!)
+            Values.save = "save_changes".localized(lang: lang!)
             Values.changePassword = "change_password".localized(lang: lang!)
         }
     }
