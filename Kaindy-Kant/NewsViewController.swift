@@ -24,7 +24,7 @@ enum NewsSections: Int {
     }
 }
 
-class NewsViewController: UIViewController {
+class NewsViewController: ViewController {
 
     var newRossahar: Rossahar?
     var sugarJom: SugarJom?
@@ -48,7 +48,7 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         SVProgressHUD.show()
-        self.title = "Новости"
+        self.title = "news".localized(lang: self.lang)!
         ServerManager.shared.getNewsRossahar({ (succes) in
             SVProgressHUD.dismiss()
             self.setRossahar(rossahar: succes)

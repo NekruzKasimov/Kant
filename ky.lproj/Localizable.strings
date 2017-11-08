@@ -23,7 +23,7 @@
 "changes" = "өзгөртүү";
 "choose_language" = "Тил тандаңыз";
 "change_photo" = "сүрөт өзгөртүү";
-"change_password" = "пароль өзгөртүү";
+"change_password" = "Пароль өзгөртүү";
 "confirm" = "Ырастоо";
 "contract" = "Контракт/Макулдуулук";
 "current_password" = "Азыркы паролунуз";
@@ -32,7 +32,7 @@
 "close_drawer" = "жабуу";
 "field" = "Талаа";
 "finish" = "Бүтүрүү";
-"hectar" = "Гектар";
+"hectar" = "Гектар (га)";
 "hektar" = "Гектар";
 "kyrgyz" = "Кыргызча";
 "logout" = "Чыгуу";
@@ -63,9 +63,9 @@
 "save_changes" = "өзгөртүүлөрдү сактоо";
 "news" = "Жаңылактар";
 "phone" = "Уюлдук Телефон";
-"average_yield" = "Орточо салмак-н кирешелүүлүк";
+"average_yield" = "Орточо салмак-н кирешелүүлүк (т)";
 "district" = "Аймак";
-"email" = "Почта";
+"email" = "Электрондук почта";
 "enter" = "Кирүү";
 "error" = "Жүктөө ишке ашкан жок!";
 "exchange_rate" = "Валюта курсу";
@@ -97,5 +97,6 @@
 "fail_to_get_field" = "Талаа алынбай калды";
 "fail_to_get_profile" = "Профиль ачылбай акылды";
 "password_not_the_same" = "сырсөздөр дал келбей жатат!";
-
+"choose_image" = "";
+"add" = "Кошуу";
 

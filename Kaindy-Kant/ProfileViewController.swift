@@ -14,10 +14,25 @@ import SkyFloatingLabelTextField
 import Photos
 import ScrollableSegmentedControl
 
-class ProfileViewController: UIViewController,  UITextFieldDelegate {
+class ProfileViewController: ViewController,  UITextFieldDelegate {
     
+    @IBOutlet weak var changePasswordButton: UIButton! {
+        didSet {
+            changePasswordButton.setTitle(Constants.Values.changePassword, for: .normal)
+        }
+    }
     
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet {
+            saveButton.setTitle(Constants.Values.save, for: .normal)
+        }
+    }
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var myFieldsButton: UIButton! {
+        didSet {
+            myFieldsButton.setTitle(Constants.MainPage.myFields, for: .normal)
+        }
+    }
     
     var imagePicker = UIImagePickerController()
     var image = ""
@@ -25,7 +40,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var first_name_TF: SkyFloatingLabelTextField! {
         didSet {
             first_name_TF.accessibilityIdentifier = "firstNameTextField"
-            GlobalFunctions.configure(textField: first_name_TF, withText: "Имя", placeholder: "Имя", tag: 0)
+            GlobalFunctions.configure(textField: first_name_TF, withText: "name".localized(lang: self.lang)!, placeholder: "name".localized(lang: self.lang)! , tag: 0)
             configureTextField(textField: first_name_TF)
         }
     }
@@ -33,7 +48,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var last_name_TF: SkyFloatingLabelTextField! {
         didSet {
             last_name_TF.accessibilityIdentifier = "lastNameTextField"
-            GlobalFunctions.configure(textField: last_name_TF, withText: "Фамилия", placeholder: "Фамилия", tag: 1)
+            GlobalFunctions.configure(textField: last_name_TF, withText: "surname".localized(lang: self.lang)! , placeholder: "surname".localized(lang: self.lang)! , tag: 1)
             configureTextField(textField: last_name_TF)
         }
     }
@@ -41,7 +56,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var fathers_name_TF: SkyFloatingLabelTextField! {
         didSet {
             fathers_name_TF.accessibilityIdentifier = "fathersNameTextField"
-            GlobalFunctions.configure(textField: fathers_name_TF, withText: "Отчество", placeholder: "Отчество", tag: 2)
+            GlobalFunctions.configure(textField: fathers_name_TF, withText: "fathers_name".localized(lang: self.lang)!, placeholder: "fathers_name".localized(lang: self.lang)!, tag: 2)
             configureTextField(textField: fathers_name_TF)
         }
     }
@@ -49,7 +64,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var phone_TF: SkyFloatingLabelTextField!  {
         didSet {
             phone_TF.accessibilityIdentifier = "phoneTextField"
-            GlobalFunctions.configure(textField: phone_TF, withText: "Телефон", placeholder: "0777-77-77", tag: 3)
+            GlobalFunctions.configure(textField: phone_TF, withText: "phone".localized(lang: self.lang)! , placeholder: "0777-77-77", tag: 3)
             phone_TF.keyboardType = .phonePad
             configureTextField(textField: phone_TF)
         }
@@ -58,7 +73,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var email_TF: SkyFloatingLabelTextField! {
         didSet {
             email_TF.accessibilityIdentifier = "emailTextField"
-            GlobalFunctions.configure(textField: email_TF, withText: "Электронная Почта", placeholder: "Электронная Почта", tag: 7)
+            GlobalFunctions.configure(textField: email_TF, withText: "email".localized(lang: self.lang)! , placeholder: "email".localized(lang: self.lang)! , tag: 7)
             configureTextField(textField: email_TF)
         }
     }
@@ -66,7 +81,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var date_of_birth_TF: SkyFloatingLabelTextField! {
         didSet {
             date_of_birth_TF.accessibilityIdentifier = "birthdayTextField"
-            GlobalFunctions.configure(textField: date_of_birth_TF, withText: "День рождения", placeholder: "ГГГГ/ММ/ДД", tag: 4)
+            GlobalFunctions.configure(textField: date_of_birth_TF, withText: "birth_date".localized(lang: self.lang)! , placeholder: "ГГГГ/ММ/ДД", tag: 4)
             date_of_birth_TF.delegate = self
             configureTextField(textField: date_of_birth_TF)
         }
@@ -75,7 +90,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var address_TF: SkyFloatingLabelTextField! {
         didSet {
             address_TF.accessibilityIdentifier = "addressTextField"
-            GlobalFunctions.configure(textField: address_TF, withText: "Адрес", placeholder: "Адрес", tag: 6)
+            GlobalFunctions.configure(textField: address_TF, withText: "address".localized(lang: self.lang)!, placeholder: "address".localized(lang: self.lang)!, tag: 6)
             configureTextField(textField: address_TF)
         }
     }
@@ -83,7 +98,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var city_TF: SkyFloatingLabelTextField! {
         didSet {
             city_TF.accessibilityIdentifier = "cityTextField"
-            GlobalFunctions.configure(textField: city_TF, withText: "Город/Село/Район", placeholder: "Город/Село/Район", tag: 5)
+            GlobalFunctions.configure(textField: city_TF, withText: "city".localized(lang: self.lang)!, placeholder: "city".localized(lang: self.lang)!, tag: 5)
             configureTextField(textField: city_TF)
         }
     }
@@ -112,7 +127,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var noFieldsConstraint: NSLayoutConstraint!
     
     @IBAction func chagePasswordButton(_ sender: Any) {
-    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangingPasswordViewController") as! ChangingPasswordViewController
+    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ManagingPasswordViewController") as! ManagingPasswordViewController
     self.navigationController?.show(vc, sender: self)
         
     }
@@ -157,7 +172,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
         super.viewDidLoad()
 //        configureRefreshControl()
 //        addTapToScrollView()
-        self.title = "Профиль"
+        self.title = "my_profile".localized(lang: self.lang)!
         setNavigationBar()
         
     }
@@ -183,6 +198,7 @@ class ProfileViewController: UIViewController,  UITextFieldDelegate {
             avatarImageView.image = UIImage(named: "camera")
         } else {
             avatarImageView.image = imageToDecode?.decode64(imageData: imageToDecode!)
+            self.image = imageToDecode!
         }
     }
     
@@ -220,19 +236,14 @@ extension ProfileViewController {
             dateFormatter.locale = Locale.init(identifier: "en_GB")
             self?.date_of_birth_TF.text = dateFormatter.string(from: myDatePicker.date)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Constants.Values.cancel, style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:{})
     }
     
-    func changePassword()  {
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangingPasswordViewController") as! ChangingPasswordViewController
-//        self.navigationController?.show(vc, sender: self)
-            }
-    
     func showImagePicker() {
-        let alert = UIAlertController(title: "Выбрать картинку", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: Constants.Values.chooseImage, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Камера", style: .default, handler: { _ in
             self.openCamera()
         }))
@@ -241,7 +252,7 @@ extension ProfileViewController {
             self.openGallary()
         }))
         
-        alert.addAction(UIAlertAction.init(title: "Отмена", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.init(title: Constants.Values.cancel , style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
@@ -251,11 +262,7 @@ extension ProfileViewController {
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
-        } else {
-            let alert  = UIAlertController(title: "Предупреждение", message: "У вас нет Камеры", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+        } 
         imagePicker.delegate = self
     }
 

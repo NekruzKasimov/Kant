@@ -20,7 +20,7 @@ enum MainVCSections : Int {
     }
 }
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainViewController: ViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var mainMenuBtn: UIBarButtonItem!
     
@@ -72,7 +72,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.title = "Главная"
+        self.title = "main_menu".localized(lang: self.lang)!
     }
     
     func setUserInfo(user: NewUser){
@@ -128,24 +128,25 @@ extension MainViewController {
             if indexPath.item == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCollectionViewCell", for: indexPath) as! CurrencyCollectionViewCell
                 if let c = currencies {
-                    cell.setValues(currencies: c)
+                    cell.setValues(currencies: c, language: self.lang)
                 }
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
                 cell.weatherDegreeLabel.text = degree > 0 ? "+\(degree)°C" : "\(degree)°C"
                 cell.weatherStatusLabel.text = status
+                cell.weatherLabel.text = "weather".localized(lang: self.lang)!
                 return cell
             }
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ServiceCollectionViewCell", for: indexPath) as! ServiceCollectionViewCell
             var title = ""
             if indexPath.row == 0 {
-                title = Constants.MainPage.myFields
+                title = (Constants.MainPage.myFields?.localized(lang: self.lang)!)!
                 cell.imageView.image = UIImage(named: "beet")
             }
             else if indexPath.row == 1 {
-                title = Constants.MainPage.service
+                title = (Constants.MainPage.technology?.localized(lang: self.lang)!)!
                 cell.imageView.image = UIImage(named: "technology")
             } else {
                 title = (services?.array[indexPath.row - 2].name)!

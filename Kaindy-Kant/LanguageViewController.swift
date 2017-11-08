@@ -17,7 +17,7 @@ class LanguageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func russianLanguageButton(_ sender: Any) {
-        DataManager.shared.setLanguage(language: "en")
+        DataManager.shared.setLanguage(language: "ru")
         showMainPage()
     }
     @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {

@@ -13,7 +13,7 @@ import GoogleMaps
 import SVProgressHUD
 import SkyFloatingLabelTextField
 
-class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate{
+class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDelegate{
     
     struct MapCoordinate {
         var coordinate: CLLocationCoordinate2D
@@ -35,14 +35,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBOutlet weak var fieldHectare: SkyFloatingLabelTextField! {
         didSet {
             fieldHectare.accessibilityIdentifier = "fieldHectare"
-            GlobalFunctions.configure(textField: fieldHectare, withText: "Гектары(га)", placeholder: "Гектары(га)", tag: 2)
+            GlobalFunctions.configure(textField: fieldHectare, withText: "hectar".localized(lang: self.lang)!, placeholder: "hectar".localized(lang: self.lang)!, tag: 2)
             configureTextField(textField: fieldHectare)
         }
     }
     @IBOutlet weak var averageYield: SkyFloatingLabelTextField! {
         didSet {
             averageYield.accessibilityIdentifier = "averageYield"
-            GlobalFunctions.configure(textField: averageYield, withText: "Средняя урожайность(т)", placeholder: "Средняя урожайность(т)", tag: 2)
+            GlobalFunctions.configure(textField: averageYield, withText: "average_yield".localized(lang: self.lang)!, placeholder: "average_yield".localized(lang: self.lang)!, tag: 2)
             configureTextField(textField: averageYield)
         }
     }
@@ -78,7 +78,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBAction func saveFiledBtn(_ sender: Any) {
         
         if (fieldHectare.text == "" || averageYield.text == "") {
-            showErrorAlert(message: "Добавите данные")
+            showErrorAlert(message: "fill_field".localized(lang: self.lang)!)
         } else {
             let coordinates = Coordinates()
             for coordinate in points {
@@ -107,7 +107,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             self.navigationController?.popViewController(animated: true)
         }))
         //Add
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: { (action) in
             print("ok")
             let sb = UIStoryboard(name: "CalculatorExcelViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
@@ -258,7 +258,7 @@ extension MapViewController {
         if points.count > 2 {
             acceptFiled()
         } else {
-            showErrorAlert(message: "вы должны указать минимум три точки")
+            showErrorAlert(message: "Вы должны указать минимум три точки")
         }
     }
     

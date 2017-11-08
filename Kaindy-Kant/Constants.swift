@@ -9,7 +9,9 @@
 import Foundation
 
 struct Constants {
-   
+    
+    static let lang = DataManager.shared.getLanguage()
+    
     struct Network {
         
         struct ErrorMessage {
@@ -52,9 +54,22 @@ struct Constants {
     }
     
     struct MainPage {
-        static let service = "Технологии"
-        static let myFields = "Мои поля"
-
+        static let technology = "technology".localized(lang: lang)
+        static let myFields = "my_field".localized(lang: lang)
+    }
+    
+    struct MenuPage {
+        static let menu = ["main_menu".localized(lang: lang) , "my_field".localized(lang: lang) , "news".localized(lang: lang) , "services".localized(lang: lang) , "suppliers".localized(lang: lang) , "budget".localized(lang: lang) , "about_app".localized(lang: lang) ,  "logout".localized(lang: lang)]
+        static let navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
+        static let storyboards = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
+    }
+    
+    struct Values {
+        static let error = "error1".localized(lang: lang)
+        static let cancel = "cancel".localized(lang: lang)
+        static let chooseImage = "choose_image".localized(lang: lang)
+        static let save = "save".localized(lang: lang)
+        static let changePassword = "change_password".localized(lang: lang)
     }
 }
 

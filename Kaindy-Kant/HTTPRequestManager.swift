@@ -44,6 +44,7 @@ class HTTPRequestManager {
         if let token = UserDefaults.standard.string(forKey: "token") {
             header = ["Authorization" : "Bearer \(token)"]
         }
+        
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
             //print(response.description)
             guard response.response != nil else {

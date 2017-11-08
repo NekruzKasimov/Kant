@@ -10,6 +10,9 @@ import Foundation
 
 
 class CurrencyCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var buyLabel: UILabel!
+    @IBOutlet weak var sellLabel: UILabel!
     
     @IBOutlet weak var cardView: UIView!  {
         didSet {
@@ -31,7 +34,7 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var kzt_sell: UILabel!
     
     
-    func setValues(currencies: [Currency]){
+    func setValues(currencies: [Currency], language: String){
         //print(currencies.count)
         
         rub_buy.text = currencies[2].rates.buy_rate
@@ -42,7 +45,9 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
         eur_sell.text = currencies[1].rates.sell_rate
         kzt_buy.text = currencies[3].rates.buy_rate
         kzt_sell.text = currencies[3].rates.sell_rate
-        
+        currencyLabel.text = "exchange_rate".localized(lang: language)!
+        buyLabel.text = "buy".localized(lang: language)!
+        sellLabel.text = "sale".localized(lang: language)!
     }
     
 }

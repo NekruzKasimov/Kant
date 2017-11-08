@@ -11,6 +11,8 @@ import Foundation
 
 class WeatherCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var weatherLabel: UILabel!
+    
     @IBOutlet weak var weatherDegreeLabel: UILabel!
     @IBOutlet weak var weatherStatusLabel: UILabel!
     

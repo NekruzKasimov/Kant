@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class MenuViewController: UIViewController {
+class MenuViewController: ViewController {
     
     @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
@@ -18,9 +18,9 @@ class MenuViewController: UIViewController {
         }
     }
     
-    var menu = ["Главная", "Мои поля", "Новости" , "Услуги" , "Поставщики" , "Рассчитать бюджет", "О приложении" ,  "Выход"]
-    var navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
-    var sbs = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
+    var menu = Constants.MenuPage.menu
+    var navigations = Constants.MenuPage.navigations
+    var sbs = Constants.MenuPage.storyboards
 
     @IBAction func openProfilePage(_ sender: Any) {
         openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")

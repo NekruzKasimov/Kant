@@ -10,7 +10,7 @@ import UIKit
 import ScrollableSegmentedControl
 import SVProgressHUD
 import SkyFloatingLabelTextField
-class FieldViewController: UIViewController {
+class FieldViewController: ViewController {
 
     @IBOutlet weak var viewForYearPicker: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -28,14 +28,14 @@ class FieldViewController: UIViewController {
     @IBOutlet weak var fieldHectare: SkyFloatingLabelTextField! {
         didSet {
             fieldHectare.accessibilityIdentifier = "fieldHectare"
-            GlobalFunctions.configure(textField: fieldHectare, withText: "Гектары(га)", placeholder: "Гектары(га)", tag: 2)
+            GlobalFunctions.configure(textField: fieldHectare, withText: "hectar".localized(lang: self.lang)! , placeholder: "hektar".localized(lang: self.lang)!, tag: 2)
             configureTextField(textField: fieldHectare)
         }
     }
     @IBOutlet weak var averageYield: SkyFloatingLabelTextField! {
         didSet {
             averageYield.accessibilityIdentifier = "averageYield"
-            GlobalFunctions.configure(textField: averageYield, withText: "Средняя урожайность(т)", placeholder: "Средняя урожайность(т)", tag: 2)
+            GlobalFunctions.configure(textField: averageYield, withText: "average_yield".localized(lang: self.lang)!, placeholder: "average_yield".localized(lang: self.lang)!, tag: 2)
             configureTextField(textField: averageYield)
         }
     }
@@ -46,8 +46,8 @@ class FieldViewController: UIViewController {
     var field_id = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Мои поля"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить", style: .plain, target: self, action: #selector(addTapped))
+        self.title = Constants.MainPage.myFields
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add".localized(lang: self.lang)!, style: .plain, target: self, action: #selector(addTapped))
 
         self.yearsPicker = DataManager.shared.getYears()
         choseYear = yearsPicker[yearsPicker.count - 1]
@@ -123,7 +123,7 @@ class FieldViewController: UIViewController {
     @IBAction func saveFiledBtn(_ sender: Any) {
         
         if (fieldHectare.text == "" || averageYield.text == "") {
-            showErrorAlert(message: "Добавите данные")
+            showErrorAlert(message: "fill_field".localized(lang: self.lang)!)
         } else {
             let doubleString = fieldHectare.text!.replacingOccurrences(of: ",", with: ".")
             SVProgressHUD.show()
@@ -308,12 +308,12 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         }
     }
     func uvensinbi(tag: Int) {
-        let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить данной поле?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить данное поле?", preferredStyle: .alert)
         //Cancel
-        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (acrion) in
+        alert.addAction(UIAlertAction(title: Constants.Values.cancel, style: .cancel, handler: { (acrion) in
         }))
         //Add
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: { (action) in
             SVProgressHUD.show()
             ServerManager.shared.deleteField(field_id: self.years[self.yearIndex].fields[tag].id, self.deleteField, error: self.showErrorAlert)
         }))
