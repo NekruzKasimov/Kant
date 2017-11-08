@@ -13,6 +13,11 @@ protocol SaveButtonDelegate : class {
 class SaveTableViewCell: UITableViewCell {
     weak var cellDelegate: SaveButtonDelegate?
 
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet {
+            saveButton.setTitle("save".localized(lang: DataManager.shared.getLanguage()), for: .normal)
+        }
+    }
     @IBAction func saveExpensesPressed(_ sender: Any) {
         cellDelegate?.didPressButton(self.tag)
 

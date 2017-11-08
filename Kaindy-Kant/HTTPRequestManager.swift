@@ -23,7 +23,7 @@ class HTTPRequestManager {
     
     //let url = "http://rooms.auca.kg/"
     
-    private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+    private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, header: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         if !isConnectedToNetwork() {
             error(Constants.Network.ErrorMessage.NO_INTERNET_CONNECTION)
             return
@@ -40,12 +40,16 @@ class HTTPRequestManager {
         apiUrl.remove(at: apiUrl.index(before: apiUrl.endIndex))
         print(apiUrl)
         
-        var header: HTTPHeaders = [:]
+        var head: HTTPHeaders = [:]
         if let token = UserDefaults.standard.string(forKey: "token") {
-            header = ["Authorization" : "Bearer \(token)"]
+            head = ["Authorization" : "Bearer \(token)"]
         }
         
-        Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
+        if header != "" {
+            head.updateValue(header, forKey: "language")
+        }
+        
+        Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: head).responseJSON { (response:DataResponse<Any>) in
             //print(response.description)
             guard response.response != nil else {
                 error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)
@@ -96,20 +100,23 @@ class HTTPRequestManager {
     }
     
     
-    internal func post(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .post, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
+    internal func post(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .post, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
     }
-    internal func get(endpoint: String, serverType: ServerType,  completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: nil, completion: completion, error: error)
+    internal func get(endpoint: String, serverType: ServerType, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error)
     }
     internal func get(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
+        let header = ""
+        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
     }
     internal func delete(endpoint: String, serverType: ServerType, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .delete, endpoint: endpoint, serverType: serverType, parameters: nil, completion: completion, error: error)
+        let header = ""
+        request(method: .delete, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error)
     }
     internal func patch(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .patch, endpoint: endpoint, serverType: serverType, parameters: parameters, completion: completion, error: error)
+        let header = ""
+        request(method: .patch, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
     }
     
     

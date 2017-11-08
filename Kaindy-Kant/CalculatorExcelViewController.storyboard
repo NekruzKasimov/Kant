@@ -112,6 +112,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountLabel" destination="dTe-Ym-1kc" id="zzk-jY-1W4"/>
+                                            <outlet property="firstLabel" destination="phB-oK-M0U" id="pAV-uO-ppZ"/>
                                             <outlet property="priceLabel" destination="ZO9-GS-4pZ" id="pPu-Ab-LGW"/>
                                             <outlet property="totalPriceLabel" destination="Abn-8d-EN8" id="1q2-He-hFu"/>
                                             <outlet property="typesOfJobLabel" destination="vGK-GS-3Bq" id="zQg-kG-f4i"/>
@@ -260,6 +261,9 @@
                                                 <constraint firstItem="s0A-VC-Abh" firstAttribute="leading" secondItem="QnN-1M-2uL" secondAttribute="leading" constant="30" id="hBC-aE-qgS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="saveButton" destination="s0A-VC-Abh" id="q2F-q5-dNF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

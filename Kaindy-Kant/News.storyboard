@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -322,16 +322,25 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cardView" destination="v1v-bn-Fi0" id="gwq-Pe-uQp"/>
+                                            <outlet property="changesLabel" destination="CDk-T5-x9j" id="pR1-tU-d6u"/>
+                                            <outlet property="demandLabel" destination="w1k-BD-9Bt" id="aE5-de-v1G"/>
+                                            <outlet property="districtJomLabel" destination="IuN-OW-SfL" id="UcN-l4-Hqa"/>
+                                            <outlet property="districtLabel" destination="jab-Cy-Rkp" id="NxA-bn-gMl"/>
                                             <outlet property="jomDateLabel" destination="c66-Rh-eab" id="Xdy-9q-Ms4"/>
+                                            <outlet property="jomLabel" destination="boe-Zw-tXm" id="LUo-cl-i7r"/>
                                             <outlet property="jomPercentageLabelCFO" destination="rjM-fC-eFx" id="IKr-HV-X4K"/>
                                             <outlet property="jomPercentageLabelUFO" destination="326-Ch-2Gl" id="WBM-5L-3RG"/>
                                             <outlet property="jomPriceLabelCFO" destination="KvQ-uT-ZPE" id="U4j-FY-M7s"/>
                                             <outlet property="jomPriceLabelUFO" destination="SF6-Z2-dyH" id="VLI-P0-6Lq"/>
+                                            <outlet property="priceLabel" destination="Cej-0U-qvy" id="kPI-PA-pl5"/>
+                                            <outlet property="pricesAndValuesLabel" destination="mNa-uV-CKW" id="OMq-sf-mbQ"/>
                                             <outlet property="sugarDateLabel" destination="yKH-fN-VvY" id="IGH-Ki-fzG"/>
+                                            <outlet property="sugarLabel" destination="Phb-6i-oqg" id="Cuq-fs-OpX"/>
                                             <outlet property="sugarPercentageLabelCFO" destination="Pd4-6j-WrU" id="4Ww-1c-Z0p"/>
                                             <outlet property="sugarPercentageLabelUFO" destination="jN5-Gt-198" id="NuV-Fs-Wnd"/>
                                             <outlet property="sugarPriceLabelCFO" destination="oYy-Cu-HgK" id="8G9-fu-PVr"/>
                                             <outlet property="sugarPriceLabelUFO" destination="0tj-xC-U5c" id="Mhy-lB-iYj"/>
+                                            <outlet property="supplyLabel" destination="Hkb-ql-hco" id="7Xf-kH-sFY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

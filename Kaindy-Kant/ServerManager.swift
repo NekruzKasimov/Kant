@@ -62,7 +62,7 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
     }
     func getFields(_ completion: @escaping (Years)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())", serverType: .kant, completion: { (json) in
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())", serverType: .kant, header: DataManager.shared.getLanguage(), completion: { (json) in
             completion(Years(json: json))
         }, error: error)
     }
@@ -94,13 +94,13 @@ class ServerManager: HTTPRequestManager  {
     
     
     func getExpenses(_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: Constants.Network.EndPoints.Expenses, serverType: .kant, completion: { (success) in
+        self.get(endpoint: Constants.Network.EndPoints.Expenses, serverType: .kant, header: DataManager.shared.getLanguage(), completion: { (success) in
             completion(Expenses(json: success))
         }, error: error)
         
     }
     func getFieldExpenses(field_id: Int,_ completion: @escaping (Expenses)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.FieldExpenses)/\(field_id)", serverType: .kant, completion: { (success) in
+        self.get(endpoint: "\(Constants.Network.EndPoints.FieldExpenses)/\(field_id)", serverType: .kant, header: DataManager.shared.getLanguage(),  completion: { (success) in
             completion(Expenses(json: success))
         }, error: error)
         
@@ -113,25 +113,25 @@ class ServerManager: HTTPRequestManager  {
     }
     
     func getServices(_ completion: @escaping (Services)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.GetServices)", serverType: .kant, completion: { (success) in
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetServices)", serverType: .kant, header: DataManager.shared.getLanguage(), completion: { (success) in
             completion(Services(json: success))
         }, error: error)
     }
     
     func getTechnologies(_ completion: @escaping (Technologies)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.GetTechnologies)", serverType: .kant, completion: { (success) in
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetTechnologies)", serverType: .kant, header: DataManager.shared.getLanguage(), completion: { (success) in
             completion(Technologies(json: success))
         }, error: error)
     }
     
     func getSuppliers(_ completion: @escaping (Services)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.GetSuppliers)", serverType: .kant, completion: { (success) in
+        self.get(endpoint: "\(Constants.Network.EndPoints.GetSuppliers)", serverType: .kant, header: DataManager.shared.getLanguage(), completion: { (success) in
             completion(Services(json: success))
         }, error: error)
     }
     func addField(field: FieldToAdd, _ completion: @escaping (Int)-> Void, error: @escaping (String)-> Void) {
         print(field.getFieldToAddDictionary())
-        self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: field.getFieldToAddDictionary(), completion: { (json) in
+        self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: field.getFieldToAddDictionary(),  completion: { (json) in
             print(json)
             let id = json["id"].intValue
             completion(id)

@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import Kingfisher
 
-class ServiceViewController: UIViewController {
+class ServiceViewController: ViewController {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -28,6 +28,11 @@ class ServiceViewController: UIViewController {
         SVProgressHUD.show()
         self.services = DataManager.shared.getServices()
         setNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "services".localized(lang: self.lang)
     }
     
 }

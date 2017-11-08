@@ -20,7 +20,12 @@ class ExcelTotalTableViewCell: UITableViewCell, UpdateTotalValueDelegate {
         CalculatorExcelLogicController.shared.delegate = self
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
+    let lang = DataManager.shared.getLanguage()
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = "total_sum".localized(lang: lang)
+        }
+    }
     
     @IBOutlet weak var totalLabel: UILabel! 
 

@@ -12,6 +12,12 @@ import SVProgressHUD
 import SkyFloatingLabelTextField
 class FieldViewController: ViewController {
 
+    @IBOutlet weak var addFieldButton: UIButton! {
+        didSet {
+            addFieldButton.setTitle("add_field".localized(lang: self.lang), for: .normal)
+        }
+    }
+    
     @IBOutlet weak var viewForYearPicker: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
@@ -106,6 +112,7 @@ class FieldViewController: ViewController {
             self.viewForYearPicker.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
         }
     }
+    
     @IBAction func hideButtonPressed(_ sender: Any) {
         self.viewForYearPicker.isHidden = true
         self.mapView.isHidden = true

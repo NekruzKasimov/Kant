@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutAppViewController: UIViewController {
+class AboutAppViewController: ViewController {
     
     @IBOutlet weak var aboutAppImg: UIImageView!
     @IBOutlet weak var aboutAppLbl: UILabel!
@@ -18,11 +18,12 @@ class AboutAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
-        
-        ru = ["Мобильное приложение разработано при финансовой поддержке Федерального правительства Германии через программу Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH (Германского общества по международному сотрудничеству) „Содействие устойчивому экономическому развитию“." , "gizLogoRu"]
-        kg = ["Мобилдик колдонмо Германия Федералдык өкмөтү тарабынан  каржыланган Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH (Германия эл аралык кызматташуу коомунун) «Туруктуу экономикалык өнүгүүгө көмөктөшүү” программасы аркылуу иштеп чыгарылган.", "gizLogoKg"]
-        self.title = "О приложении"
-        aboutAppImg.image = UIImage(named: ru[1])
-        aboutAppLbl.text = ru[0]
+        self.title = "about_app".localized(lang: self.lang)
+        if self.lang == "ky" {
+            aboutAppImg.image = #imageLiteral(resourceName: "gizLogoKg")
+        } else {
+            aboutAppImg.image = #imageLiteral(resourceName: "gizLogoRu")
+        }
+        aboutAppLbl.text = "about_description".localized(lang: self.lang)
     }
 }

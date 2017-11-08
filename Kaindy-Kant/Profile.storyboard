@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Ytv-UW-j3E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F1j-DV-obZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlv-HA-bTv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Аман Аманов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwd-fe-8ov">
                                         <rect key="frame" x="118" y="49" width="109" height="21"/>
@@ -194,6 +194,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dta-ef-h5J"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="address_TF" destination="10j-wC-8t5" id="E8s-Js-6Mc"/>
                         <outlet property="avatarImageView" destination="0XG-NL-5Wr" id="jmR-kS-vVw"/>
@@ -959,6 +960,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ieh-H3-pZB"/>
                     <connections>
+                        <outlet property="addFieldButton" destination="XIc-2J-6Ne" id="ZnG-sd-DEe"/>
                         <outlet property="averageYield" destination="sxX-6Z-ZzA" id="s9y-5x-whU"/>
                         <outlet property="fieldHectare" destination="roP-j1-pgt" id="xBm-a6-nB2"/>
                         <outlet property="fieldId" destination="WaN-XT-2RV" id="IDX-si-j4n"/>

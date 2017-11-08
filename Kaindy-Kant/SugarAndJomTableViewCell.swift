@@ -10,6 +10,23 @@ import Foundation
 
 class SugarAndJomTableViewCell: UITableViewCell {
 
+    let lang = DataManager.shared.getLanguage()
+    
+    @IBOutlet weak var pricesAndValuesLabel: UILabel! {
+        didSet {
+            pricesAndValuesLabel.text = "prices".localized(lang: lang)
+        }
+    }
+    
+    @IBOutlet weak var jomLabel: UILabel!
+    @IBOutlet weak var sugarLabel: UILabel!
+    
+    @IBOutlet weak var districtLabel: UILabel!{
+        didSet {
+            districtLabel.text = "district".localized(lang: lang)
+        }
+    }
+    
     @IBOutlet weak var cardView: UIView! {
         didSet {
             cardView.layer.cornerRadius = 3
@@ -17,6 +34,33 @@ class SugarAndJomTableViewCell: UITableViewCell {
             cardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
             cardView.layer.shadowOffset = CGSize(width: 0, height: 0)
             cardView.layer.shadowOpacity = 0.8
+        }
+    }
+    @IBOutlet weak var changesLabel: UILabel!{
+        didSet {
+            changesLabel.text = "changes".localized(lang: lang)
+        }
+    }
+    @IBOutlet weak var priceLabel: UILabel! {
+        didSet {
+            priceLabel.text = "price".localized(lang: lang)
+        }
+    }
+    
+    @IBOutlet weak var districtJomLabel: UILabel! {
+        didSet {
+            districtJomLabel.text = "district".localized(lang: lang)
+        }
+    }
+    
+    @IBOutlet weak var demandLabel: UILabel!{
+        didSet {
+            demandLabel.text = "demand".localized(lang: lang)
+        }
+    }
+    @IBOutlet weak var supplyLabel: UILabel! {
+        didSet {
+            supplyLabel.text = "supply".localized(lang: lang)
         }
     }
     
@@ -43,7 +87,7 @@ class SugarAndJomTableViewCell: UITableViewCell {
             sugarPriceLabelUFO.text = sugar.price
             sugarPercentageLabelUFO.text = sugar.percentage
         }
-        sugarDateLabel.text = "\(Constants.SugarAndJom.SugarDate) \(sugar.date)"
+        sugarDateLabel.text = "\(Constants.SugarAndJom.SugarDate!) \(sugar.date)"
     }
 
     func setJomValue(jom: Jom){
@@ -54,7 +98,7 @@ class SugarAndJomTableViewCell: UITableViewCell {
             jomPriceLabelUFO.text = jom.price
             jomPercentageLabelUFO.text = jom.percentage
         }
-        sugarDateLabel.text = "\(Constants.SugarAndJom.JomDate) \(jom.date)"
+        jomDateLabel.text = "\(Constants.SugarAndJom.JomDate!) \(jom.date)"
     }
     
     func setValues(sugarJom: SugarJom) {

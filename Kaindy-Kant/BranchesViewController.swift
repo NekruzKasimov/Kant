@@ -42,11 +42,17 @@ extension BranchesViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesTableViewCell") as! BranchesTableViewCell
-            cell.titleLabel.text = titles[indexPath.row]
+            cell.titleLabel.text = titles[0]
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesMapTableViewCell") as! BranchesMapTableViewCell
-            cell.setMapMarkers(loc: loc, titles: titles)
+//            if loc.count > 0 {
+//                if titles.count > 0 {
+//                    cell.setMapMarkers(loc: loc, titles: titles)
+//                } else {
+//                    cell.setMapMarkers(loc: loc, titles: [""])
+//                }
+//            }
             return cell
         }
         return UITableViewCell()

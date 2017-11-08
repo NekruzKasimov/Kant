@@ -13,7 +13,39 @@ protocol ButtonDelegate : class {
 class ProfileMapTableViewCell: UITableViewCell {
     weak var cellDelegate: ButtonDelegate?
 
+    let lang = DataManager.shared.getLanguage()
     
+    @IBOutlet weak var averageYieldLabel: UILabel! {
+        didSet {
+            averageYieldLabel.text = "average_yield".localized(lang: lang)
+        }
+    }
+    @IBOutlet weak var hectaresLabel: UILabel! {
+        didSet {
+            hectaresLabel.text = "hectar".localized(lang: lang)
+        }
+    }
+    @IBOutlet weak var totalYieldLabel: UILabel!{
+        didSet {
+            averageYieldLabel.text = "Всего урожвя"
+        }
+    }
+    @IBOutlet weak var deleteButton: UIButton! {
+        didSet {
+           deleteButton.setTitle("Удалить", for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var showOnMapButton: UIButton!{
+        didSet {
+            deleteButton.setTitle("look_at_the_map".localized(lang: lang), for: .normal)
+        }
+    }
+    @IBOutlet weak var changeButton: UIButton! {
+        didSet {
+            changeButton.setTitle("change".localized(lang: lang), for: .normal)
+        }
+    }
     @IBOutlet weak var buttonMap: UIButton! {
         didSet {
             buttonMap.layer.masksToBounds = true

@@ -24,6 +24,7 @@ struct Constants {
         MainPage.init()
         MenuPage.init()
         Values.init()
+        SugarAndJom.init()
     }
 
     
@@ -53,13 +54,17 @@ struct Constants {
             static let GetServices = "api/service"
             static let GetTechnologies = "api/technology"
             static let GetSuppliers = "api/supplier"
-            static let FieldExpenses = "api/expenses/field"
+            static let FieldExpenses = "api/expenses"
         }
     }
     
     struct SugarAndJom {
-        static let JomDate = "Сушенный гранулированный жом НТБ (руб./т, с НДС)"
-        static let SugarDate = "Расчетная цена на сахар НТБ (руб./т, с НДС)"
+        static var JomDate: String?
+        static var SugarDate: String?
+        init(){
+            SugarAndJom.SugarDate = "sugar_tax".localized(lang: lang!)
+            SugarAndJom.JomDate = "jom_tax".localized(lang: lang!)
+        }
     }
     
     struct Weather {

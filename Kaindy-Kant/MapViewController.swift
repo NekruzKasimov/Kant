@@ -222,7 +222,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     }
     func addAddInfoButton(){
         addInfoButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
-        addInfoButton.setTitle("Сохранить", for: .normal)
+        addInfoButton.setTitle("save".localized(lang: self.lang), for: .normal)
         addInfoButton.setTitleColor(.white, for: .normal)
         addInfoButton.layer.cornerRadius = 2
         addInfoButton.backgroundColor = UIColor.init(netHex: Colors.purple)
@@ -265,7 +265,7 @@ extension MapViewController {
     func acceptFiled() {
         let alert = UIAlertController(title: "", message: "Соединить точки?", preferredStyle: .alert)
         //Cancel
-        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (acrion) in
+        alert.addAction(UIAlertAction(title: Constants.Values.cancel , style: .cancel, handler: { (acrion) in
         }))
         //Add
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in

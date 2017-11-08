@@ -175,9 +175,15 @@
             <connections>
                 <outlet property="areaLabel" destination="GRu-m3-hHW" id="eBn-5u-B3Y"/>
                 <outlet property="averageLabel" destination="fA3-1c-4CT" id="7sF-Rp-b5h"/>
+                <outlet property="averageYieldLabel" destination="yBk-mV-y0o" id="bZa-4F-k27"/>
                 <outlet property="buttonMap" destination="Ymh-Q7-jXm" id="Rh1-sB-A8x"/>
+                <outlet property="changeButton" destination="bOb-8l-atQ" id="dln-zy-DkE"/>
+                <outlet property="deleteButton" destination="EUB-su-rXR" id="Bo8-4w-DUz"/>
+                <outlet property="hectaresLabel" destination="PoN-10-Vaf" id="FH7-9N-UmR"/>
                 <outlet property="idLabel" destination="Hfu-gw-jyc" id="hca-t7-Op4"/>
+                <outlet property="showOnMapButton" destination="Ymh-Q7-jXm" id="4mP-dR-C0U"/>
                 <outlet property="totalLabel" destination="Gls-w6-Xss" id="uRm-Ld-Dle"/>
+                <outlet property="totalYieldLabel" destination="d30-E3-L7r" id="aVF-D7-gSW"/>
             </connections>
             <point key="canvasLocation" x="87.5" y="97"/>
         </tableViewCell>

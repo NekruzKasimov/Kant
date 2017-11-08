@@ -30,11 +30,17 @@ class NewsViewController: ViewController {
     var sugarJom: SugarJom?
     var localNews: News!
     
-    @IBOutlet weak var mySCOutlet: UISegmentedControl!
+    @IBOutlet weak var mySCOutlet: UISegmentedControl! {
+        didSet {
+            mySCOutlet.setTitle("Россахар", forSegmentAt: 0)
+            mySCOutlet.setTitle("local".localized(lang: self.lang), forSegmentAt: 1)
+        }
+    }
     
     @IBAction func showOtherNews(_ sender: Any) {
         
     }
+    
     @IBOutlet weak var newsTableView: UITableView! {
         didSet {
             newsTableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "NewsTableViewCell")
