@@ -54,7 +54,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneTF: SkyFloatingLabelTextField! {
         didSet {
             phoneTF.accessibilityIdentifier = "phoneTextField"
-            GlobalFunctions.configure(textField: phoneTF, withText: "Телефон", placeholder: "0777-77-77", tag: 3)
+            GlobalFunctions.configure(textField: phoneTF, withText: "Телефон", placeholder: "Телефон", tag: 3)
             phoneTF.keyboardType = .phonePad
             configureTextField(textField: phoneTF)
         }

@@ -17,7 +17,7 @@ target 'Kaindy-Kant' do
  pod 'SkyFloatingLabelTextField'
  pod 'Firebase/Core'
  pod 'Firebase/Messaging'
-
+ pod 'PickerView'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do

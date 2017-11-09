@@ -19,7 +19,7 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
-    let googleApiKey = "AIzaSyBQ9MySCWhmNLQlItBfbWTfbr1tgP1iBVQ"
+    let googleApiKey = "AIzaSyBtEyE10T9uHR79PMTPMTNZCGrWiYakBx0"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

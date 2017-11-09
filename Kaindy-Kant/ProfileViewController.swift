@@ -64,7 +64,7 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     @IBOutlet weak var phone_TF: SkyFloatingLabelTextField!  {
         didSet {
             phone_TF.accessibilityIdentifier = "phoneTextField"
-            GlobalFunctions.configure(textField: phone_TF, withText: "phone".localized(lang: self.lang)! , placeholder: "0777-77-77", tag: 3)
+            GlobalFunctions.configure(textField: phone_TF, withText: "phone".localized(lang: self.lang)! , placeholder: "phone".localized(lang: self.lang)!, tag: 3)
             phone_TF.keyboardType = .phonePad
             configureTextField(textField: phone_TF)
         }

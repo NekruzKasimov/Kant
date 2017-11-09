@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: SkyFloatingLabelTextField! {
         didSet {
-            loginTextField.accessibilityIdentifier = "passwordTextField"
-            GlobalFunctions.configure(textField: loginTextField, withText: "Логин", placeholder: "0777-77-77", tag: 0)
+            loginTextField.accessibilityIdentifier = "loginTextField"
+            GlobalFunctions.configure(textField: loginTextField, withText: "Логин", placeholder: "Логин", tag: 0)
             loginTextField.keyboardType = .phonePad
             configureTextField(textField: loginTextField)
         }

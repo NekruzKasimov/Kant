@@ -8,28 +8,70 @@
 
 import UIKit
 import SwiftyJSON
-
+import PickerView
 class LanguageViewController: UIViewController {
     
     @IBOutlet weak var languageView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var languagePickerView: PickerView!
     
+    var languages = ["Русский", "Кыргызча"]
+    var titles = ["Добро пожаловать!", "Кош келиниз!"]
+    var buttonTitles = ["Далее", "Кийинки"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        languagePickerView.dataSource = self
+        languagePickerView.delegate = self
+        languagePickerView.selectionStyle = .defaultIndicator
+        languagePickerView.translatesAutoresizingMaskIntoConstraints = false
+        
         
         // Do any additional setup after loading the view.
     }
-    @IBAction func russianLanguageButton(_ sender: Any) {
-        DataManager.shared.setLanguage(language: "ru")
-        showMainPage()
-    }
-    @IBAction func kyrgyzchaLanguageButton(_ sender: Any) {
-        DataManager.shared.setLanguage(language: "ky")
-        showMainPage()
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if languagePickerView.currentSelectedIndex == 0 {
+            DataManager.shared.setLanguage(language: "ru")
+            showMainPage()
+        }
+        else {
+            DataManager.shared.setLanguage(language: "ky")
+            showMainPage()
+        }
+       
     }
     func showMainPage(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
         present(vc, animated: true, completion: nil)
     }
+}
+extension LanguageViewController: PickerViewDataSource, PickerViewDelegate {
+    func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
+        return languages.count
+    }
+    func pickerView(_ pickerView: PickerView, titleForRow row: Int, index: Int) -> String {
+        let item = languages[index]
+        return item
+    }
+    func pickerViewHeightForRows(_ pickerView: PickerView) -> CGFloat {
+        return 60
+    }
+    func pickerView(_ pickerView: PickerView, didSelectRow row: Int, index: Int) {
+        titleLabel.text = titles[index]
+        nextButton.setTitle(buttonTitles[index], for: .normal)
+        print(languages[index])
+    }
+    func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 25.0)
+        if highlighted {
+            label.textColor = .black
+        } else {
+            label.textColor = .lightGray
+        }
+    }
+    
 }
 
