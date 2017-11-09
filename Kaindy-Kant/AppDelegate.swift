@@ -14,7 +14,7 @@ import UserNotifications
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
-
+import NotificationBannerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
 
@@ -81,17 +81,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print("NTO: \(userInfo)")
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        print("NTO local \(notification.alertTitle) \(notification.alertBody)")
+    }
 
 }
 extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-        print(fcmToken)
+        print("NTO token \(fcmToken)")
     }
     
     // The callback to handle data message received via FCM for devices running iOS 10 or above.
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print("NTO \(messaging.description)")
+        
+        print("NTO \(remoteMessage.appData)")
+    }
+    
     func application(received remoteMessage: MessagingRemoteMessage) {
-        print(remoteMessage.appData)
+        
+        print("NTO \(remoteMessage)")
+    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        guard let userInfo = userInfo as NSDictionary? as? [String: Any] else {return}
+        let name_of_message = userInfo["google.c.a.c_l"]!
+        let body_of_message = userInfo["aps"] as! NSDictionary? as? [String: Any]
+        let body_alert = body_of_message!["alert"]!
+        let banner = NotificationBanner(title: name_of_message as! String, subtitle: body_alert as! String, style: .info)
+        banner.backgroundColor = UIColor.init(netHex: Colors.purple)
+        banner.autoDismiss = false
+        banner.haptic = .light
+        banner.show(queuePosition: .front)
+        banner.dismissOnTap = true
+        banner.dismissOnSwipeUp = true
+        let uuid = UUID().uuidString
+        print(uuid)
+        print("NTO name - \(name_of_message) body - \(body_alert)")
+    }
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("NTO \(response.notification)")
     }
 }
 

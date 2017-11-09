@@ -194,7 +194,6 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         for p in points {
             path.add(p.coordinate)
         }
-        
         let route = GMSPolygon(path: path)
         route.strokeWidth = 2.0
         route.strokeColor = .green

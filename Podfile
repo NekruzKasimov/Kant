@@ -14,6 +14,7 @@ target 'Kaindy-Kant' do
  pod 'ImageSlideshow/Kingfisher’
  pod 'PKHUD'
  pod 'SVProgressHUD'
+ pod 'NotificationBannerSwift', '~> 1.4.4'
  pod 'SkyFloatingLabelTextField'
  pod 'Firebase/Core'
  pod 'Firebase/Messaging'
