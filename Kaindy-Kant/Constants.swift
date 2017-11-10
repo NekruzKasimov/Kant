@@ -83,11 +83,10 @@ struct Constants {
     }
     
     struct MenuPage {
-        static let menu = ["main_menu", "my_field" , "news", "services", "suppliers", "budget", "about_app", "logout"]
-        static let navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "AboutAppNav" , "LoginNav"]
-        static let storyboards = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "AboutApp" ,  "Login"]
+        static let menu = ["main_menu", "my_field" , "news", "services", "suppliers", "budget", "Настройки", "logout"]
+        static let navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "SettingsNav" , "LoginNav"]
+        static let storyboards = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "Settings" ,  "Login"]
     }
-
     struct Values {
         static var error: String?
         static var cancel: String?
@@ -102,6 +101,10 @@ struct Constants {
             Values.changePassword = "change_password".localized(lang: lang!)
         }
     }
+    struct SettingsOptions {
+        static let options = ["Выбор языка", "О приложении"]
+    }
+    
 
 }
 

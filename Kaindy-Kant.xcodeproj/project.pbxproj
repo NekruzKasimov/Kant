@@ -104,6 +104,9 @@
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
+		84816E231FB53FD900AAA05D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84816E221FB53FD900AAA05D /* Settings.storyboard */; };
+		84816E271FB5413100AAA05D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816E261FB5413100AAA05D /* SettingsViewController.swift */; };
+		84816E2A1FB5414F00AAA05D /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */; };
 		84A74C5C1FA1CD9500E7AE11 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A74C5B1FA1CD9500E7AE11 /* Field.swift */; };
 		84B4EA2D1FB09B6C005A5A95 /* PopUpYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */; };
 		84B4EA2F1FB0D219005A5A95 /* SaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */; };
@@ -252,6 +255,9 @@
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
+		84816E221FB53FD900AAA05D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		84816E261FB5413100AAA05D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		84A74C5B1FA1CD9500E7AE11 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYearViewController.swift; sourceTree = "<group>"; };
 		84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTableViewCell.swift; sourceTree = "<group>"; };
@@ -348,6 +354,7 @@
 			children = (
 				8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */,
 				8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */,
+				84816E211FB53FBD00AAA05D /* Settings */,
 				235E28501F7A8B1D00378759 /* Models */,
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
 				1F5893C01F61582400FD2C5D /* Login */,
@@ -671,6 +678,24 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		84816E211FB53FBD00AAA05D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				84816E281FB5413900AAA05D /* Cells */,
+				84816E221FB53FD900AAA05D /* Settings.storyboard */,
+				84816E261FB5413100AAA05D /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		84816E281FB5413900AAA05D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		84B54FC51F8B8DBA0016A301 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +842,7 @@
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
 				1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */,
 				2344C05E1FB0DC24005C97CD /* Localizable.strings in Resources */,
+				84816E231FB53FD900AAA05D /* Settings.storyboard in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
 				23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */,
 				1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */,
@@ -1064,6 +1090,7 @@
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				2397A2851F8CB8E200606660 /* DescriptionViewController.swift in Sources */,
 				232AD4631F991868007736B3 /* Services.swift in Sources */,
+				84816E271FB5413100AAA05D /* SettingsViewController.swift in Sources */,
 				84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */,
 				2319A3721F7BB96F00F787D3 /* CalculatorExcelLogicController.swift in Sources */,
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
@@ -1112,6 +1139,7 @@
 				1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */,
 				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
 				2397A2871F8CDB4E00606660 /* SugarAndJomTableViewCell.swift in Sources */,
+				84816E2A1FB5414F00AAA05D /* SettingsTableViewCell.swift in Sources */,
 				23EF3F6F1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift in Sources */,
 				84BAC2A71FB2BAEB007C3C34 /* PopUpViewController.swift in Sources */,
 				23A690EB1F7B46060062B4F9 /* Weather.swift in Sources */,

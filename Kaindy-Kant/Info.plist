@@ -33,7 +33,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Кант Кызылча uses Camera</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Нужно разрешение для определения вашего местополджения</string>
+	<string>Нужно разрешение для определения вашего местоположения</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Кант Кызылча</string>
 	<key>NSPhotoLibraryUsageDescription</key>

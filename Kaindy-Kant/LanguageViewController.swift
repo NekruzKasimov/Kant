@@ -17,9 +17,10 @@ class LanguageViewController: UIViewController {
     @IBOutlet weak var languagePickerView: PickerView!
     
     var languages = ["Русский", "Кыргызча"]
+    var selectLanguages = ["Выберите язык", "Тил тандаңыз"]
     var titles = ["Добро пожаловать!", "Кош келиниз!"]
     var buttonTitles = ["Далее", "Кийинки"]
-
+    var isLogin = true
     override func viewDidLoad() {
         super.viewDidLoad()
         languagePickerView.dataSource = self
@@ -59,9 +60,15 @@ extension LanguageViewController: PickerViewDataSource, PickerViewDelegate {
         return 60
     }
     func pickerView(_ pickerView: PickerView, didSelectRow row: Int, index: Int) {
-        titleLabel.text = titles[index]
-        nextButton.setTitle(buttonTitles[index], for: .normal)
-        print(languages[index])
+        
+        if isLogin {
+            nextButton.setTitle(buttonTitles[index], for: .normal)
+            titleLabel.text = titles[index]
+        }
+        else {
+            titleLabel.text = selectLanguages[index]
+        }
+       // print(languages[index])
     }
     func pickerView(_ pickerView: PickerView, styleForLabel label: UILabel, highlighted: Bool) {
         label.textAlignment = .center

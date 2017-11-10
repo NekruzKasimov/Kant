@@ -286,6 +286,7 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
         cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
         cell.averageLabel.text = "\(self.years[yearIndex].fields[indexPath.row].average_harvest)"
+        cell.totalLabel.text = "\(Double(self.years[yearIndex].fields[indexPath.row].hectares) * Double(self.years[yearIndex].fields[indexPath.row].average_harvest))"
 
         cell.selectionStyle = .none
         return cell
