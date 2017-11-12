@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import ScrollableSegmentedControl
 import SVProgressHUD
 import SkyFloatingLabelTextField
+import HSegmentControl
 class FieldViewController: ViewController {
 
     @IBOutlet weak var addFieldButton: UIButton! {
@@ -20,7 +20,7 @@ class FieldViewController: ViewController {
     
     @IBOutlet weak var viewForYearPicker: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
+    @IBOutlet weak var segmentedControl: HSegmentControl!
     @IBOutlet weak var hideButton: UIButton!
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var mapView: UIView!
@@ -62,10 +62,29 @@ class FieldViewController: ViewController {
         
         setNavigationBar()
         configureTableView()
-        segmentedControl.selectedSegmentIndex = 0
+        //segmentedControl.selectedIndex = 0
         yearPickerView.selectRow(yearsPicker.count - 1, inComponent: 0, animated: false)
+        segmentedControl.dataSource = self
+        //.
+        //.
+        //.
+        // Customized configuration
+        print(getNumberOfDisplayedSegments())
+        segmentedControl.numberOfDisplayedSegments = getNumberOfDisplayedSegments()
+        segmentedControl.segmentIndicatorViewContentMode = UIViewContentMode.bottom
+        segmentedControl.selectedTitleFont = UIFont.boldSystemFont(ofSize: 19)
+        segmentedControl.selectedTitleColor = UIColor.black
+        segmentedControl.unselectedTitleFont = UIFont.systemFont(ofSize: 17)
+        segmentedControl.unselectedTitleColor = UIColor.darkGray
+        //segmentedControl.segmentIndicatorView.backgroundColor = UIColor.red
+        segmentedControl.segmentIndicatorImage = UIImage(named: "arrow_up")
+        //segmentedControl.segmentIndicatorView.backgroundColor = UIColor.white
+
         //self.years = DataManager.shared.getYears()
         // Do any additional setup after loading the view.
+    }
+    func getNumberOfDisplayedSegments() -> Int{
+        return self.years.count == 0 ? 1  : self.years.count == 1 ? 1 : self.years.count == 2 ? 2 : 3
     }
     @IBAction func hideMapView(_ sender: UIButton) {
         //self.dismissMapView()
@@ -152,56 +171,74 @@ class FieldViewController: ViewController {
     }
     func setFields(years: Years){
 
-        
         SVProgressHUD.dismiss()
-        segmentedControl.segmentStyle = .textOnly
-        var goToFirst = false
-        if self.years.count == 0 {
-            for (index, year) in years.years.enumerated() {
-                segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
-            }
-        }
-        else {
-            for (index, year) in years.years.enumerated() {
-                var isAppeared = false
-                for yearOld in self.years {
-                    if yearOld.year == year.year {
-                        isAppeared = true
-                    }
-                }
-                if !isAppeared {
-                    segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
-                    break
-                }
-            }
-            for (index, yearOld) in self.years.enumerated() {
-                var isAppeared = false
-                for year in years.years {
-                    if yearOld.year == year.year {
-                        isAppeared = true
-                    }
-                }
-                if !isAppeared {
-                    goToFirst = true
-                    segmentedControl.removeSegment(at: index)
-                    break
-                }
-            }
-
-        }
-        if goToFirst {
-            segmentedControl.selectedSegmentIndex = 0
-        }
-        else {
-            segmentedControl.selectedSegmentIndex = yearIndex
-        }
+//        segmentedControl.segmentStyle = .textOnly
+//        var goToFirst = false
+//        if self.years.count == 0 {
+//            for (index, year) in years.years.enumerated() {
+//                segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
+//            }
+//        }
+//        else {
+//            for (index, year) in years.years.enumerated() {
+//                var isAppeared = false
+//                for yearOld in self.years {
+//                    if yearOld.year == year.year {
+//                        isAppeared = true
+//                    }
+//                }
+//                if !isAppeared {
+//                    segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
+//                    break
+//                }
+//            }
+//            for (index, yearOld) in self.years.enumerated() {
+//                var isAppeared = false
+//                for year in years.years {
+//                    if yearOld.year == year.year {
+//                        isAppeared = true
+//                    }
+//                }
+//                if !isAppeared {
+//                    goToFirst = true
+//                    if segmentedControl.numberOfSegments > 1 {
+//                        segmentedControl.removeSegment(at: index)
+//                    }
+//                    break
+//                }
+//            }
+//        }
+//        if goToFirst {
+//
+//            if segmentedControl.numberOfSegments > 0 {
+//                segmentedControl.selectedSegmentIndex = 0
+//            }
+//        }
+//        else {
+//
+//            if segmentedControl.numberOfSegments >= yearIndex {
+//                segmentedControl.selectedSegmentIndex = yearIndex
+//            }
+//        }
         self.years = years.years
-        segmentedControl.underlineSelected = true
-        segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
-        // change some colors
-        segmentedControl.segmentContentColor = UIColor.black
-        segmentedControl.selectedSegmentContentColor = UIColor.black
-        segmentedControl.backgroundColor = UIColor.white
+        if yearIndex >= self.years.count {
+            yearIndex = yearIndex - 1
+            if yearIndex > -1 {
+                segmentedControl.selectedIndex = yearIndex
+            }
+        }
+        if yearIndex < 0 {
+            yearIndex = 0
+        }
+        segmentedControl.reloadData()
+        segmentedControl.numberOfDisplayedSegments = getNumberOfDisplayedSegments()
+
+        //        segmentedControl.underlineSelected = true
+//        segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
+//        // change some colors
+//        segmentedControl.segmentContentColor = UIColor.black
+//        segmentedControl.selectedSegmentContentColor = UIColor.black
+//        segmentedControl.backgroundColor = UIColor.white
         tableView.reloadData()
 
     }
@@ -210,12 +247,18 @@ class FieldViewController: ViewController {
         tableView.tableFooterView           = UIView()
         //tableView.separatorStyle            = .none
     }
-    func segmentSelected(sender:ScrollableSegmentedControl) {
-        //segmentedControl
-        yearIndex = sender.selectedSegmentIndex
-        print("Segment at index \(sender.selectedSegmentIndex)  selected")
+    
+    @IBAction func segmentControlValueChanged(_ sender: Any) {
+        yearIndex = (sender as! HSegmentControl).selectedIndex
+        print("Segment at index \(yearIndex)  selected")
         tableView.reloadData()
     }
+//    func segmentSelected(sender:ScrollableSegmentedControl) {
+//        //segmentedControl
+//        yearIndex = sender.selectedSegmentIndex
+//        print("Segment at index \(sender.selectedSegmentIndex)  selected")
+//        tableView.reloadData()
+//    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewForYearPicker.isHidden = true
@@ -270,6 +313,28 @@ class FieldViewController: ViewController {
 
 }
 
+extension FieldViewController: HSegmentControlDataSource {
+    func segmentControl(_ segmentControl: HSegmentControl, titleOfIndex index: Int) -> String {
+        return self.years.count == 0 ? "2017" : self.years[index].year
+    }
+    
+    func numberOfSegments(_ segmentControl: HSegmentControl) -> Int {
+        return self.years.count == 0 ? 1 : self.years.count
+    }
+//    func segmentControl(_ segmentControl: HSegmentControl, segmentBackgroundViewOfIndex index: Int) -> UIView {
+//        let view = UIView()
+//        if index == segmentControl.selectedIndex {
+//            view.backgroundColor = UIColor.red
+//        }
+//        else {
+//            view.backgroundColor = UIColor.white
+//        }
+//
+//        return view
+//    }
+    
+    
+}
 extension FieldViewController: UITableViewDataSource, UITableViewDelegate, ButtonDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.years.count == 0 {

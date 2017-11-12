@@ -19,6 +19,7 @@ target 'Kaindy-Kant' do
  pod 'Firebase/Core'
  pod 'Firebase/Messaging'
  pod 'PickerView'
+ pod 'HSegmentControl'
   # Pods for Kaindy-Kant
 
   target 'Kaindy-KantTests' do

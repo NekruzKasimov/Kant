@@ -34,7 +34,9 @@ class DetailedMapViewController: UIViewController {
         //let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 75)
         googleMap = GMSMapView.map(withFrame: self.view.frame, camera: googleCamera)
         googleMap.mapType = .hybrid
-        googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight] 
+        googleMap.settings.myLocationButton = true
+        googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        googleMap.isMyLocationEnabled = true
         view.addSubview(googleMap)
         setupField()
     }
