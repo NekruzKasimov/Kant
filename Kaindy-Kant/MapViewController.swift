@@ -66,7 +66,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
         addGoogleMap()
-        addCurrentLocation()
+        //addCurrentLocation()
         //view.addSubview(tabBarView)
         addResetButton()
         addAddInfoButton()
@@ -133,7 +133,6 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         map.isMyLocationEnabled = true
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
-        
         fillExistingFields()
     }
     func fillExistingFields() {
@@ -228,18 +227,18 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         addInfoButton.addTarget(self, action: #selector(addInfoButtonClicked), for: .touchUpInside)
         view.addSubview(addInfoButton)
     }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations.last
-        //let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
-
-        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
-                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
-        self.map.animate(to: camera)
-//        map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//        map.isMyLocationEnabled = true
-//        self.view = mapView
-        locationManager.stopUpdatingLocation()
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let userLocation = locations.last
+//        //let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
+//
+//        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
+//                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
+//        self.map.animate(to: camera)
+////        map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+////        map.isMyLocationEnabled = true
+////        self.view = mapView
+//        locationManager.stopUpdatingLocation()
+//    }
 }
 
 extension MapViewController {

@@ -133,7 +133,7 @@ class ServerManager: HTTPRequestManager  {
         print(field.getFieldToAddDictionary())
         self.post(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: field.getFieldToAddDictionary(),  completion: { (json) in
             print(json)
-            let id = json["id"].intValue
+            let id = json["field_id"].intValue
             completion(id)
         }, error: error)
     }
