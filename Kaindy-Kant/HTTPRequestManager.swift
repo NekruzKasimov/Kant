@@ -50,7 +50,7 @@ class HTTPRequestManager {
         }
         
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: head).responseJSON { (response:DataResponse<Any>) in
-            //print(response.description)
+//            print(response.description)
             guard response.response != nil else {
                 error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)
                 return

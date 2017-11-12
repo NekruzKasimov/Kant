@@ -17,7 +17,6 @@ class AboutAppViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
         self.title = "about_app".localized(lang: self.lang)
         if self.lang == "ky" {
             aboutAppImg.image = #imageLiteral(resourceName: "gizLogoKg")

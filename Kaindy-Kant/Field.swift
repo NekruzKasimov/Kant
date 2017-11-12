@@ -47,6 +47,7 @@ struct Field {
     var average_harvest: Double
     var coordinates: Coordinates
     var expenses: Expenses
+    var point_name: String
     init(json: JSON) {
         id = json["id"].intValue
         field_id = json["field_id"].stringValue
@@ -54,6 +55,7 @@ struct Field {
         average_harvest = json["average_harvest"].doubleValue
         coordinates = Coordinates(json: json["coordinates"])
         expenses = Expenses(json: json["expenses"])
+        point_name = json["point_name"].stringValue
     }
 }
 struct Year {

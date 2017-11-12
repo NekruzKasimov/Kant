@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     let options = Constants.SettingsOptions.options
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
         tableView.tableFooterView = UIView()
         self.title = "Настройки"
         // Do any additional setup after loading the view.
