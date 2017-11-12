@@ -107,13 +107,13 @@ class DataManager {
     }
     
     func setLanguage(language: String) {
-        uDefaults.removeObject(forKey: "AppleLanguages")
-        uDefaults.set(language, forKey: "AppleLanguages")
+        uDefaults.removeObject(forKey: "lang")
+        uDefaults.set(language, forKey: "lang")
         uDefaults.synchronize()
     }
     
     func getLanguage() -> String {
-        return uDefaults.string(forKey: "AppleLanguages")!
+        return uDefaults.string(forKey: "lang")!
     }
     
     

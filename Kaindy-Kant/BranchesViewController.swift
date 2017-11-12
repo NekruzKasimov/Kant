@@ -34,7 +34,7 @@ extension BranchesViewController {
         if section == 0 {
             return titles.count
         } else if section == 1 {
-            return 0
+            return 1
         }
         return 0
     }
@@ -46,13 +46,13 @@ extension BranchesViewController {
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesMapTableViewCell") as! BranchesMapTableViewCell
-//            if loc.count > 0 {
-//                if titles.count > 0 {
-//                    cell.setMapMarkers(loc: loc, titles: titles)
-//                } else {
-//                    cell.setMapMarkers(loc: loc, titles: [""])
-//                }
-//            }
+            if loc.count > 0 {
+                if titles.count > 0 {
+                    cell.setMapMarkers(loc: loc, titles: titles)
+                } else {
+                    cell.setMapMarkers(loc: loc, titles: [""])
+                }
+            }
             return cell
         }
         return UITableViewCell()
