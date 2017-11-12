@@ -796,12 +796,15 @@
                                     <outlet property="delegate" destination="eA4-Sw-QTW" id="62k-dI-cGH"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="el2-Ic-lrI" customClass="ScrollableSegmentedControl" customModule="ScrollableSegmentedControl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="el2-Ic-lrI" customClass="HSegmentControl" customModule="HSegmentControl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="eCk-qp-408"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="segmentControlValueChanged:" destination="eA4-Sw-QTW" eventType="valueChanged" id="Ah5-JQ-SMC"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guA-hD-Ik8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -966,7 +969,7 @@
                         <outlet property="fieldId" destination="WaN-XT-2RV" id="IDX-si-j4n"/>
                         <outlet property="hideButton" destination="guA-hD-Ik8" id="JNQ-47-Vi7"/>
                         <outlet property="mapView" destination="2WB-cj-Sv5" id="JCT-dm-l7Z"/>
-                        <outlet property="segmentedControl" destination="el2-Ic-lrI" id="cb4-1o-4NL"/>
+                        <outlet property="segmentedControl" destination="el2-Ic-lrI" id="YqF-cY-zuU"/>
                         <outlet property="tableView" destination="Xjl-0z-bIN" id="QL9-au-xND"/>
                         <outlet property="viewForYearPicker" destination="gdA-h1-W1w" id="JV3-Gc-Rlb"/>
                         <outlet property="yearPickerView" destination="1sI-ZU-Q64" id="2a2-bK-lO1"/>
