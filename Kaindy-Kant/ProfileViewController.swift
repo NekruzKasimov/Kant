@@ -133,6 +133,10 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     }
     @IBAction func saveChangesPressed(_ sender: Any) {
 
+        SVProgressHUD.show()
+        ServerManager.shared.updateUser(parameters: getInfoToUpdate(), updateUser, error: showErrorAlert)
+    }
+    func getInfoToUpdate() -> [String: String] {
         var infoToUpdate = [String: String]()
         infoToUpdate["first_name"] = self.first_name_TF.text
         infoToUpdate["last_name"] = self.last_name_TF.text
@@ -143,10 +147,8 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
         infoToUpdate["city"] = self.city_TF.text
         infoToUpdate["address"] = self.address_TF.text
         infoToUpdate["photo"] = self.image
-        SVProgressHUD.show()
-        ServerManager.shared.updateUser(parameters: infoToUpdate, updateUser, error: showErrorAlert)
+        return infoToUpdate
     }
-    
     func updateUser(user: NewUser){
         SVProgressHUD.dismiss()
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
@@ -300,6 +302,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             self.avatarImageView.image = imageToEncode
         }
         self.image = (imageToEncode?.encode64(image: imageToEncode!))!
+        DataManager.shared.saveUserInformation(userDictionary: getInfoToUpdate())
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
