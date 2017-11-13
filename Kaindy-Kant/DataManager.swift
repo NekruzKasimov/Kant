@@ -32,8 +32,10 @@ class DataManager {
         uDefaults.set(beetPoints.array, forKey: "beetPoints")
     }
     func getBeetPoints() -> [BeetPoint]? {
-        let beetPoints = uDefaults.array(forKey: "beetPoints")
-        return beetPoints as! [BeetPoint]
+        if let beetPoints = uDefaults.array(forKey: "beetPoints") {
+            return beetPoints as! [BeetPoint]
+        }
+        return nil
     }
     func getServices() -> Services? {
         return self.services

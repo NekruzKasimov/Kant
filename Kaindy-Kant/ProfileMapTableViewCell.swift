@@ -42,7 +42,7 @@ class ProfileMapTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var beetPointLabel: UILabel! {
         didSet {
-            totalYieldLabel.text = "Свеклоприемный пункт:"
+            beetPointLabel.text = "Свеклоприемный пункт:"
         }
     }
     @IBOutlet weak var deleteButton: UIButton! {
