@@ -209,6 +209,8 @@ extension MainViewController {
         var degreeToday = ""
         var statusToday = ""
         let currentDate = Date()
+        statusToday = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
+        degreeToday = (self.weather?.today.array[0].temp)!
         for item in (self.weather?.today.array)! {
             switch currentDate.compare(item.exact_time) {
             case .orderedAscending:

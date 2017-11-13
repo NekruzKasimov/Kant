@@ -42,7 +42,7 @@ class ProfileMapTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var beetPointLabel: UILabel! {
         didSet {
-            totalYieldLabel.text = "Свеклоприемный пункт"
+            totalYieldLabel.text = "Свеклоприемный пункт:"
         }
     }
     @IBOutlet weak var deleteButton: UIButton! {
@@ -67,6 +67,7 @@ class ProfileMapTableViewCell: UITableViewCell {
             buttonMap.layer.cornerRadius = 5
         }
     }
+    
     @IBOutlet weak var idLabel: UILabel! 
     
     @IBOutlet weak var areaLabel: UILabel!

@@ -81,6 +81,9 @@ extension WeatherViewController {
             weekdays.append(Constants.Weather.weekdays[weekday - 1])
         }
         let currentDate = Date()
+        statusToday = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!]!
+        degreeToday = (weather?.today.array[0].temp)!
+        month = Constants.Weather.months[Calendar.current.component(.month, from: (weather?.today.array[0].exact_time)!)]
         for item in (weather?.today.array)! {
             switch currentDate.compare(item.exact_time) {
             case .orderedAscending:
