@@ -21,10 +21,10 @@ class Weather {
 }
 
 struct List {
-    var date: String
+    var date: Date
     var temp: Temp
     init(json: JSON) {
-        date = json["date"].stringValue
+        date = json["timestamp"].intValue.timestampToDate()
         temp = Temp(json: json["temp"])
     }
 }
@@ -39,13 +39,13 @@ struct Temp {
 }
 
 struct Today {
-    var exact_time: String
+    var exact_time: Date
     var type: String
     var temp: String
     var icon: String
     
     init(json: JSON) {
-        exact_time = json["exact_time"].stringValue
+        exact_time = json["timestamp"].intValue.timestampToDate()
         type = json["type"].stringValue
         temp = json["temp"].stringValue
         icon = json["icon"].stringValue

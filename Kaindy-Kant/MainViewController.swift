@@ -206,8 +206,20 @@ extension MainViewController {
     
     func setWeather(weather: Weather){
         self.weather = weather
-        self.degree = Int((self.weather?.today.array[0].temp)!)!
-        self.status = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
+        var degreeToday = ""
+        var statusToday = ""
+        let currentDate = Date()
+        for item in (self.weather?.today.array)! {
+            switch currentDate.compare(item.exact_time) {
+            case .orderedAscending:
+                statusToday = Constants.Weather.weatherStatuses[item.type]!
+                degreeToday = item.temp
+            default:
+                break
+            }
+        }
+        self.degree = Int(degreeToday)!
+        self.status = statusToday
         collectionView.reloadData()
     }
     func setCurrencies(currencies: [Currency]) {

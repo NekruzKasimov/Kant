@@ -25,11 +25,12 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    var week: Int = 0
+    var weekdays = [String]()
     var dates: [Int] = []
-    var month: String = ""
     var degrees: [[Int]] = []
-    var status = ""
+    var statusToday = ""
+    var degreeToday = ""
+    var month: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +50,7 @@ extension WeatherViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        let temp = (week + indexPath.row)
-        let weekday = temp >= 7 ? (temp - 7) : temp
-        cell.setValues(week: Constants.Weather.weekdays[weekday], degrees: degrees[indexPath.row])
+        cell.setValues(week: self.weekdays[indexPath.row], degrees: degrees[indexPath.row])
         return cell
     }
     
@@ -71,34 +70,32 @@ extension WeatherViewController {
 extension WeatherViewController {
     
     func updateValues() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-        let today = dateFormatter.date(from: (weather?.list.array[0].date)!)
-        week = Calendar.current.component(.weekday, from: today!) - 1
-        let monthDate = Calendar.current.component(.month, from: today!)
-        month = Constants.Weather.months[monthDate - 1]
         for item in (weather?.list.array)!{
-            let date = dateFormatter.date(from: item.date)
-//            let weekday = Calendar.current.component(.weekday, from: date!)
-    
-            let day = Calendar.current.component(.day, from: date!)
+            let weekday = Calendar.current.component(.weekday, from: item.date)
+            let day = Calendar.current.component(.day, from: item.date)
             var temp: [Int] = []
             temp.append(Int(item.temp.max)!)
             temp.append(Int(item.temp.min)!)
             degrees.append(temp)
             dates.append(day)
-//            months.append(Constants.Weather.months[month - 1])
-//            week.append(Constants.Weather.weekdays[weekday - 1])
-            if let item = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!] {
-                self.status = item
+            weekdays.append(Constants.Weather.weekdays[weekday - 1])
+        }
+        let currentDate = Date()
+        for item in (weather?.today.array)! {
+            switch currentDate.compare(item.exact_time) {
+            case .orderedAscending:
+                statusToday = Constants.Weather.weatherStatuses[item.type]!
+                degreeToday = item.temp
+                month = Constants.Weather.months[Calendar.current.component(.month, from: item.exact_time)]
+            default:
+                break
             }
         }
     }
     
     func setWeatherDegree() {
-        self.weatherDegreeLabel.text = Int(weather!.today.array[0].temp)! > 0 ? "+\(Int(weather!.today.array[0].temp)!)°C" : "\(Int(weather!.today.array[0].temp)!)°C"
-        self.weatheStatusLabel.text = status
-        self.dateLabel.text = "\(Constants.Weather.weekdays[week]), \(dates[0]) \(month)"
+        self.weatherDegreeLabel.text = Int(degreeToday)! > 0 ? "+\(degreeToday)!)°C" : "\(degreeToday)°C"
+        self.weatheStatusLabel.text = statusToday
+        self.dateLabel.text = "\(weekdays[0]), \(dates[0]) \(month)"
     }
 }
