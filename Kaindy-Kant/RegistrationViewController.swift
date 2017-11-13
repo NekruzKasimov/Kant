@@ -98,6 +98,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             passwordTF.accessibilityIdentifier = "passwordTextField"
             GlobalFunctions.configure(textField: passwordTF, withText: "Пароль", placeholder: "Пароль", tag: 8)
             configureTextField(textField: passwordTF)
+            passwordTF.isSecureTextEntry = true
         }
     }
     

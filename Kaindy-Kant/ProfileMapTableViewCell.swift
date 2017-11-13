@@ -13,6 +13,16 @@ protocol ButtonDelegate : class {
 class ProfileMapTableViewCell: UITableViewCell {
     weak var cellDelegate: ButtonDelegate?
 
+    @IBOutlet weak var cardView: UIView! {
+        didSet {
+            cardView.layer.cornerRadius = 3
+            cardView.layer.masksToBounds = false
+            cardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+            cardView.layer.shadowOffset = CGSize(width: 0, height: 0)
+            cardView.layer.shadowOpacity = 0.8
+        }
+    }
+    
     let lang = DataManager.shared.getLanguage()
     
     @IBOutlet weak var averageYieldLabel: UILabel! {
@@ -52,7 +62,7 @@ class ProfileMapTableViewCell: UITableViewCell {
             buttonMap.layer.cornerRadius = 5
         }
     }
-    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel! 
     
     @IBOutlet weak var areaLabel: UILabel!
     

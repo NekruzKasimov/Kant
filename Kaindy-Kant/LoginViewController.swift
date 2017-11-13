@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
             passwordTextField.accessibilityIdentifier = "passwordTextField"
             GlobalFunctions.configure(textField: passwordTextField, withText: "Пароль", placeholder: "Пароль", tag: 1)
             configureTextField(textField: passwordTextField)
+            passwordTextField.isSecureTextEntry = true
         }
     }
     

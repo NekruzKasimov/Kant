@@ -348,7 +348,8 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
         cell.cellDelegate = self
         cell.tag = indexPath.row
-        cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
+        let id = self.years[yearIndex].fields[indexPath.row].field_id
+        cell.idLabel.text = id == "" ? "ID:-------------" : "ID:\(id)"
         cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
         cell.averageLabel.text = "\(self.years[yearIndex].fields[indexPath.row].average_harvest)"
         cell.totalLabel.text = "\(Double(self.years[yearIndex].fields[indexPath.row].hectares) * Double(self.years[yearIndex].fields[indexPath.row].average_harvest))"
