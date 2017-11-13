@@ -172,4 +172,9 @@ class ServerManager: HTTPRequestManager  {
             completion(Currencies(json: json).array)
         }, error: error)
     }
+    func getBeetPoints(_ completion: @escaping (BeetPoints)-> Void, error: @escaping (String)-> Void) {
+        self.get(endpoint: "\(Constants.Network.EndPoints.BeetPoint)", serverType: .kant, completion: { (json) in
+            completion(BeetPoints(json: json))
+        }, error: error)
+    }
 }

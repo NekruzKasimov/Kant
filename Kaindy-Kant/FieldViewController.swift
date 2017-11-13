@@ -38,6 +38,13 @@ class FieldViewController: ViewController {
             configureTextField(textField: fieldHectare)
         }
     }
+    @IBOutlet weak var beet_point_name: SkyFloatingLabelTextField! {
+        didSet {
+            beet_point_name.accessibilityIdentifier = "beet_point_name"
+            GlobalFunctions.configure(textField: beet_point_name, withText: "Свеклоприкмный пукт" , placeholder: "Свеклоприкмный пукт", tag: 2)
+            configureTextField(textField: beet_point_name)
+        }
+    }
     @IBOutlet weak var averageYield: SkyFloatingLabelTextField! {
         didSet {
             averageYield.accessibilityIdentifier = "averageYield"
@@ -54,7 +61,10 @@ class FieldViewController: ViewController {
         super.viewDidLoad()
         self.title = Constants.MainPage.myFields
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add".localized(lang: self.lang)!, style: .plain, target: self, action: #selector(addTapped))
-
+        //ServerManager.shared.ge
+        if DataManager.shared.getBeetPoints() == nil {
+            ServerManager.shared.getBeetPoints(setBeetPoints, error: showErrorAlert)
+        }
         self.yearsPicker = DataManager.shared.getYears()
         choseYear = yearsPicker[yearsPicker.count - 1]
         //yearPickerView.reloadAllComponents()
@@ -82,6 +92,9 @@ class FieldViewController: ViewController {
 
         //self.years = DataManager.shared.getYears()
         // Do any additional setup after loading the view.
+    }
+    func setBeetPoints(beetPoints: BeetPoints) {
+        
     }
     func getNumberOfDisplayedSegments() -> Int{
         return self.years.count == 0 ? 1  : self.years.count == 1 ? 1 : self.years.count == 2 ? 2 : 3
