@@ -108,6 +108,7 @@
 		84816E271FB5413100AAA05D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816E261FB5413100AAA05D /* SettingsViewController.swift */; };
 		84816E2A1FB5414F00AAA05D /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */; };
 		84A74C5C1FA1CD9500E7AE11 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A74C5B1FA1CD9500E7AE11 /* Field.swift */; };
+		84AEF8191FB9C135005D6B08 /* BeetPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AEF8181FB9C135005D6B08 /* BeetPoint.swift */; };
 		84B4EA2D1FB09B6C005A5A95 /* PopUpYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */; };
 		84B4EA2F1FB0D219005A5A95 /* SaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */; };
 		84BAC2A71FB2BAEB007C3C34 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAC2A61FB2BAEB007C3C34 /* PopUpViewController.swift */; };
@@ -259,6 +260,7 @@
 		84816E261FB5413100AAA05D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		84A74C5B1FA1CD9500E7AE11 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		84AEF8181FB9C135005D6B08 /* BeetPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeetPoint.swift; sourceTree = "<group>"; };
 		84B4EA2C1FB09B6C005A5A95 /* PopUpYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYearViewController.swift; sourceTree = "<group>"; };
 		84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTableViewCell.swift; sourceTree = "<group>"; };
 		84BAC2A61FB2BAEB007C3C34 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 				232AD4641F992B48007736B3 /* Technologies.swift */,
 				84A74C5B1FA1CD9500E7AE11 /* Field.swift */,
 				842EB3751FA762C100DC25F2 /* FieldToAdd.swift */,
+				84AEF8181FB9C135005D6B08 /* BeetPoint.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1089,6 +1092,7 @@
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
 				8424F6391F8DF5B700639C9D /* SugarJom.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
+				84AEF8191FB9C135005D6B08 /* BeetPoint.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
 				2397A2851F8CB8E200606660 /* DescriptionViewController.swift in Sources */,
 				232AD4631F991868007736B3 /* Services.swift in Sources */,

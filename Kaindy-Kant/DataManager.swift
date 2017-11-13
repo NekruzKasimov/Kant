@@ -23,10 +23,18 @@ class DataManager {
     var services: Services?
     var years = Years().years
     var expenses = [[String: Any]]()
+    //var beetPoints: BeetPoints?
     func setServices(Services: Services) {
         self.services = Services
     }
-    
+    func setBeetPoints(beetPoints: BeetPoints) {
+        //self.beetPoints = beetPoints
+        uDefaults.set(beetPoints.array, forKey: "beetPoints")
+    }
+    func getBeetPoints() -> [BeetPoint]? {
+        let beetPoints = uDefaults.array(forKey: "beetPoints")
+        return beetPoints as! [BeetPoint]
+    }
     func getServices() -> Services? {
         return self.services
     }
