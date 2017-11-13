@@ -30,6 +30,11 @@ class ProfileMapTableViewCell: UITableViewCell {
             totalYieldLabel.text = "Всего урожая"
         }
     }
+    @IBOutlet weak var beetPointLabel: UILabel! {
+        didSet {
+            totalYieldLabel.text = "Свеклоприемный пункт"
+        }
+    }
     @IBOutlet weak var deleteButton: UIButton! {
         didSet {
            deleteButton.setTitle("Удалить", for: .normal)
@@ -60,6 +65,8 @@ class ProfileMapTableViewCell: UITableViewCell {
     
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var beetLabel: UILabel!
+    
     @IBAction func showInMap(_ sender: Any) {
         cellDelegate?.didPressButton(self.tag, "show")
     }
@@ -70,5 +77,8 @@ class ProfileMapTableViewCell: UITableViewCell {
         cellDelegate?.didPressButton(self.tag, "update")
 
     }
+//    func setData(field: Field){
+//        
+//    }
     
 }

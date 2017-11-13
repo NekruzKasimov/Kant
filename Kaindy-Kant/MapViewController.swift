@@ -46,6 +46,13 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             configureTextField(textField: averageYield)
         }
     }
+    @IBOutlet weak var beet_point_name: SkyFloatingLabelTextField! {
+        didSet {
+            beet_point_name.accessibilityIdentifier = "beet_point_name"
+            GlobalFunctions.configure(textField: beet_point_name, withText: "Свеклоприкмный пукт" , placeholder: "Свеклоприкмный пукт", tag: 2)
+            configureTextField(textField: beet_point_name)
+        }
+    }
     
     let resetButton = UIButton()
     let saveButton = UIButton()
@@ -54,6 +61,8 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
    // var map: GMSMapView!
     var points: [MapCoordinate] = []
     var locationManager = CLLocationManager()
+    var beetPoints = [BeetPoint]()
+    var beetPointIndex = 0
     lazy var map = GMSMapView()
 
     @IBOutlet weak var hideButton: UIButton!
@@ -65,12 +74,30 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             let vc = sb.instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
+        setBeetPointsInformation()
         addGoogleMap()
         //addCurrentLocation()
         //view.addSubview(tabBarView)
         addResetButton()
         addAddInfoButton()
         addSaveButton()
+    }
+    func setBeetPointsInformation(){
+        if let beetPoints = DataManager.shared.getBeetPoints() {
+            self.beetPoints = beetPoints
+            self.beet_point_name.text = beetPoints[0].name
+        } else {
+            ServerManager.shared.getBeetPoints(setBeetPoints, error: showErrorAlert)
+        }
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        beet_point_name.inputView = pickerView
+    }
+    func setBeetPoints(beetPoints: BeetPoints) {
+        self.beetPoints = beetPoints.array
+        self.beet_point_name.text = beetPoints.array[0].name
+        
     }
     @IBAction func hideButtonPressed(_ sender: Any) {
         dismissMapView()
@@ -88,7 +115,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             let doubleString = fieldHectare.text!.replacingOccurrences(of: ",", with: ".")
            // print(fieldHectare.text,(doubleString as NSString).doubleValue, (fieldHectare.text! as NSString))
             //print(Double(doubleString))
-            let field = FieldToAdd(field_id: fieldId.text!, year: yearChose, hectares: (doubleString as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue, point_id: 2)
+            let field = FieldToAdd(field_id: fieldId.text!, year: yearChose, hectares: (doubleString as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue, point_id: self.beetPoints.count == 0 ? 0 : self.beetPoints[beetPointIndex].id)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            
@@ -227,20 +254,24 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         addInfoButton.addTarget(self, action: #selector(addInfoButtonClicked), for: .touchUpInside)
         view.addSubview(addInfoButton)
     }
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let userLocation = locations.last
-//        //let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
-//
-//        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
-//                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
-//        self.map.animate(to: camera)
-////        map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-////        map.isMyLocationEnabled = true
-////        self.view = mapView
-//        locationManager.stopUpdatingLocation()
-//    }
 }
-
+extension MapViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.beetPoints.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.beetPoints[row].name
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        beet_point_name.text = self.beetPoints[row].name
+        beetPointIndex = row
+        self.view.endEditing(true)
+    }
+}
 extension MapViewController {
     
     func resetButtonClicked() {

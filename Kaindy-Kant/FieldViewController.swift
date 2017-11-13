@@ -17,7 +17,6 @@ class FieldViewController: ViewController {
             addFieldButton.setTitle("add_field".localized(lang: self.lang), for: .normal)
         }
     }
-    
     @IBOutlet weak var viewForYearPicker: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: HSegmentControl!
@@ -38,13 +37,7 @@ class FieldViewController: ViewController {
             configureTextField(textField: fieldHectare)
         }
     }
-    @IBOutlet weak var beet_point_name: SkyFloatingLabelTextField! {
-        didSet {
-            beet_point_name.accessibilityIdentifier = "beet_point_name"
-            GlobalFunctions.configure(textField: beet_point_name, withText: "Свеклоприкмный пукт" , placeholder: "Свеклоприкмный пукт", tag: 2)
-            configureTextField(textField: beet_point_name)
-        }
-    }
+    
     @IBOutlet weak var averageYield: SkyFloatingLabelTextField! {
         didSet {
             averageYield.accessibilityIdentifier = "averageYield"
@@ -57,28 +50,23 @@ class FieldViewController: ViewController {
     var years = Years().years
     var yearIndex = 0
     var field_id = -1
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constants.MainPage.myFields
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add".localized(lang: self.lang)!, style: .plain, target: self, action: #selector(addTapped))
         //ServerManager.shared.ge
-        if DataManager.shared.getBeetPoints() == nil {
-            ServerManager.shared.getBeetPoints(setBeetPoints, error: showErrorAlert)
-        }
+        
         self.yearsPicker = DataManager.shared.getYears()
         choseYear = yearsPicker[yearsPicker.count - 1]
         //yearPickerView.reloadAllComponents()
-        
         
         setNavigationBar()
         configureTableView()
         //segmentedControl.selectedIndex = 0
         yearPickerView.selectRow(yearsPicker.count - 1, inComponent: 0, animated: false)
         segmentedControl.dataSource = self
-        //.
-        //.
-        //.
-        // Customized configuration
         print(getNumberOfDisplayedSegments())
         segmentedControl.numberOfDisplayedSegments = getNumberOfDisplayedSegments()
         segmentedControl.segmentIndicatorViewContentMode = UIViewContentMode.bottom
@@ -86,16 +74,10 @@ class FieldViewController: ViewController {
         segmentedControl.selectedTitleColor = UIColor.black
         segmentedControl.unselectedTitleFont = UIFont.systemFont(ofSize: 17)
         segmentedControl.unselectedTitleColor = UIColor.darkGray
-        //segmentedControl.segmentIndicatorView.backgroundColor = UIColor.red
         segmentedControl.segmentIndicatorImage = UIImage(named: "arrow_up")
-        //segmentedControl.segmentIndicatorView.backgroundColor = UIColor.white
 
-        //self.years = DataManager.shared.getYears()
-        // Do any additional setup after loading the view.
     }
-    func setBeetPoints(beetPoints: BeetPoints) {
-        
-    }
+   
     func getNumberOfDisplayedSegments() -> Int{
         return self.years.count == 0 ? 1  : self.years.count == 1 ? 1 : self.years.count == 2 ? 2 : 3
     }
@@ -149,15 +131,6 @@ class FieldViewController: ViewController {
         self.viewForYearPicker.isHidden = true
         self.mapView.isHidden = true
         self.hideButton.isHidden = true
-//        viewForYearPicker.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
-//        viewForYearPicker.alpha = 1
-//        hideButton.alpha = 0.5
-//        UIView.animate(withDuration: 0.3) {
-//            self.hideButton.alpha = 0
-//            self.viewForYearPicker.alpha = 0
-//            self.viewForYearPicker.center = self.view.center
-//        }
-        print("pressedMe")
     }
     @IBAction func saveFiledBtn(_ sender: Any) {
         
@@ -177,62 +150,11 @@ class FieldViewController: ViewController {
         dismissMapView()
     }
     func setFiledAfterDeleting(years: Years) {
-        //removeall
-        
-        //reload
         setFields(years: years)
     }
     func setFields(years: Years){
 
         SVProgressHUD.dismiss()
-//        segmentedControl.segmentStyle = .textOnly
-//        var goToFirst = false
-//        if self.years.count == 0 {
-//            for (index, year) in years.years.enumerated() {
-//                segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
-//            }
-//        }
-//        else {
-//            for (index, year) in years.years.enumerated() {
-//                var isAppeared = false
-//                for yearOld in self.years {
-//                    if yearOld.year == year.year {
-//                        isAppeared = true
-//                    }
-//                }
-//                if !isAppeared {
-//                    segmentedControl.insertSegment(withTitle: "\(year.year)", at: index)
-//                    break
-//                }
-//            }
-//            for (index, yearOld) in self.years.enumerated() {
-//                var isAppeared = false
-//                for year in years.years {
-//                    if yearOld.year == year.year {
-//                        isAppeared = true
-//                    }
-//                }
-//                if !isAppeared {
-//                    goToFirst = true
-//                    if segmentedControl.numberOfSegments > 1 {
-//                        segmentedControl.removeSegment(at: index)
-//                    }
-//                    break
-//                }
-//            }
-//        }
-//        if goToFirst {
-//
-//            if segmentedControl.numberOfSegments > 0 {
-//                segmentedControl.selectedSegmentIndex = 0
-//            }
-//        }
-//        else {
-//
-//            if segmentedControl.numberOfSegments >= yearIndex {
-//                segmentedControl.selectedSegmentIndex = yearIndex
-//            }
-//        }
         self.years = years.years
         if yearIndex >= self.years.count {
             yearIndex = yearIndex - 1
@@ -245,13 +167,6 @@ class FieldViewController: ViewController {
         }
         segmentedControl.reloadData()
         segmentedControl.numberOfDisplayedSegments = getNumberOfDisplayedSegments()
-
-        //        segmentedControl.underlineSelected = true
-//        segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
-//        // change some colors
-//        segmentedControl.segmentContentColor = UIColor.black
-//        segmentedControl.selectedSegmentContentColor = UIColor.black
-//        segmentedControl.backgroundColor = UIColor.white
         tableView.reloadData()
 
     }
@@ -266,12 +181,6 @@ class FieldViewController: ViewController {
         print("Segment at index \(yearIndex)  selected")
         tableView.reloadData()
     }
-//    func segmentSelected(sender:ScrollableSegmentedControl) {
-//        //segmentedControl
-//        yearIndex = sender.selectedSegmentIndex
-//        print("Segment at index \(sender.selectedSegmentIndex)  selected")
-//        tableView.reloadData()
-//    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewForYearPicker.isHidden = true
@@ -291,12 +200,6 @@ class FieldViewController: ViewController {
             self.viewForYearPicker.alpha = 1
             self.viewForYearPicker.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.frame.height / 2)
         }
-        //animateYearView()
-        
-//        let sb = UIStoryboard(name: "Profile", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-//        self.navigationController?.show(vc, sender: self)
-        //present(vc, animated: true, completion: nil)
     }
     func animateYearView(){
         viewForYearPicker.center = CGPoint(x: self.view.bounds.size.width / 2, y: 0)
@@ -321,11 +224,8 @@ class FieldViewController: ViewController {
         }
         return [Field]()
     }
-    
-   
 
 }
-
 extension FieldViewController: HSegmentControlDataSource {
     func segmentControl(_ segmentControl: HSegmentControl, titleOfIndex index: Int) -> String {
         return self.years.count == 0 ? "2017" : self.years[index].year
@@ -334,20 +234,10 @@ extension FieldViewController: HSegmentControlDataSource {
     func numberOfSegments(_ segmentControl: HSegmentControl) -> Int {
         return self.years.count == 0 ? 1 : self.years.count
     }
-//    func segmentControl(_ segmentControl: HSegmentControl, segmentBackgroundViewOfIndex index: Int) -> UIView {
-//        let view = UIView()
-//        if index == segmentControl.selectedIndex {
-//            view.backgroundColor = UIColor.red
-//        }
-//        else {
-//            view.backgroundColor = UIColor.white
-//        }
-//
-//        return view
-//    }
-    
     
 }
+
+
 extension FieldViewController: UITableViewDataSource, UITableViewDelegate, ButtonDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.years.count == 0 {
@@ -361,10 +251,13 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMapTableViewCell") as! ProfileMapTableViewCell
         cell.cellDelegate = self
         cell.tag = indexPath.row
+        
         cell.idLabel.text = self.years[yearIndex].fields[indexPath.row].field_id
         cell.areaLabel.text = "\(self.years[yearIndex].fields[indexPath.row].hectares)"
         cell.averageLabel.text = "\(self.years[yearIndex].fields[indexPath.row].average_harvest)"
         cell.totalLabel.text = "\(Double(self.years[yearIndex].fields[indexPath.row].hectares) * Double(self.years[yearIndex].fields[indexPath.row].average_harvest))"
+        cell.beetLabel.text = self.years[yearIndex].fields[indexPath.row].point_name
+        
 
         cell.selectionStyle = .none
         return cell
@@ -410,26 +303,7 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         print(message)
     }
 }
-extension FieldViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.yearsPicker.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(self.yearsPicker[row])"
-    }
-    
-}
 
-extension FieldViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(yearsPicker[row])
-        choseYear = yearsPicker[row]
-        self.view.endEditing(true)
-    }
-}
 extension FieldViewController {
     func configureTextField(textField: SkyFloatingLabelTextField){
         textField.lineColor = UIColor.init(netHex: Colors.purple)
