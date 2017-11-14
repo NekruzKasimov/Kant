@@ -236,7 +236,25 @@ extension FieldViewController: HSegmentControlDataSource {
     }
     
 }
+extension FieldViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.yearsPicker.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(self.yearsPicker[row])"
+        }
+}
 
+extension FieldViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(yearsPicker[row])
+        choseYear = yearsPicker[row]
+        self.view.endEditing(true)
+    }
+}
 
 extension FieldViewController: UITableViewDataSource, UITableViewDelegate, ButtonDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
