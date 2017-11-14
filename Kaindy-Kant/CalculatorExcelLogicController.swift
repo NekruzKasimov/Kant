@@ -14,6 +14,9 @@ protocol UpdateTotalValueDelegate: class {
 
 class CalculatorExcelLogicController {
     
+    var amounts = [Int]()
+    var prices = [Int]()
+    
     class var shared: CalculatorExcelLogicController {
         struct Static {
             static let instance = CalculatorExcelLogicController()
@@ -40,10 +43,10 @@ class CalculatorExcelLogicController {
     }
     
     func updateValues(total: Int, counter: Int) {
-        let value = self.total[counter - 1]
+        let value = self.total[counter]
         totalValue -= value
         totalValue += total
-        self.total[counter - 1] = total
+        self.total[counter] = total
         setTotalValue(total: totalValue)
     }
 }

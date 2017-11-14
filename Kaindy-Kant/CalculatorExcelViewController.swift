@@ -61,6 +61,10 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         DataManager.shared.setExpenses(expenses: expenses)
         self.expenses = expenses
         CalculatorExcelLogicController.shared.updateTotalValues(expenses: self.expenses!)
+        for item in expenses.array {
+            CalculatorExcelLogicController.shared.amounts.append(item.amount)
+            CalculatorExcelLogicController.shared.prices.append(item.price)
+        }
         tableView.reloadData()
     }
 }
@@ -93,8 +97,11 @@ extension CalculatorExcelViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FirstSectionTableViewCell") as! FirstSectionTableViewCell
             return cell
         case .items:
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell") as! CalculatorExcelTableViewCell
             cell.setValues(expense: (expenses?.array[indexPath.row])!, counter: indexPath.row)
+            let shared = CalculatorExcelLogicController.shared
+            cell.setAmountAndPrice(amount: shared.amounts[indexPath.row], price: shared.prices[indexPath.row])
             cell.totalLabel.text = "\(CalculatorExcelLogicController.shared.total[indexPath.row])"
             return cell
         case .total:
@@ -108,13 +115,13 @@ extension CalculatorExcelViewController {
             return cell
         }
     }
+    
     func didPressButton(_ tag: Int) {
-        //print(expenses)
         SVProgressHUD.show()
-        print(DataManager.shared.getExpenses())
         ServerManager.shared.updateExpenses(parameters: ["data": DataManager.shared.getExpenses()], expensesUpdated, error: showErrorAlert)
         print("save expenses")
     }
+    
     func expensesUpdated(message: String){
         print(message)
         SVProgressHUD.dismiss()

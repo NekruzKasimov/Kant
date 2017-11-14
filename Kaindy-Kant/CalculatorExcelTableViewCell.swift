@@ -11,7 +11,7 @@ import Foundation
 class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     var valueChangeHandler: ((Int, Int)->())?
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var priceTF: UITextField! {
@@ -33,15 +33,20 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var totalLabel: UILabel!
     
     func setValues(expense: Expense, counter: Int) {
-        self.priceTF.placeholder = "\(expense.price)"
-        self.amountTF.placeholder = "\(expense.amount)"
+        self.priceTF.placeholder = "\(CalculatorExcelLogicController.shared.prices[counter])"
+        self.amountTF.placeholder = "\(CalculatorExcelLogicController.shared.amounts[counter])"
         self.titleLabel.text = "\(counter + 1).\n\(expense.name)"
-        self.tag = counter + 1
+        self.tag = counter
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         valueChangeHandler = CalculatorExcelLogicController.shared.updateValues(total:counter:)
+    }
+    
+    func setAmountAndPrice(amount: Int, price: Int) {
+        priceTF.text = "\(price)"
+        amountTF.text = "\(amount)"
     }
 }
 
@@ -55,7 +60,9 @@ extension CalculatorExcelTableViewCell {
     func textFieldDidChange() {
         let price = priceTF.text == "" ? Int(priceTF.placeholder!)! : Int(priceTF.text!)!
         let amount = amountTF.text == "" ? Int(amountTF.placeholder!)! : Int(amountTF.text!)!
-        DataManager.shared.update(index: self.tag - 1, price: price, amount: amount)
+        DataManager.shared.update(index: self.tag, price: price, amount: amount)
+        CalculatorExcelLogicController.shared.amounts[self.tag] = amount
+        CalculatorExcelLogicController.shared.prices[self.tag] = price
         valueChangeHandler?(price * amount, self.tag)
         self.totalLabel.text = "\(price * amount)"
         reloadInputViews()
