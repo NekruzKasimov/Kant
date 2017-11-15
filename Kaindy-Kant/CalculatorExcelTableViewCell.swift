@@ -45,8 +45,12 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func setAmountAndPrice(amount: Int, price: Int) {
-        priceTF.text = "\(price)"
-        amountTF.text = "\(amount)"
+//        if priceTF.placeholder != "\(price)" {
+            priceTF.text = "\(price)"
+//        }
+//        if amountTF.placeholder != "\(amount)" {
+            amountTF.text = "\(amount)"
+//        }
     }
 }
 

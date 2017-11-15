@@ -107,6 +107,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             passwordRepeatTF.accessibilityIdentifier = "passwordRepeatTextField"
             GlobalFunctions.configure(textField: passwordRepeatTF, withText: "Повторить пароль", placeholder: "Повторить пароль", tag: 9)
             configureTextField(textField: passwordRepeatTF)
+            passwordRepeatTF.isSecureTextEntry = true
         }
     }
 

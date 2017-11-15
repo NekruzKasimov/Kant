@@ -15,7 +15,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var contacts: Contacts!
     
-    var titles = [["phone", "Телефон"], ["fax", "Факс"], ["social", "Социальная сеть"], ["web", "Сайт"]]
+    var titles = [["phone", "Телефон"], ["fax", "Факс"], ["social", "Социальная сеть"], ["web", "Сайт"], ["email", "Электронная почта"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +34,14 @@ extension ContactsViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsTableViewCell") as! ContactsTableViewCell
         var title = ""
-        
+        var icon = ""
         for item in titles {
             if item[0] == contacts?.array[indexPath.row].type {
                 title = item[1]
+                icon = item[0]
             }
         }
+        cell.iconImage.image = UIImage(named: icon)
         cell.titleLabel.text = title
         cell.dataLabel.text = contacts?.array[indexPath.row].data
         return cell

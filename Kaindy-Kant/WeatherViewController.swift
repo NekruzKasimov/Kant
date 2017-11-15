@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class WeatherViewController: ViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
     
@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var weatheStatusLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var weather: Weather? {
@@ -31,11 +32,12 @@ class WeatherViewController: UIViewController, UICollectionViewDataSource, UICol
     var statusToday = ""
     var degreeToday = ""
     var month: String = ""
+    var statusIcon = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setWeatherDegree()
-        self.title = "Погода"
+        self.title = "weather".localized(lang: self.lang)
         self.navigationController?.navigationBar.topItem?.title = ""
     }
 }
@@ -50,7 +52,8 @@ extension WeatherViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        cell.setValues(week: self.weekdays[indexPath.row], degrees: degrees[indexPath.row])
+        let weekday = indexPath.row == 0 ? "Сегодня" : self.weekdays[indexPath.row]
+        cell.setValues(week: weekday, degrees: degrees[indexPath.row])
         return cell
     }
     
@@ -81,23 +84,54 @@ extension WeatherViewController {
             weekdays.append(Constants.Weather.weekdays[weekday - 1])
         }
         let currentDate = Date()
-        statusToday = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!]!
+        let type = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!]!
+        statusToday = type
+        statusIcon = checkType(type: type)
         degreeToday = (weather?.today.array[0].temp)!
         month = Constants.Weather.months[Calendar.current.component(.month, from: (weather?.today.array[0].exact_time)!)]
-        for item in (weather?.today.array)! {
-            switch currentDate.compare(item.exact_time) {
-            case .orderedAscending:
-                statusToday = Constants.Weather.weatherStatuses[item.type]!
-                degreeToday = item.temp
-                month = Constants.Weather.months[Calendar.current.component(.month, from: item.exact_time)]
-            default:
-                break
-            }
+//        for item in (weather?.today.array)! {
+//            switch currentDate.compare(item.exact_time) {
+//            case .orderedAscending:
+//                let type = Constants.Weather.weatherStatuses[item.type]!
+//                statusToday = type
+//                checkType(type: type)
+//                degreeToday = item.temp
+//                month = Constants.Weather.months[Calendar.current.component(.month, from: item.exact_time)]
+//            default:
+//                break
+//            }
+//        }
+    }
+    
+    func checkType(type: String) -> Int {
+        switch type {
+        case "Rain":
+            return 1
+        case "Cloudy", "Mostly cloudy" :
+            return 2
+        case "Clear":
+            return 3
+        case "Snow":
+            return 4
+        default:
+            break
         }
+        return 0
     }
     
     func setWeatherDegree() {
-        self.weatherDegreeLabel.text = Int(degreeToday)! > 0 ? "+\(degreeToday)!)°C" : "\(degreeToday)°C"
+        switch statusIcon {
+        case 1:
+            iconImageView.image = #imageLiteral(resourceName: "rainy")
+        case 2, 0:
+            iconImageView.image = #imageLiteral(resourceName: "cloudy")
+        case 3:
+            iconImageView.image = #imageLiteral(resourceName: "sunny")
+        case 4:
+            iconImageView.image = #imageLiteral(resourceName: "snowy")
+        default: break
+        }
+        self.weatherDegreeLabel.text = Int(degreeToday)! > 0 ? "+\(degreeToday)°C" : "\(degreeToday)°C"
         self.weatheStatusLabel.text = statusToday
         self.dateLabel.text = "\(weekdays[0]), \(dates[0]) \(month)"
     }

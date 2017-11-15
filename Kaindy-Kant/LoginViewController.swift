@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
             GlobalFunctions.configure(textField: loginTextField, withText: "Логин", placeholder: "Логин", tag: 0)
             loginTextField.keyboardType = .phonePad
             configureTextField(textField: loginTextField)
+            
         }
     }
     

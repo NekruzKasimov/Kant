@@ -211,15 +211,15 @@ extension MainViewController {
         let currentDate = Date()
         statusToday = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
         degreeToday = (self.weather?.today.array[0].temp)!
-        for item in (self.weather?.today.array)! {
-            switch currentDate.compare(item.exact_time) {
-            case .orderedAscending:
-                statusToday = Constants.Weather.weatherStatuses[item.type]!
-                degreeToday = item.temp
-            default:
-                break
-            }
-        }
+//        for item in (self.weather?.today.array)! {
+//            switch currentDate.compare(item.exact_time) {
+//            case .orderedAscending:
+//                statusToday = Constants.Weather.weatherStatuses[item.type]!
+//                degreeToday = item.temp
+//            default:
+//                break
+//            }
+//        }
         self.degree = Int(degreeToday)!
         self.status = statusToday
         collectionView.reloadData()

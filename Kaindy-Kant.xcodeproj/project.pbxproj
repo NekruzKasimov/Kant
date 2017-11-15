@@ -100,7 +100,6 @@
 		8424F63D1F8DF6BF00639C9D /* Jom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424F63C1F8DF6BF00639C9D /* Jom.swift */; };
 		842EB3761FA762C100DC25F2 /* FieldToAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EB3751FA762C100DC25F2 /* FieldToAdd.swift */; };
 		8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2731F8B521C00BA712B /* Rossahar.swift */; };
-		8433F2761F8B523400BA712B /* Domestic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2751F8B523400BA712B /* Domestic.swift */; };
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
@@ -252,7 +251,6 @@
 		8424F63C1F8DF6BF00639C9D /* Jom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jom.swift; sourceTree = "<group>"; };
 		842EB3751FA762C100DC25F2 /* FieldToAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldToAdd.swift; sourceTree = "<group>"; };
 		8433F2731F8B521C00BA712B /* Rossahar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rossahar.swift; sourceTree = "<group>"; };
-		8433F2751F8B523400BA712B /* Domestic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domestic.swift; sourceTree = "<group>"; };
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
@@ -565,7 +563,6 @@
 				8423B9961F8B4FA10061C702 /* NewUser.swift */,
 				8433F2731F8B521C00BA712B /* Rossahar.swift */,
 				2397A2731F8CB7B800606660 /* DetailedService.swift */,
-				8433F2751F8B523400BA712B /* Domestic.swift */,
 				8433F2771F8B550400BA712B /* Result.swift */,
 				84BEAA9D1F8F65C500D6A647 /* Currency.swift */,
 				8424F6381F8DF5B700639C9D /* SugarJom.swift */,
@@ -1127,7 +1124,6 @@
 				23205AE81F62378100D58F5B /* Colors.swift in Sources */,
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
 				2397A27F1F8CB80600606660 /* HeaderViewController.swift in Sources */,
-				8433F2761F8B523400BA712B /* Domestic.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				8423B9991F8B54780061C702 /* Constants.swift in Sources */,

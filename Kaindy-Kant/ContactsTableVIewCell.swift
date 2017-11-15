@@ -10,11 +10,7 @@ import Foundation
 
 class ContactsTableViewCell: UITableViewCell {
    
-    @IBOutlet weak var iconImage: UIImageView! {
-        didSet {
-            iconImage.image = UIImage(named: "camera")
-        }
-    }
+    @IBOutlet weak var iconImage: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
     

@@ -86,7 +86,7 @@ class ServerManager: HTTPRequestManager  {
     }
     
     func getLocalNews(_ completion: @escaping (News)-> Void, error: @escaping (String)-> Void) {
-        self.get(endpoint: "\(Constants.Network.EndPoints.LocalNews)", serverType: .kant, completion: { (success) in
+        self.get(endpoint: "\(Constants.Network.EndPoints.LocalNews)", serverType: .kant, header: DataManager.shared.getLanguage(), completion: { (success) in
             completion(News(json: success))
         }, error: error)
     }

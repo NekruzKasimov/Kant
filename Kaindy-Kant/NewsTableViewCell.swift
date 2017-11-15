@@ -30,8 +30,8 @@ class NewsTableViewCell: UITableViewCell {
         descriptionLabel.text = result.description
     }
     
-    func setLocalNews(result: LocalNews) {
+    func setLocalNews(result: NewsData) {
         titleLabel.text = result.title
-        descriptionLabel.text = result.content
+        descriptionLabel.text = result.description
     }
 }

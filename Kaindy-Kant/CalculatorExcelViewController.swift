@@ -56,6 +56,14 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
             }
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        CalculatorExcelLogicController.shared.prices.removeAll()
+        CalculatorExcelLogicController.shared.amounts.removeAll()
+        CalculatorExcelLogicController.shared.total.removeAll()
+        CalculatorExcelLogicController.shared.totalValue = 0
+    }
+    
     func setExpenses(expenses: Expenses) {
         SVProgressHUD.dismiss()
         DataManager.shared.setExpenses(expenses: expenses)

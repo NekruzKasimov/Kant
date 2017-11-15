@@ -11,16 +11,13 @@ import SwiftyJSON
 
 struct LocalNews {
     var photo: NewsPhotos
-    var title: String
-    var description: String
-    var content: String
+    var data: NewsData
     
     init(json: JSON) {
         photo = NewsPhotos(json: json["photo_link"])
-        title = json["name"].stringValue
-        description = json["description"].stringValue
-        content = json["content"].stringValue
+        data = NewsData(json: json["news"])
     }
+    
 }
 
 class LocalNewses: NSObject {
@@ -35,6 +32,18 @@ class LocalNewses: NSObject {
     }
 }
 
+struct NewsData {
+    var title: String
+    var description: String
+    var content: String
+    
+    init(json: JSON) {
+        title = json["name"].stringValue
+        description = json["description"].stringValue
+        content = json["content"].stringValue
+    }
+}
+
 struct News {
     var results: LocalNewses
     
@@ -45,6 +54,7 @@ struct News {
         return ["results": results]
     }
 }
+
 class Newses: NSObject {
     override init() {}
     var array: Array = Array<News>()

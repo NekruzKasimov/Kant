@@ -45,8 +45,6 @@ class NewsViewController: ViewController {
         didSet {
             newsTableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "NewsTableViewCell")
             newsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsTableViewCell")
-//            newsTableView.estimatedRowHeight = 200
-//            newsTableView.rowHeight = UITableViewAutomaticDimension
         }
     }
     
@@ -146,14 +144,17 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             if mySCOutlet.selectedSegmentIndex == 0 {
                 cell.setValues(result: (newRossahar?.results.array[indexPath.row])!)
             } else if mySCOutlet.selectedSegmentIndex == 1 {
-                cell.setLocalNews(result: (localNews.results.array[indexPath.row]))
+                cell.setLocalNews(result: (localNews.results.array[indexPath.row].data))
             }
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 204
+        if indexPath.section == 0 {
+            return 204
+        }
+        return UITableViewAutomaticDimension
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -165,8 +166,8 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             let sb = UIStoryboard(name: "News", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "LocalNewsViewController") as! LocalNewsViewController
             
-            vc.newsTitle = localNews.results.array[indexPath.row].title
-            vc.newsContent = localNews.results.array[indexPath.row].content
+            vc.newsTitle = localNews.results.array[indexPath.row].data.title
+            vc.newsContent = localNews.results.array[indexPath.row].data.content
             vc.images = localNews.results.array[indexPath.row].photo
             
             navigationController?.pushViewController(vc, animated: true)
