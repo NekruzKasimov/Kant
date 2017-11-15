@@ -31,23 +31,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3g-dv-gQU">
-                                        <rect key="frame" x="24" y="404" width="327" height="28"/>
-                                        <color key="backgroundColor" red="0.61568627450000002" green="0.12549019610000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Мои поля">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="presentMap:" destination="WIi-VN-ZPK" eventType="touchUpInside" id="ksP-TY-rpx"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofj-t9-1q3" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="24" y="130" width="327" height="17"/>
                                         <nil key="textColor"/>
@@ -146,21 +129,17 @@
                                     <constraint firstItem="CHE-tw-Eap" firstAttribute="leading" secondItem="yB8-HT-SdY" secondAttribute="leading" id="44n-N0-t5G"/>
                                     <constraint firstItem="rxN-Ni-hiW" firstAttribute="leading" secondItem="ofj-t9-1q3" secondAttribute="leading" id="6fO-1K-nY0"/>
                                     <constraint firstItem="Pwd-fe-8ov" firstAttribute="centerY" secondItem="0XG-NL-5Wr" secondAttribute="centerY" id="75K-QH-sBn"/>
-                                    <constraint firstAttribute="bottom" secondItem="R3g-dv-gQU" secondAttribute="bottom" constant="24" id="7Vc-Tk-WQk"/>
                                     <constraint firstAttribute="trailing" secondItem="ofj-t9-1q3" secondAttribute="trailing" constant="24" id="91Q-aI-LC3"/>
-                                    <constraint firstItem="R3g-dv-gQU" firstAttribute="trailing" secondItem="fa6-su-oxT" secondAttribute="trailing" id="9WY-dW-UTw"/>
                                     <constraint firstItem="10j-wC-8t5" firstAttribute="top" secondItem="Ycp-Oa-eki" secondAttribute="bottom" constant="8" id="AWy-5w-vZP"/>
                                     <constraint firstItem="rxN-Ni-hiW" firstAttribute="top" secondItem="10j-wC-8t5" secondAttribute="bottom" constant="30" id="Bpy-xI-ZVd"/>
                                     <constraint firstItem="Gep-b0-C8O" firstAttribute="leading" secondItem="ofj-t9-1q3" secondAttribute="leading" id="Dni-Y6-lMY"/>
                                     <constraint firstItem="fa6-su-oxT" firstAttribute="leading" secondItem="rxN-Ni-hiW" secondAttribute="trailing" constant="24" id="Eb2-gS-0G7"/>
-                                    <constraint firstItem="R3g-dv-gQU" firstAttribute="leading" secondItem="rxN-Ni-hiW" secondAttribute="leading" id="FHo-9M-hqy"/>
                                     <constraint firstItem="ofj-t9-1q3" firstAttribute="top" secondItem="0XG-NL-5Wr" secondAttribute="bottom" constant="36" id="GX1-Ki-qbQ"/>
                                     <constraint firstItem="iub-9U-p4e" firstAttribute="top" secondItem="ofj-t9-1q3" secondAttribute="bottom" constant="8" id="J6G-w4-S0B"/>
                                     <constraint firstItem="Ycp-Oa-eki" firstAttribute="leading" secondItem="ofj-t9-1q3" secondAttribute="leading" id="Jau-Ny-wVG"/>
                                     <constraint firstItem="iub-9U-p4e" firstAttribute="leading" secondItem="ofj-t9-1q3" secondAttribute="leading" id="KFP-eG-Vtg"/>
                                     <constraint firstItem="yB8-HT-SdY" firstAttribute="top" secondItem="A6T-Np-KLv" secondAttribute="bottom" constant="8" id="KbY-rG-liD"/>
                                     <constraint firstItem="Ycp-Oa-eki" firstAttribute="trailing" secondItem="ofj-t9-1q3" secondAttribute="trailing" id="Kso-6E-14v"/>
-                                    <constraint firstItem="R3g-dv-gQU" firstAttribute="top" secondItem="rxN-Ni-hiW" secondAttribute="bottom" priority="200" constant="24" id="LoM-5v-THH"/>
                                     <constraint firstItem="Gep-b0-C8O" firstAttribute="leading" secondItem="yB8-HT-SdY" secondAttribute="leading" id="Ltw-g9-lEe"/>
                                     <constraint firstItem="A6T-Np-KLv" firstAttribute="trailing" secondItem="ofj-t9-1q3" secondAttribute="trailing" id="NFj-tN-5dL"/>
                                     <constraint firstItem="10j-wC-8t5" firstAttribute="leading" secondItem="Ycp-Oa-eki" secondAttribute="leading" id="OXz-W2-T7X"/>
@@ -169,7 +148,7 @@
                                     <constraint firstItem="Ycp-Oa-eki" firstAttribute="top" secondItem="CHE-tw-Eap" secondAttribute="bottom" constant="8" id="Rpm-z8-kbL"/>
                                     <constraint firstItem="0XG-NL-5Wr" firstAttribute="leading" secondItem="nlv-HA-bTv" secondAttribute="leading" constant="24" id="RvZ-kk-Y2Y"/>
                                     <constraint firstItem="Gep-b0-C8O" firstAttribute="trailing" secondItem="yB8-HT-SdY" secondAttribute="trailing" id="V0T-pp-lB5"/>
-                                    <constraint firstItem="R3g-dv-gQU" firstAttribute="height" secondItem="fa6-su-oxT" secondAttribute="height" id="apU-zj-hb1"/>
+                                    <constraint firstAttribute="bottom" secondItem="rxN-Ni-hiW" secondAttribute="bottom" constant="24" id="beh-T5-ed7"/>
                                     <constraint firstItem="0XG-NL-5Wr" firstAttribute="top" secondItem="nlv-HA-bTv" secondAttribute="top" constant="24" id="bgu-kv-LpW"/>
                                     <constraint firstItem="fa6-su-oxT" firstAttribute="width" secondItem="rxN-Ni-hiW" secondAttribute="width" id="ct6-O8-mqz"/>
                                     <constraint firstItem="Gep-b0-C8O" firstAttribute="top" secondItem="yB8-HT-SdY" secondAttribute="bottom" constant="8" id="eeP-ng-Hnr"/>
@@ -206,8 +185,6 @@
                         <outlet property="first_name_TF" destination="ofj-t9-1q3" id="Rhp-De-2fX"/>
                         <outlet property="fullNameLabel" destination="Pwd-fe-8ov" id="Cok-TJ-1NU"/>
                         <outlet property="last_name_TF" destination="iub-9U-p4e" id="g3U-hS-9dc"/>
-                        <outlet property="myFieldsButton" destination="R3g-dv-gQU" id="6QM-u7-0aM"/>
-                        <outlet property="noFieldsConstraint" destination="LoM-5v-THH" id="XeJ-RI-kEC"/>
                         <outlet property="phone_TF" destination="yB8-HT-SdY" id="jO6-S3-h9a"/>
                         <outlet property="saveButton" destination="fa6-su-oxT" id="LrL-cH-Dfw"/>
                         <outlet property="scrollView" destination="nlv-HA-bTv" id="4Qb-gY-n0t"/>

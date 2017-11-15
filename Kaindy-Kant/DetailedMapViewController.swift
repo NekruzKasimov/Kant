@@ -15,6 +15,7 @@ class DetailedMapViewController: UIViewController {
     
     var googleMap: GMSMapView!
     var googlePoints: [CLLocationCoordinate2D] = []
+    var bounds = GMSCoordinateBounds()
     var coordinates: Coordinates?
     var field_id: Int?
     var expenseButton = UIButton()
@@ -24,6 +25,7 @@ class DetailedMapViewController: UIViewController {
         self.title = "Карта"
         for coordinate in (coordinates?.array)! {
             googlePoints.append(CLLocationCoordinate2D(latitude: (coordinate.latitude as NSString).doubleValue, longitude: (coordinate.longitude as NSString).doubleValue))
+            
         }
         setupMap()
         addExpenseButton()
@@ -58,8 +60,11 @@ class DetailedMapViewController: UIViewController {
     func setupField() {
         let path = GMSMutablePath()
         for p in googlePoints {
+            bounds = bounds.includingCoordinate(p)
             path.add(p)
         }
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 60)
+        googleMap.animate(with: update)
         let line = GMSPolyline(path: path)
         let field = GMSPolygon(path: path)
         field.strokeWidth = 2.0

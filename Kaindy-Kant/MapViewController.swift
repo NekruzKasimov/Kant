@@ -24,6 +24,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     @IBOutlet weak var mapView: UIView!
     var isMapViewAdded = false
     var fieldsToShow = [Field]()
+    var bounds = GMSCoordinateBounds()
     var yearChose = 0
     @IBOutlet weak var fieldId: SkyFloatingLabelTextField! {
         didSet {
@@ -174,8 +175,12 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     func setupField(points: [CLLocationCoordinate2D]) {
         let path = GMSMutablePath()
         for p in points {
+            bounds = bounds.includingCoordinate(p)
             path.add(p)
+            
         }
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 60)
+        map.animate(with: update)
         let line = GMSPolyline(path: path)
         let field = GMSPolygon(path: path)
         field.strokeWidth = 2.0
