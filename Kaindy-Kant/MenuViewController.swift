@@ -76,9 +76,25 @@ extension MenuViewController {
     }
     
     func openPage(storyboard: String, vcIdentifier: String) {
-        let revealVC = revealViewController()
-        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
-        revealVC?.pushFrontViewController(vc, animated: true)
+        if storyboard == "Login" {
+                let alert = UIAlertController(title: "", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
+                //Cancel
+                alert.addAction(UIAlertAction(title: Constants.Values.cancel, style: .cancel, handler: { (acrion) in
+                }))
+                //Add
+                alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: { (action) in
+                    let revealVC = self.revealViewController()
+                    let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
+                    revealVC?.pushFrontViewController(vc, animated: true)
+                }))
+                present(alert, animated: true, completion: nil)
+        }
+        else {
+            let revealVC = revealViewController()
+            let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
+            revealVC?.pushFrontViewController(vc, animated: true)
+        }
     }
 }
