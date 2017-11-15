@@ -72,7 +72,7 @@ struct Constants {
     struct Weather {
         static let months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
         static let weekdays = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
-        static let weatherStatuses = ["Clouds" : "Пасмурно", "Clear" : "Ясное небо", "Rain" : "Дожди", "Snow" : "Снег"]
+        static let weatherStatuses = ["Mostly cloudy": "Преимущественно облачно", "Cloudy" : "Пасмурно", "Clear" : "Ясное небо", "Rain" : "Дожди", "Snow" : "Снег"]
     }
     
     struct MainPage {
