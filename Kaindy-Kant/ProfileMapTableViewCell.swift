@@ -78,6 +78,28 @@ class ProfileMapTableViewCell: UITableViewCell {
     
     @IBOutlet weak var beetLabel: UILabel!
     
+    @IBOutlet weak var deleteImageView: UIImageView! {
+        didSet {
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(delete(tapGestureRecognizer:)))
+            deleteImageView.isUserInteractionEnabled = true
+            deleteImageView.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    @IBOutlet weak var updateImageView: UIImageView! {
+        didSet {
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(update(tapGestureRecognizer:)))
+            updateImageView.isUserInteractionEnabled = true
+            updateImageView.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+    func update(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        cellDelegate?.didPressButton(self.tag, "update")
+    }
+    func delete(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        cellDelegate?.didPressButton(self.tag, "delete")
+    }
     @IBAction func showInMap(_ sender: Any) {
         cellDelegate?.didPressButton(self.tag, "show")
     }

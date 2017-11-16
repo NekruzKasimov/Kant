@@ -33,14 +33,16 @@ class MenuViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         var user = DataManager.shared.getUserInformation()
+        if user != nil {
         self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"
-        SVProgressHUD.dismiss()
-        if user!["photo"] == "" {
-            avatarImageView.image = UIImage(named: "camera")
-        } else {
-            let imageToDecode = user!["photo"]
-            let image = imageToDecode?.decode64(imageData: imageToDecode!)
-            avatarImageView.image = image
+            SVProgressHUD.dismiss()
+            if user!["photo"] == "" {
+                avatarImageView.image = UIImage(named: "camera")
+            } else {
+                let imageToDecode = user!["photo"]
+                let image = imageToDecode?.decode64(imageData: imageToDecode!)
+                avatarImageView.image = image
+            }
         }
     }
     @IBOutlet weak var tablevView: UITableView!
