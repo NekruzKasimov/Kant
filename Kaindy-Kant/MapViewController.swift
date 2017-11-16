@@ -140,6 +140,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             let sb = UIStoryboard(name: "CalculatorExcelViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
             vc.fieldId = id
+            vc.isFromMapViewController = true
             self.navigationController?.show(vc, sender: self)
         }))
         present(alert, animated: true, completion: nil)
@@ -243,7 +244,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     
     func addSaveButton() {
         saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
-        saveButton.setTitle("Соеденить", for: .normal)
+        saveButton.setTitle("Соединить", for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.layer.cornerRadius = 2
         saveButton.backgroundColor = UIColor.init(netHex: Colors.purple)
@@ -264,7 +265,6 @@ extension MapViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.beetPoints.count
     }
@@ -282,6 +282,7 @@ extension MapViewController {
     func resetButtonClicked() {
         //self.addInfoButton.removeFromSuperview()
         //self.addSaveButton()
+        self.map.delegate = self
         self.saveButton.isHidden = false
         points.removeAll()
         map.clear()
@@ -305,6 +306,7 @@ extension MapViewController {
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
             self.saveButton.isHidden = true
+            self.map.delegate = nil
             //self.saveButton.removeFromSuperview()
             //self.addAddInfoButton()
         }))

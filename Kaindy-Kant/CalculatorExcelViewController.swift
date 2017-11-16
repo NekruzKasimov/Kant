@@ -35,6 +35,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
     
     var expenses: Expenses?
     var fieldId = -1
+    var isFromMapViewController = false
     var totalIndexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -50,11 +51,25 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
             }
         }
         else {
+            
             ServerManager.shared.getFieldExpenses(field_id: fieldId, setExpenses) { (error) in
                 SVProgressHUD.dismiss()
                 self.showErrorAlert(message: error)
             }
+            if isFromMapViewController {
+                let backImage = UIBarButtonItem(image: UIImage.init(named: "back-5"), style: .plain, target: self, action: #selector(backTapped))
+                self.navigationItem.leftBarButtonItem = backImage
+            }
         }
+    }
+    func backTapped() {
+        if let viewControllers = self.navigationController?.viewControllers {
+            self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+        }
+//        let sb = UIStoryboard(name: "Profile", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
+//        self.navigationController?.popToViewController(vc, animated: false)
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

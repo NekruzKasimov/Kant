@@ -55,6 +55,7 @@ class DetailedMapViewController: UIViewController {
         let sb = UIStoryboard(name: "CalculatorExcelViewController", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
         vc.fieldId = field_id!
+        vc.isFromMapViewController = false
         self.navigationController?.show(vc, sender: self)
     }
     func setupField() {
