@@ -144,7 +144,7 @@ class ServerManager: HTTPRequestManager  {
         }, error: error)
         
     }
-    func updateField(field_id: Int, parameters: [String: String], _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
+    func updateField(field_id: Int, parameters: [String: Any], _ completion: @escaping (String)-> Void, error: @escaping (String)-> Void) {
         print(parameters)
         self.patch(endpoint: "\(Constants.Network.EndPoints.GetFields)/\(field_id)", serverType: .kant, parameters: parameters, completion: { (json) in
             let message = json["success"].stringValue

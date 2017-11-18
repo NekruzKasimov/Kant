@@ -45,30 +45,62 @@ class FieldViewController: ViewController {
             configureTextField(textField: averageYield)
         }
     }
+    @IBOutlet weak var beet_point_name: SkyFloatingLabelTextField! {
+        didSet {
+            beet_point_name.accessibilityIdentifier = "beet_point_name"
+            GlobalFunctions.configure(textField: beet_point_name, withText: "Свеклоприкмный пукт" , placeholder: "Свеклоприкмный пукт", tag: 2)
+            configureTextField(textField: beet_point_name)
+        }
+    }
+    
     var yearsPicker = [Int]()
     var choseYear: Int = 0
     var years = Years().years
     var yearIndex = 0
     var field_id = -1
     var isFromMainPage = false
+    var beetPoints = [BeetPoint]()
+    var beetPointIndex = -1
+    var tagIndex = 0
+    let pickerView = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.show()
-        segmentedControl.isHidden = true
+        configureSegmentControl()
         self.title = Constants.MainPage.myFields
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add".localized(lang: self.lang)!, style: .plain, target: self, action: #selector(addTapped))
-        //ServerManager.shared.ge
-        
-        self.yearsPicker = DataManager.shared.getYears()
-        choseYear = yearsPicker[yearsPicker.count - 1]
-        //yearPickerView.reloadAllComponents()
+        setBeetPointsInformation()
+        configureYearPickerView()
         if !isFromMainPage {
             setNavigationBar()
         }
         configureTableView()
-        //segmentedControl.selectedIndex = 0
+        
+    }
+    func configureYearPickerView(){
+        self.yearsPicker = DataManager.shared.getYears()
+        choseYear = yearsPicker[yearsPicker.count - 1]
         yearPickerView.selectRow(yearsPicker.count - 1, inComponent: 0, animated: false)
+    }
+    func setBeetPointsInformation(){
+        if let beetPoints = DataManager.shared.getBeetPoints() {
+            self.beetPoints = beetPoints
+            self.beet_point_name.text = beetPoints[0].name
+        } else {
+            ServerManager.shared.getBeetPoints(setBeetPoints, error: showErrorAlert)
+        }
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        beet_point_name.inputView = pickerView
+    }
+    func setBeetPoints(beetPoints: BeetPoints) {
+        self.beetPoints = beetPoints.array
+        self.beet_point_name.text = beetPoints.array[0].name
+        
+    }
+    func configureSegmentControl(){
+        segmentedControl.isHidden = true
         segmentedControl.dataSource = self
         print(getNumberOfDisplayedSegments())
         segmentedControl.numberOfDisplayedSegments = getNumberOfDisplayedSegments()
@@ -80,7 +112,6 @@ class FieldViewController: ViewController {
         segmentedControl.segmentIndicatorImage = UIImage(named: "arrow_up")
 
     }
-   
     func getNumberOfDisplayedSegments() -> Int{
         return self.years.count == 0 ? 1 : self.years.count == 2 ? 2 : 3
     }
@@ -100,10 +131,12 @@ class FieldViewController: ViewController {
         }
     }
     func showMapView(tag: Int) {
-        self.fieldId.text = "\(self.years[yearIndex].fields[tag].field_id)"
-        self.fieldHectare.text = "\(self.years[yearIndex].fields[tag].hectares)"
-        self.averageYield.text = "\(self.years[yearIndex].fields[tag].average_harvest)"
-
+        tagIndex = tag
+        let field = self.years[yearIndex].fields[tag]
+        self.fieldId.text = "\(field.field_id)"
+        self.fieldHectare.text = "\(field.hectares)"
+        self.averageYield.text = "\(field.average_harvest)"
+        self.beet_point_name.text = "\(field.point_name)"
         self.mapView.isHidden = false
         self.hideButton.isHidden = false
         self.hideButton.backgroundColor = UIColor.black
@@ -117,6 +150,8 @@ class FieldViewController: ViewController {
         }
     }
     func addTapped(){
+//        yearPickerView.dataSource = self
+//        yearPickerView.delegate = self
         self.viewForYearPicker.isHidden = false
         self.hideButton.isHidden = false
         self.hideButton.backgroundColor = UIColor.black
@@ -142,7 +177,19 @@ class FieldViewController: ViewController {
         } else {
             let doubleString = fieldHectare.text!.replacingOccurrences(of: ",", with: ".")
             SVProgressHUD.show()
-            let field_info = ["field_id": fieldId.text!, "hectares": doubleString, "average_harvest": averageYield.text!]
+            var point_id = 0
+            var current_point_name = self.years[yearIndex].fields[tagIndex].point_name
+            if beetPointIndex == -1 {
+                for point_name in self.beetPoints {
+                    if point_name.name == current_point_name {
+                        point_id = point_name.id
+                    }
+                }
+            }
+            else {
+                point_id = beetPoints[beetPointIndex].id
+            }
+            let field_info = ["field_id": fieldId.text!, "hectares": doubleString, "average_harvest": averageYield.text!, "beet_point": point_id] as [String : Any]
            ServerManager.shared.updateField(field_id: field_id, parameters: field_info, fieldUpdated, error: showErrorAlert)
         }
     }
@@ -250,18 +297,26 @@ extension FieldViewController: UIPickerViewDataSource {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.yearsPicker.count
+        
+        return pickerView == self.yearPickerView ? self.yearsPicker.count : self.beetPoints.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(self.yearsPicker[row])"
-        }
+        return pickerView == self.yearPickerView ? "\(self.yearsPicker[row])" : self.beetPoints[row].name
+    }
 }
 
 extension FieldViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(yearsPicker[row])
-        choseYear = yearsPicker[row]
-        self.view.endEditing(true)
+        if pickerView == yearPickerView {
+            choseYear = yearsPicker[row]
+            self.view.endEditing(true)
+        }
+        else {
+            beet_point_name.text = self.beetPoints[row].name
+            beetPointIndex = row
+            self.view.endEditing(true)
+        }
+        
     }
 }
 

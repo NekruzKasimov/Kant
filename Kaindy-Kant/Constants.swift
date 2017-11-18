@@ -76,7 +76,7 @@ struct Constants {
         static var weatherStatuses = [String: String]()
         init () {
             Weather.weekdays = ["sunday".localized(lang: lang!)!, "monday".localized(lang: lang!)!, "tuesday".localized(lang: lang!)!, "wednesday".localized(lang: lang!)!, "thursday".localized(lang: lang!)!, "friday".localized(lang: lang!)!, "saturday".localized(lang: lang!)!]
-            Weather.weatherStatuses = ["Intermittent clouds": "Переменная облачность", "Mostly cloudy": "Преимущественно облачно", "Cloudy" : "cloudy".localized(lang: lang!)!, "Clear" : "sunny".localized(lang: lang!)!, "Rain" : "rainy".localized(lang: lang!)!, "Snow" : "snowy".localized(lang: lang!)!]
+            Weather.weatherStatuses = ["Mostly sunny": "Преимущественно солнечно","Intermittent clouds": "Переменная облачность", "Mostly cloudy": "Преимущественно облачно", "Cloudy" : "cloudy".localized(lang: lang!)!, "Clear" : "sunny".localized(lang: lang!)!, "Rain" : "rainy".localized(lang: lang!)!, "Snow" : "snowy".localized(lang: lang!)!]
             Weather.months = ["january".localized(lang: lang!)!, "february".localized(lang: lang!)!, "march".localized(lang: lang!)!, "april".localized(lang: lang!)!, "may".localized(lang: lang!)!, "june".localized(lang: lang!)!, "july".localized(lang: lang!)!, "august".localized(lang: lang!)!, "september".localized(lang: lang!)!, "october".localized(lang: lang!)!, "november".localized(lang: lang!)!, "december".localized(lang: lang!)!]
         }
     }

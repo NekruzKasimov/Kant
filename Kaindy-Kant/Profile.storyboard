@@ -844,29 +844,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WB-cj-Sv5">
-                                <rect key="frame" x="36" y="198" width="303" height="270"/>
+                                <rect key="frame" x="36" y="168" width="303" height="330"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBa-U1-zzF">
-                                        <rect key="frame" x="91" y="210" width="120" height="30"/>
-                                        <color key="backgroundColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="PvK-TM-ceS"/>
-                                            <constraint firstAttribute="height" constant="30" id="n7i-6c-eg4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="Сохранить">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="saveFiledBtn:" destination="eA4-Sw-QTW" eventType="touchUpInside" id="VNm-V2-TKx"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-XT-2RV" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="8" y="30" width="287" height="30"/>
                                         <nil key="textColor"/>
@@ -899,15 +878,44 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DdK-jj-DDQ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="8" y="210" width="287" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBa-U1-zzF">
+                                        <rect key="frame" x="91" y="270" width="120" height="30"/>
+                                        <color key="backgroundColor" red="0.61456805469999998" green="0.1311464608" blue="0.2744202912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="PvK-TM-ceS"/>
+                                            <constraint firstAttribute="height" constant="30" id="n7i-6c-eg4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Сохранить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveFiledBtn:" destination="eA4-Sw-QTW" eventType="touchUpInside" id="VNm-V2-TKx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="EBa-U1-zzF" firstAttribute="top" secondItem="sxX-6Z-ZzA" secondAttribute="bottom" constant="30" id="5Jb-wU-Z8A"/>
+                                    <constraint firstItem="DdK-jj-DDQ" firstAttribute="top" secondItem="sxX-6Z-ZzA" secondAttribute="bottom" constant="30" id="3Sn-Sc-sFb"/>
                                     <constraint firstItem="WaN-XT-2RV" firstAttribute="top" secondItem="2WB-cj-Sv5" secondAttribute="top" constant="30" id="7o2-Cz-Jbi"/>
                                     <constraint firstItem="roP-j1-pgt" firstAttribute="leading" secondItem="2WB-cj-Sv5" secondAttribute="leading" constant="8" id="9wl-ch-yiR"/>
+                                    <constraint firstAttribute="trailing" secondItem="DdK-jj-DDQ" secondAttribute="trailing" constant="8" id="Bs8-jw-Z6s"/>
                                     <constraint firstItem="WaN-XT-2RV" firstAttribute="leading" secondItem="2WB-cj-Sv5" secondAttribute="leading" constant="8" id="DR4-ap-0dK"/>
                                     <constraint firstAttribute="trailing" secondItem="roP-j1-pgt" secondAttribute="trailing" constant="8" id="GPi-JV-yQO"/>
                                     <constraint firstAttribute="trailing" secondItem="Sy3-xF-m2u" secondAttribute="trailing" constant="8" id="JOU-hA-Eg2"/>
+                                    <constraint firstItem="EBa-U1-zzF" firstAttribute="top" secondItem="DdK-jj-DDQ" secondAttribute="bottom" constant="30" id="M0w-SG-Uph"/>
                                     <constraint firstItem="EBa-U1-zzF" firstAttribute="centerX" secondItem="2WB-cj-Sv5" secondAttribute="centerX" id="Mce-od-hWY"/>
                                     <constraint firstItem="roP-j1-pgt" firstAttribute="top" secondItem="WaN-XT-2RV" secondAttribute="bottom" constant="30" id="QYL-4i-teu"/>
                                     <constraint firstAttribute="trailing" secondItem="WaN-XT-2RV" secondAttribute="trailing" constant="8" id="Ybv-bB-zaJ"/>
@@ -915,6 +923,7 @@
                                     <constraint firstItem="sxX-6Z-ZzA" firstAttribute="leading" secondItem="2WB-cj-Sv5" secondAttribute="leading" constant="8" id="hWd-AK-ycn"/>
                                     <constraint firstItem="Sy3-xF-m2u" firstAttribute="top" secondItem="2WB-cj-Sv5" secondAttribute="top" constant="8" id="imu-iz-8Er"/>
                                     <constraint firstItem="sxX-6Z-ZzA" firstAttribute="top" secondItem="roP-j1-pgt" secondAttribute="bottom" constant="30" id="pJf-iY-hlF"/>
+                                    <constraint firstItem="DdK-jj-DDQ" firstAttribute="leading" secondItem="2WB-cj-Sv5" secondAttribute="leading" constant="8" id="q6c-rs-iCQ"/>
                                     <constraint firstAttribute="bottom" secondItem="EBa-U1-zzF" secondAttribute="bottom" constant="30" id="ver-KZ-DLi"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -952,6 +961,7 @@
                     <connections>
                         <outlet property="addFieldButton" destination="XIc-2J-6Ne" id="ZnG-sd-DEe"/>
                         <outlet property="averageYield" destination="sxX-6Z-ZzA" id="s9y-5x-whU"/>
+                        <outlet property="beet_point_name" destination="DdK-jj-DDQ" id="uln-b4-ihY"/>
                         <outlet property="fieldHectare" destination="roP-j1-pgt" id="xBm-a6-nB2"/>
                         <outlet property="fieldId" destination="WaN-XT-2RV" id="IDX-si-j4n"/>
                         <outlet property="hideButton" destination="guA-hD-Ik8" id="JNQ-47-Vi7"/>
