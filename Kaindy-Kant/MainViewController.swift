@@ -182,6 +182,7 @@ extension MainViewController {
             if indexPath.row == 0 {
                 let sb = UIStoryboard(name: "Profile", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
+                vc.isFromMainPage = true
                 self.navigationController?.show(vc, sender: self)
             }
             else if indexPath.row == 1 {

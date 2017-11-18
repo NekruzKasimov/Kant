@@ -22,10 +22,12 @@ class MenuViewController: ViewController {
     var sbs = Constants.MenuPage.storyboards
 
     @IBAction func openProfilePage(_ sender: Any) {
+       // self.tablevView.cellForRow(at: IndexPath(row: selectedIndex, section: 0))?.selectionStyle = .none
         openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
     }
     
     @IBOutlet weak var nameLabel: UILabel!
+    var selectedIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -46,7 +48,6 @@ class MenuViewController: ViewController {
         }
     }
     @IBOutlet weak var tablevView: UITableView!
-    
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -57,12 +58,14 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        //cell.selectionStyle = .default
         cell.textLabel?.text = menu[indexPath.row].localized(lang: self.lang)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
         openPage(storyboard: sbs[indexPath.row], vcIdentifier: navigations[indexPath.row])
     }
 }
@@ -78,6 +81,7 @@ extension MenuViewController {
     }
     
     func openPage(storyboard: String, vcIdentifier: String) {
+        
         if storyboard == "Login" {
                 let alert = UIAlertController(title: "", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
                 //Cancel
@@ -92,6 +96,12 @@ extension MenuViewController {
                 }))
                 present(alert, animated: true, completion: nil)
         }
+//        else if storyboard == "Profile" {
+//            let revealVC = revealViewController()
+//            let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)
+//            revealVC?.pushFrontViewController(vc, animated: true)
+//        }
         else {
             let revealVC = revealViewController()
             let storyboard = UIStoryboard(name: storyboard, bundle: nil)

@@ -50,10 +50,12 @@ class FieldViewController: ViewController {
     var years = Years().years
     var yearIndex = 0
     var field_id = -1
-    
+    var isFromMainPage = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show()
+        segmentedControl.isHidden = true
         self.title = Constants.MainPage.myFields
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add".localized(lang: self.lang)!, style: .plain, target: self, action: #selector(addTapped))
         //ServerManager.shared.ge
@@ -61,8 +63,9 @@ class FieldViewController: ViewController {
         self.yearsPicker = DataManager.shared.getYears()
         choseYear = yearsPicker[yearsPicker.count - 1]
         //yearPickerView.reloadAllComponents()
-        
-        setNavigationBar()
+        if !isFromMainPage {
+            setNavigationBar()
+        }
         configureTableView()
         //segmentedControl.selectedIndex = 0
         yearPickerView.selectRow(yearsPicker.count - 1, inComponent: 0, animated: false)
@@ -79,7 +82,7 @@ class FieldViewController: ViewController {
     }
    
     func getNumberOfDisplayedSegments() -> Int{
-        return self.years.count == 0 ? 1  : self.years.count == 1 ? 1 : self.years.count == 2 ? 2 : 3
+        return self.years.count == 0 ? 1 : self.years.count == 2 ? 2 : 3
     }
     @IBAction func hideMapView(_ sender: UIButton) {
         //self.dismissMapView()
@@ -166,6 +169,12 @@ class FieldViewController: ViewController {
             yearIndex = 0
         }
         segmentedControl.reloadData()
+        if years.years.count == 0 {
+            self.segmentedControl.isHidden = true
+        }
+        else {
+            self.segmentedControl.isHidden = false
+        }
         segmentedControl.numberOfDisplayedSegments = getNumberOfDisplayedSegments()
         tableView.reloadData()
 

@@ -77,8 +77,6 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         }
         setBeetPointsInformation()
         addGoogleMap()
-        //addCurrentLocation()
-        //view.addSubview(tabBarView)
         addResetButton()
         addAddInfoButton()
         addSaveButton()
