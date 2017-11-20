@@ -8,15 +8,15 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: ViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let options = Constants.SettingsOptions.options
+    let options = ["language", "about_app"]
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         tableView.tableFooterView = UIView()
-        self.title = "Настройки"
+        self.title = "settings".localized(lang: self.lang)!
         // Do any additional setup after loading the view.
     }
     
@@ -28,7 +28,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
-        cell.settingsLabel.text = self.options[indexPath.row]
+        cell.settingsLabel.text = self.options[indexPath.row].localized(lang: self.lang)!
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -127,7 +127,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
 
     }
     func askForOpeningExcel(id: Int){
-        let alert = UIAlertController(title: "", message: "Расчитать бюджет для данного поля?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "calculate_field_expenses".localized(lang: self.lang)! , preferredStyle: .alert)
         //Cancel
         alert.addAction(UIAlertAction(title: "Пропустить", style: .cancel, handler: { (acrion) in
             self.navigationController?.popViewController(animated: true)
@@ -232,7 +232,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     
     func addResetButton() {
         resetButton.frame = CGRect(x: view.frame.midX - 125, y: view.frame.height - 99, width: 120, height: 30)
-        resetButton.setTitle("отмена", for: .normal)
+        resetButton.setTitle("cancel".localized(lang: self.lang)!, for: .normal)
         resetButton.setTitleColor(.white, for: .normal)
         resetButton.layer.cornerRadius = 2
         resetButton.backgroundColor = UIColor.init(netHex: Colors.purple)
@@ -242,7 +242,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     
     func addSaveButton() {
         saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
-        saveButton.setTitle("Соединить", for: .normal)
+        saveButton.setTitle("confirm".localized(lang: self.lang)!, for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.layer.cornerRadius = 2
         saveButton.backgroundColor = UIColor.init(netHex: Colors.purple)
@@ -291,7 +291,7 @@ extension MapViewController {
         if points.count > 2 {
             acceptFiled()
         } else {
-            showErrorAlert(message: "Вы должны указать минимум три точки")
+            showErrorAlert(message: "points_to_draw".localized(lang: self.lang)!)
         }
     }
     

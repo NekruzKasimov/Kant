@@ -29,7 +29,7 @@ enum ExcelSections : Int {
     }
 }
 
-class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SaveButtonDelegate {
+class CalculatorExcelViewController: ViewController, UITableViewDataSource, UITableViewDelegate, SaveButtonDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,7 +42,7 @@ class CalculatorExcelViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         configureTableView()
         SVProgressHUD.show()
-        self.title = "Рассчитать бюджет"
+        self.title = "budget".localized(lang: self.lang)!
         if fieldId == -1 {
             setNavigationBar()
             ServerManager.shared.getExpenses(setExpenses) { (error) in

@@ -10,6 +10,8 @@ import Foundation
 
 class WeatherCell: UICollectionViewCell {
     
+    let lang = DataManager.shared.getLanguage()
+    
     @IBOutlet weak var cardView: UIView!  {
         didSet {
             cardView.layer.cornerRadius = 3
@@ -26,6 +28,18 @@ class WeatherCell: UICollectionViewCell {
     
     @IBOutlet weak var nightWeatherDegreeLabel: UILabel!
 
+    @IBOutlet weak var dayLabel: UILabel! {
+        didSet {
+            dayLabel.text = "day".localized(lang: lang)
+        }
+    }
+    
+    @IBOutlet weak var nightLabel: UILabel! {
+        didSet {
+            nightLabel.text = "night".localized(lang: lang)
+        }
+    }
+    
     func setValues(week: String, degrees: [Int]){
         weatherDegreeLabel.text =  degrees[0] > 0 ? "+\(degrees[0])°C" : "\(degrees[0])°C"
         nightWeatherDegreeLabel.text = degrees[1] > 0 ? "+\(degrees[1])°C" : "\(degrees[1])°C"

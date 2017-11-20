@@ -11,7 +11,7 @@ import MapKit
 import GoogleMaps
 import GooglePlaces
 
-class DetailedMapViewController: UIViewController {
+class DetailedMapViewController: ViewController {
     
     var googleMap: GMSMapView!
     var googlePoints: [CLLocationCoordinate2D] = []
@@ -44,7 +44,7 @@ class DetailedMapViewController: UIViewController {
     }
     func addExpenseButton(){
         expenseButton.frame = CGRect(x: view.frame.midX - 100, y: view.frame.height - 99, width: 200, height: 30)
-        expenseButton.setTitle("Рассчитать бюджет", for: .normal)
+        expenseButton.setTitle("budget".localized(lang: self.lang)!, for: .normal)
         expenseButton.setTitleColor(.white, for: .normal)
         expenseButton.layer.cornerRadius = 5
         expenseButton.backgroundColor = UIColor.init(netHex: Colors.purple)

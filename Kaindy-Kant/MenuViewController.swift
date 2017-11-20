@@ -83,7 +83,7 @@ extension MenuViewController {
     func openPage(storyboard: String, vcIdentifier: String) {
         
         if storyboard == "Login" {
-                let alert = UIAlertController(title: "", message: "Вы действительно хотите выйти?", preferredStyle: .alert)
+                let alert = UIAlertController(title: "", message: "logout_confirmation".localized(lang: self.lang)!, preferredStyle: .alert)
                 //Cancel
                 alert.addAction(UIAlertAction(title: Constants.Values.cancel, style: .cancel, handler: { (acrion) in
                 }))

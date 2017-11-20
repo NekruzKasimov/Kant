@@ -9,7 +9,7 @@
 import UIKit
 import ImageSlideshow
 
-class LocalNewsViewController: UIViewController {
+class LocalNewsViewController: ViewController {
 
     @IBOutlet weak var localNewsSlideShow: ImageSlideshow!
     @IBOutlet weak var localNewsTitle: UILabel!
@@ -25,7 +25,7 @@ class LocalNewsViewController: UIViewController {
         setupSlideShow()
         localNewsTitle.text = newsTitle
         localNewsContent.text = newsContent
-        self.title = "Новости"
+        self.title = "news".localized(lang: self.lang)!
         self.navigationController?.navigationBar.topItem?.title = ""
         
     }

@@ -17,6 +17,11 @@ class WeatherViewController: ViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var weatheStatusLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var weekLabel: UILabel! {
+        didSet {
+            weekLabel.text = "week".localized(lang: self.lang)!
+        }
+    }
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -52,7 +57,7 @@ extension WeatherViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        let weekday = indexPath.row == 0 ? "Сегодня" : self.weekdays[indexPath.row]
+        let weekday = indexPath.row == 0 ? "today".localized(lang: self.lang)! : self.weekdays[indexPath.row]
         cell.setValues(week: weekday, degrees: degrees[indexPath.row])
         return cell
     }

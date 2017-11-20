@@ -591,6 +591,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cardView" destination="u2E-T9-Dqi" id="oeT-gz-3ja"/>
+                                            <outlet property="dayLabel" destination="8km-u2-BGl" id="gT3-PM-nIz"/>
+                                            <outlet property="nightLabel" destination="xf0-By-jDy" id="JES-dd-syR"/>
                                             <outlet property="nightWeatherDegreeLabel" destination="e4e-KT-Q6e" id="PNi-Vh-hGI"/>
                                             <outlet property="weatherDegreeLabel" destination="P7S-dr-agD" id="AgF-nH-HYm"/>
                                             <outlet property="weekdayLabel" destination="0ah-vz-2NN" id="HuL-5h-Co8"/>
@@ -655,6 +657,7 @@
                         <outlet property="iconImageView" destination="gRt-SA-N8D" id="Etf-Ti-4XJ"/>
                         <outlet property="weatheStatusLabel" destination="WnN-ap-ppT" id="Vup-OU-8fk"/>
                         <outlet property="weatherDegreeLabel" destination="xD3-uP-eGu" id="adw-kT-3bh"/>
+                        <outlet property="weekLabel" destination="o16-Xe-nSb" id="mMM-fo-fps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI9-z0-FYI" userLabel="First Responder" sceneMemberID="firstResponder"/>

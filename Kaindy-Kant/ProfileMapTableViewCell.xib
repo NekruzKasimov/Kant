@@ -254,9 +254,12 @@
                 <outlet property="beetLabel" destination="wjL-QJ-JHd" id="UU5-cR-0Ek"/>
                 <outlet property="beetPointLabel" destination="byZ-VV-Ysl" id="evn-xd-EPp"/>
                 <outlet property="cardView" destination="57n-YP-PJ8" id="oWW-FG-JTt"/>
+                <outlet property="changeButton" destination="OXM-KQ-kEk" id="K6l-X5-Q5o"/>
+                <outlet property="deleteButton" destination="uQT-2J-m4u" id="oLK-2b-QnZ"/>
                 <outlet property="deleteImageView" destination="tcV-vt-jaU" id="J2u-Ig-D1C"/>
                 <outlet property="hectaresLabel" destination="KGh-8R-HPx" id="8HJ-GK-EUU"/>
                 <outlet property="idLabel" destination="7nV-Ry-E5O" id="1Y6-Tc-Wgk"/>
+                <outlet property="showOnMapButton" destination="T8i-i4-NNU" id="UOr-Bu-BEB"/>
                 <outlet property="totalLabel" destination="fEg-3X-Gkh" id="PaT-Ay-CM3"/>
                 <outlet property="totalYieldLabel" destination="SYc-GM-Fl1" id="f9a-d8-igz"/>
                 <outlet property="updateImageView" destination="hqj-TD-Vhn" id="Hbc-Z0-K5b"/>

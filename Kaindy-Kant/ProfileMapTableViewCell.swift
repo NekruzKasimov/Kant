@@ -37,17 +37,17 @@ class ProfileMapTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var totalYieldLabel: UILabel!{
         didSet {
-            totalYieldLabel.text = "Всего урожая"
+            totalYieldLabel.text = "total_yield".localized(lang: lang)
         }
     }
     @IBOutlet weak var beetPointLabel: UILabel! {
         didSet {
-            beetPointLabel.text = "Свеклоприемный пункт:"
+            beetPointLabel.text = "beet_point".localized(lang: lang)
         }
     }
     @IBOutlet weak var deleteButton: UIButton! {
         didSet {
-           deleteButton.setTitle("Удалить", for: .normal)
+           deleteButton.setTitle("delete".localized(lang: lang), for: .normal)
         }
     }
     

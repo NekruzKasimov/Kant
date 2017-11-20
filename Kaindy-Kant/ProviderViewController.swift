@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class ProviderViewController: UIViewController,  UICollectionViewDataSource, UISearchControllerDelegate, UICollectionViewDelegateFlowLayout {
+class ProviderViewController: ViewController,  UICollectionViewDataSource, UISearchControllerDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -32,7 +32,7 @@ class ProviderViewController: UIViewController,  UICollectionViewDataSource, UIS
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.title = "Поставщики"
+        self.title = "suppliers".localized(lang: self.lang)!
     }
     
     func setSuppliers(suppliers: Services) {

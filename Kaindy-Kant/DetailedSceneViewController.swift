@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import SJSegmentedScrollView
 
-class DetailedSceneViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailedSceneViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -78,7 +78,7 @@ extension DetailedSceneViewController {
 
         let aboutVC = storyboard.instantiateViewController(
             withIdentifier: "DescriptionViewController") as! DescriptionViewController
-        aboutVC.title = "Описание"
+        aboutVC.title = "description".localized(lang: self.lang)!
         aboutVC.desc = detailedService.description
 
         for item in (detailedService.contacts?.array)! {
@@ -105,7 +105,7 @@ extension DetailedSceneViewController {
 
         let contactsVC = storyboard.instantiateViewController(
             withIdentifier: "ContactsViewController") as! ContactsViewController
-        contactsVC.title = "Контакты"
+        contactsVC.title = "contacts".localized(lang: self.lang)!
         contactsVC.contacts = detailedService.contacts
 
 

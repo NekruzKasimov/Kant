@@ -17,6 +17,11 @@ class FieldViewController: ViewController {
             addFieldButton.setTitle("add_field".localized(lang: self.lang), for: .normal)
         }
     }
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet {
+            saveButton.setTitle("save".localized(lang: self.lang)!, for: .normal)
+        }
+    }
     @IBOutlet weak var viewForYearPicker: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: HSegmentControl!
@@ -48,7 +53,7 @@ class FieldViewController: ViewController {
     @IBOutlet weak var beet_point_name: SkyFloatingLabelTextField! {
         didSet {
             beet_point_name.accessibilityIdentifier = "beet_point_name"
-            GlobalFunctions.configure(textField: beet_point_name, withText: "Свеклоприкмный пукт" , placeholder: "Свеклоприкмный пукт", tag: 2)
+            GlobalFunctions.configure(textField: beet_point_name, withText: "beet_point".localized(lang: self.lang)! , placeholder: "beet_point".localized(lang: self.lang)!, tag: 2)
             configureTextField(textField: beet_point_name)
         }
     }
@@ -372,7 +377,7 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
         }
     }
     func uvensinbi(tag: Int) {
-        let alert = UIAlertController(title: "", message: "Вы действительно хотите удалить данное поле?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "delete_field".localized(lang: self.lang)!, preferredStyle: .alert)
         //Cancel
         alert.addAction(UIAlertAction(title: Constants.Values.cancel, style: .cancel, handler: { (acrion) in
         }))
