@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class TechnologiesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TechnologiesListViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,23 +18,23 @@ class TechnologiesListViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.show()
-        ServerManager.shared.getTechnologies(setTechnologies) { (error) in
-            SVProgressHUD.dismiss()
-            self.showErrorAlert(message: error)
-        }
+//        ServerManager.shared.getTechnologies(setTechnologies) { (error) in
+//            SVProgressHUD.dismiss()
+//            self.showErrorAlert(message: error)
+//        }
         self.navigationController?.navigationBar.topItem?.title = ""
         tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.title = "Технологии"
+        self.title = "technology".localized(lang: self.lang)!
     }
     
-    func setTechnologies(technologies: Technologies) {
-        self.technologies = technologies
-        tableView.reloadData()
-    }
+//    func setTechnologies(technologies: Technologies) {
+//        self.technologies = technologies
+//        tableView.reloadData()
+//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let counter = technologies?.array.count {
@@ -54,8 +54,8 @@ class TechnologiesListViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "TechnologiesViewController") as! TechnologiesViewController
-        vc.desc = technologies?.array[indexPath.row].text
-        vc.title = technologies?.array[indexPath.row].name
+        //vc.desc = technologies?.array[indexPath.row].text
+        //vc.title = technologies?.array[indexPath.row].name
         navigationController?.show(vc, sender: self)
     }
 }

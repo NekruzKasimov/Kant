@@ -192,7 +192,7 @@ extension MainViewController {
             }
             else if indexPath.row == 1 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
+                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesViewController") as! TechnologiesViewController
                 navigationController?.show(vc, sender: self)
                 
             } else {
@@ -214,8 +214,11 @@ extension MainViewController {
         self.weather = weather
         var degreeToday = ""
         var statusToday = ""
-        let currentDate = Date()
-        statusToday = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
+       // let currentDate = Date()
+        if let status = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!] {
+            statusToday = status
+        }
+        //statusToday = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
         degreeToday = (self.weather?.today.array[0].temp)!
 //        for item in (self.weather?.today.array)! {
 //            switch currentDate.compare(item.exact_time) {
