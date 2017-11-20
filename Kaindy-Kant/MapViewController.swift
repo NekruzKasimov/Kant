@@ -112,9 +112,9 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
                 coordinates.array.append(c)
             }
             let doubleString = fieldHectare.text!.replacingOccurrences(of: ",", with: ".")
-           // print(fieldHectare.text,(doubleString as NSString).doubleValue, (fieldHectare.text! as NSString))
-            //print(Double(doubleString))
-            let field = FieldToAdd(field_id: fieldId.text!, year: yearChose, hectares: (doubleString as NSString).doubleValue, coordinates: coordinates, average_harvest: (averageYield.text! as NSString).doubleValue, point_id: self.beetPoints.count == 0 ? 0 : self.beetPoints[beetPointIndex].id)
+            let harvestString = averageYield.text!.replacingOccurrences(of: ",", with: ".")
+            
+            let field = FieldToAdd(field_id: fieldId.text!, year: yearChose, hectares: (doubleString as NSString).doubleValue, coordinates: coordinates, average_harvest: (harvestString as NSString).doubleValue, point_id: self.beetPoints.count == 0 ? 0 : self.beetPoints[beetPointIndex].id)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
            

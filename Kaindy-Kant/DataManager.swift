@@ -110,7 +110,7 @@ class DataManager {
         let calendar = Calendar.current
         let currentYear = calendar.component(.year, from: date)
         var years = [Int]()
-        for year in 1970...currentYear {
+        for year in 1970...currentYear + 1 {
             years.append(year)
         }
         return years

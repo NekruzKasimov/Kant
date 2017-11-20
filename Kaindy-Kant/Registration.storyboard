@@ -24,15 +24,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-Bb-Afc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="680"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-FO-Yij">
-                                        <rect key="frame" x="132.5" y="24" width="110" height="110"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="LpR-hT-Eh8"/>
-                                            <constraint firstAttribute="width" constant="110" id="ZSn-fl-oPs"/>
-                                        </constraints>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-Wa-QEr">
-                                        <rect key="frame" x="8" y="158" width="359" height="581"/>
+                                        <rect key="frame" x="8" y="20" width="359" height="581"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yu-np-LdF" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="24" y="24" width="311" height="39"/>
@@ -158,10 +151,8 @@
                                     <constraint firstItem="DPr-Wa-QEr" firstAttribute="leading" secondItem="qcx-Bb-Afc" secondAttribute="leading" constant="8" id="32J-3W-jef"/>
                                     <constraint firstAttribute="bottom" secondItem="DPr-Wa-QEr" secondAttribute="bottom" constant="8" id="KdR-LW-aj9"/>
                                     <constraint firstAttribute="trailing" secondItem="DPr-Wa-QEr" secondAttribute="trailing" constant="8" id="Vn8-aw-697"/>
-                                    <constraint firstItem="DPr-Wa-QEr" firstAttribute="top" secondItem="mXi-FO-Yij" secondAttribute="bottom" constant="24" id="YfG-IO-paK"/>
+                                    <constraint firstItem="DPr-Wa-QEr" firstAttribute="top" secondItem="qcx-Bb-Afc" secondAttribute="top" constant="20" id="e0e-6U-uzE"/>
                                     <constraint firstItem="DPr-Wa-QEr" firstAttribute="centerX" secondItem="qcx-Bb-Afc" secondAttribute="centerX" id="g0J-JT-8pc"/>
-                                    <constraint firstItem="mXi-FO-Yij" firstAttribute="top" secondItem="qcx-Bb-Afc" secondAttribute="top" constant="24" id="oZQ-nZ-FQ9"/>
-                                    <constraint firstItem="mXi-FO-Yij" firstAttribute="centerX" secondItem="qcx-Bb-Afc" secondAttribute="centerX" id="zQH-b2-1VA"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -178,7 +169,6 @@
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="addressTF" destination="HJD-Fz-n36" id="EYm-Eb-eQa"/>
-                        <outlet property="avatarImageView" destination="mXi-FO-Yij" id="kO7-kq-f4A"/>
                         <outlet property="birthdayTF" destination="yRo-U1-tse" id="xat-oU-UIC"/>
                         <outlet property="cityTF" destination="jNu-jO-vjB" id="bqs-Sx-uZD"/>
                         <outlet property="emailTF" destination="XH0-xG-9Se" id="fXh-DR-EOR"/>
@@ -285,7 +275,4 @@
             <point key="canvasLocation" x="980.625" y="-421.47887323943661"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera" width="90" height="90"/>
-    </resources>
 </document>

@@ -80,8 +80,8 @@ class FieldViewController: ViewController {
     }
     func configureYearPickerView(){
         self.yearsPicker = DataManager.shared.getYears()
-        choseYear = yearsPicker[yearsPicker.count - 1]
-        yearPickerView.selectRow(yearsPicker.count - 1, inComponent: 0, animated: false)
+        choseYear = yearsPicker[yearsPicker.count - 2]
+        yearPickerView.selectRow(yearsPicker.count - 2, inComponent: 0, animated: false)
     }
     func setBeetPointsInformation(){
         if let beetPoints = DataManager.shared.getBeetPoints() {
@@ -176,9 +176,11 @@ class FieldViewController: ViewController {
             showErrorAlert(message: "fill_field".localized(lang: self.lang)!)
         } else {
             let doubleString = fieldHectare.text!.replacingOccurrences(of: ",", with: ".")
+            let harvestString = averageYield.text!.replacingOccurrences(of: ",", with: ".")
+
             SVProgressHUD.show()
             var point_id = 0
-            var current_point_name = self.years[yearIndex].fields[tagIndex].point_name
+            let current_point_name = self.years[yearIndex].fields[tagIndex].point_name
             if beetPointIndex == -1 {
                 for point_name in self.beetPoints {
                     if point_name.name == current_point_name {
@@ -189,7 +191,8 @@ class FieldViewController: ViewController {
             else {
                 point_id = beetPoints[beetPointIndex].id
             }
-            let field_info = ["field_id": fieldId.text!, "hectares": doubleString, "average_harvest": averageYield.text!, "beet_point": point_id] as [String : Any]
+            
+            let field_info = ["field_id": fieldId.text!, "hectares": (doubleString as NSString).doubleValue, "average_harvest": (harvestString as NSString).doubleValue, "beet_point": point_id] as [String : Any]
            ServerManager.shared.updateField(field_id: field_id, parameters: field_info, fieldUpdated, error: showErrorAlert)
         }
     }

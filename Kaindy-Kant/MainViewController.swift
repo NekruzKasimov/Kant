@@ -101,7 +101,12 @@ extension MainViewController {
                 if section == 0 {
                     return 2
                 } else {
-                    return (services?.array.count)! + 2
+                    if (services?.array.count)! > 0 {
+                        return 3
+                    }
+                    else {
+                        return 2
+                    }
                 }
             }
         }
