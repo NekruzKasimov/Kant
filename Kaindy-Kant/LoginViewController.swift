@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        let login = loginTextField.text
+        let login = loginTextField.text?.westernArabicNumeralsOnly
         let password = passwordTextField.text
         if login != "" && password != "" {
             //HUD.show(.progress)
@@ -72,13 +72,12 @@ class LoginViewController: UIViewController {
             showErrorAlert(message: "Заполните поля!")
         }
         
-        
     }
     
     func log_in(user_id: Int) {
         //HUD.hide()
         DataManager.shared.setUserId(user_id: user_id)
-        DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
+        DataManager.shared.saveUser(username: (loginTextField.text?.westernArabicNumeralsOnly)!, password: passwordTextField.text!)
         let sb = UIStoryboard(name: "Registration", bundle: nil)
         let nextViewController = sb.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
         self.present(nextViewController!, animated:true, completion:nil)
