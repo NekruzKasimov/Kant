@@ -91,9 +91,9 @@ struct Constants {
     }
     
     struct MenuPage {
-        static let menu = ["main_menu", "my_field" , "news", "services", "suppliers", "budget", "Настройки", "logout"]
-        static let navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "SettingsNav" , "LoginNav"]
-        static let storyboards = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "Settings" ,  "Login"]
+        static let menu = ["main_menu", "my_field" , "news", "services", "suppliers", "budget", "contracts", "Настройки", "logout"]
+        static let navigations = ["MainNav" , "FieldsNav", "NewsNav" , "ServiceNav" , "ProviderNav" , "CalcNav", "ContractsNav", "SettingsNav" , "LoginNav"]
+        static let storyboards = ["Main" , "Profile", "News" , "Service" , "Provider" , "CalculatorExcelViewController", "Contracts","Settings" ,  "Login"]
     }
     struct Values {
         static var error: String?

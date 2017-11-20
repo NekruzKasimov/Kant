@@ -114,6 +114,15 @@
 		84BEAA9E1F8F65C500D6A647 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEAA9D1F8F65C500D6A647 /* Currency.swift */; };
 		84CEC66C1FAD8E6F00D6198D /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */; };
 		84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D519491F8B6BDE00512102 /* DataManager.swift */; };
+		84E497401FC341EA00B9A618 /* Contracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E4973F1FC341EA00B9A618 /* Contracts.storyboard */; };
+		84E497421FC341F900B9A618 /* ContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E497411FC341F900B9A618 /* ContractsViewController.swift */; };
+		84E497441FC3420800B9A618 /* contract_sugar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E497431FC3420800B9A618 /* contract_sugar.pdf */; };
+		84E497461FC3421100B9A618 /* contract_kant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E497451FC3421100B9A618 /* contract_kant.pdf */; };
+		84E497481FC3422000B9A618 /* calendar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E497471FC3422000B9A618 /* calendar.pdf */; };
+		84E4974C1FC3459200B9A618 /* ShowWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974B1FC3459200B9A618 /* ShowWebView.swift */; };
+		84E4974E1FC347E400B9A618 /* ContractsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974D1FC347E400B9A618 /* ContractsTableViewCell.swift */; };
+		84E497501FC3498900B9A618 /* KantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974F1FC3498900B9A618 /* KantViewController.swift */; };
+		84E497521FC3499500B9A618 /* SugarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E497511FC3499500B9A618 /* SugarViewController.swift */; };
 		84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */; };
 		84FBB1001F74EE2C00C366B1 /* ProfileMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */; };
 		AA0D37D0FB995154CCF358BA /* Pods_Kaindy_Kant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -265,6 +274,15 @@
 		84BEAA9D1F8F65C500D6A647 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		84CEC66B1FAD8E6F00D6198D /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
 		84D519491F8B6BDE00512102 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		84E4973F1FC341EA00B9A618 /* Contracts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contracts.storyboard; sourceTree = "<group>"; };
+		84E497411FC341F900B9A618 /* ContractsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsViewController.swift; sourceTree = "<group>"; };
+		84E497431FC3420800B9A618 /* contract_sugar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract_sugar.pdf; sourceTree = "<group>"; };
+		84E497451FC3421100B9A618 /* contract_kant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract_kant.pdf; sourceTree = "<group>"; };
+		84E497471FC3422000B9A618 /* calendar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = calendar.pdf; sourceTree = "<group>"; };
+		84E4974B1FC3459200B9A618 /* ShowWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWebView.swift; sourceTree = "<group>"; };
+		84E4974D1FC347E400B9A618 /* ContractsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsTableViewCell.swift; sourceTree = "<group>"; };
+		84E4974F1FC3498900B9A618 /* KantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KantViewController.swift; sourceTree = "<group>"; };
+		84E497511FC3499500B9A618 /* SugarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarViewController.swift; sourceTree = "<group>"; };
 		84FBB0FD1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMapTableViewCell.swift; sourceTree = "<group>"; };
 		84FBB0FE1F74EE2C00C366B1 /* ProfileMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileMapTableViewCell.xib; sourceTree = "<group>"; };
 		9F3784CF1CA75796598245CC /* Pods_Kaindy_Kant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaindy_Kant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,6 +372,7 @@
 			children = (
 				8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */,
 				8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */,
+				84E4973E1FC341D700B9A618 /* Contracts */,
 				84816E211FB53FBD00AAA05D /* Settings */,
 				235E28501F7A8B1D00378759 /* Models */,
 				1F5893A51F614EF900FD2C5D /* Supporting Files */,
@@ -396,12 +415,14 @@
 		1F58939E1F614EA200FD2C5D /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				84E497471FC3422000B9A618 /* calendar.pdf */,
 				23205AF51F62407300D58F5B /* Cells */,
 				1F5893741F614DB600FD2C5D /* Main.storyboard */,
 				1F58939F1F614ED700FD2C5D /* MainViewController.swift */,
 				2388D2171F74E09E0059B88C /* WeatherViewController.swift */,
 				232AD4601F98DF73007736B3 /* TechnologiesViewController.swift */,
 				232AD4661F993576007736B3 /* TechnologiesListViewController.swift */,
+				84E4974B1FC3459200B9A618 /* ShowWebView.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -409,8 +430,8 @@
 		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				23B4EF5E1FB2D75D0087B82D /* ViewController.swift */,
 				84D519491F8B6BDE00512102 /* DataManager.swift */,
+				23B4EF5E1FB2D75D0087B82D /* ViewController.swift */,
 				23727DF21FA308A3009BC273 /* GlobalFunctions.swift */,
 				8423B9981F8B54780061C702 /* Constants.swift */,
 				8423B9941F8B4DBA0061C702 /* ApiAddress.swift */,
@@ -706,6 +727,20 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		84E4973E1FC341D700B9A618 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				84E497451FC3421100B9A618 /* contract_kant.pdf */,
+				84E497431FC3420800B9A618 /* contract_sugar.pdf */,
+				84E4973F1FC341EA00B9A618 /* Contracts.storyboard */,
+				84E497411FC341F900B9A618 /* ContractsViewController.swift */,
+				84E4974D1FC347E400B9A618 /* ContractsTableViewCell.swift */,
+				84E4974F1FC3498900B9A618 /* KantViewController.swift */,
+				84E497511FC3499500B9A618 /* SugarViewController.swift */,
+			);
+			name = Contracts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -832,6 +867,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0DF1AC1F6BCDDC00DE54F2 /* Приложение 4_Модуль_Сахарная свекла_2016.pdf in Resources */,
+				84E497401FC341EA00B9A618 /* Contracts.storyboard in Resources */,
 				1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */,
 				1F781B2A1F824AD90060B616 /* AboutApp.storyboard in Resources */,
 				1F0DF1AD1F6BCDDC00DE54F2 /* Приложение 5_Кант кызылчасын өстүрүү технологиясы боюнча кыскача таркатма.pdf in Resources */,
@@ -840,8 +876,10 @@
 				23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */,
 				2344C0731FB0E55B005C97CD /* Provider.storyboard in Resources */,
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
+				84E497481FC3422000B9A618 /* calendar.pdf in Resources */,
 				1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */,
 				2344C05E1FB0DC24005C97CD /* Localizable.strings in Resources */,
+				84E497461FC3421100B9A618 /* contract_kant.pdf in Resources */,
 				84816E231FB53FD900AAA05D /* Settings.storyboard in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
 				23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */,
@@ -851,6 +889,7 @@
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
 				2344C06F1FB0E522005C97CD /* Profile.storyboard in Resources */,
+				84E497441FC3420800B9A618 /* contract_sugar.pdf in Resources */,
 				8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */,
 				84049AE21F85F32200BA935F /* DetailProvider.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,
@@ -1082,6 +1121,8 @@
 				84FBB0FF1F74EE2C00C366B1 /* ProfileMapTableViewCell.swift in Sources */,
 				84049AE81F85FAE800BA935F /* DetailContactOfResouceViewController.swift in Sources */,
 				238F6F021F8B713400304DED /* ContactsViewController.swift in Sources */,
+				84E497521FC3499500B9A618 /* SugarViewController.swift in Sources */,
+				84E4974C1FC3459200B9A618 /* ShowWebView.swift in Sources */,
 				842EB3761FA762C100DC25F2 /* FieldToAdd.swift in Sources */,
 				235E28521F7A8B4A00378759 /* Expenses.swift in Sources */,
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
@@ -1110,6 +1151,7 @@
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
 				8424F63B1F8DF6AF00639C9D /* Sugar.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
+				84E497501FC3498900B9A618 /* KantViewController.swift in Sources */,
 				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
 				23A8A36B1F83425B0065C5E6 /* ServiceCollectionViewCell.swift in Sources */,
 				84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */,
@@ -1125,6 +1167,7 @@
 				23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */,
 				2397A27F1F8CB80600606660 /* HeaderViewController.swift in Sources */,
 				23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */,
+				84E497421FC341F900B9A618 /* ContractsViewController.swift in Sources */,
 				1F5893B51F61547000FD2C5D /* ServiceViewController.swift in Sources */,
 				8423B9991F8B54780061C702 /* Constants.swift in Sources */,
 				2397A2751F8CB7B800606660 /* DetailedService.swift in Sources */,
@@ -1138,6 +1181,7 @@
 				1F5893C41F61583E00FD2C5D /* LoginViewController.swift in Sources */,
 				1FC61FD61F83BF68000BE56A /* NewsTableViewCell.swift in Sources */,
 				84049AE61F85F71200BA935F /* ContactOfResourceProtectionViewController.swift in Sources */,
+				84E4974E1FC347E400B9A618 /* ContractsTableViewCell.swift in Sources */,
 				1FC61FD01F83BCD5000BE56A /* NewsViewController.swift in Sources */,
 				23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */,
 				2397A2871F8CDB4E00606660 /* SugarAndJomTableViewCell.swift in Sources */,

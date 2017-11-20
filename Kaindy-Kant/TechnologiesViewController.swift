@@ -10,16 +10,17 @@ import UIKit
 
 class TechnologiesViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    var desc: String?
+    @IBOutlet weak var showCalendar: ShowWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionLabel.text = desc
-        navigationController?.navigationBar.topItem?.title = ""
+        if let pdf = Bundle.main.url(forResource: "calendar", withExtension: "pdf")
+        {
+            showCalendar.loadRequest(URLRequest(url: pdf))
+        }
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "Технологии"
+    }
 }
