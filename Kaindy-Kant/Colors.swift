@@ -20,5 +20,6 @@ struct Colors {
     static let fbColor = 0x3B5998
     static let greyBackground = 0xF5F5F7
     static let googleColor = 0xC71610
+    static let placeholderColor = 0xC7C7CD
 }
 
