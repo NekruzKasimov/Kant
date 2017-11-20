@@ -122,6 +122,9 @@
 "october" = "октября";
 "november" = "ноября";
 "december" = "декабря";
+"contracts" = "Контракт/Соглашение";
+"agreement1" = "Соглашение №1";
+"agreement2" = "Соглашение №2";
 "beet_point" = "Свеклоприемный пункт";
 "delete" = "Удалить";
 "calculate_field_expenses" = "Рассчитать бюжет для данного поля?";
