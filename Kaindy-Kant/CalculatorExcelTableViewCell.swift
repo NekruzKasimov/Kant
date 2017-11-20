@@ -18,7 +18,7 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
         didSet {
             priceTF.keyboardType = .numberPad
             priceTF.delegate = self
-            priceTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+            priceTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
     
@@ -26,15 +26,15 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
         didSet {
             amountTF.keyboardType = .numberPad
             amountTF.delegate = self
-            amountTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+            amountTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
     }
     
     @IBOutlet weak var totalLabel: UILabel!
     
     func setValues(expense: Expense, counter: Int) {
-        self.priceTF.placeholder = "\(CalculatorExcelLogicController.shared.prices[counter])"
-        self.amountTF.placeholder = "\(CalculatorExcelLogicController.shared.amounts[counter])"
+        self.priceTF.placeholder = "\(expense.price)"
+        self.amountTF.placeholder = "\(expense.amount)"
         self.titleLabel.text = "\(counter + 1).\n\(expense.name)"
         self.tag = counter
     }
@@ -45,23 +45,29 @@ class CalculatorExcelTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func setAmountAndPrice(amount: Int, price: Int) {
-//        if priceTF.placeholder != "\(price)" {
-            priceTF.text = "\(price)"
-//        }
-//        if amountTF.placeholder != "\(amount)" {
-            amountTF.text = "\(amount)"
-//        }
+        priceTF.text = "\(price)"
+        amountTF.text = "\(amount)"
+        priceTF.textColor = priceTF.placeholder != "\(price)" ? .black : UIColor.init(netHex: Colors.placeholderColor)
+        amountTF.textColor = amountTF.placeholder != "\(amount)" ? .black : UIColor.init(netHex: Colors.placeholderColor)
     }
 }
 
 extension CalculatorExcelTableViewCell {
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        textFieldDidChange()
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.textColor == UIColor.init(netHex: Colors.placeholderColor) {
+            textField.text = ""
+        }
         return true
     }
     
-    func textFieldDidChange() {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textFieldDidChange(textField)
+        return true
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        textField.textColor = .black
         let price = priceTF.text == "" ? Int(priceTF.placeholder!)! : Int(priceTF.text!)!
         let amount = amountTF.text == "" ? Int(amountTF.placeholder!)! : Int(amountTF.text!)!
         DataManager.shared.update(index: self.tag, price: price, amount: amount)
