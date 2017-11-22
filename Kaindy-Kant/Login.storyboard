@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="js5-BS-lDF">
             <objects>
-                <viewController id="wTp-Lc-hrk" customClass="LoginViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="wTp-Lc-hrk" customClass="LoginViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zlD-YE-C4y"/>
                         <viewControllerLayoutGuide type="bottom" id="BwW-gd-7YX"/>

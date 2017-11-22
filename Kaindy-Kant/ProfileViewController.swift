@@ -129,8 +129,8 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     @IBOutlet weak var noFieldsConstraint: NSLayoutConstraint!
     
     @IBAction func chagePasswordButton(_ sender: Any) {
-    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ManagingPasswordViewController") as! ManagingPasswordViewController
-    self.navigationController?.show(vc, sender: self)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangePasswordViewController")
+        self.navigationController?.show(vc!, sender: self)
         
     }
     @IBAction func saveChangesPressed(_ sender: Any) {

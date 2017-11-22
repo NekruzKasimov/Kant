@@ -177,4 +177,10 @@ class ServerManager: HTTPRequestManager  {
             completion(BeetPoints(json: json))
         }, error: error)
     }
+    func updatePassword(changePassword: ChangePassword, _ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
+        self.put(endpoint: "\(Constants.Network.EndPoints.ChangePassword)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: changePassword.getDictionary(),  completion: { (json) in
+            print(json)
+            completion()
+        }, error: error)
+    }
 }

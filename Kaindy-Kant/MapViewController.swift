@@ -117,14 +117,12 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             let field = FieldToAdd(field_id: fieldId.text!, year: yearChose, hectares: (doubleString as NSString).doubleValue, coordinates: coordinates, average_harvest: (harvestString as NSString).doubleValue, point_id: self.beetPoints.count == 0 ? 0 : self.beetPoints[beetPointIndex].id)
             SVProgressHUD.show()
             ServerManager.shared.addField(field: field, fieldAdded, error: showErrorAlert)
-           
         }
     }
     
     @IBAction func hideMapView(_ sender: UIButton) {
         //self.dismissMapView()
         dismissMapView()
-
     }
     func askForOpeningExcel(id: Int){
         let alert = UIAlertController(title: "", message: "calculate_field_expenses".localized(lang: self.lang)! , preferredStyle: .alert)

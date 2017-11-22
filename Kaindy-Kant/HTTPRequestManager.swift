@@ -39,16 +39,13 @@ class HTTPRequestManager {
         }
         apiUrl.remove(at: apiUrl.index(before: apiUrl.endIndex))
         print(apiUrl)
-        
         var head: HTTPHeaders = [:]
         if let token = UserDefaults.standard.string(forKey: "token") {
             head = ["Authorization" : "Bearer \(token)"]
         }
-        
         if header != "" {
             head.updateValue(header, forKey: "language")
         }
-        
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: head).responseJSON { (response:DataResponse<Any>) in
 //            print(response.description)
             guard response.response != nil else {
@@ -102,6 +99,9 @@ class HTTPRequestManager {
     
     internal func post(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         request(method: .post, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
+    }
+    internal func put(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+        request(method: .put, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
     }
     internal func get(endpoint: String, serverType: ServerType, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         request(method: .get, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error)

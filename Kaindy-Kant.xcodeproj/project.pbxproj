@@ -104,6 +104,8 @@
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
+		8465FF871FC5A11F00412657 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465FF861FC5A11F00412657 /* ChangePasswordViewController.swift */; };
+		8465FF891FC5AC5700412657 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465FF881FC5AC5700412657 /* ChangePassword.swift */; };
 		84816E231FB53FD900AAA05D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84816E221FB53FD900AAA05D /* Settings.storyboard */; };
 		84816E271FB5413100AAA05D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816E261FB5413100AAA05D /* SettingsViewController.swift */; };
 		84816E2A1FB5414F00AAA05D /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */; };
@@ -265,6 +267,8 @@
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
+		8465FF861FC5A11F00412657 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		8465FF881FC5AC5700412657 /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		84816E221FB53FD900AAA05D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		84816E261FB5413100AAA05D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84816E291FB5414F00AAA05D /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -598,6 +602,7 @@
 				84A74C5B1FA1CD9500E7AE11 /* Field.swift */,
 				842EB3751FA762C100DC25F2 /* FieldToAdd.swift */,
 				84AEF8181FB9C135005D6B08 /* BeetPoint.swift */,
+				8465FF881FC5AC5700412657 /* ChangePassword.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -698,6 +703,7 @@
 			children = (
 				8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */,
 				8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */,
+				8465FF861FC5A11F00412657 /* ChangePasswordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1157,11 +1163,13 @@
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
 				8424F63B1F8DF6AF00639C9D /* Sugar.swift in Sources */,
+				8465FF871FC5A11F00412657 /* ChangePasswordViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
 				84E497501FC3498900B9A618 /* KantViewController.swift in Sources */,
 				23A690EF1F7B5BDA0062B4F9 /* HTTPRequestManager.swift in Sources */,
 				23A8A36B1F83425B0065C5E6 /* ServiceCollectionViewCell.swift in Sources */,
 				84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */,
+				8465FF891FC5AC5700412657 /* ChangePassword.swift in Sources */,
 				8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */,
 				8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */,
 				1F781B281F824A1E0060B616 /* AboutAppViewController.swift in Sources */,

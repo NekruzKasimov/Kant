@@ -57,6 +57,7 @@ struct Constants {
             static let GetSuppliers = "api/supplier"
             static let FieldExpenses = "api/expenses"
             static let BeetPoint = "api/beet-point"
+            static let ChangePassword = "api/user/change-password"
 
         }
     }
