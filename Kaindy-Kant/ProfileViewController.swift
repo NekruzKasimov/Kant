@@ -36,6 +36,7 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     
     var imagePicker = UIImagePickerController()
     var image = ""
+    var phoneNumber = ""
     
     @IBOutlet weak var first_name_TF: SkyFloatingLabelTextField! {
         didSet {
@@ -64,8 +65,9 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     @IBOutlet weak var phone_TF: SkyFloatingLabelTextField!  {
         didSet {
             phone_TF.accessibilityIdentifier = "phoneTextField"
-            GlobalFunctions.configure(textField: phone_TF, withText: "phone".localized(lang: self.lang)! , placeholder: "phone".localized(lang: self.lang)!, tag: 3)
+            GlobalFunctions.configure(textField: phone_TF, withText: "phone".localized(lang: self.lang)! , placeholder: "(XXX) YY-YY-YY", tag: 3)
             phone_TF.keyboardType = .phonePad
+            phone_TF.delegate = self
             configureTextField(textField: phone_TF)
         }
     }
@@ -189,7 +191,8 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
         first_name_TF.text = user_info["first_name"]
         last_name_TF.text = user_info["last_name"]
         fathers_name_TF.text = user_info["fathers_name"]
-        phone_TF.text = user_info["phone"]
+        phone_TF.text = setPhoneNumber(phone: user_info["phone"])
+        phoneNumber = phone_TF.text!
         email_TF.text = user_info["email"]
         address_TF.text = user_info["address"]
         date_of_birth_TF.text = user_info["date_of_birth"]
@@ -223,6 +226,24 @@ extension ProfileViewController {
 //    func dismissKeyboard() {
 //        scrollView.endEditing(true)
 //    }
+    
+    func setPhoneNumber(phone: String?) -> String {
+        var response = ""
+        var counter = 0
+        for item in (phone?.characters)! {
+            if counter == 0 {
+                response = response + "("
+            } else if counter == 3 {
+                response = response + ") "
+            } else if counter == 5 || counter == 7 {
+                response = response + "-"
+            }
+            counter = counter + 1
+            response = response + String(describing: item)
+        }
+        
+        return response
+    }
     
     func showDatePicker() {
         let myDatePicker = UIDatePicker()
@@ -285,6 +306,33 @@ extension ProfileViewController {
             showDatePicker()
             return false
         }
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool  {
+        let totalString = "\(phone_TF.text!)\(string)"
+        //        if !self.isValid(number: totalString, in: range) {
+        //            return false
+        //        }
+        
+        if(phone_TF.tag == 3) {
+            if (range.location == 0 && string == "0") { return false }
+            if (range.length == 1) {
+                let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
+                
+                phoneNumber = phoneNumber.substring(to: end)
+                phone_TF.text = PhoneNumbers.format(input: totalString, true)
+                
+            } else {
+                if phoneNumber.count < 9 {
+                    phoneNumber += string
+                }
+                phone_TF.text = PhoneNumbers.format(input: totalString, false)
+            }
+            print("my phone - \(phoneNumber)")
+            return false
+        }
+        
         return true
     }
 }

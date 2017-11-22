@@ -15,6 +15,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
     var imagePicker = UIImagePickerController()
     var image = ""
+    var phoneNumber = ""
     
 //    @IBOutlet weak var avatarImageView: UIImageView! {
 //        didSet {
@@ -54,8 +55,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneTF: SkyFloatingLabelTextField! {
         didSet {
             phoneTF.accessibilityIdentifier = "phoneTextField"
-            GlobalFunctions.configure(textField: phoneTF, withText: "Телефон", placeholder: "Телефон", tag: 3)
+            GlobalFunctions.configure(textField: phoneTF, withText: "Телефон", placeholder: "(XXX) YY-YY-YY", tag: 3)
             phoneTF.keyboardType = .phonePad
+            phoneTF.delegate = self
             configureTextField(textField: phoneTF)
         }
     }
@@ -247,6 +249,33 @@ extension RegistrationViewController {
         } else {
             return true
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool  {
+        let totalString = "\(phoneTF.text!)\(string)"
+        //        if !self.isValid(number: totalString, in: range) {
+        //            return false
+        //        }
+        
+        if(phoneTF.tag == 3) {
+            if (range.location == 0 && string == "0") { return false }
+            if (range.length == 1) {
+                let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
+                
+                phoneNumber = phoneNumber.substring(to: end)
+                phoneTF.text = PhoneNumbers.format(input: totalString, true)
+                
+            } else {
+                if phoneNumber.count < 9 {
+                    phoneNumber += string
+                }
+                phoneTF.text = PhoneNumbers.format(input: totalString, false)
+            }
+            print("my phone - \(phoneNumber)")
+            return false
+        }
+        
+        return true
     }
 }
 

@@ -77,6 +77,7 @@
 		23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
+		23D49C731FC57EEE001F755A /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D49C721FC57EEE001F755A /* PhoneNumbers.swift */; };
 		23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */; };
 		23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */; };
 		23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */; };
@@ -232,6 +233,7 @@
 		23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionTableViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
+		23D49C721FC57EEE001F755A /* PhoneNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
 		23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorExcelViewController.storyboard; sourceTree = "<group>"; };
 		23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelViewController.swift; sourceTree = "<group>"; };
 		23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelTableViewCell.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 		1F5893A51F614EF900FD2C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				23D49C721FC57EEE001F755A /* PhoneNumbers.swift */,
 				84D519491F8B6BDE00512102 /* DataManager.swift */,
 				23B4EF5E1FB2D75D0087B82D /* ViewController.swift */,
 				23727DF21FA308A3009BC273 /* GlobalFunctions.swift */,
@@ -822,6 +825,9 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1140,6 +1146,7 @@
 				1F781B241F8247930060B616 /* MapViewController.swift in Sources */,
 				232AD4651F992B48007736B3 /* Technologies.swift in Sources */,
 				1F7898591F9635D8001E12FE /* LocalNewsViewController.swift in Sources */,
+				23D49C731FC57EEE001F755A /* PhoneNumbers.swift in Sources */,
 				84B4EA2D1FB09B6C005A5A95 /* PopUpYearViewController.swift in Sources */,
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
