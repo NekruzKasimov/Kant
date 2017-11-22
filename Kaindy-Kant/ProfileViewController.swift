@@ -230,7 +230,7 @@ extension ProfileViewController {
     func setPhoneNumber(phone: String?) -> String {
         var response = "0("
         var counter = 0
-        for item in (phone?.characters)! {
+        for item in phone! {
             if counter == 3 {
                 response = response + ") "
             } else if counter == 5 || counter == 7 {
@@ -239,7 +239,6 @@ extension ProfileViewController {
             counter = counter + 1
             response = response + String(describing: item)
         }
-        
         return response
     }
     

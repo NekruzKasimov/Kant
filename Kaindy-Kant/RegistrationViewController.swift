@@ -133,12 +133,13 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             }
             else if (phoneTF.text?.count)! < 10 {
                 showErrorAlert(message: "Введите правильный номер телефона!")
-
             } else {
                 newUser.first_name = self.firstNameTF.text!
                 newUser.last_name = self.lastNameTF.text!
                 newUser.fathers_name = self.fathersNameTF.text!
-                newUser.phone = self.phoneTF.text!
+                var phone = phoneTF.text
+                phone?.remove(at: (phone?.startIndex)!)
+                newUser.phone = (phone?.westernArabicNumeralsOnly)!
                 newUser.city = self.cityTF.text!
                 newUser.address = self.addressTF.text!
                 newUser.password_repeat = self.passwordRepeatTF.text!
