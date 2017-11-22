@@ -15,7 +15,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
     var imagePicker = UIImagePickerController()
     var image = ""
-    var phoneNumber = ""
+    var phoneNumber = "0("
     
 //    @IBOutlet weak var avatarImageView: UIImageView! {
 //        didSet {
@@ -260,13 +260,14 @@ extension RegistrationViewController {
         if(phoneTF.tag == 3) {
             if (range.location == 0 && string == "0") { return false }
             if (range.length == 1) {
-                let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
-                
-                phoneNumber = phoneNumber.substring(to: end)
+                if phoneNumber != "0" {
+                    let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
+                    phoneNumber = phoneNumber.substring(to: end)
+                }
                 phoneTF.text = PhoneNumbers.format(input: totalString, true)
                 
             } else {
-                if phoneNumber.count < 9 {
+                if phoneNumber.count < 10 {
                     phoneNumber += string
                 }
                 phoneTF.text = PhoneNumbers.format(input: totalString, false)

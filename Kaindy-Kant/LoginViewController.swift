@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         textField.selectedLineColor = UIColor.init(netHex: Colors.green)
         textField.selectedTitleColor = UIColor.init(netHex: Colors.green)
     }
-    var phoneNumber = ""
+    var phoneNumber = "0("
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        let login = loginTextField.text?.westernArabicNumeralsOnly
+        var login = loginTextField.text?.westernArabicNumeralsOnly
+        login?.remove(at: (login?.startIndex)!)
         let password = passwordTextField.text
         if login != "" && password != "" {
             //HUD.show(.progress)
@@ -117,13 +118,14 @@ extension LoginViewController: UITextFieldDelegate {
         if(loginTextField.tag == 0) {
             if (range.location == 0 && string == "0") { return false }
             if (range.length == 1) {
-                let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
-                
-                phoneNumber = phoneNumber.substring(to: end)
+                if phoneNumber != "0" {
+                    let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
+                    phoneNumber = phoneNumber.substring(to: end)
+                }
+               
                 loginTextField.text = PhoneNumbers.format(input: totalString, true)
-                
             } else {
-                if phoneNumber.count < 9 {
+                if phoneNumber.count < 10 {
                     phoneNumber += string
                 }
                 loginTextField.text = PhoneNumbers.format(input: totalString, false)

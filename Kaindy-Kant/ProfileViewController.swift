@@ -36,7 +36,7 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     
     var imagePicker = UIImagePickerController()
     var image = ""
-    var phoneNumber = ""
+    var phoneNumber = "0("
     
     @IBOutlet weak var first_name_TF: SkyFloatingLabelTextField! {
         didSet {
@@ -228,12 +228,10 @@ extension ProfileViewController {
 //    }
     
     func setPhoneNumber(phone: String?) -> String {
-        var response = ""
+        var response = "0("
         var counter = 0
         for item in (phone?.characters)! {
-            if counter == 0 {
-                response = response + "("
-            } else if counter == 3 {
+            if counter == 3 {
                 response = response + ") "
             } else if counter == 5 || counter == 7 {
                 response = response + "-"
@@ -318,13 +316,14 @@ extension ProfileViewController {
         if(phone_TF.tag == 3) {
             if (range.location == 0 && string == "0") { return false }
             if (range.length == 1) {
-                let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
-                
-                phoneNumber = phoneNumber.substring(to: end)
+                if phoneNumber != "0" {
+                    let end = phoneNumber.index(phoneNumber.endIndex, offsetBy: -1)
+                    phoneNumber = phoneNumber.substring(to: end)
+                }
                 phone_TF.text = PhoneNumbers.format(input: totalString, true)
                 
             } else {
-                if phoneNumber.count < 9 {
+                if phoneNumber.count < 10 {
                     phoneNumber += string
                 }
                 phone_TF.text = PhoneNumbers.format(input: totalString, false)
