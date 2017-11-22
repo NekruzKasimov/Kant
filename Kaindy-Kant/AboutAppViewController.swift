@@ -25,4 +25,7 @@ class AboutAppViewController: ViewController {
         }
         aboutAppLbl.text = "about_description".localized(lang: self.lang)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "about_app".localized(lang: self.lang)
+    }
 }

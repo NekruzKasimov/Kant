@@ -30,7 +30,9 @@ class DetailedMapViewController: ViewController {
         setupMap()
         addExpenseButton()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Карта"
+    }
     func setupMap() {
         let googleCamera = GMSCameraPosition.camera(withTarget: googlePoints[0], zoom: 15)
         //let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 75)

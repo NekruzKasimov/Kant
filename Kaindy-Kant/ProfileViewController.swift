@@ -143,7 +143,10 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
         infoToUpdate["first_name"] = self.first_name_TF.text
         infoToUpdate["last_name"] = self.last_name_TF.text
         infoToUpdate["fathers_name"] = self.fathers_name_TF.text
-        infoToUpdate["phone"] = self.phone_TF.text
+        var phone = phone_TF.text
+        phone?.remove(at: (phone?.startIndex)!)
+        
+        infoToUpdate["phone"] = (phone?.westernArabicNumeralsOnly)!
         infoToUpdate["email"] = self.email_TF.text
         infoToUpdate["date_of_birth"] = self.date_of_birth_TF.text
         infoToUpdate["city"] = self.city_TF.text
@@ -183,6 +186,7 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = "my_profile".localized(lang: self.lang)!
         fillUserInformation()
     }
     

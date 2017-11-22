@@ -29,7 +29,10 @@ class LocalNewsViewController: ViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "news".localized(lang: self.lang)!
+
+    }
     func setupSlideShow() {
         
         var imageArray = [InputSource]()

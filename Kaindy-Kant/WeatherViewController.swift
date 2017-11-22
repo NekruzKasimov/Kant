@@ -45,6 +45,9 @@ class WeatherViewController: ViewController, UICollectionViewDataSource, UIColle
         self.title = "weather".localized(lang: self.lang)
         self.navigationController?.navigationBar.topItem?.title = ""
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "weather".localized(lang: self.lang)
+    }
 }
 
 //MARK: UICollectionViewDataSourse, UICollectionViewDelegate methods

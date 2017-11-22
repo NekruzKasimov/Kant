@@ -16,8 +16,10 @@ class SettingsViewController: ViewController {
         super.viewDidLoad()
         setNavigationBar()
         tableView.tableFooterView = UIView()
-        self.title = "settings".localized(lang: self.lang)!
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "settings".localized(lang: self.lang)!
     }
     
 

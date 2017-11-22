@@ -65,8 +65,7 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
         })
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "main_menu".localized(lang: self.lang)
     }
     

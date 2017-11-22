@@ -23,7 +23,9 @@ class MenuViewController: ViewController {
 
     @IBAction func openProfilePage(_ sender: Any) {
        // self.tablevView.cellForRow(at: IndexPath(row: selectedIndex, section: 0))?.selectionStyle = .none
-        openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
+        if let user_info = DataManager.shared.getUserInformation() {
+            openPage(storyboard: "Profile", vcIdentifier: "ProfileNav")
+        }
     }
     
     @IBOutlet weak var nameLabel: UILabel!

@@ -24,14 +24,10 @@ class DetailedSceneViewController: ViewController, UITableViewDataSource, UITabl
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        self.title = serviceTitle
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.title = serviceTitle
-    }
 }
 
 //MARK: UITableViewDataSourse methods

@@ -81,6 +81,9 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         addAddInfoButton()
         addSaveButton()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Карта"
+    }
     func setBeetPointsInformation(){
         if let beetPoints = DataManager.shared.getBeetPoints() {
             self.beetPoints = beetPoints

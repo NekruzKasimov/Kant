@@ -83,6 +83,14 @@ class FieldViewController: ViewController {
         configureTableView()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = Constants.MainPage.myFields
+        self.viewForYearPicker.isHidden = true
+        self.hideButton.isHidden = true
+        self.mapView.isHidden = true
+        ServerManager.shared.getFields(setFields, error: showErrorAlert)
+    }
     func configureYearPickerView(){
         self.yearsPicker = DataManager.shared.getYears()
         choseYear = yearsPicker[yearsPicker.count - 2]
@@ -245,13 +253,7 @@ class FieldViewController: ViewController {
         print("Segment at index \(yearIndex)  selected")
         tableView.reloadData()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.viewForYearPicker.isHidden = true
-        self.hideButton.isHidden = true
-        self.mapView.isHidden = true
-        ServerManager.shared.getFields(setFields, error: showErrorAlert)
-    }
+    
     @IBAction func addFiledPressed(_ sender: Any) {
         self.viewForYearPicker.isHidden = false
         self.hideButton.isHidden = false

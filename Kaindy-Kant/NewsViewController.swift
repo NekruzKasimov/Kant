@@ -77,7 +77,9 @@ class NewsViewController: ViewController {
             self.showErrorAlert(message: error)
         })
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "news".localized(lang: self.lang)!
+    }
     func setRossahar(rossahar: Rossahar) {
         self.newRossahar = rossahar
         newsTableView.reloadData()

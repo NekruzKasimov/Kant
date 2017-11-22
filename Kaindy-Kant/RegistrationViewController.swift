@@ -116,6 +116,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    override func viewWillAppear(_ animated: Bool) {
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
     }
     

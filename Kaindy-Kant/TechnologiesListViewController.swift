@@ -26,8 +26,7 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
         tableView.tableFooterView = UIView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "technology".localized(lang: self.lang)!
     }
     

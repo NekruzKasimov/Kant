@@ -19,8 +19,7 @@ class TechnologiesViewController: UIViewController {
             showCalendar.loadRequest(URLRequest(url: pdf))
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "Технологии"
     }
 }

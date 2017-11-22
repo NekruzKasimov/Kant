@@ -19,7 +19,7 @@ class ContractsViewController: ViewController {
         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "contracts".localized(lang: self.lang)!
     }
     

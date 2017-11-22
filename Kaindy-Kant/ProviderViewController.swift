@@ -30,8 +30,7 @@ class ProviderViewController: ViewController,  UICollectionViewDataSource, UISea
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
         self.title = "suppliers".localized(lang: self.lang)!
     }
     

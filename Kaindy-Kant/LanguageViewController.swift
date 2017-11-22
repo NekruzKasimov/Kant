@@ -31,6 +31,7 @@ class LanguageViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func nextButtonPressed(_ sender: Any) {
         if languagePickerView.currentSelectedIndex == 0 {
             DataManager.shared.setLanguage(language: "ru")
