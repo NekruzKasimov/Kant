@@ -42,11 +42,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginTextField.delegate = self
-        DataManager.shared.clearData()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     override func viewWillAppear(_ animated: Bool) {
+        DataManager.shared.clearData()
         self.title = "Авторизация"
     }
     @IBOutlet weak var registrationButton: UIButton! {
