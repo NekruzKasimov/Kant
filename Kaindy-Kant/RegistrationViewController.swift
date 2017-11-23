@@ -158,7 +158,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
                     self.present(nextViewController!, animated:true, completion:nil)
                 }, error: { (error) in
-                    print(error)
+                    SVProgressHUD.dismiss()
+                    self.showErrorAlert(message: error)
                 })
             }
         
