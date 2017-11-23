@@ -70,13 +70,17 @@ class DataManager {
         return ["username": username, "password": password]
     }
     func clearData(){
-        uDefaults.removeObject(forKey: "username")
-        uDefaults.removeObject(forKey: "password")
-        uDefaults.removeObject(forKey: "token")
-        uDefaults.removeObject(forKey: "user_information")
-        uDefaults.removeObject(forKey: "lang")
-        uDefaults.removeObject(forKey: "user_id")
-        uDefaults.removeObject(forKey: "FirebaseToken")
+        ServerManager.shared.registerFirebaseToken(parameters: ["firebase_token" : ""], {
+            self.uDefaults.removeObject(forKey: "username")
+            self.uDefaults.removeObject(forKey: "password")
+            self.uDefaults.removeObject(forKey: "token")
+            self.uDefaults.removeObject(forKey: "user_information")
+            self.uDefaults.removeObject(forKey: "lang")
+            self.uDefaults.removeObject(forKey: "user_id")
+            self.uDefaults.removeObject(forKey: "FirebaseToken")
+        }) { (error) in
+            print(error)
+        }
         let cookieJar = HTTPCookieStorage.shared
         for cookie in cookieJar.cookies! {
             print(cookie.name+"="+cookie.value)
