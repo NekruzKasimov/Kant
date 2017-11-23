@@ -74,14 +74,14 @@ class DataManager {
         uDefaults.removeObject(forKey: "password")
         uDefaults.removeObject(forKey: "token")
         uDefaults.removeObject(forKey: "user_information")
-        uDefaults.removeObject(forKey: "AppleLanguages")
+        uDefaults.removeObject(forKey: "lang")
         uDefaults.removeObject(forKey: "user_id")
+        uDefaults.removeObject(forKey: "FirebaseToken")
         let cookieJar = HTTPCookieStorage.shared
         for cookie in cookieJar.cookies! {
             print(cookie.name+"="+cookie.value)
             cookieJar.deleteCookie(cookie)
         }
-        
 
     }
     func setUserId(user_id: Int) {

@@ -139,6 +139,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         if let refreshedToken = InstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
+            let token = UserDefaults.standard.string(forKey: "FirebaseToken")
+            if refreshedToken != token {
+                ServerManager.shared.registerFirebaseToken(parameters: ["firebase_token" : refreshedToken], {
+                    UserDefaults.standard.set(refreshedToken, forKey: "FirebaseToken")
+                }, error: { (error) in
+                    print(error)
+                })
+            }
         }
     }
     

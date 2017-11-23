@@ -183,4 +183,9 @@ class ServerManager: HTTPRequestManager  {
             completion()
         }, error: error)
     }
+    
+    func registerFirebaseToken(parameters: [String: String], _ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
+        self.patch(endpoint: "\(Constants.Network.EndPoints.RegisterToken)/\(DataManager.shared.getUserId())/", serverType: .kant, parameters: parameters, completion: { (json) in completion()
+        }, error: error)
+    }
 }
