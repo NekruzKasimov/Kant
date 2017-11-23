@@ -256,7 +256,7 @@ extension ProfileViewController {
         alertController.view.tintColor = .black
         let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             dateFormatter.locale = Locale.init(identifier: "en_GB")
             self?.date_of_birth_TF.text = dateFormatter.string(from: myDatePicker.date)
         }
