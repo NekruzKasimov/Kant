@@ -81,6 +81,7 @@ class LoginViewController: UIViewController {
         //HUD.hide()
         DataManager.shared.setUserId(user_id: user_id)
         DataManager.shared.saveUser(username: (loginTextField.text?.westernArabicNumeralsOnly)!, password: passwordTextField.text!)
+        UIApplication.shared.registerForRemoteNotifications()
         let sb = UIStoryboard(name: "Registration", bundle: nil)
         let nextViewController = sb.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
         self.present(nextViewController!, animated:true, completion:nil)

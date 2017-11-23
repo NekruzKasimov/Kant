@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TechnologiesViewController: UIViewController {
+class TechnologiesViewController: ViewController {
 
     @IBOutlet weak var showCalendar: ShowWebView!
     
@@ -20,6 +20,6 @@ class TechnologiesViewController: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Технологии"
+        self.title = "technology".localized(lang: self.lang)!
     }
 }

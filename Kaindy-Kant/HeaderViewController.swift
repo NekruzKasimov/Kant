@@ -18,6 +18,21 @@ class HeaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSlideImageView()
+        self.title = finOffice.title
+    }
+    
+    func setNavigation() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 64))
+        let navItem = UINavigationItem(title: "")
+        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
+        navItem.leftBarButtonItem = doneItem
+        navBar.setItems([navItem], animated: true)
+        self.view.addSubview(navBar)
+    }
+    
+    func done() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     func setSlideImageView() {
