@@ -55,7 +55,8 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
         if DataManager.shared.getUserInformation() == nil {
             ServerManager.shared.getUser(setUserInfo, error: { (error) in
                 SVProgressHUD.dismiss()
-                self.showErrorAlert(message: error)
+                self.unauthorizedError(message: error)
+
             })
         } else {
             self.user = NewUser()
