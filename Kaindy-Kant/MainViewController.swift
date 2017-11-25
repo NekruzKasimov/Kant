@@ -68,6 +68,9 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
     override func viewWillAppear(_ animated: Bool) {
         self.title = "main_menu".localized(lang: self.lang)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.title = "main_menu".localized(lang: self.lang)
+    }
     
     func setUserInfo(user: NewUser){
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
