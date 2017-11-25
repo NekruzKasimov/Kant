@@ -148,9 +148,7 @@ extension CalculatorExcelViewController {
     func expensesUpdated(message: String){
         print(message)
         SVProgressHUD.dismiss()
-        let sb = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "FieldViewController") as! FieldViewController
-        self.navigationController?.show(vc, sender: self)
+        backTapped()
     }
 }
 

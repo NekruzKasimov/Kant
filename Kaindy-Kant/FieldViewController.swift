@@ -280,7 +280,7 @@ class FieldViewController: ViewController {
         let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         vc.yearChose = self.choseYear
         vc.fieldsToShow = getFieldsIfExist()
-        self.navigationController?.present(vc, animated: false, completion: nil)
+        self.navigationController?.show(vc, sender: self)
     }
     func getFieldsIfExist() -> [Field] {
         for (index, year) in years.enumerated() {

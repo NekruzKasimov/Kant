@@ -87,7 +87,11 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         addSaveButton()
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         self.title = "Карта"
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     func setBeetPointsInformation(){
         if let beetPoints = DataManager.shared.getBeetPoints() {
@@ -330,7 +334,7 @@ extension MapViewController {
         fillExistingFields()
     }
     func backClicked() {
-        self.dismiss(animated: false, completion: nil)
+        self.navigationController?.popViewController(animated: false)
     }
     func saveButtonClicked() {
         if points.count > 2 {
