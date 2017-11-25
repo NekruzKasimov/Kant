@@ -56,8 +56,12 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     }
     
     let resetButton = UIButton()
+    let resetButtonTransparent = UIButton()
     let saveButton = UIButton()
+    let saveButtonTransparent = UIButton()
     let addInfoButton = UIButton()
+    let addInfoButtonTransparent = UIButton()
+
 
    // var map: GMSMapView!
     var points: [MapCoordinate] = []
@@ -65,7 +69,6 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     var beetPoints = [BeetPoint]()
     var beetPointIndex = 0
     lazy var map = GMSMapView()
-
     @IBOutlet weak var hideButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,8 +80,11 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         }
         setBeetPointsInformation()
         addGoogleMap()
+        addResetButtonTransparent()
         addResetButton()
+        addAddInfoButtonTransparent()
         addAddInfoButton()
+        addSaveButtonTransparent()
         addSaveButton()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -232,7 +238,8 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     }
     
     func addResetButton() {
-        resetButton.frame = CGRect(x: view.frame.midX - 125, y: view.frame.height - 99, width: 120, height: 30)
+        //let screenWidth = self.view.frame.width
+        resetButton.frame = CGRect(x: view.frame.midX - (getWidthOfButton() + 5), y: view.frame.height - 99, width: getWidthOfButton(), height: 30)
         resetButton.setTitle("cancel".localized(lang: self.lang)!, for: .normal)
         resetButton.setTitleColor(.white, for: .normal)
         resetButton.layer.cornerRadius = 2
@@ -240,9 +247,23 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         resetButton.addTarget(self, action: #selector(resetButtonClicked), for: .touchUpInside)
         view.addSubview(resetButton)
     }
-    
+    func addResetButtonTransparent() {
+        //let screenWidth = self.view.frame.width
+        resetButtonTransparent.frame = CGRect(x: view.frame.midX - (getWidthOfButton() + 5), y: view.frame.height - 119, width: getWidthOfButton(), height: 50)
+        resetButtonTransparent.setTitle("", for: .normal)
+        resetButtonTransparent.addTarget(self, action: #selector(resetButtonClicked), for: .touchUpInside)
+        view.addSubview(resetButtonTransparent)
+    }
+    func addSaveButtonTransparent() {
+        //let screenWidth = self.view.frame.width
+        saveButtonTransparent.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 119, width: getWidthOfButton(), height: 50)
+        saveButtonTransparent.setTitle("", for: .normal)
+        saveButtonTransparent.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
+        view.addSubview(saveButtonTransparent)
+    }
     func addSaveButton() {
-        saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
+        //let screenWidth = self.view.frame.width
+        saveButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: getWidthOfButton(), height: 30)
         saveButton.setTitle("confirm".localized(lang: self.lang)!, for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.layer.cornerRadius = 2
@@ -250,14 +271,35 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
         view.addSubview(saveButton)
     }
+    func addAddInfoButtonTransparent(){
+        //let screenWidth = self.view.frame.width
+        addInfoButtonTransparent.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 119, width: getWidthOfButton(), height: 50)
+        addInfoButtonTransparent.setTitle("", for: .normal)
+        addInfoButtonTransparent.addTarget(self, action: #selector(addInfoButtonClicked), for: .touchUpInside)
+        view.addSubview(addInfoButtonTransparent)
+    }
     func addAddInfoButton(){
-        addInfoButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: 120, height: 30)
+        //let screenWidth = self.view.frame.width
+        addInfoButton.frame = CGRect(x: view.frame.midX + 5, y: view.frame.height - 99, width: getWidthOfButton(), height: 30)
         addInfoButton.setTitle("save".localized(lang: self.lang), for: .normal)
         addInfoButton.setTitleColor(.white, for: .normal)
         addInfoButton.layer.cornerRadius = 2
         addInfoButton.backgroundColor = UIColor.init(netHex: Colors.purple)
         addInfoButton.addTarget(self, action: #selector(addInfoButtonClicked), for: .touchUpInside)
         view.addSubview(addInfoButton)
+    }
+//    func createButton(button: UIButton, target:  @escaping () -> Void, isTransparent: Bool, xPosition: Int, yPosition: Int, width: CGFloat, height: Int){
+//        button.frame = CGRect(x: view.frame.midX - (getWidthOfButton() + 5), y: view.frame.height - 99, width: getWidthOfButton(), height: 30)
+//        button.setTitle("cancel".localized(lang: self.lang)!, for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//        button.layer.cornerRadius = 2
+//        button.backgroundColor = UIColor.init(netHex: Colors.purple)
+//        button.addTarget(self, action: #selector(addInfoButtonClicked), for: .touchUpInside)
+//        view.addSubview(resetButton)
+//    }
+    func getWidthOfButton() -> CGFloat {
+        let screenWidth = self.view.frame.width
+        return screenWidth / 2 - 24
     }
 }
 extension MapViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -282,6 +324,7 @@ extension MapViewController {
         //self.addInfoButton.removeFromSuperview()
         //self.addSaveButton()
         self.map.delegate = self
+        self.saveButtonTransparent.isHidden = false
         self.saveButton.isHidden = false
         points.removeAll()
         map.clear()
@@ -305,6 +348,7 @@ extension MapViewController {
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
             self.saveButton.isHidden = true
+            self.saveButtonTransparent.isHidden = true
             self.map.delegate = nil
             //self.saveButton.removeFromSuperview()
             //self.addAddInfoButton()
