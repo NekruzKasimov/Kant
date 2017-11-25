@@ -13,11 +13,13 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
 
     @IBOutlet weak var tableView: UITableView!
     
-    var technologies: Technologies?
+    var technologies = ["technology", "calendar"]
+    var technologies_title = ["Технология возведения свеклы", "Календарь свекловода"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show()
+        //SVProgressHUD.show()
 //        ServerManager.shared.getTechnologies(setTechnologies) { (error) in
 //            SVProgressHUD.dismiss()
 //            self.showErrorAlert(message: error)
@@ -36,16 +38,13 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
 //    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let counter = technologies?.array.count {
-            SVProgressHUD.dismiss()
-            return counter
-        }
-        return 0
+       return technologies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = technologies?.array[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TechnologyTableViewCell")
+        cell?.textLabel?.text = technologies_title[indexPath.row]
+        //cell?.textLabel?.text = technologies[indexPath.row]
         cell?.selectionStyle = .none
         return cell!
     }
@@ -53,8 +52,7 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "TechnologiesViewController") as! TechnologiesViewController
-        //vc.desc = technologies?.array[indexPath.row].text
-        //vc.title = technologies?.array[indexPath.row].name
+        vc.pdfName = self.technologies[indexPath.row]
         navigationController?.show(vc, sender: self)
     }
 }

@@ -191,7 +191,7 @@ extension MainViewController {
             }
             else if indexPath.row == 1 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesViewController") as! TechnologiesViewController
+                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
                 navigationController?.show(vc, sender: self)
                 
             } else {
