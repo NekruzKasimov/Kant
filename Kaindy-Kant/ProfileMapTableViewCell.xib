@@ -268,7 +268,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="delete-2" width="32" height="32"/>
-        <image name="edit-2" width="32" height="32"/>
+        <image name="delete-2" width="200" height="200"/>
+        <image name="edit-2" width="200" height="200"/>
     </resources>
 </document>

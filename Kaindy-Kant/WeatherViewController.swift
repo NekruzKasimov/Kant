@@ -43,7 +43,7 @@ class WeatherViewController: ViewController, UICollectionViewDataSource, UIColle
         super.viewDidLoad()
         setWeatherDegree()
         self.title = "weather".localized(lang: self.lang)
-        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.backItem?.title = ""
     }
     override func viewWillAppear(_ animated: Bool) {
         self.title = "weather".localized(lang: self.lang)

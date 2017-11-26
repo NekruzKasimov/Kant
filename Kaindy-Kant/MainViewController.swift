@@ -55,17 +55,31 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
         if DataManager.shared.getUserInformation() == nil {
             ServerManager.shared.getUser(setUserInfo, error: { (error) in
                 SVProgressHUD.dismiss()
-                self.showErrorAlert(message: error)
+                self.unauthorizedError(message: error)
+
             })
         } else {
             self.user = NewUser()
         }
-        ServerManager.shared.getServices(setServices, error: { (error) in
-            self.showErrorAlert(message: error)
-        })
+        ServerManager.shared.getServices(setServices) { (message) in
+            self.unauthorizedError(message: message)
+        }
+        
     }
-    
+    func unauthorizedError(message: String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        //Add
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            let sb = UIStoryboard(name: "Login", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "LoginViewController")
+            self.navigationController?.present(vc, animated: false, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
     override func viewWillAppear(_ animated: Bool) {
+        self.title = "main_menu".localized(lang: self.lang)
+    }
+    override func viewDidAppear(_ animated: Bool) {
         self.title = "main_menu".localized(lang: self.lang)
     }
     
@@ -191,7 +205,7 @@ extension MainViewController {
             }
             else if indexPath.row == 1 {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesViewController") as! TechnologiesViewController
+                let vc = sb.instantiateViewController(withIdentifier: "TechnologiesListViewController") as! TechnologiesListViewController
                 navigationController?.show(vc, sender: self)
                 
             } else {

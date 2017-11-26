@@ -23,7 +23,7 @@ class PopUpYearViewController: UIViewController {
         let sb = UIStoryboard(name: "Profile", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         //self.navigationController?.show(vc, sender: self)
-        self.parent?.navigationController?.show(vc, sender: self.parent)
+        self.parent?.navigationController?.show(vc, sender: self)
        // self.dismiss(animated: true, completion: nil)
         
        // present(vc, animated: true, completion: nil)

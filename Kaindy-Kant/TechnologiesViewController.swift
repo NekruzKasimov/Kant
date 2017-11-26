@@ -11,10 +11,10 @@ import UIKit
 class TechnologiesViewController: ViewController {
 
     @IBOutlet weak var showCalendar: ShowWebView!
-    
+    var pdfName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let pdf = Bundle.main.url(forResource: "calendar", withExtension: "pdf")
+        if let pdf = Bundle.main.url(forResource: pdfName, withExtension: "pdf")
         {
             showCalendar.loadRequest(URLRequest(url: pdf))
         }

@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "maps-and-flags.png",
+      "filename" : "circular-shape-silhouette.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "circular-shape-silhouette-2.png",
       "scale" : "2x"
     },
     {

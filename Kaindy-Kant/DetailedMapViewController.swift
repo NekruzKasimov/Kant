@@ -21,7 +21,6 @@ class DetailedMapViewController: ViewController {
     var expenseButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "Карта"
         for coordinate in (coordinates?.array)! {
             googlePoints.append(CLLocationCoordinate2D(latitude: (coordinate.latitude as NSString).doubleValue, longitude: (coordinate.longitude as NSString).doubleValue))
@@ -34,16 +33,28 @@ class DetailedMapViewController: ViewController {
         self.title = "Карта"
     }
     func setupMap() {
-        let googleCamera = GMSCameraPosition.camera(withTarget: googlePoints[0], zoom: 15)
-        //let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 75)
+        let googleCamera = GMSCameraPosition.camera(withLatitude: 42.81064, longitude: 74.627359, zoom: 15)
         googleMap = GMSMapView.map(withFrame: self.view.frame, camera: googleCamera)
         googleMap.mapType = .hybrid
         googleMap.settings.myLocationButton = true
+        //googleMap.padding = UIEdgeInsets(top: 0, left: 0, bottom: 35, right: 0)
         googleMap.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         googleMap.isMyLocationEnabled = true
         view.addSubview(googleMap)
         setupField()
     }
+//    func addGoogleMap() {
+//        let camera = GMSCameraPosition.camera(withLatitude: 42.81064, longitude: 74.627359, zoom: 15)
+//        map = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+//        map.delegate = self
+//        map.mapType = .hybrid
+//        map.settings.myLocationButton = true
+//        map.padding = UIEdgeInsets(top: 0, left: 0, bottom: 55, right: 0)
+//        map.isMyLocationEnabled = true
+//        map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        view.addSubview(map)
+//        fillExistingFields()
+//    }
     func addExpenseButton(){
         expenseButton.frame = CGRect(x: view.frame.midX - 100, y: view.frame.height - 99, width: 200, height: 30)
         expenseButton.setTitle("budget".localized(lang: self.lang)!, for: .normal)

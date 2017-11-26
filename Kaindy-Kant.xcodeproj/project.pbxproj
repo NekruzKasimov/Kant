@@ -102,6 +102,8 @@
 		842EB3761FA762C100DC25F2 /* FieldToAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EB3751FA762C100DC25F2 /* FieldToAdd.swift */; };
 		8433F2741F8B521C00BA712B /* Rossahar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2731F8B521C00BA712B /* Rossahar.swift */; };
 		8433F2781F8B550400BA712B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433F2771F8B550400BA712B /* Result.swift */; };
+		843E06481FC93FEF005B9A31 /* technology.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 843E06471FC93FEF005B9A31 /* technology.pdf */; };
+		843E064A1FC94140005B9A31 /* TechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E06491FC94140005B9A31 /* TechnologyTableViewCell.swift */; };
 		8464AAC11F738B8400AA4980 /* ChangingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */; };
 		8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */; };
 		8465FF871FC5A11F00412657 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465FF861FC5A11F00412657 /* ChangePasswordViewController.swift */; };
@@ -265,6 +267,8 @@
 		842EB3751FA762C100DC25F2 /* FieldToAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldToAdd.swift; sourceTree = "<group>"; };
 		8433F2731F8B521C00BA712B /* Rossahar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rossahar.swift; sourceTree = "<group>"; };
 		8433F2771F8B550400BA712B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		843E06471FC93FEF005B9A31 /* technology.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = technology.pdf; sourceTree = "<group>"; };
+		843E06491FC94140005B9A31 /* TechnologyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyTableViewCell.swift; sourceTree = "<group>"; };
 		8464AAC01F738B8400AA4980 /* ChangingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangingPasswordViewController.swift; sourceTree = "<group>"; };
 		8464AAC21F73FD4B00AA4980 /* ManagingPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagingPasswordViewController.swift; sourceTree = "<group>"; };
 		8465FF861FC5A11F00412657 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +425,7 @@
 		1F58939E1F614EA200FD2C5D /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				843E06471FC93FEF005B9A31 /* technology.pdf */,
 				84E497471FC3422000B9A618 /* calendar.pdf */,
 				23205AF51F62407300D58F5B /* Cells */,
 				1F5893741F614DB600FD2C5D /* Main.storyboard */,
@@ -579,6 +584,7 @@
 				2388D21B1F74F83D0059B88C /* WeatherCell.swift */,
 				23A8A3651F828A0C0065C5E6 /* NewsCollectionViewCell.swift */,
 				23A8A3661F828A0C0065C5E6 /* NewsCollectionViewCell.xib */,
+				843E06491FC94140005B9A31 /* TechnologyTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -900,6 +906,7 @@
 				23A8A3681F828A0C0065C5E6 /* NewsCollectionViewCell.xib in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
+				843E06481FC93FEF005B9A31 /* technology.pdf in Resources */,
 				2344C06F1FB0E522005C97CD /* Profile.storyboard in Resources */,
 				84E497441FC3420800B9A618 /* contract_sugar.pdf in Resources */,
 				8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */,
@@ -1207,6 +1214,7 @@
 				1F5893A91F61510D00FD2C5D /* MenuViewController.swift in Sources */,
 				8433F2781F8B550400BA712B /* Result.swift in Sources */,
 				2397A27A1F8CB7E000606660 /* DetailedSceneViewController.swift in Sources */,
+				843E064A1FC94140005B9A31 /* TechnologyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
