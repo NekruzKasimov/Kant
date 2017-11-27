@@ -292,9 +292,9 @@
                                                                 <constraint firstAttribute="height" constant="4" id="ahm-9E-AE9"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чуй" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uid-Ps-iJF">
-                                                            <rect key="frame" x="12" y="74" width="118" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чуй" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uid-Ps-iJF">
+                                                            <rect key="frame" x="12" y="54" width="118" height="41"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

@@ -13,7 +13,11 @@ enum ExcelSections : Int {
     case first = 0
     case items = 1
     case total = 2
-    case save = 3
+    case valueOfProducts = 3
+    case harvest = 4
+    case income = 5
+    case profit = 6
+    case save = 7
     
     func getItemsCount() -> Int {
         switch self {
@@ -22,6 +26,14 @@ enum ExcelSections : Int {
         case .items:
             return 1
         case .total:
+            return 1
+        case .valueOfProducts:
+            return 1
+        case .harvest:
+            return 1
+        case .income:
+            return 1
+        case .profit:
             return 1
         case .save:
             return 1
@@ -37,6 +49,9 @@ class CalculatorExcelViewController: ViewController, UITableViewDataSource, UITa
     var fieldId = -1
     var isFromMapViewController = false
     var totalIndexPath: IndexPath?
+    
+    var yield: Double?
+    var area: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +92,13 @@ class CalculatorExcelViewController: ViewController, UITableViewDataSource, UITa
         CalculatorExcelLogicController.shared.amounts.removeAll()
         CalculatorExcelLogicController.shared.total.removeAll()
         CalculatorExcelLogicController.shared.totalValue = 0
+        CalculatorExcelLogicController.shared.valueOfProduct = 3400
+        CalculatorExcelLogicController.shared.income = 0
+        CalculatorExcelLogicController.shared.totalValue = 0
+        CalculatorExcelLogicController.shared.harvest = 0.0
+        CalculatorExcelLogicController.shared.yield = 0.0
+        CalculatorExcelLogicController.shared.area = 0
+        tableView.reloadData()
     }
     
     func setExpenses(expenses: Expenses) {
@@ -98,9 +120,9 @@ extension CalculatorExcelViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if fieldId == -1 {
-            return 3
+            return 7
         }
-        return 4
+        return 8
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,7 +142,6 @@ extension CalculatorExcelViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FirstSectionTableViewCell") as! FirstSectionTableViewCell
             return cell
         case .items:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorExcelTableViewCell") as! CalculatorExcelTableViewCell
             cell.setValues(expense: (expenses?.array[indexPath.row])!, counter: indexPath.row)
             let shared = CalculatorExcelLogicController.shared
@@ -131,6 +152,26 @@ extension CalculatorExcelViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExcelTotalTableViewCell") as! ExcelTotalTableViewCell
             self.totalIndexPath = indexPath
             cell.totalLabel.text = "\(CalculatorExcelLogicController.shared.totalValue)"
+            return cell
+        case .valueOfProducts:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ValueOfProductsTableViewCell") as! ValueOfProductsTableViewCell
+            return cell
+        case .harvest:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HarvestTableViewCell") as! HarvestTableViewCell
+            if fieldId != -1 {
+                cell.setYieldAndArea(yield: yield!, area: area!)
+            }
+            return cell
+        case .income:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeTableViewCell") as! IncomeTableViewCell
+            let shared = CalculatorExcelLogicController.shared
+            cell.resultLabel.text = "\(shared.harvest) * \(shared.valueOfProduct) = \(shared.harvest * Double(shared.valueOfProduct))"
+            CalculatorExcelLogicController.shared.income = Int(shared.harvest * Double(shared.valueOfProduct))
+            return cell
+        case .profit:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfitTableViewCell") as! ProfitTableViewCell
+            let shared = CalculatorExcelLogicController.shared
+            cell.resultLabel.text = "\(shared.income) - \(shared.totalValue) = \(shared.income - shared.totalValue)"
             return cell
         case .save:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SaveTableViewCell") as! SaveTableViewCell
@@ -158,7 +199,6 @@ extension CalculatorExcelViewController {
     
     func configureTableView() {
         tableView.tableFooterView                   = UIView()
-        tableView.separatorStyle                    = .none
         tableView.estimatedRowHeight                = 80
         tableView.rowHeight                         = UITableViewAutomaticDimension
     }

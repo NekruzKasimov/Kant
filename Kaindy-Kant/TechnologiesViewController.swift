@@ -20,6 +20,6 @@ class TechnologiesViewController: ViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "technology".localized(lang: self.lang)!
+        //self.title = "Технологии"
     }
 }

@@ -368,6 +368,8 @@ extension FieldViewController: UITableViewDataSource, UITableViewDelegate, Butto
             let vc = sb.instantiateViewController(withIdentifier: "DetailedMapViewController") as! DetailedMapViewController
             vc.coordinates = self.years[yearIndex].fields[tag].coordinates
             vc.field_id = self.years[yearIndex].fields[tag].id
+            vc.fieldHectare =  self.years[yearIndex].fields[tag].hectares
+            vc.area = self.years[yearIndex].fields[tag].average_harvest
             navigationController?.show(vc, sender: self)
         }
         else if action == "delete" {

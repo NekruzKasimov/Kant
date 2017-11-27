@@ -7,9 +7,11 @@
 //
 
 import UIKit
+
 protocol SaveButtonDelegate : class {
     func didPressButton(_ tag: Int)
 }
+
 class SaveTableViewCell: UITableViewCell {
     weak var cellDelegate: SaveButtonDelegate?
 

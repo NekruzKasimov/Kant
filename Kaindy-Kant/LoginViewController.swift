@@ -46,7 +46,11 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     override func viewWillAppear(_ animated: Bool) {
-        DataManager.shared.clearData()
+        ServerManager.shared.registerFirebaseToken(parameters: ["firebase_token" : ""], {
+            DataManager.shared.clearData()
+        }) { (error) in
+            print(error)
+        }
         self.title = "Авторизация"
     }
     @IBOutlet weak var registrationButton: UIButton! {
@@ -72,7 +76,10 @@ class LoginViewController: UIViewController {
             ServerManager.shared.login(login: login!, password: password!, completion: log_in, error: showErrorAlert)
         }
         else {
-            showErrorAlert(message: "Заполните поля!")
+            let alertController = UIAlertController(title: "Ошибка", message: "Заполните поля!", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
         }
         
     }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-8T-594">
-                                <rect key="frame" x="0.0" y="68" width="375" height="29"/>
+                                <rect key="frame" x="4" y="68" width="367" height="29"/>
                                 <segments>
                                     <segment title="Россахар"/>
                                     <segment title="Местные"/>
@@ -73,7 +73,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расчетная цена на сахар НТБ (руб./т, с НДС) 13.09.2017" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="yKH-fN-VvY">
-                                                            <rect key="frame" x="8" y="78" width="165" height="26.5"/>
+                                                            <rect key="frame" x="8" y="78" width="165" height="99"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -86,13 +86,13 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сушенный гранулированный жом НТБ (руб./т, с НДС) 13.09.2017" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="c66-Rh-eab">
-                                                            <rect key="frame" x="193" y="80" width="166" height="39.5"/>
+                                                            <rect key="frame" x="193" y="80" width="166" height="97"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-lN-xHB">
-                                                            <rect key="frame" x="8" y="112.5" width="165" height="132.5"/>
+                                                            <rect key="frame" x="8" y="185" width="165" height="60"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cej-0U-qvy">
                                                                     <rect key="frame" x="34" y="8" width="63.5" height="11"/>
@@ -161,6 +161,7 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="jN5-Gt-198" firstAttribute="centerY" secondItem="ruJ-kG-mWD" secondAttribute="centerY" id="39e-Uo-id2"/>
+                                                                <constraint firstAttribute="height" constant="60" id="4us-3h-FTc"/>
                                                                 <constraint firstItem="psu-kw-TMM" firstAttribute="leading" secondItem="Maf-lN-xHB" secondAttribute="leading" id="6nt-ZF-LKc"/>
                                                                 <constraint firstItem="CDk-T5-x9j" firstAttribute="leading" secondItem="Cej-0U-qvy" secondAttribute="trailing" constant="4" id="6pO-Tk-xs2"/>
                                                                 <constraint firstItem="Pd4-6j-WrU" firstAttribute="leading" secondItem="oYy-Cu-HgK" secondAttribute="trailing" constant="4" id="7ia-w2-cny"/>
@@ -187,7 +188,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PlQ-xw-2t1">
-                                                            <rect key="frame" x="193" y="127.5" width="166" height="117.5"/>
+                                                            <rect key="frame" x="193" y="185" width="166" height="60"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спрос" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="w1k-BD-9Bt">
                                                                     <rect key="frame" x="34" y="8" width="64" height="11"/>
@@ -267,6 +268,7 @@
                                                                 <constraint firstItem="IuN-OW-SfL" firstAttribute="top" secondItem="PlQ-xw-2t1" secondAttribute="top" constant="8" id="K2N-A1-KB8"/>
                                                                 <constraint firstItem="3Ag-pT-aS6" firstAttribute="leading" secondItem="PlQ-xw-2t1" secondAttribute="leading" id="K9X-Bp-URe"/>
                                                                 <constraint firstItem="326-Ch-2Gl" firstAttribute="centerY" secondItem="3Ag-pT-aS6" secondAttribute="centerY" id="L79-Op-KUj"/>
+                                                                <constraint firstAttribute="height" constant="60" id="Mmo-Ab-2bs"/>
                                                                 <constraint firstItem="w1k-BD-9Bt" firstAttribute="centerY" secondItem="IuN-OW-SfL" secondAttribute="centerY" id="Rk3-O2-SFT"/>
                                                                 <constraint firstItem="326-Ch-2Gl" firstAttribute="leading" secondItem="SF6-Z2-dyH" secondAttribute="trailing" constant="4" id="Zwz-6Y-Jlz"/>
                                                                 <constraint firstItem="IuN-OW-SfL" firstAttribute="leading" secondItem="PlQ-xw-2t1" secondAttribute="leading" id="aeh-pk-bbs"/>
@@ -356,9 +358,9 @@
                             <constraint firstItem="bNK-jI-4Ni" firstAttribute="trailing" secondItem="3oK-0C-2Ng" secondAttribute="trailing" id="32r-gq-UjN"/>
                             <constraint firstItem="X9k-8T-594" firstAttribute="top" secondItem="bNK-jI-4Ni" secondAttribute="top" constant="4" id="8jD-fx-jxy"/>
                             <constraint firstItem="3oK-0C-2Ng" firstAttribute="top" secondItem="X9k-8T-594" secondAttribute="bottom" constant="4" id="PBq-tD-9za"/>
-                            <constraint firstItem="X9k-8T-594" firstAttribute="trailing" secondItem="bNK-jI-4Ni" secondAttribute="trailing" id="USq-7F-TvM"/>
-                            <constraint firstItem="X9k-8T-594" firstAttribute="leading" secondItem="bNK-jI-4Ni" secondAttribute="leading" id="YDG-wi-feF"/>
+                            <constraint firstItem="X9k-8T-594" firstAttribute="leading" secondItem="bNK-jI-4Ni" secondAttribute="leading" constant="4" id="YDG-wi-feF"/>
                             <constraint firstItem="bNK-jI-4Ni" firstAttribute="bottom" secondItem="3oK-0C-2Ng" secondAttribute="bottom" id="gCt-qs-knJ"/>
+                            <constraint firstItem="bNK-jI-4Ni" firstAttribute="trailing" secondItem="X9k-8T-594" secondAttribute="trailing" constant="4" id="yi3-Xw-Cy4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bNK-jI-4Ni"/>
                     </view>
@@ -428,6 +430,7 @@
                         <viewLayoutGuide key="safeArea" id="OFb-mU-uZc"/>
                     </view>
                     <connections>
+                        <outlet property="heightConstraint" destination="yRv-MB-PeQ" id="e6B-q2-mfn"/>
                         <outlet property="localNewsContent" destination="p2B-BI-o5C" id="rhY-Ud-6aK"/>
                         <outlet property="localNewsSlideShow" destination="KNW-WE-omi" id="gQW-YX-er4"/>
                         <outlet property="localNewsTitle" destination="MBz-EU-DGn" id="3fi-YU-gzM"/>

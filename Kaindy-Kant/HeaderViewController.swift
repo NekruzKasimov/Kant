@@ -12,29 +12,38 @@ import ImageSlideshow
 class HeaderViewController: UIViewController {
     
     @IBOutlet weak var slideShow: ImageSlideshow!
-
+    
     var finOffice: DetailedService!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setSlideImageView()
         self.title = finOffice.title
+        self.modalPresentationCapturesStatusBarAppearance = true
+        let myimage = UIImage(named: "back-5")?.withRenderingMode(.alwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: myimage, style: .plain, target: self, action: #selector(goBack))
     }
     
-    func setNavigation() {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 64))
-        let navItem = UINavigationItem(title: "")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
-        navItem.leftBarButtonItem = doneItem
-        navBar.setItems([navItem], animated: true)
-        self.view.addSubview(navBar)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.isStatusBarHidden = true
     }
     
-    func done() {
-        self.dismiss(animated: true, completion: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.isStatusBarHidden = false
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
+    
+    func goBack(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func setSlideImageView() {
         var images: [String] = []
         for item in (finOffice.images?.array)! {

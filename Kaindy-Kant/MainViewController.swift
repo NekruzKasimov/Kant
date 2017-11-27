@@ -228,9 +228,7 @@ extension MainViewController {
         var degreeToday = ""
         var statusToday = ""
        // let currentDate = Date()
-        if let status = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!] {
-            statusToday = status
-        }
+
         //statusToday = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!]!
         degreeToday = (self.weather?.today.array[0].temp)!
 //        for item in (self.weather?.today.array)! {
@@ -244,6 +242,11 @@ extension MainViewController {
 //        }
         self.degree = Int(degreeToday)!
         self.status = statusToday
+        guard let status = Constants.Weather.weatherStatuses[(self.weather?.today.array[0].type)!] else {
+            collectionView.reloadData()
+            return
+        }
+        statusToday = status
         collectionView.reloadData()
     }
     func setCurrencies(currencies: [Currency]) {
