@@ -28,4 +28,9 @@ class AboutAppViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.title = "about_app".localized(lang: self.lang)
     }
+    @IBOutlet weak var versionLabel: UILabel! {
+        didSet {
+            versionLabel.text = "NeoBis 2017 версия " + Bundle.main.releaseVersionNumber! + "." + Bundle.main.buildVersionNumber!
+        }
+    }
 }

@@ -31,14 +31,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-Ne-sxX">
+                                <rect key="frame" x="171" y="643" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kIM-s2-w9l" firstAttribute="centerX" secondItem="9U0-Xv-IAd" secondAttribute="centerX" id="LH2-Ro-pno"/>
                             <constraint firstItem="fjg-LJ-34Z" firstAttribute="trailing" secondItem="kIM-s2-w9l" secondAttribute="trailing" id="VpO-VM-VP2"/>
+                            <constraint firstItem="WwG-Ne-sxX" firstAttribute="centerX" secondItem="9U0-Xv-IAd" secondAttribute="centerX" id="XqP-Sy-ym0"/>
                             <constraint firstItem="kIM-s2-w9l" firstAttribute="top" secondItem="DXG-Ef-pKC" secondAttribute="top" constant="20" id="Xtn-CW-fPm"/>
                             <constraint firstItem="fjg-LJ-34Z" firstAttribute="top" secondItem="kIM-s2-w9l" secondAttribute="bottom" constant="20" id="fjN-ia-vi6"/>
                             <constraint firstItem="fjg-LJ-34Z" firstAttribute="leading" secondItem="kIM-s2-w9l" secondAttribute="leading" id="kRH-l5-l4d"/>
+                            <constraint firstItem="DXG-Ef-pKC" firstAttribute="bottom" secondItem="WwG-Ne-sxX" secondAttribute="bottom" constant="8" id="x6E-HA-amT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DXG-Ef-pKC"/>
                     </view>
@@ -46,6 +54,7 @@
                     <connections>
                         <outlet property="aboutAppImg" destination="kIM-s2-w9l" id="bxS-l0-kYE"/>
                         <outlet property="aboutAppLbl" destination="fjg-LJ-34Z" id="6mH-RP-3pF"/>
+                        <outlet property="versionLabel" destination="WwG-Ne-sxX" id="bia-LB-12e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63W-A3-6LS" userLabel="First Responder" sceneMemberID="firstResponder"/>

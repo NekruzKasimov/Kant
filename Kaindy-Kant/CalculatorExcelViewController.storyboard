@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,9 +112,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amountLabel" destination="dTe-Ym-1kc" id="zzk-jY-1W4"/>
+                                            <outlet property="amountLabel" destination="ZO9-GS-4pZ" id="tO7-ky-sZk"/>
                                             <outlet property="firstLabel" destination="phB-oK-M0U" id="pAV-uO-ppZ"/>
-                                            <outlet property="priceLabel" destination="ZO9-GS-4pZ" id="pPu-Ab-LGW"/>
+                                            <outlet property="priceLabel" destination="dTe-Ym-1kc" id="las-uE-Q3P"/>
                                             <outlet property="totalPriceLabel" destination="Abn-8d-EN8" id="1q2-He-hFu"/>
                                             <outlet property="typesOfJobLabel" destination="vGK-GS-3Bq" id="zQg-kG-f4i"/>
                                         </connections>
@@ -186,8 +187,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amountTF" destination="aqe-aH-qEY" id="Trz-Df-b9Q"/>
-                                            <outlet property="priceTF" destination="9XC-2D-ODj" id="sng-Kn-oZ4"/>
+                                            <outlet property="amountTF" destination="9XC-2D-ODj" id="est-cS-4uD"/>
+                                            <outlet property="priceTF" destination="aqe-aH-qEY" id="f8f-7D-TAF"/>
                                             <outlet property="titleLabel" destination="nl3-kl-PxE" id="png-oU-4wH"/>
                                             <outlet property="totalLabel" destination="4fP-It-WiO" id="R70-RB-CVH"/>
                                         </connections>
@@ -282,27 +283,33 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smA-lm-Qfj">
-                                                    <rect key="frame" x="8" y="37" width="105" height="33.5"/>
+                                                    <rect key="frame" x="8" y="37" width="88" height="33.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-VJ-OVj">
-                                                    <rect key="frame" x="149.5" y="39" width="104.5" height="30"/>
+                                                    <rect key="frame" x="132.5" y="39" width="87.5" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHP-Zc-1YG">
-                                                    <rect key="frame" x="262" y="43.5" width="105" height="21"/>
+                                                    <rect key="frame" x="235" y="43.5" width="132" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="га *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyj-Rx-IYP">
-                                                    <rect key="frame" x="117" y="44" width="28.5" height="21"/>
+                                                    <rect key="frame" x="100" y="44" width="28.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wJ-cS-aO6">
+                                                    <rect key="frame" x="222" y="49" width="11" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -316,12 +323,14 @@
                                                 <constraint firstItem="smA-lm-Qfj" firstAttribute="top" secondItem="gFO-tX-U1i" secondAttribute="bottom" constant="8" id="YTf-AT-1FA"/>
                                                 <constraint firstItem="gFO-tX-U1i" firstAttribute="top" secondItem="WNN-f5-mJw" secondAttribute="top" constant="16" id="Zo1-qr-5iD"/>
                                                 <constraint firstItem="VHP-Zc-1YG" firstAttribute="centerY" secondItem="smA-lm-Qfj" secondAttribute="centerY" id="Zqx-kh-Wbe"/>
+                                                <constraint firstItem="VHP-Zc-1YG" firstAttribute="centerY" secondItem="8wJ-cS-aO6" secondAttribute="centerY" id="cBf-Mc-b6Y"/>
+                                                <constraint firstItem="VHP-Zc-1YG" firstAttribute="leading" secondItem="8wJ-cS-aO6" secondAttribute="trailing" constant="2" id="dhV-eR-UBv"/>
+                                                <constraint firstItem="8wJ-cS-aO6" firstAttribute="leading" secondItem="l9p-VJ-OVj" secondAttribute="trailing" constant="2" id="enO-Ch-Pie"/>
                                                 <constraint firstItem="cyj-Rx-IYP" firstAttribute="leading" secondItem="smA-lm-Qfj" secondAttribute="trailing" constant="4" id="fxU-ju-Vjz"/>
                                                 <constraint firstItem="l9p-VJ-OVj" firstAttribute="width" secondItem="smA-lm-Qfj" secondAttribute="width" id="h5B-72-NZr"/>
                                                 <constraint firstAttribute="trailing" secondItem="VHP-Zc-1YG" secondAttribute="trailing" constant="8" id="hdI-u3-ghN"/>
-                                                <constraint firstItem="VHP-Zc-1YG" firstAttribute="leading" secondItem="l9p-VJ-OVj" secondAttribute="trailing" constant="8" id="qPo-iO-23X"/>
                                                 <constraint firstItem="gFO-tX-U1i" firstAttribute="leading" secondItem="WNN-f5-mJw" secondAttribute="leading" constant="8" id="seC-7S-hNG"/>
-                                                <constraint firstItem="VHP-Zc-1YG" firstAttribute="width" secondItem="smA-lm-Qfj" secondAttribute="width" id="xta-mw-t1E"/>
+                                                <constraint firstItem="VHP-Zc-1YG" firstAttribute="width" secondItem="smA-lm-Qfj" secondAttribute="width" multiplier="1.5" id="xta-mw-t1E"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

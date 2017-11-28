@@ -10,7 +10,13 @@ import Foundation
 
 class HarvestTableViewCell: UITableViewCell, UITextFieldDelegate {
     
-    @IBOutlet weak var yieldLabel: UILabel!
+    let lang = DataManager.shared.getLanguage()
+    
+    @IBOutlet weak var yieldLabel: UILabel! {
+        didSet {
+            yieldLabel.text = "harvest".localized(lang: lang)
+        }
+    }
     
     @IBOutlet weak var yieldTF: UITextField!{
         didSet {
@@ -36,6 +42,7 @@ class HarvestTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var resultLabel: UILabel!{
         didSet {
+            resultLabel.textColor = UIColor.init(netHex: Colors.purple)
             resultLabel.text = "0.0"
         }
     }
@@ -43,10 +50,12 @@ class HarvestTableViewCell: UITableViewCell, UITextFieldDelegate {
     func setYieldAndArea(yield: Double, area: Double){
         self.yieldTF.text = "\(yield)"
         self.yieldTF.isUserInteractionEnabled = false
-        self.yieldTF.textColor = .black
+        self.yieldTF.textColor = UIColor.init(netHex: Colors.purple)
+        self.yieldTF.borderStyle = .none
         self.areaTF.text = "\(area)"
         self.areaTF.isUserInteractionEnabled = false
-        self.areaTF.textColor = .black
+        self.areaTF.textColor = UIColor.init(netHex: Colors.purple)
+        self.areaTF.borderStyle = .none
         resultLabel.text = "\(yield * area)"
         CalculatorExcelLogicController.shared.yield = yield
         CalculatorExcelLogicController.shared.area = area
@@ -65,7 +74,7 @@ extension HarvestTableViewCell {
     }
     
     func textFieldDidChange(_ textField: UITextField) {
-        textField.textColor = .black
+        textField.textColor = UIColor.init(netHex: Colors.purple)
         let yield = yieldTF.text == "" ? Double(yieldTF.placeholder!)! : Double(yieldTF.text!)!
         let area = areaTF.text == "" ? Double(areaTF.placeholder!)! : Double(areaTF.text!)!
         resultLabel.text = "\(yield * area)"

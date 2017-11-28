@@ -26,16 +26,23 @@ struct Constants {
         Values.init()
         SugarAndJom.init()
         Weather.init()
+        Network.ErrorMessage.init()
     }
 
     
     struct Network {
         
         struct ErrorMessage {
-            static let NO_INTERNET_CONNECTION = "No internet connection"
-            static let UNABLE_LOAD_DATA = "Unable load data"
+            static var NO_INTERNET_CONNECTION: String?
+            static var UNABLE_LOAD_DATA: String?
             static let NO_HTTP_STATUS_CODE = "Unable to get response HTTP status code"
-            static let UNAUTHORIZED = "Unauthorized error"
+            static var UNAUTHORIZED: String?
+            
+            init() {
+                Network.ErrorMessage.NO_INTERNET_CONNECTION = "no_internet_connection".localized(lang: lang!)
+                Network.ErrorMessage.UNABLE_LOAD_DATA = "unable_load_data".localized(lang: lang!)
+                Network.ErrorMessage.UNAUTHORIZED = "unauthorized".localized(lang: lang!)
+            }
         }
         
         struct EndPoints {

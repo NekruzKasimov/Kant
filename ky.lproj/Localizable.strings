@@ -147,3 +147,10 @@
 "current_password" = "Сиздин колдонуудагы сырсөз";
 "new_password" = "Жаңы сырсөз";
 "rep_new_password" = "Жаңы паролду кайталаңыз";
+"product_price" = "Азыктын наркы(сом)";
+"harvest" = "Кирешелүүлүк";
+"profit" = "Пайда";
+"income" = "Кирешелер";
+"no_internet_connection" = "Интернет байланышы жок";
+"unable_load_data" = "Маалыматтарды жүктөө мүмкүн эмес";
+"unauthorized" = "Авторизация катасы";

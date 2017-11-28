@@ -10,9 +10,11 @@ import Foundation
 
 class ValueOfProductsTableViewCell: UITableViewCell, UITextFieldDelegate {
     
+    let lang = DataManager.shared.getLanguage()
+    
     @IBOutlet weak var valueLabel: UILabel! {
         didSet {
-            valueLabel.text = "Стоимость продукции(сом)"
+            valueLabel.text = "product_price".localized(lang: lang)
         }
     }
     
@@ -39,7 +41,7 @@ extension ValueOfProductsTableViewCell {
     }
     
     func textFieldDidChange(_ textField: UITextField) {
-        textField.textColor = .black
+        textField.textColor = UIColor.init(netHex: Colors.purple)
         let value = valueTextField.text == "" ? Int(valueTextField.placeholder!)! : Int(valueTextField.text!)!
         CalculatorExcelLogicController.shared.setValueOfProduct(int: value)
     }

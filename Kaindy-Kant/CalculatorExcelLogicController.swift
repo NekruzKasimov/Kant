@@ -48,6 +48,7 @@ class CalculatorExcelLogicController {
     func setValueOfProduct(int: Int) {
         valueOfProduct = int
         incomeDelegate?.updateIncomeData()
+        profitDelegate?.updateProfitData()
     }
     
     func setYieldAndArea(yield: Double, area: Double){

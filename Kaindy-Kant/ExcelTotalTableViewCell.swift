@@ -27,6 +27,10 @@ class ExcelTotalTableViewCell: UITableViewCell, UpdateTotalValueDelegate {
         }
     }
     
-    @IBOutlet weak var totalLabel: UILabel! 
+    @IBOutlet weak var totalLabel: UILabel!  {
+        didSet {
+            totalLabel.textColor = UIColor.init(netHex: Colors.purple)
+        }
+    }
 
 }

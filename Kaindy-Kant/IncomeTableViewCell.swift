@@ -10,6 +10,8 @@ import Foundation
 
 class IncomeTableViewCell: UITableViewCell, IncomeDelegate {
     
+    let lang = DataManager.shared.getLanguage()
+    
     func updateIncomeData() {
         let shared = CalculatorExcelLogicController.shared
         resultLabel.text = "\(shared.harvest) * \(shared.valueOfProduct) = \(shared.harvest * Double(shared.valueOfProduct))"
@@ -22,7 +24,15 @@ class IncomeTableViewCell: UITableViewCell, IncomeDelegate {
         CalculatorExcelLogicController.shared.incomeDelegate = self
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!{
+        didSet {
+            titleLabel.text = "income".localized(lang: lang)
+        }
+    }
     
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel! {
+        didSet {
+            resultLabel.textColor = UIColor.init(netHex: Colors.purple)
+        }
+    }
 }

@@ -146,3 +146,10 @@
 "current_password" = "Ваш нынешний пароль";
 "new_password" = "Ваш новый пароль";
 "rep_new_password" = "Повторите новый пароль";
+"product_price" = "Стоимость продукции(сом)";
+"harvest" = "Урожайность";
+"profit" = "Прибыль";
+"income" = "Доход";
+"no_internet_connection" = "Нет подключения к интернету";
+"unable_load_data" = "Невозможно загрузить данные";
+"unauthorized" = "Ошибка авторизации";

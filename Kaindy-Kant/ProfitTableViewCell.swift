@@ -9,6 +9,9 @@
 import Foundation
 
 class ProfitTableViewCell: UITableViewCell, ProfitDelegate {
+    
+    let lang = DataManager.shared.getLanguage()
+    
     func updateProfitData() {
         let shared = CalculatorExcelLogicController.shared
         resultLabel.text = "\(shared.income) - \(shared.totalValue) = \(shared.income - shared.totalValue)"
@@ -20,8 +23,16 @@ class ProfitTableViewCell: UITableViewCell, ProfitDelegate {
         CalculatorExcelLogicController.shared.profitDelegate = self
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = "profit".localized(lang: lang)
+        }
+    }
     
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel! {
+        didSet {
+            resultLabel.textColor = UIColor.init(netHex: Colors.purple)
+        }
+    }
 }
 

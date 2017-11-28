@@ -75,7 +75,6 @@ class DataManager {
         uDefaults.removeObject(forKey: "token")
         uDefaults.removeObject(forKey: "user_information")
         uDefaults.removeObject(forKey: "lang")
-        uDefaults.set("ru", forKey: "lang")
         uDefaults.removeObject(forKey: "user_id")
         uDefaults.removeObject(forKey: "FirebaseToken")
         let cookieJar = HTTPCookieStorage.shared
@@ -128,4 +127,12 @@ class DataManager {
         return uDefaults.string(forKey: "lang")!
     }
     
+    //cache
+    func setCache(forKey: String, value: Data){
+        uDefaults.set(value, forKey: forKey)
+    }
+    
+    func getCache(forKey: String) -> Data? {
+        return uDefaults.data(forKey: forKey)
+    }
 }

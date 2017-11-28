@@ -20,14 +20,16 @@ class HTTPRequestManager {
     typealias SuccessHandler = (JSON) -> Void
     typealias FailureHandler = (String)-> Void
     typealias Parameter = [String: Any]?
+    typealias JSONValue = (Data) -> Void
     
     //let url = "http://rooms.auca.kg/"
     
-    private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, header: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+    private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, header: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
         if !isConnectedToNetwork() {
-            error(Constants.Network.ErrorMessage.NO_INTERNET_CONNECTION)
+            error(Constants.Network.ErrorMessage.NO_INTERNET_CONNECTION!)
             return
         }
+        
         var apiUrl = ""
         var tempParam = parameters
         switch serverType {
@@ -47,9 +49,9 @@ class HTTPRequestManager {
             head.updateValue(header, forKey: "language")
         }
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: head).responseJSON { (response:DataResponse<Any>) in
-//            print(response.description)
+            //            print(response.description)
             guard response.response != nil else {
-                error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)
+                error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA!)
                 return
             }
             //value    String    "PHPSESSID=o549sv96q773fu97jmrc6sa420"
@@ -61,23 +63,24 @@ class HTTPRequestManager {
             
             switch(statusCode) {
             case HttpStatusCode.unauthorized.statusCode:
-                error(Constants.Network.ErrorMessage.UNAUTHORIZED)
+                error(Constants.Network.ErrorMessage.UNAUTHORIZED!)
                 break
             case HttpStatusCode.ok.statusCode,
                  HttpStatusCode.accepted.statusCode,
                  HttpStatusCode.created.statusCode:
                 
-                let json = JSON(data: response.data!)
-
-                if !json["error"].stringValue.isEmpty{
-                    error(json["error"].stringValue)
+                let jsonValue = JSON(data: response.data!)
+                
+                if !jsonValue["error"].stringValue.isEmpty{
+                    error(jsonValue["error"].stringValue)
                 } else {
                     //print(response.response?.allHeaderFields.description)
-                    completion(json)
+                    completion(jsonValue)
+                    json(response.data!)
                 }
                 
                 break
-            default: 
+            default:
                 
                 let json = JSON(data: response.data!)
                 if !json.isEmpty {
@@ -97,26 +100,26 @@ class HTTPRequestManager {
     }
     
     
-    internal func post(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .post, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
+    internal func post(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
+        request(method: .post, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error, json: json)
     }
-    internal func put(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .put, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
+    internal func put(endpoint: String, serverType: ServerType, parameters: Parameter, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
+        request(method: .put, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error, json: json)
     }
-    internal func get(endpoint: String, serverType: ServerType, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
-        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error)
+    internal func get(endpoint: String, serverType: ServerType, header: String = "", completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
+        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error, json: json)
     }
-    internal func get(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+    internal func get(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
         let header = ""
-        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
+        request(method: .get, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error, json: json)
     }
-    internal func delete(endpoint: String, serverType: ServerType, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+    internal func delete(endpoint: String, serverType: ServerType, completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
         let header = ""
-        request(method: .delete, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error)
+        request(method: .delete, endpoint: endpoint, serverType: serverType, parameters: nil, header: header, completion: completion, error: error, json: json)
     }
-    internal func patch(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
+    internal func patch(endpoint: String, serverType: ServerType, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
         let header = ""
-        request(method: .patch, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error)
+        request(method: .patch, endpoint: endpoint, serverType: serverType, parameters: parameters, header: header, completion: completion, error: error, json: json)
     }
     
     
@@ -146,6 +149,5 @@ class HTTPRequestManager {
         
         return (isReachable && !needsConnection)
     }
-    
-    
 }
+

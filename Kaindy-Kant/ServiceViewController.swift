@@ -26,8 +26,14 @@ class ServiceViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.show()
-        self.services = DataManager.shared.getServices()
+        ServerManager.shared.getServices(setServices) { (error) in
+        }
         setNavigationBar()
+    }
+    
+    func setServices(services: Services){
+        self.services = services
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

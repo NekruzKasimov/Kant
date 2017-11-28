@@ -41,9 +41,14 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.show()
+        self.title = "main_menu".localized(lang: self.lang)
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         mainMenuBtn.target = revealViewController()
         mainMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+        downloadData()
+    }
+    
+    func downloadData() {
         ServerManager.shared.getWeather(setWeather, error: { (error) in
             SVProgressHUD.dismiss()
             self.showErrorAlert(message: error)
@@ -56,16 +61,16 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
             ServerManager.shared.getUser(setUserInfo, error: { (error) in
                 SVProgressHUD.dismiss()
                 self.unauthorizedError(message: error)
-
+                
             })
         } else {
             self.user = NewUser()
         }
         ServerManager.shared.getServices(setServices) { (message) in
-            self.unauthorizedError(message: message)
+//            self.unauthorizedError(message: message)
         }
-        
     }
+    
     func unauthorizedError(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         //Add
@@ -75,12 +80,6 @@ class MainViewController: ViewController, UICollectionViewDataSource, UICollecti
             self.navigationController?.present(vc, animated: false, completion: nil)
         }))
         present(alert, animated: true, completion: nil)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        self.title = "main_menu".localized(lang: self.lang)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        self.title = "main_menu".localized(lang: self.lang)
     }
     
     func setUserInfo(user: NewUser){

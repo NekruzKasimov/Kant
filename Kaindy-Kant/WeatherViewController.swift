@@ -94,7 +94,7 @@ extension WeatherViewController {
         let currentDate = Date()
         degreeToday = (weather?.today.array[0].temp)!
         let a = Calendar.current.component(.month, from: (weather?.today.array[0].exact_time)!)
-        month = Constants.Weather.months[a]
+        month = Constants.Weather.months[a - 1]
         guard let type = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!] else {
             return
         }
