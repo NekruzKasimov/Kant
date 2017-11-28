@@ -72,6 +72,36 @@
             </objects>
             <point key="canvasLocation" x="212" y="34.632683658170919"/>
         </scene>
+        <!--Contract2 View Controller-->
+        <scene sceneID="IAI-4h-6cW">
+            <objects>
+                <viewController storyboardIdentifier="Contract2ViewController" id="HGB-Dk-h9J" customClass="Contract2ViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZRr-nW-GUt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6o9-9j-HXa" customClass="ShowWebView" customModule="Kaindy_Kant" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6o9-9j-HXa" firstAttribute="leading" secondItem="wds-vH-4sO" secondAttribute="leading" id="33B-7L-JCc"/>
+                            <constraint firstItem="wds-vH-4sO" firstAttribute="bottom" secondItem="6o9-9j-HXa" secondAttribute="bottom" id="BbC-x3-UcQ"/>
+                            <constraint firstItem="6o9-9j-HXa" firstAttribute="top" secondItem="wds-vH-4sO" secondAttribute="top" id="Gum-vb-xdk"/>
+                            <constraint firstItem="wds-vH-4sO" firstAttribute="trailing" secondItem="6o9-9j-HXa" secondAttribute="trailing" id="JBa-qd-zmf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wds-vH-4sO"/>
+                    </view>
+                    <connections>
+                        <outlet property="showCalendar" destination="6o9-9j-HXa" id="aV5-2W-hft"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSn-Yh-glf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="711"/>
+        </scene>
         <!--Sugar View Controller-->
         <scene sceneID="yKf-yo-Y4V">
             <objects>
@@ -101,6 +131,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mt7-oG-RiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1385" y="303"/>
+        </scene>
+        <!--Contract4 View Controller-->
+        <scene sceneID="K31-gj-kuw">
+            <objects>
+                <viewController storyboardIdentifier="Contract4ViewController" id="l1x-wn-nmA" customClass="Contract4ViewController" customModule="Kaindy_Kant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lXU-dQ-iS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jww-wL-RYk" customClass="ShowWebView" customModule="Kaindy_Kant" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zsf-it-Hap" firstAttribute="bottom" secondItem="Jww-wL-RYk" secondAttribute="bottom" id="7I3-1Z-fBr"/>
+                            <constraint firstItem="Zsf-it-Hap" firstAttribute="trailing" secondItem="Jww-wL-RYk" secondAttribute="trailing" id="9KR-gU-RWf"/>
+                            <constraint firstItem="Jww-wL-RYk" firstAttribute="top" secondItem="Zsf-it-Hap" secondAttribute="top" id="TlV-qm-QV7"/>
+                            <constraint firstItem="Jww-wL-RYk" firstAttribute="leading" secondItem="Zsf-it-Hap" secondAttribute="leading" id="xvy-pl-8Bp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zsf-it-Hap"/>
+                    </view>
+                    <connections>
+                        <outlet property="showCalendar" destination="Jww-wL-RYk" id="zUk-yI-q35"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZY-vF-tGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="-661"/>
         </scene>
         <!--Kant View Controller-->
         <scene sceneID="Jn0-0K-T26">
