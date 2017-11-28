@@ -19,6 +19,9 @@ class DetailedMapViewController: ViewController {
     var coordinates: Coordinates?
     var field_id: Int?
     var expenseButton = UIButton()
+    var fieldHectare: Double?
+    var area: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Карта"
@@ -69,6 +72,8 @@ class DetailedMapViewController: ViewController {
         let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
         vc.fieldId = field_id!
         vc.isFromMapViewController = false
+        vc.area = area!
+        vc.yield = fieldHectare!
         self.navigationController?.show(vc, sender: self)
     }
     func setupField() {

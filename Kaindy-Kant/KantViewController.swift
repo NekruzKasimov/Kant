@@ -20,7 +20,7 @@ class KantViewController: ViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = ""
         self.title = "agreement1".localized(lang: self.lang)!
+//        self.navigationController?.navigationBar.topItem?.title = ""
     }
 }

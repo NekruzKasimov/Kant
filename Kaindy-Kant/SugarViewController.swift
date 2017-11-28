@@ -20,7 +20,7 @@ class SugarViewController: ViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
         self.title = "agreement2".localized(lang: self.lang)!
     }
 }

@@ -115,7 +115,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
     }
     override func viewWillAppear(_ animated: Bool) {
         self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
@@ -156,6 +156,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     DataManager.shared.saveUser(username: DataManager.shared.getNewUser().phone, password: DataManager.shared.getNewUser().password)
                     SVProgressHUD.dismiss()
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LanguageViewController") as? LanguageViewController
+                    UIApplication.shared.registerForRemoteNotifications()
                     self.present(nextViewController!, animated:true, completion:nil)
                 }, error: { (error) in
                     SVProgressHUD.dismiss()

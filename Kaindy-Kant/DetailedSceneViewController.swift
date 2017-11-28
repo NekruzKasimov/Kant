@@ -25,7 +25,7 @@ class DetailedSceneViewController: ViewController, UITableViewDataSource, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = serviceTitle
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
     }
     
 }
@@ -68,26 +68,27 @@ extension DetailedSceneViewController {
     
     func setBank(detailedService: DetailedService) {
         let storyboard = UIStoryboard(name: "DetailedService", bundle: nil)
-        let headerVC = storyboard.instantiateViewController(
+        let vc = storyboard.instantiateViewController(
             withIdentifier: "HeaderViewController") as! HeaderViewController
-        headerVC.finOffice = detailedService
-
+        vc.finOffice = detailedService
+        let headerVC = UINavigationController(rootViewController: vc)
+        
         let aboutVC = storyboard.instantiateViewController(
             withIdentifier: "DescriptionViewController") as! DescriptionViewController
         aboutVC.title = "description".localized(lang: self.lang)!
         aboutVC.desc = detailedService.description
-
+        
         for item in (detailedService.contacts?.array)! {
             if item.type == "web" {
                 aboutVC.webSite = item.data
             }
         }
-
+        
         
         let mapVC = storyboard.instantiateViewController(
             withIdentifier: "BranchesViewController") as! BranchesViewController
         mapVC.title = "Карта"
-
+        
         var titles = [String]()
         var locations = [Location]()
         for item in (detailedService.branches?.array)!{
@@ -97,20 +98,20 @@ extension DetailedSceneViewController {
         }
         mapVC.titles = titles
         mapVC.loc = locations
-
-
+        
+        
         let contactsVC = storyboard.instantiateViewController(
             withIdentifier: "ContactsViewController") as! ContactsViewController
         contactsVC.title = "contacts".localized(lang: self.lang)!
         contactsVC.contacts = detailedService.contacts
-
-
-//        let servicesVC = storyboard.instantiateViewController(
-//            withIdentifier: "ServicesVC") as! ServicesVC
-//        servicesVC.title = "Услуги"
-//        servicesVC.services = course.services
-
-//            headerViewController = headerVC
+        
+        
+        //        let servicesVC = storyboard.instantiateViewController(
+        //            withIdentifier: "ServicesVC") as! ServicesVC
+        //        servicesVC.title = "Услуги"
+        //        servicesVC.services = course.services
+        
+        //            headerViewController = headerVC
         let segmentControllers = SJSegmentedViewController(
             headerViewController: headerVC,
             segmentControllers: [aboutVC, mapVC, contactsVC])
@@ -122,19 +123,19 @@ extension DetailedSceneViewController {
         segmentControllers.segmentShadow = SJShadow.light()
         segmentControllers.showsHorizontalScrollIndicator = false
         segmentControllers.showsVerticalScrollIndicator = false
-
-//                if !(navigationController?.navigationBar.isOpaque)! {
-//
-//                    topSpacing += (navigationController?.navigationBar.bounds.height)!
-//                }
-//
-//        segmentControllers.delegate = self
-
-        navigationController?.pushViewController(segmentControllers, animated: true)
+        
+        //                if !(navigationController?.navigationBar.isOpaque)! {
+        //
+        //                    topSpacing += (navigationController?.navigationBar.bounds.height)!
+        //                }
+        //
+        //        segmentControllers.delegate = self
+        
+//                navigationController?.pushViewController(segmentControllers, animated: true)
         //segmentControllers
-        //navigationController?.present(segmentControllers, animated: false, completion: nil)
+        navigationController?.present(segmentControllers, animated: true, completion: nil)
         //?.pushViewController(segmentControllers, animated: true)
-
+        
     }
 }
 

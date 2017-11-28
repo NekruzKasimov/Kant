@@ -153,9 +153,9 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 204
-        }
+//        if indexPath.section == 0 {
+//            return 204
+//        }
         return UITableViewAutomaticDimension
     }
 

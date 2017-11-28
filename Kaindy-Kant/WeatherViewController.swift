@@ -92,11 +92,14 @@ extension WeatherViewController {
             weekdays.append(Constants.Weather.weekdays[weekday - 1])
         }
         let currentDate = Date()
-        let type = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!]!
+        degreeToday = (weather?.today.array[0].temp)!
+        let a = Calendar.current.component(.month, from: (weather?.today.array[0].exact_time)!)
+        month = Constants.Weather.months[a]
+        guard let type = Constants.Weather.weatherStatuses[(weather?.today.array[0].type)!] else {
+            return
+        }
         statusToday = type
         statusIcon = checkType(type: type)
-        degreeToday = (weather?.today.array[0].temp)!
-        month = Constants.Weather.months[Calendar.current.component(.month, from: (weather?.today.array[0].exact_time)!)]
 //        for item in (weather?.today.array)! {
 //            switch currentDate.compare(item.exact_time) {
 //            case .orderedAscending:
@@ -139,6 +142,7 @@ extension WeatherViewController {
             iconImageView.image = #imageLiteral(resourceName: "snowy")
         default: break
         }
+        
         self.weatherDegreeLabel.text = Int(degreeToday)! > 0 ? "+\(degreeToday)°C" : "\(degreeToday)°C"
         self.weatheStatusLabel.text = statusToday
         self.dateLabel.text = "\(weekdays[0]), \(dates[0]) \(month)"

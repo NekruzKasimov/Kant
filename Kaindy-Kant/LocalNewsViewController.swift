@@ -14,6 +14,7 @@ class LocalNewsViewController: ViewController {
     @IBOutlet weak var localNewsSlideShow: ImageSlideshow!
     @IBOutlet weak var localNewsTitle: UILabel!
     @IBOutlet weak var localNewsContent: UILabel!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     var newsTitle = ""
     var newsContent = ""
@@ -21,20 +22,24 @@ class LocalNewsViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupSlideShow()
+        if images?.array.count != 0 {
+            setupSlideShow()
+        } else {
+            heightConstraint.constant = 0
+            localNewsSlideShow.isHidden = true
+        }
         localNewsTitle.text = newsTitle
         localNewsContent.text = newsContent
         self.title = "news".localized(lang: self.lang)!
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
         
     }
     override func viewWillAppear(_ animated: Bool) {
         self.title = "news".localized(lang: self.lang)!
 
     }
+    
     func setupSlideShow() {
-        
         var imageArray = [InputSource]()
         var count = 0
         for imageModel in (images?.array)! {

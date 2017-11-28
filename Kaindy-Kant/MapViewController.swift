@@ -148,6 +148,8 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
             let sb = UIStoryboard(name: "CalculatorExcelViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CalculatorExcelViewController") as! CalculatorExcelViewController
             vc.fieldId = id
+            vc.yield = Double(self.averageYield.text!)!
+            vc.area = Double(self.fieldHectare.text!)!
             vc.isFromMapViewController = true
             self.navigationController?.show(vc, sender: self)
         }))
@@ -260,7 +262,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
     func addBackButton() {
         //let screenWidth = self.view.frame.width
         backButton.frame = CGRect(x: view.frame.midX - (getWidthOfButton() + 5), y: view.frame.height - 45, width: getWidthOfButton(), height: 35)
-        backButton.setTitle("Назад", for: .normal)
+        backButton.setTitle("back".localized(lang: self.lang)!, for: .normal)
         backButton.setTitleColor(.black, for: .normal)
         backButton.backgroundColor = UIColor.white
 
@@ -345,19 +347,19 @@ extension MapViewController {
     }
     
     func acceptFiled() {
-        let alert = UIAlertController(title: "", message: "Соединить точки?", preferredStyle: .alert)
-        //Cancel
-        alert.addAction(UIAlertAction(title: Constants.Values.cancel , style: .cancel, handler: { (acrion) in
-        }))
-        //Add
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
+//        let alert = UIAlertController(title: "", message: "Соединить точки?", preferredStyle: .alert)
+//        //Cancel
+//        alert.addAction(UIAlertAction(title: Constants.Values.cancel , style: .cancel, handler: { (acrion) in
+//        }))
+//        //Add
+//        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (action) in
             self.addRoute()
             self.saveButton.isHidden = true
             self.map.delegate = nil
-            //self.saveButton.removeFromSuperview()
-            //self.addAddInfoButton()
-        }))
-        present(alert, animated: true, completion: nil)
+//            //self.saveButton.removeFromSuperview()
+//            //self.addAddInfoButton()
+//        }))
+//        present(alert, animated: true, completion: nil)
     }
    
     func addInfoButtonClicked(){

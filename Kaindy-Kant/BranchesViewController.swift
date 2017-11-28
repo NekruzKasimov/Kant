@@ -19,39 +19,22 @@ class BranchesViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        self.navigationController?.navigationBar.topItem?.title = ""
     }
 }
 
 //MARK: UITableViewDataSourse methods
 
 extension BranchesViewController {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return titles.count
-        } else if section == 1 {
-            return 1
-        }
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesTableViewCell") as! BranchesTableViewCell
-            cell.titleLabel.text = titles[indexPath.row]
-            return cell
-        } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesMapTableViewCell") as! BranchesMapTableViewCell
-            if loc.count > 0 {
-                cell.setMapMarkers(loc: loc, titles: titles)
-            }
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesMapTableViewCell") as! BranchesMapTableViewCell
+        if loc.count > 0 {
+            cell.setMapMarkers(loc: loc, titles: titles)
         }
-        return UITableViewCell()
+        return cell
     }
 }
 

@@ -13,7 +13,7 @@ class ManagingPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Восстановление пароля"
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
         // Do any additional setup after loading the view.
     }
 

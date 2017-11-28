@@ -12,10 +12,25 @@ protocol UpdateTotalValueDelegate: class {
     func updateTotalValue(total: Int)
 }
 
+
+protocol ProfitDelegate: class {
+    func updateProfitData()
+}
+
+protocol IncomeDelegate: class {
+    func updateIncomeData()
+}
+
 class CalculatorExcelLogicController {
     
     var amounts = [Int]()
     var prices = [Int]()
+    var valueOfProduct = 3400
+    var income = 0
+    var totalValue = 0
+    var harvest: Double = 0
+    var yield: Double = 0
+    var area: Double = 0
     
     class var shared: CalculatorExcelLogicController {
         struct Static {
@@ -25,13 +40,26 @@ class CalculatorExcelLogicController {
     }
     
     var delegate: UpdateTotalValueDelegate?
-        
-    var totalValue = 0
+    var profitDelegate: ProfitDelegate?
+    var incomeDelegate: IncomeDelegate?
     
     var total: [Int] = []
     
+    func setValueOfProduct(int: Int) {
+        valueOfProduct = int
+        incomeDelegate?.updateIncomeData()
+    }
+    
+    func setYieldAndArea(yield: Double, area: Double){
+        self.yield = yield
+        self.area = area
+        incomeDelegate?.updateIncomeData()
+        profitDelegate?.updateProfitData()
+    }
+    
     func setTotalValue(total: Int) {
         delegate?.updateTotalValue(total: total)
+        profitDelegate?.updateProfitData()
     }
     
     func updateTotalValues(expenses: Expenses) {

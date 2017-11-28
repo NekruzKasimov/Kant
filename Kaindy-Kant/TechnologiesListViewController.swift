@@ -24,7 +24,7 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
 //            SVProgressHUD.dismiss()
 //            self.showErrorAlert(message: error)
 //        }
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
         tableView.tableFooterView = UIView()
     }
     

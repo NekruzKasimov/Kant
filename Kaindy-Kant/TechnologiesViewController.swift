@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TechnologiesViewController: UIViewController {
+class TechnologiesViewController: ViewController {
 
     @IBOutlet weak var showCalendar: ShowWebView!
     var pdfName: String?

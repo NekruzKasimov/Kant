@@ -145,3 +145,7 @@
 "finish" = "Закончить";
 "today" = "Сегодня";
 "settings" = "Настройки";
+"change_password" = "Изменить пароль";
+"current_password" = "Ваш нынешний пароль";
+"new_password" = "Ваш новый пароль";
+"rep_new_password" = "Повторите новый пароль";

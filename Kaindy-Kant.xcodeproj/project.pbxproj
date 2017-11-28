@@ -78,6 +78,10 @@
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
 		23D49C731FC57EEE001F755A /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D49C721FC57EEE001F755A /* PhoneNumbers.swift */; };
+		23E84C341FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C331FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift */; };
+		23E84C361FCB508300BE1173 /* HarvestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C351FCB508300BE1173 /* HarvestTableViewCell.swift */; };
+		23E84C3A1FCB693700BE1173 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C391FCB693700BE1173 /* IncomeTableViewCell.swift */; };
+		23E84C3C1FCB695400BE1173 /* ProfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C3B1FCB695400BE1173 /* ProfitTableViewCell.swift */; };
 		23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */; };
 		23EF3F6A1F77E46500D0C4B7 /* CalculatorExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */; };
 		23EF3F6D1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */; };
@@ -242,6 +246,10 @@
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
 		23D49C721FC57EEE001F755A /* PhoneNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
+		23E84C331FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueOfProductsTableViewCell.swift; sourceTree = "<group>"; };
+		23E84C351FCB508300BE1173 /* HarvestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestTableViewCell.swift; sourceTree = "<group>"; };
+		23E84C391FCB693700BE1173 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
+		23E84C3B1FCB695400BE1173 /* ProfitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitTableViewCell.swift; sourceTree = "<group>"; };
 		23EF3F671F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculatorExcelViewController.storyboard; sourceTree = "<group>"; };
 		23EF3F691F77E46500D0C4B7 /* CalculatorExcelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelViewController.swift; sourceTree = "<group>"; };
 		23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorExcelTableViewCell.swift; sourceTree = "<group>"; };
@@ -678,6 +686,10 @@
 				23EF3F6C1F77E8F700D0C4B7 /* CalculatorExcelTableViewCell.swift */,
 				23EF3F6E1F77EC0E00D0C4B7 /* ExcelTotalTableViewCell.swift */,
 				84B4EA2E1FB0D219005A5A95 /* SaveTableViewCell.swift */,
+				23E84C331FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift */,
+				23E84C351FCB508300BE1173 /* HarvestTableViewCell.swift */,
+				23E84C391FCB693700BE1173 /* IncomeTableViewCell.swift */,
+				23E84C3B1FCB695400BE1173 /* ProfitTableViewCell.swift */,
 			);
 			name = CalculatorExcelTableViewCell;
 			sourceTree = "<group>";
@@ -1161,7 +1173,9 @@
 				2388D21C1F74F83D0059B88C /* WeatherCell.swift in Sources */,
 				232AD4671F993576007736B3 /* TechnologiesListViewController.swift in Sources */,
 				2380AB9F1F6678E10023C5AB /* RegistrationViewController.swift in Sources */,
+				23E84C341FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift in Sources */,
 				8424F6391F8DF5B700639C9D /* SugarJom.swift in Sources */,
+				23E84C3A1FCB693700BE1173 /* IncomeTableViewCell.swift in Sources */,
 				2388D2181F74E09E0059B88C /* WeatherViewController.swift in Sources */,
 				84AEF8191FB9C135005D6B08 /* BeetPoint.swift in Sources */,
 				1F5893BA1F61562B00FD2C5D /* ProviderViewController.swift in Sources */,
@@ -1179,11 +1193,13 @@
 				1F5893AB1F61523700FD2C5D /* Extensions.swift in Sources */,
 				23205AF41F6239B900D58F5B /* ProfileViewController.swift in Sources */,
 				84CEC66C1FAD8E6F00D6198D /* FieldViewController.swift in Sources */,
+				23E84C3C1FCB695400BE1173 /* ProfitTableViewCell.swift in Sources */,
 				84BEAA9E1F8F65C500D6A647 /* Currency.swift in Sources */,
 				1F2D284E1F8787EC00FE7A0B /* DetailedMapViewController.swift in Sources */,
 				1F5893A01F614ED700FD2C5D /* MainViewController.swift in Sources */,
 				8464AAC31F73FD4B00AA4980 /* ManagingPasswordViewController.swift in Sources */,
 				23A8A3671F828A0C0065C5E6 /* NewsCollectionViewCell.swift in Sources */,
+				23E84C361FCB508300BE1173 /* HarvestTableViewCell.swift in Sources */,
 				8424F63B1F8DF6AF00639C9D /* Sugar.swift in Sources */,
 				8465FF871FC5A11F00412657 /* ChangePasswordViewController.swift in Sources */,
 				1F5893711F614DB600FD2C5D /* AppDelegate.swift in Sources */,
