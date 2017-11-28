@@ -11,8 +11,8 @@ import UIKit
 class ContractsViewController: ViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let titles = ["ДОГОВОР на приемку корнеплодов сахарной свеклы урожая 2017 года", "ДОГОВОР на переработку и приемку корнеплодов сахарной свеклы урожая 2017 года"]
-    let controllers = ["KantViewController", "SugarViewController"]
+    let titles = ["ДОГОВОР на приемку корнеплодов сахарной свеклы урожая 2017 года", "ДОГОВОР на переработку и приемку корнеплодов сахарной свеклы урожая 2017 года", "ДОГОВОР на приемку корнеплодов сахарной свеклы урожая 2017 года (на условиях выдачи Свеклопроизводителям сахара-песка).", "ДОГОВОР на переработку и покупку корнеплодов сахарной свеклы урожая 2017 года"]
+    let controllers = ["KantViewController", "SugarViewController", "Contract2ViewController", "Contract4ViewController"]
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
@@ -29,7 +29,7 @@ extension ContractsViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContractsTableViewCell", for: indexPath) as! ContractsTableViewCell
