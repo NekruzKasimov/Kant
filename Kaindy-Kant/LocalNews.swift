@@ -14,7 +14,7 @@ struct LocalNews {
     var data: NewsData
     
     init(json: JSON) {
-        photo = NewsPhotos(json: json["photo_link"])
+        photo = NewsPhotos(json: json["photos"])
         data = NewsData(json: json["news"])
     }
     
@@ -71,7 +71,7 @@ struct NewsPhoto {
     var link: String
     
     init(json: JSON) {
-        link = json["link"].stringValue
+        link = json["photo_link"].stringValue
     }
 }
 

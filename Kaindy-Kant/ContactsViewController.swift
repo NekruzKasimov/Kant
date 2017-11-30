@@ -68,6 +68,10 @@ extension ContactsViewController {
             })
             let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
             Alert.shared.showCustomAlertIn(vc: self, withTitle: "Браузер", message: "Вы хотите открыть сайт \(cell.dataLabel.text!)", actions: [okAction, cancelAction])
+        } else {
+            UIPasteboard.general.string = cell.dataLabel.text!
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+             Alert.shared.showCustomAlertIn(vc: self, withTitle: "", message: "Данные скопированы", actions: [okAction])
         }
         
     }

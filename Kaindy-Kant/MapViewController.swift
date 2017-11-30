@@ -137,6 +137,7 @@ class MapViewController: ViewController, GMSMapViewDelegate, CLLocationManagerDe
         dismissMapView()
     }
     func askForOpeningExcel(id: Int){
+        UserDefaults.standard.set(false, forKey: "fieldsCached")
         let alert = UIAlertController(title: "", message: "calculate_field_expenses".localized(lang: self.lang)! , preferredStyle: .alert)
         //Cancel
         alert.addAction(UIAlertAction(title: "Пропустить", style: .cancel, handler: { (acrion) in
