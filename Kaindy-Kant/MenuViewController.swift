@@ -91,6 +91,7 @@ extension MenuViewController {
                 }))
                 //Add
                 alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: { (action) in
+                    ServerManager.shared.clearCache()
                     let revealVC = self.revealViewController()
                     let storyboard = UIStoryboard(name: storyboard, bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: vcIdentifier)

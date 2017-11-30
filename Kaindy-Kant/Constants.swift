@@ -33,10 +33,10 @@ struct Constants {
     struct Network {
         
         struct ErrorMessage {
-            static var NO_INTERNET_CONNECTION: String?
-            static var UNABLE_LOAD_DATA: String?
+            static var NO_INTERNET_CONNECTION = "no_internet_connection".localized(lang: "ru")
+            static var UNABLE_LOAD_DATA = "unable_load_data".localized(lang: "ru")
             static let NO_HTTP_STATUS_CODE = "Unable to get response HTTP status code"
-            static var UNAUTHORIZED: String?
+            static var UNAUTHORIZED = "unauthorized".localized(lang: "ru")
             
             init() {
                 Network.ErrorMessage.NO_INTERNET_CONNECTION = "no_internet_connection".localized(lang: lang!)
