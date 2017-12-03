@@ -13,7 +13,6 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-   
     @IBOutlet weak var newsView: UIView! {
         didSet {
             newsView.layer.cornerRadius = 3
@@ -26,7 +25,11 @@ class NewsTableViewCell: UITableViewCell {
 
     func setValues(result: Result){
         titleLabel.text = result.name
-        dataLabel.text = result.data
+        if result.data == "None" {
+            dataLabel.text = ""
+        } else {
+            dataLabel.text = result.data
+        }
         descriptionLabel.text = result.description
     }
     

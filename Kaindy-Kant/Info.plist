@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
@@ -35,7 +35,7 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Нужно разрешение для определения вашего местоположения</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Кант Кызылча</string>
+	<string>Нужно разрешение для точного определения местоположения</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Кант Кызылча uses Gallery</string>
 	<key>UIBackgroundModes</key>
