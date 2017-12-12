@@ -25,7 +25,7 @@ class DescriptionViewController: UIViewController {
                 NSForegroundColorAttributeName : UIColor.init(netHex: Colors.purple),
                 NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue
             ]
-            let attributeString = NSMutableAttributedString(string: "Перейти на сайт банк",
+            let attributeString = NSMutableAttributedString(string: "Перейти на сайт",
                                                             attributes: attrs)
             showWebSiteButton.setAttributedTitle(attributeString, for: .normal)
             showWebSiteButton.addTarget(self, action: #selector(showWebSite), for: .touchUpInside)

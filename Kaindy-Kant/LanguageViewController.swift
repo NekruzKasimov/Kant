@@ -33,6 +33,7 @@ class LanguageViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        ServerManager.shared.clearCache()
         if languagePickerView.currentSelectedIndex == 0 {
             DataManager.shared.setLanguage(language: "ru")
             showMainPage()

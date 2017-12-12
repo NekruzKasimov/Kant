@@ -9,9 +9,18 @@
 import UIKit
 import SJSegmentedScrollView
 
-class BranchesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BranchesViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapSegment: UISegmentedControl! {
+        didSet {
+            mapSegment.setTitle("addresses".localized(lang: self.lang), forSegmentAt: 1)
+        }
+    }
+    
+    @IBAction func showMapOrAddresses(_ sender: Any) {
+        tableView.reloadData()
+    }
     
     var titles: [String] = []
     var loc: [Location] = []
@@ -26,14 +35,23 @@ class BranchesViewController: UIViewController, UITableViewDataSource, UITableVi
 
 extension BranchesViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if mapSegment.selectedSegmentIndex == 1 {
+            return titles.count
+        }
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesMapTableViewCell") as! BranchesMapTableViewCell
-        if loc.count > 0 {
-            cell.setMapMarkers(loc: loc, titles: titles)
+        if mapSegment.selectedSegmentIndex == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesMapTableViewCell") as! BranchesMapTableViewCell
+            if loc.count > 0 {
+                cell.setMapMarkers(loc: loc, titles: titles)
+            }
+            return cell
         }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BranchesTableViewCell") as!
+        BranchesTableViewCell
+        cell.titleLabel.text = titles[indexPath.row]
         return cell
     }
 }

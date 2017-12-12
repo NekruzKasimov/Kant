@@ -75,9 +75,13 @@
 		23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8A36A1F83425B0065C5E6 /* ServiceCollectionViewCell.xib */; };
 		23B4EF5F1FB2D75D0087B82D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4EF5E1FB2D75D0087B82D /* ViewController.swift */; };
 		23C2F66A1F7A1496003470D1 /* FirstSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */; };
+		23CAC7021FDE939E00D025B4 /* contract_kant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 23CAC7011FDE939E00D025B4 /* contract_kant.pdf */; };
 		23CE2FCE1F74CDE80002CDD0 /* SugarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */; };
 		23CE2FCF1F74CDE80002CDD0 /* SugarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */; };
 		23D49C731FC57EEE001F755A /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D49C721FC57EEE001F755A /* PhoneNumbers.swift */; };
+		23DF6B5F1FE050C000D5E2A4 /* contract_sugar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 23DF6B5E1FE050BF00D5E2A4 /* contract_sugar.pdf */; };
+		23DF6B611FE0519200D5E2A4 /* contract4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 23DF6B601FE0519200D5E2A4 /* contract4.pdf */; };
+		23DF6B631FE051EF00D5E2A4 /* contract2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 23DF6B621FE051EF00D5E2A4 /* contract2.pdf */; };
 		23E84C341FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C331FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift */; };
 		23E84C361FCB508300BE1173 /* HarvestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C351FCB508300BE1173 /* HarvestTableViewCell.swift */; };
 		23E84C3A1FCB693700BE1173 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E84C391FCB693700BE1173 /* IncomeTableViewCell.swift */; };
@@ -97,8 +101,6 @@
 		84049AEA1F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AE91F85FB0F00BA935F /* DetailContactOfResourceProtectionViewController.swift */; };
 		84049AEC1F85FF2C00BA935F /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */; };
 		8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */; };
-		84227F5B1FCD43A200CFE4D9 /* contract2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84227F5A1FCD43A100CFE4D9 /* contract2.pdf */; };
-		84227F5D1FCD43AC00CFE4D9 /* contract4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84227F5C1FCD43AC00CFE4D9 /* contract4.pdf */; };
 		84227F5F1FCD452600CFE4D9 /* Contract2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84227F5E1FCD452600CFE4D9 /* Contract2ViewController.swift */; };
 		84227F611FCD453500CFE4D9 /* Contract4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84227F601FCD453500CFE4D9 /* Contract4ViewController.swift */; };
 		8423B9951F8B4DBA0061C702 /* ApiAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423B9941F8B4DBA0061C702 /* ApiAddress.swift */; };
@@ -129,8 +131,6 @@
 		84D5194A1F8B6BDE00512102 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D519491F8B6BDE00512102 /* DataManager.swift */; };
 		84E497401FC341EA00B9A618 /* Contracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E4973F1FC341EA00B9A618 /* Contracts.storyboard */; };
 		84E497421FC341F900B9A618 /* ContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E497411FC341F900B9A618 /* ContractsViewController.swift */; };
-		84E497441FC3420800B9A618 /* contract_sugar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E497431FC3420800B9A618 /* contract_sugar.pdf */; };
-		84E497461FC3421100B9A618 /* contract_kant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E497451FC3421100B9A618 /* contract_kant.pdf */; };
 		84E497481FC3422000B9A618 /* calendar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84E497471FC3422000B9A618 /* calendar.pdf */; };
 		84E4974C1FC3459200B9A618 /* ShowWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974B1FC3459200B9A618 /* ShowWebView.swift */; };
 		84E4974E1FC347E400B9A618 /* ContractsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974D1FC347E400B9A618 /* ContractsTableViewCell.swift */; };
@@ -243,9 +243,13 @@
 		23B4EF621FB2E0F10087B82D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		23B4EF631FB2E12A0087B82D /* ky */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ky; path = ky.lproj/Localizable.strings; sourceTree = "<group>"; };
 		23C2F6691F7A1496003470D1 /* FirstSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSectionTableViewCell.swift; sourceTree = "<group>"; };
+		23CAC7011FDE939E00D025B4 /* contract_kant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract_kant.pdf; sourceTree = "<group>"; };
 		23CE2FCC1F74CDE80002CDD0 /* SugarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23CE2FCD1F74CDE80002CDD0 /* SugarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SugarCollectionViewCell.xib; sourceTree = "<group>"; };
 		23D49C721FC57EEE001F755A /* PhoneNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
+		23DF6B5E1FE050BF00D5E2A4 /* contract_sugar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract_sugar.pdf; sourceTree = "<group>"; };
+		23DF6B601FE0519200D5E2A4 /* contract4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract4.pdf; sourceTree = "<group>"; };
+		23DF6B621FE051EF00D5E2A4 /* contract2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract2.pdf; sourceTree = "<group>"; };
 		23E84C331FCB4AF400BE1173 /* ValueOfProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueOfProductsTableViewCell.swift; sourceTree = "<group>"; };
 		23E84C351FCB508300BE1173 /* HarvestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestTableViewCell.swift; sourceTree = "<group>"; };
 		23E84C391FCB693700BE1173 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -270,8 +274,6 @@
 		84049AEB1F85FF2C00BA935F /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		8408C3591FA37AFC00B2DDA4 /* Kaindy-Kant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Kaindy-Kant.entitlements"; sourceTree = "<group>"; };
 		8408C35A1FA37F1A00B2DDA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		84227F5A1FCD43A100CFE4D9 /* contract2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract2.pdf; sourceTree = "<group>"; };
-		84227F5C1FCD43AC00CFE4D9 /* contract4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract4.pdf; sourceTree = "<group>"; };
 		84227F5E1FCD452600CFE4D9 /* Contract2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract2ViewController.swift; sourceTree = "<group>"; };
 		84227F601FCD453500CFE4D9 /* Contract4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract4ViewController.swift; sourceTree = "<group>"; };
 		8423B9941F8B4DBA0061C702 /* ApiAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAddress.swift; sourceTree = "<group>"; };
@@ -302,8 +304,6 @@
 		84D519491F8B6BDE00512102 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84E4973F1FC341EA00B9A618 /* Contracts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contracts.storyboard; sourceTree = "<group>"; };
 		84E497411FC341F900B9A618 /* ContractsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsViewController.swift; sourceTree = "<group>"; };
-		84E497431FC3420800B9A618 /* contract_sugar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract_sugar.pdf; sourceTree = "<group>"; };
-		84E497451FC3421100B9A618 /* contract_kant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = contract_kant.pdf; sourceTree = "<group>"; };
 		84E497471FC3422000B9A618 /* calendar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = calendar.pdf; sourceTree = "<group>"; };
 		84E4974B1FC3459200B9A618 /* ShowWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWebView.swift; sourceTree = "<group>"; };
 		84E4974D1FC347E400B9A618 /* ContractsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsTableViewCell.swift; sourceTree = "<group>"; };
@@ -765,10 +765,10 @@
 		84E4973E1FC341D700B9A618 /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				84227F5C1FCD43AC00CFE4D9 /* contract4.pdf */,
-				84227F5A1FCD43A100CFE4D9 /* contract2.pdf */,
-				84E497451FC3421100B9A618 /* contract_kant.pdf */,
-				84E497431FC3420800B9A618 /* contract_sugar.pdf */,
+				23CAC7011FDE939E00D025B4 /* contract_kant.pdf */,
+				23DF6B601FE0519200D5E2A4 /* contract4.pdf */,
+				23DF6B5E1FE050BF00D5E2A4 /* contract_sugar.pdf */,
+				23DF6B621FE051EF00D5E2A4 /* contract2.pdf */,
 				84E4973F1FC341EA00B9A618 /* Contracts.storyboard */,
 				84E497411FC341F900B9A618 /* ContractsViewController.swift */,
 				84E4974D1FC347E400B9A618 /* ContractsTableViewCell.swift */,
@@ -910,11 +910,11 @@
 			files = (
 				1F0DF1AC1F6BCDDC00DE54F2 /* Приложение 4_Модуль_Сахарная свекла_2016.pdf in Resources */,
 				84E497401FC341EA00B9A618 /* Contracts.storyboard in Resources */,
-				84227F5D1FCD43AC00CFE4D9 /* contract4.pdf in Resources */,
+				23DF6B611FE0519200D5E2A4 /* contract4.pdf in Resources */,
+				23DF6B5F1FE050C000D5E2A4 /* contract_sugar.pdf in Resources */,
 				1F5893C21F61583200FD2C5D /* Login.storyboard in Resources */,
 				1F781B2A1F824AD90060B616 /* AboutApp.storyboard in Resources */,
 				1F0DF1AD1F6BCDDC00DE54F2 /* Приложение 5_Кант кызылчасын өстүрүү технологиясы боюнча кыскача таркатма.pdf in Resources */,
-				84227F5B1FCD43A200CFE4D9 /* contract2.pdf in Resources */,
 				2380ABA21F667C0E0023C5AB /* Registration.storyboard in Resources */,
 				1F58937B1F614DB600FD2C5D /* LaunchScreen.storyboard in Resources */,
 				23A8A36C1F83425B0065C5E6 /* ServiceCollectionViewCell.xib in Resources */,
@@ -922,19 +922,19 @@
 				1F0DF1AE1F6BCDDC00DE54F2 /* Приложение 6_Тех карта_ сахарная свекла_образец и пустая_2016 - Тех карта_образец_Миргасым.pdf in Resources */,
 				84E497481FC3422000B9A618 /* calendar.pdf in Resources */,
 				1FC61FD71F83BF68000BE56A /* NewsTableViewCell.xib in Resources */,
+				23DF6B631FE051EF00D5E2A4 /* contract2.pdf in Resources */,
 				2344C05E1FB0DC24005C97CD /* Localizable.strings in Resources */,
-				84E497461FC3421100B9A618 /* contract_kant.pdf in Resources */,
 				84816E231FB53FD900AAA05D /* Settings.storyboard in Resources */,
 				1F0DF1B01F6BCDDC00DE54F2 /* Sugar Beet VAC_Development Concept-2_MD.pdf in Resources */,
 				23EF3F681F77E45300D0C4B7 /* CalculatorExcelViewController.storyboard in Resources */,
 				1F0DF1AF1F6BCDDC00DE54F2 /* Приложение 7_Сравнительный анализ культур_свекла_картофель_кукуруза.pdf in Resources */,
 				1F5893B31F61546400FD2C5D /* Service.storyboard in Resources */,
 				23A8A3681F828A0C0065C5E6 /* NewsCollectionViewCell.xib in Resources */,
+				23CAC7021FDE939E00D025B4 /* contract_kant.pdf in Resources */,
 				1F5893781F614DB600FD2C5D /* Assets.xcassets in Resources */,
 				1F5893761F614DB600FD2C5D /* Main.storyboard in Resources */,
 				843E06481FC93FEF005B9A31 /* technology.pdf in Resources */,
 				2344C06F1FB0E522005C97CD /* Profile.storyboard in Resources */,
-				84E497441FC3420800B9A618 /* contract_sugar.pdf in Resources */,
 				8408C35B1FA37F1A00B2DDA4 /* GoogleService-Info.plist in Resources */,
 				84049AE21F85F32200BA935F /* DetailProvider.storyboard in Resources */,
 				1FE137731F6FB6AD00B7926B /* DetailedService.storyboard in Resources */,

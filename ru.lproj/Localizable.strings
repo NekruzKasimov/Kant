@@ -43,6 +43,7 @@
 "birth_date" = "Дата рождения";
 "city" = "Город/Район/Село";
 "address" = "Адрес";
+"addresses" = "Адресa";
 "change_password" = "Изменить пароль";
 "my_field" = "Мои поля";
 "add_field" = "Добавить поле";

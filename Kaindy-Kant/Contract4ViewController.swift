@@ -20,7 +20,7 @@ class Contract4ViewController: ViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
         self.title = "agreement4".localized(lang: self.lang)!
     }
 

@@ -14,7 +14,7 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     
     var technologies = ["technology", "calendar"]
-    var technologies_title = ["Технология возведения свеклы", "Календарь свекловода"]
+    var technologies_title = ["Технология возделывания сахарной свеклы", "Календарь свекловода"]
     
     
     override func viewDidLoad() {
@@ -44,6 +44,7 @@ class TechnologiesListViewController: ViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TechnologyTableViewCell")
         cell?.textLabel?.text = technologies_title[indexPath.row]
+        cell?.textLabel?.numberOfLines = 0
         //cell?.textLabel?.text = technologies[indexPath.row]
         cell?.selectionStyle = .none
         return cell!

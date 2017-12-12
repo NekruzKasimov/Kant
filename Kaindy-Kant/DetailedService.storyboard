@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -2225,7 +2225,7 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MEo-3G-wcG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BranchesTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="BranchesTableViewCell" rowHeight="97" id="5GE-hC-eXY" customClass="BranchesTableViewCell" customModule="Kaindy_Kant" customModuleProvider="target">
@@ -2285,16 +2285,31 @@ Cg
                                     <outlet property="delegate" destination="OnO-sg-F7m" id="rrh-15-XgH"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ktr-Qt-tLZ">
+                                <rect key="frame" x="24" y="20" width="327" height="29"/>
+                                <segments>
+                                    <segment title="Карта"/>
+                                    <segment title="Адреса"/>
+                                </segments>
+                                <color key="tintColor" red="0.61568627450980395" green="0.12549019607843137" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="showMapOrAddresses:" destination="OnO-sg-F7m" eventType="valueChanged" id="NlQ-6j-0fR"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ktr-Qt-tLZ" firstAttribute="leading" secondItem="rKK-UL-u8a" secondAttribute="leading" constant="24" id="GzG-7i-NxZ"/>
                             <constraint firstItem="Hk6-1J-NJG" firstAttribute="top" secondItem="MEo-3G-wcG" secondAttribute="bottom" id="XRt-3V-78r"/>
                             <constraint firstAttribute="trailing" secondItem="MEo-3G-wcG" secondAttribute="trailing" id="e46-Wa-P8f"/>
-                            <constraint firstItem="MEo-3G-wcG" firstAttribute="top" secondItem="rKK-UL-u8a" secondAttribute="top" id="kRE-db-UBU"/>
+                            <constraint firstItem="ktr-Qt-tLZ" firstAttribute="top" secondItem="HyH-Ex-XLn" secondAttribute="bottom" id="g5d-2s-DKD"/>
+                            <constraint firstItem="MEo-3G-wcG" firstAttribute="top" secondItem="ktr-Qt-tLZ" secondAttribute="bottom" constant="16" id="lil-jc-Kh6"/>
                             <constraint firstItem="MEo-3G-wcG" firstAttribute="leading" secondItem="rKK-UL-u8a" secondAttribute="leading" id="m0T-af-7V8"/>
+                            <constraint firstAttribute="trailing" secondItem="ktr-Qt-tLZ" secondAttribute="trailing" constant="24" id="z6c-ey-vmQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapSegment" destination="ktr-Qt-tLZ" id="pjl-Kp-wFT"/>
                         <outlet property="tableView" destination="MEo-3G-wcG" id="ouf-Tc-uyO"/>
                     </connections>
                 </viewController>

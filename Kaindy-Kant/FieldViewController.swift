@@ -206,7 +206,8 @@ class FieldViewController: ViewController {
             }
             
             let field_info = ["field_id": fieldId.text!, "hectares": (doubleString as NSString).doubleValue, "average_harvest": (harvestString as NSString).doubleValue, "beet_point": point_id] as [String : Any]
-           ServerManager.shared.updateField(field_id: field_id, parameters: field_info, fieldUpdated, error: showErrorAlert)
+            UserDefaults.standard.set(false, forKey: "fieldsCached")
+            ServerManager.shared.updateField(field_id: field_id, parameters: field_info, fieldUpdated, error: showErrorAlert)
         }
     }
     func fieldUpdated(message: String){

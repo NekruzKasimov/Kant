@@ -11,7 +11,7 @@ import UIKit
 class ContractsViewController: ViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let titles = ["ДОГОВОР на приемку корнеплодов сахарной свеклы урожая 2017 года", "ДОГОВОР на переработку и приемку корнеплодов сахарной свеклы урожая 2017 года", "ДОГОВОР на приемку корнеплодов сахарной свеклы урожая 2017 года (на условиях выдачи Свеклопроизводителям сахара-песка).", "ДОГОВОР на переработку и покупку корнеплодов сахарной свеклы урожая 2017 года"]
+    let titles = [" Договор ОАО \"Каинды-Кант\" 50% деньги / 50% сахар", "Договор ОАО \"Каинды-Кант\" на 100%сахар", "Договор ОАО \"Кошой\" 50% сахар / 50% деньги", "Договор ОАО \"Кошой\" на 100%сахар"]
     let controllers = ["KantViewController", "SugarViewController", "Contract2ViewController", "Contract4ViewController"]
     override func viewDidLoad() {
         super.viewDidLoad()

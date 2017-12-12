@@ -125,7 +125,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         SVProgressHUD.show()
         let newUser = NewUser()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Registration", bundle:nil)
-        if birthdayTF.text! != "" && phoneTF.text! != "" && passwordTF.text! != "" && passwordRepeatTF.text! != "" {
+        if firstNameTF.text! != "" && lastNameTF.text! != "" && phoneTF.text! != "" && passwordTF.text! != "" && passwordRepeatTF.text! != "" {
             
             if passwordTF.text! != passwordRepeatTF.text! {
                 showErrorAlert(message: "Пароли не совпадают!")
@@ -160,13 +160,13 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     self.present(nextViewController!, animated:true, completion:nil)
                 }, error: { (error) in
                     SVProgressHUD.dismiss()
-                    self.showErrorAlert(message: error)
+                    self.showErrorAlert(message: "Не удалось зарегистрировать пользователя")
                 })
             }
         
         }
         else {
-            showErrorAlert(message: "Fill required data")
+            showErrorAlert(message: "Заполните нужные поля")
         }
     }
 }
