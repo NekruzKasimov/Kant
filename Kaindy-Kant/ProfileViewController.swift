@@ -9,8 +9,6 @@
 import UIKit
 import SVProgressHUD
 import SkyFloatingLabelTextField
-//import BetterSegmentedControl
-//import PageMenu
 import Photos
 import ScrollableSegmentedControl
 
@@ -186,6 +184,7 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        MenuViewController.hideKeyboardDelegate = self
         self.title = "my_profile".localized(lang: self.lang)!
         fillUserInformation()
     }
@@ -219,7 +218,7 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
 }
 
 
-extension ProfileViewController {
+extension ProfileViewController: HideKeyboard {
     
 //    func addTapToScrollView() {
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -250,7 +249,8 @@ extension ProfileViewController {
         let myDatePicker = UIDatePicker()
         myDatePicker.datePickerMode = .date
         myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
-        
+        myDatePicker.date = Calendar.current.date(byAdding: .year, value: -10, to: Date())!
+        myDatePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alertController.view.addSubview(myDatePicker)
         alertController.view.tintColor = .black
@@ -296,7 +296,10 @@ extension ProfileViewController {
         self.present(imagePicker, animated: true, completion: nil)
         imagePicker.delegate = self
     }
-
+    
+    func stopEditing(){
+        self.view.endEditing(true)
+    }
 }
 
 //MARK: UITextFieldDelegate methods

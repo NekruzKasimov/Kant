@@ -9,7 +9,13 @@
 import UIKit
 import SVProgressHUD
 
+protocol HideKeyboard : class {
+    func stopEditing()
+}
+
 class MenuViewController: ViewController {
+    
+    static var hideKeyboardDelegate: HideKeyboard?
     
     @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
@@ -30,12 +36,15 @@ class MenuViewController: ViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     var selectedIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MenuViewController.hideKeyboardDelegate?.stopEditing()
         var user = DataManager.shared.getUserInformation()
         if user != nil {
         self.nameLabel.text = "\(user!["first_name"]!) \(user!["last_name"]!)"

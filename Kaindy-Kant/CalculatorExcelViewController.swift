@@ -53,6 +53,11 @@ class CalculatorExcelViewController: ViewController, UITableViewDataSource, UITa
     var yield: Double?
     var area: Double?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MenuViewController.hideKeyboardDelegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -195,7 +200,11 @@ extension CalculatorExcelViewController {
 
 //MARK: Helper functions
 
-extension CalculatorExcelViewController {
+extension CalculatorExcelViewController: HideKeyboard {
+    func stopEditing(){
+        self.view.endEditing(true)
+    }
+    
     
     func configureTableView() {
         tableView.tableFooterView                   = UIView()

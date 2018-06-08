@@ -160,7 +160,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     self.present(nextViewController!, animated:true, completion:nil)
                 }, error: { (error) in
                     SVProgressHUD.dismiss()
-                    self.showErrorAlert(message: "Не удалось зарегистрировать пользователя")
+                    self.showErrorAlert(message: error)
                 })
             }
         
@@ -179,7 +179,8 @@ extension RegistrationViewController {
         let myDatePicker = UIDatePicker()
         myDatePicker.datePickerMode = .date
         myDatePicker.frame = CGRect(x:0,y:15, width: 270, height: 200)
-        
+        myDatePicker.date = Calendar.current.date(byAdding: .year, value: -10, to: Date())!
+        myDatePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alertController.view.addSubview(myDatePicker)
         alertController.view.tintColor = .black
