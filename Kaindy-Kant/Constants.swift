@@ -21,12 +21,12 @@ struct Constants {
     
     func setLanguage() {
         Constants.lang = DataManager.shared.getLanguage()
-        MainPage.init()
-        MenuPage.init()
-        Values.init()
-        SugarAndJom.init()
-        Weather.init()
-        Network.ErrorMessage.init()
+        _ = MainPage.init()
+        _ = MenuPage.init()
+        _ = Values.init()
+        _ = SugarAndJom.init()
+        _ = Weather.init()
+        _ = Network.ErrorMessage.init()
     }
 
     

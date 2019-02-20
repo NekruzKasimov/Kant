@@ -10,8 +10,6 @@ import UIKit
 
 class WeatherViewController: ViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
-    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherDegreeLabel: UILabel!
     @IBOutlet weak var weatheStatusLabel: UILabel!

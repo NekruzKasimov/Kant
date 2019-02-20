@@ -153,7 +153,8 @@ class ProfileViewController: ViewController,  UITextFieldDelegate {
         return infoToUpdate
     }
     func updateUser(user: NewUser){
-        SVProgressHUD.dismiss()
+        SVProgressHUD.showSuccess(withStatus: nil)
+        
         DataManager.shared.saveUserInformation(userDictionary: user.toDictionary() as! [String : String])
         fillUserInformation()
     }

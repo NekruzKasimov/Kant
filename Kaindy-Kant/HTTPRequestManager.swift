@@ -22,8 +22,6 @@ class HTTPRequestManager {
     typealias Parameter = [String: Any]?
     typealias JSONValue = (Data) -> Void
     
-    //let url = "http://rooms.auca.kg/"
-    
     private func request(method: HTTPMethod, endpoint: String, serverType: ServerType, parameters: Parameter, header: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler, json: @escaping JSONValue) {
         if !isConnectedToNetwork() {
             error(Constants.Network.ErrorMessage.NO_INTERNET_CONNECTION!)
@@ -48,6 +46,7 @@ class HTTPRequestManager {
         if header != "" {
             head.updateValue(header, forKey: "language")
         }
+        
         Alamofire.request(apiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: tempParam, encoding: JSONEncoding.default , headers: head).responseJSON { (response:DataResponse<Any>) in
             //            print(response.description)
             guard response.response != nil else {
@@ -60,6 +59,8 @@ class HTTPRequestManager {
                 return
             }
             print("\(statusCode) - \(apiUrl)")
+            
+            let a = JSON(data: response.data!)
             
             switch(statusCode) {
             case HttpStatusCode.unauthorized.statusCode:
